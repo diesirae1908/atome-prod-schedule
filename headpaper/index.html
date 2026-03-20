@@ -16,6 +16,7 @@
                         <a href="../index.html" class="back-btn">← Weekly Schedule</a>
                         <span style="font-size:22px">🥖</span>
                         <span class="topbar-title">Atome Bakery — 🗓 Daily Planner</span>
+                        <span id="hp-sync-dot" class="hp-sync-dot sync-syncing" title="Syncing…"></span>
                     </div>
                     <div class="header-controls">
                         <div class="date-selector">
@@ -193,6 +194,86 @@
         </div>
     </div>
 
+    <script>
+    // ── Supabase Sync for Daily Planner ──────────────────────────────────────
+    // Must run BEFORE app.js so localStorage.setItem is patched in time.
+    const HP_SUPA_URL = "https://ktbbmtyesrprvxrseiph.supabase.co";
+    const HP_SUPA_KEY = "sb_publishable_1vfCHnng8kWfUGFtOt9Dmw_Rzkn8M62";
+    const HP_KEY      = "headpaper:bakerySchedule"; // unique key in checks table
+
+    function hpSetSync(status) {
+      const dot = document.getElementById('hp-sync-dot');
+      if (!dot) return;
+      dot.className = 'hp-sync-dot sync-' + status;
+      dot.title = { ok: 'Synced ✓', syncing: 'Syncing…', error: 'Sync error ✕' }[status] || '';
+    }
+
+    async function hpSupaFetch(method, path, body) {
+      return fetch(HP_SUPA_URL + path, {
+        method,
+        headers: {
+          'apikey': HP_SUPA_KEY,
+          'Authorization': 'Bearer ' + HP_SUPA_KEY,
+          'Content-Type': 'application/json',
+          'Prefer': method === 'POST' ? 'resolution=merge-duplicates' : ''
+        },
+        body: body ? JSON.stringify(body) : undefined
+      });
+    }
+
+    // Debounced save (800 ms after last write)
+    let _hpSaveTimer = null;
+    function hpSave(value) {
+      clearTimeout(_hpSaveTimer);
+      _hpSaveTimer = setTimeout(async () => {
+        hpSetSync('syncing');
+        try {
+          await hpSupaFetch('POST', '/rest/v1/checks', {
+            key: HP_KEY, value, updated_at: new Date().toISOString()
+          });
+          hpSetSync('ok');
+        } catch (e) {
+          console.warn('[HP sync] save error', e);
+          hpSetSync('error');
+        }
+      }, 800);
+    }
+
+    // Patch localStorage so every bakerySchedule write is mirrored to Supabase
+    const _hpOrigSet = localStorage.setItem.bind(localStorage);
+    localStorage.setItem = function(key, value) {
+      _hpOrigSet(key, value);
+      if (key === 'bakerySchedule') hpSave(value);
+    };
+
+    // On page load: pull latest from Supabase, then re-render
+    // (init() fires after this listener but before the await resolves,
+    //  so we call loadFromStorage + render again once we have fresh data)
+    document.addEventListener('DOMContentLoaded', async () => {
+      hpSetSync('syncing');
+      try {
+        const r = await hpSupaFetch('GET',
+          '/rest/v1/checks?key=eq.' + encodeURIComponent(HP_KEY) + '&select=value'
+        );
+        const rows = await r.json();
+        if (Array.isArray(rows) && rows.length && rows[0].value) {
+          // Write directly (bypass patch to avoid re-uploading what we just downloaded)
+          _hpOrigSet('bakerySchedule', rows[0].value);
+          // Re-render with Supabase data (app.js functions are now available)
+          if (typeof loadFromStorage === 'function') {
+            loadFromStorage();
+            if (typeof renderTaskLibrary  === 'function') renderTaskLibrary();
+            if (typeof renderScheduleTabs === 'function') renderScheduleTabs();
+            if (typeof renderSchedule     === 'function') renderSchedule();
+          }
+        }
+        hpSetSync('ok');
+      } catch (e) {
+        console.warn('[HP sync] load error', e);
+        hpSetSync('error');
+      }
+    });
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
