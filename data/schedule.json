@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T22:44:48Z",
+  "generated_at": "2026-03-20T23:02:04Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-03-29",
@@ -758,7 +758,7 @@
           "name": "Country Rye Loaf (×2)",
           "qty_packs": 231.0,
           "qty_units": 462.0,
-          "dluo": "2026-12-31",
+          "dluo": "2026-12-23",
           "mo_ref": "WH/MO/00573"
         },
         {
@@ -766,7 +766,7 @@
           "name": "Multigrain Baguette (×3)",
           "qty_packs": 120.0,
           "qty_units": 360.0,
-          "dluo": "2026-12-31",
+          "dluo": "2026-12-24",
           "mo_ref": "WH/MO/00575"
         },
         {
@@ -774,7 +774,7 @@
           "name": "Pain au Chocolat (×3)",
           "qty_packs": 242.0,
           "qty_units": 726.0,
-          "dluo": "2026-09-30",
+          "dluo": "2026-09-24",
           "mo_ref": "WH/MO/00572"
         }
       ]
