@@ -27,7 +27,7 @@
       "name": "Brioche",
       "dough_type": "BRIOCHE",
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
-      "premix_offset": -2, "premix_label": "Pre-mix Brioche",
+      "premix_offset": -2, "premix_label": "Prep mix Brioche",
       "dluo_months": 6,
       "units_per_pack": 1, "weight_g_per_unit": 450
     },
@@ -35,7 +35,7 @@
       "name": "Brioche Buns (×3)",
       "dough_type": "BRIOCHE",
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
-      "premix_offset": -2, "premix_label": "Pre-mix Brioche",
+      "premix_offset": -2, "premix_label": "Prep mix Brioche",
       "dluo_months": 6,
       "units_per_pack": 3, "weight_g_per_unit": 150
     },
@@ -43,7 +43,7 @@
       "name": "Liège Waffle (×3)",
       "dough_type": "WAFFLES",
       "mix_offset": 0, "shape_offset": 0, "score_offset": 0, "vacuum_offset": 0,
-      "premix_offset": -1, "premix_label": "Pre-mix Waffles",
+      "premix_offset": -1, "premix_label": "Prep mix Waffles",
       "dluo_months": 6,
       "units_per_pack": 3, "weight_g_per_unit": 100
     },
@@ -58,7 +58,7 @@
       "name": "Pain au Chocolat (×3)",
       "dough_type": "PAC_CR",
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
-      "premix_offset": -2, "premix_label": "Pre-mix PAC/CR",
+      "premix_offset": -2, "premix_label": "Prep mix PAC/CR",
       "dluo_months": 6,
       "units_per_pack": 3, "weight_g_per_unit": 90
     },
@@ -116,7 +116,7 @@
       "name": "Viennoise (×2)",
       "dough_type": "VIENNOISE",
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
-      "premix_offset": -2, "premix_label": "Pre-mix Viennoise",
+      "premix_offset": -2, "premix_label": "Prep mix Viennoise",
       "dluo_months": 6,
       "units_per_pack": 2, "weight_g_per_unit": 200
     },

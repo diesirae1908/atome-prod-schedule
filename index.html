@@ -305,7 +305,7 @@
 </div>
 
 <div class="legend">
-  <div class="legend-item"><div class="legend-dot" style="background:var(--premix-hd)"></div> Pre-Mixing</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--premix-hd)"></div> Prep Mixing</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--mix-hd)"></div> Mixing</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--shape-hd)"></div> Shaping / Scoring</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--vac-hd)"></div> Vacuuming / Packaging</div>
@@ -727,7 +727,7 @@ function buildTable(weekStart) {
     table.appendChild(row);
   }
 
-  addSection("🟠", "PRE-MIXING",  "premix-hd", "premix-row", (d, day) => renderPremixCell(day));
+  addSection("🟠", "PREP MIXING", "premix-hd", "premix-row", (d, day) => renderPremixCell(day));
   addSection("🟣", "MIXING",      "mix-hd",    "mix-row",    (d, day) => renderMixCell(day));
   addSection("🔵", "SHAPING",     "shape-hd",  "shape-row",  (d, day) => renderShapeCell(day));
   addSection("🟢", "VACUUMING",   "vac-hd",    "vac-row",    (d, day) => renderVacCell(day));
