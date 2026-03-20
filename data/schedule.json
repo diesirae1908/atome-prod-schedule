@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T02:33:24Z",
+  "generated_at": "2026-03-20T19:15:19Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-03-29",
@@ -7,15 +7,7 @@
     {
       "date": "2026-03-16",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "MG Grain Soak",
-          "total_units": 360,
-          "products": [
-            "Multigrain Baguette (×3)"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [],
       "shaping": [],
       "vacuuming": []
@@ -23,48 +15,9 @@
     {
       "date": "2026-03-17",
       "label": "TUESDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 732,
-          "products": [
-            "Pain au Chocolat (×3)"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "MG",
-          "label": "MG",
-          "unit": "kg",
-          "total_kg": 135.0,
-          "total_units": 360,
-          "products": [
-            "Multigrain Baguette (×3)"
-          ]
-        },
-        {
-          "dough_type": "WW",
-          "label": "WW",
-          "unit": "kg",
-          "total_kg": 184.8,
-          "total_units": 308,
-          "products": [
-            "Wholewheat Loaf (×2)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Wholewheat Loaf (×2)",
-          "qty_packs": 154,
-          "qty_units": 308,
-          "total_kg": 184.8,
-          "mo_ref": "WH/MO/00519",
-          "d0": "2026-03-19"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "vacuuming": []
     },
     {
@@ -91,16 +44,6 @@
           ]
         },
         {
-          "dough_type": "PAC_CR",
-          "label": "PAC/CR",
-          "unit": "pcs",
-          "total_kg": 65.9,
-          "total_units": 732,
-          "products": [
-            "Pain au Chocolat (×3)"
-          ]
-        },
-        {
           "dough_type": "TRAD",
           "label": "TRAD",
           "unit": "kg",
@@ -120,49 +63,14 @@
           "total_kg": 323.4,
           "mo_ref": "WH/MO/00520",
           "d0": "2026-03-20"
-        },
-        {
-          "sku": "MG3P-SGL",
-          "name": "Multigrain Baguette (×3)",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 135.0,
-          "mo_ref": "WH/MO/00522",
-          "d0": "2026-03-19"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pain au Chocolat (×3)",
-          "qty_packs": 244,
-          "qty_units": 732,
-          "total_kg": 65.9,
-          "mo_ref": "WH/MO/00534",
-          "d0": "2026-03-19"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Choc. Croissant Bites (×8)",
-          "qty_packs": 120.0,
-          "qty_units": 960.0,
-          "dluo": "2026-06-06",
-          "mo_ref": "WH/MO/00570"
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-03-19",
       "label": "THURSDAY",
-      "premix": [
-        {
-          "label": "Prep mix Brioche",
-          "total_units": 348,
-          "products": [
-            "Brioche Buns (×3)"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "BRIOCHE",
@@ -215,40 +123,7 @@
           "d0": "2026-03-20"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "1-CRB8P-SGL",
-          "name": "Croissant Bites (×8)",
-          "qty_packs": 168.0,
-          "qty_units": 1344.0,
-          "dluo": "2026-10-11",
-          "mo_ref": "WH/MO/00571"
-        },
-        {
-          "sku": "MG3P-SGL",
-          "name": "Multigrain Baguette (×3)",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "dluo": "2026-12-18",
-          "mo_ref": "WH/MO/00522"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pain au Chocolat (×3)",
-          "qty_packs": 244.0,
-          "qty_units": 732.0,
-          "dluo": "2026-09-18",
-          "mo_ref": "WH/MO/00534"
-        },
-        {
-          "sku": "WW2P-SGL",
-          "name": "Wholewheat Loaf (×2)",
-          "qty_packs": 154.0,
-          "qty_units": 308.0,
-          "dluo": "2026-12-17",
-          "mo_ref": "WH/MO/00519"
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-03-20",
@@ -271,16 +146,6 @@
       ],
       "mix": [
         {
-          "dough_type": "BRIOCHE",
-          "label": "BRIOCHE",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "products": [
-            "Brioche Buns (×3)"
-          ]
-        },
-        {
           "dough_type": "PIZZA",
           "label": "PIZZA",
           "unit": "kg",
@@ -302,15 +167,6 @@
         }
       ],
       "shaping": [
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Brioche Buns (×3)",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00535",
-          "d0": "2026-03-21"
-        },
         {
           "sku": "PIZ2-SGL",
           "name": "Pizza Dough (×2)",
@@ -340,20 +196,20 @@
           "mo_ref": "WH/MO/00542"
         },
         {
+          "sku": "1-PACB8P-SGL",
+          "name": "Choc. Croissant Bites (×8)",
+          "qty_packs": 120.0,
+          "qty_units": 960.0,
+          "dluo": "2026-06-06",
+          "mo_ref": "WH/MO/00570"
+        },
+        {
           "sku": "CTY2P-SGL",
           "name": "Country Rye Loaf (×2)",
           "qty_packs": 231.0,
           "qty_units": 462.0,
           "dluo": "2026-12-18",
           "mo_ref": "WH/MO/00520"
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Croissants (×3)",
-          "qty_packs": 160.0,
-          "qty_units": 480.0,
-          "dluo": "2026-07-18",
-          "mo_ref": "WH/MO/00568"
         },
         {
           "sku": "TR3P-SGL",
@@ -382,11 +238,11 @@
           "dough_type": "TRAD",
           "label": "TRAD",
           "unit": "kg",
-          "total_kg": 504.0,
-          "total_units": 1080,
+          "total_kg": 378.0,
+          "total_units": 720,
           "products": [
-            "Trad. Baguette (×3)",
-            "Sourdough Loaf (×2)"
+            "Sourdough Loaf (×2)",
+            "Trad. Baguette (×3)"
           ]
         },
         {
@@ -450,14 +306,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "BR3BN-SGL",
-          "name": "Brioche Buns (×3)",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "dluo": "2026-09-20",
-          "mo_ref": "WH/MO/00535"
-        },
-        {
           "sku": "WA3P-SGL",
           "name": "Liège Waffle (×3)",
           "qty_packs": 208.0,
@@ -480,6 +328,14 @@
           "qty_units": 360.0,
           "dluo": "2026-12-19",
           "mo_ref": "WH/MO/00529"
+        },
+        {
+          "sku": "2-CRVGN3P-SGL",
+          "name": "Vegan Croissant (×3)",
+          "qty_packs": 60.0,
+          "qty_units": 180.0,
+          "dluo": "2026-09-10",
+          "mo_ref": "WH/MO/00577"
         }
       ]
     },
@@ -543,15 +399,6 @@
           "total_kg": 378.0,
           "mo_ref": "WH/MO/00530",
           "d0": "2026-03-24"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Trad. Baguette (×3)",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 126.0,
-          "mo_ref": "WH/MO/00553",
-          "d0": "2026-03-23"
         },
         {
           "sku": "TR3P-SGL",
@@ -692,16 +539,16 @@
           "name": "Trad. Baguette (×3)",
           "qty_packs": 120.0,
           "qty_units": 360.0,
-          "dluo": "2026-12-31",
-          "mo_ref": "WH/MO/00553"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Trad. Baguette (×3)",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
           "dluo": "2026-12-22",
           "mo_ref": "WH/MO/00541"
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "[1-AT3P-SGL] Pack of 3 apple turnover",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/00579"
         }
       ]
     },
@@ -790,11 +637,19 @@
       ],
       "vacuuming": [
         {
+          "sku": "CR3P-SGL",
+          "name": "Croissants (×3)",
+          "qty_packs": 160.0,
+          "qty_units": 480.0,
+          "dluo": "2026-07-18",
+          "mo_ref": "WH/MO/00580"
+        },
+        {
           "sku": "PAC3P-SGL",
           "name": "Pain au Chocolat (×3)",
           "qty_packs": 242.0,
           "qty_units": 726.0,
-          "dluo": "2026-09-30",
+          "dluo": "2026-09-23",
           "mo_ref": "WH/MO/00561"
         },
         {
@@ -810,7 +665,7 @@
           "name": "Trad. Baguette (×3)",
           "qty_packs": 120.0,
           "qty_units": 360.0,
-          "dluo": "2026-12-31",
+          "dluo": "2026-12-23",
           "mo_ref": "WH/MO/00547"
         }
       ]
@@ -1183,6 +1038,14 @@
           "qty_units": 360.0,
           "dluo": "2026-12-31",
           "mo_ref": "WH/MO/00551"
+        },
+        {
+          "sku": "GNOC-330",
+          "name": "Gnocchi",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "dluo": "2026-09-30",
+          "mo_ref": "WH/MO/00578"
         },
         {
           "sku": "WA3P-SGL",
