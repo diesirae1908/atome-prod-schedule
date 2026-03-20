@@ -258,6 +258,28 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
+    /* ── refresh button ── */
+    .refresh-btn {
+      display: flex; align-items: center; gap: 5px;
+      background: #10b981; color: #fff;
+      border: none; border-radius: 6px;
+      padding: 6px 12px; font-size: 12px; font-weight: 600;
+      cursor: pointer; transition: background .15s; white-space: nowrap;
+    }
+    .refresh-btn:hover    { background: #059669; }
+    .refresh-btn:disabled { background: #4b5563; cursor: default; }
+    .refresh-btn .rspin   { display: inline-block; animation: spin .7s linear infinite; }
+
+    /* ── sync status dot ── */
+    .sync-dot {
+      width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
+      background: #6b7280; cursor: default;
+    }
+    .sync-dot.synced  { background: #10b981; }
+    .sync-dot.syncing { background: #f59e0b; animation: pulse 1s ease-in-out infinite; }
+    .sync-dot.error   { background: #ef4444; }
+    @keyframes pulse  { 0%,100% { opacity:1; } 50% { opacity:.35; } }
+
     @media (max-width: 600px) {
       .topbar { flex-direction: column; gap: 8px; align-items: flex-start; }
     }
@@ -276,6 +298,8 @@
       <span class="week-badge" id="weekBadge">W–</span>
       <button id="nextWeek">▶</button>
     </div>
+    <button class="refresh-btn" id="refreshBtn">🔄 Refresh from Odoo</button>
+    <span class="sync-dot syncing" id="syncDot" title="Syncing…"></span>
     <div class="meta" id="metaLine">Loading…</div>
   </div>
 </div>
@@ -300,13 +324,135 @@
 </div>
 
 <script>
+// ── Supabase config ───────────────────────────────────────────────────────────
+const SUPA_URL = "https://ktbbmtyesrprvxrseiph.supabase.co";
+const SUPA_KEY = "sb_publishable_1vfCHnng8kWfUGFtOt9Dmw_Rzkn8M62";
+
+function setSyncStatus(s) {
+  const dot = document.getElementById("syncDot");
+  if (!dot) return;
+  dot.className = "sync-dot " + s;
+  dot.title = s === "synced"  ? "✓ Synced across all devices"
+            : s === "syncing" ? "⟳ Syncing…"
+            : "⚠ Sync error — using local data";
+}
+
+async function supaFetch(method, path, body) {
+  const resp = await fetch(SUPA_URL + "/rest/v1" + path, {
+    method,
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": SUPA_KEY,
+      "Authorization": "Bearer " + SUPA_KEY,
+      "Prefer": "return=minimal,resolution=merge-duplicates"
+    },
+    body: body != null ? JSON.stringify(body) : undefined
+  });
+  if (!resp.ok && resp.status !== 204) {
+    const txt = await resp.text().catch(() => "");
+    throw new Error("Supabase " + resp.status + ": " + txt);
+  }
+  try { return await resp.json(); } catch { return null; }
+}
+
+async function syncFromSupabase() {
+  setSyncStatus("syncing");
+  try {
+    const rows = await Promise.race([
+      supaFetch("GET", "/checks?select=key,value"),
+      new Promise(res => setTimeout(() => res([]), 5000))
+    ]);
+    (rows || []).forEach(r => {
+      try { localStorage.setItem(r.key, r.value); } catch {}
+    });
+    setSyncStatus("synced");
+    return true;
+  } catch (e) {
+    console.warn("Supabase sync error:", e);
+    setSyncStatus("error");
+    return false;
+  }
+}
+
+async function saveToSupabase(fullKey, jsonValue) {
+  try {
+    await supaFetch("POST", "/checks", [{ key: fullKey, value: jsonValue, updated_at: new Date().toISOString() }]);
+    setSyncStatus("synced");
+  } catch (e) {
+    console.warn("Supabase save error:", e);
+    setSyncStatus("error");
+  }
+}
+
+// ── GitHub workflow dispatch (via Supabase Edge Function proxy) ───────────────
+// The GitHub token lives in Supabase secrets — never in browser source code.
+async function triggerRefresh() {
+  const btn = document.getElementById("refreshBtn");
+  btn.disabled = true;
+  btn.innerHTML = '<span class="rspin">⏳</span> Triggering…';
+  try {
+    const resp = await fetch(`${SUPA_URL}/functions/v1/trigger-refresh`, {
+      method: "POST",
+      headers: {
+        "apikey": SUPA_KEY,
+        "Authorization": "Bearer " + SUPA_KEY,
+        "Content-Type": "application/json"
+      }
+    });
+    if (!resp.ok) {
+      const body = await resp.text().catch(() => "");
+      throw new Error("Edge Function error " + resp.status + ": " + body);
+    }
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = "🔄 Refresh from Odoo";
+    alert("Could not trigger refresh: " + e.message);
+    return;
+  }
+
+  // Poll schedule.json until generated_at changes (workflow ~1-2 min)
+  const beforeTs = scheduleData?.generated_at || "";
+  let elapsed = 0;
+  const MAX_WAIT = 5 * 60 * 1000;
+  const INTERVAL = 15000;
+  btn.innerHTML = `<span class="rspin">⏳</span> Refreshing… (0s)`;
+
+  const poll = setInterval(async () => {
+    elapsed += INTERVAL;
+    btn.innerHTML = `<span class="rspin">⏳</span> Refreshing… (${Math.round(elapsed / 1000)}s)`;
+    if (elapsed >= MAX_WAIT) {
+      clearInterval(poll);
+      btn.disabled = false;
+      btn.textContent = "🔄 Refresh from Odoo";
+      alert("Refresh timed out — the workflow may still be running. Check GitHub Actions.");
+      return;
+    }
+    try {
+      const r = await fetch("data/schedule.json?t=" + Date.now());
+      if (!r.ok) return;
+      const newData = await r.json();
+      if (newData.generated_at !== beforeTs) {
+        clearInterval(poll);
+        scheduleData = newData;
+        render();
+        btn.disabled = false;
+        btn.textContent = "🔄 Refresh from Odoo";
+      }
+    } catch {}
+  }, INTERVAL);
+}
+
 // ── localStorage helpers ──────────────────────────────────────────────────────
 const PFX = "atome_";
 function lsGet(k) {
   try { return JSON.parse(localStorage.getItem(PFX + k)); } catch { return null; }
 }
 function lsSet(k, v) {
-  try { localStorage.setItem(PFX + k, JSON.stringify(v)); } catch {}
+  const fullKey = PFX + k;
+  const jsonVal = JSON.stringify(v);
+  try { localStorage.setItem(fullKey, jsonVal); } catch {}
+  setSyncStatus("syncing");
+  saveToSupabase(fullKey, jsonVal); // async fire-and-forget
 }
 
 // ── date helpers (local timezone, not UTC) ────────────────────────────────────
@@ -672,10 +818,18 @@ document.getElementById("nextWeek").addEventListener("click", () => {
   viewWeekStart = addDays(viewWeekStart, 7); render();
 });
 
+// ── refresh button wiring ─────────────────────────────────────────────────────
+document.getElementById("refreshBtn").addEventListener("click", triggerRefresh);
+
 // ── init ──────────────────────────────────────────────────────────────────────
 (async () => {
   try {
-    scheduleData = await loadSchedule();
+    // Load schedule + sync checks from Supabase in parallel
+    const [sched] = await Promise.all([
+      loadSchedule(),
+      syncFromSupabase()
+    ]);
+    scheduleData = sched;
     const todayMon = mondayOfWeek(isoToday());
     const ds = scheduleData.week_start, de = scheduleData.week_end;
     viewWeekStart = (todayMon >= ds && todayMon <= de) ? todayMon : mondayOfWeek(ds);
