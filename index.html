@@ -181,17 +181,15 @@
     .levain-pill.done { opacity: .38; }
     .levain-pill.done .prod-name { text-decoration: line-through; color: var(--muted); }
 
-    /* ── vac priority badges ── */
-    .prio-badge {
-      font-size: 9px; font-weight: 700; letter-spacing: .03em;
-      border-radius: 4px; padding: 1px 5px;
+    /* ── vac queue badge ── */
+    .queue-badge {
+      font-size: 9px; font-weight: 700; letter-spacing: .02em;
+      border-radius: 4px; padding: 1px 6px;
+      background: #d1fae5; color: #065f46;
+      border: 1px solid #6ee7b7;
       white-space: nowrap; display: inline-block;
       margin-bottom: 2px;
     }
-    .prio-higher { background: #fee2e2; color: #b91c1c; }
-    .prio-medium { background: #fef3c7; color: #b45309; }
-    .prio-low    { background: #dbeafe; color: #1d4ed8; }
-    .prio-na     { background: #f3f4f6; color: #9ca3af; }
 
     /* ── vac step buttons ── */
     .vac-steps { display: flex; gap: 3px; flex-wrap: wrap; margin-top: 4px; }
@@ -289,10 +287,8 @@
   <div class="legend-item"><div class="legend-dot" style="background:var(--vac-hd)"></div> Vacuuming / Packaging</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--tasks-hd)"></div> Daily Tasks</div>
   <div class="legend-item">
-    <span class="prio-badge prio-higher">↑ High</span>
-    <span class="prio-badge prio-medium">▶ Med</span>
-    <span class="prio-badge prio-low">↓ Low</span>
-    <span style="font-size:11px;color:var(--muted)"> Vac priority</span>
+    <span class="queue-badge">1st in queue</span>
+    <span style="font-size:11px;color:var(--muted);margin-left:3px"> Vac order</span>
   </div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--today-border)"></div> Today</div>
 </div>
@@ -365,7 +361,12 @@ const VAC_PRIORITY = {
   "WA3P-SGL":   "na",
 };
 const PRIO_ORDER = { higher: 0, medium: 1, low: 2, na: 3, none: 4 };
-const PRIO_LABEL = { higher: "↑ High priority", medium: "▶ Med priority", low: "↓ Low priority" };
+
+function ordinal(n) {
+  const s = ["th","st","nd","rd"];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
 
 // ── state ─────────────────────────────────────────────────────────────────────
 let scheduleData = null;
@@ -434,7 +435,7 @@ function renderMixCell(day) {
   </div>`;
 
   if (!day || !day.mix || day.mix.length === 0) {
-    return levainPill + '<span class="empty-cell">–</span>';
+    return '<span class="empty-cell">–</span>' + levainPill;
   }
 
   const mixPills = day.mix.map(m => {
@@ -452,7 +453,7 @@ function renderMixCell(day) {
     </div>`;
   }).join("");
 
-  return levainPill + mixPills;
+  return mixPills + levainPill;
 }
 
 function renderShapeCell(day) {
@@ -483,15 +484,12 @@ function renderVacCell(day) {
     return (a.name || "").localeCompare(b.name || "");
   });
 
-  return sorted.map(v => {
+  return sorted.map((v, i) => {
     const vKey    = `vac_${day.date}_${v.mo_ref || v.sku}`;
     const step    = lsGet(vKey) || 0;
     const allDone = step >= 3;
-    const prio    = VAC_PRIORITY[v.sku] || "none";
 
-    const prioBadge = PRIO_LABEL[prio]
-      ? `<span class="prio-badge prio-${prio}">${PRIO_LABEL[prio]}</span>`
-      : "";
+    const queueBadge = `<span class="queue-badge">${ordinal(i + 1)} in queue</span>`;
 
     const dluoStr = v.dluo
       ? `<span class="prod-dluo">DLUO ${fmtDluo(v.dluo)}</span>`
@@ -513,7 +511,7 @@ function renderVacCell(day) {
       <div class="pill-header">
         <span class="prod-name">${v.name}</span>
       </div>
-      ${prioBadge}
+      ${queueBadge}
       <span class="prod-sub">${qtyStr}</span>
       ${dluoStr}
       ${v.mo_ref ? `<span class="prod-sub">${v.mo_ref}</span>` : ""}
