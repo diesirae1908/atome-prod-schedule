@@ -165,8 +165,33 @@
     .premix-row .pill-check:hover   { border-color: var(--premix-hd); }
     .premix-row .pill-check.checked { background: var(--premix-hd); border-color: var(--premix-hd); }
     .mix-row    .pill-check.checked { background: var(--mix-hd);    border-color: var(--mix-hd); }
+    .mix-row    .pill-check:hover   { border-color: var(--mix-hd); }
     .shape-row  .pill-check.checked { background: var(--shape-hd);  border-color: var(--shape-hd); }
     .shape-row  .pill-check:hover   { border-color: var(--shape-hd); }
+
+    /* ── levain pill (special fixed mix pill) ── */
+    .levain-pill {
+      display: flex; justify-content: space-between; align-items: center; gap: 4px;
+      background: rgba(109,40,217,.08);
+      border: 1px dashed rgba(109,40,217,.3);
+      border-radius: 6px;
+      padding: 4px 6px;
+      margin-bottom: 4px;
+    }
+    .levain-pill.done { opacity: .38; }
+    .levain-pill.done .prod-name { text-decoration: line-through; color: var(--muted); }
+
+    /* ── vac priority badges ── */
+    .prio-badge {
+      font-size: 9px; font-weight: 700; letter-spacing: .03em;
+      border-radius: 4px; padding: 1px 5px;
+      white-space: nowrap; display: inline-block;
+      margin-bottom: 2px;
+    }
+    .prio-higher { background: #fee2e2; color: #b91c1c; }
+    .prio-medium { background: #fef3c7; color: #b45309; }
+    .prio-low    { background: #dbeafe; color: #1d4ed8; }
+    .prio-na     { background: #f3f4f6; color: #9ca3af; }
 
     /* ── vac step buttons ── */
     .vac-steps { display: flex; gap: 3px; flex-wrap: wrap; margin-top: 4px; }
@@ -263,6 +288,12 @@
   <div class="legend-item"><div class="legend-dot" style="background:var(--shape-hd)"></div> Shaping / Scoring</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--vac-hd)"></div> Vacuuming / Packaging</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--tasks-hd)"></div> Daily Tasks</div>
+  <div class="legend-item">
+    <span class="prio-badge prio-higher">↑ High</span>
+    <span class="prio-badge prio-medium">▶ Med</span>
+    <span class="prio-badge prio-low">↓ Low</span>
+    <span style="font-size:11px;color:var(--muted)"> Vac priority</span>
+  </div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--today-border)"></div> Today</div>
 </div>
 
@@ -282,8 +313,11 @@ function lsSet(k, v) {
   try { localStorage.setItem(PFX + k, JSON.stringify(v)); } catch {}
 }
 
-// ── date helpers ──────────────────────────────────────────────────────────────
-const isoToday = () => new Date().toISOString().slice(0, 10);
+// ── date helpers (local timezone, not UTC) ────────────────────────────────────
+function isoToday() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
 
 function mondayOfWeek(iso) {
   const d = new Date(iso + "T00:00:00");
@@ -307,6 +341,32 @@ function fmtDluo(iso) {
   return new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
 }
 
+// ── strip "(×N)" suffix from product names ────────────────────────────────────
+function shortName(name) {
+  return (name || "").replace(/\s*\(×\d+\)\s*$/, "").trim();
+}
+
+// ── vacuum priority map (SKU → priority level) ────────────────────────────────
+const VAC_PRIORITY = {
+  "BR-SGL":     "higher",
+  "BR3BN-SGL":  "higher",
+  "PAC3P-SGL":  "higher",
+  "VI2P-SGL":   "higher",
+  "CH-SGL":     "medium",
+  "MG3P-SGL":   "medium",
+  "PO3P-SGL":   "medium",
+  "SE3P-SGL":   "medium",
+  "TR3P-SGL":   "medium",
+  "CIA3-SGL":   "low",
+  "LF2P":       "low",
+  "PIZ2-SGL":   "low",
+  "WW2P-SGL":   "low",
+  "CTY2P-SGL":  "low",
+  "WA3P-SGL":   "na",
+};
+const PRIO_ORDER = { higher: 0, medium: 1, low: 2, na: 3, none: 4 };
+const PRIO_LABEL = { higher: "↑ High priority", medium: "▶ Med priority", low: "↓ Low priority" };
+
 // ── state ─────────────────────────────────────────────────────────────────────
 let scheduleData = null;
 let viewWeekStart = mondayOfWeek(isoToday());
@@ -325,9 +385,10 @@ function getDayData(iso) {
 
 // ── daily tasks ───────────────────────────────────────────────────────────────
 const FIXED_TASKS = [
-  { id: "fixed_checkin",  text: "Check-in",      fixed: true },
-  { id: "fixed_levain",   text: "Refresh Levain", fixed: true },
-  { id: "fixed_checkout", text: "Check-out",      fixed: true },
+  { id: "fixed_checkin_vac",  text: "Check-in Vacuum",  fixed: true },
+  { id: "fixed_checkin_prod", text: "Check-in Prod",    fixed: true },
+  { id: "fixed_checkout_vac", text: "Check-out Vacuum", fixed: true },
+  { id: "fixed_checkout_prod",text: "Check-out Prod",   fixed: true },
 ];
 
 function getTasksForDay(iso) {
@@ -351,23 +412,36 @@ function renderPremixCell(day) {
   return day.premix.map(p => {
     const key  = `check_${day.date}_premix_${p.label}`;
     const done = lsGet(key) || false;
+    // strip pack counts from product names
+    const prods = (p.products || []).map(shortName).join(", ");
     return `<div class="product-pill${done ? " done" : ""}">
       <div class="pill-header">
         <span class="prod-name">${p.label}</span>
         ${pillCheckBtn(key)}
       </div>
-      <span class="prod-sub">${p.total_units} units · ${(p.products || []).join(", ")}</span>
+      <span class="prod-sub">${p.total_units} units · ${prods}</span>
     </div>`;
   }).join("");
 }
 
 function renderMixCell(day) {
-  if (!day || !day.mix || day.mix.length === 0) return '<span class="empty-cell">–</span>';
-  return day.mix.map(m => {
+  // Refresh Levain – always shown as a fixed pill at the top of the mix column
+  const levainKey  = `check_${day ? day.date : "noop"}_mix_levain`;
+  const levainDone = lsGet(levainKey) || false;
+  const levainPill = `<div class="levain-pill${levainDone ? " done" : ""}">
+    <span class="prod-name" style="font-size:11px;color:#6d28d9">🫙 Refresh Levain</span>
+    ${pillCheckBtn(levainKey)}
+  </div>`;
+
+  if (!day || !day.mix || day.mix.length === 0) {
+    return levainPill + '<span class="empty-cell">–</span>';
+  }
+
+  const mixPills = day.mix.map(m => {
     const key  = `check_${day.date}_mix_${m.dough_type || m.label}`;
     const done = lsGet(key) || false;
     const qty  = m.total_units ? `${m.total_units} units` : "";
-    const prods = (m.products || []).join(", ");
+    const prods = (m.products || []).map(shortName).join(", ");
     const sub  = [qty, prods].filter(Boolean).join(" · ");
     return `<div class="product-pill${done ? " done" : ""}">
       <div class="pill-header">
@@ -377,6 +451,8 @@ function renderMixCell(day) {
       <span class="prod-sub">${sub}</span>
     </div>`;
   }).join("");
+
+  return levainPill + mixPills;
 }
 
 function renderShapeCell(day) {
@@ -388,7 +464,7 @@ function renderShapeCell(day) {
     const sub  = [qty, s.mo_ref || ""].filter(Boolean).join(" · ");
     return `<div class="product-pill${done ? " done" : ""}">
       <div class="pill-header">
-        <span class="prod-name">${s.name}</span>
+        <span class="prod-name">${shortName(s.name)}</span>
         ${pillCheckBtn(key)}
       </div>
       <span class="prod-sub">${sub}</span>
@@ -398,17 +474,31 @@ function renderShapeCell(day) {
 
 function renderVacCell(day) {
   if (!day || !day.vacuuming || day.vacuuming.length === 0) return '<span class="empty-cell">–</span>';
-  return day.vacuuming.map(v => {
+
+  // sort by priority: higher → medium → low → na → none
+  const sorted = [...day.vacuuming].sort((a, b) => {
+    const pa = PRIO_ORDER[VAC_PRIORITY[a.sku] || "none"] ?? 4;
+    const pb = PRIO_ORDER[VAC_PRIORITY[b.sku] || "none"] ?? 4;
+    if (pa !== pb) return pa - pb;
+    return (a.name || "").localeCompare(b.name || "");
+  });
+
+  return sorted.map(v => {
     const vKey    = `vac_${day.date}_${v.mo_ref || v.sku}`;
     const step    = lsGet(vKey) || 0;
     const allDone = step >= 3;
+    const prio    = VAC_PRIORITY[v.sku] || "none";
+
+    const prioBadge = PRIO_LABEL[prio]
+      ? `<span class="prio-badge prio-${prio}">${PRIO_LABEL[prio]}</span>`
+      : "";
 
     const dluoStr = v.dluo
       ? `<span class="prod-dluo">DLUO ${fmtDluo(v.dluo)}</span>`
       : `<span class="prod-dluo dluo-fixed">DLUO fixed</span>`;
 
     const qtyStr = v.qty_packs
-      ? `${Math.round(v.qty_packs)} packs · ${Math.round(v.qty_units)} units`
+      ? `${Math.round(v.qty_packs)} pouches · ${Math.round(v.qty_units)} units`
       : "";
 
     const stepsHtml = [
@@ -420,7 +510,10 @@ function renderVacCell(day) {
     ).join("");
 
     return `<div class="product-pill${allDone ? " done" : ""}">
-      <span class="prod-name">${v.name}</span>
+      <div class="pill-header">
+        <span class="prod-name">${v.name}</span>
+      </div>
+      ${prioBadge}
       <span class="prod-sub">${qtyStr}</span>
       ${dluoStr}
       ${v.mo_ref ? `<span class="prod-sub">${v.mo_ref}</span>` : ""}
@@ -477,7 +570,6 @@ function buildTable(weekStart) {
 
     const row = document.createElement("tr");
     row.className = "data-row " + rowClass;
-    // empty label cell
     const lbl = document.createElement("td");
     lbl.className = rowClass;
     row.appendChild(lbl);
@@ -508,14 +600,12 @@ function render() {
   root.appendChild(buildTable(viewWeekStart));
   root.style.display = "block";
 
-  // week badge
   const wn = scheduleData?.week_number;
   const isSecondWeek = viewWeekStart > (scheduleData?.week_start || viewWeekStart);
   document.getElementById("weekBadge").textContent = wn
     ? "W" + (wn + (isSecondWeek ? 1 : 0))
     : "Week of " + fmtDate(viewWeekStart);
 
-  // meta
   const gen = scheduleData?.generated_at
     ? new Date(scheduleData.generated_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })
     : "?";
@@ -523,7 +613,6 @@ function render() {
   document.getElementById("metaLine").innerHTML =
     `Last refresh: ${gen}<br/>MOs: ${moCount} this fortnight`;
 
-  // nav buttons
   const ds = scheduleData?.week_start, de = scheduleData?.week_end;
   document.getElementById("prevWeek").disabled = viewWeekStart <= (ds || viewWeekStart);
   document.getElementById("nextWeek").disabled = addDays(viewWeekStart, 7) > (de || viewWeekStart);
@@ -533,49 +622,36 @@ function render() {
 
 // ── event delegation ──────────────────────────────────────────────────────────
 document.getElementById("scheduleRoot").addEventListener("click", e => {
-  // ── pill checkbox (mix / premix / shape) ──
   const pillCheck = e.target.closest(".pill-check");
   if (pillCheck) {
-    const key = pillCheck.dataset.key;
-    lsSet(key, !(lsGet(key) || false));
-    render();
-    return;
+    lsSet(pillCheck.dataset.key, !(lsGet(pillCheck.dataset.key) || false));
+    render(); return;
   }
 
-  // ── vacuuming step button ──
   const stepBtn = e.target.closest(".step-btn");
   if (stepBtn) {
-    const key  = stepBtn.dataset.vkey;
-    const tgt  = parseInt(stepBtn.dataset.step);
-    const cur  = lsGet(key) || 0;
-    lsSet(key, cur >= tgt ? tgt - 1 : tgt);
-    render();
-    return;
+    const key = stepBtn.dataset.vkey;
+    const tgt = parseInt(stepBtn.dataset.step);
+    lsSet(key, (lsGet(key) || 0) >= tgt ? tgt - 1 : tgt);
+    render(); return;
   }
 
-  // ── task checkbox ──
   const taskCheck = e.target.closest(".task-check");
   if (taskCheck) {
-    const iso  = taskCheck.dataset.tday;
-    const id   = taskCheck.dataset.tid;
+    const iso = taskCheck.dataset.tday, id = taskCheck.dataset.tid;
     const tasks = getTasksForDay(iso);
     const t = tasks.find(x => x.id === id);
     if (t) { t.done = !t.done; saveTasksForDay(iso, tasks); }
-    render();
-    return;
+    render(); return;
   }
 
-  // ── remove custom task ──
   const removeBtn = e.target.closest(".remove-task");
   if (removeBtn) {
-    const iso  = removeBtn.dataset.tday;
-    const id   = removeBtn.dataset.tid;
+    const iso = removeBtn.dataset.tday, id = removeBtn.dataset.tid;
     saveTasksForDay(iso, getTasksForDay(iso).filter(t => t.id !== id));
-    render();
-    return;
+    render(); return;
   }
 
-  // ── add custom task ──
   const addBtn = e.target.closest(".add-task-btn");
   if (addBtn) {
     const iso  = addBtn.dataset.tday;
@@ -592,12 +668,10 @@ document.getElementById("scheduleRoot").addEventListener("click", e => {
 
 // ── week navigation ───────────────────────────────────────────────────────────
 document.getElementById("prevWeek").addEventListener("click", () => {
-  viewWeekStart = addDays(viewWeekStart, -7);
-  render();
+  viewWeekStart = addDays(viewWeekStart, -7); render();
 });
 document.getElementById("nextWeek").addEventListener("click", () => {
-  viewWeekStart = addDays(viewWeekStart, 7);
-  render();
+  viewWeekStart = addDays(viewWeekStart, 7); render();
 });
 
 // ── init ──────────────────────────────────────────────────────────────────────
@@ -614,8 +688,7 @@ document.getElementById("nextWeek").addEventListener("click", () => {
     const el = document.getElementById("error");
     el.style.display = "flex";
     el.innerHTML = `<b>Could not load schedule</b><br/>${err.message}<br/>
-      <small>Make sure <code>data/schedule.json</code> exists.
-      Run <code>python scripts/fetch_schedule.py --dry-run</code> to generate a placeholder.</small>`;
+      <small>Make sure <code>data/schedule.json</code> exists.</small>`;
   }
 })();
 </script>
