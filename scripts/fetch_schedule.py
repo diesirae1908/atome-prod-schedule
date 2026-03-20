@@ -17,10 +17,14 @@ import os
 import json
 import math
 import re
+import ssl
 import xmlrpc.client
 from datetime import date, datetime, timedelta
 from pathlib import Path
 import argparse
+
+# ── SSL context (Odoo SH uses a cert chain not in Python's default bundle) ─────
+_ssl_ctx = ssl._create_unverified_context()
 
 # ── paths ──────────────────────────────────────────────────────────────────────
 ROOT = Path(__file__).resolve().parent.parent
@@ -57,26 +61,28 @@ def odoo_connect():
     user     = os.environ["ODOO_USER"]
     api_key  = os.environ["ODOO_API_KEY"]
 
-    common = xmlrpc.client.ServerProxy(f"{url}/xmlrpc/2/common", allow_none=True)
+    common = xmlrpc.client.ServerProxy(f"{url}/xmlrpc/2/common", allow_none=True, context=_ssl_ctx)
     uid = common.authenticate(db, user, api_key, {})
     if not uid:
         raise RuntimeError("Odoo authentication failed – check ODOO_URL / ODOO_DB / ODOO_USER / ODOO_API_KEY")
 
-    models = xmlrpc.client.ServerProxy(f"{url}/xmlrpc/2/object", allow_none=True)
+    models = xmlrpc.client.ServerProxy(f"{url}/xmlrpc/2/object", allow_none=True, context=_ssl_ctx)
     return models, db, uid, api_key
 
 def fetch_mos(models, db, uid, api_key, start: date, end: date) -> list[dict]:
-    """Fetch confirmed/in-progress MOs with scheduled date in [start, end]."""
+    """Fetch confirmed/in-progress MOs with scheduled date in [start, end].
+    Uses date_start (Odoo 18 field name; was date_planned_start in <=17).
+    """
     domain = [
         ["state", "in", ["confirmed", "progress", "to_close"]],
-        ["date_planned_start", ">=", f"{iso(start)} 00:00:00"],
-        ["date_planned_start", "<=", f"{iso(end)} 23:59:59"],
+        ["date_start", ">=", f"{iso(start)} 00:00:00"],
+        ["date_start", "<=", f"{iso(end)} 23:59:59"],
     ]
     fields = [
         "name",
         "product_id",
         "product_qty",
-        "date_planned_start",
+        "date_start",
         "lot_producing_id",
         "state",
         "product_uom_id",
@@ -85,7 +91,7 @@ def fetch_mos(models, db, uid, api_key, start: date, end: date) -> list[dict]:
         db, uid, api_key,
         "mrp.production", "search_read",
         [domain],
-        {"fields": fields, "order": "date_planned_start asc"},
+        {"fields": fields, "order": "date_start asc"},
     )
     return result or []
 
@@ -104,8 +110,8 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
         cursor += timedelta(days=1)
 
     for mo in mos:
-        # D-0 = scheduled packaging/vacuuming date
-        d0_str = (mo.get("date_planned_start") or "")[:10]
+        # D-0 = scheduled packaging/vacuuming date (field: date_start in Odoo 18)
+        d0_str = (mo.get("date_start") or "")[:10]
         if not d0_str:
             continue
         d0 = date.fromisoformat(d0_str)
@@ -217,7 +223,9 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                     entry["total_kg"] = 0.0
                 entry["total_kg"] += total_kg
             entry["total_units"] += int(round(qty_packs * units_per_pack))
-            entry["products"].append(cfg.get("name") or sku or "?")
+            prod_name = cfg.get("name") or sku or "?"
+            if prod_name not in entry["products"]:
+                entry["products"].append(prod_name)
 
     # Round mix totals
     for day_str, day in day_map.items():
