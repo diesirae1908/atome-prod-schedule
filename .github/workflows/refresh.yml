@@ -2,8 +2,8 @@ name: Refresh Production Schedule
 
 on:
   schedule:
-    # Runs every day at 05:00 UTC (adjust to your timezone, e.g. 04:00 UTC = 06:00 CEST)
-    - cron: "0 5 * * *"
+    # Runs every day at 21:00 UTC = 22:00 CET (winter) / 23:00 CEST (summer) ≈ 10pm Paris
+    - cron: "0 21 * * *"
   workflow_dispatch:
     # Allow manual trigger from GitHub Actions UI
 
