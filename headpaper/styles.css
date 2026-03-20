@@ -846,7 +846,7 @@ body {
 }
 
 .time-slot {
-  height: 20px;
+  height: 24px; /* must match slotHeight=24 in app.js */
   display: flex;
   align-items: center;
   padding: 0 8px;
@@ -862,6 +862,13 @@ body {
   color: var(--text);
 }
 
+/* ── Baker columns wrapper in grid (app.js class = baker-columns-grid) ── */
+.baker-columns-grid {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
 /* ── Baker columns in grid ── */
 .baker-column {
   width: 200px;
@@ -872,8 +879,23 @@ body {
   position: relative;
 }
 
+/* Task overlay container — sits on top of time slots, pointer-events forwarded */
+.baker-task-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.baker-task-container .scheduled-task {
+  pointer-events: all;
+}
+
 .baker-time-slot {
-  height: 20px;
+  height: 24px; /* must match slotHeight=24 in app.js */
   border-bottom: 1px solid #f3f4f6;
   position: relative;
   transition: background 0.1s;
