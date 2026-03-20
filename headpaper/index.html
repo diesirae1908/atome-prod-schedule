@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atome Bakery — Daily Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="app">
+        <!-- Admin View -->
+        <div id="admin-view" class="view active">
+            <header class="admin-header">
+                <div class="topbar-inner">
+                    <div class="topbar-left">
+                        <a href="../index.html" class="back-btn">← Weekly Schedule</a>
+                        <span style="font-size:22px">🥖</span>
+                        <span class="topbar-title">Atome Bakery — 🗓 Daily Planner</span>
+                    </div>
+                    <div class="header-controls">
+                        <div class="date-selector">
+                            <label>Date:</label>
+                            <input type="date" id="schedule-date" />
+                        </div>
+                        <button id="add-baker-btn" class="btn btn-secondary">+ Add Baker</button>
+                        <button id="save-template-btn" class="btn btn-secondary">Save as Template</button>
+                        <button id="load-template-btn" class="btn btn-secondary">Load Template</button>
+                        <button id="export-all-data-btn" class="btn btn-secondary" title="Export all tasks, templates, and data">Export All Data</button>
+                        <button id="import-all-data-btn" class="btn btn-secondary" title="Import all tasks, templates, and data">Import All Data</button>
+                        <button id="view-print-btn" class="btn btn-primary">View Print Version</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-container">
+                <!-- Task Library Sidebar -->
+                <aside class="task-library">
+                    <div class="task-library-header">
+                        <h2>Task Library</h2>
+                        <div class="task-library-header-actions">
+                            <div class="task-library-menu-container">
+                                <button id="task-library-menu-btn" class="icon-btn" title="Import/Export">📥</button>
+                                <div id="task-library-menu" class="dropdown-menu">
+                                    <button id="export-tasks-btn" class="dropdown-item">📤 Export Tasks</button>
+                                    <button id="import-tasks-file-btn" class="dropdown-item">📥 Import Tasks</button>
+                                    <button id="import-tasks-btn" class="dropdown-item">Import from Excel</button>
+                                </div>
+                            </div>
+                            <button id="add-category-btn" class="icon-btn" title="Add Category">+</button>
+                        </div>
+                    </div>
+                    <div id="task-list" class="task-list">
+                        <!-- Tasks organized by category will be populated here -->
+                    </div>
+                </aside>
+
+                <!-- Resizable Divider -->
+                <div class="resizer" id="panel-resizer"></div>
+
+                <!-- Schedule Grid -->
+                <main class="schedule-container">
+                    <div id="schedule-tabs" class="schedule-tabs">
+                        <!-- Date tabs will be populated here -->
+                    </div>
+                    <div class="schedule-header">
+                        <div class="time-column-header">Time</div>
+                        <div id="baker-headers" class="baker-columns">
+                            <!-- Baker headers will be populated here -->
+                        </div>
+                    </div>
+                    <div id="schedule-grid" class="schedule-grid">
+                        <!-- Schedule grid will be populated here -->
+                        <div id="selection-box" class="selection-box" style="display: none;"></div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Print View -->
+        <div id="print-view" class="view">
+            <div class="print-header">
+                <button id="back-to-admin-btn" class="btn btn-secondary">← Back to Admin</button>
+                <button id="print-btn" class="btn btn-primary">Print</button>
+            </div>
+            <div id="print-schedule" class="print-schedule">
+                <!-- Print schedule will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Add Task</h2>
+            <form id="task-form">
+                <label>Task Name:</label>
+                <input type="text" id="task-name" required />
+
+                <label>Duration (minutes):</label>
+                <input type="number" id="task-duration" min="10" step="10" value="30" required />
+                <small style="color: #7f8c8d; font-size: 0.875rem; display: block; margin-top: -0.75rem; margin-bottom: 0.5rem;">Time slots are in 10-minute increments (minimum: 10 minutes)</small>
+
+                <label>Description (optional):</label>
+                <textarea id="task-description" rows="3" placeholder="e.g., Shaping 1 baguette = 2min"></textarea>
+
+                <label>Category:</label>
+                <select id="task-category">
+                    <option value="">Uncategorized</option>
+                </select>
+
+                <label>Color:</label>
+                <div id="task-color-picker" class="color-picker">
+                    <!-- Color options will be populated here -->
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-task-btn">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="delete-task-btn" style="display: none;">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Baker Modal -->
+    <div id="baker-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Rename Baker</h2>
+            <form id="baker-form">
+                <label>Baker Name:</label>
+                <input type="text" id="baker-name" required />
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-baker-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Template Modal -->
+    <div id="template-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="template-modal-title">Templates</h2>
+            <div style="margin-bottom: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button class="btn btn-secondary btn-small" onclick="exportBlankTemplate()">Export Blank Template</button>
+                <button class="btn btn-secondary btn-small" onclick="document.getElementById('import-template-file').click()">Import Template</button>
+                <input type="file" id="import-template-file" accept=".json" style="display: none;" onchange="importTemplateFromFile(event)">
+            </div>
+            <div id="template-list" class="template-list">
+                <!-- Templates will be populated here -->
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn btn-secondary" id="close-template-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scheduled Task Edit Modal -->
+    <div id="scheduled-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="scheduled-task-modal-title">Edit Scheduled Task</h2>
+            <form id="scheduled-task-form">
+                <label>Task Name:</label>
+                <input type="text" id="scheduled-task-name" required />
+
+                <label>Start Time:</label>
+                <input type="text" id="scheduled-task-start-time" readonly />
+
+                <label>Duration (minutes):</label>
+                <input type="number" id="scheduled-task-duration" min="10" step="10" required />
+                <small style="color: #7f8c8d; font-size: 0.875rem; display: block; margin-top: -0.75rem; margin-bottom: 0.5rem;">Time slots are in 10-minute increments</small>
+
+                <label>Product Count (optional):</label>
+                <input type="number" id="scheduled-task-product-count" min="0" step="1" />
+
+                <label>Description (optional):</label>
+                <textarea id="scheduled-task-description" rows="3" placeholder="e.g., Shaping 1 baguette = 2min"></textarea>
+
+                <label>Color:</label>
+                <div id="scheduled-task-color-picker" class="color-picker">
+                    <!-- Color options will be populated here -->
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-scheduled-task-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

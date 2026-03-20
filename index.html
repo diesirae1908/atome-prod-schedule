@@ -57,6 +57,13 @@
     }
     .week-nav button:hover  { background: #3730a3; }
     .week-nav button:disabled { opacity: .5; cursor: default; }
+    .planner-btn {
+      background: #312e81; color: #c7d2fe;
+      padding: 5px 12px; border-radius: 6px;
+      font-size: 13px; font-weight: 600; text-decoration: none;
+      transition: background .15s;
+    }
+    .planner-btn:hover { background: #3730a3; color: #fff; }
 
     /* ── legend ── */
     .legend {
@@ -293,6 +300,7 @@
     <h1>Atome Bakery — Production Schedule</h1>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
+    <a href="headpaper/index.html" class="planner-btn">📋 Daily Planner</a>
     <div class="week-nav">
       <button id="prevWeek">◀</button>
       <span class="week-badge" id="weekBadge">W–</span>
