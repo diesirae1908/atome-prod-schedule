@@ -336,7 +336,9 @@ body {
   min-width: 170px;
 }
 
-.dropdown-menu.open {
+/* app.js uses both .active and .open */
+.dropdown-menu.open,
+.dropdown-menu.active {
   display: block;
 }
 
@@ -500,7 +502,7 @@ body {
 
 .task-item:hover {
   box-shadow: 0 3px 10px rgba(67, 56, 202, 0.15);
-  transform: translateY(-1px);
+  /* no transform — avoids drag origin jitter */
 }
 
 .task-item.dragging {
@@ -573,12 +575,14 @@ body {
 }
 
 .resizer:hover,
-.resizer.active {
+.resizer.active,
+.resizer.dragging {
   background: #c7d2fe;
 }
 
 .resizer:hover::after,
-.resizer.active::after {
+.resizer.active::after,
+.resizer.dragging::after {
   background: var(--primary);
 }
 
@@ -731,12 +735,14 @@ body {
 .baker-columns {
   display: flex;
   flex: 1;
-  overflow: hidden;
+  overflow-x: auto;
+  min-width: 0;
 }
 
 .baker-header {
   width: 200px;
-  min-width: 160px;
+  min-width: 200px;
+  max-width: 200px;
   flex-shrink: 0;
   padding: 8px 12px;
   display: flex;
@@ -859,7 +865,8 @@ body {
 /* ── Baker columns in grid ── */
 .baker-column {
   width: 200px;
-  min-width: 160px;
+  min-width: 200px;
+  max-width: 200px;
   flex-shrink: 0;
   border-right: 1px solid var(--border);
   position: relative;
@@ -1081,32 +1088,40 @@ body {
   background: #e5e7eb;
 }
 
-/* ── Color picker ── */
+/* ── Color picker (app.js renders .color-option divs + .color-picker-row rows) ── */
 .color-picker {
   display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 0;
+}
+
+.color-picker-row {
+  display: flex;
+  gap: 6px;
   flex-wrap: wrap;
-  gap: 8px;
-  padding: 8px 0;
 }
 
-.color-picker input[type="radio"] {
-  display: none;
-}
-
-.color-picker label {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
+.color-option {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
   cursor: pointer;
-  border: 3px solid transparent;
-  transition: border-color 0.15s, transform 0.1s;
-  margin: 0;
+  border: 2.5px solid transparent;
+  transition: border-color 0.15s, transform 0.12s, box-shadow 0.12s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  flex-shrink: 0;
 }
 
-.color-picker input[type="radio"]:checked + label {
+.color-option:hover {
+  transform: scale(1.12);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.22);
+}
+
+.color-option.selected {
   border-color: var(--text);
-  transform: scale(1.15);
+  transform: scale(1.18);
+  box-shadow: 0 0 0 3px rgba(67,56,202,0.25);
 }
 
 /* ============================================================

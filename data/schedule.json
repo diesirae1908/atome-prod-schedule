@@ -25,7 +25,7 @@
       "label": "TUESDAY",
       "premix": [
         {
-          "label": "Pre-mix PAC/CR",
+          "label": "Prep mix PAC/CR",
           "total_units": 732,
           "products": [
             "Pain au Chocolat (×3)"
@@ -72,7 +72,7 @@
       "label": "WEDNESDAY",
       "premix": [
         {
-          "label": "Pre-mix Brioche",
+          "label": "Prep mix Brioche",
           "total_units": 118,
           "products": [
             "Brioche"
@@ -156,7 +156,7 @@
       "label": "THURSDAY",
       "premix": [
         {
-          "label": "Pre-mix Brioche",
+          "label": "Prep mix Brioche",
           "total_units": 348,
           "products": [
             "Brioche Buns (×3)"
@@ -255,14 +255,14 @@
       "label": "FRIDAY",
       "premix": [
         {
-          "label": "Pre-mix Viennoise",
+          "label": "Prep mix Viennoise",
           "total_units": 204,
           "products": [
             "Viennoise (×2)"
           ]
         },
         {
-          "label": "Pre-mix Waffles",
+          "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
             "Liège Waffle (×3)"
@@ -370,7 +370,7 @@
       "label": "SATURDAY",
       "premix": [
         {
-          "label": "Pre-mix Waffles",
+          "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
             "Liège Waffle (×3)"
@@ -495,7 +495,7 @@
           ]
         },
         {
-          "label": "Pre-mix PAC/CR",
+          "label": "Prep mix PAC/CR",
           "total_units": 726,
           "products": [
             "Pain au Chocolat (×3)"
@@ -610,7 +610,7 @@
           ]
         },
         {
-          "label": "Pre-mix PAC/CR",
+          "label": "Prep mix PAC/CR",
           "total_units": 726,
           "products": [
             "Pain au Chocolat (×3)"
@@ -710,7 +710,7 @@
       "label": "TUESDAY",
       "premix": [
         {
-          "label": "Pre-mix PAC/CR",
+          "label": "Prep mix PAC/CR",
           "total_units": 726,
           "products": [
             "Pain au Chocolat (×3)"
@@ -820,7 +820,7 @@
       "label": "WEDNESDAY",
       "premix": [
         {
-          "label": "Pre-mix Brioche",
+          "label": "Prep mix Brioche",
           "total_units": 118,
           "products": [
             "Brioche"
@@ -929,7 +929,7 @@
       "label": "THURSDAY",
       "premix": [
         {
-          "label": "Pre-mix Brioche",
+          "label": "Prep mix Brioche",
           "total_units": 348,
           "products": [
             "Brioche Buns (×3)"
@@ -1028,7 +1028,7 @@
       "label": "FRIDAY",
       "premix": [
         {
-          "label": "Pre-mix Waffles",
+          "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
             "Liège Waffle (×3)"
@@ -1128,7 +1128,7 @@
       "label": "SATURDAY",
       "premix": [
         {
-          "label": "Pre-mix Waffles",
+          "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
             "Liège Waffle (×3)"
