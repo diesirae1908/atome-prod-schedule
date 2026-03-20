@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T23:06:08Z",
+  "generated_at": "2026-03-20T23:16:16Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-03-29",
@@ -845,6 +845,14 @@
       ],
       "vacuuming": [
         {
+          "sku": "1-CRB8P-SGL",
+          "name": "Croissant Bites (×8)",
+          "qty_packs": 168.0,
+          "qty_units": 1344.0,
+          "dluo": "2026-10-11",
+          "mo_ref": "WH/MO/00581"
+        },
+        {
           "sku": "MG3P-SGL",
           "name": "Multigrain Baguette (×3)",
           "qty_packs": 120.0,
@@ -957,8 +965,16 @@
           "name": "Brioche",
           "qty_packs": 118.0,
           "qty_units": 118.0,
-          "dluo": "2026-09-30",
+          "dluo": "2026-09-26",
           "mo_ref": "WH/MO/00564"
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Croissants (×3)",
+          "qty_packs": 160.0,
+          "qty_units": 480.0,
+          "dluo": "2026-07-18",
+          "mo_ref": "WH/MO/00582"
         },
         {
           "sku": "PIZ2-SGL",
@@ -1028,7 +1044,7 @@
           "name": "Brioche Buns (×3)",
           "qty_packs": 116.0,
           "qty_units": 348.0,
-          "dluo": "2026-09-30",
+          "dluo": "2026-09-27",
           "mo_ref": "WH/MO/00565"
         },
         {
@@ -1036,7 +1052,7 @@
           "name": "Cheese Baguette",
           "qty_packs": 360.0,
           "qty_units": 360.0,
-          "dluo": "2026-12-31",
+          "dluo": "2026-12-27",
           "mo_ref": "WH/MO/00551"
         },
         {
@@ -1044,7 +1060,7 @@
           "name": "Gnocchi",
           "qty_packs": 360.0,
           "qty_units": 360.0,
-          "dluo": "2026-09-30",
+          "dluo": "2026-09-27",
           "mo_ref": "WH/MO/00578"
         },
         {
@@ -1052,7 +1068,7 @@
           "name": "Liège Waffle (×3)",
           "qty_packs": 208.0,
           "qty_units": 624.0,
-          "dluo": "2026-09-30",
+          "dluo": "2026-09-28",
           "mo_ref": "WH/MO/00566"
         },
         {
@@ -1060,7 +1076,7 @@
           "name": "Sourdough Loaf (×2)",
           "qty_packs": 180.0,
           "qty_units": 360.0,
-          "dluo": "2026-12-31",
+          "dluo": "2026-12-26",
           "mo_ref": "WH/MO/00557"
         }
       ]
@@ -1098,7 +1114,7 @@
           "name": "Ciabatta (×3)",
           "qty_packs": 280.0,
           "qty_units": 840.0,
-          "dluo": "2026-12-31",
+          "dluo": "2026-12-27",
           "mo_ref": "WH/MO/00558"
         },
         {
@@ -1106,7 +1122,7 @@
           "name": "Liège Waffle (×3)",
           "qty_packs": 208.0,
           "qty_units": 624.0,
-          "dluo": "2026-09-30",
+          "dluo": "2026-09-29",
           "mo_ref": "WH/MO/00567"
         },
         {
@@ -1114,7 +1130,7 @@
           "name": "Trad. Baguette (×3)",
           "qty_packs": 120.0,
           "qty_units": 360.0,
-          "dluo": "2026-12-31",
+          "dluo": "2026-12-29",
           "mo_ref": "WH/MO/00552"
         }
       ]
