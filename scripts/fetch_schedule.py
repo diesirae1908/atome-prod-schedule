@@ -106,7 +106,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
     span_end = end + timedelta(days=1)
     cursor = span_start
     while cursor <= span_end:
-        day_map[iso(cursor)] = {"mix": {}, "shaping": [], "vacuuming": []}
+        day_map[iso(cursor)] = {"premix": {}, "mix": {}, "shaping": [], "vacuuming": []}
         cursor += timedelta(days=1)
 
     for mo in mos:
@@ -227,8 +227,30 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
             if prod_name not in entry["products"]:
                 entry["products"].append(prod_name)
 
-    # Round mix totals
+        # ── PRE-MIXING (premix_offset) ────────────────────────────────────────
+        pm_offset = cfg.get("premix_offset")
+        pm_label  = cfg.get("premix_label")
+        if pm_offset is not None and pm_label:
+            premix_date = iso(d0 + timedelta(days=pm_offset))
+            if premix_date in day_map:
+                upp = cfg.get("units_per_pack") or 1
+                if pm_label not in day_map[premix_date]["premix"]:
+                    day_map[premix_date]["premix"][pm_label] = {
+                        "label": pm_label,
+                        "total_units": 0,
+                        "products": [],
+                    }
+                pm_entry = day_map[premix_date]["premix"][pm_label]
+                pm_entry["total_units"] += int(round(qty_packs * upp))
+                pm_prod = cfg.get("name") or sku or "?"
+                if pm_prod not in pm_entry["products"]:
+                    pm_entry["products"].append(pm_prod)
+
+    # Round mix totals and convert dicts to sorted lists
     for day_str, day in day_map.items():
+        # premix dict → sorted list
+        day["premix"] = [v for _, v in sorted(day["premix"].items())]
+
         mix_list = []
         for dough_type, entry in sorted(day["mix"].items()):
             if entry["total_kg"] is not None:
@@ -250,6 +272,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
         days_out.append({
             "date": d_str,
             "label": day_labels[cursor.weekday()],
+            "premix": day["premix"],
             "mix": day["mix"],
             "shaping": day["shaping"],
             "vacuuming": day["vacuuming"],

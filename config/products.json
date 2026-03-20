@@ -1,5 +1,5 @@
 {
-  "_comment": "mix/shape/score/vacuum_offset = days before D-0 (MO scheduled date = packaging day). weight_g_per_unit = baked weight of one individual item (used to show total kg in MIX section). dluo_months = null means FIXED (copacked).",
+  "_comment": "mix/shape/score/vacuum_offset = days before D-0 (MO scheduled date = packaging day). premix_offset = day of pre-mixing (levain build, butter block, grain soak…). weight_g_per_unit = raw dough weight of one item. dluo_months = null means FIXED (copacked).",
 
   "dough_types": {
     "TRAD":       { "label": "TRAD",       "unit": "kg" },
@@ -27,6 +27,7 @@
       "name": "Brioche",
       "dough_type": "BRIOCHE",
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
+      "premix_offset": -2, "premix_label": "Pre-mix Brioche",
       "dluo_months": 6,
       "units_per_pack": 1, "weight_g_per_unit": 450
     },
@@ -34,6 +35,7 @@
       "name": "Brioche Buns (×3)",
       "dough_type": "BRIOCHE",
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
+      "premix_offset": -2, "premix_label": "Pre-mix Brioche",
       "dluo_months": 6,
       "units_per_pack": 3, "weight_g_per_unit": 150
     },
@@ -41,6 +43,7 @@
       "name": "Liège Waffle (×3)",
       "dough_type": "WAFFLES",
       "mix_offset": 0, "shape_offset": 0, "score_offset": 0, "vacuum_offset": 0,
+      "premix_offset": -1, "premix_label": "Pre-mix Waffles",
       "dluo_months": 6,
       "units_per_pack": 3, "weight_g_per_unit": 100
     },
@@ -55,6 +58,7 @@
       "name": "Pain au Chocolat (×3)",
       "dough_type": "PAC_CR",
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
+      "premix_offset": -2, "premix_label": "Pre-mix PAC/CR",
       "dluo_months": 6,
       "units_per_pack": 3, "weight_g_per_unit": 90
     },
@@ -76,6 +80,7 @@
       "name": "Multigrain Baguette (×3)",
       "dough_type": "MG",
       "mix_offset": -2, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
+      "premix_offset": -3, "premix_label": "MG Grain Soak",
       "dluo_months": 9,
       "units_per_pack": 3, "weight_g_per_unit": 375
     },
@@ -111,6 +116,7 @@
       "name": "Viennoise (×2)",
       "dough_type": "VIENNOISE",
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
+      "premix_offset": -2, "premix_label": "Pre-mix Viennoise",
       "dluo_months": 6,
       "units_per_pack": 2, "weight_g_per_unit": 200
     },

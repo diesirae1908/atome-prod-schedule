@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T01:41:12Z",
+  "generated_at": "2026-03-20T02:33:24Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-03-29",
@@ -7,6 +7,15 @@
     {
       "date": "2026-03-16",
       "label": "MONDAY",
+      "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Multigrain Baguette (×3)"
+          ]
+        }
+      ],
       "mix": [],
       "shaping": [],
       "vacuuming": []
@@ -14,6 +23,15 @@
     {
       "date": "2026-03-17",
       "label": "TUESDAY",
+      "premix": [
+        {
+          "label": "Pre-mix PAC/CR",
+          "total_units": 732,
+          "products": [
+            "Pain au Chocolat (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "MG",
@@ -52,6 +70,15 @@
     {
       "date": "2026-03-18",
       "label": "WEDNESDAY",
+      "premix": [
+        {
+          "label": "Pre-mix Brioche",
+          "total_units": 118,
+          "products": [
+            "Brioche"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "COUNTRY",
@@ -127,6 +154,15 @@
     {
       "date": "2026-03-19",
       "label": "THURSDAY",
+      "premix": [
+        {
+          "label": "Pre-mix Brioche",
+          "total_units": 348,
+          "products": [
+            "Brioche Buns (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "BRIOCHE",
@@ -217,6 +253,22 @@
     {
       "date": "2026-03-20",
       "label": "FRIDAY",
+      "premix": [
+        {
+          "label": "Pre-mix Viennoise",
+          "total_units": 204,
+          "products": [
+            "Viennoise (×2)"
+          ]
+        },
+        {
+          "label": "Pre-mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Liège Waffle (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "BRIOCHE",
@@ -316,6 +368,15 @@
     {
       "date": "2026-03-21",
       "label": "SATURDAY",
+      "premix": [
+        {
+          "label": "Pre-mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Liège Waffle (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -425,6 +486,22 @@
     {
       "date": "2026-03-22",
       "label": "SUNDAY",
+      "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Multigrain Baguette (×3)"
+          ]
+        },
+        {
+          "label": "Pre-mix PAC/CR",
+          "total_units": 726,
+          "products": [
+            "Pain au Chocolat (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -524,6 +601,22 @@
     {
       "date": "2026-03-23",
       "label": "MONDAY",
+      "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Multigrain Baguette (×3)"
+          ]
+        },
+        {
+          "label": "Pre-mix PAC/CR",
+          "total_units": 726,
+          "products": [
+            "Pain au Chocolat (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "COUNTRY",
@@ -615,6 +708,15 @@
     {
       "date": "2026-03-24",
       "label": "TUESDAY",
+      "premix": [
+        {
+          "label": "Pre-mix PAC/CR",
+          "total_units": 726,
+          "products": [
+            "Pain au Chocolat (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "MG",
@@ -716,6 +818,15 @@
     {
       "date": "2026-03-25",
       "label": "WEDNESDAY",
+      "premix": [
+        {
+          "label": "Pre-mix Brioche",
+          "total_units": 118,
+          "products": [
+            "Brioche"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "PAC_CR",
@@ -816,6 +927,15 @@
     {
       "date": "2026-03-26",
       "label": "THURSDAY",
+      "premix": [
+        {
+          "label": "Pre-mix Brioche",
+          "total_units": 348,
+          "products": [
+            "Brioche Buns (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "BRIOCHE",
@@ -906,6 +1026,15 @@
     {
       "date": "2026-03-27",
       "label": "FRIDAY",
+      "premix": [
+        {
+          "label": "Pre-mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Liège Waffle (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "BRIOCHE",
@@ -997,6 +1126,15 @@
     {
       "date": "2026-03-28",
       "label": "SATURDAY",
+      "premix": [
+        {
+          "label": "Pre-mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Liège Waffle (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "WAFFLES",
@@ -1067,6 +1205,7 @@
     {
       "date": "2026-03-29",
       "label": "SUNDAY",
+      "premix": [],
       "mix": [
         {
           "dough_type": "WAFFLES",

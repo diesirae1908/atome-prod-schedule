@@ -5,34 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atome Bakery – Production Schedule</title>
   <style>
-    /* ── reset & base ──────────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --col-mon: #fff;
-      --col-sat: #fafafa;
-      --today-bg: #fff8e1;
+      --premix-hd:    #ea580c;
+      --premix-row:   #fff7ed;
+      --mix-hd:       #7c3aed;
+      --mix-row:      #f5f3ff;
+      --shape-hd:     #0284c7;
+      --shape-row:    #f0f9ff;
+      --vac-hd:       #059669;
+      --vac-row:      #f0fdf4;
+      --tasks-hd:     #475569;
+      --tasks-row:    #f8fafc;
+      --today-bg:     #fff8e1;
       --today-border: #f59e0b;
-
-      --mix-hd:   #7c3aed;   /* purple  */
-      --mix-row:  #f5f3ff;
-      --mix-alt:  #ede9fe;
-
-      --shape-hd: #0284c7;   /* blue    */
-      --shape-row: #f0f9ff;
-      --shape-alt: #e0f2fe;
-
-      --vac-hd:   #059669;   /* green   */
-      --vac-row:  #f0fdf4;
-      --vac-alt:  #dcfce7;
-
-      --pack-hd:  #b45309;   /* amber – copacked/packaging only */
-      --pack-row: #fffbeb;
-
-      --border: #e5e7eb;
-      --text: #111827;
-      --muted: #6b7280;
-      --badge-bg: #e5e7eb;
+      --border:       #e5e7eb;
+      --text:         #111827;
+      --muted:        #6b7280;
     }
 
     body {
@@ -42,7 +32,7 @@
       background: #f3f4f6;
     }
 
-    /* ── header bar ────────────────────────────────────────────────────────── */
+    /* ── topbar ── */
     .topbar {
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -52,166 +42,199 @@
       box-shadow: 0 2px 8px rgba(0,0,0,.25);
     }
     .topbar h1 { font-size: 17px; font-weight: 700; letter-spacing: .02em; }
-    .topbar .meta { font-size: 11px; color: #c7d2fe; text-align: right; line-height: 1.5; }
-    .topbar .week-badge {
+    .topbar .meta { font-size: 11px; color: #c7d2fe; text-align: right; line-height: 1.6; }
+    .week-badge {
       background: #4338ca; color: #fff;
       padding: 3px 10px; border-radius: 12px;
       font-size: 13px; font-weight: 600; margin-right: 12px;
     }
-
-    /* ── legend ─────────────────────────────────────────────────────────────── */
-    .legend {
-      display: flex; gap: 16px; padding: 8px 20px;
-      background: #fff; border-bottom: 1px solid var(--border);
-      flex-wrap: wrap;
-    }
-    .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); }
-    .legend-dot { width: 10px; height: 10px; border-radius: 3px; }
-
-    /* ── wrapper ─────────────────────────────────────────────────────────────── */
-    .schedule-wrap {
-      overflow-x: auto;
-      padding: 16px;
-    }
-
-    /* ── main grid table ───────────────────────────────────────────────────── */
-    table.schedule {
-      border-collapse: collapse;
-      width: 100%;
-      min-width: 900px;
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,.1);
-    }
-
-    /* day header row */
-    .day-header th {
-      padding: 8px 10px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-      border-bottom: 2px solid var(--border);
-      font-weight: 700;
-      font-size: 12px;
-      background: #fff;
-    }
-    .day-header th:first-child { width: 90px; background: #f9fafb; }
-    .day-header th.today-col {
-      background: var(--today-bg);
-      border-bottom: 2px solid var(--today-border);
-    }
-    .day-header .day-name { display: block; font-size: 11px; color: var(--muted); margin-bottom: 2px; }
-    .day-header .day-date { display: block; font-size: 14px; font-weight: 800; }
-
-    /* section header rows */
-    .section-header td {
-      padding: 6px 10px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: #fff;
-      border-right: 1px solid rgba(255,255,255,.2);
-    }
-    .section-header.mix-hd    td { background: var(--mix-hd); }
-    .section-header.shape-hd  td { background: var(--shape-hd); }
-    .section-header.vac-hd    td { background: var(--vac-hd); }
-    .section-header.pack-hd   td { background: var(--pack-hd); }
-
-    /* data rows */
-    .data-row td {
-      padding: 5px 10px;
-      vertical-align: top;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      min-width: 100px;
-    }
-    .data-row td:first-child { min-width: 90px; }
-
-    /* today column highlight */
-    .today-col { background: var(--today-bg) !important; }
-
-    /* alternating row colours per section */
-    .mix-row   { background: var(--mix-row); }
-    .mix-alt   { background: var(--mix-alt); }
-    .shape-row { background: var(--shape-row); }
-    .shape-alt { background: var(--shape-alt); }
-    .vac-row   { background: var(--vac-row); }
-    .vac-alt   { background: var(--vac-alt); }
-    .pack-row  { background: var(--pack-row); }
-
-    /* ── cell content ───────────────────────────────────────────────────────── */
-    .cell-label {
-      display: block;
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-
-    .product-pill {
-      display: inline-flex;
-      flex-direction: column;
-      background: rgba(255,255,255,.8);
-      border: 1px solid rgba(0,0,0,.08);
-      border-radius: 6px;
-      padding: 3px 6px;
-      margin: 2px 0;
-      line-height: 1.4;
-      width: 100%;
-    }
-    .product-pill .prod-name  { font-weight: 600; font-size: 12px; }
-    .product-pill .prod-sub   { font-size: 10px; color: var(--muted); margin-top: 1px; }
-    .product-pill .prod-qty   { font-size: 11px; font-weight: 700; color: #374151; }
-    .product-pill .prod-dluo  { font-size: 10px; color: #059669; font-weight: 600; }
-
-    /* kg / quantity badge */
-    .kg-badge {
-      display: inline-block;
-      background: #ddd6fe;
-      color: #5b21b6;
-      border-radius: 4px;
-      padding: 2px 7px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-right: 4px;
-    }
-    .kg-badge.shape-kg { background: #bae6fd; color: #075985; }
-
-    .empty-cell { color: #d1d5db; font-size: 11px; }
-
-    /* dluo pill colours */
-    .dluo-fixed { color: #b45309; }
-
-    /* ── loading / error states ─────────────────────────────────────────────── */
-    #loading, #error {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      min-height: 300px; gap: 12px; color: var(--muted);
-    }
-    #error { color: #dc2626; }
-    .spinner {
-      width: 36px; height: 36px;
-      border: 3px solid #e5e7eb;
-      border-top-color: #4338ca;
-      border-radius: 50%;
-      animation: spin .7s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* ── week nav ─────────────────────────────────────────────────────────────── */
-    .week-nav {
-      display: flex; align-items: center; gap: 8px;
-    }
+    .week-nav { display: flex; align-items: center; gap: 8px; }
     .week-nav button {
       background: #4338ca; color: #fff;
       border: none; border-radius: 6px;
       padding: 5px 12px; font-size: 13px; cursor: pointer;
       transition: background .15s;
     }
-    .week-nav button:hover { background: #3730a3; }
-    .week-nav button:disabled { background: #6366f1; opacity: .5; cursor: default; }
+    .week-nav button:hover  { background: #3730a3; }
+    .week-nav button:disabled { opacity: .5; cursor: default; }
 
-    /* ── responsive ────────────────────────────────────────────────────────── */
+    /* ── legend ── */
+    .legend {
+      display: flex; gap: 14px; padding: 7px 20px;
+      background: #fff; border-bottom: 1px solid var(--border); flex-wrap: wrap;
+    }
+    .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); }
+    .legend-dot  { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+    /* ── schedule wrapper ── */
+    .schedule-wrap { overflow-x: auto; padding: 16px; }
+
+    /* ── table ── */
+    table.schedule {
+      border-collapse: collapse; width: 100%; min-width: 900px;
+      background: #fff; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    }
+
+    /* day header */
+    .day-header th {
+      padding: 8px 10px; text-align: center;
+      border-right: 1px solid var(--border);
+      border-bottom: 2px solid var(--border);
+      font-weight: 700; font-size: 12px; background: #fff;
+    }
+    .day-header th:first-child { width: 26px; background: #f9fafb; }
+    .day-header th.today-col {
+      background: var(--today-bg);
+      border-bottom: 2px solid var(--today-border);
+    }
+    .day-header .day-name { display: block; font-size: 11px; color: var(--muted); margin-bottom: 2px; }
+    .day-header .day-date { display: block; font-size: 14px; font-weight: 800; }
+    .today-tag { font-size: 10px; color: var(--today-border); font-weight: 700; }
+
+    /* section headers */
+    .section-header td {
+      padding: 6px 10px; font-size: 11px; font-weight: 800;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: #fff; border-right: 1px solid rgba(255,255,255,.2);
+    }
+    .section-header.premix-hd td { background: var(--premix-hd); }
+    .section-header.mix-hd    td { background: var(--mix-hd); }
+    .section-header.shape-hd  td { background: var(--shape-hd); }
+    .section-header.vac-hd    td { background: var(--vac-hd); }
+    .section-header.tasks-hd  td { background: var(--tasks-hd); }
+
+    /* data rows */
+    .data-row td {
+      padding: 5px 8px; vertical-align: top;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      min-width: 112px;
+    }
+    .data-row td:first-child { min-width: 26px; padding: 0; }
+
+    .today-col { background: var(--today-bg) !important; }
+
+    .premix-row { background: var(--premix-row); }
+    .mix-row    { background: var(--mix-row); }
+    .shape-row  { background: var(--shape-row); }
+    .vac-row    { background: var(--vac-row); }
+    .tasks-row  { background: var(--tasks-row); }
+
+    /* ── product pill ── */
+    .product-pill {
+      display: flex; flex-direction: column; gap: 2px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(0,0,0,.09);
+      border-radius: 6px;
+      padding: 4px 6px;
+      margin-bottom: 4px;
+      transition: opacity .15s, background .15s;
+    }
+    .product-pill.done {
+      opacity: .38;
+      background: #f3f4f6;
+    }
+    .product-pill.done .prod-name {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+    .pill-header {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 4px;
+    }
+    .prod-name { font-weight: 600; font-size: 12px; flex: 1; line-height: 1.35; }
+    .prod-sub  { font-size: 10px; color: var(--muted); line-height: 1.35; }
+    .prod-dluo { font-size: 10px; color: #059669; font-weight: 600; }
+    .dluo-fixed { color: #b45309; }
+
+    /* ── pill checkbox ── */
+    .pill-check {
+      width: 18px; height: 18px; flex-shrink: 0;
+      border-radius: 50%;
+      border: 2px solid #d1d5db;
+      background: #fff;
+      cursor: pointer;
+      font-size: 10px; line-height: 1; color: transparent;
+      display: flex; align-items: center; justify-content: center;
+      padding: 0;
+      transition: all .12s;
+    }
+    .pill-check:hover { border-color: #6d28d9; }
+    .pill-check.checked { background: #6d28d9; border-color: #6d28d9; color: #fff; }
+
+    .premix-row .pill-check:hover   { border-color: var(--premix-hd); }
+    .premix-row .pill-check.checked { background: var(--premix-hd); border-color: var(--premix-hd); }
+    .mix-row    .pill-check.checked { background: var(--mix-hd);    border-color: var(--mix-hd); }
+    .shape-row  .pill-check.checked { background: var(--shape-hd);  border-color: var(--shape-hd); }
+    .shape-row  .pill-check:hover   { border-color: var(--shape-hd); }
+
+    /* ── vac step buttons ── */
+    .vac-steps { display: flex; gap: 3px; flex-wrap: wrap; margin-top: 4px; }
+    .step-btn {
+      font-size: 10px; padding: 2px 6px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      background: #fff;
+      cursor: pointer;
+      color: var(--muted);
+      white-space: nowrap;
+      transition: all .1s;
+    }
+    .step-btn:hover { border-color: var(--vac-hd); color: var(--vac-hd); }
+    .step-btn.step-done {
+      background: #dcfce7; border-color: var(--vac-hd);
+      color: #065f46; font-weight: 600;
+    }
+
+    /* ── daily tasks ── */
+    .tasks-list { display: flex; flex-direction: column; gap: 2px; }
+    .task-item  { display: flex; align-items: center; gap: 5px; padding: 3px 2px; }
+    .task-item.done .task-text {
+      text-decoration: line-through; color: var(--muted); opacity: .6;
+    }
+    .task-check {
+      width: 15px; height: 15px; flex-shrink: 0;
+      border-radius: 3px;
+      border: 2px solid #d1d5db;
+      background: #fff;
+      cursor: pointer;
+      font-size: 9px; line-height: 1; color: transparent;
+      display: flex; align-items: center; justify-content: center;
+      padding: 0;
+      transition: all .1s;
+    }
+    .task-check:hover  { border-color: #4338ca; }
+    .task-check.checked { background: #4338ca; border-color: #4338ca; color: #fff; }
+    .task-text   { font-size: 11px; flex: 1; }
+    .remove-task {
+      font-size: 13px; border: none; background: none;
+      color: #d1d5db; cursor: pointer; padding: 0 1px; line-height: 1;
+    }
+    .remove-task:hover { color: #dc2626; }
+    .add-task-btn {
+      margin-top: 5px; width: 100%; text-align: center;
+      font-size: 10px; color: #9ca3af;
+      background: none; border: 1px dashed #d1d5db;
+      border-radius: 4px; padding: 3px 6px; cursor: pointer;
+      transition: all .1s;
+    }
+    .add-task-btn:hover { border-color: #4338ca; color: #4338ca; }
+
+    .empty-cell { color: #d1d5db; font-size: 11px; }
+
+    /* ── loading / error ── */
+    #loading, #error {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; min-height: 300px; gap: 12px; color: var(--muted);
+    }
+    #error { color: #dc2626; }
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid #e5e7eb; border-top-color: #4338ca;
+      border-radius: 50%; animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
     @media (max-width: 600px) {
       .topbar { flex-direction: column; gap: 8px; align-items: flex-start; }
     }
@@ -235,10 +258,11 @@
 </div>
 
 <div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--premix-hd)"></div> Pre-Mixing</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--mix-hd)"></div> Mixing</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--shape-hd)"></div> Shaping / Scoring</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--vac-hd)"></div> Vacuuming / Packaging</div>
-  <div class="legend-item"><div class="legend-dot" style="background:var(--pack-hd)"></div> Packaging only (copacked)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--tasks-hd)"></div> Daily Tasks</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--today-border)"></div> Today</div>
 </div>
 
@@ -249,7 +273,16 @@
 </div>
 
 <script>
-// ── helpers ──────────────────────────────────────────────────────────────────
+// ── localStorage helpers ──────────────────────────────────────────────────────
+const PFX = "atome_";
+function lsGet(k) {
+  try { return JSON.parse(localStorage.getItem(PFX + k)); } catch { return null; }
+}
+function lsSet(k, v) {
+  try { localStorage.setItem(PFX + k, JSON.stringify(v)); } catch {}
+}
+
+// ── date helpers ──────────────────────────────────────────────────────────────
 const isoToday = () => new Date().toISOString().slice(0, 10);
 
 function mondayOfWeek(iso) {
@@ -266,53 +299,82 @@ function addDays(iso, n) {
 }
 
 function fmtDate(iso) {
-  const d = new Date(iso + "T00:00:00");
-  return d.toLocaleDateString("en-GB", { day: "2-digit", month: "short" });
+  return new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { day: "2-digit", month: "short" });
 }
 
 function fmtDluo(iso) {
   if (!iso) return null;
-  const d = new Date(iso + "T00:00:00");
-  return d.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+  return new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
 }
 
-// ── state ────────────────────────────────────────────────────────────────────
+// ── state ─────────────────────────────────────────────────────────────────────
 let scheduleData = null;
-let viewWeekStart = mondayOfWeek(isoToday());  // always a Monday
+let viewWeekStart = mondayOfWeek(isoToday());
 
 // ── data loading ──────────────────────────────────────────────────────────────
 async function loadSchedule() {
-  const response = await fetch("data/schedule.json?t=" + Date.now());
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  return response.json();
+  const r = await fetch("data/schedule.json?t=" + Date.now());
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  return r.json();
 }
 
-// ── render ────────────────────────────────────────────────────────────────────
-function getDayData(dayIso) {
+function getDayData(iso) {
   if (!scheduleData) return null;
-  return scheduleData.days.find(d => d.date === dayIso) || null;
+  return scheduleData.days.find(d => d.date === iso) || null;
 }
 
-function renderPill(content) {
-  const el = document.createElement("div");
-  el.className = "product-pill";
-  el.innerHTML = content;
-  return el;
+// ── daily tasks ───────────────────────────────────────────────────────────────
+const FIXED_TASKS = [
+  { id: "fixed_checkin",  text: "Check-in",      fixed: true },
+  { id: "fixed_levain",   text: "Refresh Levain", fixed: true },
+  { id: "fixed_checkout", text: "Check-out",      fixed: true },
+];
+
+function getTasksForDay(iso) {
+  const saved = lsGet("tasks_" + iso);
+  if (saved && Array.isArray(saved)) return saved;
+  return FIXED_TASKS.map(t => ({ ...t, done: false }));
+}
+
+function saveTasksForDay(iso, tasks) {
+  lsSet("tasks_" + iso, tasks);
+}
+
+// ── renderers ─────────────────────────────────────────────────────────────────
+function pillCheckBtn(key) {
+  const done = lsGet(key) || false;
+  return `<button class="pill-check${done ? " checked" : ""}" data-key="${key}">✓</button>`;
+}
+
+function renderPremixCell(day) {
+  if (!day || !day.premix || day.premix.length === 0) return '<span class="empty-cell">–</span>';
+  return day.premix.map(p => {
+    const key  = `check_${day.date}_premix_${p.label}`;
+    const done = lsGet(key) || false;
+    return `<div class="product-pill${done ? " done" : ""}">
+      <div class="pill-header">
+        <span class="prod-name">${p.label}</span>
+        ${pillCheckBtn(key)}
+      </div>
+      <span class="prod-sub">${p.total_units} units · ${(p.products || []).join(", ")}</span>
+    </div>`;
+  }).join("");
 }
 
 function renderMixCell(day) {
   if (!day || !day.mix || day.mix.length === 0) return '<span class="empty-cell">–</span>';
   return day.mix.map(m => {
-    const kgStr = m.total_kg != null
-      ? `<span class="kg-badge">${m.total_kg} kg</span>`
-      : m.total_units
-        ? `<span class="kg-badge">${m.total_units} pcs</span>`
-        : "";
-    const prodNames = (m.products || []).join(" · ");
-    return `<div class="product-pill">
-      <span class="prod-name">${m.label}</span>
-      <span class="prod-qty">${kgStr}</span>
-      <span class="prod-sub">${prodNames}</span>
+    const key  = `check_${day.date}_mix_${m.dough_type || m.label}`;
+    const done = lsGet(key) || false;
+    const qty  = m.total_units ? `${m.total_units} units` : "";
+    const prods = (m.products || []).join(", ");
+    const sub  = [qty, prods].filter(Boolean).join(" · ");
+    return `<div class="product-pill${done ? " done" : ""}">
+      <div class="pill-header">
+        <span class="prod-name">${m.label}</span>
+        ${pillCheckBtn(key)}
+      </div>
+      <span class="prod-sub">${sub}</span>
     </div>`;
   }).join("");
 }
@@ -320,13 +382,16 @@ function renderMixCell(day) {
 function renderShapeCell(day) {
   if (!day || !day.shaping || day.shaping.length === 0) return '<span class="empty-cell">–</span>';
   return day.shaping.map(s => {
-    const kgStr = s.total_kg != null ? `<span class="kg-badge shape-kg">${s.total_kg} kg</span>` : "";
-    const unitStr = s.qty_units ? `<b>${s.qty_units}</b> units` : "";
-    const qtyStr = [kgStr, unitStr].filter(Boolean).join(" ");
-    return `<div class="product-pill">
-      <span class="prod-name">${s.name}</span>
-      <span class="prod-qty">${qtyStr}</span>
-      <span class="prod-sub">${s.mo_ref || ""}</span>
+    const key  = `check_${day.date}_shape_${s.mo_ref || s.name}`;
+    const done = lsGet(key) || false;
+    const qty  = s.qty_units ? `${s.qty_units} units` : "";
+    const sub  = [qty, s.mo_ref || ""].filter(Boolean).join(" · ");
+    return `<div class="product-pill${done ? " done" : ""}">
+      <div class="pill-header">
+        <span class="prod-name">${s.name}</span>
+        ${pillCheckBtn(key)}
+      </div>
+      <span class="prod-sub">${sub}</span>
     </div>`;
   }).join("");
 }
@@ -334,115 +399,198 @@ function renderShapeCell(day) {
 function renderVacCell(day) {
   if (!day || !day.vacuuming || day.vacuuming.length === 0) return '<span class="empty-cell">–</span>';
   return day.vacuuming.map(v => {
+    const vKey    = `vac_${day.date}_${v.mo_ref || v.sku}`;
+    const step    = lsGet(vKey) || 0;
+    const allDone = step >= 3;
+
     const dluoStr = v.dluo
       ? `<span class="prod-dluo">DLUO ${fmtDluo(v.dluo)}</span>`
       : `<span class="prod-dluo dluo-fixed">DLUO fixed</span>`;
-    const qtyStr = v.qty_packs ? `<b>${Math.round(v.qty_packs)}</b> packs` : "";
-    return `<div class="product-pill">
+
+    const qtyStr = v.qty_packs
+      ? `${Math.round(v.qty_packs)} packs · ${Math.round(v.qty_units)} units`
+      : "";
+
+    const stepsHtml = [
+      { n: 1, label: "Stickered" },
+      { n: 2, label: "Dated" },
+      { n: 3, label: "Packaged" },
+    ].map(st =>
+      `<button class="step-btn${step >= st.n ? " step-done" : ""}" data-vkey="${vKey}" data-step="${st.n}">${step >= st.n ? "✓ " : ""}${st.label}</button>`
+    ).join("");
+
+    return `<div class="product-pill${allDone ? " done" : ""}">
       <span class="prod-name">${v.name}</span>
-      <span class="prod-qty">${qtyStr}</span>
+      <span class="prod-sub">${qtyStr}</span>
       ${dluoStr}
-      <span class="prod-sub">${v.mo_ref || ""}</span>
+      ${v.mo_ref ? `<span class="prod-sub">${v.mo_ref}</span>` : ""}
+      <div class="vac-steps">${stepsHtml}</div>
     </div>`;
   }).join("");
 }
 
-function buildScheduleTable(weekStart) {
-  const today = isoToday();
-  const days = Array.from({length: 7}, (_, i) => addDays(weekStart, i));
-  const dayLabels = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"];
+function renderTasksCell(iso) {
+  const tasks = getTasksForDay(iso);
+  const items = tasks.map(t =>
+    `<div class="task-item${t.done ? " done" : ""}">
+      <button class="task-check${t.done ? " checked" : ""}" data-tday="${iso}" data-tid="${t.id}">✓</button>
+      <span class="task-text">${t.text}</span>
+      ${!t.fixed ? `<button class="remove-task" data-tday="${iso}" data-tid="${t.id}" title="Remove">×</button>` : ""}
+    </div>`
+  ).join("");
+  return `<div class="tasks-list">${items}</div>
+    <button class="add-task-btn" data-tday="${iso}">+ Add task</button>`;
+}
+
+// ── table builder ─────────────────────────────────────────────────────────────
+function buildTable(weekStart) {
+  const today  = isoToday();
+  const days   = Array.from({ length: 7 }, (_, i) => addDays(weekStart, i));
+  const LABELS = ["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"];
 
   const table = document.createElement("table");
   table.className = "schedule";
 
-  // ── day header row ────────────────────────────────────────────────────────
+  // day header row
   const headRow = document.createElement("tr");
   headRow.className = "day-header";
-  const emptyTh = document.createElement("th");
-  headRow.appendChild(emptyTh);
-
+  headRow.appendChild(document.createElement("th")); // corner
   days.forEach((d, i) => {
     const th = document.createElement("th");
     if (d === today) th.className = "today-col";
-    th.innerHTML = `<span class="day-name">${dayLabels[i]}</span>
+    th.innerHTML = `<span class="day-name">${LABELS[i]}</span>
                     <span class="day-date">${fmtDate(d)}</span>
-                    ${d === today ? '<span style="font-size:10px;color:var(--today-border);font-weight:700">TODAY</span>' : ""}`;
+                    ${d === today ? '<span class="today-tag">TODAY</span>' : ""}`;
     headRow.appendChild(th);
   });
   table.appendChild(headRow);
 
-  // ── helper: build a section ───────────────────────────────────────────────
-  function addSection(label, sectionClass, hdClass, rowBase, altBase, renderFn) {
-    // section header
-    const hdrRow = document.createElement("tr");
-    hdrRow.className = `section-header ${hdClass}`;
+  // helper: add a section (header row + data row)
+  function addSection(emoji, label, hdClass, rowClass, renderFn) {
+    const hdr = document.createElement("tr");
+    hdr.className = "section-header " + hdClass;
     const hdrTd = document.createElement("td");
     hdrTd.colSpan = 8;
-    hdrTd.textContent = label;
-    hdrRow.appendChild(hdrTd);
-    table.appendChild(hdrRow);
+    hdrTd.textContent = emoji + "  " + label;
+    hdr.appendChild(hdrTd);
+    table.appendChild(hdr);
 
-    // find max rows needed across all days
-    const dayDatas = days.map(d => getDayData(d));
-    const maxItems = Math.max(1, ...dayDatas.map(dd => {
-      if (!dd) return 0;
-      if (sectionClass === "mix-section")   return (dd.mix || []).length;
-      if (sectionClass === "shape-section") return (dd.shaping || []).length;
-      if (sectionClass === "vac-section")   return (dd.vacuuming || []).length;
-      return 0;
-    }));
-
-    // single row (cells wrap naturally)
     const row = document.createElement("tr");
-    row.className = `data-row ${sectionClass} ${rowBase}`;
+    row.className = "data-row " + rowClass;
+    // empty label cell
+    const lbl = document.createElement("td");
+    lbl.className = rowClass;
+    row.appendChild(lbl);
 
-    const labelTd = document.createElement("td");
-    labelTd.className = rowBase;
-    labelTd.innerHTML = `<span class="cell-label">${label}</span>`;
-    row.appendChild(labelTd);
-
-    days.forEach((d, i) => {
+    days.forEach(d => {
       const td = document.createElement("td");
-      td.className = `${rowBase}${d === today ? " today-col" : ""}`;
-      td.innerHTML = renderFn(getDayData(d));
+      td.className = rowClass + (d === today ? " today-col" : "");
+      td.innerHTML = renderFn(d, getDayData(d));
       row.appendChild(td);
     });
     table.appendChild(row);
   }
 
-  addSection("🟣  MIXING",    "mix-section",   "mix-hd",   "mix-row",   "mix-alt",   renderMixCell);
-  addSection("🔵  SHAPING",   "shape-section", "shape-hd", "shape-row", "shape-alt", renderShapeCell);
-  addSection("🟢  VACUUMING", "vac-section",   "vac-hd",   "vac-row",   "vac-alt",   renderVacCell);
+  addSection("🟠", "PRE-MIXING",  "premix-hd", "premix-row", (d, day) => renderPremixCell(day));
+  addSection("🟣", "MIXING",      "mix-hd",    "mix-row",    (d, day) => renderMixCell(day));
+  addSection("🔵", "SHAPING",     "shape-hd",  "shape-row",  (d, day) => renderShapeCell(day));
+  addSection("🟢", "VACUUMING",   "vac-hd",    "vac-row",    (d, day) => renderVacCell(day));
+  addSection("📋", "DAILY TASKS", "tasks-hd",  "tasks-row",  (d)      => renderTasksCell(d));
 
   return table;
 }
 
+// ── render ────────────────────────────────────────────────────────────────────
 function render() {
+  const sy   = window.scrollY;
   const root = document.getElementById("scheduleRoot");
   root.innerHTML = "";
-  root.appendChild(buildScheduleTable(viewWeekStart));
+  root.appendChild(buildTable(viewWeekStart));
   root.style.display = "block";
 
-  // update week badge
+  // week badge
   const wn = scheduleData?.week_number;
+  const isSecondWeek = viewWeekStart > (scheduleData?.week_start || viewWeekStart);
   document.getElementById("weekBadge").textContent = wn
-    ? `W${wn + (viewWeekStart > scheduleData.week_start ? 1 : 0)}`
-    : `Week of ${fmtDate(viewWeekStart)}`;
+    ? "W" + (wn + (isSecondWeek ? 1 : 0))
+    : "Week of " + fmtDate(viewWeekStart);
 
   // meta
   const gen = scheduleData?.generated_at
-    ? new Date(scheduleData.generated_at).toLocaleString("en-GB", {dateStyle:"medium", timeStyle:"short"})
+    ? new Date(scheduleData.generated_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })
     : "?";
-  document.getElementById("metaLine").innerHTML = `Last refresh: ${gen}<br/>MOs: ${(scheduleData?.days || []).reduce((s,d) => s + (d.vacuuming||[]).length, 0)} products this fortnight`;
+  const moCount = (scheduleData?.days || []).reduce((s, d) => s + (d.vacuuming || []).length, 0);
+  document.getElementById("metaLine").innerHTML =
+    `Last refresh: ${gen}<br/>MOs: ${moCount} this fortnight`;
 
   // nav buttons
-  const dataStart = scheduleData?.week_start;
-  const dataEnd   = scheduleData?.week_end;
-  document.getElementById("prevWeek").disabled = viewWeekStart <= (dataStart || viewWeekStart);
-  document.getElementById("nextWeek").disabled = addDays(viewWeekStart, 7) > (dataEnd || viewWeekStart);
+  const ds = scheduleData?.week_start, de = scheduleData?.week_end;
+  document.getElementById("prevWeek").disabled = viewWeekStart <= (ds || viewWeekStart);
+  document.getElementById("nextWeek").disabled = addDays(viewWeekStart, 7) > (de || viewWeekStart);
+
+  window.scrollTo(0, sy);
 }
 
-// ── init ──────────────────────────────────────────────────────────────────────
+// ── event delegation ──────────────────────────────────────────────────────────
+document.getElementById("scheduleRoot").addEventListener("click", e => {
+  // ── pill checkbox (mix / premix / shape) ──
+  const pillCheck = e.target.closest(".pill-check");
+  if (pillCheck) {
+    const key = pillCheck.dataset.key;
+    lsSet(key, !(lsGet(key) || false));
+    render();
+    return;
+  }
+
+  // ── vacuuming step button ──
+  const stepBtn = e.target.closest(".step-btn");
+  if (stepBtn) {
+    const key  = stepBtn.dataset.vkey;
+    const tgt  = parseInt(stepBtn.dataset.step);
+    const cur  = lsGet(key) || 0;
+    lsSet(key, cur >= tgt ? tgt - 1 : tgt);
+    render();
+    return;
+  }
+
+  // ── task checkbox ──
+  const taskCheck = e.target.closest(".task-check");
+  if (taskCheck) {
+    const iso  = taskCheck.dataset.tday;
+    const id   = taskCheck.dataset.tid;
+    const tasks = getTasksForDay(iso);
+    const t = tasks.find(x => x.id === id);
+    if (t) { t.done = !t.done; saveTasksForDay(iso, tasks); }
+    render();
+    return;
+  }
+
+  // ── remove custom task ──
+  const removeBtn = e.target.closest(".remove-task");
+  if (removeBtn) {
+    const iso  = removeBtn.dataset.tday;
+    const id   = removeBtn.dataset.tid;
+    saveTasksForDay(iso, getTasksForDay(iso).filter(t => t.id !== id));
+    render();
+    return;
+  }
+
+  // ── add custom task ──
+  const addBtn = e.target.closest(".add-task-btn");
+  if (addBtn) {
+    const iso  = addBtn.dataset.tday;
+    const text = prompt("New task:");
+    if (text && text.trim()) {
+      const tasks = getTasksForDay(iso);
+      tasks.push({ id: "custom_" + Date.now(), text: text.trim(), fixed: false, done: false });
+      saveTasksForDay(iso, tasks);
+      render();
+    }
+    return;
+  }
+});
+
+// ── week navigation ───────────────────────────────────────────────────────────
 document.getElementById("prevWeek").addEventListener("click", () => {
   viewWeekStart = addDays(viewWeekStart, -7);
   render();
@@ -452,27 +600,22 @@ document.getElementById("nextWeek").addEventListener("click", () => {
   render();
 });
 
+// ── init ──────────────────────────────────────────────────────────────────────
 (async () => {
   try {
     scheduleData = await loadSchedule();
-    // Jump to the week that contains today if it's in the data
-    const dataStart = scheduleData.week_start;
-    const dataEnd   = scheduleData.week_end;
-    const todayMonday = mondayOfWeek(isoToday());
-    if (todayMonday >= dataStart && todayMonday <= dataEnd) {
-      viewWeekStart = todayMonday;
-    } else {
-      viewWeekStart = mondayOfWeek(dataStart);
-    }
-
+    const todayMon = mondayOfWeek(isoToday());
+    const ds = scheduleData.week_start, de = scheduleData.week_end;
+    viewWeekStart = (todayMon >= ds && todayMon <= de) ? todayMon : mondayOfWeek(ds);
     document.getElementById("loading").style.display = "none";
     render();
   } catch (err) {
     document.getElementById("loading").style.display = "none";
-    const errEl = document.getElementById("error");
-    errEl.style.display = "flex";
-    errEl.innerHTML = `<b>Could not load schedule</b><br/>${err.message}<br/>
-      <small>Make sure <code>data/schedule.json</code> exists. Run <code>python scripts/fetch_schedule.py --dry-run</code> to generate a placeholder.</small>`;
+    const el = document.getElementById("error");
+    el.style.display = "flex";
+    el.innerHTML = `<b>Could not load schedule</b><br/>${err.message}<br/>
+      <small>Make sure <code>data/schedule.json</code> exists.
+      Run <code>python scripts/fetch_schedule.py --dry-run</code> to generate a placeholder.</small>`;
   }
 })();
 </script>
