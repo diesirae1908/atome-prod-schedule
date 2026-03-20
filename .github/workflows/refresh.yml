@@ -1,0 +1,39 @@
+name: Refresh Production Schedule
+
+on:
+  schedule:
+    # Runs every day at 05:00 UTC (adjust to your timezone, e.g. 04:00 UTC = 06:00 CEST)
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+    # Allow manual trigger from GitHub Actions UI
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch schedule from Odoo
+        env:
+          ODOO_URL:     ${{ secrets.ODOO_URL }}
+          ODOO_DB:      ${{ secrets.ODOO_DB }}
+          ODOO_USER:    ${{ secrets.ODOO_USER }}
+          ODOO_API_KEY: ${{ secrets.ODOO_API_KEY }}
+        run: |
+          python scripts/fetch_schedule.py --weeks 2
+
+      - name: Commit and push updated schedule
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/schedule.json
+          # Only commit if there are actual changes
+          git diff --cached --quiet || git commit -m "chore: auto-refresh schedule $(date -u +%Y-%m-%d)"
+          git push
