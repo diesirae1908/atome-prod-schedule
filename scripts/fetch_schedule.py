@@ -19,9 +19,14 @@ import math
 import re
 import ssl
 import xmlrpc.client
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 import argparse
+
+# Odoo returns datetimes in UTC; convert to local bakery timezone before extracting date
+# so that MOs scheduled late in the day don't land on the wrong calendar day.
+BAKERY_TZ = ZoneInfo("America/Vancouver")
 
 # ── SSL context (Odoo SH uses a cert chain not in Python's default bundle) ─────
 _ssl_ctx = ssl._create_unverified_context()
@@ -111,10 +116,12 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
 
     for mo in mos:
         # D-0 = scheduled packaging/vacuuming date (field: date_start in Odoo 18)
-        d0_str = (mo.get("date_start") or "")[:10]
-        if not d0_str:
+        raw_dt = (mo.get("date_start") or "")
+        if not raw_dt:
             continue
-        d0 = date.fromisoformat(d0_str)
+        # Odoo returns UTC naive strings — convert to bakery local date
+        dt_utc = datetime.fromisoformat(raw_dt.replace(" ", "T")).replace(tzinfo=timezone.utc)
+        d0 = dt_utc.astimezone(BAKERY_TZ).date()
 
         product_name = mo["product_id"][1] if mo.get("product_id") else ""
         sku = extract_sku(product_name)
