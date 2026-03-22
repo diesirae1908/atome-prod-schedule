@@ -488,7 +488,10 @@ function fmtDate(iso) {
 
 function fmtDluo(iso) {
   if (!iso) return null;
-  return new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+  const d = new Date(iso + "T00:00:00");
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${mm}/${dd}/${d.getFullYear()}`;
 }
 
 // ── strip "(×N)" suffix from product names ────────────────────────────────────
@@ -650,7 +653,7 @@ function renderVacCell(day) {
       : `<span class="prod-dluo dluo-fixed">DLUO fixed</span>`;
 
     const qtyStr = v.qty_packs
-      ? `${Math.round(v.qty_packs)} pouches · ${Math.round(v.qty_units)} units`
+      ? `${Math.round(v.qty_packs)} bundles · ${Math.round(v.qty_units)} units`
       : "";
 
     const stepsHtml = [
