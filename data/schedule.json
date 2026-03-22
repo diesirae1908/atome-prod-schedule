@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-21T21:13:48Z",
+  "generated_at": "2026-03-22T19:42:52Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-03-29",
@@ -31,7 +31,15 @@
     {
       "date": "2026-03-19",
       "label": "THURSDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Viennoise",
+          "total_units": 204,
+          "products": [
+            "Viennoise (×2)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -63,13 +71,6 @@
       "label": "FRIDAY",
       "premix": [
         {
-          "label": "Prep mix Viennoise",
-          "total_units": 204,
-          "products": [
-            "Viennoise (×2)"
-          ]
-        },
-        {
           "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
@@ -97,6 +98,16 @@
           "products": [
             "Trad. Baguette (×3)"
           ]
+        },
+        {
+          "dough_type": "VIENNOISE",
+          "label": "VIENNOISE",
+          "unit": "kg",
+          "total_kg": 40.8,
+          "total_units": 204,
+          "products": [
+            "Viennoise (×2)"
+          ]
         }
       ],
       "shaping": [
@@ -116,6 +127,15 @@
           "qty_units": 360,
           "total_kg": 126.0,
           "mo_ref": "WH/MO/00526",
+          "d0": "2026-03-21"
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Viennoise (×2)",
+          "qty_packs": 102,
+          "qty_units": 204,
+          "total_kg": 40.8,
+          "mo_ref": "WH/MO/00546",
           "d0": "2026-03-21"
         }
       ],
@@ -152,16 +172,6 @@
           "products": [
             "Sourdough Loaf (×2)",
             "Trad. Baguette (×3)"
-          ]
-        },
-        {
-          "dough_type": "VIENNOISE",
-          "label": "VIENNOISE",
-          "unit": "kg",
-          "total_kg": 40.8,
-          "total_units": 204,
-          "products": [
-            "Viennoise (×2)"
           ]
         },
         {
@@ -202,15 +212,6 @@
           "total_kg": 126.0,
           "mo_ref": "WH/MO/00540",
           "d0": "2026-03-22"
-        },
-        {
-          "sku": "VI2P-SGL",
-          "name": "Viennoise (×2)",
-          "qty_packs": 102,
-          "qty_units": 204,
-          "total_kg": 40.8,
-          "mo_ref": "WH/MO/00546",
-          "d0": "2026-03-22"
         }
       ],
       "vacuuming": [
@@ -245,6 +246,14 @@
           "qty_units": 180.0,
           "dluo": "2026-09-10",
           "mo_ref": "WH/MO/00577"
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Viennoise (×2)",
+          "qty_packs": 102.0,
+          "qty_units": 204.0,
+          "dluo": "2026-09-20",
+          "mo_ref": "WH/MO/00546"
         }
       ]
     },
@@ -343,14 +352,6 @@
           "qty_units": 360.0,
           "dluo": "2026-12-21",
           "mo_ref": "WH/MO/00540"
-        },
-        {
-          "sku": "VI2P-SGL",
-          "name": "Viennoise (×2)",
-          "qty_packs": 102.0,
-          "qty_units": 204.0,
-          "dluo": "2026-09-20",
-          "mo_ref": "WH/MO/00546"
         }
       ]
     },
@@ -572,7 +573,15 @@
     {
       "date": "2026-03-25",
       "label": "WEDNESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 726,
+          "products": [
+            "Pain au Chocolat (×3)"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "PAC_CR",
@@ -675,17 +684,37 @@
       ],
       "mix": [
         {
+          "dough_type": "PAC_CR",
+          "label": "PAC/CR",
+          "unit": "pcs",
+          "total_kg": 65.3,
+          "total_units": 726,
+          "products": [
+            "Pain au Chocolat (×3)"
+          ]
+        },
+        {
           "dough_type": "TRAD",
           "label": "TRAD",
           "unit": "kg",
-          "total_kg": 252.0,
-          "total_units": 360,
+          "total_kg": 378.0,
+          "total_units": 720,
           "products": [
-            "Sourdough Loaf (×2)"
+            "Sourdough Loaf (×2)",
+            "Sesame Baguette (×3)"
           ]
         }
       ],
       "shaping": [
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pain au Chocolat (×3)",
+          "qty_packs": 242,
+          "qty_units": 726,
+          "total_kg": 65.3,
+          "mo_ref": "WH/MO/00585",
+          "d0": "2026-03-27"
+        },
         {
           "sku": "SE3P-SGL",
           "name": "Sesame Baguette (×3)",
@@ -752,13 +781,6 @@
           ]
         },
         {
-          "label": "Prep mix PAC/CR",
-          "total_units": 726,
-          "products": [
-            "Pain au Chocolat (×3)"
-          ]
-        },
-        {
           "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
@@ -791,10 +813,9 @@
           "dough_type": "TRAD",
           "label": "TRAD",
           "unit": "kg",
-          "total_kg": 270.0,
-          "total_units": 720,
+          "total_kg": 144.0,
+          "total_units": 360,
           "products": [
-            "Sesame Baguette (×3)",
             "Cheese Baguette"
           ]
         }
@@ -815,7 +836,16 @@
           "qty_packs": 242,
           "qty_units": 726,
           "total_kg": 65.3,
-          "mo_ref": "WH/MO/00585",
+          "mo_ref": "WH/MO/00586",
+          "d0": "2026-03-28"
+        },
+        {
+          "sku": "SE3P-SGL",
+          "name": "Sesame Baguette (×3)",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 126.0,
+          "mo_ref": "WH/MO/00587",
           "d0": "2026-03-28"
         }
       ],
@@ -827,6 +857,14 @@
           "qty_units": 480.0,
           "dluo": "2026-07-18",
           "mo_ref": "WH/MO/00582"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pain au Chocolat (×3)",
+          "qty_packs": 242.0,
+          "qty_units": 726.0,
+          "dluo": "2026-09-30",
+          "mo_ref": "WH/MO/00585"
         },
         {
           "sku": "PIZ2-SGL",
@@ -870,16 +908,6 @@
           ]
         },
         {
-          "dough_type": "PAC_CR",
-          "label": "PAC/CR",
-          "unit": "pcs",
-          "total_kg": 65.3,
-          "total_units": 726,
-          "products": [
-            "Pain au Chocolat (×3)"
-          ]
-        },
-        {
           "dough_type": "WAFFLES",
           "label": "WAFFLES",
           "unit": "kg",
@@ -917,24 +945,6 @@
           "total_kg": 62.4,
           "mo_ref": "WH/MO/00566",
           "d0": "2026-03-28"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pain au Chocolat (×3)",
-          "qty_packs": 242,
-          "qty_units": 726,
-          "total_kg": 65.3,
-          "mo_ref": "WH/MO/00586",
-          "d0": "2026-03-29"
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Sesame Baguette (×3)",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 126.0,
-          "mo_ref": "WH/MO/00587",
-          "d0": "2026-03-29"
         }
       ],
       "vacuuming": [
@@ -960,7 +970,15 @@
           "qty_packs": 242.0,
           "qty_units": 726.0,
           "dluo": "2026-09-30",
-          "mo_ref": "WH/MO/00585"
+          "mo_ref": "WH/MO/00586"
+        },
+        {
+          "sku": "SE3P-SGL",
+          "name": "Sesame Baguette (×3)",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "dluo": "2026-12-31",
+          "mo_ref": "WH/MO/00587"
         },
         {
           "sku": "LF2P",
@@ -1031,22 +1049,6 @@
           "qty_units": 624.0,
           "dluo": "2026-09-29",
           "mo_ref": "WH/MO/00567"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pain au Chocolat (×3)",
-          "qty_packs": 242.0,
-          "qty_units": 726.0,
-          "dluo": "2026-09-30",
-          "mo_ref": "WH/MO/00586"
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Sesame Baguette (×3)",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "dluo": "2026-12-31",
-          "mo_ref": "WH/MO/00587"
         }
       ]
     }
