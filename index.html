@@ -594,7 +594,8 @@ async function loadOutputs() {
 
 async function saveOutput(entry) {
   try {
-    await supaFetch("POST", "/production_outputs", [{ ...entry, updated_at: new Date().toISOString() }]);
+    // on_conflict tells PostgREST which columns to use for upsert resolution
+    await supaFetch("POST", "/production_outputs?on_conflict=recorded_date,task_type,mo_ref", [{ ...entry, updated_at: new Date().toISOString() }]);
     _outputMap[`${entry.recorded_date}|${entry.task_type}|${entry.mo_ref}`] = { ...entry };
   } catch(e) {
     console.warn("saveOutput:", e);
@@ -1000,6 +1001,28 @@ document.getElementById("nextWeek").addEventListener("click", () => {
 
 // ── refresh button wiring ─────────────────────────────────────────────────────
 document.getElementById("refreshBtn").addEventListener("click", triggerRefresh);
+
+// ── auto-reload: poll schedule.json every 2 min for changes ──────────────────
+async function checkForScheduleUpdate() {
+  if (document.getElementById("refreshBtn").disabled) return; // manual refresh in progress
+  try {
+    const r = await fetch("data/schedule.json?t=" + Date.now());
+    if (!r.ok) return;
+    const data = await r.json();
+    if (data.generated_at && scheduleData && data.generated_at !== scheduleData.generated_at) {
+      scheduleData = data;
+      render();
+      document.getElementById("metaLine").innerHTML =
+        `Last refresh: ${data.generated_at?.replace("T"," ").slice(0,16)} UTC<br/>MOs: ${data.days?.reduce((s,d)=>s+(d.vacuuming||[]).length,0)*2} this fortnight`;
+    }
+  } catch {}
+}
+setInterval(checkForScheduleUpdate, 2 * 60 * 1000); // every 2 minutes
+
+// Also check when the tab becomes visible again (user switching back)
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") checkForScheduleUpdate();
+});
 
 // ── init ──────────────────────────────────────────────────────────────────────
 (async () => {
