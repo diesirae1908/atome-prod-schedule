@@ -594,9 +594,17 @@ async function loadOutputs() {
 
 async function saveOutput(entry) {
   try {
-    // on_conflict tells PostgREST which columns to use for upsert resolution
-    await supaFetch("POST", "/production_outputs?on_conflict=recorded_date,task_type,mo_ref", [{ ...entry, updated_at: new Date().toISOString() }]);
-    _outputMap[`${entry.recorded_date}|${entry.task_type}|${entry.mo_ref}`] = { ...entry };
+    const mapKey = `${entry.recorded_date}|${entry.task_type}|${entry.mo_ref}`;
+    const payload = { ...entry, updated_at: new Date().toISOString() };
+    if (_outputMap[mapKey]) {
+      // Row already exists → PATCH (update)
+      const q = `recorded_date=eq.${entry.recorded_date}&task_type=eq.${entry.task_type}&mo_ref=eq.${encodeURIComponent(entry.mo_ref)}`;
+      await supaFetch("PATCH", `/production_outputs?${q}`, payload);
+    } else {
+      // New row → POST (insert)
+      await supaFetch("POST", "/production_outputs", [payload]);
+    }
+    _outputMap[mapKey] = { ...payload };
   } catch(e) {
     console.warn("saveOutput:", e);
     alert("Could not save output: " + e.message);
