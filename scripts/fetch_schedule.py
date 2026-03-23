@@ -210,29 +210,28 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
             dt_cfg = dough_types.get(dough_type, {})
             units_per_pack = cfg.get("units_per_pack") or 1
             weight_g = cfg.get("weight_g_per_unit")
-
-            # total kg = packs × units/pack × g/unit / 1000
             total_kg = (qty_packs * units_per_pack * weight_g / 1000) if weight_g else None
+            prod_name = cfg.get("name") or sku or "?"
 
-            if dough_type not in day_map[mix_date]["mix"]:
-                day_map[mix_date]["mix"][dough_type] = {
+            # One mixing task per MO (keyed by mo_ref), not per dough type
+            mix_key = mo_ref or f"{dough_type}_{prod_name}"
+            if mix_key not in day_map[mix_date]["mix"]:
+                day_map[mix_date]["mix"][mix_key] = {
                     "dough_type": dough_type,
-                    "label": dt_cfg.get("label", dough_type),
+                    "label": prod_name,
                     "unit": dt_cfg.get("unit", "kg"),
                     "total_kg": 0.0 if total_kg is not None else None,
                     "total_units": 0,
-                    "products": [],
+                    "mo_ref": mo_ref,
+                    "products": [prod_name],
                 }
 
-            entry = day_map[mix_date]["mix"][dough_type]
+            entry = day_map[mix_date]["mix"][mix_key]
             if total_kg is not None:
                 if entry["total_kg"] is None:
                     entry["total_kg"] = 0.0
                 entry["total_kg"] += total_kg
             entry["total_units"] += int(round(qty_packs * units_per_pack))
-            prod_name = cfg.get("name") or sku or "?"
-            if prod_name not in entry["products"]:
-                entry["products"].append(prod_name)
 
         # ── PRE-MIXING (premix_offset) ────────────────────────────────────────
         pm_offset = cfg.get("premix_offset")

@@ -701,14 +701,13 @@ function renderMixCell(day) {
   }
 
   const mixPills = day.mix.map(m => {
-    const key  = `check_${day.date}_mix_${m.dough_type || m.label}`;
+    const key  = `check_${day.date}_mix_${m.mo_ref || m.dough_type || m.label}`;
     const done = lsGet(key) || false;
     const qty  = m.total_units ? `${m.total_units} units` : "";
-    const prods = (m.products || []).map(shortName).join(", ");
-    const sub  = [qty, prods].filter(Boolean).join(" · ");
+    const sub  = [qty, m.mo_ref || ""].filter(Boolean).join(" · ");
     return `<div class="product-pill${done ? " done" : ""}">
       <div class="pill-header">
-        <span class="prod-name">${m.label}</span>
+        <span class="prod-name">${shortName(m.label)}</span>
         ${pillCheckBtn(key)}
       </div>
       <span class="prod-sub">${sub}</span>
