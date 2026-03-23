@@ -798,13 +798,15 @@ function renderPremixCell(day) {
     const key  = `check_${day.date}_premix_${p.label}`;
     const done = lsGet(key) || false;
     // strip pack counts from product names
-    const prods = (p.products || []).map(shortName).join(", ");
+    const prods  = (p.products || []).map(shortName).join(", ");
+    const moRefs = (p.mo_refs || []).join(" · ");
     return `<div class="product-pill${done ? " done" : ""}">
       <div class="pill-header">
         <span class="prod-name">${p.label}</span>
         ${pillCheckBtn(key)}
       </div>
       <span class="prod-sub">${p.total_units} units · ${prods}</span>
+      ${moRefs ? `<span class="prod-sub">${moRefs}</span>` : ""}
     </div>`;
   }).join("");
 }

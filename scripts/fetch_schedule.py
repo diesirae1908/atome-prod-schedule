@@ -245,12 +245,15 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                         "label": pm_label,
                         "total_units": 0,
                         "products": [],
+                        "mo_refs": [],
                     }
                 pm_entry = day_map[premix_date]["premix"][pm_label]
                 pm_entry["total_units"] += int(round(qty_packs * upp))
                 pm_prod = cfg.get("name") or sku or "?"
                 if pm_prod not in pm_entry["products"]:
                     pm_entry["products"].append(pm_prod)
+                if mo_ref and mo_ref not in pm_entry["mo_refs"]:
+                    pm_entry["mo_refs"].append(mo_ref)
 
     # Round mix totals and convert dicts to sorted lists
     for day_str, day in day_map.items():
