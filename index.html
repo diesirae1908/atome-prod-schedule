@@ -1246,13 +1246,6 @@ function renderMopModal(mopId, units) {
 
   document.getElementById("mopModalBody").innerHTML = `
     <div>
-      <div class="mop-section-title">Ingredients (Baker's %)</div>
-      <table class="mop-ingr-table">
-        <thead><tr><th>Ingredient</th><th>Quantity</th><th>Baker's %</th></tr></thead>
-        <tbody>${ingrRows}</tbody>
-      </table>
-    </div>
-    <div>
       <div class="mop-section-title">Mixer Loads — ${mixerLabel}</div>
       <div class="mop-mixer-row">
         <div class="mop-mixer-card">
@@ -1272,6 +1265,13 @@ function renderMopModal(mopId, units) {
         </div>
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">${loadBoxes}</div>
+    </div>
+    <div>
+      <div class="mop-section-title">Ingredients (Baker's %)</div>
+      <table class="mop-ingr-table">
+        <thead><tr><th>Ingredient</th><th>Quantity</th><th>Baker's %</th></tr></thead>
+        <tbody>${ingrRows}</tbody>
+      </table>
     </div>
     ${stepsHtml ? `<div><div class="mop-section-title">Production Steps</div><div class="mop-steps">${stepsHtml}</div></div>` : ""}
   `;
