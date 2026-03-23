@@ -1213,6 +1213,37 @@ function renderMopModal(mopId, units) {
     `<div class="mop-step"><div class="mop-step-phase">${s.phase}</div><div class="mop-step-detail">${s.detail}</div></div>`
   ).join("");
 
+  // per-load breakdown
+  const bagKg = mop.id === "pizza" ? 25 : 20;
+  const bagG  = bagKg * 1000;
+  const nonToppingIngrs = mop.ingredients.filter(i => !i.is_topping);
+  const loadBoxes = Array.from({ length: loads }, (_, li) => {
+    const rows = nonToppingIngrs.map(ing => {
+      const totalG = Math.round(ing.g * scale);
+      const loadG  = totalG / loads;
+      let bagHtml  = "";
+      if (ing.is_flour) {
+        const bags    = loadG / bagG;
+        const isWhole = Math.abs(bags - Math.round(bags)) < 0.02;
+        const bagStr  = isWhole ? Math.round(bags) : bags.toFixed(1);
+        const color   = isWhole ? "#059669" : "#d97706";
+        bagHtml = ` <small style="color:${color};font-weight:700;">(${bagStr}×${bagKg}kg)</small>`;
+      }
+      return `<div style="display:flex;justify-content:space-between;gap:6px;padding:3px 0;border-bottom:1px solid #ecfdf5;font-size:11px;">
+        <span style="color:#374151">${ing.name}</span>
+        <span style="font-weight:600;white-space:nowrap">${Math.round(loadG).toLocaleString()}g${bagHtml}</span>
+      </div>`;
+    }).join("");
+    const loadTotal = nonToppingIngrs.reduce((s, i) => s + Math.round(i.g * scale) / loads, 0);
+    return `<div style="flex:1;min-width:160px;background:rgba(255,255,255,.7);border:1px solid #bbf7d0;border-radius:8px;padding:9px 11px;">
+      <div style="font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#059669;margin-bottom:6px;">Load ${li+1} of ${loads}</div>
+      ${rows}
+      <div style="display:flex;justify-content:space-between;padding:4px 0 0;margin-top:4px;border-top:2px solid #bbf7d0;font-size:11px;font-weight:700;">
+        <span>Total</span><span>${(loadTotal/1000).toFixed(1)} kg</span>
+      </div>
+    </div>`;
+  }).join("");
+
   document.getElementById("mopModalBody").innerHTML = `
     <div>
       <div class="mop-section-title">Ingredients (Baker's %)</div>
@@ -1240,6 +1271,7 @@ function renderMopModal(mopId, units) {
           <div class="mop-mixer-sub">kg total</div>
         </div>
       </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">${loadBoxes}</div>
     </div>
     ${stepsHtml ? `<div><div class="mop-section-title">Production Steps</div><div class="mop-steps">${stepsHtml}</div></div>` : ""}
   `;
