@@ -329,6 +329,107 @@
     .sync-dot.error   { background: #ef4444; }
     @keyframes pulse  { 0%,100% { opacity:1; } 50% { opacity:.35; } }
 
+    /* ── week picker dropdown ── */
+    .week-picker-wrap { position: relative; }
+    .week-badge { cursor: pointer; user-select: none; }
+    .week-badge:hover { background: #3730a3; }
+    .week-picker-dropdown {
+      display: none; position: absolute; top: calc(100% + 6px); left: 50%;
+      transform: translateX(-50%);
+      background: #1e1b4b; border: 1px solid #4338ca;
+      border-radius: 8px; padding: 4px;
+      max-height: 280px; overflow-y: auto;
+      min-width: 170px; z-index: 200;
+      box-shadow: 0 4px 20px rgba(0,0,0,.5);
+    }
+    .week-picker-dropdown.open { display: block; }
+    .week-picker-item {
+      display: block; width: 100%;
+      padding: 6px 12px; border: none; background: none;
+      color: #c7d2fe; font-size: 12px; text-align: left;
+      cursor: pointer; border-radius: 5px; white-space: nowrap;
+    }
+    .week-picker-item:hover { background: #4338ca; color: #fff; }
+    .week-picker-item.active { background: #4338ca; color: #fff; font-weight: 700; }
+
+    /* ── MOP modal ── */
+    #mopModal {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,.55);
+      display: none; align-items: flex-start; justify-content: center;
+      padding-top: 40px;
+    }
+    #mopModal.open { display: flex; }
+    .mop-modal-box {
+      background: #fff; border-radius: 14px;
+      padding: 24px 28px; max-width: 520px; width: 95%; max-height: 82vh;
+      overflow-y: auto;
+      box-shadow: 0 12px 48px rgba(0,0,0,.3);
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .mop-modal-hdr {
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .mop-modal-hdr h3 { font-size: 17px; font-weight: 800; color: #1e1b4b; }
+    .mop-modal-close {
+      background: none; border: none; font-size: 20px; cursor: pointer;
+      color: #9ca3af; line-height: 1; padding: 0 2px;
+    }
+    .mop-modal-close:hover { color: #111; }
+    .mop-qty-row {
+      display: flex; align-items: center; gap: 8px;
+      background: #f5f3ff; border-radius: 8px; padding: 8px 12px;
+    }
+    .mop-qty-row label { font-size: 12px; font-weight: 600; color: #4338ca; }
+    .mop-qty-input {
+      width: 80px; padding: 4px 8px; border: 1px solid #c4b5fd;
+      border-radius: 6px; font-size: 14px; font-weight: 700; text-align: center;
+      outline: none;
+    }
+    .mop-qty-input:focus { border-color: #4338ca; }
+    .mop-qty-unit { font-size: 12px; color: #6b7280; }
+    .mop-section-title {
+      font-size: 10px; font-weight: 800; letter-spacing: .08em;
+      text-transform: uppercase; color: #6b7280; margin-bottom: 6px;
+    }
+    .mop-ingr-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .mop-ingr-table th {
+      text-align: left; padding: 4px 8px;
+      background: #f3f4f6; color: #374151;
+      font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    }
+    .mop-ingr-table td { padding: 5px 8px; border-bottom: 1px solid #f3f4f6; }
+    .mop-ingr-table tr:last-child td { border-bottom: none; }
+    .mop-ingr-table .topping-row td { color: #b45309; font-style: italic; }
+    .mop-pct { color: #7c3aed; font-weight: 600; }
+    .mop-mixer-row {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .mop-mixer-card {
+      flex: 1; min-width: 120px;
+      background: #f0fdf4; border: 1px solid #86efac;
+      border-radius: 8px; padding: 10px 14px;
+      text-align: center;
+    }
+    .mop-mixer-label { font-size: 10px; font-weight: 700; color: #15803d; text-transform: uppercase; letter-spacing: .05em; }
+    .mop-mixer-value { font-size: 22px; font-weight: 800; color: #166534; }
+    .mop-mixer-sub { font-size: 10px; color: #6b7280; }
+    .mop-steps { display: flex; flex-direction: column; gap: 6px; }
+    .mop-step {
+      background: #f9fafb; border-radius: 6px; padding: 8px 10px;
+      font-size: 12px;
+    }
+    .mop-step-phase { font-weight: 700; color: #1e1b4b; margin-bottom: 2px; font-size: 11px; }
+    .mop-step-detail { color: #374151; }
+    .mop-btn {
+      background: none; border: 1px solid #c4b5fd; border-radius: 5px;
+      padding: 2px 6px; font-size: 10px; cursor: pointer;
+      color: #7c3aed; margin-left: 4px;
+      transition: background .1s;
+    }
+    .mop-btn:hover { background: #ede9fe; }
+    .mop-no-recipe { font-size: 12px; color: #9ca3af; text-align: center; padding: 20px 0; }
+
     @media (max-width: 600px) {
       .topbar { flex-direction: column; gap: 8px; align-items: flex-start; }
     }
@@ -344,9 +445,13 @@
   <div style="display:flex;align-items:center;gap:8px">
     <a href="headpaper/index.html" class="planner-btn">📋 Daily Planner</a>
     <a href="outputs.html" class="planner-btn">📊 Outputs</a>
+    <a href="mops.html" class="planner-btn">📚 MOPs</a>
     <div class="week-nav">
       <button id="prevWeek">◀</button>
-      <span class="week-badge" id="weekBadge">W–</span>
+      <div class="week-picker-wrap">
+        <span class="week-badge" id="weekBadge">W–</span>
+        <div id="weekPickerDropdown" class="week-picker-dropdown"></div>
+      </div>
       <button id="nextWeek">▶</button>
     </div>
     <button class="refresh-btn" id="refreshBtn">🔄 Refresh from Odoo</button>
@@ -379,12 +484,29 @@
   </div>
 </div>
 
+<!-- ── MOP Modal ── -->
+<div id="mopModal">
+  <div class="mop-modal-box">
+    <div class="mop-modal-hdr">
+      <h3 id="mopModalTitle">Recipe</h3>
+      <button class="mop-modal-close" id="mopModalClose">×</button>
+    </div>
+    <div class="mop-qty-row">
+      <label>Quantity:</label>
+      <input class="mop-qty-input" id="mopQtyInput" type="number" min="1" step="1" value="1" />
+      <span class="mop-qty-unit" id="mopQtyUnit">units</span>
+    </div>
+    <div id="mopModalBody"></div>
+  </div>
+</div>
+
 <div class="schedule-wrap">
   <div id="loading"><div class="spinner"></div><span>Loading schedule…</span></div>
   <div id="error" style="display:none"></div>
   <div id="scheduleRoot" style="display:none"></div>
 </div>
 
+<script src="mops-data.js"></script>
 <script>
 // ── Supabase config ───────────────────────────────────────────────────────────
 const SUPA_URL = "https://ktbbmtyesrprvxrseiph.supabase.co";
@@ -705,9 +827,13 @@ function renderMixCell(day) {
     const done = lsGet(key) || false;
     const qty  = m.total_units ? `${m.total_units} units` : "";
     const sub  = [qty, m.mo_ref || ""].filter(Boolean).join(" · ");
+    const mopId = (typeof PRODUCT_MOP_MAP !== "undefined") ? (PRODUCT_MOP_MAP[shortName(m.label)] || PRODUCT_MOP_MAP[m.label] || null) : null;
+    const mopBtn = mopId
+      ? `<button class="mop-btn" data-mop-id="${mopId}" data-mop-units="${m.total_units || 0}" data-mop-label="${escAttr(shortName(m.label))}" title="View MOP / Recipe">📖</button>`
+      : "";
     return `<div class="product-pill${done ? " done" : ""}">
       <div class="pill-header">
-        <span class="prod-name">${shortName(m.label)}</span>
+        <span class="prod-name">${shortName(m.label)}${mopBtn}</span>
         ${pillCheckBtn(key)}
       </div>
       <span class="prod-sub">${sub}</span>
@@ -893,9 +1019,12 @@ function render() {
   document.getElementById("metaLine").innerHTML =
     `Last refresh: ${gen}<br/>MOs: ${moCount} this fortnight`;
 
-  const ds = scheduleData?.week_start, de = scheduleData?.week_end;
-  document.getElementById("prevWeek").disabled = viewWeekStart <= (ds || viewWeekStart);
-  document.getElementById("nextWeek").disabled = addDays(viewWeekStart, 7) > (de || viewWeekStart);
+  const todayMon2 = mondayOfWeek(isoToday());
+  const earliestWeek = addDays(todayMon2, -12 * 7); // 3 months back
+  const latestWeek   = scheduleData?.week_end || todayMon2;
+  document.getElementById("prevWeek").disabled = viewWeekStart <= earliestWeek;
+  document.getElementById("nextWeek").disabled = addDays(viewWeekStart, 7) > latestWeek;
+  populateWeekPicker();
 
   window.scrollTo(0, sy);
 }
@@ -997,6 +1126,160 @@ document.getElementById("scheduleRoot").addEventListener("click", e => {
     return;
   }
 });
+
+// ── week picker dropdown ──────────────────────────────────────────────────────
+function populateWeekPicker() {
+  const dropdown = document.getElementById("weekPickerDropdown");
+  const todayMon = mondayOfWeek(isoToday());
+  const earliest = addDays(todayMon, -12 * 7);
+  const latest   = scheduleData?.week_end || todayMon;
+  const latestMon = mondayOfWeek(latest);
+
+  dropdown.innerHTML = "";
+  let cursor = latestMon;
+  while (cursor >= earliest) {
+    const wMon = cursor;
+    const wSun = addDays(wMon, 6);
+    const wNum = new Date(wMon + "T00:00:00").toLocaleDateString("en-GB", {});
+    // ISO week number
+    const d = new Date(wMon + "T00:00:00");
+    const jan4 = new Date(d.getFullYear(), 0, 4);
+    const wk = Math.ceil(((d - jan4) / 86400000 + jan4.getDay() + 1) / 7);
+    const label = `W${wk} · ${fmtDate(wMon)} – ${fmtDate(wSun)}`;
+
+    const btn = document.createElement("button");
+    btn.className = "week-picker-item" + (wMon === viewWeekStart ? " active" : "");
+    btn.textContent = label;
+    btn.addEventListener("click", () => {
+      viewWeekStart = wMon;
+      dropdown.classList.remove("open");
+      render();
+    });
+    dropdown.appendChild(btn);
+    cursor = addDays(cursor, -7);
+  }
+}
+
+document.getElementById("weekBadge").addEventListener("click", e => {
+  e.stopPropagation();
+  const dd = document.getElementById("weekPickerDropdown");
+  dd.classList.toggle("open");
+});
+document.addEventListener("click", () => {
+  document.getElementById("weekPickerDropdown").classList.remove("open");
+});
+
+// ── MOP modal ────────────────────────────────────────────────────────────────
+function renderMopModal(mopId, units) {
+  if (typeof MOPS === "undefined") return;
+  const mop = MOPS.find(m => m.id === mopId);
+  if (!mop) {
+    document.getElementById("mopModalBody").innerHTML = `<p class="mop-no-recipe">No recipe found for this product.</p>`;
+    return;
+  }
+  const qty = parseInt(units) || mop.base_units;
+  const scale = qty / mop.base_units;
+  const totalFlourG = mop.ingredients.filter(i => i.is_flour).reduce((s, i) => s + i.g, 0);
+
+  // ingredients table
+  let ingrRows = mop.ingredients.map(ing => {
+    const scaled = Math.round(ing.g * scale);
+    const bakers = totalFlourG > 0 && !ing.is_topping
+      ? (ing.g / totalFlourG * 100).toFixed(1) + "%"
+      : ing.is_topping ? "topping" : "—";
+    const rowClass = ing.is_topping ? " class=\"topping-row\"" : "";
+    return `<tr${rowClass}>
+      <td>${ing.name}</td>
+      <td>${scaled.toLocaleString()} g</td>
+      <td class="mop-pct">${bakers}</td>
+    </tr>`;
+  }).join("");
+
+  // total dough weight
+  const totalDough = Math.round(mop.ingredients.filter(i => !i.is_topping).reduce((s, i) => s + i.g * scale, 0));
+  ingrRows += `<tr style="font-weight:700;border-top:2px solid #e5e7eb">
+    <td>Total dough</td><td>${totalDough.toLocaleString()} g</td><td>—</td>
+  </tr>`;
+
+  // mixer loads
+  const doughOnly = Math.round(mop.ingredients.filter(i => !i.is_topping).reduce((s, i) => s + i.g * scale, 0));
+  const maxG = (typeof MIXER_MAX !== "undefined") ? (MIXER_MAX[mop.mixer] || 150000) : 150000;
+  const loads = Math.ceil(doughOnly / maxG);
+  const perLoad = Math.round(doughOnly / loads);
+  const mixerLabel = mop.mixer === "large" ? "Large mixer (150 kg max)" : "Small mixer (50 kg max)";
+
+  // steps
+  const stepsHtml = (mop.steps || []).map(s =>
+    `<div class="mop-step"><div class="mop-step-phase">${s.phase}</div><div class="mop-step-detail">${s.detail}</div></div>`
+  ).join("");
+
+  document.getElementById("mopModalBody").innerHTML = `
+    <div>
+      <div class="mop-section-title">Ingredients (Baker's %)</div>
+      <table class="mop-ingr-table">
+        <thead><tr><th>Ingredient</th><th>Quantity</th><th>Baker's %</th></tr></thead>
+        <tbody>${ingrRows}</tbody>
+      </table>
+    </div>
+    <div>
+      <div class="mop-section-title">Mixer Loads — ${mixerLabel}</div>
+      <div class="mop-mixer-row">
+        <div class="mop-mixer-card">
+          <div class="mop-mixer-label">Loads needed</div>
+          <div class="mop-mixer-value">${loads}</div>
+          <div class="mop-mixer-sub">load${loads !== 1 ? "s" : ""}</div>
+        </div>
+        <div class="mop-mixer-card">
+          <div class="mop-mixer-label">Dough per load</div>
+          <div class="mop-mixer-value">${(perLoad / 1000).toFixed(1)}</div>
+          <div class="mop-mixer-sub">kg / load</div>
+        </div>
+        <div class="mop-mixer-card">
+          <div class="mop-mixer-label">Total dough</div>
+          <div class="mop-mixer-value">${(doughOnly / 1000).toFixed(1)}</div>
+          <div class="mop-mixer-sub">kg total</div>
+        </div>
+      </div>
+    </div>
+    ${stepsHtml ? `<div><div class="mop-section-title">Production Steps</div><div class="mop-steps">${stepsHtml}</div></div>` : ""}
+  `;
+}
+
+function openMopModal(mopId, units, label) {
+  if (typeof MOPS === "undefined") return;
+  const mop = MOPS.find(m => m.id === mopId);
+  const title = mop ? mop.name : label;
+  document.getElementById("mopModalTitle").textContent = "📖 " + title;
+  const unitLabel = mop ? mop.unit_label : "units";
+  document.getElementById("mopQtyUnit").textContent = unitLabel;
+  document.getElementById("mopQtyInput").value = units || mop?.base_units || 1;
+  document.getElementById("mopModal").classList.add("open");
+
+  // Store current mopId for qty changes
+  document.getElementById("mopQtyInput").dataset.mopId = mopId;
+  renderMopModal(mopId, units);
+}
+
+document.getElementById("mopModalClose").addEventListener("click", () => {
+  document.getElementById("mopModal").classList.remove("open");
+});
+document.getElementById("mopModal").addEventListener("click", e => {
+  if (e.target === document.getElementById("mopModal"))
+    document.getElementById("mopModal").classList.remove("open");
+});
+document.getElementById("mopQtyInput").addEventListener("input", e => {
+  const mopId = e.target.dataset.mopId;
+  if (mopId) renderMopModal(mopId, parseInt(e.target.value) || 1);
+});
+
+// ── mop-btn clicks (via event delegation on scheduleRoot) ────────────────────
+document.getElementById("scheduleRoot").addEventListener("click", e => {
+  const mopBtn = e.target.closest(".mop-btn");
+  if (mopBtn) {
+    e.stopPropagation();
+    openMopModal(mopBtn.dataset.mopId, parseInt(mopBtn.dataset.mopUnits) || 0, mopBtn.dataset.mopLabel);
+  }
+}, true); // capture phase so it fires before other click handlers
 
 // ── week navigation ───────────────────────────────────────────────────────────
 document.getElementById("prevWeek").addEventListener("click", () => {

@@ -306,22 +306,24 @@ def main():
     with open(PRODUCTS_CFG) as f:
         products_cfg = json.load(f)
 
-    # Compute date range: current Monday → end of requested weeks
+    # Compute date range: 3 weeks back → end of requested weeks ahead
     today = date.today()
     monday = today - timedelta(days=today.weekday())
+    lookback_weeks = 3
+    start = monday - timedelta(weeks=lookback_weeks)
     end = monday + timedelta(weeks=args.weeks) - timedelta(days=1)
 
-    print(f"Fetching MOs from {iso(monday)} to {iso(end)}…")
+    print(f"Fetching MOs from {iso(start)} to {iso(end)} ({lookback_weeks}w back + {args.weeks}w ahead)…")
 
     if args.dry_run:
         print("DRY RUN – using empty MO list")
         mos = []
     else:
         models, db, uid, api_key = odoo_connect()
-        mos = fetch_mos(models, db, uid, api_key, monday, end)
+        mos = fetch_mos(models, db, uid, api_key, start, end)
         print(f"  → {len(mos)} MOs found")
 
-    schedule = build_schedule(mos, products_cfg, monday, end)
+    schedule = build_schedule(mos, products_cfg, start, end)
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT, "w") as f:

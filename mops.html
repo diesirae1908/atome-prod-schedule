@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atome Bakery — Recipes (MOPs)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #1e1b4b;
+      --indigo-700:  #4338ca;
+      --indigo-800:  #3730a3;
+      --indigo-900:  #312e81;
+      --indigo-100:  #e0e7ff;
+      --indigo-200:  #c7d2fe;
+      --indigo-50:   #eef2ff;
+      --purple-600:  #7c3aed;
+      --amber-500:   #f59e0b;
+      --sidebar-w:   240px;
+      --topbar-h:    52px;
+      --border:      #e5e7eb;
+      --text:        #111827;
+      --muted:       #6b7280;
+      --bg:          #f3f4f6;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Topbar ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: var(--topbar-h);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 20px;
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+      flex-shrink: 0;
+    }
+
+    .topbar-back {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--indigo-200);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: var(--indigo-900);
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+    .topbar-back:hover { background: var(--indigo-800); color: #fff; }
+
+    .topbar-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      flex: 1;
+    }
+
+    /* ── Layout ── */
+    .layout {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      height: calc(100vh - var(--topbar-h));
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      background: #fff;
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-header {
+      padding: 14px 16px 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+      background: #fafafa;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .sidebar-section {
+      padding: 10px 0 4px;
+    }
+
+    .sidebar-section-label {
+      padding: 4px 16px 6px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .sidebar-item {
+      display: block;
+      width: 100%;
+      padding: 7px 16px;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--text);
+      border-left: 3px solid transparent;
+      transition: background .1s, color .1s, border-color .1s;
+      line-height: 1.3;
+    }
+    .sidebar-item:hover {
+      background: var(--indigo-50);
+      color: var(--indigo-700);
+    }
+    .sidebar-item.active {
+      background: var(--indigo-50);
+      color: var(--indigo-700);
+      border-left-color: var(--indigo-700);
+      font-weight: 600;
+    }
+
+    /* ── Content ── */
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* ── Recipe Header ── */
+    .recipe-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .recipe-name {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -.01em;
+    }
+
+    .mixer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      margin-top: 4px;
+    }
+    .mixer-badge.large {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .mixer-badge.small {
+      background: #fef9c3;
+      color: #92400e;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card-title {
+      padding: 12px 18px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: #fafafa;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Calculator Card ── */
+    .calc-card {
+      background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+      border: 1px solid var(--indigo-200);
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .calc-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--indigo-700);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    .calc-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .calc-input {
+      width: 110px;
+      padding: 8px 12px;
+      border: 2px solid var(--indigo-200);
+      border-radius: 7px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--indigo-700);
+      background: #fff;
+      outline: none;
+      transition: border-color .15s;
+    }
+    .calc-input:focus { border-color: var(--indigo-700); }
+
+    .calc-unit-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .calc-helper {
+      font-size: 11.5px;
+      color: #6366f1;
+      margin-top: 2px;
+    }
+
+    /* ── Ingredients Table ── */
+    .ingredients-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .ingredients-table th {
+      padding: 9px 14px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: #fafafa;
+      border-bottom: 1px solid var(--border);
+    }
+    .ingredients-table th:not(:first-child) { text-align: right; }
+
+    .ingredients-table td {
+      padding: 8px 14px;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: 13px;
+      color: var(--text);
+      vertical-align: middle;
+    }
+    .ingredients-table td:not(:first-child) { text-align: right; }
+
+    .ingredients-table tr:last-child td { border-bottom: none; }
+
+    .ing-row-flour td {
+      background: #fffbeb;
+      font-weight: 600;
+    }
+    .ing-row-flour td:first-child::after {
+      content: " ★";
+      font-size: 10px;
+      color: var(--amber-500);
+    }
+
+    .ing-row-topping td {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .ing-separator td {
+      padding: 0;
+      border-bottom: none;
+    }
+    .ing-separator-line {
+      height: 1px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--border) 0px,
+        var(--border) 6px,
+        transparent 6px,
+        transparent 12px
+      );
+      margin: 4px 14px;
+    }
+
+    .ing-row-total td {
+      font-weight: 700;
+      background: #f8fafc;
+      border-top: 2px solid var(--border);
+      font-size: 13px;
+    }
+
+    /* ── Mixer Loads Card ── */
+    .loads-card {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .loads-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #059669;
+    }
+
+    .loads-main {
+      font-size: 15px;
+      font-weight: 600;
+      color: #064e3b;
+      line-height: 1.5;
+    }
+    .loads-main strong {
+      font-size: 20px;
+      font-weight: 800;
+      color: #047857;
+    }
+
+    .loads-detail {
+      font-size: 12px;
+      color: #065f46;
+    }
+
+    /* ── Production Steps ── */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .step-item:last-child { border-bottom: none; }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      cursor: pointer;
+      user-select: none;
+      transition: background .1s;
+    }
+    .step-header:hover { background: #fafafa; }
+
+    .step-number {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--indigo-700);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-phase {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--navy);
+      flex: 1;
+    }
+
+    .step-chevron {
+      font-size: 11px;
+      color: var(--muted);
+      transition: transform .2s;
+    }
+    .step-item.open .step-chevron { transform: rotate(90deg); }
+
+    .step-body {
+      display: none;
+      padding: 0 18px 14px 52px;
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.65;
+    }
+    .step-item.open .step-body { display: block; }
+
+    /* ── Note Banner ── */
+    .note-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 16px;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 8px;
+      font-size: 12.5px;
+      color: #78350f;
+      line-height: 1.55;
+    }
+    .note-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── Paton note ── */
+    .paton-info {
+      font-size: 12px;
+      color: #6366f1;
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    /* ── Empty state ── */
+    .empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: var(--muted);
+      gap: 12px;
+      font-size: 15px;
+    }
+    .empty-icon { font-size: 48px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      .sidebar { width: 200px; }
+      .content { padding: 16px; }
+      .recipe-name { font-size: 20px; }
+    }
+
+    @media (max-width: 500px) {
+      .layout { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; max-height: 200px; border-right: none; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Topbar -->
+<header class="topbar">
+  <a class="topbar-back" href="index.html">&#8592; Weekly Schedule</a>
+  <h1 class="topbar-title">🥖 Atome Bakery &mdash; 📚 Recipes (MOPs)</h1>
+</header>
+
+<!-- Layout -->
+<div class="layout">
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">Recipes</div>
+    <!-- populated by JS -->
+  </nav>
+
+  <!-- Content -->
+  <main class="content" id="content">
+    <div class="empty-state">
+      <span class="empty-icon">📖</span>
+      <span>Select a recipe from the sidebar</span>
+    </div>
+  </main>
+
+</div>
+
+<!-- Data -->
+<script src="mops-data.js"></script>
+
+<!-- App -->
+<script>
+  // ── State ─────────────────────────────────────────────────────────────────
+  let selectedMopId = null;
+  let selectedUnits = 0;
+
+  // ── Helpers ───────────────────────────────────────────────────────────────
+
+  function formatG(g) {
+    if (g === null || g === undefined || isNaN(g)) return '—';
+    const rounded = Math.round(g);
+    if (rounded >= 1000) {
+      const kg = (rounded / 1000).toFixed(rounded % 1000 === 0 ? 0 : 1);
+      return `${kg} kg`;
+    }
+    return `${rounded} g`;
+  }
+
+  function formatPct(g, flourG) {
+    if (!flourG) return '—';
+    return (g / flourG * 100).toFixed(1) + '%';
+  }
+
+  function isPaton(mop) {
+    return mop.id === 'pac' || mop.id === 'croissant';
+  }
+
+  // For PAC/Croissant: each paton = 3616g dough (sum of non-topping ingredients)
+  // We compute it from the data itself for accuracy.
+  function patonDoughG(mop) {
+    return mop.ingredients
+      .filter(i => !i.is_topping)
+      .reduce((s, i) => s + i.g, 0);
+  }
+
+  function calcLoads(mop, units) {
+    const maxG = MIXER_MAX[mop.mixer];
+    if (isPaton(mop)) {
+      const patons = Math.ceil(units / mop.base_units);
+      const doughPerPaton = patonDoughG(mop);
+      const totalDoughG   = patons * doughPerPaton;
+      const loads         = Math.ceil(totalDoughG / maxG);
+      return { patons, totalDoughG, loads, doughPerLoad: totalDoughG / loads };
+    }
+    // Standard: scale all non-topping ingredients
+    const baseNonToppingG = mop.ingredients
+      .filter(i => !i.is_topping)
+      .reduce((s, i) => s + i.g, 0);
+    const totalDoughG = baseNonToppingG * (units / mop.base_units);
+    const loads       = Math.ceil(totalDoughG / maxG);
+    return { patons: null, totalDoughG, loads, doughPerLoad: totalDoughG / loads };
+  }
+
+  function scaledG(ing, mop, units) {
+    if (isPaton(mop)) {
+      const patons = Math.ceil(units / mop.base_units);
+      return ing.g * patons;
+    }
+    return ing.g * (units / mop.base_units);
+  }
+
+  // ── Sidebar ───────────────────────────────────────────────────────────────
+
+  function renderSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    // Keep header
+    const header = sidebar.querySelector('.sidebar-header');
+    sidebar.innerHTML = '';
+    sidebar.appendChild(header);
+
+    const categories = ['Bread', 'Pastry'];
+    const icons = { Bread: '🍞', Pastry: '🥐' };
+
+    for (const cat of categories) {
+      const section = document.createElement('div');
+      section.className = 'sidebar-section';
+
+      const label = document.createElement('div');
+      label.className = 'sidebar-section-label';
+      label.textContent = `${icons[cat]} ${cat.toUpperCase()}`;
+      section.appendChild(label);
+
+      const mops = MOPS.filter(m => m.category === cat);
+      for (const mop of mops) {
+        const btn = document.createElement('button');
+        btn.className = 'sidebar-item' + (mop.id === selectedMopId ? ' active' : '');
+        btn.textContent = mop.name;
+        btn.dataset.mopId = mop.id;
+        btn.addEventListener('click', () => selectMop(mop.id));
+        section.appendChild(btn);
+      }
+
+      sidebar.appendChild(section);
+    }
+  }
+
+  // ── Recipe Detail ─────────────────────────────────────────────────────────
+
+  function renderRecipe(mopId) {
+    const mop = MOPS.find(m => m.id === mopId);
+    if (!mop) return;
+
+    selectedMopId = mopId;
+    selectedUnits = mop.base_units;
+
+    const content = document.getElementById('content');
+    content.innerHTML = '';
+
+    // ── Header
+    const headerDiv = document.createElement('div');
+    headerDiv.className = 'recipe-header';
+
+    const nameWrap = document.createElement('div');
+    const nameEl = document.createElement('h2');
+    nameEl.className = 'recipe-name';
+    nameEl.textContent = mop.name;
+    nameWrap.appendChild(nameEl);
+
+    if (mop.note) {
+      const noteEl = document.createElement('div');
+      noteEl.className = 'paton-info';
+      noteEl.textContent = mop.note;
+      nameWrap.appendChild(noteEl);
+    }
+
+    const mixerBadge = document.createElement('div');
+    const mixerLabel = mop.mixer === 'large' ? '🔴 Large Mixer 150 kg' : '🟡 Small Mixer 50 kg';
+    mixerBadge.className = `mixer-badge ${mop.mixer}`;
+    mixerBadge.textContent = mixerLabel;
+
+    headerDiv.appendChild(nameWrap);
+    headerDiv.appendChild(mixerBadge);
+    content.appendChild(headerDiv);
+
+    // ── Note banner (allergen, special note if not paton-based)
+    // Allergen note is embedded in steps, no extra banner needed.
+
+    // ── Calculator
+    const calcCard = document.createElement('div');
+    calcCard.className = 'calc-card';
+
+    const calcLabelEl = document.createElement('div');
+    calcLabelEl.className = 'calc-label';
+    calcLabelEl.textContent = 'Scale recipe to:';
+    calcCard.appendChild(calcLabelEl);
+
+    const calcRow = document.createElement('div');
+    calcRow.className = 'calc-row';
+
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.className = 'calc-input';
+    input.id = 'qty-input';
+    input.min = '1';
+    input.value = mop.base_units;
+
+    const unitLabel = document.createElement('span');
+    unitLabel.className = 'calc-unit-label';
+    unitLabel.textContent = mop.unit_label;
+
+    calcRow.appendChild(input);
+    calcRow.appendChild(unitLabel);
+    calcCard.appendChild(calcRow);
+
+    const helper = document.createElement('div');
+    helper.className = 'calc-helper';
+    const flourKg = (mop.base_flour / 1000).toFixed(0);
+    if (isPaton(mop)) {
+      helper.textContent = `Reference: 1 paton = ${mop.base_units} ${mop.unit_label} (${patonDoughG(mop) / 1000}kg dough)`;
+    } else {
+      helper.textContent = `Reference batch: ${mop.base_units} ${mop.unit_label} (${flourKg}kg flour)`;
+    }
+    calcCard.appendChild(helper);
+
+    content.appendChild(calcCard);
+
+    // ── Ingredients Table
+    const ingCard = document.createElement('div');
+    ingCard.className = 'card';
+
+    const ingTitle = document.createElement('div');
+    ingTitle.className = 'card-title';
+    ingTitle.textContent = 'Ingredients';
+    ingCard.appendChild(ingTitle);
+
+    const table = document.createElement('table');
+    table.className = 'ingredients-table';
+    table.id = 'ing-table';
+
+    const thead = document.createElement('thead');
+    thead.innerHTML = `
+      <tr>
+        <th>Ingredient</th>
+        <th>Baker's %</th>
+        <th id="qty-col-header">For ${mop.base_units} ${mop.unit_label}</th>
+      </tr>`;
+    table.appendChild(thead);
+
+    const tbody = document.createElement('tbody');
+    tbody.id = 'ing-tbody';
+    table.appendChild(tbody);
+
+    ingCard.appendChild(table);
+    content.appendChild(ingCard);
+
+    // ── Mixer Loads Card
+    const loadsCard = document.createElement('div');
+    loadsCard.className = 'loads-card';
+    loadsCard.id = 'loads-card';
+
+    const loadsLabel = document.createElement('div');
+    loadsLabel.className = 'loads-label';
+    loadsLabel.textContent = 'Mixer Loads';
+    loadsCard.appendChild(loadsLabel);
+
+    const loadsMain = document.createElement('div');
+    loadsMain.className = 'loads-main';
+    loadsMain.id = 'loads-main';
+    loadsCard.appendChild(loadsMain);
+
+    const loadsDetail = document.createElement('div');
+    loadsDetail.className = 'loads-detail';
+    loadsDetail.id = 'loads-detail';
+    loadsCard.appendChild(loadsDetail);
+
+    content.appendChild(loadsCard);
+
+    // ── Production Steps
+    const stepsCard = document.createElement('div');
+    stepsCard.className = 'card';
+
+    const stepsTitle = document.createElement('div');
+    stepsTitle.className = 'card-title';
+    stepsTitle.textContent = 'Production Steps';
+    stepsCard.appendChild(stepsTitle);
+
+    const stepsList = document.createElement('div');
+    stepsList.className = 'steps-list';
+
+    mop.steps.forEach((step, idx) => {
+      const item = document.createElement('div');
+      item.className = 'step-item open'; // open by default
+
+      const hdr = document.createElement('div');
+      hdr.className = 'step-header';
+      hdr.innerHTML = `
+        <div class="step-number">${idx + 1}</div>
+        <div class="step-phase">${step.phase}</div>
+        <span class="step-chevron">&#9654;</span>`;
+
+      const body = document.createElement('div');
+      body.className = 'step-body';
+      body.textContent = step.detail;
+
+      hdr.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+
+      item.appendChild(hdr);
+      item.appendChild(body);
+      stepsList.appendChild(item);
+    });
+
+    stepsCard.appendChild(stepsList);
+    content.appendChild(stepsCard);
+
+    // ── Bind input
+    input.addEventListener('input', () => {
+      const val = parseInt(input.value, 10);
+      if (!isNaN(val) && val > 0) {
+        selectedUnits = val;
+        updateQuantities(val);
+      }
+    });
+
+    // Initial render
+    updateQuantities(mop.base_units);
+  }
+
+  // ── Update Quantities ─────────────────────────────────────────────────────
+
+  function updateQuantities(units) {
+    const mop = MOPS.find(m => m.id === selectedMopId);
+    if (!mop) return;
+
+    const flourIng = mop.ingredients.find(i => i.is_flour);
+    const flourG   = flourIng ? flourIng.g : 1;
+
+    // ── Column header
+    const colHeader = document.getElementById('qty-col-header');
+    if (colHeader) {
+      colHeader.textContent = `For ${units} ${mop.unit_label}`;
+    }
+
+    // ── Ingredients body
+    const tbody = document.getElementById('ing-tbody');
+    if (!tbody) return;
+    tbody.innerHTML = '';
+
+    let toppingStarted = false;
+    let nonToppingTotalG = 0;
+    let toppingTotalG    = 0;
+
+    mop.ingredients.forEach(ing => {
+      // Dashed separator before first topping
+      if (ing.is_topping && !toppingStarted) {
+        toppingStarted = true;
+        const sepRow = document.createElement('tr');
+        sepRow.className = 'ing-separator';
+        const sepTd = document.createElement('td');
+        sepTd.colSpan = 3;
+        const line = document.createElement('div');
+        line.className = 'ing-separator-line';
+        sepTd.appendChild(line);
+        sepRow.appendChild(sepTd);
+        tbody.appendChild(sepRow);
+      }
+
+      const scaled = scaledG(ing, mop, units);
+
+      if (!ing.is_topping) nonToppingTotalG += scaled;
+      else                  toppingTotalG   += scaled;
+
+      const row = document.createElement('tr');
+      if (ing.is_flour)   row.className = 'ing-row-flour';
+      if (ing.is_topping) row.className = 'ing-row-topping';
+
+      const pct = ing.is_flour ? '100.0%' : formatPct(ing.g, flourG);
+
+      row.innerHTML = `
+        <td>${ing.name}</td>
+        <td>${pct}</td>
+        <td>${formatG(scaled)}</td>`;
+      tbody.appendChild(row);
+    });
+
+    // Total row
+    const totalRow = document.createElement('tr');
+    totalRow.className = 'ing-row-total';
+    const totalDough = nonToppingTotalG;
+    totalRow.innerHTML = `
+      <td>Total dough weight</td>
+      <td></td>
+      <td>${formatG(totalDough)}</td>`;
+    tbody.appendChild(totalRow);
+
+    // ── Mixer loads
+    const loadsMain   = document.getElementById('loads-main');
+    const loadsDetail = document.getElementById('loads-detail');
+    if (!loadsMain || !loadsDetail) return;
+
+    const maxG       = MIXER_MAX[mop.mixer];
+    const mixerName  = mop.mixer === 'large' ? 'large' : 'small';
+    const maxKg      = (maxG / 1000).toFixed(0);
+
+    if (isPaton(mop)) {
+      const patons = Math.ceil(units / mop.base_units);
+      const doughPerPaton = patonDoughG(mop);
+      const totalDoughG   = patons * doughPerPaton;
+      const loads         = Math.ceil(totalDoughG / maxG);
+      const perLoad       = totalDoughG / loads;
+
+      loadsMain.innerHTML = `For <strong>${units}</strong> ${mop.unit_label} you need <strong>${patons}</strong> paton${patons > 1 ? 's' : ''} → <strong>${loads}</strong> mixer load${loads > 1 ? 's' : ''} in the ${mixerName} mixer`;
+      loadsDetail.textContent = `Each load: ~${formatG(perLoad)} of dough (max ${maxKg} kg)  ·  Each paton: ${formatG(doughPerPaton)}`;
+    } else {
+      const { loads, doughPerLoad } = calcLoads(mop, units);
+      loadsMain.innerHTML = `For <strong>${units}</strong> ${mop.unit_label} you need <strong>${loads}</strong> load${loads > 1 ? 's' : ''} in the ${mixerName} mixer`;
+      loadsDetail.textContent = `Each load: ~${formatG(doughPerLoad)} of dough  (max ${maxKg} kg)`;
+    }
+  }
+
+  // ── Select MOP ────────────────────────────────────────────────────────────
+
+  function selectMop(mopId) {
+    selectedMopId = mopId;
+    // Update sidebar active state
+    document.querySelectorAll('.sidebar-item').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.mopId === mopId);
+    });
+    renderRecipe(mopId);
+  }
+
+  // ── Init ──────────────────────────────────────────────────────────────────
+
+  renderSidebar();
+  selectMop('trad-baguette');
+</script>
+</body>
+</html>
