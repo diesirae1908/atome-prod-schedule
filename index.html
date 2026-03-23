@@ -645,6 +645,14 @@ function isoToday() {
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
 
+function isoWeekNumber(iso) {
+  const d = new Date(iso + "T00:00:00");
+  const dayOfWeek = (d.getDay() + 6) % 7; // Mon=0, Sun=6
+  d.setDate(d.getDate() - dayOfWeek + 3); // move to Thursday of this week
+  const yearStart = new Date(d.getFullYear(), 0, 1);
+  return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+}
+
 function mondayOfWeek(iso) {
   const d = new Date(iso + "T00:00:00");
   const day = d.getDay() === 0 ? 6 : d.getDay() - 1;
@@ -1008,11 +1016,7 @@ function render() {
   root.appendChild(buildTable(viewWeekStart));
   root.style.display = "block";
 
-  const wn = scheduleData?.week_number;
-  const isSecondWeek = viewWeekStart > (scheduleData?.week_start || viewWeekStart);
-  document.getElementById("weekBadge").textContent = wn
-    ? "W" + (wn + (isSecondWeek ? 1 : 0))
-    : "Week of " + fmtDate(viewWeekStart);
+  document.getElementById("weekBadge").textContent = "W" + isoWeekNumber(viewWeekStart);
 
   const gen = scheduleData?.generated_at
     ? new Date(scheduleData.generated_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })
@@ -1142,11 +1146,7 @@ function populateWeekPicker() {
   while (cursor >= earliest) {
     const wMon = cursor;
     const wSun = addDays(wMon, 6);
-    const wNum = new Date(wMon + "T00:00:00").toLocaleDateString("en-GB", {});
-    // ISO week number
-    const d = new Date(wMon + "T00:00:00");
-    const jan4 = new Date(d.getFullYear(), 0, 4);
-    const wk = Math.ceil(((d - jan4) / 86400000 + jan4.getDay() + 1) / 7);
+    const wk = isoWeekNumber(wMon);
     const label = `W${wk} · ${fmtDate(wMon)} – ${fmtDate(wSun)}`;
 
     const btn = document.createElement("button");
