@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atome Bakery – Production Outputs</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; background: #f3f4f6; color: #111827; }
+
+    /* ── topbar ── */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; gap: 14px;
+      padding: 10px 20px;
+      background: #1e1b4b; color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .back-btn {
+      background: #312e81; color: #c7d2fe;
+      padding: 5px 12px; border-radius: 6px;
+      font-size: 13px; font-weight: 600; text-decoration: none;
+      transition: background .15s;
+    }
+    .back-btn:hover { background: #3730a3; color: #fff; }
+    .topbar h1 { font-size: 17px; font-weight: 700; letter-spacing: .02em; flex: 1; }
+
+    /* ── filters bar ── */
+    .filters {
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+      background: #fff; padding: 12px 20px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .filters label { font-size: 12px; font-weight: 600; color: #374151; }
+    .filters select, .filters input[type="date"] {
+      padding: 5px 8px; border: 1px solid #d1d5db; border-radius: 6px;
+      font-size: 12px; color: #111827; background: #fff;
+    }
+    .filters select:focus, .filters input:focus { outline: none; border-color: #4338ca; }
+    .filter-group { display: flex; align-items: center; gap: 6px; }
+    .btn-reset {
+      padding: 5px 12px; border: 1px solid #d1d5db; border-radius: 6px;
+      background: #fff; font-size: 12px; cursor: pointer; color: #6b7280;
+      transition: all .1s;
+    }
+    .btn-reset:hover { border-color: #4338ca; color: #4338ca; }
+
+    /* ── summary cards ── */
+    .summary { display: flex; gap: 12px; padding: 16px 20px; flex-wrap: wrap; }
+    .card {
+      background: #fff; border-radius: 10px; padding: 16px 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08); min-width: 160px; flex: 1;
+    }
+    .card .card-label { font-size: 11px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+    .card .card-value { font-size: 28px; font-weight: 800; color: #1e1b4b; }
+    .card .card-sub   { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+
+    /* ── table ── */
+    .table-wrap { padding: 0 20px 32px; overflow-x: auto; }
+    table.outputs {
+      width: 100%; border-collapse: collapse;
+      background: #fff; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    }
+    table.outputs th {
+      padding: 10px 12px; text-align: left;
+      background: #1e1b4b; color: #c7d2fe;
+      font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+      white-space: nowrap;
+    }
+    table.outputs td {
+      padding: 9px 12px; border-bottom: 1px solid #f3f4f6;
+      font-size: 12px; color: #374151; vertical-align: middle;
+    }
+    table.outputs tr:last-child td { border-bottom: none; }
+    table.outputs tr:hover td { background: #f9fafb; }
+
+    .type-badge {
+      display: inline-block; padding: 2px 8px; border-radius: 10px;
+      font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+    }
+    .type-shaping   { background: #e0f2fe; color: #0284c7; }
+    .type-vacuuming { background: #d1fae5; color: #059669; }
+
+    .variance { font-weight: 700; }
+    .var-over  { color: #059669; }
+    .var-under { color: #dc2626; }
+    .var-exact { color: #6b7280; }
+
+    .mo-ref { font-size: 10px; color: #9ca3af; }
+
+    .empty-state {
+      text-align: center; padding: 60px 20px;
+      color: #9ca3af; font-size: 14px;
+    }
+    .empty-state .big { font-size: 40px; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="back-btn">← Weekly Schedule</a>
+  <span style="font-size:22px">🥖</span>
+  <h1>Atome Bakery — 📊 Production Outputs</h1>
+</div>
+
+<div class="filters">
+  <div class="filter-group">
+    <label>From</label>
+    <input type="date" id="filterFrom" />
+  </div>
+  <div class="filter-group">
+    <label>To</label>
+    <input type="date" id="filterTo" />
+  </div>
+  <div class="filter-group">
+    <label>Type</label>
+    <select id="filterType">
+      <option value="">All</option>
+      <option value="shaping">Shaping</option>
+      <option value="vacuuming">Vacuuming</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Product</label>
+    <select id="filterProduct">
+      <option value="">All products</option>
+    </select>
+  </div>
+  <button class="btn-reset" id="btnReset">Reset filters</button>
+</div>
+
+<div class="summary" id="summary"></div>
+
+<div class="table-wrap">
+  <table class="outputs">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Product</th>
+        <th>MO Ref</th>
+        <th>Target</th>
+        <th>Actual</th>
+        <th>Variance</th>
+        <th>Recorded</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+  <div id="emptyState" class="empty-state" style="display:none">
+    <div class="big">📋</div>
+    No outputs recorded yet for the selected filters.
+  </div>
+</div>
+
+<script>
+const SUPA_URL = "https://ktbbmtyesrprvxrseiph.supabase.co";
+const SUPA_KEY = "sb_publishable_1vfCHnng8kWfUGFtOt9Dmw_Rzkn8M62";
+
+let allRows = [];
+
+async function fetchOutputs() {
+  const r = await fetch(SUPA_URL + "/rest/v1/production_outputs?select=*&order=recorded_date.desc,recorded_at.desc", {
+    headers: { "apikey": SUPA_KEY, "Authorization": "Bearer " + SUPA_KEY }
+  });
+  if (!r.ok) throw new Error("Supabase " + r.status);
+  return r.json();
+}
+
+function fmtDate(iso) {
+  if (!iso) return "–";
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-CA", { weekday: "short", year: "numeric", month: "short", day: "numeric" });
+}
+
+function fmtRecorded(ts) {
+  if (!ts) return "–";
+  const d = new Date(ts);
+  return d.toLocaleString("en-CA", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+}
+
+function render() {
+  const from    = document.getElementById("filterFrom").value;
+  const to      = document.getElementById("filterTo").value;
+  const type    = document.getElementById("filterType").value;
+  const product = document.getElementById("filterProduct").value;
+
+  let rows = allRows.filter(r => {
+    if (from    && r.recorded_date < from)   return false;
+    if (to      && r.recorded_date > to)     return false;
+    if (type    && r.task_type !== type)     return false;
+    if (product && r.product_name !== product) return false;
+    return true;
+  });
+
+  // ── Summary cards ──
+  const totalShaping   = rows.filter(r => r.task_type === "shaping").reduce((s, r) => s + (r.actual_qty || 0), 0);
+  const totalVacuuming = rows.filter(r => r.task_type === "vacuuming").reduce((s, r) => s + (r.actual_qty || 0), 0);
+  const days = new Set(rows.map(r => r.recorded_date)).size;
+  document.getElementById("summary").innerHTML = `
+    <div class="card"><div class="card-label">Shaping Total</div><div class="card-value">${Math.round(totalShaping).toLocaleString()}</div><div class="card-sub">units shaped</div></div>
+    <div class="card"><div class="card-label">Vacuuming Total</div><div class="card-value">${Math.round(totalVacuuming).toLocaleString()}</div><div class="card-sub">bundles packed</div></div>
+    <div class="card"><div class="card-label">Records</div><div class="card-value">${rows.length}</div><div class="card-sub">across ${days} day${days !== 1 ? "s" : ""}</div></div>
+  `;
+
+  // ── Table rows ──
+  const tbody = document.getElementById("tableBody");
+  const empty = document.getElementById("emptyState");
+
+  if (rows.length === 0) {
+    tbody.innerHTML = "";
+    empty.style.display = "block";
+    return;
+  }
+  empty.style.display = "none";
+
+  tbody.innerHTML = rows.map(r => {
+    const diff = r.target_qty != null ? (r.actual_qty - r.target_qty) : null;
+    let varHtml = "–";
+    if (diff !== null) {
+      const cls = diff > 0 ? "var-over" : diff < 0 ? "var-under" : "var-exact";
+      const sign = diff > 0 ? "+" : "";
+      varHtml = `<span class="variance ${cls}">${sign}${Math.round(diff)}</span>`;
+    }
+    const typeBadge = `<span class="type-badge type-${r.task_type}">${r.task_type}</span>`;
+    return `<tr>
+      <td>${fmtDate(r.recorded_date)}</td>
+      <td>${typeBadge}</td>
+      <td><strong>${r.product_name || "–"}</strong></td>
+      <td><span class="mo-ref">${r.mo_ref || "–"}</span></td>
+      <td>${r.target_qty != null ? Math.round(r.target_qty) + " " + r.unit : "–"}</td>
+      <td><strong>${Math.round(r.actual_qty)} ${r.unit}</strong></td>
+      <td>${varHtml}</td>
+      <td>${fmtRecorded(r.updated_at || r.recorded_at)}</td>
+    </tr>`;
+  }).join("");
+}
+
+function populateProductFilter() {
+  const products = [...new Set(allRows.map(r => r.product_name).filter(Boolean))].sort();
+  const sel = document.getElementById("filterProduct");
+  products.forEach(p => {
+    const opt = document.createElement("option");
+    opt.value = p; opt.textContent = p;
+    sel.appendChild(opt);
+  });
+}
+
+// ── Default date range: last 14 days ──
+function initDateDefaults() {
+  const today = new Date();
+  const from  = new Date(today); from.setDate(from.getDate() - 13);
+  const fmt = d => d.toISOString().slice(0, 10);
+  document.getElementById("filterFrom").value = fmt(from);
+  document.getElementById("filterTo").value   = fmt(today);
+}
+
+document.getElementById("btnReset").addEventListener("click", () => {
+  initDateDefaults();
+  document.getElementById("filterType").value    = "";
+  document.getElementById("filterProduct").value = "";
+  render();
+});
+["filterFrom", "filterTo", "filterType", "filterProduct"].forEach(id => {
+  document.getElementById(id).addEventListener("change", render);
+});
+
+(async () => {
+  try {
+    allRows = await fetchOutputs();
+    initDateDefaults();
+    populateProductFilter();
+    render();
+  } catch(e) {
+    document.getElementById("summary").innerHTML = `<p style="color:#dc2626;padding:20px">Could not load outputs: ${e.message}</p>`;
+  }
+})();
+</script>
+</body>
+</html>

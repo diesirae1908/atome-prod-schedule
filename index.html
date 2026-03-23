@@ -252,6 +252,48 @@
 
     .empty-cell { color: #d1d5db; font-size: 11px; }
 
+    /* ── output badge (shown on done shaping / vacuuming pills) ── */
+    .output-badge {
+      display: inline-block; margin-top: 3px;
+      font-size: 10px; font-weight: 600;
+      color: #4338ca; background: #ede9fe;
+      border: 1px solid #c4b5fd;
+      border-radius: 10px; padding: 1px 8px;
+      cursor: pointer; transition: background .1s;
+    }
+    .output-badge:hover { background: #ddd6fe; }
+
+    /* ── output entry modal overlay ── */
+    #outputModal {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,.55);
+      display: none; align-items: center; justify-content: center;
+    }
+    #outputModal.open { display: flex; }
+    .out-modal-box {
+      background: #fff; border-radius: 14px;
+      padding: 28px 32px; max-width: 360px; width: 90%;
+      box-shadow: 0 12px 48px rgba(0,0,0,.28);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .out-modal-box h3 { font-size: 16px; font-weight: 700; color: #1e1b4b; line-height: 1.35; }
+    .out-modal-box p  { font-size: 12px; color: #6b7280; margin: 0; }
+    #outModalInput {
+      width: 100%; padding: 10px 12px;
+      font-size: 24px; font-weight: 800; text-align: center;
+      border: 2px solid #e5e7eb; border-radius: 8px; outline: none;
+    }
+    #outModalInput:focus { border-color: #4338ca; }
+    #outModalSave {
+      width: 100%; padding: 11px;
+      background: #4338ca; color: #fff;
+      border: none; border-radius: 8px;
+      font-size: 14px; font-weight: 700; cursor: pointer;
+      transition: background .15s;
+    }
+    #outModalSave:hover { background: #3730a3; }
+    .out-modal-hint { font-size: 10px; color: #9ca3af; text-align: center; }
+
     /* ── loading / error ── */
     #loading, #error {
       display: flex; flex-direction: column; align-items: center;
@@ -301,6 +343,7 @@
   </div>
   <div style="display:flex;align-items:center;gap:8px">
     <a href="headpaper/index.html" class="planner-btn">📋 Daily Planner</a>
+    <a href="outputs.html" class="planner-btn">📊 Outputs</a>
     <div class="week-nav">
       <button id="prevWeek">◀</button>
       <span class="week-badge" id="weekBadge">W–</span>
@@ -323,6 +366,17 @@
     <span style="font-size:11px;color:var(--muted);margin-left:3px"> Vac order</span>
   </div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--today-border)"></div> Today</div>
+</div>
+
+<!-- ── Output Entry Modal (non-skippable) ── -->
+<div id="outputModal">
+  <div class="out-modal-box">
+    <h3 id="outModalTitle"></h3>
+    <p id="outModalSub"></p>
+    <input id="outModalInput" type="number" min="0" step="1" placeholder="0" />
+    <button id="outModalSave">Save</button>
+    <span class="out-modal-hint">A number is required to validate this task.</span>
+  </div>
 </div>
 
 <div class="schedule-wrap">
@@ -525,6 +579,48 @@ function ordinal(n) {
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
+// ── production output state ───────────────────────────────────────────────────
+let _outputMap = {}; // key: "date|type|moref" → row
+
+async function loadOutputs() {
+  try {
+    const rows = await supaFetch("GET", "/production_outputs?select=*");
+    _outputMap = {};
+    (rows || []).forEach(r => {
+      _outputMap[`${r.recorded_date}|${r.task_type}|${r.mo_ref}`] = r;
+    });
+  } catch(e) { console.warn("loadOutputs:", e); }
+}
+
+async function saveOutput(entry) {
+  try {
+    await supaFetch("POST", "/production_outputs", [{ ...entry, updated_at: new Date().toISOString() }]);
+    _outputMap[`${entry.recorded_date}|${entry.task_type}|${entry.mo_ref}`] = { ...entry };
+  } catch(e) {
+    console.warn("saveOutput:", e);
+    alert("Could not save output: " + e.message);
+  }
+}
+
+function showOutputModal({ title, subtitle, defaultValue, onSave }) {
+  document.getElementById("outModalTitle").textContent = title;
+  document.getElementById("outModalSub").textContent   = subtitle;
+  const inp = document.getElementById("outModalInput");
+  inp.value = defaultValue != null && defaultValue !== "" ? defaultValue : "";
+  inp.style.borderColor = "";
+  document.getElementById("outputModal").classList.add("open");
+  inp.focus(); inp.select();
+  document.getElementById("outModalSave").onclick = () => {
+    const val = parseInt(inp.value, 10);
+    if (isNaN(val) || val < 0) { inp.style.borderColor = "#ef4444"; inp.focus(); return; }
+    document.getElementById("outputModal").classList.remove("open");
+    onSave(val);
+  };
+  inp.onkeydown = e => { if (e.key === "Enter") document.getElementById("outModalSave").click(); };
+}
+
+function escAttr(s) { return (s || "").replace(/"/g, "&quot;"); }
+
 // ── state ─────────────────────────────────────────────────────────────────────
 let scheduleData = null;
 let viewWeekStart = mondayOfWeek(isoToday());
@@ -616,16 +712,25 @@ function renderMixCell(day) {
 function renderShapeCell(day) {
   if (!day || !day.shaping || day.shaping.length === 0) return '<span class="empty-cell">–</span>';
   return day.shaping.map(s => {
-    const key  = `check_${day.date}_shape_${s.mo_ref || s.name}`;
-    const done = lsGet(key) || false;
-    const qty  = s.qty_units ? `${s.qty_units} units` : "";
-    const sub  = [qty, s.mo_ref || ""].filter(Boolean).join(" · ");
+    const key     = `check_${day.date}_shape_${s.mo_ref || s.name}`;
+    const done    = lsGet(key) || false;
+    const moRef   = s.mo_ref || s.name;
+    const target  = Math.round(s.qty_units || 0);
+    const qty     = target ? `${target} units` : "";
+    const sub     = [qty, s.mo_ref || ""].filter(Boolean).join(" · ");
+    const outKey  = `${day.date}|shaping|${moRef}`;
+    const outEntry = _outputMap[outKey];
+    const outBadge = done && outEntry
+      ? `<span class="output-badge" data-section="shaping" data-date="${day.date}" data-moref="${escAttr(moRef)}" data-product="${escAttr(shortName(s.name))}" data-target="${target}">✏ ${outEntry.actual_qty} units shaped</span>`
+      : "";
+    const checkBtn = `<button class="pill-check${done ? " checked" : ""}" data-key="${key}" data-section="shaping" data-date="${day.date}" data-moref="${escAttr(moRef)}" data-product="${escAttr(shortName(s.name))}" data-target="${target}">✓</button>`;
     return `<div class="product-pill${done ? " done" : ""}">
       <div class="pill-header">
         <span class="prod-name">${shortName(s.name)}</span>
-        ${pillCheckBtn(key)}
+        ${checkBtn}
       </div>
       <span class="prod-sub">${sub}</span>
+      ${outBadge}
     </div>`;
   }).join("");
 }
@@ -656,13 +761,24 @@ function renderVacCell(day) {
       ? `${Math.round(v.qty_packs)} bundles · ${Math.round(v.qty_units)} units`
       : "";
 
+    const vacMoRef  = v.mo_ref || v.sku;
+    const vacTarget = Math.round(v.qty_packs || 0);
+    const outKey    = `${day.date}|vacuuming|${vacMoRef}`;
+    const outEntry  = _outputMap[outKey];
+    const outBadge  = allDone && outEntry
+      ? `<span class="output-badge" data-section="vacuuming" data-date="${day.date}" data-moref="${escAttr(vacMoRef)}" data-product="${escAttr(v.name)}" data-target="${vacTarget}">✏ ${outEntry.actual_qty} bundles packed</span>`
+      : "";
+
     const stepsHtml = [
       { n: 1, label: "Stickered" },
       { n: 2, label: "Dated" },
       { n: 3, label: "Packaged" },
-    ].map(st =>
-      `<button class="step-btn${step >= st.n ? " step-done" : ""}" data-vkey="${vKey}" data-step="${st.n}">${step >= st.n ? "✓ " : ""}${st.label}</button>`
-    ).join("");
+    ].map(st => {
+      const extra = st.n === 3
+        ? ` data-date="${day.date}" data-moref="${escAttr(vacMoRef)}" data-product="${escAttr(v.name)}" data-target="${vacTarget}"`
+        : "";
+      return `<button class="step-btn${step >= st.n ? " step-done" : ""}" data-vkey="${vKey}" data-step="${st.n}"${extra}>${step >= st.n ? "✓ " : ""}${st.label}</button>`;
+    }).join("");
 
     return `<div class="product-pill${allDone ? " done" : ""}">
       <div class="pill-header">
@@ -673,6 +789,7 @@ function renderVacCell(day) {
       ${dluoStr}
       ${v.mo_ref ? `<span class="prod-sub">${v.mo_ref}</span>` : ""}
       <div class="vac-steps">${stepsHtml}</div>
+      ${outBadge}
     </div>`;
   }).join("");
 }
@@ -777,9 +894,44 @@ function render() {
 
 // ── event delegation ──────────────────────────────────────────────────────────
 document.getElementById("scheduleRoot").addEventListener("click", e => {
+  // ── output badge click → re-edit ──
+  const outBadge = e.target.closest(".output-badge");
+  if (outBadge) {
+    const { section, date, moref, product, target } = outBadge.dataset;
+    const isShaping = section === "shaping";
+    const outKey = `${date}|${section}|${moref}`;
+    showOutputModal({
+      title:    isShaping ? `Update shaped count for ${product}` : `Update packed bundles for ${product}`,
+      subtitle: isShaping ? `Target: ${target} units` : `Target: ${target} bundles`,
+      defaultValue: _outputMap[outKey]?.actual_qty ?? "",
+      onSave: async val => {
+        await saveOutput({ recorded_date: date, task_type: section, product_name: product, mo_ref: moref, target_qty: parseInt(target), actual_qty: val, unit: isShaping ? "units" : "bundles" });
+        render();
+      }
+    });
+    return;
+  }
+
   const pillCheck = e.target.closest(".pill-check");
   if (pillCheck) {
-    lsSet(pillCheck.dataset.key, !(lsGet(pillCheck.dataset.key) || false));
+    const key = pillCheck.dataset.key;
+    const currentDone = lsGet(key) || false;
+    // Shaping: mandatory output entry when marking done
+    if (pillCheck.dataset.section === "shaping" && !currentDone) {
+      const { date, moref, product, target } = pillCheck.dataset;
+      showOutputModal({
+        title:    `How many ${product} were shaped?`,
+        subtitle: `Target: ${target} units`,
+        defaultValue: _outputMap[`${date}|shaping|${moref}`]?.actual_qty ?? "",
+        onSave: async val => {
+          lsSet(key, true);
+          await saveOutput({ recorded_date: date, task_type: "shaping", product_name: product, mo_ref: moref, target_qty: parseInt(target), actual_qty: val, unit: "units" });
+          render();
+        }
+      });
+      return;
+    }
+    lsSet(key, !currentDone);
     render(); return;
   }
 
@@ -787,7 +939,24 @@ document.getElementById("scheduleRoot").addEventListener("click", e => {
   if (stepBtn) {
     const key = stepBtn.dataset.vkey;
     const tgt = parseInt(stepBtn.dataset.step);
-    lsSet(key, (lsGet(key) || 0) >= tgt ? tgt - 1 : tgt);
+    const current = lsGet(key) || 0;
+    const newStep = current >= tgt ? tgt - 1 : tgt;
+    // Vacuuming Packaged (step 3): mandatory output entry when completing
+    if (tgt === 3 && newStep === 3) {
+      const { date, moref, product, target } = stepBtn.dataset;
+      showOutputModal({
+        title:    `How many ${product} bundles were packed?`,
+        subtitle: `Target: ${target} bundles`,
+        defaultValue: _outputMap[`${date}|vacuuming|${moref}`]?.actual_qty ?? "",
+        onSave: async val => {
+          lsSet(key, 3);
+          await saveOutput({ recorded_date: date, task_type: "vacuuming", product_name: product, mo_ref: moref, target_qty: parseInt(target), actual_qty: val, unit: "bundles" });
+          render();
+        }
+      });
+      return;
+    }
+    lsSet(key, newStep);
     render(); return;
   }
 
@@ -835,10 +1004,11 @@ document.getElementById("refreshBtn").addEventListener("click", triggerRefresh);
 // ── init ──────────────────────────────────────────────────────────────────────
 (async () => {
   try {
-    // Load schedule + sync checks from Supabase in parallel
+    // Load schedule + sync checks + load output records in parallel
     const [sched] = await Promise.all([
       loadSchedule(),
-      syncFromSupabase()
+      syncFromSupabase(),
+      loadOutputs()
     ]);
     scheduleData = sched;
     const todayMon = mondayOfWeek(isoToday());
