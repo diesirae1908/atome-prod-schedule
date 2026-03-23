@@ -1,9 +1,510 @@
 {
-  "generated_at": "2026-03-23T01:27:49Z",
-  "week_number": 13,
-  "week_start": "2026-03-23",
+  "generated_at": "2026-03-23T04:55:59Z",
+  "week_number": 10,
+  "week_start": "2026-03-02",
   "week_end": "2026-04-05",
   "days": [
+    {
+      "date": "2026-03-02",
+      "label": "MONDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-03",
+      "label": "TUESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-04",
+      "label": "WEDNESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-05",
+      "label": "THURSDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-06",
+      "label": "FRIDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-07",
+      "label": "SATURDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-08",
+      "label": "SUNDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-09",
+      "label": "MONDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-10",
+      "label": "TUESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-11",
+      "label": "WEDNESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-12",
+      "label": "THURSDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-13",
+      "label": "FRIDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-14",
+      "label": "SATURDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-15",
+      "label": "SUNDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-16",
+      "label": "MONDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-17",
+      "label": "TUESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-18",
+      "label": "WEDNESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-19",
+      "label": "THURSDAY",
+      "premix": [
+        {
+          "label": "Prep mix Viennoise",
+          "total_units": 204,
+          "products": [
+            "Viennoise (×2)"
+          ]
+        }
+      ],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Poppy Seed Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 126.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00526",
+          "products": [
+            "Poppy Seed Baguette (×3)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 252.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00529",
+          "products": [
+            "Sourdough Loaf (×2)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Sourdough Loaf (×2)",
+          "qty_packs": 180,
+          "qty_units": 360,
+          "total_kg": 252.0,
+          "mo_ref": "WH/MO/00529",
+          "d0": "2026-03-21"
+        }
+      ],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-03-20",
+      "label": "FRIDAY",
+      "premix": [
+        {
+          "label": "Prep mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Liège Waffle (×3)"
+          ]
+        }
+      ],
+      "mix": [
+        {
+          "dough_type": "PIZZA",
+          "label": "Pizza Dough (×2)",
+          "unit": "kg",
+          "total_kg": 130.4,
+          "total_units": 652,
+          "mo_ref": "WH/MO/00532",
+          "products": [
+            "Pizza Dough (×2)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 126.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00540",
+          "products": [
+            "Trad. Baguette (×3)"
+          ]
+        },
+        {
+          "dough_type": "VIENNOISE",
+          "label": "Viennoise (×2)",
+          "unit": "kg",
+          "total_kg": 40.8,
+          "total_units": 204,
+          "mo_ref": "WH/MO/00546",
+          "products": [
+            "Viennoise (×2)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "PIZ2-SGL",
+          "name": "Pizza Dough (×2)",
+          "qty_packs": 326,
+          "qty_units": 652,
+          "total_kg": 130.4,
+          "mo_ref": "WH/MO/00532",
+          "d0": "2026-03-22"
+        },
+        {
+          "sku": "PO3P-SGL",
+          "name": "Poppy Seed Baguette (×3)",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 126.0,
+          "mo_ref": "WH/MO/00526",
+          "d0": "2026-03-21"
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Viennoise (×2)",
+          "qty_packs": 102,
+          "qty_units": 204,
+          "total_kg": 40.8,
+          "mo_ref": "WH/MO/00546",
+          "d0": "2026-03-21"
+        }
+      ],
+      "vacuuming": [
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Choc. Croissant Bites (×8)",
+          "qty_packs": 120.0,
+          "qty_units": 960.0,
+          "dluo": "2026-06-06",
+          "mo_ref": "WH/MO/00570"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-21",
+      "label": "SATURDAY",
+      "premix": [
+        {
+          "label": "Prep mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Liège Waffle (×3)"
+          ]
+        }
+      ],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 252.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00531",
+          "products": [
+            "Sourdough Loaf (×2)"
+          ]
+        },
+        {
+          "dough_type": "WAFFLES",
+          "label": "Liège Waffle (×3)",
+          "unit": "kg",
+          "total_kg": 62.4,
+          "total_units": 624,
+          "mo_ref": "WH/MO/00538",
+          "products": [
+            "Liège Waffle (×3)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 126.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00541",
+          "products": [
+            "Trad. Baguette (×3)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "WA3P-SGL",
+          "name": "Liège Waffle (×3)",
+          "qty_packs": 208,
+          "qty_units": 624,
+          "total_kg": 62.4,
+          "mo_ref": "WH/MO/00538",
+          "d0": "2026-03-21"
+        },
+        {
+          "sku": "LF2P",
+          "name": "Sourdough Loaf (×2)",
+          "qty_packs": 180,
+          "qty_units": 360,
+          "total_kg": 252.0,
+          "mo_ref": "WH/MO/00531",
+          "d0": "2026-03-23"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Trad. Baguette (×3)",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 126.0,
+          "mo_ref": "WH/MO/00540",
+          "d0": "2026-03-22"
+        }
+      ],
+      "vacuuming": [
+        {
+          "sku": "WA3P-SGL",
+          "name": "Liège Waffle (×3)",
+          "qty_packs": 208.0,
+          "qty_units": 624.0,
+          "dluo": "2026-09-21",
+          "mo_ref": "WH/MO/00538"
+        },
+        {
+          "sku": "PO3P-SGL",
+          "name": "Poppy Seed Baguette (×3)",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "dluo": "2026-12-20",
+          "mo_ref": "WH/MO/00526"
+        },
+        {
+          "sku": "LF2P",
+          "name": "Sourdough Loaf (×2)",
+          "qty_packs": 180.0,
+          "qty_units": 360.0,
+          "dluo": "2026-12-19",
+          "mo_ref": "WH/MO/00529"
+        },
+        {
+          "sku": "2-CRVGN3P-SGL",
+          "name": "Vegan Croissant (×3)",
+          "qty_packs": 60.0,
+          "qty_units": 180.0,
+          "dluo": "2026-09-10",
+          "mo_ref": "WH/MO/00577"
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Viennoise (×2)",
+          "qty_packs": 102.0,
+          "qty_units": 204.0,
+          "dluo": "2026-09-20",
+          "mo_ref": "WH/MO/00546"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "label": "SUNDAY",
+      "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Multigrain Baguette (×3)"
+          ]
+        },
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 726,
+          "products": [
+            "Pain au Chocolat (×3)"
+          ]
+        }
+      ],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 378.0,
+          "total_units": 540,
+          "mo_ref": "WH/MO/00530",
+          "products": [
+            "Sourdough Loaf (×2)"
+          ]
+        },
+        {
+          "dough_type": "WAFFLES",
+          "label": "Liège Waffle (×3)",
+          "unit": "kg",
+          "total_kg": 62.4,
+          "total_units": 624,
+          "mo_ref": "WH/MO/00539",
+          "products": [
+            "Liège Waffle (×3)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 126.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00547",
+          "products": [
+            "Trad. Baguette (×3)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "WA3P-SGL",
+          "name": "Liège Waffle (×3)",
+          "qty_packs": 208,
+          "qty_units": 624,
+          "total_kg": 62.4,
+          "mo_ref": "WH/MO/00539",
+          "d0": "2026-03-22"
+        },
+        {
+          "sku": "LF2P",
+          "name": "Sourdough Loaf (×2)",
+          "qty_packs": 270,
+          "qty_units": 540,
+          "total_kg": 378.0,
+          "mo_ref": "WH/MO/00530",
+          "d0": "2026-03-24"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Trad. Baguette (×3)",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 126.0,
+          "mo_ref": "WH/MO/00541",
+          "d0": "2026-03-23"
+        }
+      ],
+      "vacuuming": [
+        {
+          "sku": "WA3P-SGL",
+          "name": "Liège Waffle (×3)",
+          "qty_packs": 208.0,
+          "qty_units": 624.0,
+          "dluo": "2026-09-22",
+          "mo_ref": "WH/MO/00539"
+        },
+        {
+          "sku": "PIZ2-SGL",
+          "name": "Pizza Dough (×2)",
+          "qty_packs": 326.0,
+          "qty_units": 652.0,
+          "dluo": "2026-12-20",
+          "mo_ref": "WH/MO/00532"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Trad. Baguette (×3)",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "dluo": "2026-12-21",
+          "mo_ref": "WH/MO/00540"
+        }
+      ]
+    },
     {
       "date": "2026-03-23",
       "label": "MONDAY",
@@ -253,8 +754,8 @@
           "dough_type": "PIZZA",
           "label": "Pizza Dough (×2)",
           "unit": "kg",
-          "total_kg": 195.6,
-          "total_units": 978,
+          "total_kg": 198.8,
+          "total_units": 994,
           "mo_ref": "WH/MO/00556",
           "products": [
             "Pizza Dough (×2)"
@@ -294,9 +795,9 @@
         {
           "sku": "PIZ2-SGL",
           "name": "Pizza Dough (×2)",
-          "qty_packs": 489,
-          "qty_units": 978,
-          "total_kg": 195.6,
+          "qty_packs": 497,
+          "qty_units": 994,
+          "total_kg": 198.8,
           "mo_ref": "WH/MO/00556",
           "d0": "2026-03-27"
         }
@@ -542,8 +1043,8 @@
         {
           "sku": "PIZ2-SGL",
           "name": "Pizza Dough (×2)",
-          "qty_packs": 489.0,
-          "qty_units": 978.0,
+          "qty_packs": 497.0,
+          "qty_units": 994.0,
           "dluo": "2026-12-25",
           "mo_ref": "WH/MO/00556"
         },
