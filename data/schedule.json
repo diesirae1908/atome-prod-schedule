@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T04:55:59Z",
+  "generated_at": "2026-03-23T05:04:57Z",
   "week_number": 10,
   "week_start": "2026-03-02",
   "week_end": "2026-04-05",
@@ -149,6 +149,9 @@
           "total_units": 204,
           "products": [
             "Viennoise (×2)"
+          ],
+          "mo_refs": [
+            "WH/MO/00546"
           ]
         }
       ],
@@ -198,6 +201,9 @@
           "total_units": 624,
           "products": [
             "Liège Waffle (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00538"
           ]
         }
       ],
@@ -285,6 +291,9 @@
           "total_units": 624,
           "products": [
             "Liège Waffle (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00539"
           ]
         }
       ],
@@ -404,6 +413,9 @@
           "total_units": 360,
           "products": [
             "Multigrain Baguette (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00575"
           ]
         },
         {
@@ -411,6 +423,9 @@
           "total_units": 726,
           "products": [
             "Pain au Chocolat (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00561"
           ]
         }
       ],
@@ -514,6 +529,9 @@
           "total_units": 360,
           "products": [
             "Multigrain Baguette (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00576"
           ]
         },
         {
@@ -521,6 +539,9 @@
           "total_units": 726,
           "products": [
             "Pain au Chocolat (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00572"
           ]
         }
       ],
@@ -624,6 +645,9 @@
           "total_units": 726,
           "products": [
             "Pain au Chocolat (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00563"
           ]
         }
       ],
@@ -735,6 +759,9 @@
           "total_units": 726,
           "products": [
             "Pain au Chocolat (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00585"
           ]
         }
       ],
@@ -838,6 +865,9 @@
           "total_units": 726,
           "products": [
             "Pain au Chocolat (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00586"
           ]
         }
       ],
@@ -949,6 +979,9 @@
           "total_units": 348,
           "products": [
             "Brioche Buns (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00565"
           ]
         },
         {
@@ -956,6 +989,9 @@
           "total_units": 624,
           "products": [
             "Liège Waffle (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00566"
           ]
         }
       ],
@@ -1067,6 +1103,9 @@
           "total_units": 624,
           "products": [
             "Liège Waffle (×3)"
+          ],
+          "mo_refs": [
+            "WH/MO/00567"
           ]
         }
       ],
