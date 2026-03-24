@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24T18:11:17Z",
+  "generated_at": "2026-03-24T18:13:24Z",
   "week_number": 10,
   "week_start": "2026-03-02",
   "week_end": "2026-04-05",
@@ -499,8 +499,8 @@
           "dough_type": "PIZZA",
           "label": "Pizza Dough (×2)",
           "unit": "kg",
-          "total_kg": 99.2,
-          "total_units": 496,
+          "total_kg": 165.2,
+          "total_units": 826,
           "mo_ref": "WH/MO/00556",
           "products": [
             "Pizza Dough (×2)"
@@ -540,9 +540,9 @@
         {
           "sku": "PIZ2-SGL",
           "name": "Pizza Dough (×2)",
-          "qty_packs": 248,
-          "qty_units": 496,
-          "total_kg": 99.2,
+          "qty_packs": 413,
+          "qty_units": 826,
+          "total_kg": 165.2,
           "mo_ref": "WH/MO/00556",
           "d0": "2026-03-27"
         }
@@ -789,8 +789,8 @@
         {
           "sku": "PIZ2-SGL",
           "name": "Pizza Dough (×2)",
-          "qty_packs": 248.0,
-          "qty_units": 496.0,
+          "qty_packs": 413.0,
+          "qty_units": 826.0,
           "dluo": "2026-12-25",
           "mo_ref": "WH/MO/00556"
         },
