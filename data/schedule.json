@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24T18:53:45Z",
+  "generated_at": "2026-03-24T21:25:49Z",
   "week_number": 10,
   "week_start": "2026-03-02",
   "week_end": "2026-04-05",
@@ -160,41 +160,8 @@
       "date": "2026-03-21",
       "label": "SATURDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 252.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00531",
-          "products": [
-            "Sourdough Loaf (×2)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 126.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00541",
-          "products": [
-            "Trad. Baguette (×3)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Sourdough Loaf (×2)",
-          "qty_packs": 180,
-          "qty_units": 360,
-          "total_kg": 252.0,
-          "mo_ref": "WH/MO/00531",
-          "d0": "2026-03-23"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "vacuuming": []
     },
     {
@@ -245,15 +212,6 @@
           "total_kg": 378.0,
           "mo_ref": "WH/MO/00530",
           "d0": "2026-03-24"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Trad. Baguette (×3)",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 126.0,
-          "mo_ref": "WH/MO/00541",
-          "d0": "2026-03-23"
         }
       ],
       "vacuuming": []
@@ -336,32 +294,7 @@
           "d0": "2026-03-24"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Sourdough Loaf (×2)",
-          "qty_packs": 180.0,
-          "qty_units": 360.0,
-          "dluo": "2026-12-21",
-          "mo_ref": "WH/MO/00531"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Trad. Baguette (×3)",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "dluo": "2026-12-22",
-          "mo_ref": "WH/MO/00541"
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "[1-AT3P-SGL] Pack of 3 apple turnover",
-          "qty_packs": 100.0,
-          "qty_units": 100.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00579"
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-03-24",
