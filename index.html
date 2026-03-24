@@ -1219,10 +1219,36 @@ function renderMopModal(mopId, units) {
   const bagKg = mop.id === "pizza" ? 25 : 20;
   const bagG  = bagKg * 1000;
   const nonToppingIngrs = mop.ingredients.filter(i => !i.is_topping);
+  const flourIngr = nonToppingIngrs.find(i => i.is_flour);
+
+  // Optimise flour distribution: maximise whole-bag loads by concentrating
+  // any fractional remainder into as few loads as possible.
+  // e.g. 5 bags × 2 loads → [3, 2] not [2.5, 2.5]
+  //      5.5 bags × 2 loads → [3, 2.5] not [2.75, 2.75]
+  let loadFlourG; // grams of flour assigned to each load
+  const totalFlourG = flourIngr ? Math.round(flourIngr.g * scale) : 1;
+  if (flourIngr) {
+    const totalBagsF = totalFlourG / bagG;
+    const b          = Math.floor(totalBagsF / loads);   // base bags per load
+    const r          = totalBagsF - b * loads;            // bags left to distribute (0 ≤ r < loads)
+    const wholePlus1 = Math.floor(r);                     // how many loads get (b+1) whole bags
+    const frac       = r - wholePlus1;                    // residual fraction goes into one load
+    loadFlourG = Array.from({ length: loads }, (_, i) => {
+      if (i < wholePlus1)                   return (b + 1)    * bagG;  // whole extra bag
+      if (i === wholePlus1 && frac > 0.001) return (b + frac) * bagG;  // leftover fraction
+      return b * bagG;                                                    // base bags
+    });
+  } else {
+    // No flour ingredient — split every ingredient evenly
+    loadFlourG = Array.from({ length: loads }, () => totalFlourG / loads);
+  }
+
   const loadBoxes = Array.from({ length: loads }, (_, li) => {
+    // Scale all non-flour ingredients proportionally to this load's flour amount
+    const flourFrac = loadFlourG[li] / totalFlourG;
     const rows = nonToppingIngrs.map(ing => {
       const totalG = Math.round(ing.g * scale);
-      const loadG  = totalG / loads;
+      const loadG  = ing.is_flour ? loadFlourG[li] : Math.round(totalG * flourFrac);
       let bagHtml  = "";
       if (ing.is_flour) {
         const bags    = loadG / bagG;
@@ -1236,7 +1262,10 @@ function renderMopModal(mopId, units) {
         <span style="font-weight:600;white-space:nowrap">${Math.round(loadG).toLocaleString()}g${bagHtml}</span>
       </div>`;
     }).join("");
-    const loadTotal = nonToppingIngrs.reduce((s, i) => s + Math.round(i.g * scale) / loads, 0);
+    const loadTotal = nonToppingIngrs.reduce((s, ing) => {
+      const totalG = Math.round(ing.g * scale);
+      return s + (ing.is_flour ? loadFlourG[li] : Math.round(totalG * flourFrac));
+    }, 0);
     return `<div style="flex:1;min-width:160px;background:rgba(255,255,255,.7);border:1px solid #bbf7d0;border-radius:8px;padding:9px 11px;">
       <div style="font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#059669;margin-bottom:6px;">Load ${li+1} of ${loads}</div>
       ${rows}
