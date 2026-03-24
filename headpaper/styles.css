@@ -409,6 +409,7 @@ body {
   border: 1px solid var(--border);
   overflow: hidden;
   background: #fff;
+  flex-shrink: 0;
 }
 
 .task-category-header {
