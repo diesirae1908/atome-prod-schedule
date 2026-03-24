@@ -3541,55 +3541,64 @@ function deleteBaker(bakerIndex) {
     syncHeaderScroll();
 }
 
-// Sync horizontal scroll between header and grid
+// Sync horizontal scroll between baker-name header row and the schedule grid.
+// Both have a sticky 100px time column on the left, so scrollLeft maps 1:1.
+// Uses scroll events + rAF polling as fallback (scroll events may not fire
+// in all environments for programmatic scrollLeft changes).
 function syncHeaderScroll() {
-    const scheduleHeader = document.querySelector('.schedule-header');
+    const bakerHeaders = document.getElementById('baker-headers');
     const scheduleGrid = document.getElementById('schedule-grid');
-    
-    if (!scheduleHeader || !scheduleGrid) return;
-    
-    // Remove old listeners by using named functions we can track
-    if (scheduleGrid._scrollHandler) {
-        scheduleGrid.removeEventListener('scroll', scheduleGrid._scrollHandler);
-    }
-    if (scheduleHeader._scrollHandler) {
-        scheduleHeader.removeEventListener('scroll', scheduleHeader._scrollHandler);
-    }
-    
-    // Create new handlers
-    scheduleGrid._scrollHandler = function() {
-        if (scheduleHeader.scrollLeft !== scheduleGrid.scrollLeft) {
-            scheduleHeader.scrollLeft = scheduleGrid.scrollLeft;
-        }
-    };
-    
-    scheduleHeader._scrollHandler = function() {
-        if (scheduleGrid.scrollLeft !== scheduleHeader.scrollLeft) {
-            scheduleGrid.scrollLeft = scheduleHeader.scrollLeft;
-        }
-    };
-    
-    // Add listeners
-    scheduleGrid.addEventListener('scroll', scheduleGrid._scrollHandler);
-    scheduleHeader.addEventListener('scroll', scheduleHeader._scrollHandler);
-}
 
-// Sync horizontal scroll between header and grid
-function syncHeaderScroll() {
-    const scheduleHeader = document.querySelector('.schedule-header');
-    const scheduleGrid = document.getElementById('schedule-grid');
-    
-    if (!scheduleHeader || !scheduleGrid) return;
-    
-    // Sync grid scroll to header
-    scheduleGrid.addEventListener('scroll', function() {
-        scheduleHeader.scrollLeft = scheduleGrid.scrollLeft;
-    });
-    
-    // Sync header scroll to grid
-    scheduleHeader.addEventListener('scroll', function() {
-        scheduleGrid.scrollLeft = scheduleHeader.scrollLeft;
-    });
+    if (!bakerHeaders || !scheduleGrid) return;
+
+    // Cancel previous rAF loop and listeners
+    if (window._syncScrollRafId) cancelAnimationFrame(window._syncScrollRafId);
+    if (scheduleGrid._scrollHandler) scheduleGrid.removeEventListener('scroll', scheduleGrid._scrollHandler);
+    if (bakerHeaders._scrollHandler)  bakerHeaders.removeEventListener('scroll', bakerHeaders._scrollHandler);
+
+    let syncing = false;
+
+    scheduleGrid._scrollHandler = function() {
+        if (syncing) return;
+        syncing = true;
+        bakerHeaders.scrollLeft = scheduleGrid.scrollLeft;
+        syncing = false;
+    };
+    bakerHeaders._scrollHandler = function() {
+        if (syncing) return;
+        syncing = true;
+        scheduleGrid.scrollLeft = bakerHeaders.scrollLeft;
+        syncing = false;
+    };
+
+    scheduleGrid.addEventListener('scroll', scheduleGrid._scrollHandler);
+    bakerHeaders.addEventListener('scroll', bakerHeaders._scrollHandler);
+
+    // rAF polling — detects scrollLeft changes even when scroll events don't fire
+    let prevGrid   = scheduleGrid.scrollLeft;
+    let prevHeader = bakerHeaders.scrollLeft;
+
+    function rafSync() {
+        if (!syncing) {
+            const gs = scheduleGrid.scrollLeft;
+            const hs = bakerHeaders.scrollLeft;
+            if (gs !== prevGrid) {
+                prevGrid = gs;
+                syncing = true;
+                bakerHeaders.scrollLeft = gs;
+                prevHeader = bakerHeaders.scrollLeft; // clamp-aware
+                syncing = false;
+            } else if (hs !== prevHeader) {
+                prevHeader = hs;
+                syncing = true;
+                scheduleGrid.scrollLeft = hs;
+                prevGrid = scheduleGrid.scrollLeft;
+                syncing = false;
+            }
+        }
+        window._syncScrollRafId = requestAnimationFrame(rafSync);
+    }
+    window._syncScrollRafId = requestAnimationFrame(rafSync);
 }
 
 // ============================================================================
