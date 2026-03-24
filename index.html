@@ -1226,9 +1226,9 @@ function renderMopModal(mopId, units) {
   // e.g. 5 bags × 2 loads → [3, 2] not [2.5, 2.5]
   //      5.5 bags × 2 loads → [3, 2.5] not [2.75, 2.75]
   let loadFlourG; // grams of flour assigned to each load
-  const totalFlourG = flourIngr ? Math.round(flourIngr.g * scale) : 1;
+  const scaledFlourG = flourIngr ? Math.round(flourIngr.g * scale) : 1;
   if (flourIngr) {
-    const totalBagsF = totalFlourG / bagG;
+    const totalBagsF = scaledFlourG / bagG;
     const b          = Math.floor(totalBagsF / loads);   // base bags per load
     const r          = totalBagsF - b * loads;            // bags left to distribute (0 ≤ r < loads)
     const wholePlus1 = Math.floor(r);                     // how many loads get (b+1) whole bags
@@ -1240,12 +1240,12 @@ function renderMopModal(mopId, units) {
     });
   } else {
     // No flour ingredient — split every ingredient evenly
-    loadFlourG = Array.from({ length: loads }, () => totalFlourG / loads);
+    loadFlourG = Array.from({ length: loads }, () => scaledFlourG / loads);
   }
 
   const loadBoxes = Array.from({ length: loads }, (_, li) => {
     // Scale all non-flour ingredients proportionally to this load's flour amount
-    const flourFrac = loadFlourG[li] / totalFlourG;
+    const flourFrac = loadFlourG[li] / scaledFlourG;
     const rows = nonToppingIngrs.map(ing => {
       const totalG = Math.round(ing.g * scale);
       const loadG  = ing.is_flour ? loadFlourG[li] : Math.round(totalG * flourFrac);
