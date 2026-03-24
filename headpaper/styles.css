@@ -984,6 +984,109 @@ body {
   opacity: 1;
 }
 
+.scheduled-task-content {
+  flex: 1;
+  padding: 2px 4px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.scheduled-task-header {
+  font-weight: 700;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.scheduled-task-details {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.88);
+  flex-shrink: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.scheduled-task-description {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  line-height: 1.2;
+  margin-top: 2px;
+  flex-shrink: 0;
+  display: none;
+}
+
+.scheduled-task.min-height .scheduled-task-description {
+  display: block;
+}
+
+.scheduled-task-warning {
+  display: inline-block;
+  margin-right: 2px;
+  font-size: 10px;
+}
+
+.scheduled-task-actions {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.scheduled-task:hover .scheduled-task-actions {
+  opacity: 1;
+}
+
+.scheduled-task-edit,
+.scheduled-task-duplicate,
+.scheduled-task-remove {
+  background: rgba(0, 0, 0, 0.35);
+  border: none;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  pointer-events: auto;
+  padding: 0;
+  line-height: 1;
+}
+
+.scheduled-task-edit:hover {
+  background: rgba(99, 102, 241, 0.85);
+}
+
+.scheduled-task-duplicate:hover {
+  background: rgba(16, 185, 129, 0.85);
+}
+
+.scheduled-task-remove:hover {
+  background: rgba(220, 38, 38, 0.85);
+}
+
+.scheduled-task-conflict {
+  outline: 2px solid #f87171;
+  outline-offset: -2px;
+}
+
 /* ============================================================
    MODALS
    ============================================================ */
@@ -1000,6 +1103,7 @@ body {
 }
 
 .modal.open,
+.modal.active,
 .modal[style*="display: flex"],
 .modal[style*="display:flex"] {
   display: flex;
