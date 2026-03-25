@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24T21:25:49Z",
+  "generated_at": "2026-03-25T01:04:15Z",
   "week_number": 10,
   "week_start": "2026-03-02",
   "week_end": "2026-04-05",
@@ -640,17 +640,6 @@
       ],
       "mix": [
         {
-          "dough_type": "TRAD",
-          "label": "Cheese Baguette",
-          "unit": "kg",
-          "total_kg": 144.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00551",
-          "products": [
-            "Cheese Baguette"
-          ]
-        },
-        {
           "dough_type": "CIABATTA",
           "label": "Ciabatta (×3)",
           "unit": "kg",
@@ -670,6 +659,17 @@
           "mo_ref": "WH/MO/00586",
           "products": [
             "Pain au Chocolat (×3)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 126.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00588",
+          "products": [
+            "Trad. Baguette (×3)"
           ]
         }
       ],
@@ -754,6 +754,17 @@
       ],
       "mix": [
         {
+          "dough_type": "TRAD",
+          "label": "Cheese Baguette",
+          "unit": "kg",
+          "total_kg": 144.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00551",
+          "products": [
+            "Cheese Baguette"
+          ]
+        },
+        {
           "dough_type": "CIABATTA",
           "label": "Ciabatta (×3)",
           "unit": "kg",
@@ -798,15 +809,6 @@
           "d0": "2026-03-29"
         },
         {
-          "sku": "CH-SGL",
-          "name": "Cheese Baguette",
-          "qty_packs": 360,
-          "qty_units": 360,
-          "total_kg": 144.0,
-          "mo_ref": "WH/MO/00551",
-          "d0": "2026-03-29"
-        },
-        {
           "sku": "CIA3-SGL",
           "name": "Ciabatta (×3)",
           "qty_packs": 140,
@@ -823,6 +825,15 @@
           "total_kg": 41.4,
           "mo_ref": "WH/MO/00566",
           "d0": "2026-03-28"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Trad. Baguette (×3)",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 126.0,
+          "mo_ref": "WH/MO/00588",
+          "d0": "2026-03-29"
         }
       ],
       "vacuuming": [
@@ -877,8 +888,8 @@
           "dough_type": "TRAD",
           "label": "Sourdough Loaf (×2)",
           "unit": "kg",
-          "total_kg": 378.0,
-          "total_units": 540,
+          "total_kg": 252.0,
+          "total_units": 360,
           "mo_ref": "WH/MO/00560",
           "products": [
             "Sourdough Loaf (×2)"
@@ -898,6 +909,15 @@
       ],
       "shaping": [
         {
+          "sku": "CH-SGL",
+          "name": "Cheese Baguette",
+          "qty_packs": 360,
+          "qty_units": 360,
+          "total_kg": 144.0,
+          "mo_ref": "WH/MO/00551",
+          "d0": "2026-03-30"
+        },
+        {
           "sku": "WA3P-SGL",
           "name": "Liège Waffle (×3)",
           "qty_packs": 138,
@@ -909,9 +929,9 @@
         {
           "sku": "LF2P",
           "name": "Sourdough Loaf (×2)",
-          "qty_packs": 270,
-          "qty_units": 540,
-          "total_kg": 378.0,
+          "qty_packs": 180,
+          "qty_units": 360,
+          "total_kg": 252.0,
           "mo_ref": "WH/MO/00560",
           "d0": "2026-03-31"
         }
@@ -924,14 +944,6 @@
           "qty_units": 348.0,
           "dluo": "2026-09-28",
           "mo_ref": "WH/MO/00565"
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Cheese Baguette",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "dluo": "2026-12-27",
-          "mo_ref": "WH/MO/00551"
         },
         {
           "sku": "CIA3-SGL",
@@ -948,6 +960,14 @@
           "qty_units": 414.0,
           "dluo": "2026-09-29",
           "mo_ref": "WH/MO/00567"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Trad. Baguette (×3)",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "dluo": "2026-12-31",
+          "mo_ref": "WH/MO/00588"
         }
       ]
     },
@@ -958,6 +978,14 @@
       "mix": [],
       "shaping": [],
       "vacuuming": [
+        {
+          "sku": "CH-SGL",
+          "name": "Cheese Baguette",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "dluo": "2026-12-29",
+          "mo_ref": "WH/MO/00551"
+        },
         {
           "sku": "CIA3-SGL",
           "name": "Ciabatta (×3)",
@@ -994,8 +1022,8 @@
         {
           "sku": "LF2P",
           "name": "Sourdough Loaf (×2)",
-          "qty_packs": 270.0,
-          "qty_units": 540.0,
+          "qty_packs": 180.0,
+          "qty_units": 360.0,
           "dluo": "2026-12-29",
           "mo_ref": "WH/MO/00560"
         }
