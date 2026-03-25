@@ -1519,6 +1519,27 @@ body {
     page-break-before: avoid;
   }
 
+  /* ── Darker colours for weak printers ── */
+
+  /* Title block */
+  .print-schedule-header .title { color: #000 !important; }
+  .print-schedule-header .date  { color: #222 !important; }
+
+  /* Column headers */
+  .pg-time-header  { color: #111 !important; background: #e8e8e8 !important; border-color: #888 !important; }
+  .pg-baker-header { color: #000 !important; background: #d4d8f0 !important; border-color: #888 !important; }
+
+  /* Time labels — show ALL slots and make them dark */
+  .pg-time-slot               { color: #555 !important; border-color: #ccc !important; }
+  .pg-time-slot.pg-time-major { color: #111 !important; font-weight: 700; border-bottom-color: #aaa !important; }
+
+  /* Grid lines */
+  .pg-empty-slot { border-color: #ccc !important; }
+
+  /* Task text — already white on colour bg, bump contrast */
+  .pg-task-name { color: #fff !important; text-shadow: 0 0 2px rgba(0,0,0,0.6); }
+  .pg-task-time { color: rgba(255,255,255,0.95) !important; }
+
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
