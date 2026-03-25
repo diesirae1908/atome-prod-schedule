@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atome Bakery — Levain Planner</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1e1b4b;
+      --indigo-700: #4338ca;
+      --indigo-800: #3730a3;
+      --indigo-100: #e0e7ff;
+      --indigo-50:  #eef2ff;
+      --purple-600: #7c3aed;
+      --purple-50:  #f5f3ff;
+      --amber-500:  #f59e0b;
+      --amber-50:   #fffbeb;
+      --amber-100:  #fef3c7;
+      --teal-600:   #0d9488;
+      --teal-50:    #f0fdfa;
+      --orange-500: #f97316;
+      --orange-100: #ffedd5;
+      --border:     #e5e7eb;
+      --text:       #111827;
+      --muted:      #6b7280;
+      --bg:         #f3f4f6;
+      --topbar-h:   52px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Topbar ── */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      height: var(--topbar-h);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 20px; gap: 12px;
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .topbar h1  { font-size: 17px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+    .nav-links  { display: flex; align-items: center; gap: 6px; }
+    .nav-btn {
+      background: rgba(255,255,255,.12); color: #e0e7ff;
+      border: none; border-radius: 6px;
+      padding: 5px 11px; font-size: 12px; cursor: pointer;
+      text-decoration: none; transition: background .15s;
+      white-space: nowrap;
+    }
+    .nav-btn:hover  { background: rgba(255,255,255,.22); }
+    .nav-btn.active { background: var(--indigo-700); color: #fff; }
+
+    /* week nav */
+    .week-nav { display: flex; align-items: center; gap: 6px; }
+    .week-nav button {
+      background: var(--indigo-700); color: #fff;
+      border: none; border-radius: 6px;
+      padding: 5px 11px; font-size: 13px; cursor: pointer;
+      transition: background .15s;
+    }
+    .week-nav button:hover     { background: var(--indigo-800); }
+    .week-nav button:disabled  { opacity: .45; cursor: default; }
+    .week-badge {
+      background: var(--indigo-700); color: #fff;
+      padding: 3px 11px; border-radius: 12px;
+      font-size: 13px; font-weight: 600;
+    }
+
+    /* ── Settings bar ── */
+    .settings-bar {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      padding: 10px 20px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .settings-bar label { font-size: 12px; color: var(--muted); font-weight: 500; }
+    .settings-bar select, .settings-bar input[type=number] {
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 4px 8px; font-size: 12px;
+      background: #fff; color: var(--text);
+      margin-left: 6px;
+    }
+    .ratio-badge {
+      display: flex; align-items: center; gap: 6px;
+      margin-left: auto;
+      font-size: 12px; font-weight: 600; color: var(--muted);
+    }
+    .ratio-part {
+      padding: 3px 8px; border-radius: 6px; font-size: 12px; font-weight: 700;
+    }
+    .ratio-levain { background: var(--purple-50);  color: var(--purple-600); }
+    .ratio-flour  { background: var(--amber-100);  color: #92400e; }
+    .ratio-water  { background: #dbeafe;            color: #1d4ed8; }
+    .ratio-total  { background: #f3f4f6;            color: var(--muted); }
+
+    /* ── Main content ── */
+    .page-wrap { padding: 20px; overflow-x: auto; }
+
+    /* ── Table ── */
+    .lv-table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 800px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 6px rgba(0,0,0,.08);
+    }
+    .lv-table th, .lv-table td {
+      border: 1px solid var(--border);
+      padding: 7px 12px;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .lv-table th { text-align: center; }
+    .lv-table .row-label { text-align: left; font-size: 12px; min-width: 190px; }
+
+    /* header row */
+    .lv-table thead th {
+      background: var(--navy); color: #e0e7ff;
+      font-size: 11px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .lv-table thead th.col-today { background: #3730a3; color: #fff; }
+
+    /* group rows (per dough type) */
+    .lv-group-row td { background: #fafafa; color: var(--muted); font-size: 12px; }
+    .lv-group-row td.row-label { color: var(--text); }
+    .lv-group-row td.zero-cell { color: #d1d5db; }
+
+    /* section divider */
+    .lv-divider td { background: var(--bg); border: none; height: 6px; padding: 0; }
+
+    /* levain for mix total */
+    .lv-mix-total td {
+      background: var(--purple-50); font-weight: 700; font-size: 13px;
+      color: var(--purple-600);
+    }
+    .lv-mix-total td.row-label { color: #5b21b6; }
+
+    /* starter row */
+    .lv-starter-row td { background: var(--indigo-50); color: #3730a3; font-size: 12px; }
+    .lv-starter-row td.row-label { font-weight: 600; }
+
+    /* extra/emergency */
+    .lv-extra-row td { background: #fffbeb; color: #92400e; font-size: 12px; }
+    .lv-extra-row td.row-label { font-weight: 600; }
+    .lv-extra-row td.emergency-cell {
+      background: var(--orange-100); color: #9a3412; font-weight: 700;
+    }
+
+    /* TOTAL row */
+    .lv-total-row td {
+      background: var(--amber-100); font-weight: 800; font-size: 14px;
+      color: #92400e; border-top: 2px solid var(--amber-500);
+    }
+    .lv-total-row td.col-today { background: #fde68a; }
+
+    /* refresh rows */
+    .lv-flour-row td { background: var(--amber-50); color: #92400e; font-size: 12px; }
+    .lv-flour-row td.row-label { font-weight: 600; }
+    .lv-water-row td { background: #eff6ff; color: #1e40af; font-size: 12px; }
+    .lv-water-row td.row-label { font-weight: 600; }
+
+    /* "no data" faded */
+    td.no-data { color: #d1d5db; font-style: italic; font-size: 11px; }
+
+    /* today column highlight on data cells */
+    td.col-today { box-shadow: inset 0 0 0 2px #f59e0b; }
+
+    /* ── Empty/loading state ── */
+    #loading { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 15px; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span style="font-size:22px">🫙</span>
+    <h1>Atome Bakery — Levain Planner</h1>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <nav class="nav-links">
+      <a href="index.html"         class="nav-btn">📅 Schedule</a>
+      <a href="headpaper/index.html" class="nav-btn">📋 Daily Planner</a>
+      <a href="outputs.html"       class="nav-btn">📊 Outputs</a>
+      <a href="mops.html"          class="nav-btn">📚 MOPs</a>
+      <a href="levain.html"        class="nav-btn active">🫙 Levain</a>
+    </nav>
+    <div class="week-nav">
+      <button id="prevWeek">◀</button>
+      <span class="week-badge" id="weekBadge">W–</span>
+      <button id="nextWeek">▶</button>
+    </div>
+  </div>
+</div>
+
+<div class="settings-bar">
+  <div>
+    <label for="emergencyDaySelect">Weekly extraction day:</label>
+    <select id="emergencyDaySelect">
+      <option value="0">Sunday</option>
+      <option value="1" selected>Monday</option>
+      <option value="2">Tuesday</option>
+      <option value="3">Wednesday</option>
+      <option value="4">Thursday</option>
+      <option value="5">Friday</option>
+      <option value="6">Saturday</option>
+    </select>
+  </div>
+  <div>
+    <label for="emergencyKgInput">Emergency extraction:</label>
+    <input type="number" id="emergencyKgInput" value="9" min="0" step="0.5" style="width:60px" /> kg
+  </div>
+  <div>
+    <label for="bufferKgInput">Daily pour buffer:</label>
+    <input type="number" id="bufferKgInput" value="3" min="0" step="0.5" style="width:60px" /> kg
+  </div>
+  <div class="ratio-badge">
+    Refresh ratio:
+    <span class="ratio-part ratio-levain">Levain 6</span>
+    <span style="color:#9ca3af">+</span>
+    <span class="ratio-part ratio-flour">Flour 4</span>
+    <span style="color:#9ca3af">+</span>
+    <span class="ratio-part ratio-water">Water 5</span>
+    <span style="color:#9ca3af">=</span>
+    <span class="ratio-part ratio-total">15</span>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div id="loading">Loading schedule…</div>
+  <div id="tableContainer" style="display:none"></div>
+</div>
+
+<script src="mops-data.js"></script>
+<script>
+// ── Constants ────────────────────────────────────────────────────────────────
+const RATIO_LEVAIN = 6, RATIO_FLOUR = 4, RATIO_WATER = 5, RATIO_TOTAL = 15;
+
+const LEVAIN_GROUPS = [
+  { label: "TRAD / MG / PIZ", mopIds: new Set(["trad-baguette","sesame-baguette","poppy-baguette","cheese-baguette","sourdough-loaf","ciabatta","multigrain-baguette","pizza"]) },
+  { label: "Country Rye (CTY)", mopIds: new Set(["country-rye"]) },
+  { label: "Wholewheat (WW)",   mopIds: new Set(["wholewheat"]) },
+  { label: "Brioche",           mopIds: new Set(["brioche-bun"]) },
+  { label: "Viennoise",         mopIds: new Set(["viennoise"]) },
+  { label: "PAC / Croissant",   mopIds: new Set(["pac","croissant"]) },
+];
+
+// ── State ────────────────────────────────────────────────────────────────────
+let allDays      = [];
+let viewWeekMon  = null; // ISO string of Monday of visible week
+let emergencyDay = parseInt(localStorage.getItem("lv_emergency_day") ?? "1");
+let emergencyKg  = parseFloat(localStorage.getItem("lv_emergency_kg")  ?? "9");
+let bufferKg     = parseFloat(localStorage.getItem("lv_buffer_kg")     ?? "3");
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+function isoToday() {
+  return new Date().toISOString().slice(0, 10);
+}
+function addDays(iso, n) {
+  const d = new Date(iso + "T12:00:00");
+  d.setDate(d.getDate() + n);
+  return d.toISOString().slice(0, 10);
+}
+function mondayOf(iso) {
+  const d = new Date(iso + "T12:00:00");
+  const dow = d.getDay(); // 0=Sun
+  const diff = (dow === 0) ? -6 : 1 - dow;
+  d.setDate(d.getDate() + diff);
+  return d.toISOString().slice(0, 10);
+}
+function isoWeekNum(iso) {
+  const d = new Date(iso + "T12:00:00");
+  const thu = new Date(d); thu.setDate(d.getDate() + (4 - (d.getDay() || 7)));
+  const jan4 = new Date(thu.getFullYear(), 0, 4);
+  return 1 + Math.round(((thu - jan4) / 86400000 - 3 + (jan4.getDay() || 7)) / 7);
+}
+function fmtDate(iso) {
+  const d = new Date(iso + "T12:00:00");
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+}
+function fmt1(v) { return v > 0 ? v.toFixed(1) : "–"; }
+
+// ── Levain calculation ────────────────────────────────────────────────────────
+function mopIdForLabel(label) {
+  if (typeof PRODUCT_MOP_MAP === "undefined") return null;
+  return PRODUCT_MOP_MAP[label] ?? null;
+}
+
+function levainKgForMixItem(item) {
+  const mopId = mopIdForLabel(item.label);
+  if (!mopId) return 0;
+  const mop = MOPS.find(m => m.id === mopId);
+  if (!mop) return 0;
+  const levainIngr = mop.ingredients.find(i => i.name.toLowerCase().includes("levain"));
+  if (!levainIngr) return 0;
+  const scale = item.total_units / mop.base_units;
+  return (levainIngr.g * scale) / 1000;
+}
+
+function groupKgForDay(day) {
+  const result = {};
+  LEVAIN_GROUPS.forEach(g => { result[g.label] = 0; });
+  (day?.mix || []).forEach(item => {
+    const mopId = mopIdForLabel(item.label);
+    if (!mopId) return;
+    const group = LEVAIN_GROUPS.find(g => g.mopIds.has(mopId));
+    if (group) result[group.label] += levainKgForMixItem(item);
+  });
+  return result;
+}
+
+function calcSchedule(days) {
+  const n = days.length;
+  const mixKg   = days.map(d => (d.mix || []).reduce((s, i) => s + levainKgForMixItem(i), 0));
+  const extraKg = days.map(d => {
+    const dow = new Date(d.date + "T12:00:00").getDay();
+    return bufferKg + (dow === emergencyDay ? emergencyKg : 0);
+  });
+
+  // Compute TOTAL backwards from last day
+  const total = new Array(n).fill(0);
+  total[n - 1] = mixKg[n - 1] + extraKg[n - 1];
+  for (let i = n - 2; i >= 0; i--) {
+    total[i] = mixKg[i] + extraKg[i] + total[i + 1] * (RATIO_LEVAIN / RATIO_TOTAL);
+  }
+
+  return days.map((d, i) => {
+    const hasNext    = i < n - 1;
+    const starterKg  = hasNext ? total[i + 1] * (RATIO_LEVAIN / RATIO_TOTAL) : null;
+    const flourToAdd = hasNext ? total[i + 1] * (RATIO_FLOUR  / RATIO_TOTAL) : null;
+    const waterToAdd = hasNext ? total[i + 1] * (RATIO_WATER  / RATIO_TOTAL) : null;
+    const dow = new Date(d.date + "T12:00:00").getDay();
+    const isEmergency = dow === emergencyDay;
+
+    return {
+      date: d.date,
+      label: d.label,
+      groupKg: groupKgForDay(d),
+      mixKg: mixKg[i],
+      starterKg,
+      extraKg: extraKg[i],
+      isEmergency,
+      total: total[i],
+      flourToAdd,
+      waterToAdd,
+    };
+  });
+}
+
+// ── Render ───────────────────────────────────────────────────────────────────
+const DAY_NAMES = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+function render() {
+  if (!allDays.length || !viewWeekMon) return;
+  const today = isoToday();
+
+  // Pick 7 days starting from viewWeekMon
+  const weekDates = Array.from({ length: 7 }, (_, i) => addDays(viewWeekMon, i));
+  const weekDays  = weekDates.map(iso => allDays.find(d => d.date === iso) || null);
+
+  // Calc full schedule (all 35 days) so totals are accurate
+  const fullCalc = calcSchedule(allDays);
+  const dayCalc  = weekDates.map(iso => fullCalc.find(d => d.date === iso) || null);
+
+  // Week badge
+  document.getElementById("weekBadge").textContent = "W" + isoWeekNum(viewWeekMon);
+
+  // Week navigation bounds
+  const firstMon = mondayOf(allDays[0].date);
+  const lastMon  = mondayOf(allDays[allDays.length - 1].date);
+  document.getElementById("prevWeek").disabled = (viewWeekMon <= firstMon);
+  document.getElementById("nextWeek").disabled = (viewWeekMon >= lastMon);
+
+  // Build table
+  const colClass = (iso) => iso === today ? " col-today" : "";
+
+  // Header
+  let html = `<table class="lv-table"><thead><tr>
+    <th class="row-label"></th>`;
+  weekDates.forEach(iso => {
+    const d = new Date(iso + "T12:00:00");
+    const dow = DAY_NAMES[d.getDay()];
+    const isTd = iso === today;
+    html += `<th class="${isTd ? "col-today" : ""}">${dow}<br><small style="font-weight:400;font-size:10px">${fmtDate(iso)}</small></th>`;
+  });
+  html += `</tr></thead><tbody>`;
+
+  // ── Group rows ──
+  LEVAIN_GROUPS.forEach(group => {
+    // Only show if at least one day has data for this group
+    const anyData = dayCalc.some(dc => dc && dc.groupKg[group.label] > 0.01);
+    if (!anyData) return;
+
+    html += `<tr class="lv-group-row"><td class="row-label">${group.label}</td>`;
+    weekDates.forEach((iso, i) => {
+      const dc = dayCalc[i];
+      const cc = colClass(iso);
+      if (!dc) { html += `<td class="no-data${cc}">–</td>`; return; }
+      const v = dc.groupKg[group.label];
+      html += `<td class="${v < 0.01 ? "zero-cell" : ""}${cc}">${v > 0.01 ? v.toFixed(1) : "–"}</td>`;
+    });
+    html += `</tr>`;
+  });
+
+  // divider
+  html += `<tr class="lv-divider"><td colspan="${weekDates.length + 1}"></td></tr>`;
+
+  // ── Levain for mix total ──
+  html += `<tr class="lv-mix-total"><td class="row-label">🫙 Levain for Mix</td>`;
+  weekDates.forEach((iso, i) => {
+    const dc = dayCalc[i];
+    const cc = colClass(iso);
+    html += `<td class="${cc}">${dc ? fmt1(dc.mixKg) : "–"}</td>`;
+  });
+  html += `</tr>`;
+
+  // ── Starter for next day ──
+  html += `<tr class="lv-starter-row"><td class="row-label">Levain base to keep</td>`;
+  weekDates.forEach((iso, i) => {
+    const dc = dayCalc[i];
+    const cc = colClass(iso);
+    if (!dc || dc.starterKg === null) { html += `<td class="no-data${cc}" title="Last day — next week unknown">–</td>`; return; }
+    html += `<td class="${cc}" title="Keep this much as inoculation for next refresh (40% of tomorrow's total)">${fmt1(dc.starterKg)}</td>`;
+  });
+  html += `</tr>`;
+
+  // ── Extra emergency ──
+  html += `<tr class="lv-extra-row"><td class="row-label">Extra (buffer + extraction)</td>`;
+  weekDates.forEach((iso, i) => {
+    const dc = dayCalc[i];
+    const cc = colClass(iso);
+    if (!dc) { html += `<td class="${cc}">–</td>`; return; }
+    const cls = dc.isEmergency ? "emergency-cell" : "";
+    const tip = dc.isEmergency ? `${bufferKg} kg buffer + ${emergencyKg} kg emergency extraction` : `${bufferKg} kg pour buffer`;
+    html += `<td class="${cls}${cc}" title="${tip}">${dc.extraKg.toFixed(1)}${dc.isEmergency ? " 🧊" : ""}</td>`;
+  });
+  html += `</tr>`;
+
+  // divider
+  html += `<tr class="lv-divider"><td colspan="${weekDates.length + 1}"></td></tr>`;
+
+  // ── TOTAL ──
+  html += `<tr class="lv-total-row"><td class="row-label">TOTAL LEVAIN NEEDED</td>`;
+  weekDates.forEach((iso, i) => {
+    const dc = dayCalc[i];
+    const cc = colClass(iso);
+    html += `<td class="${cc}">${dc ? dc.total.toFixed(1) : "–"} kg</td>`;
+  });
+  html += `</tr>`;
+
+  // divider
+  html += `<tr class="lv-divider"><td colspan="${weekDates.length + 1}"></td></tr>`;
+
+  // ── Refresh tonight ──
+  html += `<tr class="lv-flour-row"><td class="row-label">🌾 Flour to add tonight</td>`;
+  weekDates.forEach((iso, i) => {
+    const dc = dayCalc[i];
+    const cc = colClass(iso);
+    if (!dc || dc.flourToAdd === null) { html += `<td class="no-data${cc}">–</td>`; return; }
+    html += `<td class="${cc}" title="= tomorrow's total × ${RATIO_FLOUR}/${RATIO_TOTAL}">${fmt1(dc.flourToAdd)} kg</td>`;
+  });
+  html += `</tr>`;
+
+  html += `<tr class="lv-water-row"><td class="row-label">💧 Water to add tonight (30°C)</td>`;
+  weekDates.forEach((iso, i) => {
+    const dc = dayCalc[i];
+    const cc = colClass(iso);
+    if (!dc || dc.waterToAdd === null) { html += `<td class="no-data${cc}">–</td>`; return; }
+    html += `<td class="${cc}" title="= tomorrow's total × ${RATIO_WATER}/${RATIO_TOTAL}">${fmt1(dc.waterToAdd)} kg</td>`;
+  });
+  html += `</tr>`;
+
+  html += `</tbody></table>`;
+
+  document.getElementById("tableContainer").innerHTML = html;
+  document.getElementById("tableContainer").style.display = "block";
+  document.getElementById("loading").style.display = "none";
+}
+
+// ── Load schedule ─────────────────────────────────────────────────────────────
+async function loadSchedule() {
+  try {
+    const r = await fetch("data/schedule.json?t=" + Date.now());
+    const data = await r.json();
+    allDays = data.days || [];
+
+    const today = isoToday();
+    // Pick the Monday of today's week, clamped within dataset
+    const desiredMon = mondayOf(today);
+    const firstMon   = mondayOf(allDays[0].date);
+    const lastMon    = mondayOf(allDays[allDays.length - 1].date);
+    viewWeekMon = desiredMon < firstMon ? firstMon : desiredMon > lastMon ? lastMon : desiredMon;
+
+    render();
+  } catch (e) {
+    document.getElementById("loading").textContent = "⚠ Could not load schedule.json";
+    console.error(e);
+  }
+}
+
+// ── Week navigation ───────────────────────────────────────────────────────────
+document.getElementById("prevWeek").addEventListener("click", () => {
+  viewWeekMon = addDays(viewWeekMon, -7); render();
+});
+document.getElementById("nextWeek").addEventListener("click", () => {
+  viewWeekMon = addDays(viewWeekMon, 7); render();
+});
+
+// ── Settings ─────────────────────────────────────────────────────────────────
+const emergencyDayEl = document.getElementById("emergencyDaySelect");
+const emergencyKgEl  = document.getElementById("emergencyKgInput");
+const bufferKgEl     = document.getElementById("bufferKgInput");
+
+// Init from localStorage
+emergencyDayEl.value = emergencyDay;
+emergencyKgEl.value  = emergencyKg;
+bufferKgEl.value     = bufferKg;
+
+emergencyDayEl.addEventListener("change", () => {
+  emergencyDay = parseInt(emergencyDayEl.value);
+  localStorage.setItem("lv_emergency_day", emergencyDay);
+  render();
+});
+emergencyKgEl.addEventListener("change", () => {
+  emergencyKg = parseFloat(emergencyKgEl.value) || 0;
+  localStorage.setItem("lv_emergency_kg", emergencyKg);
+  render();
+});
+bufferKgEl.addEventListener("change", () => {
+  bufferKg = parseFloat(bufferKgEl.value) || 0;
+  localStorage.setItem("lv_buffer_kg", bufferKg);
+  render();
+});
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+loadSchedule();
+</script>
+</body>
+</html>
