@@ -1315,7 +1315,7 @@ body {
 }
 
 /* ============================================================
-   PRINT VIEW
+   PRINT VIEW — screen preview
    ============================================================ */
 
 .print-header {
@@ -1331,29 +1331,175 @@ body {
 .print-schedule {
   flex: 1;
   overflow-y: auto;
-  padding: 24px;
+  padding: 16px 20px;
   background: var(--bg);
 }
 
+/* ── Schedule document ── */
+.print-schedule-header {
+  text-align: center;
+  padding: 10px 20px 8px;
+  border-bottom: 2px solid #1e1b4b;
+  margin-bottom: 0;
+  background: #fff;
+}
+.print-schedule-header h1 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e1b4b;
+  margin: 0;
+}
+.print-schedule-header .date {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 3px;
+}
+
+/* ── Grid layout ── */
+.print-schedule-grid {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+}
+
+.print-time-column {
+  flex: 0 0 52px;
+  border-right: 2px solid #d1d5db;
+}
+.print-time-header {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: #6b7280;
+  background: #f9fafb;
+  border-bottom: 1px solid #d1d5db;
+  box-sizing: border-box;
+}
+.print-time-slot {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6px;
+  font-size: 9px;
+  color: #9ca3af;
+  border-bottom: 1px solid #f3f4f6;
+  box-sizing: border-box;
+}
+/* Show only :00 and :30 labels — every 3rd slot starting at 1 and 4 */
+.print-time-slot:not(:nth-child(3n+2)):not(:nth-child(3n+5)) {
+  color: transparent;
+}
+
+.print-baker-columns {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
+.print-baker-column {
+  flex: 1;
+  min-width: 0;
+  border-right: 1px solid #e5e7eb;
+}
+.print-baker-column:last-child {
+  border-right: none;
+}
+
+.print-baker-header {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1e1b4b;
+  background: #eef2ff;
+  border-bottom: 1px solid #c7d2fe;
+  box-sizing: border-box;
+}
+
+.print-baker-time-slot {
+  height: 24px;
+  border-bottom: 1px solid #f3f4f6;
+  box-sizing: border-box;
+}
+
+/* ── Task blocks ── */
+.print-scheduled-task {
+  border-radius: 3px;
+  padding: 2px 5px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.print-scheduled-task-header {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.print-scheduled-task-details {
+  font-size: 9px;
+  line-height: 1.3;
+  opacity: 0.9;
+}
+.print-scheduled-task-description {
+  font-size: 9px;
+  line-height: 1.3;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   @MEDIA PRINT — actual browser print output
+   ============================================================ */
+
 @media print {
-  .print-header {
-    display: none;
+  @page {
+    size: A4 landscape;
+    margin: 8mm 10mm;
   }
+
+  /* Remove overflow restrictions so full content prints */
+  html, body, #app {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Hide admin view, show only print content */
+  #admin-view { display: none !important; }
+  #print-view {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .print-header { display: none !important; }
 
   .print-schedule {
-    padding: 0;
-    background: #fff;
+    flex: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    background: #fff !important;
+    height: auto !important;
   }
 
-  body {
-    height: auto;
-    overflow: visible;
+  /* Ensure background colours print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  .view.active {
-    height: auto;
-    overflow: visible;
-  }
+  /* Avoid breaking inside a baker column */
+  .print-baker-column { break-inside: avoid; }
+  .print-schedule-header { break-after: avoid; }
 }
 
 /* ============================================================
