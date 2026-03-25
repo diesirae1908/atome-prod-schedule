@@ -4579,173 +4579,105 @@ function renderPrintView() {
     const printSchedule = document.getElementById('print-schedule');
     const timeSlots = generateTimeSlots();
     const schedule = getScheduleForDate(state.currentDate);
-    const date = state.currentDate; // Use the date string for getCustomTaskName
-    
-    // Parse date string manually to avoid timezone issues
-    // Format: YYYY-MM-DD
+    const date = state.currentDate;
+    const bakers = getBakersForDate(state.currentDate);
+    const numBakers = bakers.length;
+
+    // Date display
     const dateParts = state.currentDate.split('-');
-    const year = parseInt(dateParts[0]);
-    const month = parseInt(dateParts[1]) - 1; // Month is 0-indexed
-    const day = parseInt(dateParts[2]);
-    
-    // Create date in local timezone (not UTC)
-    const localDate = new Date(year, month, day);
+    const localDate = new Date(parseInt(dateParts[0]), parseInt(dateParts[1]) - 1, parseInt(dateParts[2]));
     const dateDisplay = localDate.toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    // Collect tasks per baker: {startIndex, durationSlots, taskColor, displayName, startTime, actualDuration}
+    const bakerTasks = bakers.map((baker, bakerIndex) => {
+        const bakerSchedule = schedule[bakerIndex] || {};
+        const rendered = new Set();
+        const tasks = [];
+
+        timeSlots.forEach((time, timeIndex) => {
+            const raw = bakerSchedule[time];
+            if (!raw) return;
+            const instanceIds = Array.isArray(raw) ? raw : [raw];
+
+            instanceIds.forEach(instanceId => {
+                if (rendered.has(instanceId)) return;
+                let parts = String(instanceId).split('|');
+                let taskId, instanceStartTime, instanceBakerIndex;
+                if (parts.length >= 4) {
+                    [taskId, instanceStartTime, instanceBakerIndex] = [parts[0], parts[1], parseInt(parts[2])];
+                } else {
+                    parts = String(instanceId).split('_');
+                    if (parts.length < 3) return;
+                    [taskId, instanceStartTime, instanceBakerIndex] = [parts[0], parts[1], parseInt(parts[2])];
+                }
+                if (instanceStartTime !== time || instanceBakerIndex !== bakerIndex) return;
+
+                const task = state.tasks.find(t => t.id === taskId);
+                if (!task) { console.warn(`Print: task not found: ${taskId}`); return; }
+
+                let actualDuration = task.duration;
+                if (state.scheduledTaskInstances && state.scheduledTaskInstances[instanceId]) {
+                    const p = state.scheduledTaskInstances[instanceId];
+                    if (p.duration !== undefined) actualDuration = p.duration;
+                }
+                const taskIndex = state.tasks.findIndex(t => t.id === task.id);
+                const taskColor = task.color || state.taskColors[taskIndex % state.taskColors.length];
+                const customName = getCustomTaskName(instanceId) || getCustomTaskNameLegacy(date, bakerIndex, time);
+                const displayName = customName || task.name;
+
+                tasks.push({ startIndex: timeIndex, durationSlots: Math.ceil(actualDuration / 10),
+                    taskColor, displayName, startTime: time, actualDuration, task });
+                rendered.add(instanceId);
+            });
+        });
+        return tasks;
+    });
+
+    // Build CSS grid cells — one row per time slot, columns: time + bakers
+    // Track which rows are already "consumed" by a spanning task
+    const occupied = bakers.map(() => new Set());
+    let gridHTML = '';
+
+    // Header row
+    gridHTML += `<div class="pg-time-header">Time</div>`;
+    bakers.forEach(baker => { gridHTML += `<div class="pg-baker-header">${baker}</div>`; });
+
+    // Time rows
+    timeSlots.forEach((time, timeIndex) => {
+        const isMajor = time.endsWith(':00') || time.endsWith(':30');
+        gridHTML += `<div class="pg-time-slot${isMajor ? ' pg-time-major' : ''}">${isMajor ? time : ''}</div>`;
+
+        bakers.forEach((baker, bakerIndex) => {
+            if (occupied[bakerIndex].has(timeIndex)) return; // spanned — CSS grid handles space
+
+            const taskInfo = bakerTasks[bakerIndex].find(t => t.startIndex === timeIndex);
+            if (taskInfo) {
+                const { durationSlots, taskColor, displayName, startTime, actualDuration } = taskInfo;
+                const endTime = calculateEndTime(startTime, actualDuration);
+                for (let i = 1; i < durationSlots; i++) occupied[bakerIndex].add(timeIndex + i);
+
+                const spanStyle = durationSlots > 1
+                    ? `grid-row: span ${durationSlots}; background-color: ${taskColor};`
+                    : `background-color: ${taskColor};`;
+                gridHTML += `<div class="pg-task" style="${spanStyle}">
+                    <div class="pg-task-name">${displayName}</div>
+                    <div class="pg-task-time">${startTime} – ${endTime}</div>
+                </div>`;
+            } else {
+                gridHTML += `<div class="pg-empty-slot"></div>`;
+            }
+        });
     });
 
     printSchedule.innerHTML = `
         <div class="print-schedule-header">
-            <h1>Atome Bakery - Production Schedule</h1>
+            <h1>Atome Bakery — Production Schedule</h1>
             <div class="date">${dateDisplay}</div>
         </div>
-        <div class="print-schedule-grid">
-            <div class="print-time-column">
-                <div class="print-time-header">Time</div>
-                ${timeSlots.map(time => `<div class="print-time-slot">${time}</div>`).join('')}
-            </div>
-            <div class="print-baker-columns">
-                ${getBakersForDate(state.currentDate).map((baker, bakerIndex) => {
-                    const bakerSchedule = schedule[bakerIndex] || {};
-                    const renderedTasks = new Set();
-                    
-                    // First, collect all tasks that should be rendered
-                    const tasksToRender = [];
-                    timeSlots.forEach((time, timeIndex) => {
-                        const instanceIdOrArray = bakerSchedule[time];
-                        if (!instanceIdOrArray) return;
-                        
-                        const instanceIds = Array.isArray(instanceIdOrArray) ? instanceIdOrArray : [instanceIdOrArray];
-                        
-                        instanceIds.forEach(instanceId => {
-                            if (renderedTasks.has(instanceId)) return;
-                            
-                            // Parse instance ID
-                            let parts = String(instanceId).split('|');
-                            let taskId, instanceStartTime, instanceBakerIndex;
-                            
-                            if (parts.length >= 4) {
-                                [taskId, instanceStartTime, instanceBakerIndex] = [parts[0], parts[1], parseInt(parts[2])];
-                            } else {
-                                parts = String(instanceId).split('_');
-                                if (parts.length < 3) return;
-                                [taskId, instanceStartTime, instanceBakerIndex] = [parts[0], parts[1], parseInt(parts[2])];
-                            }
-                            
-                            // Only process if this is the start time and correct baker
-                            if (instanceStartTime === time && instanceBakerIndex === bakerIndex) {
-                                const task = state.tasks.find(t => t.id === taskId);
-                                if (task) {
-                                    tasksToRender.push({
-                                        instanceId,
-                                        task,
-                                        startTime: time,
-                                        startIndex: timeIndex
-                                    });
-                                    renderedTasks.add(instanceId);
-                                } else {
-                                    // Task not found - log warning but continue (won't show in print view)
-                                    console.warn(`Task not found for print view: ${taskId}. Skipping.`);
-                                }
-                            }
-                        });
-                    });
-                    
-                    return `
-                    <div class="print-baker-column">
-                        <div class="print-baker-header">${baker}</div>
-                        ${timeSlots.map((time, timeIndex) => {
-                            // Find if any task starts at this time
-                            const taskToRender = tasksToRender.find(t => t.startTime === time);
-                            
-                            if (taskToRender) {
-                                const { task, startTime, instanceId } = taskToRender;
-                                
-                                // Get actual duration - use instance duration if available
-                                let actualDuration = task.duration;
-                                if (instanceId && state.scheduledTaskInstances && state.scheduledTaskInstances[instanceId]) {
-                                    const instanceProps = state.scheduledTaskInstances[instanceId];
-                                    if (instanceProps.duration !== undefined) {
-                                        actualDuration = instanceProps.duration;
-                                    }
-                                }
-                                
-                                const durationSlots = Math.ceil(actualDuration / 10);
-                                const slotHeight = 24;
-                                const height = durationSlots * slotHeight;
-                                
-                                // Use task color if set, otherwise use default color
-                                const taskIndex = state.tasks.findIndex(t => t.id === task.id);
-                                const taskColor = task.color || state.taskColors[taskIndex % state.taskColors.length];
-                                
-                                // Get custom name if it exists (try to find instanceId first)
-                                let customName = null;
-                                // Try to find instanceId from schedule
-                                const schedule = state.schedule[date];
-                                if (schedule && schedule[bakerIndex] && schedule[bakerIndex][startTime]) {
-                                    const instanceIdOrArray = schedule[bakerIndex][startTime];
-                                    const instanceIds = Array.isArray(instanceIdOrArray) ? instanceIdOrArray : [instanceIdOrArray];
-                                    // Find matching instance
-                                    const matchingInstance = instanceIds.find(instId => {
-                                        const parts = String(instId).split('|');
-                                        if (parts.length >= 3) {
-                                            return parts[1] === startTime && parseInt(parts[2]) === bakerIndex;
-                                        }
-                                        const oldParts = String(instId).split('_');
-                                        return oldParts.length >= 3 && oldParts[1] === startTime && parseInt(oldParts[2]) === bakerIndex;
-                                    });
-                                    if (matchingInstance) {
-                                        customName = getCustomTaskName(matchingInstance);
-                                    }
-                                }
-                                // Fallback to legacy lookup
-                                if (!customName) {
-                                    customName = getCustomTaskNameLegacy(date, bakerIndex, startTime);
-                                }
-                                const displayName = customName || task.name;
-                                
-                                return `
-                                    <div class="print-baker-time-slot" style="position: relative; height: ${slotHeight}px;">
-                                        <div class="print-scheduled-task" style="height: ${height}px; background-color: ${taskColor} !important; position: absolute; top: 0; left: 2px; right: 2px; z-index: 1; -webkit-print-color-adjust: exact; print-color-adjust: exact; color-adjust: exact;">
-                                            <div class="print-scheduled-task-header" style="color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;">${displayName}</div>
-                                            <div class="print-scheduled-task-details" style="color: rgba(255,255,255,0.9) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;">
-                                                ${formatTime(startTime)} - ${calculateEndTime(startTime, actualDuration)}
-                                                ${task.productCount ? ` • ${task.productCount} products` : ''}
-                                            </div>
-                                            ${task.description ? `<div class="print-scheduled-task-description" style="color: rgba(255,255,255,0.85) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;">${task.description}</div>` : ''}
-                                        </div>
-                                    </div>
-                                `;
-                            }
-                            
-                            // Check if this slot is part of a task that started earlier
-                            const isPartOfTask = tasksToRender.some(t => {
-                                const startIndex = timeSlots.indexOf(t.startTime);
-                                // Get actual duration for this instance
-                                let actualDuration = t.task.duration;
-                                if (t.instanceId && state.scheduledTaskInstances && state.scheduledTaskInstances[t.instanceId]) {
-                                    const instanceProps = state.scheduledTaskInstances[t.instanceId];
-                                    if (instanceProps.duration !== undefined) {
-                                        actualDuration = instanceProps.duration;
-                                    }
-                                }
-                                const durationSlots = Math.ceil(actualDuration / 10);
-                                return timeIndex >= startIndex && timeIndex < startIndex + durationSlots && timeIndex !== startIndex;
-                            });
-                            
-                            if (isPartOfTask) {
-                                return `<div class="print-baker-time-slot" style="height: 24px;"></div>`;
-                            }
-                            
-                            return '<div class="print-baker-time-slot" style="height: 24px;"></div>';
-                        }).join('')}
-                    </div>
-                    `;
-                }).join('')}
-            </div>
+        <div class="pg-grid" style="grid-template-columns: 52px repeat(${numBakers}, 1fr);">
+            ${gridHTML}
         </div>
     `;
 }
