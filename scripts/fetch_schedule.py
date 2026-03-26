@@ -163,10 +163,8 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
         units_per_pack = cfg.get("units_per_pack") or 1
         qty_units = qty_packs * units_per_pack
 
-        # DLUO: Odoo lot name takes precedence, else compute from config
+        # DLUO: Odoo lot name only — no computed fallback
         dluo = dluo_from_odoo
-        if dluo is None and cfg.get("dluo_months") is not None:
-            dluo = compute_dluo(d0, cfg["dluo_months"])
 
         # ── VACUUMING (D-0) ───────────────────────────────────────────────────
         vac_offset = cfg.get("vacuum_offset") or 0
