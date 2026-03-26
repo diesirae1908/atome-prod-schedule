@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T02:33:32Z",
+  "generated_at": "2026-03-26T20:25:47Z",
   "week_number": 10,
   "week_start": "2026-03-02",
   "week_end": "2026-04-05",
@@ -185,42 +185,10 @@
           "mo_refs": [
             "WH/MO/00576"
           ]
-        },
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 726,
-          "products": [
-            "Pain au Chocolat (×3)"
-          ],
-          "mo_refs": [
-            "WH/MO/00572"
-          ]
         }
       ],
-      "mix": [
-        {
-          "dough_type": "COUNTRY",
-          "label": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 336.0,
-          "total_units": 480,
-          "mo_ref": "WH/MO/00573",
-          "products": [
-            "Country Rye Loaf (×2)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Country Rye Loaf (×2)",
-          "qty_packs": 240,
-          "qty_units": 480,
-          "total_kg": 336.0,
-          "mo_ref": "WH/MO/00573",
-          "d0": "2026-03-25"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "vacuuming": []
     },
     {
@@ -239,17 +207,6 @@
         }
       ],
       "mix": [
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 65.3,
-          "total_units": 726,
-          "mo_ref": "WH/MO/00572",
-          "products": [
-            "Pain au Chocolat (×3)"
-          ]
-        },
         {
           "dough_type": "WW",
           "label": "Wholewheat Loaf (×2)",
@@ -275,15 +232,6 @@
       ],
       "shaping": [
         {
-          "sku": "PAC3P-SGL",
-          "name": "Pain au Chocolat (×3)",
-          "qty_packs": 242,
-          "qty_units": 726,
-          "total_kg": 65.3,
-          "mo_ref": "WH/MO/00572",
-          "d0": "2026-03-25"
-        },
-        {
           "sku": "WW2P-SGL",
           "name": "Wholewheat Loaf (×2)",
           "qty_packs": 192,
@@ -293,16 +241,7 @@
           "d0": "2026-03-26"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Croissants (×3)",
-          "qty_packs": 160.0,
-          "qty_units": 480.0,
-          "dluo": "2026-07-18",
-          "mo_ref": "WH/MO/00580"
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-03-25",
@@ -383,24 +322,7 @@
           "d0": "2026-03-27"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Country Rye Loaf (×2)",
-          "qty_packs": 240.0,
-          "qty_units": 480.0,
-          "dluo": "2026-12-23",
-          "mo_ref": "WH/MO/00573"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pain au Chocolat (×3)",
-          "qty_packs": 242.0,
-          "qty_units": 726.0,
-          "dluo": "2026-09-24",
-          "mo_ref": "WH/MO/00572"
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-03-26",
@@ -463,12 +385,12 @@
       ],
       "vacuuming": [
         {
-          "sku": "1-CRB8P-SGL",
-          "name": "Croissant Bites (×8)",
-          "qty_packs": 168.0,
-          "qty_units": 1344.0,
-          "dluo": "2026-10-11",
-          "mo_ref": "WH/MO/00581"
+          "sku": "CR3P-SGL",
+          "name": "Croissants (×3)",
+          "qty_packs": 160.0,
+          "qty_units": 480.0,
+          "dluo": "2026-07-18",
+          "mo_ref": "WH/MO/00580"
         },
         {
           "sku": "MG3P-SGL",
@@ -587,14 +509,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "CR3P-SGL",
-          "name": "Croissants (×3)",
-          "qty_packs": 160.0,
-          "qty_units": 480.0,
-          "dluo": "2026-07-18",
-          "mo_ref": "WH/MO/00582"
-        },
-        {
           "sku": "PAC3P-SGL",
           "name": "Pain au Chocolat (×3)",
           "qty_packs": 242.0,
@@ -617,6 +531,14 @@
           "qty_units": 360.0,
           "dluo": "2026-12-26",
           "mo_ref": "WH/MO/00550"
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "[1-AT3P-SGL] Pack of 3 apple turnover",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/00590"
         }
       ]
     },
