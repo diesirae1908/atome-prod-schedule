@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T21:49:08Z",
+  "generated_at": "2026-03-26T22:01:09Z",
   "week_number": 10,
   "week_start": "2026-03-02",
   "week_end": "2026-04-05",
@@ -513,7 +513,7 @@
           "name": "Pain au Chocolat (×3)",
           "qty_packs": 242.0,
           "qty_units": 726.0,
-          "dluo": "2026-09-30",
+          "dluo": null,
           "mo_ref": "WH/MO/00585"
         },
         {
@@ -663,7 +663,7 @@
           "name": "Pain au Chocolat (×3)",
           "qty_packs": 242.0,
           "qty_units": 726.0,
-          "dluo": "2026-09-30",
+          "dluo": null,
           "mo_ref": "WH/MO/00586"
         },
         {
@@ -671,7 +671,7 @@
           "name": "Sesame Baguette (×3)",
           "qty_packs": 120.0,
           "qty_units": 360.0,
-          "dluo": "2026-12-31",
+          "dluo": null,
           "mo_ref": "WH/MO/00587"
         }
       ]
@@ -747,7 +747,7 @@
           "name": "Ciabatta (×3)",
           "qty_packs": 140.0,
           "qty_units": 420.0,
-          "dluo": "2026-12-31",
+          "dluo": null,
           "mo_ref": "WH/MO/00589"
         },
         {
@@ -763,7 +763,7 @@
           "name": "Trad. Baguette (×3)",
           "qty_packs": 120.0,
           "qty_units": 360.0,
-          "dluo": "2026-12-31",
+          "dluo": null,
           "mo_ref": "WH/MO/00588"
         }
       ]
