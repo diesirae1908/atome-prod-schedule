@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T02:13:51Z",
+  "generated_at": "2026-03-26T02:16:28Z",
   "week_number": 10,
   "week_start": "2026-03-02",
   "week_end": "2026-04-05",
@@ -439,9 +439,29 @@
           "products": [
             "Sesame Baguette (×3)"
           ]
+        },
+        {
+          "dough_type": "CIABATTA",
+          "label": "Ciabatta (×3)",
+          "unit": "kg",
+          "total_kg": 252.0,
+          "total_units": 840,
+          "mo_ref": "WH/MO/00589",
+          "products": [
+            "Ciabatta (×3)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "CIA3-SGL",
+          "name": "Ciabatta (×3)",
+          "qty_packs": 280,
+          "qty_units": 840,
+          "total_kg": 252.0,
+          "mo_ref": "WH/MO/00589",
+          "d0": "2026-03-28"
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pain au Chocolat (×3)",
@@ -700,6 +720,14 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "CIA3-SGL",
+          "name": "Ciabatta (×3)",
+          "qty_packs": 280.0,
+          "qty_units": 840.0,
+          "dluo": "2026-12-31",
+          "mo_ref": "WH/MO/00589"
+        },
         {
           "sku": "GNOC-330",
           "name": "Gnocchi",
