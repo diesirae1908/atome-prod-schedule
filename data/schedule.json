@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T01:51:28Z",
+  "generated_at": "2026-03-26T02:13:51Z",
   "week_number": 10,
   "week_start": "2026-03-02",
   "week_end": "2026-04-05",
@@ -523,17 +523,6 @@
       ],
       "mix": [
         {
-          "dough_type": "CIABATTA",
-          "label": "Ciabatta (×3)",
-          "unit": "kg",
-          "total_kg": 252.0,
-          "total_units": 840,
-          "mo_ref": "WH/MO/00558",
-          "products": [
-            "Ciabatta (×3)"
-          ]
-        },
-        {
           "dough_type": "PAC_CR",
           "label": "Pain au Chocolat (×3)",
           "unit": "pcs",
@@ -557,15 +546,6 @@
         }
       ],
       "shaping": [
-        {
-          "sku": "CIA3-SGL",
-          "name": "Ciabatta (×3)",
-          "qty_packs": 280,
-          "qty_units": 840,
-          "total_kg": 252.0,
-          "mo_ref": "WH/MO/00558",
-          "d0": "2026-03-29"
-        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pain au Chocolat (×3)",
@@ -819,14 +799,6 @@
           "qty_units": 348.0,
           "dluo": "2026-09-28",
           "mo_ref": "WH/MO/00565"
-        },
-        {
-          "sku": "CIA3-SGL",
-          "name": "Ciabatta (×3)",
-          "qty_packs": 280.0,
-          "qty_units": 840.0,
-          "dluo": "2026-12-27",
-          "mo_ref": "WH/MO/00558"
         },
         {
           "sku": "WA3P-SGL",
