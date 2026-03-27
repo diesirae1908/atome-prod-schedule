@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-27T15:49:41Z",
+  "generated_at": "2026-03-27T16:15:17Z",
   "week_number": 10,
   "week_start": "2026-03-02",
   "week_end": "2026-04-05",
@@ -175,18 +175,7 @@
     {
       "date": "2026-03-23",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "MG Grain Soak",
-          "total_units": 360,
-          "products": [
-            "Multigrain Baguette (×3)"
-          ],
-          "mo_refs": [
-            "WH/MO/00576"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [],
       "shaping": [],
       "vacuuming": []
@@ -194,53 +183,9 @@
     {
       "date": "2026-03-24",
       "label": "TUESDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 726,
-          "products": [
-            "Pain au Chocolat (×3)"
-          ],
-          "mo_refs": [
-            "WH/MO/00563"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "WW",
-          "label": "Wholewheat Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 230.4,
-          "total_units": 384,
-          "mo_ref": "WH/MO/00574",
-          "products": [
-            "Wholewheat Loaf (×2)"
-          ]
-        },
-        {
-          "dough_type": "MG",
-          "label": "Multigrain Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 135.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00576",
-          "products": [
-            "Multigrain Baguette (×3)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Wholewheat Loaf (×2)",
-          "qty_packs": 192,
-          "qty_units": 384,
-          "total_kg": 230.4,
-          "mo_ref": "WH/MO/00574",
-          "d0": "2026-03-26"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "vacuuming": []
     },
     {
@@ -280,38 +225,9 @@
           "products": [
             "Pizza Dough (×2)"
           ]
-        },
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 65.3,
-          "total_units": 726,
-          "mo_ref": "WH/MO/00563",
-          "products": [
-            "Pain au Chocolat (×3)"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "MG3P-SGL",
-          "name": "Multigrain Baguette (×3)",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 135.0,
-          "mo_ref": "WH/MO/00576",
-          "d0": "2026-03-26"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pain au Chocolat (×3)",
-          "qty_packs": 242,
-          "qty_units": 726,
-          "total_kg": 65.3,
-          "mo_ref": "WH/MO/00563",
-          "d0": "2026-03-26"
-        },
         {
           "sku": "PIZ2-SGL",
           "name": "Pizza Dough (×2)",
@@ -383,40 +299,7 @@
           "d0": "2026-03-27"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Croissants (×3)",
-          "qty_packs": 160.0,
-          "qty_units": 480.0,
-          "dluo": "2026-07-18",
-          "mo_ref": "WH/MO/00580"
-        },
-        {
-          "sku": "MG3P-SGL",
-          "name": "Multigrain Baguette (×3)",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "dluo": "2026-12-25",
-          "mo_ref": "WH/MO/00576"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pain au Chocolat (×3)",
-          "qty_packs": 242.0,
-          "qty_units": 726.0,
-          "dluo": "2026-09-25",
-          "mo_ref": "WH/MO/00563"
-        },
-        {
-          "sku": "WW2P-SGL",
-          "name": "Wholewheat Loaf (×2)",
-          "qty_packs": 192.0,
-          "qty_units": 384.0,
-          "dluo": "2026-12-24",
-          "mo_ref": "WH/MO/00574"
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-03-27",
