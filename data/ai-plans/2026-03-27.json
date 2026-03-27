@@ -1,0 +1,252 @@
+{
+  "date": "2026-03-27",
+  "dayOfWeek": "Friday",
+  "generatedAt": "2026-03-27T00:33:15.268160Z",
+  "notes": "No manufacturing orders scheduled for 2026-03-27. Light production day with maintenance focus. Team should use time for equipment cleaning, inventory checks, and prep work for weekend bread (Baguette Trad + Loaf Trad only). All bakers available for vacuum/cleanup duties 15:30-17:30.",
+  "bakers": [
+    {
+      "name": "Mehdi",
+      "role": "M",
+      "tasks": [
+        {
+          "id": "mehdi_001",
+          "name": "Mixer startup & levain refresh prep",
+          "start": "07:00",
+          "end": "07:30",
+          "color": "#6366f1",
+          "description": "Start mixer, prepare levain for 10:00 refresh"
+        },
+        {
+          "id": "mehdi_002",
+          "name": "Mix baguette dough for 2026-03-28 (Saturday)",
+          "start": "07:30",
+          "end": "10:00",
+          "color": "#6366f1",
+          "description": "D-1 rule: baguettes mixed day before. Prepare Baguette Trad for weekend"
+        },
+        {
+          "id": "mehdi_003",
+          "name": "Levain refresh execution",
+          "start": "10:00",
+          "end": "11:00",
+          "color": "#8b5cf6",
+          "description": "Refresh levain during mixer operation"
+        },
+        {
+          "id": "mehdi_004",
+          "name": "Mixer cleanup & prep for Monday",
+          "start": "11:00",
+          "end": "12:00",
+          "color": "#6366f1",
+          "description": "Clean mixer, inventory check, prepare for next production cycle"
+        }
+      ]
+    },
+    {
+      "name": "Sebastien",
+      "role": "M",
+      "tasks": [
+        {
+          "id": "sebastien_001",
+          "name": "Mixer support & batch monitoring",
+          "start": "07:00",
+          "end": "10:00",
+          "color": "#6366f1",
+          "description": "Support baguette dough mixing, monitor fermentation"
+        },
+        {
+          "id": "sebastien_002",
+          "name": "Levain refresh assistance",
+          "start": "10:00",
+          "end": "11:00",
+          "color": "#8b5cf6",
+          "description": "Assist with levain refresh process"
+        },
+        {
+          "id": "sebastien_003",
+          "name": "Equipment maintenance & cleaning",
+          "start": "11:00",
+          "end": "12:00",
+          "color": "#94a3b8",
+          "description": "Deep clean mixer bowls, check equipment, organize workspace"
+        }
+      ]
+    },
+    {
+      "name": "Damien",
+      "role": "S",
+      "tasks": [
+        {
+          "id": "damien_001",
+          "name": "Facility inspection & prep",
+          "start": "09:00",
+          "end": "09:30",
+          "color": "#94a3b8",
+          "description": "No J-1 scoring needed. Review ovens, prep workspace for weekend production"
+        },
+        {
+          "id": "damien_002",
+          "name": "Pre-shape baguettes for Saturday",
+          "start": "09:30",
+          "end": "10:30",
+          "color": "#f59e0b",
+          "description": "Pre-shape Baguette Trad dough (mixed at 07:30-10:00)"
+        },
+        {
+          "id": "damien_003",
+          "name": "Final shape baguettes + scoring",
+          "start": "10:30",
+          "end": "11:30",
+          "color": "#f59e0b",
+          "description": "Final shape and score Baguette Trad for weekend sales"
+        },
+        {
+          "id": "damien_004",
+          "name": "Equipment cleaning & inventory",
+          "start": "11:30",
+          "end": "13:00",
+          "color": "#94a3b8",
+          "description": "Deep clean shaping tables, check dough buckets, organize tools"
+        },
+        {
+          "id": "damien_005",
+          "name": "Vacuum & packaging",
+          "start": "15:30",
+          "end": "17:30",
+          "color": "#64748b",
+          "description": "Assist with vacuum sealing and carton prep for weekend stock"
+        }
+      ]
+    },
+    {
+      "name": "Joyie",
+      "role": "S",
+      "tasks": [
+        {
+          "id": "joyie_001",
+          "name": "Workspace prep & ingredient check",
+          "start": "09:00",
+          "end": "09:30",
+          "color": "#94a3b8",
+          "description": "No J-1 scoring. Verify Saturday loaf ingredients, check fermentation chamber"
+        },
+        {
+          "id": "joyie_002",
+          "name": "Pre-shape baguettes for Saturday",
+          "start": "09:30",
+          "end": "10:30",
+          "color": "#f59e0b",
+          "description": "Pre-shape Baguette Trad with Damien (2 bakers together)"
+        },
+        {
+          "id": "joyie_003",
+          "name": "Maintenance & cleaning tasks",
+          "start": "10:30",
+          "end": "13:00",
+          "color": "#94a3b8",
+          "description": "Clean proofing racks, sanitize benches, organize dough bins"
+        },
+        {
+          "id": "joyie_004",
+          "name": "Vacuum & packaging",
+          "start": "15:30",
+          "end": "17:30",
+          "color": "#64748b",
+          "description": "Vacuum seal and prepare cartons for weekend delivery"
+        }
+      ]
+    },
+    {
+      "name": "Natalia",
+      "role": "S",
+      "tasks": [
+        {
+          "id": "natalia_001",
+          "name": "Oven temperature check & calibration",
+          "start": "09:00",
+          "end": "09:30",
+          "color": "#94a3b8",
+          "description": "Verify oven settings for Saturday baking cycle"
+        },
+        {
+          "id": "natalia_002",
+          "name": "Loaf Trad shaping prep for Saturday",
+          "start": "09:30",
+          "end": "10:30",
+          "color": "#10b981",
+          "description": "Prepare workspace, measure loaf dough portions for Saturday"
+        },
+        {
+          "id": "natalia_003",
+          "name": "Facility deep clean",
+          "start": "10:30",
+          "end": "13:00",
+          "color": "#94a3b8",
+          "description": "Clean floors, sanitize all surfaces, organize ingredient storage"
+        },
+        {
+          "id": "natalia_004",
+          "name": "Vacuum & packaging lead",
+          "start": "15:30",
+          "end": "17:30",
+          "color": "#64748b",
+          "description": "Lead vacuum operations, apply stickers, finalize cartons"
+        }
+      ]
+    },
+    {
+      "name": "Ysaline",
+      "role": "V",
+      "tasks": [
+        {
+          "id": "ysaline_001",
+          "name": "Vacuum equipment prep & maintenance",
+          "start": "13:30",
+          "end": "15:30",
+          "color": "#64748b",
+          "description": "Check vacuum sealer, prep bags, organize packaging station"
+        },
+        {
+          "id": "ysaline_002",
+          "name": "Vacuum & carton operations",
+          "start": "15:30",
+          "end": "17:30",
+          "color": "#64748b",
+          "description": "Vacuum seal prepared loaves and baguettes, organize cartons"
+        }
+      ]
+    },
+    {
+      "name": "Angele",
+      "role": "V",
+      "tasks": [
+        {
+          "id": "angele_001",
+          "name": "Vacuum station setup",
+          "start": "13:30",
+          "end": "15:30",
+          "color": "#64748b",
+          "description": "Prepare vacuum bags, check seals, organize sticker supplies"
+        },
+        {
+          "id": "angele_002",
+          "name": "Vacuum & packaging operations",
+          "start": "15:30",
+          "end": "17:30",
+          "color": "#64748b",
+          "description": "Seal products, apply labels, finalize weekend stock packaging"
+        }
+      ]
+    }
+  ],
+  "shiftsUsed": {
+    "Damien": "S",
+    "Joyie": "S",
+    "Mehdi": "M",
+    "Natalia": "S",
+    "Sebastien": "M",
+    "Mena": "H",
+    "Ysaline": "V",
+    "Angele": "V"
+  }
+}
