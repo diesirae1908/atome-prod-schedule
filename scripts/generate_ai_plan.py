@@ -30,6 +30,7 @@ Use the guide to understand the rules. Use the examples to understand how those 
 
 ABSOLUTE LIMITS (safety rules only — everything else comes from the guide and examples):
 - V (Vacuum team) NEVER shapes, scores, preshapes, or mixes bread — ever.
+- M (Mixer) NEVER does Lamination PAC — lamination is a Shaper (S) task only.
 - Atome has NO OVEN. Never write oven, baking, or proofing chamber tasks.
 - Every baker must have a continuous schedule covering their full shift — no gaps.
 - Output: valid JSON only — no markdown, no explanation.
@@ -326,13 +327,33 @@ def build_prompt(date_str: str, shifts: dict, day_data: dict, shifts_data: dict,
     mo_summary  = summarise_mos(day_data)
     baker_hours = shifts_data.get("bakerHours", {})
 
-    # Build baker detail lines — include EVERY working baker
+    # Normalise baker name for bakerHours lookup (handle accent variants e.g. Angèle vs Angele)
+    def _get_hours(name: str) -> str:
+        for key in baker_hours:
+            if key.lower().replace("è","e").replace("é","e") == name.lower().replace("è","e").replace("é","e"):
+                h = baker_hours[key].get(dow)
+                if h:
+                    return h
+        return "07:00 - 17:30"   # safe default if not found
+
+    # Build baker detail lines — be explicit about V team schedule so AI cannot misassign tasks
     baker_detail_lines = []
     for baker, code in shifts.items():
         if code in ("P&P", "H", "BD", "Sick"):
-            continue   # not on the floor
-        hours = baker_hours.get(baker, {}).get(dow, "unknown hours")
-        baker_detail_lines.append(f"  - {baker} ({code}): {hours}")
+            continue
+        hours = _get_hours(baker)
+        if code == "V":
+            # V bakers: deterministic schedule — make it unmistakable
+            parts = [p.strip() for p in hours.replace("–","-").split("-")]
+            start = parts[0] if parts else "07:00"
+            end   = parts[1] if len(parts) > 1 else "17:30"
+            baker_detail_lines.append(
+                f"  - {baker} (V — PACKAGING ONLY): {hours} "
+                f"→ task 1: 'Sticker prep / Bag & carton prep' {start}–15:30 "
+                f"| task 2: 'Vacuum/Box/Stick' 15:30–{end}. No other tasks."
+            )
+        else:
+            baker_detail_lines.append(f"  - {baker} ({code}): {hours}")
 
     baker_details = "\n".join(baker_detail_lines) if baker_detail_lines else "  (none)"
     baker_names   = [b for b, c in shifts.items() if c not in ("P&P", "H", "BD", "Sick")]
