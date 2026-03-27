@@ -21,95 +21,82 @@ import anthropic
 SYSTEM_PROMPT_BASE = """You are the production planner for Atome Bakery. Your ONLY job is to assign tasks to bakers for a given day.
 
 ━━━ ABSOLUTE CONSTRAINTS ━━━
-1. ONLY use task names from the ALLOWED TASK LIST below. NEVER invent new task names.
-2. Atome Bakery has NO OVEN. Never write any oven-related task (no "enfournement", no oven temperature, no proofing chamber).
+1. ONLY use task names from the ALLOWED TASK LIST for each role. NEVER invent new task names.
+2. Atome Bakery has NO OVEN. Never write any oven-related task (no "enfournement", no proofing chamber).
 3. Schedule EVERY baker listed — do not drop anyone.
 4. Every baker's tasks must cover their FULL shift with NO gaps and NO overlaps.
-5. Tasks must follow the TIMING RULES exactly.
+5. ROLES ARE STRICTLY SEPARATE — never assign a task from another role's list.
 
-━━━ ALLOWED TASK LIST (use ONLY these names, with product/batch details in description) ━━━
+━━━ ROLE DEFINITIONS & STRICT TASK LISTS ━━━
 
-MIXER tasks (role M):
-  - Mix LOAF
-  - Mix WW
-  - Mix CTY
-  - Mix PIZ
-  - Mix Ciabatta
-  - Mix BGT (D+1)        ← baguette dough for next day, always
-  - Mix PAC batter
-  - Mix WAF dough
-  - Fold LOAF / Fold WW / Fold CTY / Fold PIZ / Fold BGT
-  - Refresh levain       ← every single day, no exception
-  - Measuring future mixes
-  - Clean Mixer
-  - Dishes
-  - Kitchen Organization
-  - Vacuum/Box/Stick
+── ROLE M — MIXER ──────────────────────────────────────────────
+Mixers work the MIXER station only. They NEVER shape bread.
+Allowed tasks:
+  Mix LOAF / Mix WW / Mix CTY / Mix PIZ / Mix Ciabatta
+  Mix BGT (D+1)          ← baguette dough for next day — ALWAYS done
+  Mix PAC batter
+  Mix WAF dough
+  Fold LOAF / Fold WW / Fold CTY / Fold PIZ / Fold BGT / Fold Ciabatta
+  Refresh levain         ← EVERY day, no exception, ~10:00–11:00
+  Measuring future mixes
+  Clean Mixer
+  Dishes
+  Kitchen Organization
 
-SHAPER tasks (role S) and VACUUM morning assist (role V before 13:00):
-  - Score LOAF D-1        ← always 09:00–09:30, all shapers together
-  - Preshape BGT          ← 09:00–10:00, shapers + vacuum team together
-  - Shape LOAF
-  - Shape WW
-  - Shape CTY
-  - Shape PIZ
-  - Shape Ciabatta
-  - Shape BGT Trad
-  - Shape BGT MG
-  - Shape BGT Sesame
-  - Shape BGT Poppy
-  - Shape Cheese BGT      ← includes cheese cutting
-  - Score BGT             ← after final shaping, ~11:30–12:00
-  - Lamination PAC        ← 10:20–12:40
-  - Shape PAC             ← 13:00–15:30 ONLY
-  - Shape Bun             ← finish before 15:30
-  - Shape Brioche
-  - Shape Viennoiseries
-  - Lunch                 ← 12:00–13:00 for shapers who need it
-  - Vacuum/Box/Stick      ← 15:30 to end of shift, ALL bakers
-  - Clean end of day
+── ROLE S — SHAPER / BAKER ─────────────────────────────────────
+Shapers work the SHAPING station. Production tasks only.
+Shift start: 09:00 (never earlier, even if bakerHours shows an earlier time).
+Allowed tasks:
+  Score LOAF D-1         ← always first, 09:00–09:30
+  Preshape BGT           ← 09:00–10:00 (or 09:30–10:00 after scoring)
+  Shape LOAF / Shape WW / Shape CTY / Shape PIZ / Shape Ciabatta
+  Shape BGT Trad / Shape BGT MG / Shape BGT Sesame / Shape BGT Poppy
+  Shape Cheese BGT       ← includes cheese cutting
+  Score BGT              ← ~11:30–12:00 after final shape
+  Lamination PAC         ← 10:20–12:40
+  Shape PAC              ← 13:00–15:30 ONLY
+  Shape Bun / Shape Brioche / Shape Viennoiseries
+  Lunch                  ← 12:00–13:00 when needed
+  Clean end of day       ← end of shift close-out
 
-VACUUM team tasks (role V):
-  - [Any SHAPER task above] before 13:00 — vacuum team helps with real production
-  - Sticker prep / Bag & carton prep   ← 13:00–15:30
-  - Vacuum/Box/Stick                   ← 15:30 to end of shift
+── ROLE V — VACUUM TEAM ─────────────────────────────────────────
+Vacuum team NEVER does bread shaping, scoring, preshaping, or mixing.
+Their job is packaging and vacuum operations exclusively.
+Shift start: use their actual start time from bakerHours.
+Allowed tasks:
+  Sticker prep / Bag & carton prep   ← from shift start until 15:30
+  Vacuum/Box/Stick                   ← 15:30 to end of shift
+  (On very light days, also: Dishes, Kitchen Organization)
 
-WAFFLE tasks (role Waffle — Théo):
-  - Setup WAF
-  - Bake WAF
-  - Packaging WAF
-  - Lunch
+── ROLE Waffle — THÉO ───────────────────────────────────────────
+Allowed tasks: Setup WAF / Bake WAF / Packaging WAF / Lunch
 
 ━━━ TIMING RULES ━━━
-- Mixer (M): works 07:00 – end of their shift (usually 12:00 or 15:30)
-- Shapers (S): first task 09:00 (Score LOAF D-1), end of shift 17:30 or 15:30
-- Vacuum (V): start at their shift start (07:00 or 09:00)
-  • Before 13:00 → help with real production (Preshape BGT, Shape LOAF, Lamination PAC, etc.)
-  • 13:00–15:30 → Sticker prep / Bag & carton prep
-  • 15:30–end → Vacuum/Box/Stick
-- Loaves/WW/CTY/PIZ/Ciabatta: mixed day-of starting 07:00 (mixer priority 1)
-- Baguettes: ALWAYS mixed D+1 (i.e. today the mixer mixes tomorrow's baguette dough)
-- PAC shaping: 13:00–15:30 ONLY — never in the morning
-- Score LOAF D-1: always 09:00–09:30, all shapers present
-- Preshape BGT: 09:00–10:00, all available bakers (shapers + vacuum) together
-- Refresh levain: 10:00–11:00, mixer does this every day
-- Final shape BGT: 10:00–12:00, 1 dedicated baker
-- Score BGT: ~11:30–12:00
-- Vacuum/Box/Stick: 15:30 to end of shift — EVERYONE switches to vacuum
+- Mixer (M): 07:00 to end of their shift. Mixing tasks come first, then cleaning/admin.
+- Shaper (S): 09:00 to end of shift (even if bakerHours shows earlier — do NOT start before 09:00).
+- Vacuum (V): from their shift start → Sticker prep / Bag & carton prep all morning → Vacuum/Box/Stick from 15:30.
+- Loaves/WW/CTY/PIZ/Ciabatta: mixed same day, starting 07:00 (mixer priority 1).
+- Baguettes: ALWAYS mixed D+1 (mixer mixes tomorrow's baguette dough today).
+- PAC shaping: 13:00–15:30 ONLY.
+- Score LOAF D-1: 09:00–09:30, shapers only (NOT vacuum team).
+- Preshape BGT: 09:00–10:00 or 09:30–10:00, shapers only.
+- Refresh levain: 10:00–11:00, mixer every day.
+- Final shape BGT: 10:00–12:00, 1 dedicated shaper.
+- Score BGT: ~11:30–12:00, the shaper who shaped baguettes.
 
-━━━ SHAPING DURATIONS (exact — do not shorten) ━━━
+━━━ SHAPING DURATIONS (exact — never shorten) ━━━
 - Shape LOAF:       1h00 per batch (20 kg flour)
 - Shape WW:         1h20 per batch (20 kg flour)
 - Shape CTY:        1h20 per batch (20 kg flour)
 - Shape PIZ:        1h30 per batch (25 kg flour)
 - Shape Ciabatta:   1h00 per batch (20 kg flour)
-- Shape Cheese BGT: 2h10 total (40 min cheese cutting + 1h30 shaping), 1 baker
+- Shape Cheese BGT: 2h10 total (40 min cutting + 1h30 shaping), 1 baker
 - Shape PAC:        2h30 total (13:00–15:30), 2–4 bakers
 - Lamination PAC:   2h20 total (10:20–12:40), 1–2 bakers
 - Shape Bun:        up to 5 baker-hours, finish by 15:30
 
 ━━━ WEEKEND RULE ━━━
-Saturday/Sunday: ONLY Baguette Trad + Loaf Trad. No PAC, no waffles, no viennoiseries, no pastries.
+Saturday/Sunday: ONLY Baguette Trad + Loaf Trad. No PAC, no waffles, no viennoiseries.
 
 ━━━ OUTPUT FORMAT ━━━
 Return ONLY valid JSON — no markdown, no explanation, no comments.
@@ -119,26 +106,31 @@ Return ONLY valid JSON — no markdown, no explanation, no comments.
 # FEW-SHOT EXAMPLES — two real representative days
 # ---------------------------------------------------------------------------
 FEW_SHOT_EXAMPLES = """
-Below are two real daily plans from Atome Bakery. Use these as templates for structure, task names, timing, and coverage.
+Below are two real daily plans from Atome Bakery. Study them carefully — especially the strict role separation.
+
+KEY RULE illustrated by these examples:
+  - Role M (Mixer): only mixing, folding, levain, cleaning tasks. Never shapes bread.
+  - Role S (Shaper): only shaping, scoring, preshaping tasks. Starts at 09:00 always.
+  - Role V (Vacuum): ONLY packaging tasks (Sticker prep / Bag & carton prep, Vacuum/Box/Stick). NEVER shapes or scores bread.
 
 ━━━ EXAMPLE 1 — Wednesday, full production day ━━━
-Team: Kuba (M, 07:00–12:00), Lavish (M, 07:00–12:00), Alice (S, 09:00–17:30), Bob (S, 09:00–17:30), Carla (V, 07:00–15:30), Diana (V, 09:00–17:30)
+Team: Kuba (M, 07:00–12:00), Lavish (M, 07:00–12:00), Alice (S, 09:00–17:30), Bob (S, 09:00–17:30), Carla (V, 07:00–15:30), Diana (V, 13:30–17:30)
 MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 patons
 
 {
   "date": "EXAMPLE-1",
   "dayOfWeek": "Wednesday",
   "notes": "Full day: 4 LOAF batches, PAC afternoon, baguette dough for tomorrow.",
+  "warnings": [],
   "bakers": [
     {
       "name": "Kuba",
       "role": "M",
       "tasks": [
-        {"id": "k1","name":"Mix LOAF","start":"07:00","end":"08:00","color":"#6366f1","description":"Batch 1+2 — 40kg flour"},
-        {"id": "k2","name":"Mix LOAF","start":"08:00","end":"09:00","color":"#6366f1","description":"Batch 3+4 — 40kg flour"},
-        {"id": "k3","name":"Fold LOAF","start":"09:00","end":"09:30","color":"#6366f1","description":"All 4 batches"},
-        {"id": "k4","name":"Refresh levain","start":"10:00","end":"11:00","color":"#8b5cf6","description":"Daily levain refresh"},
-        {"id": "k5","name":"Mix BGT (D+1)","start":"11:00","end":"12:00","color":"#6366f1","description":"3 batches baguette dough for tomorrow"}
+        {"id": "k1","name":"Mix LOAF","start":"07:00","end":"09:00","color":"#6366f1","description":"Batch 1+2+3+4 — 80kg flour"},
+        {"id": "k2","name":"Fold LOAF","start":"09:00","end":"09:30","color":"#6366f1","description":"All 4 batches"},
+        {"id": "k3","name":"Refresh levain","start":"10:00","end":"11:00","color":"#8b5cf6","description":"Daily levain refresh"},
+        {"id": "k4","name":"Mix BGT (D+1)","start":"11:00","end":"12:00","color":"#6366f1","description":"3 batches baguette dough for tomorrow"}
       ]
     },
     {
@@ -146,7 +138,7 @@ MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 
       "role": "M",
       "tasks": [
         {"id": "l1","name":"Mix PAC batter","start":"07:00","end":"08:40","color":"#ec4899","description":"12 patons PAC Chocolat"},
-        {"id": "l2","name":"Fold LOAF","start":"08:40","end":"09:00","color":"#6366f1","description":"Assist Kuba"},
+        {"id": "l2","name":"Fold LOAF","start":"08:40","end":"09:00","color":"#6366f1","description":"Assist Kuba on last batches"},
         {"id": "l3","name":"Clean Mixer","start":"09:00","end":"10:00","color":"#94a3b8","description":""},
         {"id": "l4","name":"Measuring future mixes","start":"10:00","end":"11:00","color":"#94a3b8","description":"Prepare tomorrow's ingredients"},
         {"id": "l5","name":"Dishes","start":"11:00","end":"12:00","color":"#94a3b8","description":""}
@@ -157,11 +149,11 @@ MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 
       "role": "S",
       "tasks": [
         {"id": "a1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":"Score yesterday's loaves"},
-        {"id": "a2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"Preshape baguettes with team"},
-        {"id": "a3","name":"Shape LOAF","start":"10:00","end":"12:00","color":"#10b981","description":"Batch 1+2"},
+        {"id": "a2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"Preshape baguettes with Bob"},
+        {"id": "a3","name":"Shape LOAF","start":"10:00","end":"12:00","color":"#10b981","description":"Batch 1+2 — 40kg"},
         {"id": "a4","name":"Lunch","start":"12:00","end":"13:00","color":"#94a3b8","description":""},
         {"id": "a5","name":"Shape PAC","start":"13:00","end":"15:30","color":"#ec4899","description":"PAC Chocolat, 12 patons"},
-        {"id": "a6","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
+        {"id": "a6","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":""}
       ]
     },
     {
@@ -169,46 +161,42 @@ MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 
       "role": "S",
       "tasks": [
         {"id": "b1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":"Score yesterday's loaves"},
-        {"id": "b2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"Preshape baguettes with team"},
+        {"id": "b2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"Preshape baguettes with Alice"},
         {"id": "b3","name":"Shape BGT Trad","start":"10:00","end":"12:00","color":"#f59e0b","description":"Final shape 3 batches"},
         {"id": "b4","name":"Score BGT","start":"12:00","end":"12:30","color":"#06b6d4","description":"Score all baguettes"},
-        {"id": "b5","name":"Shape LOAF","start":"12:30","end":"13:00","color":"#10b981","description":"Batch 3+4"},
+        {"id": "b5","name":"Shape LOAF","start":"12:30","end":"13:00","color":"#10b981","description":"Batch 3+4 — 40kg"},
         {"id": "b6","name":"Shape PAC","start":"13:00","end":"15:30","color":"#ec4899","description":"PAC Chocolat assist"},
-        {"id": "b7","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
+        {"id": "b7","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":""}
       ]
     },
     {
       "name": "Carla",
       "role": "V",
       "tasks": [
-        {"id": "c1","name":"Preshape BGT","start":"07:00","end":"10:00","color":"#f59e0b","description":"Prepare baguette dough from yesterday"},
-        {"id": "c2","name":"Shape LOAF","start":"10:00","end":"12:00","color":"#10b981","description":"Assist shapers, batch 3+4"},
-        {"id": "c3","name":"Sticker prep / Bag & carton prep","start":"13:00","end":"15:30","color":"#64748b","description":"Prepare vacuum station"},
-        {"id": "c4","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
+        {"id": "c1","name":"Sticker prep / Bag & carton prep","start":"07:00","end":"15:30","color":"#64748b","description":"Prepare all vacuum station, labels, cartons, pouches"},
+        {"id": "c2","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":"Vacuum and pack all products"}
       ]
     },
     {
       "name": "Diana",
       "role": "V",
       "tasks": [
-        {"id": "d1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":""},
-        {"id": "d2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":""},
-        {"id": "d3","name":"Lamination PAC","start":"10:20","end":"12:40","color":"#ec4899","description":"12 patons PAC Chocolat"},
-        {"id": "d4","name":"Sticker prep / Bag & carton prep","start":"13:00","end":"15:30","color":"#64748b","description":""},
-        {"id": "d5","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
+        {"id": "d1","name":"Sticker prep / Bag & carton prep","start":"13:30","end":"15:30","color":"#64748b","description":"Set up vacuum station, stickers, cartons"},
+        {"id": "d2","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
       ]
     }
   ]
 }
 
-━━━ EXAMPLE 2 — Friday, lighter day with WW + PAC ━━━
-Team: Mehdi (M, 07:00–15:30), Natalia (S, 09:00–17:30), Joyie (S, 09:00–17:30), Ysaline (V, 07:00–15:30)
-MOs: WW 40kg (2 batches), BGT MG 40kg (2 batches D+1), PAC Framboise 8 patons
+━━━ EXAMPLE 2 — Friday, lighter day ━━━
+Team: Mehdi (M, 07:00–15:30), Natalia (S, 09:00–17:30), Joyie (S, 09:00–17:30), Ysaline (V, 07:00–15:30), Angele (V, 07:00–15:30)
+MOs: WW 40kg (2 batches), BGT MG 40kg (2 batches D+1)
 
 {
   "date": "EXAMPLE-2",
   "dayOfWeek": "Friday",
-  "notes": "2 WW batches, PAC afternoon, baguette MG dough for tomorrow.",
+  "notes": "Light day: 2 WW batches + baguette MG dough for tomorrow. No PAC.",
+  "warnings": [],
   "bakers": [
     {
       "name": "Mehdi",
@@ -219,7 +207,7 @@ MOs: WW 40kg (2 batches), BGT MG 40kg (2 batches D+1), PAC Framboise 8 patons
         {"id": "m3","name":"Refresh levain","start":"10:00","end":"11:00","color":"#8b5cf6","description":"Daily levain refresh"},
         {"id": "m4","name":"Mix BGT (D+1)","start":"11:00","end":"12:30","color":"#6366f1","description":"2 batches BGT MG for tomorrow"},
         {"id": "m5","name":"Clean Mixer","start":"12:30","end":"13:30","color":"#94a3b8","description":""},
-        {"id": "m6","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
+        {"id": "m6","name":"Kitchen Organization","start":"13:30","end":"15:30","color":"#94a3b8","description":""}
       ]
     },
     {
@@ -227,12 +215,11 @@ MOs: WW 40kg (2 batches), BGT MG 40kg (2 batches D+1), PAC Framboise 8 patons
       "role": "S",
       "tasks": [
         {"id": "n1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":""},
-        {"id": "n2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"BGT MG preshape"},
-        {"id": "n3","name":"Shape WW","start":"10:00","end":"11:20","color":"#10b981","description":"Batch 1"},
-        {"id": "n4","name":"Shape WW","start":"11:20","end":"12:40","color":"#10b981","description":"Batch 2"},
-        {"id": "n5","name":"Lunch","start":"12:40","end":"13:00","color":"#94a3b8","description":""},
-        {"id": "n6","name":"Shape PAC","start":"13:00","end":"15:30","color":"#ec4899","description":"PAC Framboise 8 patons"},
-        {"id": "n7","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
+        {"id": "n2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"BGT MG preshape with Joyie"},
+        {"id": "n3","name":"Shape WW","start":"10:00","end":"11:20","color":"#10b981","description":"Batch 1 — 20kg"},
+        {"id": "n4","name":"Shape WW","start":"11:20","end":"12:40","color":"#10b981","description":"Batch 2 — 20kg"},
+        {"id": "n5","name":"Clean end of day","start":"12:40","end":"15:30","color":"#94a3b8","description":""},
+        {"id": "n6","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":""}
       ]
     },
     {
@@ -240,21 +227,27 @@ MOs: WW 40kg (2 batches), BGT MG 40kg (2 batches D+1), PAC Framboise 8 patons
       "role": "S",
       "tasks": [
         {"id": "j1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":""},
-        {"id": "j2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"BGT MG preshape"},
+        {"id": "j2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"BGT MG preshape with Natalia"},
         {"id": "j3","name":"Shape BGT MG","start":"10:00","end":"12:00","color":"#f59e0b","description":"Final shape 2 batches"},
         {"id": "j4","name":"Score BGT","start":"12:00","end":"12:30","color":"#06b6d4","description":""},
-        {"id": "j5","name":"Shape PAC","start":"13:00","end":"15:30","color":"#ec4899","description":"PAC Framboise assist"},
-        {"id": "j6","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
+        {"id": "j5","name":"Clean end of day","start":"12:30","end":"15:30","color":"#94a3b8","description":""},
+        {"id": "j6","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":""}
       ]
     },
     {
       "name": "Ysaline",
       "role": "V",
       "tasks": [
-        {"id": "y1","name":"Preshape BGT","start":"07:00","end":"10:00","color":"#f59e0b","description":"Prepare baguette dough from yesterday"},
-        {"id": "y2","name":"Lamination PAC","start":"10:20","end":"12:40","color":"#ec4899","description":"8 patons PAC Framboise"},
-        {"id": "y3","name":"Sticker prep / Bag & carton prep","start":"13:00","end":"15:30","color":"#64748b","description":""},
-        {"id": "y4","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
+        {"id": "y1","name":"Sticker prep / Bag & carton prep","start":"07:00","end":"15:30","color":"#64748b","description":"Labels, cartons, pouches, vacuum station prep"},
+        {"id": "y2","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
+      ]
+    },
+    {
+      "name": "Angele",
+      "role": "V",
+      "tasks": [
+        {"id": "ag1","name":"Sticker prep / Bag & carton prep","start":"07:00","end":"15:30","color":"#64748b","description":"Labels, cartons, pouches, vacuum station prep"},
+        {"id": "ag2","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
       ]
     }
   ]
