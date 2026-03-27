@@ -3,7 +3,7 @@
    ================================================================ */
 
 const REPO      = "diesirae1908/atome-prod-schedule";
-const BASE_RAW  = `https://raw.githubusercontent.com/${REPO}/main/prod-schedule`;
+const BASE_RAW  = `https://raw.githubusercontent.com/${REPO}/main`;
 const API_BASE  = `https://api.github.com/repos/${REPO}`;
 const WORKFLOW  = "generate_ai_plan.yml";
 
