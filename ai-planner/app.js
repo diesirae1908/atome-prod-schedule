@@ -251,11 +251,9 @@ function renderPlan(plan) {
 
   html += `</div></div>`;
 
-  const genAt = plan.generatedAt ? new Date(plan.generatedAt).toLocaleString("en-GB") : "";
-  html += `<p style="font-size:11px;color:#94a3b8;margin-top:10px">Generated ${genAt}</p>`;
-
   body.innerHTML = html;
-  document.getElementById("plan-status").textContent = "";
+  const genAt = plan.generatedAt ? new Date(plan.generatedAt).toLocaleString("en-GB", {day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}) : "";
+  document.getElementById("plan-status").textContent = genAt ? `Generated ${genAt}` : "";
 }
 
 function renderNoPlan(ds) {

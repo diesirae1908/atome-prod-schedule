@@ -30,21 +30,30 @@ SYSTEM_PROMPT_BASE = """You are the production planner for Atome Bakery. Your ON
 ━━━ ROLE DEFINITIONS & STRICT TASK LISTS ━━━
 
 ── ROLE M — MIXER ──────────────────────────────────────────────
-Mixers work the MIXER station only. They NEVER shape bread.
+Mixers work the MIXER station (07:00 to shift end, usually 12:00–13:00).
 Allowed tasks:
   Mix LOAF / Mix WW / Mix CTY / Mix PIZ / Mix Ciabatta
   Mix BGT (D+1)          ← baguette dough for next day — ALWAYS done
   Mix PAC batter
   Mix WAF dough
   Fold LOAF / Fold WW / Fold CTY / Fold PIZ / Fold BGT / Fold Ciabatta
+  Unload PAC             ← after Mix PAC, takes ~30 min
   Refresh levain         ← EVERY day, no exception, ~10:00–11:00
   Measuring future mixes
   Clean Mixer
   Dishes
   Kitchen Organization
+  Lunch                  ← 30 min, around 11:30–12:30
+
+⚠ MEHDI EXCEPTION — FLEX BAKER:
+  Mehdi is a flex baker (role M). Once he finishes ALL morning mixing tasks (usually 11:30–12:30),
+  Mehdi TRANSITIONS to shaping for the afternoon. Do NOT leave him idle.
+  After morning mixer duties, Mehdi may be assigned ANY shaper task:
+    Shape BGT Trad / Shape Ciabatta / Shape LOAF / Shape PAC / Score BGT / Lamination PAC
+  Schedule his afternoon as if he were a shaper.
 
 ── ROLE S — SHAPER / BAKER ─────────────────────────────────────
-Shapers work the SHAPING station. Production tasks only.
+Shapers work the SHAPING station (09:00–17:30).
 Shift start: 09:00 (never earlier, even if bakerHours shows an earlier time).
 Allowed tasks:
   Score LOAF D-1         ← always first, 09:00–09:30
@@ -52,12 +61,13 @@ Allowed tasks:
   Shape LOAF / Shape WW / Shape CTY / Shape PIZ / Shape Ciabatta
   Shape BGT Trad / Shape BGT MG / Shape BGT Sesame / Shape BGT Poppy
   Shape Cheese BGT       ← includes cheese cutting
-  Score BGT              ← ~11:30–12:00 after final shape
+  Score BGT              ← after final BGT shape, ~11:30–12:30
   Lamination PAC         ← 10:20–12:40
   Shape PAC              ← 13:00–15:30 ONLY
   Shape Bun / Shape Brioche / Shape Viennoiseries
-  Lunch                  ← 12:00–13:00 when needed
-  Clean end of day       ← end of shift close-out
+  Lunch                  ← MANDATORY 30 min, staggered (see timing rules)
+  Clean end of day       ← 15:30–16:00 roughly
+  Vacuum/Box/Stick       ← ~16:00–17:30 (all shapers join vacuum at end of day)
 
 ── ROLE V — VACUUM TEAM ─────────────────────────────────────────
 Vacuum team NEVER does bread shaping, scoring, preshaping, or mixing.
@@ -114,13 +124,16 @@ KEY RULE illustrated by these examples:
   - Role V (Vacuum): ONLY packaging tasks (Sticker prep / Bag & carton prep, Vacuum/Box/Stick). NEVER shapes or scores bread.
 
 ━━━ EXAMPLE 1 — Wednesday, full production day ━━━
-Team: Kuba (M, 07:00–12:00), Lavish (M, 07:00–12:00), Alice (S, 09:00–17:30), Bob (S, 09:00–17:30), Carla (V, 07:00–15:30), Diana (V, 13:30–17:30)
-MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 patons
+Team: Kuba (M, 07:00–12:00), Mehdi (M, 07:00–15:30), Alice (S, 09:00–17:30), Bob (S, 09:00–17:30), Carla (V, 07:00–17:30), Diana (V, 13:30–17:30)
+MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 patons, Ciabatta 40kg (2 batches)
+
+Note: Mehdi finishes mixing at ~12:00, then transitions to shaping for the afternoon (FLEX BAKER).
+Note: All shapers get a 30-min staggered lunch, then end day with Clean + Vacuum/Box/Stick.
 
 {
   "date": "EXAMPLE-1",
   "dayOfWeek": "Wednesday",
-  "notes": "Full day: 4 LOAF batches, PAC afternoon, baguette dough for tomorrow.",
+  "notes": "Full day: 4 LOAF + 2 Ciabatta, PAC afternoon, BGT dough for tomorrow. Mehdi flexes to shaping.",
   "warnings": [],
   "bakers": [
     {
@@ -134,14 +147,17 @@ MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 
       ]
     },
     {
-      "name": "Lavish",
+      "name": "Mehdi",
       "role": "M",
       "tasks": [
-        {"id": "l1","name":"Mix PAC batter","start":"07:00","end":"08:40","color":"#ec4899","description":"12 patons PAC Chocolat"},
-        {"id": "l2","name":"Fold LOAF","start":"08:40","end":"09:00","color":"#6366f1","description":"Assist Kuba on last batches"},
-        {"id": "l3","name":"Clean Mixer","start":"09:00","end":"10:00","color":"#94a3b8","description":""},
-        {"id": "l4","name":"Measuring future mixes","start":"10:00","end":"11:00","color":"#94a3b8","description":"Prepare tomorrow's ingredients"},
-        {"id": "l5","name":"Dishes","start":"11:00","end":"12:00","color":"#94a3b8","description":""}
+        {"id": "mh1","name":"Mix Ciabatta","start":"07:00","end":"08:30","color":"#6366f1","description":"2 batches — 40kg flour"},
+        {"id": "mh2","name":"Mix PAC batter","start":"08:30","end":"09:10","color":"#ec4899","description":"12 patons PAC Chocolat"},
+        {"id": "mh3","name":"Unload PAC","start":"09:10","end":"09:40","color":"#ec4899","description":"Unload PAC dough"},
+        {"id": "mh4","name":"Fold Ciabatta","start":"09:40","end":"10:00","color":"#6366f1","description":"Both ciabatta batches"},
+        {"id": "mh5","name":"Clean Mixer","start":"10:00","end":"11:00","color":"#94a3b8","description":""},
+        {"id": "mh6","name":"Lunch","start":"11:30","end":"12:00","color":"#94a3b8","description":""},
+        {"id": "mh7","name":"Shape Ciabatta","start":"12:00","end":"13:00","color":"#10b981","description":"Batch 1 — Mehdi transitions to shaping (flex baker)"},
+        {"id": "mh8","name":"Shape PAC","start":"13:00","end":"15:30","color":"#ec4899","description":"PAC Chocolat — 12 patons, assist Alice+Bob"}
       ]
     },
     {
@@ -151,9 +167,11 @@ MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 
         {"id": "a1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":"Score yesterday's loaves"},
         {"id": "a2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"Preshape baguettes with Bob"},
         {"id": "a3","name":"Shape LOAF","start":"10:00","end":"12:00","color":"#10b981","description":"Batch 1+2 — 40kg"},
-        {"id": "a4","name":"Lunch","start":"12:00","end":"13:00","color":"#94a3b8","description":""},
-        {"id": "a5","name":"Shape PAC","start":"13:00","end":"15:30","color":"#ec4899","description":"PAC Chocolat, 12 patons"},
-        {"id": "a6","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":""}
+        {"id": "a4","name":"Lunch","start":"12:00","end":"12:30","color":"#94a3b8","description":""},
+        {"id": "a5","name":"Shape Ciabatta","start":"12:30","end":"13:00","color":"#10b981","description":"Batch 2 — 20kg"},
+        {"id": "a6","name":"Shape PAC","start":"13:00","end":"15:30","color":"#ec4899","description":"PAC Chocolat, 12 patons"},
+        {"id": "a7","name":"Clean end of day","start":"15:30","end":"16:00","color":"#94a3b8","description":""},
+        {"id": "a8","name":"Vacuum/Box/Stick","start":"16:00","end":"17:30","color":"#64748b","description":"Join vacuum team"}
       ]
     },
     {
@@ -165,8 +183,10 @@ MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 
         {"id": "b3","name":"Shape BGT Trad","start":"10:00","end":"12:00","color":"#f59e0b","description":"Final shape 3 batches"},
         {"id": "b4","name":"Score BGT","start":"12:00","end":"12:30","color":"#06b6d4","description":"Score all baguettes"},
         {"id": "b5","name":"Shape LOAF","start":"12:30","end":"13:00","color":"#10b981","description":"Batch 3+4 — 40kg"},
-        {"id": "b6","name":"Shape PAC","start":"13:00","end":"15:30","color":"#ec4899","description":"PAC Chocolat assist"},
-        {"id": "b7","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":""}
+        {"id": "b6","name":"Lunch","start":"13:00","end":"13:30","color":"#94a3b8","description":""},
+        {"id": "b7","name":"Shape PAC","start":"13:30","end":"15:30","color":"#ec4899","description":"PAC Chocolat assist"},
+        {"id": "b8","name":"Clean end of day","start":"15:30","end":"16:00","color":"#94a3b8","description":""},
+        {"id": "b9","name":"Vacuum/Box/Stick","start":"16:00","end":"17:30","color":"#64748b","description":"Join vacuum team"}
       ]
     },
     {
@@ -188,26 +208,29 @@ MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 
   ]
 }
 
-━━━ EXAMPLE 2 — Friday, lighter day ━━━
+━━━ EXAMPLE 2 — Friday, lighter day with Mehdi flex ━━━
 Team: Mehdi (M, 07:00–15:30), Natalia (S, 09:00–17:30), Joyie (S, 09:00–17:30), Ysaline (V, 07:00–15:30), Angele (V, 07:00–15:30)
-MOs: WW 40kg (2 batches), BGT MG 40kg (2 batches D+1)
+MOs: LOAF Trad 40kg (2 batches), BGT MG 40kg (2 batches D+1)
+
+Note: Mehdi finishes mixing around 12:30, then transitions to shaping (flex baker).
 
 {
   "date": "EXAMPLE-2",
   "dayOfWeek": "Friday",
-  "notes": "Light day: 2 WW batches + baguette MG dough for tomorrow. No PAC.",
+  "notes": "2 LOAF batches + BGT MG dough for tomorrow. Mehdi flexes to shaping after mixing.",
   "warnings": [],
   "bakers": [
     {
       "name": "Mehdi",
       "role": "M",
       "tasks": [
-        {"id": "m1","name":"Mix WW","start":"07:00","end":"09:00","color":"#6366f1","description":"2 batches — 40kg flour"},
-        {"id": "m2","name":"Fold WW","start":"09:00","end":"09:30","color":"#6366f1","description":"Both batches"},
+        {"id": "m1","name":"Mix LOAF","start":"07:00","end":"08:30","color":"#6366f1","description":"2 batches — 40kg flour"},
+        {"id": "m2","name":"Fold LOAF","start":"08:30","end":"09:00","color":"#6366f1","description":"Both batches"},
         {"id": "m3","name":"Refresh levain","start":"10:00","end":"11:00","color":"#8b5cf6","description":"Daily levain refresh"},
         {"id": "m4","name":"Mix BGT (D+1)","start":"11:00","end":"12:30","color":"#6366f1","description":"2 batches BGT MG for tomorrow"},
-        {"id": "m5","name":"Clean Mixer","start":"12:30","end":"13:30","color":"#94a3b8","description":""},
-        {"id": "m6","name":"Kitchen Organization","start":"13:30","end":"15:30","color":"#94a3b8","description":""}
+        {"id": "m5","name":"Lunch","start":"12:30","end":"13:00","color":"#94a3b8","description":""},
+        {"id": "m6","name":"Shape LOAF","start":"13:00","end":"14:00","color":"#10b981","description":"Batch 2 — Mehdi transitions to shaping (flex baker)"},
+        {"id": "m7","name":"Clean end of day","start":"14:00","end":"15:30","color":"#94a3b8","description":"Kitchen cleanup"}
       ]
     },
     {
@@ -216,11 +239,11 @@ MOs: WW 40kg (2 batches), BGT MG 40kg (2 batches D+1)
       "tasks": [
         {"id": "n1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":"Score yesterday's loaves"},
         {"id": "n2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"BGT MG preshape with Joyie"},
-        {"id": "n3","name":"Shape WW","start":"10:00","end":"11:20","color":"#10b981","description":"Batch 1 — 20kg WW flour"},
-        {"id": "n4","name":"Shape WW","start":"11:20","end":"12:40","color":"#10b981","description":"Batch 2 — 20kg WW flour (back to back, no gap)"},
-        {"id": "n5","name":"Lunch","start":"12:40","end":"13:30","color":"#94a3b8","description":""},
-        {"id": "n6","name":"Clean end of day","start":"13:30","end":"15:30","color":"#94a3b8","description":"Kitchen help, prep, cleaning"},
-        {"id": "n7","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":"End of day cleanup"}
+        {"id": "n3","name":"Shape LOAF","start":"10:00","end":"11:00","color":"#10b981","description":"Batch 1 — 20kg"},
+        {"id": "n4","name":"Lunch","start":"12:30","end":"13:00","color":"#94a3b8","description":""},
+        {"id": "n5","name":"Clean end of day","start":"13:00","end":"15:30","color":"#94a3b8","description":"Kitchen help, prep, cleaning"},
+        {"id": "n6","name":"Clean end of day","start":"15:30","end":"16:00","color":"#94a3b8","description":"End of day cleanup"},
+        {"id": "n7","name":"Vacuum/Box/Stick","start":"16:00","end":"17:30","color":"#64748b","description":"Join vacuum team"}
       ]
     },
     {
@@ -231,9 +254,10 @@ MOs: WW 40kg (2 batches), BGT MG 40kg (2 batches D+1)
         {"id": "j2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"BGT MG preshape with Natalia"},
         {"id": "j3","name":"Shape BGT MG","start":"10:00","end":"12:00","color":"#f59e0b","description":"Final shape 2 batches"},
         {"id": "j4","name":"Score BGT","start":"12:00","end":"12:30","color":"#06b6d4","description":"Score all baguettes"},
-        {"id": "j5","name":"Lunch","start":"12:30","end":"13:30","color":"#94a3b8","description":""},
+        {"id": "j5","name":"Lunch","start":"13:00","end":"13:30","color":"#94a3b8","description":""},
         {"id": "j6","name":"Clean end of day","start":"13:30","end":"15:30","color":"#94a3b8","description":"Kitchen help, prep, cleaning"},
-        {"id": "j7","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":"End of day cleanup"}
+        {"id": "j7","name":"Clean end of day","start":"15:30","end":"16:00","color":"#94a3b8","description":"End of day cleanup"},
+        {"id": "j8","name":"Vacuum/Box/Stick","start":"16:00","end":"17:30","color":"#64748b","description":"Join vacuum team"}
       ]
     },
     {
@@ -518,11 +542,15 @@ SHAPERS (role S):
 - Preshape BGT: 09:00–10:00 or 09:30–10:00 (after scoring), SHAPERS ONLY. NEVER vacuum team.
 - Multiple batches of the same product: schedule BACK TO BACK with NO gap between them.
   Example: 2 Ciabatta batches → 09:30–10:30 then 10:30–11:30 (not 09:30–10:30 then 11:00–12:00).
+  Exception: a lunch break may split consecutive batches.
 - FERMENTATION RULE: dough mixed at 07:00 is ready to shape from 09:00 (2h bulk fermentation).
   NEVER schedule shaping within 60 min of the mixer's last fold of that same dough.
   If mixer folds Ciabatta at 08:30, shapers cannot start shaping Ciabatta before 10:00.
+- LUNCH (MANDATORY): every shaper gets a 30-min lunch break. Stagger times so production never stops.
+  Typical: 12:30–13:00 or 13:00–13:30. A lunch break may split ciabatta batches or other long tasks.
+- END OF DAY: 15:30–16:00 "Clean end of day", then 16:00–17:30 "Vacuum/Box/Stick".
+  ALL shapers join vacuum operations at the end — this is normal and expected.
 - If no PAC in MOs: skip Lamination PAC and Shape PAC entirely.
-- End of day 15:30–17:30: "Clean end of day".
 
 VACUUM TEAM (role V):
 - ENTIRE role is packaging. They NEVER shape, score, preshape, or mix — at ANY time of day.
