@@ -10,6 +10,10 @@ on:
         description: 'Number of days to generate (1–6)'
         required: false
         default: '1'
+      feedback:
+        description: 'Lead feedback for regeneration (optional)'
+        required: false
+        default: ''
 
 jobs:
   generate:
@@ -32,6 +36,7 @@ jobs:
       - name: Generate AI plan(s)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LEAD_FEEDBACK: ${{ inputs.feedback }}
         run: |
           python scripts/generate_ai_plan.py \
             --date "${{ inputs.date }}" \

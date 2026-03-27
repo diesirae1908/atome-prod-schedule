@@ -69,6 +69,10 @@ function bindUI() {
   document.getElementById("btn-regenerate").addEventListener("click", () => {
     openModal("modal-admin");
   });
+
+  // Warnings / feedback modal
+  document.getElementById("btn-warnings").addEventListener("click", () => openModal("modal-feedback"));
+  document.getElementById("btn-submit-feedback").addEventListener("click", submitFeedback);
 }
 
 // ── Date helpers ────────────────────────────────────────────────
@@ -182,6 +186,21 @@ function renderPlan(plan) {
   function timeToRow(t) {
     const [h, m] = t.split(":").map(Number);
     return Math.round((h * 60 + m - START) / SLOT) + 2;
+  }
+
+  // ── Warnings banner ────────────────────────────────────────────
+  const warnings = plan.warnings || [];
+  const btnWarn  = document.getElementById("btn-warnings");
+  if (warnings.length > 0) {
+    btnWarn.style.display = "inline-flex";
+    btnWarn.textContent   = `⚠️ ${warnings.length} Warning${warnings.length > 1 ? "s" : ""}`;
+    // Pre-populate feedback modal warnings list
+    document.getElementById("feedback-warnings-list").innerHTML =
+      warnings.map(w => `<li>${escHtml(w)}</li>`).join("");
+    document.getElementById("feedback-date").textContent = plan.date;
+  } else {
+    btnWarn.style.display = "none";
+    document.getElementById("feedback-warnings-list").innerHTML = "";
   }
 
   let html = plan.notes
@@ -407,7 +426,7 @@ function getPAT() {
   return enc ? atob(enc) : null;
 }
 
-async function triggerGenerate() {
+async function triggerGenerate(feedback = "") {
   const pat  = getPAT();
   if (!pat) { alert("Save your GitHub PAT in settings first."); return; }
   const date = document.getElementById("gen-date").value;
@@ -420,13 +439,54 @@ async function triggerGenerate() {
   status.textContent = "⏳ Triggering GitHub Actions…";
 
   try {
+    const inputs = { date, days };
+    if (feedback.trim()) inputs.feedback = feedback.trim();
     const res = await fetch(`${API_BASE}/actions/workflows/${WORKFLOW}/dispatches`, {
       method: "POST",
       headers: { Authorization: `token ${pat}`, Accept: "application/vnd.github.v3+json", "Content-Type": "application/json" },
-      body: JSON.stringify({ ref: "main", inputs: { date, days } })
+      body: JSON.stringify({ ref: "main", inputs })
     });
     if (res.status === 204) {
-      status.textContent = `✓ Generation started for ${date} (${days} day(s)). Plans will appear in ~2 minutes. Refresh this page to see them.`;
+      status.textContent = `✓ Generation started for ${date} (${days} day(s)). Plan will appear in ~2 min — refresh to see it.`;
+    } else {
+      const txt = await res.text();
+      status.textContent = `✗ Error ${res.status}: ${txt}`;
+    }
+  } catch (e) {
+    status.textContent = "✗ Failed: " + e.message;
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function submitFeedback() {
+  const pat = getPAT();
+  if (!pat) { alert("You need to be logged in as admin to regenerate. Open the Admin panel and unlock it first."); return; }
+  const feedback = document.getElementById("feedback-text").value.trim();
+  if (!feedback) { alert("Please enter your feedback before submitting."); return; }
+
+  const date     = planCache[selectedDate]?.date || selectedDate;
+  const btn      = document.getElementById("btn-submit-feedback");
+  const status   = document.getElementById("feedback-status");
+  btn.disabled   = true;
+  status.textContent = "⏳ Sending to GitHub Actions…";
+
+  // Pre-fill admin generate fields so the date matches
+  document.getElementById("gen-date").value = date;
+  document.getElementById("gen-days").value = "1";
+
+  try {
+    const inputs = { date, days: "1", feedback };
+    const res = await fetch(`${API_BASE}/actions/workflows/${WORKFLOW}/dispatches`, {
+      method: "POST",
+      headers: { Authorization: `token ${pat}`, Accept: "application/vnd.github.v3+json", "Content-Type": "application/json" },
+      body: JSON.stringify({ ref: "main", inputs })
+    });
+    if (res.status === 204) {
+      status.textContent = "✓ Regeneration triggered with your feedback! Plan will update in ~2 min — refresh to see it.";
+      document.getElementById("feedback-text").value = "";
+      // Invalidate cache so the new plan loads on next visit
+      delete planCache[date];
     } else {
       const txt = await res.text();
       status.textContent = `✗ Error ${res.status}: ${txt}`;

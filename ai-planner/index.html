@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atome AI Planner</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <div id="app">
@@ -34,6 +34,7 @@
         <div id="plan-header" class="plan-header">
           <div id="plan-date-title" class="plan-date-title"></div>
           <div class="plan-actions">
+            <button id="btn-warnings" class="btn btn-warning" style="display:none">⚠️ Warnings</button>
             <button id="btn-generate-day" class="btn btn-primary" style="display:none">⚡ Generate this day</button>
             <button id="btn-regenerate" class="btn btn-warning" style="display:none">🔄 Regenerate</button>
             <span id="plan-status" class="plan-status"></span>
@@ -123,6 +124,40 @@
       </div>
     </div>
 
+    <!-- ── Feedback / Warnings Modal ── -->
+    <div id="modal-feedback" class="modal">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h2>⚠️ AI Warnings &amp; Lead Feedback</h2>
+          <button class="modal-close" data-modal="modal-feedback">✕</button>
+        </div>
+
+        <div class="settings-section">
+          <h3>Scheduling warnings for <span id="feedback-date"></span></h3>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">
+            The AI flagged these potential issues with the current plan:
+          </p>
+          <ul id="feedback-warnings-list" style="font-size:13px;line-height:1.7;padding-left:18px;color:#92400e"></ul>
+        </div>
+
+        <div class="settings-section">
+          <h3>Your recommendations</h3>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">
+            Describe how you want the plan adjusted. The AI will regenerate the plan with your instructions as highest priority.
+          </p>
+          <textarea id="feedback-text" class="input" rows="5"
+            placeholder="e.g. Assign Angèle to help with Ciabatta shaping in the morning. Move PAC lamination to Natalia only. Joyie should do Score LOAF D-1 then Shape BGT Trad all morning."
+            style="resize:vertical;font-family:inherit"></textarea>
+          <p id="feedback-status" class="save-status" style="margin-top:6px"></p>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-outline" onclick="closeModal('modal-feedback')">Cancel</button>
+          <button id="btn-submit-feedback" class="btn btn-primary">⚡ Regenerate with feedback</button>
+        </div>
+      </div>
+    </div>
+
     <!-- ── Generate confirm banner (non-admin) ── -->
     <div id="generate-banner" style="display:none" class="generate-banner">
       <span>No plan generated yet for this day.</span>
@@ -130,6 +165,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

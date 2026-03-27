@@ -320,15 +320,16 @@ def format_recent_plans_for_prompt(plans: list[dict]) -> str:
     return "\n".join(lines)
 
 def load_schedule_for_date(date_str: str) -> dict:
-    path = BASE / "schedule.json"
-    if not path.exists():
-        return {}
-    with open(path) as f:
-        schedule = json.load(f)
-    days = schedule if isinstance(schedule, list) else schedule.get("days", [])
-    for day in days:
-        if day.get("date") == date_str:
-            return day
+    # Check both locations: data/schedule.json (primary) and schedule.json (legacy root)
+    for path in [BASE / "data" / "schedule.json", BASE / "schedule.json"]:
+        if not path.exists():
+            continue
+        with open(path) as f:
+            schedule = json.load(f)
+        days = schedule if isinstance(schedule, list) else schedule.get("days", [])
+        for day in days:
+            if day.get("date") == date_str:
+                return day
     return {}
 
 def load_shifts_data() -> dict:
@@ -341,23 +342,129 @@ def load_shifts_data() -> dict:
 def day_of_week(date_str: str) -> str:
     return datetime.strptime(date_str, "%Y-%m-%d").strftime("%A")
 
+# ---------------------------------------------------------------------------
+# Batch-size lookup (kg flour per batch) for shaping duration calculations
+# ---------------------------------------------------------------------------
+_BATCH_KG = {
+    "LOAF_T": 20, "LOAF": 20,
+    "WW": 20, "WHOLE_WHEAT": 20,
+    "COUNTRY": 20, "CTY": 20,
+    "CIABATTA": 20,
+    "PIZZA": 25,
+    "PAC_CR": 22.68, "PAC": 22.68, "CROISSANT": 22.68,
+    "TRAD": 25, "MG": 25, "SESAME": 25, "POPPY": 25,
+    "CHEESE": 25, "CHEESE_BGT": 25,
+    "BRIOCHE": 22.68, "VIENNOISERIE": 22.68, "BUN": 22.68,
+}
+# Dough types that are baguettes → mixed D-1 (today mixer prepares for tomorrow)
+_BAGUETTE_TYPES = {"TRAD", "MG", "SESAME", "POPPY", "CHEESE", "CHEESE_BGT"}
+
+def _batches(total_kg: float, dough_type: str) -> str:
+    size = _BATCH_KG.get(dough_type.upper(), 20)
+    n    = max(1, round(total_kg / size + 0.49))  # round up
+    return f"{n} batch{'es' if n != 1 else ''}"
+
+def _friendly_name(dough_type: str, label: str) -> str:
+    """Return a human-friendly product name."""
+    dt = dough_type.upper()
+    mapping = {
+        "LOAF_T": "Loaf Trad", "LOAF": "Loaf Trad",
+        "WW": "Whole Wheat (WW)", "WHOLE_WHEAT": "Whole Wheat (WW)",
+        "COUNTRY": "Country (CTY)", "CTY": "Country (CTY)",
+        "CIABATTA": "Ciabatta",
+        "PIZZA": "Pizza",
+        "PAC_CR": "PAC / Pain au Chocolat", "PAC": "PAC / Pain au Chocolat",
+        "TRAD": "Baguette Trad",
+        "MG": "Baguette MG",
+        "SESAME": "Baguette Sesame",
+        "POPPY": "Baguette Poppy",
+        "CHEESE": "Cheese Baguette", "CHEESE_BGT": "Cheese Baguette",
+        "BRIOCHE": "Brioche", "VIENNOISERIE": "Viennoiseries", "BUN": "Buns",
+    }
+    return mapping.get(dt, label or dough_type)
+
 def summarise_mos(day_data: dict) -> str:
+    """Parse the real schedule.json structure (mix/shaping/premix/vacuuming)."""
     if not day_data:
         return "No manufacturing orders found for this date."
-    lines = []
-    for mop in day_data.get("mops", []):
-        name    = mop.get("name") or mop.get("id", "Unknown")
-        qty     = mop.get("qty", "?")
-        unit    = mop.get("unit", "")
-        batches = mop.get("batches", "")
-        line    = f"- {name}: {qty} {unit}"
-        if batches:
-            line += f" ({batches} batch{'es' if batches != 1 else ''})"
-        lines.append(line)
-    return "\n".join(lines) if lines else "No MOs specified — schedule only mandatory tasks: levain refresh + Mix BGT (D+1)."
+
+    sections = []
+
+    # ── MIX (what the mixer makes today) ────────────────────────────────────
+    mix_lines = []
+    for m in day_data.get("mix", []):
+        dt    = m.get("dough_type", "")
+        name  = _friendly_name(dt, m.get("label", ""))
+        kg    = m.get("total_kg", 0)
+        batch = _batches(kg, dt) if kg else ""
+        is_bgt = dt.upper() in _BAGUETTE_TYPES
+        suffix = " → mixed TODAY for tomorrow (D+1)" if is_bgt else " → mixed TODAY"
+        mix_lines.append(f"  • {name}: {kg:.1f} kg ({batch}){suffix}")
+    if mix_lines:
+        sections.append("MIX TODAY (mixer tasks):\n" + "\n".join(mix_lines))
+
+    # ── SHAPING (what gets shaped today) ────────────────────────────────────
+    shape_lines = []
+    for s in day_data.get("shaping", []):
+        name = s.get("name", s.get("sku", "?"))
+        kg   = s.get("total_kg", 0)
+        packs= s.get("qty_packs", "")
+        d0   = s.get("d0", "")
+        # Detect product category for shaping note
+        name_l = name.lower()
+        if "ciabatta" in name_l:
+            dt, note = "CIABATTA", "(1h00/batch)"
+        elif "pizza" in name_l:
+            dt, note = "PIZZA", "(1h30/batch)"
+        elif "whole wheat" in name_l or "ww" in name_l:
+            dt, note = "WW", "(1h20/batch)"
+        elif "country" in name_l:
+            dt, note = "COUNTRY", "(1h20/batch)"
+        elif "loaf" in name_l or "trad" in name_l and "baguette" not in name_l:
+            dt, note = "LOAF_T", "(1h00/batch)"
+        elif "pain au chocolat" in name_l or "pac" in name_l:
+            dt, note = "PAC_CR", "(afternoon only: 13h–15h30)"
+        elif "sesame" in name_l:
+            dt, note = "SESAME", "(2 bakers obligatory for final shape)"
+        elif "poppy" in name_l:
+            dt, note = "POPPY", "(2 bakers obligatory for final shape)"
+        elif "cheese" in name_l:
+            dt, note = "CHEESE_BGT", "(40 min cheese cutting + 1h30 shape)"
+        elif "baguette" in name_l or "trad" in name_l:
+            dt, note = "TRAD", "(1 baker for final shape)"
+        else:
+            dt, note = "", ""
+        batch = _batches(kg, dt) if kg and dt else ""
+        d0_str = f", ready {d0}" if d0 else ""
+        shape_lines.append(f"  • {name}: {kg:.1f} kg ({batch}) {note}{d0_str}")
+    if shape_lines:
+        sections.append("SHAPE TODAY:\n" + "\n".join(shape_lines))
+
+    # ── PREMIX / INGREDIENT PREP ─────────────────────────────────────────────
+    premix_lines = []
+    for p in day_data.get("premix", []):
+        label = p.get("label", "")
+        units = p.get("total_units", "")
+        products = ", ".join(p.get("products", []))
+        premix_lines.append(f"  • {label}: {units} units ({products}) — measure ingredients today")
+    if premix_lines:
+        sections.append("INGREDIENT PREP (mixer measures today for upcoming production):\n" + "\n".join(premix_lines))
+
+    # ── VACUUMING QUEUE (for context) ────────────────────────────────────────
+    vac_lines = []
+    for v in day_data.get("vacuuming", []):
+        name  = v.get("name", v.get("sku", "?"))
+        packs = v.get("qty_packs", "")
+        vac_lines.append(f"  • {name}: {packs} packs to vacuum/box/sticker")
+    if vac_lines:
+        sections.append("VACUUM QUEUE (15h30 onwards):\n" + "\n".join(vac_lines))
+
+    if not sections:
+        return "No MOs specified — schedule only mandatory tasks: levain refresh + Mix BGT (D+1)."
+    return "\n\n".join(sections)
 
 def build_prompt(date_str: str, shifts: dict, day_data: dict, shifts_data: dict,
-                 recent_plans: list[dict] | None = None) -> str:
+                 recent_plans: list[dict] | None = None, feedback: str = "") -> str:
     dow         = day_of_week(date_str)
     is_weekend  = dow in ("Saturday", "Sunday")
     mo_summary  = summarise_mos(day_data)
@@ -381,7 +488,11 @@ def build_prompt(date_str: str, shifts: dict, day_data: dict, shifts_data: dict,
         if is_weekend else ""
     )
 
-    recent_section = format_recent_plans_for_prompt(recent_plans or [])
+    recent_section   = format_recent_plans_for_prompt(recent_plans or [])
+    feedback_section = (
+        f"\n⚠ LEAD FEEDBACK (highest priority — incorporate this into the plan):\n{feedback}\n"
+        if feedback.strip() else ""
+    )
 
     return f"""{FEW_SHOT_EXAMPLES}
 
@@ -400,7 +511,7 @@ Required baker names in output: {baker_list}
 === MANUFACTURING ORDERS FOR TODAY ===
 {mo_summary}
 
-=== REMINDERS ===
+{feedback_section}=== REMINDERS ===
 - Mix BGT (D+1): mixer ALWAYS mixes baguette dough for tomorrow — even if no BGT in today's MOs.
 - Refresh levain: ALWAYS 10:00–11:00, done by the mixer.
 - Score LOAF D-1: ALWAYS 09:00–09:30, ALL shapers.
@@ -416,6 +527,10 @@ Return ONLY valid JSON (no markdown, no explanation). Schema:
   "dayOfWeek": "{dow}",
   "generatedAt": "ISO8601",
   "notes": "one sentence summary for the team lead",
+  "warnings": [
+    "List any scheduling concerns here — e.g. tight timing, understaffing risk, tasks that may overflow 15h30.",
+    "Leave this array EMPTY [] if the day looks fully feasible."
+  ],
   "bakers": [
     {{
       "name": "ExactBakerName",
@@ -439,7 +554,7 @@ Colors: Mixer=#6366f1, Shaping=#10b981, Baguettes=#f59e0b, PAC=#ec4899,
         Viennoiseries=#e879f9, Misc=#94a3b8
 """
 
-def generate_plan(date_str: str) -> dict:
+def generate_plan(date_str: str, feedback: str = "") -> dict:
     client       = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     shifts_data  = load_shifts_data()
     shifts       = shifts_data.get("schedule", {}).get(date_str, {})
@@ -448,8 +563,10 @@ def generate_plan(date_str: str) -> dict:
 
     if recent_plans:
         print(f"  → Using {len(recent_plans)} recent plan(s) as context")
+    if feedback.strip():
+        print(f"  → Lead feedback included: {feedback[:80]}{'…' if len(feedback) > 80 else ''}")
 
-    prompt = build_prompt(date_str, shifts, day_data, shifts_data, recent_plans)
+    prompt = build_prompt(date_str, shifts, day_data, shifts_data, recent_plans, feedback)
 
     message = client.messages.create(
         model="claude-sonnet-4-5",
@@ -486,7 +603,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", required=True, help="Start date YYYY-MM-DD")
     parser.add_argument("--days", type=int, default=1, help="Number of days to generate (1-6)")
+    parser.add_argument("--feedback", default="", help="Lead feedback to incorporate (for regeneration)")
     args = parser.parse_args()
+
+    # feedback can also come from env var (set by GitHub Actions workflow)
+    feedback = args.feedback or os.environ.get("LEAD_FEEDBACK", "")
 
     args.days = max(1, min(6, args.days))
     start     = datetime.strptime(args.date, "%Y-%m-%d").date()
@@ -495,7 +616,7 @@ if __name__ == "__main__":
         d = (start + timedelta(days=i)).strftime("%Y-%m-%d")
         print(f"Generating plan for {d}…")
         try:
-            plan = generate_plan(d)
+            plan = generate_plan(d, feedback=feedback)
             save_plan(plan)
         except Exception as e:
             print(f"✗ Error for {d}: {e}", file=sys.stderr)

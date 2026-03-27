@@ -32,6 +32,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .btn-secondary:hover { background: #c7d2fe; }
 .btn-warning { background: #fef3c7; color: #92400e; }
 .btn-warning:hover { background: #fde68a; }
+.btn-danger-soft { background: #fee2e2; color: #991b1b; }
+.btn-danger-soft:hover { background: #fecaca; }
 .btn-outline { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
 .btn-outline:hover { background: var(--bg); }
 .btn-sm { padding: 5px 10px; font-size: 12px; }
