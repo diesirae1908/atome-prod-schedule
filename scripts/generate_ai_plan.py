@@ -493,44 +493,284 @@ Colors: Mixer=#6366f1, Shaping=#10b981, Baguettes=#f59e0b, PAC=#ec4899,
         Viennoiseries=#e879f9, Misc=#94a3b8
 """
 
+# ---------------------------------------------------------------------------
+# Quality gate 1 — Programmatic validator
+# ---------------------------------------------------------------------------
+def _to_min(t: str) -> int:
+    """Convert HH:MM to minutes since midnight."""
+    h, m = map(int, t.split(":"))
+    return h * 60 + m
+
+def validate_plan(plan: dict, day_data: dict, shifts: dict, shifts_data: dict) -> list[str]:
+    """
+    Hard-constraint checks that Python can evaluate deterministically.
+    Returns a list of issue strings (empty = no issues found).
+    """
+    issues: list[str] = []
+    baker_hours = shifts_data.get("bakerHours", {})
+    dow = plan.get("dayOfWeek", "")
+
+    # Expected total shaping capacity (batches) from MOs
+    mo_batch_counts: dict[str, int] = {}
+    for item in day_data.get("shaping", []):
+        name = item.get("name", "").lower()
+        qty  = item.get("total_kg", 0)
+        # Estimate batches (20 kg/batch default)
+        batches = max(1, round(qty / 20 + 0.49))
+        mo_batch_counts[name] = batches
+
+    for baker_data in plan.get("bakers", []):
+        name  = baker_data.get("name", "?")
+        role  = baker_data.get("role", "?")
+        tasks = baker_data.get("tasks", [])
+        if not tasks:
+            issues.append(f"{name}: has no tasks at all")
+            continue
+
+        # Sort tasks by start time
+        try:
+            tasks_sorted = sorted(tasks, key=lambda t: _to_min(t["start"]))
+        except Exception:
+            issues.append(f"{name}: malformed task times")
+            continue
+
+        # ── Overlap check ──────────────────────────────────────────────────
+        for i in range(len(tasks_sorted) - 1):
+            end_i   = _to_min(tasks_sorted[i]["end"])
+            start_j = _to_min(tasks_sorted[i + 1]["start"])
+            if end_i > start_j:
+                issues.append(
+                    f"{name}: OVERLAP — '{tasks_sorted[i]['name']}' ends {tasks_sorted[i]['end']} "
+                    f"but '{tasks_sorted[i+1]['name']}' starts {tasks_sorted[i+1]['start']}"
+                )
+
+        # ── Gap check (>30 min unexplained idle) ───────────────────────────
+        for i in range(len(tasks_sorted) - 1):
+            end_i   = _to_min(tasks_sorted[i]["end"])
+            start_j = _to_min(tasks_sorted[i + 1]["start"])
+            gap     = start_j - end_i
+            if gap > 30:
+                issues.append(
+                    f"{name}: GAP — {gap} min unexplained gap between "
+                    f"'{tasks_sorted[i]['name']}' ({tasks_sorted[i]['end']}) "
+                    f"and '{tasks_sorted[i+1]['name']}' ({tasks_sorted[i+1]['start']})"
+                )
+
+        # ── Shift bounds check ─────────────────────────────────────────────
+        hours_str   = _get_hours(name, dow, baker_hours)
+        parts       = [p.strip() for p in hours_str.replace("–", "-").split("-")]
+        shift_start = parts[0] if parts else "07:00"
+        shift_end   = parts[1] if len(parts) > 1 else "17:30"
+
+        first_start = tasks_sorted[0]["start"]
+        last_end    = tasks_sorted[-1]["end"]
+        if _to_min(first_start) < _to_min(shift_start) - 5:  # 5 min tolerance
+            issues.append(f"{name}: starts at {first_start} but shift doesn't begin until {shift_start}")
+        if _to_min(last_end) > _to_min(shift_end) + 5:
+            issues.append(f"{name}: last task ends {last_end} but shift ends {shift_end}")
+
+        # ── Role violations ────────────────────────────────────────────────
+        if role == "V":
+            forbidden = ["shape", "preshape", "score loaf", "score bgt", "mix/unload", "fold"]
+            for t in tasks:
+                tl = t["name"].lower()
+                if any(f in tl for f in forbidden):
+                    issues.append(f"{name} (V): ROLE VIOLATION — '{t['name']}' (V bakers do packaging only)")
+
+        if role == "M":
+            for t in tasks:
+                if "lamination" in t["name"].lower():
+                    issues.append(f"{name} (M): ROLE VIOLATION — '{t['name']}' (mixers never do lamination)")
+
+        # ── Lunch check for long shifts ────────────────────────────────────
+        shift_len = _to_min(shift_end) - _to_min(shift_start)
+        if shift_len >= 390:  # 6.5 h or more
+            has_lunch = any("lunch" in t["name"].lower() for t in tasks)
+            if not has_lunch:
+                issues.append(f"{name}: no lunch break on a {shift_len//60}h{shift_len%60:02d} shift")
+
+    # ── Mandatory daily tasks ──────────────────────────────────────────────
+    all_task_names = [
+        t["name"].lower()
+        for b in plan.get("bakers", [])
+        if b.get("role") == "M"
+        for t in b.get("tasks", [])
+    ]
+    if not any("levain" in n for n in all_task_names):
+        issues.append("MISSING: no 'Refresh levain' task found (mandatory every day, done by mixer)")
+    if not any("bgt" in n or "baguette" in n for n in all_task_names):
+        issues.append("MISSING: no BGT D+1 mix found (mixer must prepare tomorrow's baguette dough)")
+
+    return issues
+
+
+# ---------------------------------------------------------------------------
+# Quality gate 2 — AI logical review
+# ---------------------------------------------------------------------------
+def format_plan_for_review(plan: dict) -> str:
+    """Render the plan as a readable schedule for the AI reviewer."""
+    lines = []
+    for baker in plan.get("bakers", []):
+        name  = baker.get("name", "?")
+        role  = baker.get("role", "?")
+        tasks = baker.get("tasks", [])
+        shift_summary = f"{tasks[0]['start']}–{tasks[-1]['end']}" if tasks else "no tasks"
+        lines.append(f"\n{name} ({role}) — {shift_summary}:")
+        for t in tasks:
+            lines.append(f"  {t['start']}–{t['end']}  {t['name']}")
+    return "\n".join(lines)
+
+
+def ai_review_plan(plan: dict, day_data: dict, shifts_data: dict) -> list[str]:
+    """
+    Ask a separate Claude call to review the plan for logical, practical, and
+    sequencing issues that pure Python can't easily catch.
+    Returns a list of issue strings (empty = plan looks good).
+    """
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+    mo_summary   = summarise_mos(day_data)
+    plan_text    = format_plan_for_review(plan)
+
+    review_prompt = f"""You are reviewing a bakery production schedule. Your job is to find every logical problem in it.
+
+Manufacturing orders for the day:
+{mo_summary}
+
+Schedule to review:
+{plan_text}
+
+Go through every baker's day carefully. Flag issues in these categories:
+
+1. LOGIC FLOW — Does each person's day make sense as a sequence? (e.g. you can't unload dough that hasn't been mixed yet; you can't shape ciabatta immediately after folding it — it needs ~60 min rest; PAC unload by bakers can only start after the mixer finishes the PAC mix around 09:10)
+
+2. WORKLOAD COVERAGE — Are all products from the MOs actually assigned to someone? Count the batches needed vs. batches scheduled. Flag if shaping won't realistically finish before 15:30.
+
+3. COORDINATION — Do task handoffs between bakers make sense? (e.g. if two bakers preshape together, do they both have it at the same time?)
+
+4. FORGOTTEN TASKS — Is levain refresh there? Is BGT D+1 mix there? If there were loaves shaped yesterday, is Score LOAF D-1 there?
+
+5. TIMING SANITY — Are task durations realistic? (e.g. 3 loaf batches shaped in 30 min is impossible)
+
+6. LUNCH STAGGERING — Are lunches spread out so not everyone stops at once?
+
+Be specific. State the baker's name, the time slot, and exactly what's wrong.
+One issue per line. Do not invent issues — only flag real problems you can see.
+
+If the plan is logically sound, respond with exactly: PLAN OK
+"""
+
+    message = client.messages.create(
+        model="claude-sonnet-4-5",
+        max_tokens=1024,
+        messages=[{"role": "user", "content": review_prompt}],
+    )
+
+    response = message.content[0].text.strip()
+    if response.upper().startswith("PLAN OK"):
+        return []
+
+    # Parse issue lines — skip any blank lines or header lines
+    issues = [
+        line.strip().lstrip("•-– ")
+        for line in response.splitlines()
+        if line.strip() and not line.strip().upper().startswith("PLAN OK")
+    ]
+    return [i for i in issues if len(i) > 8]   # filter out very short noise lines
+
+
+# ---------------------------------------------------------------------------
+# Plan generation with validate-and-retry loop
+# ---------------------------------------------------------------------------
+def _parse_raw_json(raw: str) -> dict:
+    """Strip markdown fences and parse JSON."""
+    raw = raw.strip()
+    if raw.startswith("```"):
+        raw = raw.split("```")[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+    return json.loads(raw.strip())
+
+
 def generate_plan(date_str: str, feedback: str = "") -> dict:
     client       = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     shifts_data  = load_shifts_data()
     shifts       = shifts_data.get("schedule", {}).get(date_str, {})
     day_data     = load_schedule_for_date(date_str)
     recent_plans = load_recent_plans(date_str, max_days=30)
+    dow          = day_of_week(date_str)
+    system_prompt = build_system_prompt()
 
     if recent_plans:
         print(f"  → Using {len(recent_plans)} recent plan(s) as context")
     if feedback.strip():
-        print(f"  → Lead feedback included: {feedback[:80]}{'…' if len(feedback) > 80 else ''}")
+        print(f"  → Lead feedback: {feedback[:80]}{'…' if len(feedback) > 80 else ''}")
 
-    prompt = build_prompt(date_str, shifts, day_data, shifts_data, recent_plans, feedback)
+    current_feedback = feedback
+    MAX_ATTEMPTS = 3
 
-    message = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=8096,
-        system=build_system_prompt(),
-        messages=[{"role": "user", "content": prompt}],
-    )
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        print(f"  ── Attempt {attempt}/{MAX_ATTEMPTS} ──")
 
-    raw = message.content[0].text.strip()
-    # Strip accidental markdown fences
-    if raw.startswith("```"):
-        raw = raw.split("```")[1]
-        if raw.startswith("json"):
-            raw = raw[4:]
-    raw = raw.strip()
+        prompt  = build_prompt(date_str, shifts, day_data, shifts_data, recent_plans, current_feedback)
+        message = client.messages.create(
+            model="claude-sonnet-4-5",
+            max_tokens=8096,
+            system=system_prompt,
+            messages=[{"role": "user", "content": prompt}],
+        )
 
-    plan = json.loads(raw)
-    plan["generatedAt"] = datetime.utcnow().isoformat() + "Z"
-    plan["shiftsUsed"]  = shifts
+        plan = _parse_raw_json(message.content[0].text)
+        plan["generatedAt"] = datetime.utcnow().isoformat() + "Z"
+        plan["shiftsUsed"]  = shifts
 
-    # Inject V baker schedules programmatically (never delegated to AI)
-    dow = day_of_week(date_str)
-    inject_v_bakers(plan, shifts, shifts_data, dow)
+        # Inject V bakers (deterministic — never AI's job)
+        inject_v_bakers(plan, shifts, shifts_data, dow)
 
-    return plan
+        # ── Gate 1: Programmatic hard-constraint validation ──────────────
+        prog_issues = validate_plan(plan, day_data, shifts, shifts_data)
+        if prog_issues:
+            print(f"  ⚠ Programmatic validator found {len(prog_issues)} issue(s):")
+            for iss in prog_issues:
+                print(f"    • {iss}")
+        else:
+            print(f"  ✓ Programmatic validation passed")
+
+        # ── Gate 2: AI logical review ────────────────────────────────────
+        print(f"  → Running AI logical review…")
+        ai_issues = ai_review_plan(plan, day_data, shifts_data)
+        if ai_issues:
+            print(f"  ⚠ AI reviewer found {len(ai_issues)} issue(s):")
+            for iss in ai_issues:
+                print(f"    • {iss}")
+        else:
+            print(f"  ✓ AI logical review passed")
+
+        all_issues = prog_issues + ai_issues
+
+        if not all_issues:
+            print(f"  ✓ Plan passed both gates on attempt {attempt}")
+            plan["reviewPassed"] = True
+            return plan
+
+        if attempt == MAX_ATTEMPTS:
+            print(f"  ⚠ Max attempts reached — returning plan with {len(all_issues)} unresolved issue(s)")
+            plan["reviewPassed"] = False
+            plan["warnings"] = list(plan.get("warnings", [])) + [
+                f"[Auto-review] {iss}" for iss in all_issues
+            ]
+            return plan
+
+        # Build correction prompt for next attempt
+        issues_block = "\n".join(f"  • {iss}" for iss in all_issues)
+        current_feedback = (
+            f"⚠ PREVIOUS ATTEMPT HAD THESE SPECIFIC ERRORS — fix every single one:\n"
+            f"{issues_block}\n\n"
+            + (f"Lead feedback: {feedback}\n" if feedback.strip() else "")
+        )
+        print(f"  → Retrying with {len(all_issues)} issue(s) as correction feedback…\n")
+
+    return plan  # unreachable but satisfies linter
 
 def save_plan(plan: dict):
     out_dir  = BASE / "data" / "ai-plans"
