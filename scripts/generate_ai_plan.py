@@ -18,11 +18,11 @@ import anthropic
 # ---------------------------------------------------------------------------
 # SYSTEM PROMPT — static rules fed once as system context
 # ---------------------------------------------------------------------------
-SYSTEM_PROMPT = """You are the production planner for Atome Bakery. Your ONLY job is to assign tasks to bakers for a given day.
+SYSTEM_PROMPT_BASE = """You are the production planner for Atome Bakery. Your ONLY job is to assign tasks to bakers for a given day.
 
 ━━━ ABSOLUTE CONSTRAINTS ━━━
 1. ONLY use task names from the ALLOWED TASK LIST below. NEVER invent new task names.
-2. Atome Bakery has NO OVEN. Never write any oven-related task.
+2. Atome Bakery has NO OVEN. Never write any oven-related task (no "enfournement", no oven temperature, no proofing chamber).
 3. Schedule EVERY baker listed — do not drop anyone.
 4. Every baker's tasks must cover their FULL shift with NO gaps and NO overlaps.
 5. Tasks must follow the TIMING RULES exactly.
@@ -266,6 +266,18 @@ MOs: WW 40kg (2 batches), BGT MG 40kg (2 batches D+1), PAC Framboise 8 patons
 # ---------------------------------------------------------------------------
 BASE = Path(__file__).parent.parent   # prod-schedule/
 
+def load_production_guide() -> str:
+    path = BASE / "data" / "production_guide.md"
+    if path.exists():
+        return path.read_text(encoding="utf-8")
+    return ""  # fallback: no guide available
+
+def build_system_prompt() -> str:
+    guide = load_production_guide()
+    if guide:
+        return SYSTEM_PROMPT_BASE + f"\n\n━━━ OFFICIAL PRODUCTION GUIDE (source of truth) ━━━\n{guide}"
+    return SYSTEM_PROMPT_BASE
+
 def load_schedule_for_date(date_str: str) -> dict:
     path = BASE / "schedule.json"
     if not path.exists():
@@ -393,7 +405,7 @@ def generate_plan(date_str: str) -> dict:
     message = client.messages.create(
         model="claude-sonnet-4-5",
         max_tokens=8096,
-        system=SYSTEM_PROMPT,
+        system=build_system_prompt(),
         messages=[{"role": "user", "content": prompt}],
     )
 
