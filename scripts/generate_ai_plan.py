@@ -26,14 +26,31 @@ You have two sources of truth — read both carefully before planning:
 1. The PRODUCTION GUIDE below — the bakery's official operations manual covering roles, timings, task rules, and daily patterns.
 2. The REAL EXAMPLE PLANS in the user message — actual schedules written by the lead baker, showing exactly how the team works in practice.
 
-Use the guide to understand the rules. Use the examples to understand how those rules play out on the floor. Where the examples and guide align, follow them precisely. Where a day is unusual, reason from first principles using both.
+Use the guide to understand the rules. Use the examples to understand how those rules play out on the floor.
 
-ABSOLUTE LIMITS (safety rules only — everything else comes from the guide and examples):
-- V (Vacuum team) NEVER shapes, scores, preshapes, or mixes bread — ever.
+━━━ HOW TO PLAN ━━━
+Do NOT just generate tasks blindly. Follow this process:
+
+STEP 1 — DRAFT: Build an initial plan for each baker based on MOs, roles, and examples.
+
+STEP 2 — SELF-REVIEW (ask yourself all of these):
+  • Does each baker's day flow logically? No task starts before its dependency is ready (e.g. can't unload PAC before it's mixed).
+  • Are all MOs covered? Every product in the manufacturing orders must be assigned to someone.
+  • Does the shaping workload fit before 15:30? Count batches × time per batch ÷ number of shapers.
+  • Is there a gap in any baker's day? Every minute of their shift must be accounted for.
+  • Do lunches make sense? Stagger them — not everyone at the same time.
+  • Did I forget anything? Levain refresh, Score LOAF D-1 (if applicable), Mix BGT D+1?
+  • Are task names consistent with the real examples (not invented)?
+
+STEP 3 — ADJUST: Fix any issues found in Step 2 before outputting.
+
+STEP 4 — OUTPUT: Emit the final JSON only.
+
+━━━ ABSOLUTE LIMITS ━━━
 - M (Mixer) NEVER does Lamination PAC — lamination is a Shaper (S) task only.
 - Atome has NO OVEN. Never write oven, baking, or proofing chamber tasks.
-- Every baker must have a continuous schedule covering their full shift — no gaps.
-- Output: valid JSON only — no markdown, no explanation.
+- Every baker must have a continuous schedule with no gaps.
+- Output: valid JSON only — no markdown, no explanation, no thinking text.
 """
 
 # ---------------------------------------------------------------------------
@@ -320,6 +337,54 @@ def summarise_mos(day_data: dict) -> str:
         return "No MOs specified — schedule only mandatory tasks: levain refresh + Mix BGT (D+1)."
     return "\n\n".join(sections)
 
+def _get_hours(name: str, dow: str, baker_hours: dict) -> str:
+    """Normalise baker name (strip accents) and look up their shift hours for the given day."""
+    def _norm(s: str) -> str:
+        return s.lower().replace("è","e").replace("é","e").replace("ê","e").replace("à","a").replace("â","a")
+    for key in baker_hours:
+        if _norm(key) == _norm(name):
+            h = baker_hours[key].get(dow)
+            if h:
+                return h
+    return "07:00 - 17:30"   # safe default
+
+
+def inject_v_bakers(plan: dict, shifts: dict, shifts_data: dict, dow: str):
+    """
+    Add V (Vacuum) baker entries to the plan programmatically.
+    V bakers have a fixed packaging schedule — no AI reasoning needed.
+    """
+    baker_hours = shifts_data.get("bakerHours", {})
+    for baker_name, code in shifts.items():
+        if code != "V":
+            continue
+        hours = _get_hours(baker_name, dow, baker_hours)
+        parts = [p.strip() for p in hours.replace("–", "-").split("-")]
+        start = parts[0] if parts else "07:00"
+        end   = parts[1] if len(parts) > 1 else "15:30"
+
+        # Fixed V baker schedule: carton prep → lunch → sticker prep → vacuum
+        slug = baker_name.lower().replace(" ", "-")
+        plan["bakers"].append({
+            "name": baker_name,
+            "role": "V",
+            "tasks": [
+                {"id": f"{slug}-1", "name": "Carton prep / Box assembly",
+                 "start": start, "end": "11:30",
+                 "color": "#64748b", "description": "Assemble cartons and prepare boxes"},
+                {"id": f"{slug}-2", "name": "Lunch",
+                 "start": "11:30", "end": "12:00",
+                 "color": "#94a3b8", "description": "Break"},
+                {"id": f"{slug}-3", "name": "Sticker prep",
+                 "start": "12:00", "end": "15:00",
+                 "color": "#64748b", "description": "Print and prepare product stickers / labels"},
+                {"id": f"{slug}-4", "name": "Vacuum/Box/Stick",
+                 "start": "15:00", "end": end,
+                 "color": "#64748b", "description": "Vacuum pack, box, and sticker products"},
+            ]
+        })
+
+
 def build_prompt(date_str: str, shifts: dict, day_data: dict, shifts_data: dict,
                  recent_plans: list[dict] | None = None, feedback: str = "") -> str:
     dow         = day_of_week(date_str)
@@ -327,36 +392,17 @@ def build_prompt(date_str: str, shifts: dict, day_data: dict, shifts_data: dict,
     mo_summary  = summarise_mos(day_data)
     baker_hours = shifts_data.get("bakerHours", {})
 
-    # Normalise baker name for bakerHours lookup (handle accent variants e.g. Angèle vs Angele)
-    def _get_hours(name: str) -> str:
-        for key in baker_hours:
-            if key.lower().replace("è","e").replace("é","e") == name.lower().replace("è","e").replace("é","e"):
-                h = baker_hours[key].get(dow)
-                if h:
-                    return h
-        return "07:00 - 17:30"   # safe default if not found
-
-    # Build baker detail lines — be explicit about V team schedule so AI cannot misassign tasks
+    # Build baker detail lines — V bakers are injected AFTER AI generation, skip them here
     baker_detail_lines = []
     for baker, code in shifts.items():
-        if code in ("P&P", "H", "BD", "Sick"):
+        if code in ("P&P", "H", "BD", "Sick", "V"):
             continue
-        hours = _get_hours(baker)
-        if code == "V":
-            # V bakers: deterministic schedule — make it unmistakable
-            parts = [p.strip() for p in hours.replace("–","-").split("-")]
-            start = parts[0] if parts else "07:00"
-            end   = parts[1] if len(parts) > 1 else "17:30"
-            baker_detail_lines.append(
-                f"  - {baker} (V — PACKAGING ONLY): {hours} "
-                f"→ task 1: 'Sticker prep / Bag & carton prep' {start}–15:30 "
-                f"| task 2: 'Vacuum/Box/Stick' 15:30–{end}. No other tasks."
-            )
-        else:
-            baker_detail_lines.append(f"  - {baker} ({code}): {hours}")
+        hours = _get_hours(baker, dow, baker_hours)
+        baker_detail_lines.append(f"  - {baker} ({code}): {hours}")
 
     baker_details = "\n".join(baker_detail_lines) if baker_detail_lines else "  (none)"
-    baker_names   = [b for b, c in shifts.items() if c not in ("P&P", "H", "BD", "Sick")]
+    # Only M/S/Waffle bakers go to AI; V bakers injected later
+    baker_names   = [b for b, c in shifts.items() if c not in ("P&P", "H", "BD", "Sick", "V")]
     baker_list    = ", ".join(baker_names)
 
     weekend_warning = (
@@ -410,6 +456,7 @@ MANUFACTURING ORDERS:
 {feedback_section}CONTEXT:
 {score_loaf_rule}
 - The mixer always prepares tomorrow's baguette dough (Mix BGT D+1), even if baguettes aren't in today's MOs.
+- PAC sequencing: the mixer mixes PAC first (ends ~09:10). Bakers CANNOT unload or touch PAC dough until ~09:15–09:20. Baker 09:00 first tasks must be Score LOAF D-1 or Preshape BGT — never "Unload PAC" at 09:00.
 - Use the real examples above as your main reference for how this bakery actually works — task names, timing patterns, how bakers share work, when Mehdi transitions to shaping, etc.
 - Flag any scheduling risks (tight timing, understaffing, tasks likely to overflow 15:30) in the warnings array. Leave warnings empty [] if the day looks fine.
 
@@ -478,6 +525,11 @@ def generate_plan(date_str: str, feedback: str = "") -> dict:
     plan = json.loads(raw)
     plan["generatedAt"] = datetime.utcnow().isoformat() + "Z"
     plan["shiftsUsed"]  = shifts
+
+    # Inject V baker schedules programmatically (never delegated to AI)
+    dow = day_of_week(date_str)
+    inject_v_bakers(plan, shifts, shifts_data, dow)
+
     return plan
 
 def save_plan(plan: dict):
