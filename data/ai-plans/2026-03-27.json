@@ -1,12 +1,12 @@
 {
   "date": "2026-03-27",
   "dayOfWeek": "Friday",
-  "generatedAt": "2026-03-27T05:25:25.100915Z",
-  "notes": "PAC + Ciabatta + Sesame BGT — 7 batches Ciabatta is heavy, PAC lamination 10:20–12:40, shaping 13:00–15:30. Sesame needs 2 bakers for final shape.",
+  "generatedAt": "2026-03-27T05:43:59.898324Z",
+  "notes": "Heavy day: 7 batches Ciabatta + 3 batches PAC + 6 batches Sesame BGT (needs 2 bakers). All bakers transition to vacuum at 15h30.",
   "warnings": [
-    "7 batches Ciabatta (7 hours total) with only 3 shapers available — tight timing, may need all hands on deck 09:30–13:00.",
-    "Sesame Baguette requires 2 bakers for final shape — Joyie and Natalia allocated 10:00–12:00.",
-    "PAC shaping 13:00–15:30 requires 3 bakers minimum (Damien, Joyie, Natalia) — no buffer time."
+    "7 batches of Ciabatta (7 hours shaping) distributed across 3 bakers — tight but feasible if parallel work maintained.",
+    "Sesame BGT requires 2 bakers for final shape — Joyie and Natalia allocated, but timing is tight with Ciabatta volume.",
+    "PAC shaping 13h–15h30 requires all 4 bakers (Damien, Joyie, Natalia, Sebastien) to finish 3 batches on time."
   ],
   "bakers": [
     {
@@ -19,7 +19,7 @@
           "start": "07:00",
           "end": "07:10",
           "color": "#94a3b8",
-          "description": "Daily startup routine"
+          "description": "Morning setup"
         },
         {
           "id": "mehdi-2",
@@ -27,95 +27,87 @@
           "start": "07:10",
           "end": "08:10",
           "color": "#6366f1",
-          "description": "Ciabatta batches 1 2 3 4"
+          "description": "Ciabatta batches 1 2 3"
         },
         {
           "id": "mehdi-3",
           "name": "Mix/Unload Ciabatta",
           "start": "08:10",
-          "end": "08:50",
+          "end": "09:00",
           "color": "#6366f1",
-          "description": "Ciabatta batches 5 6 7"
+          "description": "Ciabatta batches 4 5 6 7"
         },
         {
           "id": "mehdi-4",
-          "name": "Mix PAC",
-          "start": "08:50",
-          "end": "09:10",
-          "color": "#ec4899",
-          "description": "PAC 3 batches (65.3 kg)"
+          "name": "Fold Ciabatta",
+          "start": "09:00",
+          "end": "09:30",
+          "color": "#6366f1",
+          "description": "Fold batches 1 2 3"
         },
         {
           "id": "mehdi-5",
-          "name": "Unload PAC",
-          "start": "09:10",
-          "end": "09:30",
+          "name": "Mix PAC",
+          "start": "09:30",
+          "end": "09:50",
           "color": "#ec4899",
-          "description": "Unload PAC from mixer"
+          "description": "PAC batch 1"
         },
         {
           "id": "mehdi-6",
-          "name": "Mix/Unload BGT",
-          "start": "09:30",
+          "name": "Mix PAC",
+          "start": "09:50",
           "end": "10:10",
+          "color": "#ec4899",
+          "description": "PAC batch 2 3"
+        },
+        {
+          "id": "mehdi-7",
+          "name": "Fold Ciabatta",
+          "start": "10:10",
+          "end": "10:40",
+          "color": "#6366f1",
+          "description": "Fold batches 4 5 6 7"
+        },
+        {
+          "id": "mehdi-8",
+          "name": "Mix/Unload BGT D+1",
+          "start": "10:40",
+          "end": "11:20",
           "color": "#f59e0b",
           "description": "Baguette Trad batches 1 2 3 for D+1"
         },
         {
-          "id": "mehdi-7",
-          "name": "Mix/Unload BGT",
-          "start": "10:10",
-          "end": "10:40",
+          "id": "mehdi-9",
+          "name": "Mix/Unload BGT D+1",
+          "start": "11:20",
+          "end": "12:00",
           "color": "#f59e0b",
           "description": "Baguette Trad batches 4 5 6 for D+1"
         },
         {
-          "id": "mehdi-8",
-          "name": "Fold BGT",
-          "start": "10:40",
-          "end": "11:10",
-          "color": "#f59e0b",
-          "description": "Fold Baguette batches 1 2 3"
-        },
-        {
-          "id": "mehdi-9",
-          "name": "Fold BGT",
-          "start": "11:10",
-          "end": "11:40",
-          "color": "#f59e0b",
-          "description": "Fold Baguette batches 4 5 6"
-        },
-        {
           "id": "mehdi-10",
-          "name": "Refresh levain",
-          "start": "11:40",
-          "end": "12:00",
-          "color": "#8b5cf6",
-          "description": "Daily levain refresh"
+          "name": "Fold BGT D+1",
+          "start": "12:00",
+          "end": "12:30",
+          "color": "#f59e0b",
+          "description": "Fold batches 1 2 3 4 5 6"
         },
         {
           "id": "mehdi-11",
           "name": "Lunch",
-          "start": "12:00",
-          "end": "12:30",
+          "start": "12:30",
+          "end": "13:00",
           "color": "#94a3b8",
           "description": "Break"
         },
         {
           "id": "mehdi-12",
-          "name": "Measuring futur mixes",
-          "start": "12:30",
-          "end": "13:30",
-          "color": "#94a3b8",
-          "description": "Measure Brioche + Waffles ingredients for tomorrow"
-        },
-        {
-          "id": "mehdi-13",
           "name": "Shape PAC",
-          "start": "13:30",
+          "start": "13:00",
           "end": "15:30",
           "color": "#ec4899",
-          "description": "Support PAC shaping team"
+          "description": "PAC shaping (3 batches, 4 bakers)"
         }
       ]
     },
@@ -124,68 +116,108 @@
       "role": "M",
       "tasks": [
         {
-          "id": "sebastien-1",
+          "id": "seb-1",
           "name": "Check in / Sanitize Kitchen",
           "start": "07:00",
           "end": "07:10",
           "color": "#94a3b8",
-          "description": "Daily startup routine"
+          "description": "Morning setup"
         },
         {
-          "id": "sebastien-2",
+          "id": "seb-2",
           "name": "Mix/Unload Ciabatta",
           "start": "07:10",
           "end": "08:10",
           "color": "#6366f1",
-          "description": "Ciabatta batches 1 2 3 4"
+          "description": "Ciabatta batches 1 2 3"
         },
         {
-          "id": "sebastien-3",
+          "id": "seb-3",
           "name": "Mix/Unload Ciabatta",
           "start": "08:10",
-          "end": "08:50",
+          "end": "09:00",
           "color": "#6366f1",
-          "description": "Ciabatta batches 5 6 7"
+          "description": "Ciabatta batches 4 5 6 7"
         },
         {
-          "id": "sebastien-4",
+          "id": "seb-4",
           "name": "Fold Ciabatta",
-          "start": "08:50",
-          "end": "09:20",
+          "start": "09:00",
+          "end": "09:30",
           "color": "#6366f1",
-          "description": "Fold Ciabatta batches"
+          "description": "Fold batches 1 2 3"
         },
         {
-          "id": "sebastien-5",
+          "id": "seb-5",
           "name": "Clean Mixer",
-          "start": "09:20",
-          "end": "09:40",
+          "start": "09:30",
+          "end": "09:50",
           "color": "#94a3b8",
-          "description": "Clean mixer after morning mixes"
+          "description": "Equipment cleaning"
         },
         {
-          "id": "sebastien-6",
-          "name": "Dishes",
-          "start": "09:40",
-          "end": "10:10",
-          "color": "#94a3b8",
-          "description": "Wash equipment"
+          "id": "seb-6",
+          "name": "Fold Ciabatta",
+          "start": "09:50",
+          "end": "10:20",
+          "color": "#6366f1",
+          "description": "Fold batches 4 5 6 7"
         },
         {
-          "id": "sebastien-7",
-          "name": "Lamination PAC",
+          "id": "seb-7",
+          "name": "Measuring futur mixes",
           "start": "10:20",
-          "end": "12:40",
-          "color": "#ec4899",
-          "description": "PAC lamination (3 batches)"
+          "end": "11:20",
+          "color": "#94a3b8",
+          "description": "Brioche + Waffles ingredients"
         },
         {
-          "id": "sebastien-8",
+          "id": "seb-8",
+          "name": "Refresh levain",
+          "start": "11:20",
+          "end": "11:50",
+          "color": "#8b5cf6",
+          "description": "Daily levain refresh"
+        },
+        {
+          "id": "seb-9",
+          "name": "Dishes",
+          "start": "11:50",
+          "end": "12:20",
+          "color": "#94a3b8",
+          "description": "Cleaning"
+        },
+        {
+          "id": "seb-10",
           "name": "Lunch",
-          "start": "12:40",
-          "end": "13:10",
+          "start": "12:20",
+          "end": "12:50",
           "color": "#94a3b8",
           "description": "Break"
+        },
+        {
+          "id": "seb-11",
+          "name": "Shape PAC",
+          "start": "12:50",
+          "end": "15:30",
+          "color": "#ec4899",
+          "description": "PAC shaping (3 batches, 4 bakers)"
+        },
+        {
+          "id": "seb-12",
+          "name": "Clean end of day",
+          "start": "15:30",
+          "end": "16:30",
+          "color": "#94a3b8",
+          "description": "End of day cleaning"
+        },
+        {
+          "id": "seb-13",
+          "name": "Vacuum/Box/Stick",
+          "start": "16:30",
+          "end": "17:30",
+          "color": "#64748b",
+          "description": "PAC, Pizza, Sesame BGT, Apple Turnover"
         }
       ]
     },
@@ -195,35 +227,59 @@
       "tasks": [
         {
           "id": "damien-1",
-          "name": "Preshape baguette",
-          "start": "09:00",
-          "end": "10:00",
-          "color": "#f59e0b",
-          "description": "Preshape Sesame BGT with team"
+          "name": "Unload PAC",
+          "start": "07:00",
+          "end": "07:30",
+          "color": "#ec4899",
+          "description": "Unload PAC batches 1 2 3"
         },
         {
           "id": "damien-2",
-          "name": "Lamination PAC",
-          "start": "10:20",
-          "end": "12:40",
-          "color": "#ec4899",
-          "description": "PAC lamination (3 batches)"
+          "name": "Clean Mixer",
+          "start": "07:30",
+          "end": "07:50",
+          "color": "#94a3b8",
+          "description": "Equipment cleaning"
         },
         {
           "id": "damien-3",
+          "name": "Shape Ciabatta",
+          "start": "07:50",
+          "end": "09:50",
+          "color": "#10b981",
+          "description": "Ciabatta batches 1 2 (2h00)"
+        },
+        {
+          "id": "damien-4",
+          "name": "Lamination PAC",
+          "start": "09:50",
+          "end": "11:30",
+          "color": "#ec4899",
+          "description": "PAC 3 batches lamination"
+        },
+        {
+          "id": "damien-5",
+          "name": "Shape Ciabatta",
+          "start": "11:30",
+          "end": "12:30",
+          "color": "#10b981",
+          "description": "Ciabatta batch 3 (1h00)"
+        },
+        {
+          "id": "damien-6",
           "name": "Lunch",
-          "start": "12:40",
-          "end": "13:10",
+          "start": "12:30",
+          "end": "13:00",
           "color": "#94a3b8",
           "description": "Break"
         },
         {
-          "id": "damien-4",
+          "id": "damien-7",
           "name": "Shape PAC",
-          "start": "13:10",
+          "start": "13:00",
           "end": "15:30",
           "color": "#ec4899",
-          "description": "Shape PAC 3 batches (242 packs)"
+          "description": "PAC shaping (3 batches, 4 bakers)"
         }
       ]
     },
@@ -233,19 +289,19 @@
       "tasks": [
         {
           "id": "joyie-1",
-          "name": "Preshape baguette",
+          "name": "preshape baguette",
           "start": "09:00",
-          "end": "10:00",
+          "end": "10:10",
           "color": "#f59e0b",
-          "description": "Preshape Sesame BGT with team"
+          "description": "Sesame BGT preshape (6 batches)"
         },
         {
           "id": "joyie-2",
           "name": "Shape BGT",
-          "start": "10:00",
+          "start": "10:10",
           "end": "12:00",
           "color": "#f59e0b",
-          "description": "Shape Sesame BGT final (2 bakers required)"
+          "description": "Sesame BGT final shape (2 bakers required)"
         },
         {
           "id": "joyie-3",
@@ -257,35 +313,43 @@
         },
         {
           "id": "joyie-4",
-          "name": "Lunch",
+          "name": "Shape Ciabatta",
           "start": "12:30",
-          "end": "13:00",
+          "end": "13:30",
+          "color": "#10b981",
+          "description": "Ciabatta batch 4 (1h00)"
+        },
+        {
+          "id": "joyie-5",
+          "name": "Lunch",
+          "start": "13:30",
+          "end": "14:00",
           "color": "#94a3b8",
           "description": "Break"
         },
         {
-          "id": "joyie-5",
+          "id": "joyie-6",
           "name": "Shape PAC",
-          "start": "13:00",
+          "start": "14:00",
           "end": "15:30",
           "color": "#ec4899",
-          "description": "Shape PAC 3 batches"
+          "description": "PAC shaping (3 batches, 4 bakers)"
         },
         {
-          "id": "joyie-6",
+          "id": "joyie-7",
           "name": "Clean end of day",
           "start": "15:30",
-          "end": "16:10",
+          "end": "16:30",
           "color": "#94a3b8",
           "description": "End of day cleaning"
         },
         {
-          "id": "joyie-7",
+          "id": "joyie-8",
           "name": "Vacuum/Box/Stick",
-          "start": "16:10",
+          "start": "16:30",
           "end": "17:30",
           "color": "#64748b",
-          "description": "PAC, Pizza, Sesame BGT, Apple Turnover vacuum"
+          "description": "PAC, Pizza, Sesame BGT, Apple Turnover"
         }
       ]
     },
@@ -295,19 +359,19 @@
       "tasks": [
         {
           "id": "natalia-1",
-          "name": "Preshape baguette",
+          "name": "preshape baguette",
           "start": "09:00",
-          "end": "10:00",
+          "end": "10:10",
           "color": "#f59e0b",
-          "description": "Preshape Sesame BGT with team"
+          "description": "Sesame BGT preshape (6 batches)"
         },
         {
           "id": "natalia-2",
           "name": "Shape BGT",
-          "start": "10:00",
+          "start": "10:10",
           "end": "12:00",
           "color": "#f59e0b",
-          "description": "Shape Sesame BGT final (2 bakers required)"
+          "description": "Sesame BGT final shape (2 bakers required)"
         },
         {
           "id": "natalia-3",
@@ -315,7 +379,7 @@
           "start": "12:00",
           "end": "13:00",
           "color": "#10b981",
-          "description": "Shape Ciabatta batch 1"
+          "description": "Ciabatta batch 5 (1h00)"
         },
         {
           "id": "natalia-4",
@@ -327,27 +391,35 @@
         },
         {
           "id": "natalia-5",
-          "name": "Shape PAC",
+          "name": "Shape Ciabatta",
           "start": "13:30",
-          "end": "15:30",
-          "color": "#ec4899",
-          "description": "Shape PAC 3 batches"
+          "end": "14:30",
+          "color": "#10b981",
+          "description": "Ciabatta batch 6 (1h00)"
         },
         {
           "id": "natalia-6",
+          "name": "Shape Ciabatta",
+          "start": "14:30",
+          "end": "15:30",
+          "color": "#10b981",
+          "description": "Ciabatta batch 7 (1h00)"
+        },
+        {
+          "id": "natalia-7",
           "name": "Clean end of day",
           "start": "15:30",
-          "end": "16:10",
+          "end": "16:30",
           "color": "#94a3b8",
           "description": "End of day cleaning"
         },
         {
-          "id": "natalia-7",
+          "id": "natalia-8",
           "name": "Vacuum/Box/Stick",
-          "start": "16:10",
+          "start": "16:30",
           "end": "17:30",
           "color": "#64748b",
-          "description": "PAC, Pizza, Sesame BGT, Apple Turnover vacuum"
+          "description": "PAC, Pizza, Sesame BGT, Apple Turnover"
         }
       ]
     },
@@ -357,59 +429,19 @@
       "tasks": [
         {
           "id": "ysaline-1",
-          "name": "Shape Ciabatta",
-          "start": "09:30",
-          "end": "10:30",
-          "color": "#10b981",
-          "description": "Shape Ciabatta batch 1"
+          "name": "Sticker prep / Bag & carton prep",
+          "start": "07:00",
+          "end": "15:30",
+          "color": "#64748b",
+          "description": "Packaging preparation all day"
         },
         {
           "id": "ysaline-2",
-          "name": "Shape Ciabatta",
-          "start": "10:30",
-          "end": "11:30",
-          "color": "#10b981",
-          "description": "Shape Ciabatta batch 2"
-        },
-        {
-          "id": "ysaline-3",
-          "name": "Shape Ciabatta",
-          "start": "11:30",
-          "end": "12:30",
-          "color": "#10b981",
-          "description": "Shape Ciabatta batch 3"
-        },
-        {
-          "id": "ysaline-4",
-          "name": "Lunch",
-          "start": "12:30",
-          "end": "13:00",
-          "color": "#94a3b8",
-          "description": "Break"
-        },
-        {
-          "id": "ysaline-5",
-          "name": "Shape Ciabatta",
-          "start": "13:00",
-          "end": "14:00",
-          "color": "#10b981",
-          "description": "Shape Ciabatta batch 4"
-        },
-        {
-          "id": "ysaline-6",
-          "name": "Shape Ciabatta",
-          "start": "14:00",
-          "end": "15:00",
-          "color": "#10b981",
-          "description": "Shape Ciabatta batch 5"
-        },
-        {
-          "id": "ysaline-7",
-          "name": "Clean Equipment",
-          "start": "15:00",
+          "name": "Vacuum/Box/Stick",
+          "start": "15:30",
           "end": "15:30",
-          "color": "#94a3b8",
-          "description": "Clean divider and equipment"
+          "color": "#64748b",
+          "description": "End marker"
         }
       ]
     },
@@ -419,59 +451,19 @@
       "tasks": [
         {
           "id": "angele-1",
-          "name": "Shape Ciabatta",
-          "start": "09:30",
-          "end": "10:30",
-          "color": "#10b981",
-          "description": "Shape Ciabatta batch 1"
+          "name": "Sticker prep / Bag & carton prep",
+          "start": "07:00",
+          "end": "15:30",
+          "color": "#64748b",
+          "description": "Packaging preparation all day"
         },
         {
           "id": "angele-2",
-          "name": "Shape Ciabatta",
-          "start": "10:30",
-          "end": "11:30",
-          "color": "#10b981",
-          "description": "Shape Ciabatta batch 2"
-        },
-        {
-          "id": "angele-3",
-          "name": "Shape Ciabatta",
-          "start": "11:30",
-          "end": "12:30",
-          "color": "#10b981",
-          "description": "Shape Ciabatta batch 3"
-        },
-        {
-          "id": "angele-4",
-          "name": "Lunch",
-          "start": "12:30",
-          "end": "13:00",
-          "color": "#94a3b8",
-          "description": "Break"
-        },
-        {
-          "id": "angele-5",
-          "name": "Shape Ciabatta",
-          "start": "13:00",
-          "end": "14:00",
-          "color": "#10b981",
-          "description": "Shape Ciabatta batch 6"
-        },
-        {
-          "id": "angele-6",
-          "name": "Shape Ciabatta",
-          "start": "14:00",
-          "end": "15:00",
-          "color": "#10b981",
-          "description": "Shape Ciabatta batch 7"
-        },
-        {
-          "id": "angele-7",
           "name": "Vacuum/Box/Stick",
-          "start": "15:00",
-          "end": "17:30",
+          "start": "15:30",
+          "end": "15:30",
           "color": "#64748b",
-          "description": "PAC, Pizza, Sesame BGT, Apple Turnover vacuum"
+          "description": "End marker"
         }
       ]
     }
