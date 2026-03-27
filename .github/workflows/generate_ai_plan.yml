@@ -41,7 +41,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ai-plans/
+          git stash --include-untracked || true
           git pull --rebase
+          git stash pop || true
           git add data/ai-plans/
           git diff --staged --quiet && echo "Nothing to commit" || \
             git commit -m "🤖 AI plan: ${{ inputs.date }} (+${{ inputs.days }} day(s))"
