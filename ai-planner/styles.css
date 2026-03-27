@@ -118,61 +118,80 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  background: #e5e7eb; /* gap colour */
+  background: #e2e8f0; /* gap / grid-line colour */
 }
 .cal-grid {
   display: grid;
-  grid-auto-rows: 20px;
   gap: 1px;
-  min-width: max-content;
   width: 100%;
+  min-width: 600px;
 }
-/* Time column header — sticky top-left */
+/* Time column header */
 .cal-time-hdr {
-  position: sticky; top: 0; left: 0; z-index: 30;
+  position: sticky; top: 0; z-index: 30;
   background: #f1f5f9;
   display: flex; align-items: center; justify-content: center;
   font-size: 10px; font-weight: 600; color: #6b7280;
-  min-height: 36px;
 }
-/* Baker column headers — sticky top */
+/* Baker column headers */
 .cal-baker-hdr {
   position: sticky; top: 0; z-index: 20;
   background: #eef2ff;
   display: flex; align-items: center; justify-content: center; gap: 6px;
-  padding: 0 10px;
-  font-size: 12px;
-  min-height: 36px;
+  padding: 0 8px;
+  font-size: 11px;
   border-bottom: 2px solid #c7d2fe;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.cal-baker-name { font-weight: 700; color: #1e1b4b; }
-/* Time slot labels — sticky left */
+.cal-baker-name { font-weight: 700; color: #1e1b4b; overflow: hidden; text-overflow: ellipsis; }
+/* Time slot labels */
 .cal-time-slot {
-  position: sticky; left: 0; z-index: 10;
-  background: #f9fafb;
+  background: #f8fafc;
   display: flex; align-items: center; justify-content: flex-end;
-  padding-right: 6px;
+  padding-right: 5px;
   font-size: 9px; color: transparent;
+  white-space: nowrap;
 }
-.cal-time-slot.major { color: #374151; font-size: 10px; font-weight: 700; }
-.cal-time-slot:not(.major) { color: #9ca3af; font-size: 9px; }
+.cal-time-slot.major { color: #374151; font-size: 10px; font-weight: 700; background: #f1f5f9; }
+.cal-time-slot.half  { color: #9ca3af; font-size: 9px; background: #f8fafc; }
 /* Empty baker cells */
 .cal-cell { background: #fff; }
-.cal-cell.major { background: #fafafa; border-top: 1px solid #e5e7eb; }
-/* Task blocks — overlay on top of grid */
+.cal-cell.major { background: #f8fafc; border-top: 1px solid #e2e8f0; }
+.cal-cell.half  { background: #fff; }
+/* Task blocks */
 .cal-task {
-  border-radius: 6px;
-  padding: 4px 7px;
-  margin: 1px;
+  border-radius: 5px;
+  padding: 3px 6px;
+  margin: 1px 2px;
   overflow: hidden;
   z-index: 5;
   cursor: default;
+  position: relative;
   transition: filter .12s;
 }
-.cal-task:hover { filter: brightness(.93); }
-.cal-task-name { font-size: 11px; font-weight: 700; color: #fff; line-height: 1.3; }
-.cal-task-time { font-size: 10px; color: rgba(255,255,255,.85); }
-.cal-task-desc { font-size: 10px; color: rgba(255,255,255,.72); margin-top: 2px; line-height: 1.3; }
+.cal-task:hover { filter: brightness(.92); z-index: 50; }
+.cal-task-name { font-size: 11px; font-weight: 700; color: #fff; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cal-task-time { font-size: 10px; color: rgba(255,255,255,.85); white-space: nowrap; }
+/* Hover tooltip for description */
+.cal-task-tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 100;
+  background: #1e293b;
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 7px;
+  font-size: 11px;
+  line-height: 1.4;
+  width: 220px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+  pointer-events: none;
+  white-space: normal;
+}
+.cal-task:hover .cal-task-tooltip { display: block; }
 
 /* ── Shift table ── */
 .shift-week-nav { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }

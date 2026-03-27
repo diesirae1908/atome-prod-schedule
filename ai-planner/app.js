@@ -168,51 +168,55 @@ async function fetchPlan(ds) {
 
 // ── Render plan — calendar grid view ────────────────────────────
 function renderPlan(plan) {
-  const body    = document.getElementById("plan-body");
-  const bakers  = plan.bakers || [];
-  const N       = bakers.length;
+  const body   = document.getElementById("plan-body");
+  const bakers = plan.bakers || [];
+  const N      = bakers.length;
 
   // Time range: 07:00 → 17:30, 15-min slots
-  const START   = 7 * 60;          // 420 min
-  const END     = 17 * 60 + 30;    // 1050 min
-  const SLOT    = 15;
-  const SLOTS   = (END - START) / SLOT; // 42
+  const START = 7 * 60;       // 420 min
+  const END   = 17 * 60 + 30; // 1050 min
+  const SLOT  = 15;
+  const SLOTS = (END - START) / SLOT; // 42
 
+  // Convert "HH:MM" → grid row number (row 1 = header, row 2 = 07:00)
   function timeToRow(t) {
     const [h, m] = t.split(":").map(Number);
-    return Math.round((h * 60 + m - START) / SLOT) + 2; // +1 (1-indexed) +1 (header row)
+    return Math.round((h * 60 + m - START) / SLOT) + 2;
   }
 
   let html = plan.notes
     ? `<div class="plan-notes">📝 ${escHtml(plan.notes)}</div>`
     : "";
 
-  // Outer scroll wrapper so the grid can scroll horizontally
-  html += `<div class="cal-scroll"><div class="cal-grid" style="grid-template-columns:52px repeat(${N},minmax(150px,1fr))">`;
+  // grid-template-rows: explicit header height + auto for time slots
+  html += `<div class="cal-scroll"><div class="cal-grid" style="grid-template-columns:52px repeat(${N},minmax(0,1fr));grid-template-rows:36px repeat(${SLOTS},20px)">`;
 
-  // ── Row 1: headers ──
-  html += `<div class="cal-time-hdr">Time</div>`;
-  bakers.forEach(b => {
-    html += `<div class="cal-baker-hdr">
+  // ── Row 1: headers — every cell explicitly placed ──
+  html += `<div class="cal-time-hdr" style="grid-column:1;grid-row:1">Time</div>`;
+  bakers.forEach((b, i) => {
+    html += `<div class="cal-baker-hdr" style="grid-column:${i + 2};grid-row:1">
       <span class="cal-baker-name">${escHtml(b.name)}</span>
       <span class="baker-role-badge baker-role-${b.role}">${b.role}</span>
     </div>`;
   });
 
-  // ── Rows 2+: time-slot background cells ──
+  // ── Rows 2+: background cells — all explicitly placed ──
   for (let s = 0; s < SLOTS; s++) {
-    const mins    = START + s * SLOT;
-    const h       = Math.floor(mins / 60);
-    const m       = mins % 60;
-    const isMajor = m === 0;
-    const label   = isMajor ? `${h}:00` : (m === 30 ? `${h}:30` : "");
-    html += `<div class="cal-time-slot${isMajor ? " major" : ""}">${label}</div>`;
+    const row   = s + 2;
+    const mins  = START + s * SLOT;
+    const h     = Math.floor(mins / 60);
+    const m     = mins % 60;
+    const isHour = m === 0;
+    const isHalf = m === 30;
+    const label  = isHour ? `${h}:00` : (isHalf ? `${h}:30` : "");
+    const cls    = isHour ? " major" : (isHalf ? " half" : "");
+    html += `<div class="cal-time-slot${cls}" style="grid-column:1;grid-row:${row}">${label}</div>`;
     for (let c = 0; c < N; c++) {
-      html += `<div class="cal-cell${isMajor ? " major" : ""}"></div>`;
+      html += `<div class="cal-cell${cls}" style="grid-column:${c + 2};grid-row:${row}"></div>`;
     }
   }
 
-  // ── Task overlays ──
+  // ── Task overlays — explicit grid placement + hover tooltip ──
   bakers.forEach((baker, ci) => {
     (baker.tasks || []).forEach(task => {
       const rStart = timeToRow(task.start);
@@ -221,12 +225,12 @@ function renderPlan(plan) {
       html += `<div class="cal-task" style="grid-row:${rStart}/${rEnd};grid-column:${col};background:${task.color || "#94a3b8"}">
         <div class="cal-task-name">${escHtml(task.name)}</div>
         <div class="cal-task-time">${task.start}–${task.end}</div>
-        ${task.description ? `<div class="cal-task-desc">${escHtml(task.description)}</div>` : ""}
+        ${task.description ? `<div class="cal-task-tooltip">${escHtml(task.description)}</div>` : ""}
       </div>`;
     });
   });
 
-  html += `</div></div>`; // close cal-grid + cal-scroll
+  html += `</div></div>`;
 
   const genAt = plan.generatedAt ? new Date(plan.generatedAt).toLocaleString("en-GB") : "";
   html += `<p style="font-size:11px;color:#94a3b8;margin-top:10px">Generated ${genAt}</p>`;
