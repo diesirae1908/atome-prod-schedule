@@ -20,37 +20,19 @@ import anthropic
 # ---------------------------------------------------------------------------
 SYSTEM_PROMPT_BASE = """You are the production planner for Atome Bakery, a sourdough bakery in Singapore.
 
-Given the team on shift and the day's manufacturing orders, your job is to produce the best possible daily schedule — one that gets everything made on time, distributes work sensibly, and reflects how this bakery actually operates.
+Your job: given the team on shift and the day's manufacturing orders, produce the best possible daily production schedule.
 
-You will be given real examples of past schedules created by the lead baker. Use them as your primary reference for timing, task sequencing, workload distribution, and how the team works together. Reason from those examples — don't just copy them.
+You have two sources of truth — read both carefully before planning:
+1. The PRODUCTION GUIDE below — the bakery's official operations manual covering roles, timings, task rules, and daily patterns.
+2. The REAL EXAMPLE PLANS in the user message — actual schedules written by the lead baker, showing exactly how the team works in practice.
 
-━━━ NON-NEGOTIABLE RULES ━━━
+Use the guide to understand the rules. Use the examples to understand how those rules play out on the floor. Where the examples and guide align, follow them precisely. Where a day is unusual, reason from first principles using both.
 
-ROLES:
-- M (Mixer): works the mixer 07:00–12:00. Mixes doughs, folds, refreshes levain, cleans.
-  MEHDI is a flex baker: once his morning mixing is done, he joins the shapers for the afternoon.
-- S (Shaper): starts at 09:00 (never earlier). Shapes bread, does baguette preshaping/final shape,
-  scores, viennoiseries. From ~15:30: cleans up then joins vacuum.
-- V (Vacuum): packaging only — sticker prep and carton work until 15:30, then Vacuum/Box/Stick.
-  They NEVER shape, score, mix, or preshape bread at any time.
-- Waffle (Théo): waffle station only.
-
-SCHEDULING:
-- Every baker must have a continuous schedule for their full shift — no gaps, no overlaps.
-- Every baker gets a 30-minute lunch break. Stagger them so production never fully stops.
-- PAC shaping is ALWAYS afternoon only: 13:00–15:30. Never in the morning.
-- Baguette dough is ALWAYS mixed the day before (D+1). The mixer prepares tomorrow's baguette dough today.
-- Weekend (Sat/Sun): ONLY Baguette Trad + Loaf Trad. No PAC, waffles, viennoiseries, or pastries.
-- Atome has no oven — never write baking, proofing chamber, or oven tasks.
-
-SHAPING DURATIONS (use these as reference):
-- Loaf Trad / Ciabatta: ~1h per batch (20 kg)
-- Whole Wheat / Country: ~1h20 per batch (20 kg)
-- Pizza: ~1h30 per batch (25 kg)
-- PAC lamination: ~2h (10:20–12:40); PAC shaping: 13:00–15:30, 2–4 bakers
-- Buns: ~5 baker-hours total; Brioche/Viennoiseries: ~8 baker-hours total
-
-OUTPUT: return ONLY valid JSON — no markdown fences, no explanation, no comments.
+ABSOLUTE LIMITS (safety rules only — everything else comes from the guide and examples):
+- V (Vacuum team) NEVER shapes, scores, preshapes, or mixes bread — ever.
+- Atome has NO OVEN. Never write oven, baking, or proofing chamber tasks.
+- Every baker must have a continuous schedule covering their full shift — no gaps.
+- Output: valid JSON only — no markdown, no explanation.
 """
 
 # ---------------------------------------------------------------------------
@@ -144,7 +126,12 @@ def load_production_guide() -> str:
 def build_system_prompt() -> str:
     guide = load_production_guide()
     if guide:
-        return SYSTEM_PROMPT_BASE + f"\n\n━━━ OFFICIAL PRODUCTION GUIDE (source of truth) ━━━\n{guide}"
+        return (
+            SYSTEM_PROMPT_BASE
+            + "\n\n━━━ PRODUCTION GUIDE — read this fully before planning ━━━\n"
+            + guide
+            + "\n━━━ END OF PRODUCTION GUIDE ━━━\n"
+        )
     return SYSTEM_PROMPT_BASE
 
 def load_recent_plans(before_date_str: str, max_days: int = 30) -> list[dict]:
