@@ -103,13 +103,24 @@ Toutes les pastries utilisent un batch de 22,68 kg de farine.
 
 ### 3.4 PAC — Pains au Chocolat
 
-| Phase | Quantité | Durée | Horaire |
-|---|---|---|---|
-| Mix PAC | 22,68 kg/batch | ~30 min | 08h40–09h10 |
-| Lamination PAC | 10 pâtons | 1h30 à 2h | 10h20–12h40 |
-| Lamination PAC | 14 pâtons | 1h40 | 10h20–12h40 |
-| Shaping PAC | 10 pâtons | 2h à 2h30 par baker | 13h00–15h30 (2–4 bakers) |
-| Shaping PAC | 14 pâtons | 2h — 3 bakers | 13h00–15h30 |
+Pattern journalier PAC :
+
+| Horaire | Tâche | Qui |
+|---|---|---|
+| 08h40–09h10 | Mix PAC (22,68 kg/batch) | Mixeur |
+| 09h00–09h30 | Unload / déchargement PAC | Mixeur |
+| 10h20–12h40 | Lamination PAC | 1–2 bakers viennois |
+| 13h00–15h30 | Shaping PAC (2–4 bakers) | Bakers viennois |
+| 15h30–17h30 | Vacuum | Tous |
+
+Durées de référence :
+
+| Phase | Quantité | Durée |
+|---|---|---|
+| Lamination PAC | 10 pâtons | 1h30 à 2h |
+| Lamination PAC | 14 pâtons | 1h40 (mesure validée) |
+| Shaping PAC | 10 pâtons | 2h à 2h30 par baker, 2–4 bakers |
+| Shaping PAC | 14 pâtons | 2h — 3 bakers (référence actuelle validée) |
 
 **Règle PAC :**
 - Shaping TOUJOURS en après-midi : 13h00–15h30. **Jamais le matin.**
@@ -159,12 +170,12 @@ Toujours 3 batches par production.
 | Horaire | Tâche | Qui |
 |---|---|---|
 | 09h00–09h30 | Score des loaves de la veille (J-1) | 1–2 bakers |
-| 09h00–10h00 | Pre-shape baguettes (si baguettes) | 2–3 bakers ensemble |
+| 09h00–10h00 | Pre-shape baguettes (si baguettes ce jour) | 2–3 bakers ensemble |
 | 09h00–13h00 | Shape loaves / WW / Country / Pizza / Ciabatta | 1–2 bakers selon volume |
 | 10h00–12h00 | Shape baguettes Trad/MG (1 seul baker) | 1 baker |
 | 10h00–11h30 | Shape cheese baguettes (si au planning) | 1 baker |
 | 11h30–12h00 | Score baguettes | 1 baker |
-| 13h00–15h30 | Viennoiseries / PAC / Buns | Bakers viennois |
+| 13h00–15h30 | Viennoiseries / PAC / Buns (si ce jour) | Bakers viennois |
 | 15h30–17h30 | VACUUM — mise sous vide, cartons, stickers | Tous les bakers |
 
 ---
@@ -186,6 +197,8 @@ Toujours 3 batches par production.
 
 ### 5.2 Journée « Whole Wheat + Baguettes »
 
+**Note : le WW prend plus de temps que le Loaf — prévoir plus de temps de shaping le matin.**
+
 | Horaire | Tâche | Qui |
 |---|---|---|
 | 07h00 | Mix WW + refresh levain | Mixeur |
@@ -203,6 +216,7 @@ Toujours 3 batches par production.
 |---|---|---|
 | 07h00 | Mix loaves ou WW + refresh levain | Mixeur |
 | 08h40–09h10 | Mix PAC (22,68 kg/batch) | Mixeur |
+| 09h00–09h30 | Unload / déchargement PAC | Mixeur |
 | 09h00–09h30 | Score loaves J-1 | 1–2 bakers |
 | 09h00–10h00 | Pre-shape baguettes (si baguettes) | Bakers |
 | 09h30–13h00 | Shape loaves / WW | Bakers |
@@ -225,10 +239,12 @@ Toujours 3 batches par production.
 
 | Horaire | Tâche | Qui |
 |---|---|---|
-| 07h00–08h30 | Mix pâte à waffles (22,68 kg si applicable) | Mixeur ou baker |
+| 07h00–08h30 | Mix pâte à waffles (si 22,68 kg) | Mixeur ou baker |
 | 09h00–12h00 | Cuisson waffles — première session | Théo |
-| 12h00–13h00 | Pause Théo — relais si 22,68 kg seulement | Baker de relais |
+| 09h00–12h00 | Shape baguettes / loaves en parallèle | Autres bakers |
+| 12h00–13h00 | Pause Théo — relais si 22,68 kg (pas de relais si 15 kg) | Baker de relais |
 | 13h00–14h00 | Cuisson waffles — deuxième session (si 22,68 kg) | Théo |
+| 13h00–15h30 | Viennoiseries restantes | Bakers viennois |
 | 15h30–17h30 | Vacuum | Tous |
 
 ### 5.6 Week-end (Samedi et Dimanche)
@@ -293,7 +309,44 @@ De 15h30 à 17h30, TOUS les bakers passent en mode vacuum.
 
 ---
 
-## 8. POINTS D'ATTENTION
+## 8. CHECKLIST JOURNALIÈRE
+
+### 8.1 Checklist Mixeur — chaque matin (07h–12h)
+
+- Vérifier le planning de production du jour
+- Lancer les mixes du jour EN PREMIER : Loaf / WW / Country / Pizza / Ciabatta
+- Vérifier que les baguettes ont été mixées la veille (D-1)
+- Si waffles au planning : mixer la pâte le matin même (22,68 kg ou 15 kg selon planning)
+- Faire le refresh du levain
+- Si pastries au planning du lendemain : mesurer les ingrédients
+- Surveiller la capacité du mixeur (max 3 batchs simultanés)
+
+### 8.2 Checklist Bakers — chaque matin (09h–15h30)
+
+- Vérifier le planning : quels pains à shaper aujourd'hui ?
+- Dès 9h : scorer les loaves de la veille (J-1) — toujours la première tâche
+- Si baguettes Trad/MG : pre-shape ensemble dès 9h, puis 1 seul baker pour le shape final — scorer à la fin du shaping
+- Si baguettes Sesame/Poppy : prévoir 2 bakers pour le shape final — scorer à la fin du shaping
+- Si cheese baguettes : découpe fromage + shape (3 batches), 1 baker dédié
+- Shaper les loaves / WW / Country / Pizza en parallèle des baguettes
+- Si PAC au planning : lamination le matin (10h20–12h40), shaping 13h–15h30
+- Si waffles et volume 22,68 kg : prévoir un baker de relais pendant la pause de Théo (12h–13h)
+- Si viennoiseries : calculer le temps total (8h) et répartir entre bakers viennois disponibles
+- Vérifier que tout est terminé à 15h30
+- Vacuum 15h30–17h30 : mise sous vide, cartons, stickers
+
+### 8.3 Checklist fin de journée
+
+- Tous les produits sont sous vide
+- Les cartons sont préparés
+- Les pouches sont stickées avec les bonnes quantités
+- Le levain a été refreshé
+- Les ingrédients du lendemain sont mesurés si pastries prévues
+- Les baguettes du lendemain ont été mixées (D-1)
+
+---
+
+## 9. POINTS D'ATTENTION
 
 - **Flexibilité des temps :** Les temps sont des moyennes (±20 min selon les bakers et conditions).
 - **Priorité absolue :** La deadline 15h30 est non négociable. Ajuster le nombre de bakers sur chaque tâche si en retard, pas l'heure de fin.

@@ -278,6 +278,47 @@ def build_system_prompt() -> str:
         return SYSTEM_PROMPT_BASE + f"\n\n━━━ OFFICIAL PRODUCTION GUIDE (source of truth) ━━━\n{guide}"
     return SYSTEM_PROMPT_BASE
 
+def load_recent_plans(before_date_str: str, max_days: int = 30) -> list[dict]:
+    """Return up to max_days of existing AI plans strictly before the target date, newest first."""
+    plans_dir = BASE / "data" / "ai-plans"
+    if not plans_dir.exists():
+        return []
+    cutoff = datetime.strptime(before_date_str, "%Y-%m-%d").date()
+    results = []
+    for path in sorted(plans_dir.glob("*.json"), reverse=True):
+        try:
+            d = datetime.strptime(path.stem, "%Y-%m-%d").date()
+        except ValueError:
+            continue
+        if d >= cutoff:
+            continue
+        try:
+            with open(path) as f:
+                results.append(json.load(f))
+        except Exception:
+            continue
+        if len(results) >= max_days:
+            break
+    return results
+
+def format_recent_plans_for_prompt(plans: list[dict]) -> str:
+    if not plans:
+        return ""
+    lines = ["━━━ RECENT REAL PLANS (last days — learn from these patterns) ━━━",
+             "These are actual plans used at Atome Bakery. Use them to calibrate task assignment,",
+             "baker workload distribution, and typical day structure.",
+             ""]
+    for plan in plans[:10]:   # include at most 10 days to keep prompt size reasonable
+        date  = plan.get("date", "?")
+        dow   = plan.get("dayOfWeek", "")
+        notes = plan.get("notes", "")
+        lines.append(f"--- {date} ({dow}) — {notes}")
+        for baker in plan.get("bakers", []):
+            task_strs = [f"{t['start']}–{t['end']} {t['name']}" for t in baker.get("tasks", [])]
+            lines.append(f"  {baker['name']} ({baker['role']}): {' | '.join(task_strs)}")
+        lines.append("")
+    return "\n".join(lines)
+
 def load_schedule_for_date(date_str: str) -> dict:
     path = BASE / "schedule.json"
     if not path.exists():
@@ -315,7 +356,8 @@ def summarise_mos(day_data: dict) -> str:
         lines.append(line)
     return "\n".join(lines) if lines else "No MOs specified — schedule only mandatory tasks: levain refresh + Mix BGT (D+1)."
 
-def build_prompt(date_str: str, shifts: dict, day_data: dict, shifts_data: dict) -> str:
+def build_prompt(date_str: str, shifts: dict, day_data: dict, shifts_data: dict,
+                 recent_plans: list[dict] | None = None) -> str:
     dow         = day_of_week(date_str)
     is_weekend  = dow in ("Saturday", "Sunday")
     mo_summary  = summarise_mos(day_data)
@@ -339,8 +381,11 @@ def build_prompt(date_str: str, shifts: dict, day_data: dict, shifts_data: dict)
         if is_weekend else ""
     )
 
+    recent_section = format_recent_plans_for_prompt(recent_plans or [])
+
     return f"""{FEW_SHOT_EXAMPLES}
 
+{recent_section}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 NOW GENERATE THE REAL PLAN FOR THE FOLLOWING DAY:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -395,12 +440,16 @@ Colors: Mixer=#6366f1, Shaping=#10b981, Baguettes=#f59e0b, PAC=#ec4899,
 """
 
 def generate_plan(date_str: str) -> dict:
-    client      = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-    shifts_data = load_shifts_data()
-    shifts      = shifts_data.get("schedule", {}).get(date_str, {})
-    day_data    = load_schedule_for_date(date_str)
+    client       = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    shifts_data  = load_shifts_data()
+    shifts       = shifts_data.get("schedule", {}).get(date_str, {})
+    day_data     = load_schedule_for_date(date_str)
+    recent_plans = load_recent_plans(date_str, max_days=30)
 
-    prompt = build_prompt(date_str, shifts, day_data, shifts_data)
+    if recent_plans:
+        print(f"  → Using {len(recent_plans)} recent plan(s) as context")
+
+    prompt = build_prompt(date_str, shifts, day_data, shifts_data, recent_plans)
 
     message = client.messages.create(
         model="claude-sonnet-4-5",
