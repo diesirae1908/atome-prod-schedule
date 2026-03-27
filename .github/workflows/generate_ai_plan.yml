@@ -1,0 +1,48 @@
+name: Generate AI Production Plan
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Start date (YYYY-MM-DD)'
+        required: true
+      days:
+        description: 'Number of days to generate (1–6)'
+        required: false
+        default: '1'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Generate AI plan(s)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python prod-schedule/scripts/generate_ai_plan.py \
+            --date "${{ inputs.date }}" \
+            --days "${{ inputs.days }}"
+
+      - name: Commit generated plan(s)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add prod-schedule/data/ai-plans/
+          git diff --staged --quiet && echo "Nothing to commit" || \
+            git commit -m "🤖 AI plan: ${{ inputs.date }} (+${{ inputs.days }} day(s))"
+          git push

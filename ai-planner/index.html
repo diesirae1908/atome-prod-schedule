@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atome AI Planner</title>
+  <link rel="stylesheet" href="styles.css?v=1" />
+</head>
+<body>
+  <div id="app">
+    <!-- ── Top bar ── -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <a href="../index.html" class="back-link">← Production Schedule</a>
+        <h1>AI Daily Planner</h1>
+      </div>
+      <div class="topbar-right">
+        <button id="btn-shift-table" class="btn btn-secondary">📋 Shift Table</button>
+        <button id="btn-admin" class="btn btn-outline">🔒 Admin</button>
+      </div>
+    </header>
+
+    <!-- ── Week navigation ── -->
+    <div class="week-nav">
+      <button id="prev-day" class="nav-btn">‹</button>
+      <div class="week-days" id="week-days"></div>
+      <button id="next-day" class="nav-btn">›</button>
+    </div>
+
+    <!-- ── Main content ── -->
+    <div id="main-content" class="main-content">
+      <!-- Day plan view -->
+      <div id="plan-view" class="plan-view">
+        <div id="plan-header" class="plan-header">
+          <div id="plan-date-title" class="plan-date-title"></div>
+          <div class="plan-actions">
+            <button id="btn-generate-day" class="btn btn-primary" style="display:none">⚡ Generate this day</button>
+            <button id="btn-regenerate" class="btn btn-warning" style="display:none">🔄 Regenerate</button>
+            <span id="plan-status" class="plan-status"></span>
+          </div>
+        </div>
+        <div id="plan-body"></div>
+      </div>
+    </div>
+
+    <!-- ── Shift Table Modal ── -->
+    <div id="modal-shifts" class="modal">
+      <div class="modal-box modal-wide">
+        <div class="modal-head">
+          <h2>Shift Table</h2>
+          <button class="modal-close" data-modal="modal-shifts">✕</button>
+        </div>
+        <div class="shift-week-nav">
+          <button id="shift-prev-week" class="nav-btn">‹</button>
+          <span id="shift-week-label"></span>
+          <button id="shift-next-week" class="nav-btn">›</button>
+        </div>
+        <div id="shift-table-wrap"></div>
+        <div class="modal-footer">
+          <span id="shift-save-status" class="save-status"></span>
+          <button id="btn-save-shifts" class="btn btn-primary">💾 Save shifts</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Admin Modal ── -->
+    <div id="modal-admin" class="modal">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h2>Admin Settings</h2>
+          <button class="modal-close" data-modal="modal-admin">✕</button>
+        </div>
+
+        <!-- Lock screen -->
+        <div id="admin-lock">
+          <p>Enter admin password to access settings.</p>
+          <div class="field-row">
+            <input type="password" id="admin-password-input" placeholder="Password" class="input" />
+            <button id="btn-unlock" class="btn btn-primary">Unlock</button>
+          </div>
+          <p id="lock-error" class="error-msg" style="display:none">Wrong password.</p>
+        </div>
+
+        <!-- Settings (shown after unlock) -->
+        <div id="admin-settings" style="display:none">
+          <div class="settings-section">
+            <h3>GitHub Settings</h3>
+            <label>GitHub Personal Access Token (PAT)</label>
+            <div class="field-row">
+              <input type="password" id="input-pat" placeholder="ghp_..." class="input" />
+              <button id="btn-save-pat" class="btn btn-secondary">Save</button>
+            </div>
+            <small>Needs <code>repo</code> + <code>workflow</code> scopes. Stored encrypted locally.</small>
+          </div>
+
+          <div class="settings-section">
+            <h3>Change Admin Password</h3>
+            <input type="password" id="input-new-password" placeholder="New password" class="input" style="margin-bottom:8px" />
+            <button id="btn-save-password" class="btn btn-secondary">Update password</button>
+          </div>
+
+          <div class="settings-section">
+            <h3>Generate Plans</h3>
+            <div class="field-row">
+              <input type="date" id="gen-date" class="input" />
+              <select id="gen-days" class="input" style="width:auto">
+                <option value="1">1 day</option>
+                <option value="2">2 days</option>
+                <option value="3">3 days</option>
+                <option value="4">4 days</option>
+                <option value="5">5 days</option>
+                <option value="6">6 days</option>
+              </select>
+              <button id="btn-trigger-generate" class="btn btn-primary">⚡ Generate</button>
+            </div>
+            <p id="gen-status" class="save-status"></p>
+          </div>
+
+          <div class="settings-section danger-zone">
+            <button id="btn-lock" class="btn btn-outline">🔒 Lock</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Generate confirm banner (non-admin) ── -->
+    <div id="generate-banner" style="display:none" class="generate-banner">
+      <span>No plan generated yet for this day.</span>
+      <button id="btn-banner-generate" class="btn btn-primary btn-sm">⚡ Ask admin to generate</button>
+    </div>
+  </div>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>
