@@ -166,34 +166,70 @@ async function fetchPlan(ds) {
   } catch { return null; }
 }
 
-// ── Render plan ─────────────────────────────────────────────────
+// ── Render plan — calendar grid view ────────────────────────────
 function renderPlan(plan) {
-  const body = document.getElementById("plan-body");
+  const body    = document.getElementById("plan-body");
+  const bakers  = plan.bakers || [];
+  const N       = bakers.length;
 
-  let html = "";
-  if (plan.notes) {
-    html += `<div class="plan-notes">📝 ${escHtml(plan.notes)}</div>`;
+  // Time range: 07:00 → 17:30, 15-min slots
+  const START   = 7 * 60;          // 420 min
+  const END     = 17 * 60 + 30;    // 1050 min
+  const SLOT    = 15;
+  const SLOTS   = (END - START) / SLOT; // 42
+
+  function timeToRow(t) {
+    const [h, m] = t.split(":").map(Number);
+    return Math.round((h * 60 + m - START) / SLOT) + 2; // +1 (1-indexed) +1 (header row)
   }
-  html += `<div class="baker-grid">`;
-  for (const baker of plan.bakers || []) {
-    const roleBadge = `<span class="baker-role-badge baker-role-${baker.role}">${baker.role}</span>`;
-    html += `<div class="baker-card">
-      <div class="baker-card-header">${escHtml(baker.name)} ${roleBadge}</div>
-      <div class="baker-timeline">`;
-    for (const task of baker.tasks || []) {
-      const bg  = task.color || "#94a3b8";
-      html += `<div class="task-block" style="background:${bg}" title="${escHtml(task.description||'')}">
-        <div class="task-block-name">${escHtml(task.name)}</div>
-        <div class="task-block-time">${task.start} – ${task.end}</div>
-        ${task.description ? `<div class="task-block-desc">${escHtml(task.description)}</div>` : ""}
-      </div>`;
+
+  let html = plan.notes
+    ? `<div class="plan-notes">📝 ${escHtml(plan.notes)}</div>`
+    : "";
+
+  // Outer scroll wrapper so the grid can scroll horizontally
+  html += `<div class="cal-scroll"><div class="cal-grid" style="grid-template-columns:52px repeat(${N},minmax(150px,1fr))">`;
+
+  // ── Row 1: headers ──
+  html += `<div class="cal-time-hdr">Time</div>`;
+  bakers.forEach(b => {
+    html += `<div class="cal-baker-hdr">
+      <span class="cal-baker-name">${escHtml(b.name)}</span>
+      <span class="baker-role-badge baker-role-${b.role}">${b.role}</span>
+    </div>`;
+  });
+
+  // ── Rows 2+: time-slot background cells ──
+  for (let s = 0; s < SLOTS; s++) {
+    const mins    = START + s * SLOT;
+    const h       = Math.floor(mins / 60);
+    const m       = mins % 60;
+    const isMajor = m === 0;
+    const label   = isMajor ? `${h}:00` : (m === 30 ? `${h}:30` : "");
+    html += `<div class="cal-time-slot${isMajor ? " major" : ""}">${label}</div>`;
+    for (let c = 0; c < N; c++) {
+      html += `<div class="cal-cell${isMajor ? " major" : ""}"></div>`;
     }
-    html += `</div></div>`;
   }
-  html += `</div>`;
+
+  // ── Task overlays ──
+  bakers.forEach((baker, ci) => {
+    (baker.tasks || []).forEach(task => {
+      const rStart = timeToRow(task.start);
+      const rEnd   = timeToRow(task.end);
+      const col    = ci + 2;
+      html += `<div class="cal-task" style="grid-row:${rStart}/${rEnd};grid-column:${col};background:${task.color || "#94a3b8"}">
+        <div class="cal-task-name">${escHtml(task.name)}</div>
+        <div class="cal-task-time">${task.start}–${task.end}</div>
+        ${task.description ? `<div class="cal-task-desc">${escHtml(task.description)}</div>` : ""}
+      </div>`;
+    });
+  });
+
+  html += `</div></div>`; // close cal-grid + cal-scroll
 
   const genAt = plan.generatedAt ? new Date(plan.generatedAt).toLocaleString("en-GB") : "";
-  html += `<p style="font-size:11px;color:#94a3b8;margin-top:14px">Generated ${genAt}</p>`;
+  html += `<p style="font-size:11px;color:#94a3b8;margin-top:10px">Generated ${genAt}</p>`;
 
   body.innerHTML = html;
   document.getElementById("plan-status").textContent = "";
