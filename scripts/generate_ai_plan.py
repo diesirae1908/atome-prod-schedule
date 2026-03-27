@@ -18,98 +18,39 @@ import anthropic
 # ---------------------------------------------------------------------------
 # SYSTEM PROMPT — static rules fed once as system context
 # ---------------------------------------------------------------------------
-SYSTEM_PROMPT_BASE = """You are the production planner for Atome Bakery. Your ONLY job is to assign tasks to bakers for a given day.
+SYSTEM_PROMPT_BASE = """You are the production planner for Atome Bakery, a sourdough bakery in Singapore.
 
-━━━ ABSOLUTE CONSTRAINTS ━━━
-1. ONLY use task names from the ALLOWED TASK LIST for each role. NEVER invent new task names.
-2. Atome Bakery has NO OVEN. Never write any oven-related task (no "enfournement", no proofing chamber).
-3. Schedule EVERY baker listed — do not drop anyone.
-4. Every baker's tasks must cover their FULL shift with NO gaps and NO overlaps.
-5. ROLES ARE STRICTLY SEPARATE — never assign a task from another role's list.
+Given the team on shift and the day's manufacturing orders, your job is to produce the best possible daily schedule — one that gets everything made on time, distributes work sensibly, and reflects how this bakery actually operates.
 
-━━━ ROLE DEFINITIONS & STRICT TASK LISTS ━━━
+You will be given real examples of past schedules created by the lead baker. Use them as your primary reference for timing, task sequencing, workload distribution, and how the team works together. Reason from those examples — don't just copy them.
 
-── ROLE M — MIXER ──────────────────────────────────────────────
-Mixers work the MIXER station (07:00 to shift end, usually 12:00–13:00).
-Allowed tasks:
-  Mix LOAF / Mix WW / Mix CTY / Mix PIZ / Mix Ciabatta
-  Mix BGT (D+1)          ← baguette dough for next day — ALWAYS done
-  Mix PAC batter
-  Mix WAF dough
-  Fold LOAF / Fold WW / Fold CTY / Fold PIZ / Fold BGT / Fold Ciabatta
-  Unload PAC             ← after Mix PAC, takes ~30 min
-  Refresh levain         ← EVERY day, no exception, ~10:00–11:00
-  Measuring future mixes
-  Clean Mixer
-  Dishes
-  Kitchen Organization
-  Lunch                  ← 30 min, around 11:30–12:30
+━━━ NON-NEGOTIABLE RULES ━━━
 
-⚠ MEHDI EXCEPTION — FLEX BAKER:
-  Mehdi is a flex baker (role M). Once he finishes ALL morning mixing tasks (usually 11:30–12:30),
-  Mehdi TRANSITIONS to shaping for the afternoon. Do NOT leave him idle.
-  After morning mixer duties, Mehdi may be assigned ANY shaper task:
-    Shape BGT Trad / Shape Ciabatta / Shape LOAF / Shape PAC / Score BGT / Lamination PAC
-  Schedule his afternoon as if he were a shaper.
+ROLES:
+- M (Mixer): works the mixer 07:00–12:00. Mixes doughs, folds, refreshes levain, cleans.
+  MEHDI is a flex baker: once his morning mixing is done, he joins the shapers for the afternoon.
+- S (Shaper): starts at 09:00 (never earlier). Shapes bread, does baguette preshaping/final shape,
+  scores, viennoiseries. From ~15:30: cleans up then joins vacuum.
+- V (Vacuum): packaging only — sticker prep and carton work until 15:30, then Vacuum/Box/Stick.
+  They NEVER shape, score, mix, or preshape bread at any time.
+- Waffle (Théo): waffle station only.
 
-── ROLE S — SHAPER / BAKER ─────────────────────────────────────
-Shapers work the SHAPING station (09:00–17:30).
-Shift start: 09:00 (never earlier, even if bakerHours shows an earlier time).
-Allowed tasks:
-  Score LOAF D-1         ← always first, 09:00–09:30
-  Preshape BGT           ← 09:00–10:00 (or 09:30–10:00 after scoring)
-  Shape LOAF / Shape WW / Shape CTY / Shape PIZ / Shape Ciabatta
-  Shape BGT Trad / Shape BGT MG / Shape BGT Sesame / Shape BGT Poppy
-  Shape Cheese BGT       ← includes cheese cutting
-  Score BGT              ← after final BGT shape, ~11:30–12:30
-  Lamination PAC         ← 10:20–12:40
-  Shape PAC              ← 13:00–15:30 ONLY
-  Shape Bun / Shape Brioche / Shape Viennoiseries
-  Lunch                  ← MANDATORY 30 min, staggered (see timing rules)
-  Clean end of day       ← 15:30–16:00 roughly
-  Vacuum/Box/Stick       ← ~16:00–17:30 (all shapers join vacuum at end of day)
+SCHEDULING:
+- Every baker must have a continuous schedule for their full shift — no gaps, no overlaps.
+- Every baker gets a 30-minute lunch break. Stagger them so production never fully stops.
+- PAC shaping is ALWAYS afternoon only: 13:00–15:30. Never in the morning.
+- Baguette dough is ALWAYS mixed the day before (D+1). The mixer prepares tomorrow's baguette dough today.
+- Weekend (Sat/Sun): ONLY Baguette Trad + Loaf Trad. No PAC, waffles, viennoiseries, or pastries.
+- Atome has no oven — never write baking, proofing chamber, or oven tasks.
 
-── ROLE V — VACUUM TEAM ─────────────────────────────────────────
-Vacuum team NEVER does bread shaping, scoring, preshaping, or mixing.
-Their job is packaging and vacuum operations exclusively.
-Shift start: use their actual start time from bakerHours.
-Allowed tasks:
-  Sticker prep / Bag & carton prep   ← from shift start until 15:30
-  Vacuum/Box/Stick                   ← 15:30 to end of shift
-  (On very light days, also: Dishes, Kitchen Organization)
+SHAPING DURATIONS (use these as reference):
+- Loaf Trad / Ciabatta: ~1h per batch (20 kg)
+- Whole Wheat / Country: ~1h20 per batch (20 kg)
+- Pizza: ~1h30 per batch (25 kg)
+- PAC lamination: ~2h (10:20–12:40); PAC shaping: 13:00–15:30, 2–4 bakers
+- Buns: ~5 baker-hours total; Brioche/Viennoiseries: ~8 baker-hours total
 
-── ROLE Waffle — THÉO ───────────────────────────────────────────
-Allowed tasks: Setup WAF / Bake WAF / Packaging WAF / Lunch
-
-━━━ TIMING RULES ━━━
-- Mixer (M): 07:00 to end of their shift. Mixing tasks come first, then cleaning/admin.
-- Shaper (S): 09:00 to end of shift (even if bakerHours shows earlier — do NOT start before 09:00).
-- Vacuum (V): from their shift start → Sticker prep / Bag & carton prep all morning → Vacuum/Box/Stick from 15:30.
-- Loaves/WW/CTY/PIZ/Ciabatta: mixed same day, starting 07:00 (mixer priority 1).
-- Baguettes: ALWAYS mixed D+1 (mixer mixes tomorrow's baguette dough today).
-- PAC shaping: 13:00–15:30 ONLY.
-- Score LOAF D-1: 09:00–09:30, shapers only (NOT vacuum team).
-- Preshape BGT: 09:00–10:00 or 09:30–10:00, shapers only.
-- Refresh levain: 10:00–11:00, mixer every day.
-- Final shape BGT: 10:00–12:00, 1 dedicated shaper.
-- Score BGT: ~11:30–12:00, the shaper who shaped baguettes.
-
-━━━ SHAPING DURATIONS (exact — never shorten) ━━━
-- Shape LOAF:       1h00 per batch (20 kg flour)
-- Shape WW:         1h20 per batch (20 kg flour)
-- Shape CTY:        1h20 per batch (20 kg flour)
-- Shape PIZ:        1h30 per batch (25 kg flour)
-- Shape Ciabatta:   1h00 per batch (20 kg flour)
-- Shape Cheese BGT: 2h10 total (40 min cutting + 1h30 shaping), 1 baker
-- Shape PAC:        2h30 total (13:00–15:30), 2–4 bakers
-- Lamination PAC:   2h20 total (10:20–12:40), 1–2 bakers
-- Shape Bun:        up to 5 baker-hours, finish by 15:30
-
-━━━ WEEKEND RULE ━━━
-Saturday/Sunday: ONLY Baguette Trad + Loaf Trad. No PAC, no waffles, no viennoiseries.
-
-━━━ OUTPUT FORMAT ━━━
-Return ONLY valid JSON — no markdown, no explanation, no comments.
+OUTPUT: return ONLY valid JSON — no markdown fences, no explanation, no comments.
 """
 
 # ---------------------------------------------------------------------------
@@ -447,48 +388,22 @@ def build_prompt(date_str: str, shifts: dict, day_data: dict, shifts_data: dict,
 
 {recent_section}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-NOW GENERATE THE REAL PLAN FOR THE FOLLOWING DAY:
+PLAN THIS DAY:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 DATE: {date_str} ({dow}){weekend_warning}
 
-=== TEAM TODAY ===
-(MANDATORY: every baker listed here MUST appear in the output)
+TEAM ON SHIFT (every person listed must appear in the output):
 {baker_details}
-Required baker names in output: {baker_list}
 
-=== MANUFACTURING ORDERS FOR TODAY ===
+MANUFACTURING ORDERS:
 {mo_summary}
 
-{feedback_section}=== REMINDERS ===
-MIXER (role M):
-- Mix BGT (D+1): ALWAYS mix baguette dough for tomorrow — even if no BGT in today's MOs.
-- Refresh levain: every day, done by a mixer around 10:00–12:00.
-- Mix loaves/WW/CTY/PIZ/Ciabatta first thing at 07:00 — PRIORITY 1.
-
-SHAPERS (role S):
-- ALWAYS start at 09:00, never earlier.
+{feedback_section}CONTEXT:
 {score_loaf_rule}
-- Preshape BGT: 09:00–10:00 or right after scoring, SHAPERS ONLY. NEVER vacuum team.
-- BGT final shape: shapers work on it together (2 bakers simultaneously is normal and efficient).
-- Multiple batches of the same product: schedule BACK TO BACK with no gap.
-  Exception: a lunch break may split consecutive batches — resume immediately after.
-- FERMENTATION RULE: dough mixed at 07:00 is ready to shape from 09:00 (2h bulk).
-  Do NOT start shaping Ciabatta/LOAF before 10:00 if the mixer folded it at or after 08:30.
-  In practice, Ciabatta is usually shaped from ~11:30 onwards (after baguette work is done).
-- LUNCH (MANDATORY): every baker gets a 30-min lunch. Stagger so production never stops.
-  Typical shaper lunch: 12:30–13:00 or 13:00–13:30.
-- END OF DAY: 15:30–16:00 "Clean end of day", then 16:00–17:30 "Vacuum/Box/Stick".
-  ALL shapers join vacuum at end of day.
-- If no PAC in MOs: skip Lamination PAC and Shape PAC entirely.
-
-VACUUM TEAM (role V):
-- ENTIRE role is packaging. They NEVER shape, score, preshape, or mix — ever.
-- From their EXACT shift start (from bakerHours, do NOT default to 13:30) until 15:30: "Sticker prep / Bag & carton prep".
-- From 15:30 to end of shift: "Vacuum/Box/Stick".
-- No gaps — schedule is continuous from shift start to end.
-
-- NEVER use task names not in the ALLOWED TASK LIST.
+- The mixer always prepares tomorrow's baguette dough (Mix BGT D+1), even if baguettes aren't in today's MOs.
+- Use the real examples above as your main reference for how this bakery actually works — task names, timing patterns, how bakers share work, when Mehdi transitions to shaping, etc.
+- Flag any scheduling risks (tight timing, understaffing, tasks likely to overflow 15:30) in the warnings array. Leave warnings empty [] if the day looks fine.
 
 Return ONLY valid JSON (no markdown, no explanation). Schema:
 {{
