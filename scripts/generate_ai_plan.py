@@ -214,24 +214,26 @@ MOs: WW 40kg (2 batches), BGT MG 40kg (2 batches D+1)
       "name": "Natalia",
       "role": "S",
       "tasks": [
-        {"id": "n1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":""},
+        {"id": "n1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":"Score yesterday's loaves"},
         {"id": "n2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"BGT MG preshape with Joyie"},
-        {"id": "n3","name":"Shape WW","start":"10:00","end":"11:20","color":"#10b981","description":"Batch 1 — 20kg"},
-        {"id": "n4","name":"Shape WW","start":"11:20","end":"12:40","color":"#10b981","description":"Batch 2 — 20kg"},
-        {"id": "n5","name":"Clean end of day","start":"12:40","end":"15:30","color":"#94a3b8","description":""},
-        {"id": "n6","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":""}
+        {"id": "n3","name":"Shape WW","start":"10:00","end":"11:20","color":"#10b981","description":"Batch 1 — 20kg WW flour"},
+        {"id": "n4","name":"Shape WW","start":"11:20","end":"12:40","color":"#10b981","description":"Batch 2 — 20kg WW flour (back to back, no gap)"},
+        {"id": "n5","name":"Lunch","start":"12:40","end":"13:30","color":"#94a3b8","description":""},
+        {"id": "n6","name":"Clean end of day","start":"13:30","end":"15:30","color":"#94a3b8","description":"Kitchen help, prep, cleaning"},
+        {"id": "n7","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":"End of day cleanup"}
       ]
     },
     {
       "name": "Joyie",
       "role": "S",
       "tasks": [
-        {"id": "j1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":""},
+        {"id": "j1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":"Score yesterday's loaves"},
         {"id": "j2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"BGT MG preshape with Natalia"},
         {"id": "j3","name":"Shape BGT MG","start":"10:00","end":"12:00","color":"#f59e0b","description":"Final shape 2 batches"},
-        {"id": "j4","name":"Score BGT","start":"12:00","end":"12:30","color":"#06b6d4","description":""},
-        {"id": "j5","name":"Clean end of day","start":"12:30","end":"15:30","color":"#94a3b8","description":""},
-        {"id": "j6","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":""}
+        {"id": "j4","name":"Score BGT","start":"12:00","end":"12:30","color":"#06b6d4","description":"Score all baguettes"},
+        {"id": "j5","name":"Lunch","start":"12:30","end":"13:30","color":"#94a3b8","description":""},
+        {"id": "j6","name":"Clean end of day","start":"13:30","end":"15:30","color":"#94a3b8","description":"Kitchen help, prep, cleaning"},
+        {"id": "j7","name":"Clean end of day","start":"15:30","end":"17:30","color":"#94a3b8","description":"End of day cleanup"}
       ]
     },
     {
@@ -505,13 +507,31 @@ Required baker names in output: {baker_list}
 {mo_summary}
 
 {feedback_section}=== REMINDERS ===
-- Mix BGT (D+1): mixer ALWAYS mixes baguette dough for tomorrow — even if no BGT in today's MOs.
-- Refresh levain: ALWAYS 10:00–11:00, done by the mixer.
-- Score LOAF D-1: ALWAYS 09:00–09:30, ALL shapers.
-- Preshape BGT: ALWAYS 09:00–10:00 (or 09:30–10:00 right after scoring), shapers + vacuum team.
-- Vacuum team (V) before 13:00: assign real production tasks (Preshape BGT, Shape X, Lamination PAC).
+MIXER (role M):
+- Mix BGT (D+1): ALWAYS mix baguette dough for tomorrow — even if no BGT in today's MOs.
+- Refresh levain: ALWAYS 10:00–11:00 every day.
+- Mix loaves/WW/CTY/PIZ/Ciabatta first thing at 07:00 — PRIORITY 1.
+
+SHAPERS (role S):
+- ALWAYS start at 09:00, never earlier.
+- Score LOAF D-1: ALWAYS first task, 09:00–09:30, shapers only.
+- Preshape BGT: 09:00–10:00 or 09:30–10:00 (after scoring), SHAPERS ONLY. NEVER vacuum team.
+- Multiple batches of the same product: schedule BACK TO BACK with NO gap between them.
+  Example: 2 Ciabatta batches → 09:30–10:30 then 10:30–11:30 (not 09:30–10:30 then 11:00–12:00).
+- FERMENTATION RULE: dough mixed at 07:00 is ready to shape from 09:00 (2h bulk fermentation).
+  NEVER schedule shaping within 60 min of the mixer's last fold of that same dough.
+  If mixer folds Ciabatta at 08:30, shapers cannot start shaping Ciabatta before 10:00.
 - If no PAC in MOs: skip Lamination PAC and Shape PAC entirely.
-- Vacuum/Box/Stick: 15:30–end of shift for EVERY baker, no exceptions.
+- End of day 15:30–17:30: "Clean end of day".
+
+VACUUM TEAM (role V):
+- ENTIRE role is packaging. They NEVER shape, score, preshape, or mix — at ANY time of day.
+- From their shift start time (from bakerHours) until 15:30: "Sticker prep / Bag & carton prep".
+- From 15:30 to end of shift: "Vacuum/Box/Stick".
+- Use their EXACT shift start from bakerHours — do NOT default to 13:30.
+  If bakerHours shows a V baker starting at 07:00, their day starts at 07:00, not 13:30.
+- No gaps allowed: their schedule must be continuous from shift start to end.
+
 - NEVER use task names not in the ALLOWED TASK LIST.
 
 Return ONLY valid JSON (no markdown, no explanation). Schema:
