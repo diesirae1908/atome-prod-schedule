@@ -33,7 +33,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          python prod-schedule/scripts/generate_ai_plan.py \
+          python scripts/generate_ai_plan.py \
             --date "${{ inputs.date }}" \
             --days "${{ inputs.days }}"
 
@@ -42,7 +42,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase
-          git add prod-schedule/data/ai-plans/
+          git add data/ai-plans/
           git diff --staged --quiet && echo "Nothing to commit" || \
             git commit -m "🤖 AI plan: ${{ inputs.date }} (+${{ inputs.days }} day(s))"
           git push
