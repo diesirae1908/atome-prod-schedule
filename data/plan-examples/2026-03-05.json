@@ -1,0 +1,86 @@
+{
+  "date": "2026-03-05",
+  "dayOfWeek": "Thursday",
+  "source": "human",
+  "notes": "CTY + BGT + MG preshape + Brioche shaping day",
+  "bakers": [
+    {
+      "name": "Sebastien",
+      "role": "M",
+      "tasks": [
+        {"name": "Check in / Sanitize", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix CTY 1 2 3", "start": "07:10", "end": "07:20", "description": ""},
+        {"name": "Unload CTY 1 2 3", "start": "07:20", "end": "08:10", "description": ""},
+        {"name": "Mix CTY 4 5 6", "start": "08:10", "end": "08:20", "description": ""},
+        {"name": "Fold CTY 1 2 3", "start": "08:20", "end": "08:50", "description": ""},
+        {"name": "Unload CTY 4 5 6", "start": "08:50", "end": "09:30", "description": ""},
+        {"name": "Mix/Unload BGT", "start": "09:30", "end": "09:40", "description": ""},
+        {"name": "Fold CTY 4 5 6", "start": "09:40", "end": "10:10", "description": ""},
+        {"name": "Unload BGT", "start": "10:10", "end": "10:50", "description": ""},
+        {"name": "Clean Mixer", "start": "10:50", "end": "11:10", "description": ""},
+        {"name": "Fold BGT", "start": "11:10", "end": "11:40", "description": ""},
+        {"name": "Refresh levain", "start": "11:40", "end": "12:00", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""},
+        {"name": "Shaping Brioche", "start": "13:20", "end": "14:40", "description": ""},
+        {"name": "Clean end of day", "start": "14:40", "end": "15:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:30", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Damien",
+      "role": "S",
+      "tasks": [
+        {"name": "Mix/Unload PASTRY", "start": "09:00", "end": "09:30", "description": ""},
+        {"name": "Unload pastry batch", "start": "09:10", "end": "09:30", "description": ""},
+        {"name": "Clean Mixer", "start": "09:30", "end": "09:50", "description": ""},
+        {"name": "Shape CTY", "start": "09:50", "end": "10:50", "description": ""},
+        {"name": "Shape CTY", "start": "10:50", "end": "11:50", "description": ""},
+        {"name": "Lunch", "start": "11:50", "end": "12:20", "description": ""},
+        {"name": "Shape CTY", "start": "12:20", "end": "13:20", "description": ""},
+        {"name": "Shaping Brioche", "start": "13:20", "end": "14:40", "description": ""},
+        {"name": "Dishes", "start": "14:40", "end": "15:10", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:10", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Joyie",
+      "role": "S",
+      "tasks": [
+        {"name": "Score BGT", "start": "09:00", "end": "09:30", "description": ""},
+        {"name": "preshape MG", "start": "09:30", "end": "10:10", "description": ""},
+        {"name": "Shape CTY", "start": "10:10", "end": "11:10", "description": ""},
+        {"name": "Shape CTY", "start": "11:10", "end": "12:10", "description": ""},
+        {"name": "Lunch", "start": "12:10", "end": "12:40", "description": ""},
+        {"name": "Shaping Brioche", "start": "12:40", "end": "14:40", "description": ""},
+        {"name": "Dishes", "start": "14:40", "end": "15:10", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:10", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Mehdi",
+      "role": "M",
+      "tasks": [
+        {"name": "preshape MG", "start": "09:00", "end": "10:10", "description": ""},
+        {"name": "Shape BGT", "start": "10:10", "end": "11:40", "description": ""},
+        {"name": "Score BGT", "start": "11:40", "end": "12:10", "description": ""},
+        {"name": "Lunch", "start": "12:10", "end": "12:40", "description": ""},
+        {"name": "Shaping Brioche", "start": "12:40", "end": "14:40", "description": ""},
+        {"name": "Clean equipment", "start": "14:40", "end": "15:10", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:10", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Natalia",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape MG", "start": "09:00", "end": "10:10", "description": ""},
+        {"name": "Shape BGT", "start": "10:10", "end": "11:40", "description": ""},
+        {"name": "Shape CTY", "start": "11:40", "end": "12:40", "description": ""},
+        {"name": "Lunch", "start": "12:40", "end": "13:10", "description": ""},
+        {"name": "Shaping Brioche", "start": "13:10", "end": "14:40", "description": ""},
+        {"name": "Clean end of day", "start": "14:40", "end": "15:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:30", "end": "17:30", "description": ""}
+      ]
+    }
+  ]
+}

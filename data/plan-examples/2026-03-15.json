@@ -1,0 +1,90 @@
+{
+  "date": "2026-03-15",
+  "dayOfWeek": "Sunday",
+  "source": "human",
+  "notes": "PIZ (6 batches) + BGT + Waffle day",
+  "bakers": [
+    {
+      "name": "Kuba",
+      "role": "M",
+      "tasks": [
+        {"name": "Check in / Sanitize", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload PIZ 1 2 3", "start": "07:10", "end": "07:50", "description": ""},
+        {"name": "Mix/Unload PIZ 4 5 6", "start": "07:50", "end": "08:30", "description": ""},
+        {"name": "Fold PIZ 1 2 3", "start": "08:30", "end": "09:00", "description": ""},
+        {"name": "Mix/Unload BGT 1 2 3", "start": "09:00", "end": "09:50", "description": ""},
+        {"name": "Clean Mixer", "start": "09:50", "end": "10:10", "description": ""},
+        {"name": "Fold BGT 1 2 3", "start": "10:10", "end": "10:40", "description": ""},
+        {"name": "Refresh levain", "start": "10:40", "end": "11:00", "description": ""},
+        {"name": "Measuring 22.68kg Brioche", "start": "11:00", "end": "11:30", "description": ""},
+        {"name": "Dishes", "start": "11:30", "end": "12:00", "description": ""},
+        {"name": "Lunch / end of day", "start": "12:00", "end": "12:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "13:30", "end": "15:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Mehdi",
+      "role": "M",
+      "tasks": [
+        {"name": "Check in / Sanitize", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload PIZ 1 2 3", "start": "07:10", "end": "07:50", "description": ""},
+        {"name": "Mix/Unload PIZ 4 5 6", "start": "07:50", "end": "08:30", "description": ""},
+        {"name": "Score LOAF D-1", "start": "08:30", "end": "09:00", "description": ""},
+        {"name": "Fold PIZ 4 5 6", "start": "09:00", "end": "09:30", "description": ""},
+        {"name": "preshape baguette", "start": "09:30", "end": "10:00", "description": ""},
+        {"name": "Shape PIZ 2", "start": "10:00", "end": "11:30", "description": ""},
+        {"name": "Lunch", "start": "11:30", "end": "12:00", "description": ""},
+        {"name": "Shape PIZ 4", "start": "12:00", "end": "13:30", "description": ""},
+        {"name": "Lunch", "start": "13:30", "end": "14:00", "description": ""},
+        {"name": "Shape PIZ 6", "start": "14:00", "end": "14:30", "description": ""},
+        {"name": "Dishes", "start": "14:30", "end": "15:00", "description": ""},
+        {"name": "Clean end of day", "start": "15:00", "end": "15:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:30", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Kasia",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "10:00", "description": ""},
+        {"name": "Shape PIZ 1", "start": "10:00", "end": "11:30", "description": ""},
+        {"name": "Score BGT", "start": "11:30", "end": "12:00", "description": ""},
+        {"name": "Shape PIZ 5", "start": "12:00", "end": "13:30", "description": ""},
+        {"name": "Lunch", "start": "13:30", "end": "14:00", "description": ""},
+        {"name": "Shape PIZ 6", "start": "14:00", "end": "14:30", "description": ""},
+        {"name": "Dishes", "start": "14:30", "end": "15:00", "description": ""},
+        {"name": "Clean end of day", "start": "15:00", "end": "15:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:30", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Raveena",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "10:00", "description": ""},
+        {"name": "Shape BGT", "start": "10:00", "end": "11:30", "description": ""},
+        {"name": "Shape PIZ 3", "start": "11:30", "end": "13:00", "description": ""},
+        {"name": "Lunch", "start": "13:00", "end": "13:30", "description": ""},
+        {"name": "Shape PIZ 6", "start": "13:30", "end": "14:30", "description": ""},
+        {"name": "Clean Equipment", "start": "14:30", "end": "15:00", "description": ""},
+        {"name": "Clean end of day", "start": "15:00", "end": "15:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:30", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Theo",
+      "role": "Waffle",
+      "tasks": [
+        {"name": "Setup WAF", "start": "08:30", "end": "08:40", "description": ""},
+        {"name": "Clean Mixer", "start": "08:40", "end": "09:00", "description": ""},
+        {"name": "Bake WAF", "start": "09:00", "end": "10:00", "description": ""},
+        {"name": "Bake WAF", "start": "10:00", "end": "11:00", "description": ""},
+        {"name": "Bake WAF", "start": "11:00", "end": "12:00", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""},
+        {"name": "Bake WAF", "start": "12:30", "end": "13:30", "description": ""},
+        {"name": "Dishes / equipment cleaning", "start": "13:30", "end": "14:30", "description": ""},
+        {"name": "Packaging WAF", "start": "14:30", "end": "16:00", "description": ""}
+      ]
+    }
+  ]
+}

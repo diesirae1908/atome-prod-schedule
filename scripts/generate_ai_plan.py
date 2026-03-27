@@ -113,172 +113,81 @@ Return ONLY valid JSON — no markdown, no explanation, no comments.
 """
 
 # ---------------------------------------------------------------------------
-# FEW-SHOT EXAMPLES — two real representative days
+# REAL EXAMPLES — loaded dynamically from data/plan-examples/
 # ---------------------------------------------------------------------------
-FEW_SHOT_EXAMPLES = """
-Below are two real daily plans from Atome Bakery. Study them carefully — especially the strict role separation.
+def load_real_examples(date_str: str, mo_summary: str, max_examples: int = 4) -> list[dict]:
+    """Load human-created plans that best match today's production type."""
+    examples_dir = BASE / "data" / "plan-examples"
+    if not examples_dir.exists():
+        return []
 
-KEY RULE illustrated by these examples:
-  - Role M (Mixer): only mixing, folding, levain, cleaning tasks. Never shapes bread.
-  - Role S (Shaper): only shaping, scoring, preshaping tasks. Starts at 09:00 always.
-  - Role V (Vacuum): ONLY packaging tasks (Sticker prep / Bag & carton prep, Vacuum/Box/Stick). NEVER shapes or scores bread.
+    all_examples = []
+    for path in sorted(examples_dir.glob("*.json")):
+        try:
+            with open(path) as f:
+                data = json.load(f)
+            if data.get("source") == "human":
+                all_examples.append(data)
+        except Exception:
+            continue
 
-━━━ EXAMPLE 1 — Wednesday, full production day ━━━
-Team: Kuba (M, 07:00–12:00), Mehdi (M, 07:00–15:30), Alice (S, 09:00–17:30), Bob (S, 09:00–17:30), Carla (V, 07:00–17:30), Diana (V, 13:30–17:30)
-MOs: LOAF Trad 80kg (4 batches), BGT Trad 60kg (3 batches D+1), PAC Chocolat 12 patons, Ciabatta 40kg (2 batches)
+    if not all_examples:
+        return []
 
-Note: Mehdi finishes mixing at ~12:00, then transitions to shaping for the afternoon (FLEX BAKER).
-Note: All shapers get a 30-min staggered lunch, then end day with Clean + Vacuum/Box/Stick.
+    mo_lower = mo_summary.lower()
+    has_pac      = "pac" in mo_lower
+    has_ww       = "whole wheat" in mo_lower or " ww" in mo_lower
+    has_ciabatta = "ciabatta" in mo_lower
+    has_pizza    = "pizza" in mo_lower
+    has_bgt      = "baguette" in mo_lower or "bgt" in mo_lower
+    has_brioche  = "brioche" in mo_lower or "viennois" in mo_lower or "bun" in mo_lower
+    target_dow   = day_of_week(date_str)
 
-{
-  "date": "EXAMPLE-1",
-  "dayOfWeek": "Wednesday",
-  "notes": "Full day: 4 LOAF + 2 Ciabatta, PAC afternoon, BGT dough for tomorrow. Mehdi flexes to shaping.",
-  "warnings": [],
-  "bakers": [
-    {
-      "name": "Kuba",
-      "role": "M",
-      "tasks": [
-        {"id": "k1","name":"Mix LOAF","start":"07:00","end":"09:00","color":"#6366f1","description":"Batch 1+2+3+4 — 80kg flour"},
-        {"id": "k2","name":"Fold LOAF","start":"09:00","end":"09:30","color":"#6366f1","description":"All 4 batches"},
-        {"id": "k3","name":"Refresh levain","start":"10:00","end":"11:00","color":"#8b5cf6","description":"Daily levain refresh"},
-        {"id": "k4","name":"Mix BGT (D+1)","start":"11:00","end":"12:00","color":"#6366f1","description":"3 batches baguette dough for tomorrow"}
-      ]
-    },
-    {
-      "name": "Mehdi",
-      "role": "M",
-      "tasks": [
-        {"id": "mh1","name":"Mix Ciabatta","start":"07:00","end":"08:30","color":"#6366f1","description":"2 batches — 40kg flour"},
-        {"id": "mh2","name":"Mix PAC batter","start":"08:30","end":"09:10","color":"#ec4899","description":"12 patons PAC Chocolat"},
-        {"id": "mh3","name":"Unload PAC","start":"09:10","end":"09:40","color":"#ec4899","description":"Unload PAC dough"},
-        {"id": "mh4","name":"Fold Ciabatta","start":"09:40","end":"10:00","color":"#6366f1","description":"Both ciabatta batches"},
-        {"id": "mh5","name":"Clean Mixer","start":"10:00","end":"11:00","color":"#94a3b8","description":""},
-        {"id": "mh6","name":"Lunch","start":"11:30","end":"12:00","color":"#94a3b8","description":""},
-        {"id": "mh7","name":"Shape Ciabatta","start":"12:00","end":"13:00","color":"#10b981","description":"Batch 1 — Mehdi transitions to shaping (flex baker)"},
-        {"id": "mh8","name":"Shape PAC","start":"13:00","end":"15:30","color":"#ec4899","description":"PAC Chocolat — 12 patons, assist Alice+Bob"}
-      ]
-    },
-    {
-      "name": "Alice",
-      "role": "S",
-      "tasks": [
-        {"id": "a1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":"Score yesterday's loaves"},
-        {"id": "a2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"Preshape baguettes with Bob"},
-        {"id": "a3","name":"Shape LOAF","start":"10:00","end":"12:00","color":"#10b981","description":"Batch 1+2 — 40kg"},
-        {"id": "a4","name":"Lunch","start":"12:00","end":"12:30","color":"#94a3b8","description":""},
-        {"id": "a5","name":"Shape Ciabatta","start":"12:30","end":"13:00","color":"#10b981","description":"Batch 2 — 20kg"},
-        {"id": "a6","name":"Shape PAC","start":"13:00","end":"15:30","color":"#ec4899","description":"PAC Chocolat, 12 patons"},
-        {"id": "a7","name":"Clean end of day","start":"15:30","end":"16:00","color":"#94a3b8","description":""},
-        {"id": "a8","name":"Vacuum/Box/Stick","start":"16:00","end":"17:30","color":"#64748b","description":"Join vacuum team"}
-      ]
-    },
-    {
-      "name": "Bob",
-      "role": "S",
-      "tasks": [
-        {"id": "b1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":"Score yesterday's loaves"},
-        {"id": "b2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"Preshape baguettes with Alice"},
-        {"id": "b3","name":"Shape BGT Trad","start":"10:00","end":"12:00","color":"#f59e0b","description":"Final shape 3 batches"},
-        {"id": "b4","name":"Score BGT","start":"12:00","end":"12:30","color":"#06b6d4","description":"Score all baguettes"},
-        {"id": "b5","name":"Shape LOAF","start":"12:30","end":"13:00","color":"#10b981","description":"Batch 3+4 — 40kg"},
-        {"id": "b6","name":"Lunch","start":"13:00","end":"13:30","color":"#94a3b8","description":""},
-        {"id": "b7","name":"Shape PAC","start":"13:30","end":"15:30","color":"#ec4899","description":"PAC Chocolat assist"},
-        {"id": "b8","name":"Clean end of day","start":"15:30","end":"16:00","color":"#94a3b8","description":""},
-        {"id": "b9","name":"Vacuum/Box/Stick","start":"16:00","end":"17:30","color":"#64748b","description":"Join vacuum team"}
-      ]
-    },
-    {
-      "name": "Carla",
-      "role": "V",
-      "tasks": [
-        {"id": "c1","name":"Sticker prep / Bag & carton prep","start":"07:00","end":"15:30","color":"#64748b","description":"Prepare all vacuum station, labels, cartons, pouches"},
-        {"id": "c2","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":"Vacuum and pack all products"}
-      ]
-    },
-    {
-      "name": "Diana",
-      "role": "V",
-      "tasks": [
-        {"id": "d1","name":"Sticker prep / Bag & carton prep","start":"13:30","end":"15:30","color":"#64748b","description":"Set up vacuum station, stickers, cartons"},
-        {"id": "d2","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
-      ]
-    }
-  ]
-}
+    def score(ex: dict) -> int:
+        s = 0
+        notes = ex.get("notes", "").lower()
+        if ex.get("dayOfWeek") == target_dow:
+            s += 4
+        if has_pac and "pac" in notes:        s += 3
+        if has_ww and ("ww" in notes or "whole wheat" in notes): s += 3
+        if has_ciabatta and "ciabatta" in notes: s += 3
+        if has_pizza and "pizza" in notes:    s += 3
+        if has_bgt and "bgt" in notes:        s += 1
+        if has_brioche and ("brioche" in notes or "bun" in notes): s += 2
+        return s
 
-━━━ EXAMPLE 2 — Friday, lighter day with Mehdi flex ━━━
-Team: Mehdi (M, 07:00–15:30), Natalia (S, 09:00–17:30), Joyie (S, 09:00–17:30), Ysaline (V, 07:00–15:30), Angele (V, 07:00–15:30)
-MOs: LOAF Trad 40kg (2 batches), BGT MG 40kg (2 batches D+1)
+    all_examples.sort(key=score, reverse=True)
+    return all_examples[:max_examples]
 
-Note: Mehdi finishes mixing around 12:30, then transitions to shaping (flex baker).
 
-{
-  "date": "EXAMPLE-2",
-  "dayOfWeek": "Friday",
-  "notes": "2 LOAF batches + BGT MG dough for tomorrow. Mehdi flexes to shaping after mixing.",
-  "warnings": [],
-  "bakers": [
-    {
-      "name": "Mehdi",
-      "role": "M",
-      "tasks": [
-        {"id": "m1","name":"Mix LOAF","start":"07:00","end":"08:30","color":"#6366f1","description":"2 batches — 40kg flour"},
-        {"id": "m2","name":"Fold LOAF","start":"08:30","end":"09:00","color":"#6366f1","description":"Both batches"},
-        {"id": "m3","name":"Refresh levain","start":"10:00","end":"11:00","color":"#8b5cf6","description":"Daily levain refresh"},
-        {"id": "m4","name":"Mix BGT (D+1)","start":"11:00","end":"12:30","color":"#6366f1","description":"2 batches BGT MG for tomorrow"},
-        {"id": "m5","name":"Lunch","start":"12:30","end":"13:00","color":"#94a3b8","description":""},
-        {"id": "m6","name":"Shape LOAF","start":"13:00","end":"14:00","color":"#10b981","description":"Batch 2 — Mehdi transitions to shaping (flex baker)"},
-        {"id": "m7","name":"Clean end of day","start":"14:00","end":"15:30","color":"#94a3b8","description":"Kitchen cleanup"}
-      ]
-    },
-    {
-      "name": "Natalia",
-      "role": "S",
-      "tasks": [
-        {"id": "n1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":"Score yesterday's loaves"},
-        {"id": "n2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"BGT MG preshape with Joyie"},
-        {"id": "n3","name":"Shape LOAF","start":"10:00","end":"11:00","color":"#10b981","description":"Batch 1 — 20kg"},
-        {"id": "n4","name":"Lunch","start":"12:30","end":"13:00","color":"#94a3b8","description":""},
-        {"id": "n5","name":"Clean end of day","start":"13:00","end":"15:30","color":"#94a3b8","description":"Kitchen help, prep, cleaning"},
-        {"id": "n6","name":"Clean end of day","start":"15:30","end":"16:00","color":"#94a3b8","description":"End of day cleanup"},
-        {"id": "n7","name":"Vacuum/Box/Stick","start":"16:00","end":"17:30","color":"#64748b","description":"Join vacuum team"}
-      ]
-    },
-    {
-      "name": "Joyie",
-      "role": "S",
-      "tasks": [
-        {"id": "j1","name":"Score LOAF D-1","start":"09:00","end":"09:30","color":"#06b6d4","description":"Score yesterday's loaves"},
-        {"id": "j2","name":"Preshape BGT","start":"09:30","end":"10:00","color":"#f59e0b","description":"BGT MG preshape with Natalia"},
-        {"id": "j3","name":"Shape BGT MG","start":"10:00","end":"12:00","color":"#f59e0b","description":"Final shape 2 batches"},
-        {"id": "j4","name":"Score BGT","start":"12:00","end":"12:30","color":"#06b6d4","description":"Score all baguettes"},
-        {"id": "j5","name":"Lunch","start":"13:00","end":"13:30","color":"#94a3b8","description":""},
-        {"id": "j6","name":"Clean end of day","start":"13:30","end":"15:30","color":"#94a3b8","description":"Kitchen help, prep, cleaning"},
-        {"id": "j7","name":"Clean end of day","start":"15:30","end":"16:00","color":"#94a3b8","description":"End of day cleanup"},
-        {"id": "j8","name":"Vacuum/Box/Stick","start":"16:00","end":"17:30","color":"#64748b","description":"Join vacuum team"}
-      ]
-    },
-    {
-      "name": "Ysaline",
-      "role": "V",
-      "tasks": [
-        {"id": "y1","name":"Sticker prep / Bag & carton prep","start":"07:00","end":"15:30","color":"#64748b","description":"Labels, cartons, pouches, vacuum station prep"},
-        {"id": "y2","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
-      ]
-    },
-    {
-      "name": "Angele",
-      "role": "V",
-      "tasks": [
-        {"id": "ag1","name":"Sticker prep / Bag & carton prep","start":"07:00","end":"15:30","color":"#64748b","description":"Labels, cartons, pouches, vacuum station prep"},
-        {"id": "ag2","name":"Vacuum/Box/Stick","start":"15:30","end":"17:30","color":"#64748b","description":""}
-      ]
-    }
-  ]
-}
-"""
+def format_real_examples(examples: list[dict]) -> str:
+    """Format real human plans as plain-text few-shot examples."""
+    if not examples:
+        return ""
+
+    lines = [
+        "━━━ REAL HUMAN-CREATED PLANS — learn exactly from these ━━━",
+        "These schedules were written by the lead baker at Atome Bakery.",
+        "Copy their task names, timing patterns, lunch placement, and end-of-day structure.",
+        "",
+    ]
+    for i, ex in enumerate(examples, 1):
+        date  = ex.get("date", "?")
+        dow   = ex.get("dayOfWeek", "")
+        notes = ex.get("notes", "")
+        lines.append(f"── REAL EXAMPLE {i}: {date} ({dow}) — {notes} ──")
+        for baker in ex.get("bakers", []):
+            role  = baker.get("role", "?")
+            tasks = baker.get("tasks", [])
+            task_str = "  |  ".join(
+                f"{t['start']}–{t['end']} {t['name']}" for t in tasks
+            )
+            lines.append(f"  {baker['name']} ({role}): {task_str}")
+        lines.append("")
+    return "\n".join(lines)
+
+
+# (real examples loaded dynamically — see load_real_examples / format_real_examples above)
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -507,13 +416,34 @@ def build_prompt(date_str: str, shifts: dict, day_data: dict, shifts_data: dict,
         if is_weekend else ""
     )
 
+    # Load real human examples matching today's production type
+    real_examples    = load_real_examples(date_str, mo_summary, max_examples=4)
+    examples_section = format_real_examples(real_examples)
+    if real_examples:
+        print(f"  → Using {len(real_examples)} real human plan(s) as examples: "
+              f"{', '.join(e['date'] for e in real_examples)}")
+
     recent_section   = format_recent_plans_for_prompt(recent_plans or [])
     feedback_section = (
         f"\n⚠ LEAD FEEDBACK (highest priority — incorporate this into the plan):\n{feedback}\n"
         if feedback.strip() else ""
     )
 
-    return f"""{FEW_SHOT_EXAMPLES}
+    # Determine if there are D-1 loaves to score (only if loaves were shaped yesterday)
+    has_loaf_d1 = any(
+        s.get("name", "").lower() in ("loaf trad", "whole wheat", "country", "ciabatta")
+        or any(k in s.get("name", "").lower() for k in ["loaf", "ww", "country", "ciabatta"])
+        for s in load_schedule_for_date(
+            (datetime.strptime(date_str, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
+        ).get("shaping", [])
+    )
+    score_loaf_rule = (
+        "- Score LOAF D-1: 09:00–09:30 — loaves were shaped yesterday, score them first."
+        if has_loaf_d1 else
+        "- Score LOAF D-1: skip — no loaves were shaped yesterday."
+    )
+
+    return f"""{examples_section}
 
 {recent_section}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -533,32 +463,30 @@ Required baker names in output: {baker_list}
 {feedback_section}=== REMINDERS ===
 MIXER (role M):
 - Mix BGT (D+1): ALWAYS mix baguette dough for tomorrow — even if no BGT in today's MOs.
-- Refresh levain: ALWAYS 10:00–11:00 every day.
+- Refresh levain: every day, done by a mixer around 10:00–12:00.
 - Mix loaves/WW/CTY/PIZ/Ciabatta first thing at 07:00 — PRIORITY 1.
 
 SHAPERS (role S):
 - ALWAYS start at 09:00, never earlier.
-- Score LOAF D-1: ALWAYS first task, 09:00–09:30, shapers only.
-- Preshape BGT: 09:00–10:00 or 09:30–10:00 (after scoring), SHAPERS ONLY. NEVER vacuum team.
-- Multiple batches of the same product: schedule BACK TO BACK with NO gap between them.
-  Example: 2 Ciabatta batches → 09:30–10:30 then 10:30–11:30 (not 09:30–10:30 then 11:00–12:00).
-  Exception: a lunch break may split consecutive batches.
-- FERMENTATION RULE: dough mixed at 07:00 is ready to shape from 09:00 (2h bulk fermentation).
-  NEVER schedule shaping within 60 min of the mixer's last fold of that same dough.
-  If mixer folds Ciabatta at 08:30, shapers cannot start shaping Ciabatta before 10:00.
-- LUNCH (MANDATORY): every shaper gets a 30-min lunch break. Stagger times so production never stops.
-  Typical: 12:30–13:00 or 13:00–13:30. A lunch break may split ciabatta batches or other long tasks.
+{score_loaf_rule}
+- Preshape BGT: 09:00–10:00 or right after scoring, SHAPERS ONLY. NEVER vacuum team.
+- BGT final shape: shapers work on it together (2 bakers simultaneously is normal and efficient).
+- Multiple batches of the same product: schedule BACK TO BACK with no gap.
+  Exception: a lunch break may split consecutive batches — resume immediately after.
+- FERMENTATION RULE: dough mixed at 07:00 is ready to shape from 09:00 (2h bulk).
+  Do NOT start shaping Ciabatta/LOAF before 10:00 if the mixer folded it at or after 08:30.
+  In practice, Ciabatta is usually shaped from ~11:30 onwards (after baguette work is done).
+- LUNCH (MANDATORY): every baker gets a 30-min lunch. Stagger so production never stops.
+  Typical shaper lunch: 12:30–13:00 or 13:00–13:30.
 - END OF DAY: 15:30–16:00 "Clean end of day", then 16:00–17:30 "Vacuum/Box/Stick".
-  ALL shapers join vacuum operations at the end — this is normal and expected.
+  ALL shapers join vacuum at end of day.
 - If no PAC in MOs: skip Lamination PAC and Shape PAC entirely.
 
 VACUUM TEAM (role V):
-- ENTIRE role is packaging. They NEVER shape, score, preshape, or mix — at ANY time of day.
-- From their shift start time (from bakerHours) until 15:30: "Sticker prep / Bag & carton prep".
+- ENTIRE role is packaging. They NEVER shape, score, preshape, or mix — ever.
+- From their EXACT shift start (from bakerHours, do NOT default to 13:30) until 15:30: "Sticker prep / Bag & carton prep".
 - From 15:30 to end of shift: "Vacuum/Box/Stick".
-- Use their EXACT shift start from bakerHours — do NOT default to 13:30.
-  If bakerHours shows a V baker starting at 07:00, their day starts at 07:00, not 13:30.
-- No gaps allowed: their schedule must be continuous from shift start to end.
+- No gaps — schedule is continuous from shift start to end.
 
 - NEVER use task names not in the ALLOWED TASK LIST.
 

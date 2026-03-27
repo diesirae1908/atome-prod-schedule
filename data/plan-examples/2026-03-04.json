@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-04",
+  "dayOfWeek": "Wednesday",
+  "source": "human",
+  "notes": "LOAF + PAC + BGT + MG big production day with prod meeting",
+  "bakers": [
+    {
+      "name": "Kuba",
+      "role": "M",
+      "tasks": [
+        {"name": "Check in / Sanitize", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Kitchen Organization", "start": "07:10", "end": "07:20", "description": ""},
+        {"name": "Unload LOAF 1 2 3", "start": "07:20", "end": "07:50", "description": ""},
+        {"name": "Mix/Unload LOAF", "start": "07:50", "end": "08:00", "description": ""},
+        {"name": "Unload LOAF 4 5 6", "start": "08:00", "end": "08:40", "description": ""},
+        {"name": "Mix PAC", "start": "08:40", "end": "09:00", "description": ""},
+        {"name": "Prod meeting", "start": "09:00", "end": "09:20", "description": ""},
+        {"name": "Unload PAC", "start": "09:20", "end": "09:40", "description": ""},
+        {"name": "Fold LOAF 4 5 6", "start": "09:40", "end": "10:10", "description": ""},
+        {"name": "Clean small Mixer", "start": "10:10", "end": "10:30", "description": ""},
+        {"name": "Mix MG 1 2 3", "start": "10:30", "end": "10:40", "description": ""},
+        {"name": "Unload MG 1 2 3", "start": "10:40", "end": "11:30", "description": ""},
+        {"name": "Refresh levain", "start": "11:30", "end": "12:00", "description": ""},
+        {"name": "Lunch / end of day", "start": "12:00", "end": "12:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Sebastien",
+      "role": "M",
+      "tasks": [
+        {"name": "Kitchen Organization", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload LOAF", "start": "07:10", "end": "07:40", "description": ""},
+        {"name": "Unload LOAF", "start": "07:30", "end": "07:50", "description": ""},
+        {"name": "Mix/Unload PASTRY", "start": "07:50", "end": "08:00", "description": ""},
+        {"name": "Unload pastry batch", "start": "08:00", "end": "08:30", "description": ""},
+        {"name": "Fold LOAF 1 2 3", "start": "08:30", "end": "09:00", "description": ""},
+        {"name": "Prod meeting", "start": "09:00", "end": "09:20", "description": ""},
+        {"name": "Mix LOAF 7 8 9", "start": "09:20", "end": "09:30", "description": ""},
+        {"name": "Unload LOAF 7 8 9", "start": "09:30", "end": "10:20", "description": ""},
+        {"name": "Dishes", "start": "10:20", "end": "10:40", "description": ""},
+        {"name": "Fold LOAF 7 8 9", "start": "10:40", "end": "11:10", "description": ""},
+        {"name": "Clean big Mixer", "start": "11:10", "end": "11:40", "description": ""},
+        {"name": "Fold MG", "start": "11:40", "end": "12:10", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Damien",
+      "role": "S",
+      "tasks": [
+        {"name": "Prod meeting", "start": "09:00", "end": "09:20", "description": ""},
+        {"name": "Unload PAC", "start": "09:20", "end": "09:40", "description": ""},
+        {"name": "preshape baguette", "start": "09:40", "end": "10:10", "description": ""},
+        {"name": "Shape LOAF 1", "start": "10:10", "end": "10:40", "description": ""},
+        {"name": "Lamination PAC (10 patons)", "start": "10:40", "end": "12:20", "description": ""},
+        {"name": "Lunch", "start": "12:20", "end": "12:50", "description": ""},
+        {"name": "Shape PAC", "start": "12:50", "end": "15:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:30", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Joyie",
+      "role": "S",
+      "tasks": [
+        {"name": "Prod meeting", "start": "09:00", "end": "09:20", "description": ""},
+        {"name": "preshape baguette", "start": "09:20", "end": "10:10", "description": ""},
+        {"name": "Shape BGT", "start": "10:10", "end": "11:40", "description": ""},
+        {"name": "Lamination PAC (10 patons)", "start": "11:40", "end": "12:20", "description": ""},
+        {"name": "Lunch", "start": "12:20", "end": "12:50", "description": ""},
+        {"name": "Shape LOAF 7", "start": "12:50", "end": "13:50", "description": ""},
+        {"name": "Shape PAC", "start": "13:50", "end": "15:30", "description": ""},
+        {"name": "Clean end of day", "start": "15:30", "end": "16:30", "description": ""},
+        {"name": "Vacuum", "start": "16:30", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Mehdi",
+      "role": "M",
+      "tasks": [
+        {"name": "Prod meeting", "start": "09:00", "end": "09:20", "description": ""},
+        {"name": "preshape baguette", "start": "09:20", "end": "10:10", "description": ""},
+        {"name": "Shape LOAF 1", "start": "10:10", "end": "10:40", "description": ""},
+        {"name": "Shape LOAF 2", "start": "10:40", "end": "11:40", "description": ""},
+        {"name": "Shape LOAF 4", "start": "11:40", "end": "12:40", "description": ""},
+        {"name": "Lunch", "start": "12:40", "end": "13:10", "description": ""},
+        {"name": "Shapping Buns", "start": "13:10", "end": "15:30", "description": ""},
+        {"name": "Box Dishes", "start": "15:30", "end": "16:30", "description": ""},
+        {"name": "Box", "start": "16:30", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Natalia",
+      "role": "S",
+      "tasks": [
+        {"name": "Prod meeting", "start": "09:00", "end": "09:20", "description": ""},
+        {"name": "preshape baguette", "start": "09:20", "end": "10:10", "description": ""},
+        {"name": "Shape BGT", "start": "10:10", "end": "11:40", "description": ""},
+        {"name": "Score BGT", "start": "11:40", "end": "12:10", "description": ""},
+        {"name": "Shape LOAF 6", "start": "12:10", "end": "13:10", "description": ""},
+        {"name": "Lunch", "start": "13:10", "end": "13:40", "description": ""},
+        {"name": "Shape LOAF 9", "start": "13:40", "end": "14:10", "description": ""},
+        {"name": "Shapping Buns", "start": "14:10", "end": "15:30", "description": ""},
+        {"name": "Box Dishes", "start": "15:30", "end": "16:30", "description": ""},
+        {"name": "Box", "start": "16:30", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Raveena",
+      "role": "S",
+      "tasks": [
+        {"name": "Prod meeting", "start": "09:00", "end": "09:20", "description": ""},
+        {"name": "Score LOAF D-1", "start": "09:20", "end": "09:50", "description": ""},
+        {"name": "preshape baguette", "start": "09:50", "end": "10:10", "description": ""},
+        {"name": "Shape LOAF 3", "start": "10:10", "end": "11:10", "description": ""},
+        {"name": "Shape LOAF 5", "start": "11:10", "end": "12:10", "description": ""},
+        {"name": "Lunch", "start": "12:10", "end": "12:40", "description": ""},
+        {"name": "Shape LOAF 8", "start": "12:40", "end": "13:40", "description": ""},
+        {"name": "Shape LOAF 9", "start": "13:40", "end": "14:10", "description": ""},
+        {"name": "Shape PAC", "start": "14:10", "end": "15:30", "description": ""},
+        {"name": "Box Dishes", "start": "15:30", "end": "16:30", "description": ""},
+        {"name": "Vacuum", "start": "16:30", "end": "17:30", "description": ""}
+      ]
+    }
+  ]
+}

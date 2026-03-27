@@ -1,0 +1,114 @@
+{
+  "date": "2026-03-18",
+  "dayOfWeek": "Wednesday",
+  "source": "human",
+  "notes": "CTY + BGT + PAC + Viennoise shaping day",
+  "bakers": [
+    {
+      "name": "Kuba",
+      "role": "M",
+      "tasks": [
+        {"name": "Check in / Sanitize", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload CTY 1 2", "start": "07:10", "end": "07:50", "description": ""},
+        {"name": "Mix/Unload CTY 3 4", "start": "07:50", "end": "08:20", "description": ""},
+        {"name": "Fold LOAF 1 2 3", "start": "08:20", "end": "08:50", "description": ""},
+        {"name": "Fold LOAF 4 5 6", "start": "08:50", "end": "09:20", "description": ""},
+        {"name": "Measuring futur mixes", "start": "09:20", "end": "10:20", "description": ""},
+        {"name": "Support Vacuum team", "start": "10:20", "end": "12:00", "description": ""},
+        {"name": "Lunch / end of day", "start": "12:00", "end": "12:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Sebastien",
+      "role": "M",
+      "tasks": [
+        {"name": "Kitchen Orga", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload CTY 1 2", "start": "07:10", "end": "07:50", "description": ""},
+        {"name": "Mix/Unload CTY 3 4", "start": "07:50", "end": "08:20", "description": ""},
+        {"name": "Mix/Unload Viennoise", "start": "08:20", "end": "08:50", "description": ""},
+        {"name": "Mix/Unload BGT 1 2 3", "start": "08:50", "end": "09:40", "description": ""},
+        {"name": "Clean Mixer", "start": "09:40", "end": "10:00", "description": ""},
+        {"name": "Fold BGT 1 2 3", "start": "10:00", "end": "10:30", "description": ""},
+        {"name": "Refresh levain", "start": "10:30", "end": "11:00", "description": ""},
+        {"name": "Dishes", "start": "11:00", "end": "12:00", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Damien",
+      "role": "S",
+      "tasks": [
+        {"name": "Mix PAC", "start": "09:00", "end": "09:10", "description": ""},
+        {"name": "Unload PAC", "start": "09:10", "end": "09:30", "description": ""},
+        {"name": "Clean Mixer", "start": "09:30", "end": "09:50", "description": ""},
+        {"name": "Shape CTY", "start": "09:50", "end": "10:30", "description": ""},
+        {"name": "Lamination PAC (10 patons)", "start": "10:30", "end": "12:00", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""},
+        {"name": "Shaping Viennoise", "start": "12:30", "end": "13:10", "description": ""},
+        {"name": "Shape PAC", "start": "13:10", "end": "15:30", "description": ""},
+        {"name": "Clean Equipment", "start": "15:30", "end": "15:50", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:50", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Mehdi",
+      "role": "M",
+      "tasks": [
+        {"name": "Score LOAF D-1", "start": "09:00", "end": "09:30", "description": ""},
+        {"name": "preshape baguette", "start": "09:30", "end": "10:00", "description": ""},
+        {"name": "Shape CTY", "start": "10:00", "end": "11:00", "description": ""},
+        {"name": "Lamination PAC (10 patons)", "start": "11:00", "end": "12:00", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""},
+        {"name": "Shaping Viennoise", "start": "12:30", "end": "13:10", "description": ""},
+        {"name": "Shape PAC", "start": "13:10", "end": "15:00", "description": ""},
+        {"name": "Shaping Viennoise", "start": "15:00", "end": "15:30", "description": ""},
+        {"name": "Clean end of day", "start": "15:30", "end": "16:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "16:30", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Kasia",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "09:40", "description": ""},
+        {"name": "Shape CTY", "start": "09:40", "end": "11:10", "description": ""},
+        {"name": "Shape CTY", "start": "11:10", "end": "11:40", "description": ""},
+        {"name": "Clean Equipment", "start": "11:40", "end": "12:00", "description": ""},
+        {"name": "Shaping Viennoise", "start": "12:00", "end": "12:40", "description": ""},
+        {"name": "Lunch", "start": "12:40", "end": "13:10", "description": ""},
+        {"name": "Shaping Viennoise", "start": "13:10", "end": "14:10", "description": ""},
+        {"name": "Shaping Viennoise", "start": "14:10", "end": "15:30", "description": ""},
+        {"name": "Dishes", "start": "15:30", "end": "15:50", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:50", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Natalia",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "09:40", "description": ""},
+        {"name": "Shape BGT", "start": "09:40", "end": "12:10", "description": ""},
+        {"name": "Score BGT", "start": "12:10", "end": "12:40", "description": ""},
+        {"name": "Lunch", "start": "12:40", "end": "13:10", "description": ""},
+        {"name": "Shape PAC", "start": "13:10", "end": "15:30", "description": ""},
+        {"name": "Clean end of day", "start": "15:30", "end": "16:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "16:30", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Raveena",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "09:40", "description": ""},
+        {"name": "Shape CTY", "start": "09:40", "end": "11:10", "description": ""},
+        {"name": "Shape CTY", "start": "11:10", "end": "11:40", "description": ""},
+        {"name": "Shaping Viennoise", "start": "11:40", "end": "12:40", "description": ""},
+        {"name": "Lunch", "start": "12:40", "end": "13:10", "description": ""},
+        {"name": "Shaping Viennoise", "start": "13:10", "end": "14:10", "description": ""},
+        {"name": "Shaping Viennoise", "start": "14:10", "end": "15:10", "description": ""},
+        {"name": "Clean Equipment", "start": "15:10", "end": "15:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:30", "end": "17:30", "description": ""}
+      ]
+    }
+  ]
+}

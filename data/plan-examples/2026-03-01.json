@@ -1,0 +1,107 @@
+{
+  "date": "2026-03-01",
+  "dayOfWeek": "Sunday",
+  "source": "human",
+  "notes": "LOAF + Cheese BGT + Waffle day",
+  "bakers": [
+    {
+      "name": "Kuba",
+      "role": "M",
+      "tasks": [
+        {"name": "Check in / Sanitize", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload LOAF", "start": "07:10", "end": "07:30", "description": ""},
+        {"name": "Mix Waffle", "start": "07:30", "end": "07:50", "description": ""},
+        {"name": "Mix LOAF 4 5 6", "start": "07:50", "end": "08:00", "description": ""},
+        {"name": "Unload LOAF 4 5 6", "start": "08:00", "end": "08:20", "description": ""},
+        {"name": "Fold LOAF 1 2 3", "start": "08:20", "end": "08:50", "description": ""},
+        {"name": "Unload LOAF 7 8", "start": "08:50", "end": "09:20", "description": ""},
+        {"name": "Mix BGT 1 2 3", "start": "09:20", "end": "09:30", "description": ""},
+        {"name": "Unload BGT 1 2 3", "start": "09:30", "end": "10:00", "description": ""},
+        {"name": "Measuring futur mixes", "start": "10:00", "end": "10:30", "description": ""},
+        {"name": "Fold BGT 1 2 3", "start": "10:30", "end": "11:00", "description": ""},
+        {"name": "Refresh levain", "start": "11:00", "end": "11:30", "description": ""},
+        {"name": "Clean Mixer", "start": "11:30", "end": "12:00", "description": ""},
+        {"name": "Lunch / end of day", "start": "12:00", "end": "12:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Mehdi",
+      "role": "M",
+      "tasks": [
+        {"name": "Kitchen Organization", "start": "07:00", "end": "07:20", "description": ""},
+        {"name": "Unload LOAF 1 2 3", "start": "07:20", "end": "08:00", "description": ""},
+        {"name": "Unload LOAF 4 5 6", "start": "08:00", "end": "08:30", "description": ""},
+        {"name": "Mix LOAF 7 8", "start": "08:30", "end": "08:50", "description": ""},
+        {"name": "Buffer", "start": "08:50", "end": "09:00", "description": ""},
+        {"name": "Fold LOAF 4 5 6", "start": "09:00", "end": "09:30", "description": ""},
+        {"name": "Score LOAF D-1", "start": "09:30", "end": "10:00", "description": ""},
+        {"name": "Fold LOAF 7 8", "start": "10:00", "end": "10:30", "description": ""},
+        {"name": "Shape Cheese BGT", "start": "10:30", "end": "11:30", "description": ""},
+        {"name": "Dishes", "start": "11:30", "end": "12:00", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""},
+        {"name": "Shape LOAF", "start": "12:30", "end": "13:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "13:30", "end": "15:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Kasia",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "10:00", "description": ""},
+        {"name": "Shape Cheese BGT", "start": "10:00", "end": "11:30", "description": ""},
+        {"name": "Score Cheese BGT", "start": "11:30", "end": "12:00", "description": ""},
+        {"name": "Shape LOAF", "start": "12:00", "end": "12:30", "description": ""},
+        {"name": "Lunch", "start": "12:30", "end": "13:00", "description": ""},
+        {"name": "Shape LOAF", "start": "13:00", "end": "14:00", "description": ""},
+        {"name": "Shape LOAF", "start": "14:00", "end": "14:40", "description": ""},
+        {"name": "Clean end of day", "start": "14:40", "end": "15:40", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:40", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Natalia",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "10:00", "description": ""},
+        {"name": "Shape Cheese BGT", "start": "10:00", "end": "11:30", "description": ""},
+        {"name": "Shape LOAF", "start": "11:30", "end": "12:30", "description": ""},
+        {"name": "Lunch", "start": "12:30", "end": "13:00", "description": ""},
+        {"name": "Shape LOAF", "start": "13:00", "end": "14:00", "description": ""},
+        {"name": "Shape LOAF", "start": "14:00", "end": "14:40", "description": ""},
+        {"name": "Clean end of day", "start": "14:40", "end": "15:40", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:40", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Raveena",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "10:00", "description": ""},
+        {"name": "Shape Cheese BGT", "start": "10:00", "end": "11:30", "description": ""},
+        {"name": "Shape LOAF", "start": "11:30", "end": "12:30", "description": ""},
+        {"name": "Lunch", "start": "12:30", "end": "13:00", "description": ""},
+        {"name": "Shape LOAF", "start": "13:00", "end": "14:00", "description": ""},
+        {"name": "Shape LOAF", "start": "14:00", "end": "14:40", "description": ""},
+        {"name": "Clean end of day", "start": "14:40", "end": "15:40", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "15:40", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Theo",
+      "role": "Waffle",
+      "tasks": [
+        {"name": "Setup WAF", "start": "08:30", "end": "08:40", "description": ""},
+        {"name": "Clean Mixer", "start": "08:40", "end": "09:00", "description": ""},
+        {"name": "Bake WAF", "start": "09:00", "end": "10:00", "description": ""},
+        {"name": "Bake WAF", "start": "10:00", "end": "11:00", "description": ""},
+        {"name": "Bake WAF", "start": "11:00", "end": "12:00", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""},
+        {"name": "Bake WAF", "start": "12:30", "end": "13:30", "description": ""},
+        {"name": "Bake WAF", "start": "13:30", "end": "14:30", "description": ""},
+        {"name": "Clean Mixer", "start": "14:30", "end": "15:10", "description": ""},
+        {"name": "Dishes", "start": "15:10", "end": "15:30", "description": ""},
+        {"name": "Packaging WAF", "start": "15:30", "end": "17:00", "description": ""}
+      ]
+    }
+  ]
+}

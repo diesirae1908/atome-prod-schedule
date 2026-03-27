@@ -1,0 +1,83 @@
+{
+  "date": "2026-03-20",
+  "dayOfWeek": "Friday",
+  "source": "human",
+  "notes": "LOAF + BGT + PIZ + Viennoise shaping day",
+  "bakers": [
+    {
+      "name": "Mehdi",
+      "role": "M",
+      "tasks": [
+        {"name": "Check in / Sanitize", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload LOAF 1 2 3", "start": "07:10", "end": "07:50", "description": ""},
+        {"name": "Mix/Unload LOAF 4 5 6", "start": "07:50", "end": "08:20", "description": ""},
+        {"name": "Mix/Unload Viennoise", "start": "08:20", "end": "08:50", "description": ""},
+        {"name": "Clean Mixer", "start": "08:50", "end": "09:10", "description": ""},
+        {"name": "Fold LOAF 4 5 6", "start": "09:10", "end": "09:40", "description": ""},
+        {"name": "Score LOAF D-1", "start": "09:40", "end": "10:10", "description": ""},
+        {"name": "Shape PIZ", "start": "10:10", "end": "11:40", "description": ""},
+        {"name": "Lunch", "start": "11:40", "end": "12:10", "description": ""},
+        {"name": "Shape PIZ", "start": "12:10", "end": "12:50", "description": ""},
+        {"name": "Shaping Viennoise", "start": "12:50", "end": "13:30", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "13:30", "end": "15:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Sebastien",
+      "role": "M",
+      "tasks": [
+        {"name": "Kitchen Orga", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload LOAF 1 2 3", "start": "07:10", "end": "07:50", "description": ""},
+        {"name": "Mix/Unload LOAF 4 5 6", "start": "07:50", "end": "08:20", "description": ""},
+        {"name": "Fold LOAF 1 2 3", "start": "08:20", "end": "08:50", "description": ""},
+        {"name": "Mix/Unload BGT 1 2 3", "start": "08:50", "end": "09:40", "description": ""},
+        {"name": "Clean Mixer", "start": "09:40", "end": "10:00", "description": ""},
+        {"name": "Fold BGT 1 2 3", "start": "10:00", "end": "10:30", "description": ""},
+        {"name": "Refresh levain", "start": "10:30", "end": "11:00", "description": ""},
+        {"name": "Measuring futur mixes", "start": "11:00", "end": "11:30", "description": ""},
+        {"name": "Dishes", "start": "11:30", "end": "11:50", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Damien",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "09:50", "description": ""},
+        {"name": "Shape BGT", "start": "09:50", "end": "11:20", "description": ""},
+        {"name": "Score BGT", "start": "11:20", "end": "11:50", "description": ""},
+        {"name": "Shape PIZ", "start": "11:50", "end": "12:30", "description": ""},
+        {"name": "Lunch", "start": "12:30", "end": "13:00", "description": ""},
+        {"name": "Shaping Viennoise", "start": "13:00", "end": "15:30", "description": ""},
+        {"name": "Clean end of day", "start": "15:30", "end": "16:10", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "16:10", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Joyie",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "09:50", "description": ""},
+        {"name": "Shape PIZ", "start": "09:50", "end": "11:20", "description": ""},
+        {"name": "Shape PIZ", "start": "11:20", "end": "12:30", "description": ""},
+        {"name": "Lunch", "start": "12:30", "end": "13:00", "description": ""},
+        {"name": "Shaping Viennoise", "start": "13:00", "end": "15:30", "description": ""},
+        {"name": "Clean end of day", "start": "15:30", "end": "16:10", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "16:10", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Natalia",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "09:50", "description": ""},
+        {"name": "Shape BGT", "start": "09:50", "end": "11:20", "description": ""},
+        {"name": "Shape PIZ", "start": "11:20", "end": "12:30", "description": ""},
+        {"name": "Lunch", "start": "12:30", "end": "13:00", "description": ""},
+        {"name": "Shaping Viennoise", "start": "13:00", "end": "15:30", "description": ""},
+        {"name": "Clean end of day", "start": "15:30", "end": "16:10", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "16:10", "end": "17:30", "description": ""}
+      ]
+    }
+  ]
+}

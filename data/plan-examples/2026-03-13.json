@@ -1,0 +1,58 @@
+{
+  "date": "2026-03-13",
+  "dayOfWeek": "Friday",
+  "source": "human",
+  "notes": "LOAF + BGT small crew day with waffle measuring",
+  "bakers": [
+    {
+      "name": "Sebastien",
+      "role": "M",
+      "tasks": [
+        {"name": "Kitchen Organization", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload LOAF", "start": "07:10", "end": "08:00", "description": ""},
+        {"name": "Mix/Unload BGT", "start": "08:00", "end": "08:20", "description": ""},
+        {"name": "Fold LOAF", "start": "08:20", "end": "08:50", "description": ""},
+        {"name": "Mix/Unload BGT", "start": "08:50", "end": "09:20", "description": ""},
+        {"name": "Clean Mixer", "start": "09:20", "end": "09:40", "description": ""},
+        {"name": "Fold BGT", "start": "09:40", "end": "10:10", "description": ""},
+        {"name": "Refresh levain", "start": "10:10", "end": "10:30", "description": ""},
+        {"name": "Measure 22.6 kg of waffle if not already done", "start": "10:30", "end": "11:00", "description": ""},
+        {"name": "Dishes", "start": "11:00", "end": "12:00", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""},
+        {"name": "Dishes", "start": "13:30", "end": "14:00", "description": ""},
+        {"name": "Clean end of day", "start": "14:00", "end": "14:40", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "14:40", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Joyie",
+      "role": "S",
+      "tasks": [
+        {"name": "preshape baguette", "start": "09:00", "end": "09:40", "description": ""},
+        {"name": "Shape LOAF", "start": "09:40", "end": "10:40", "description": ""},
+        {"name": "Support poppy Shaping", "start": "10:40", "end": "11:30", "description": ""},
+        {"name": "Score BGT", "start": "11:30", "end": "12:00", "description": ""},
+        {"name": "Lunch", "start": "12:00", "end": "12:30", "description": ""},
+        {"name": "Shape LOAF", "start": "12:30", "end": "13:30", "description": ""},
+        {"name": "Clean Equipment", "start": "13:00", "end": "13:30", "description": ""},
+        {"name": "Clean end of day", "start": "13:30", "end": "14:00", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "14:00", "end": "15:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Mehdi",
+      "role": "M",
+      "tasks": [
+        {"name": "Kitchen Organization", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Score LOAF D-1", "start": "07:10", "end": "07:40", "description": ""},
+        {"name": "preshape baguette", "start": "07:40", "end": "09:40", "description": ""},
+        {"name": "Shape BGT", "start": "09:40", "end": "11:30", "description": ""},
+        {"name": "Lunch", "start": "11:30", "end": "12:00", "description": ""},
+        {"name": "Shape LOAF", "start": "12:00", "end": "13:00", "description": ""},
+        {"name": "Clean Equipment", "start": "13:00", "end": "13:30", "description": ""},
+        {"name": "Clean end of day", "start": "13:30", "end": "14:00", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "14:00", "end": "15:30", "description": ""}
+      ]
+    }
+  ]
+}

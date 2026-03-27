@@ -1,0 +1,94 @@
+{
+  "date": "2026-03-24",
+  "dayOfWeek": "Tuesday",
+  "source": "human",
+  "notes": "WW + CTY + PAC day with Pick & Pack",
+  "bakers": [
+    {
+      "name": "Kuba",
+      "role": "M",
+      "tasks": [
+        {"name": "Check in / Sanitize", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload WW 1 2 3", "start": "07:10", "end": "07:50", "description": ""},
+        {"name": "Mix/Unload WW 4 5", "start": "07:50", "end": "08:20", "description": ""},
+        {"name": "Fold WW 1 2 3", "start": "08:20", "end": "08:50", "description": ""},
+        {"name": "Fold WW 4 5", "start": "08:50", "end": "09:20", "description": ""},
+        {"name": "Mix/Unload BGT", "start": "09:20", "end": "10:10", "description": ""},
+        {"name": "Clean Mixer", "start": "10:10", "end": "10:30", "description": ""},
+        {"name": "Fold BGT 1 2 3", "start": "10:30", "end": "11:00", "description": ""},
+        {"name": "Dishes", "start": "11:00", "end": "12:00", "description": ""},
+        {"name": "Lunch / end of day", "start": "12:00", "end": "12:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Sebastien",
+      "role": "M",
+      "tasks": [
+        {"name": "Kitchen Orga", "start": "07:00", "end": "07:10", "description": ""},
+        {"name": "Mix/Unload WW 1 2 3", "start": "07:10", "end": "07:50", "description": ""},
+        {"name": "Mix/Unload WW 4 5", "start": "07:50", "end": "08:50", "description": ""},
+        {"name": "Mix PAC", "start": "08:50", "end": "09:10", "description": ""},
+        {"name": "Clean Mixer", "start": "09:10", "end": "09:30", "description": ""},
+        {"name": "Refresh levain", "start": "09:30", "end": "10:00", "description": ""},
+        {"name": "Measuring PAC 14", "start": "10:00", "end": "10:30", "description": ""},
+        {"name": "Fold BGT 1 2 3", "start": "10:30", "end": "11:00", "description": ""},
+        {"name": "Dishes", "start": "11:00", "end": "12:00", "description": ""},
+        {"name": "Lunch / end of day", "start": "12:00", "end": "12:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Damien",
+      "role": "S",
+      "tasks": [
+        {"name": "Unload PAC", "start": "09:00", "end": "09:30", "description": ""},
+        {"name": "Shape WW / CTY", "start": "09:30", "end": "10:50", "description": ""},
+        {"name": "Shape WW / CTY", "start": "10:50", "end": "12:10", "description": ""},
+        {"name": "Lunch", "start": "12:10", "end": "12:40", "description": ""},
+        {"name": "Shape WW / CTY", "start": "12:40", "end": "13:20", "description": ""},
+        {"name": "Shape PAC", "start": "13:20", "end": "15:10", "description": ""},
+        {"name": "Clean end of day", "start": "15:10", "end": "16:10", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "16:10", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Joyie",
+      "role": "S",
+      "tasks": [
+        {"name": "Measuring PAC 14", "start": "09:00", "end": "09:30", "description": ""},
+        {"name": "Shape WW / CTY", "start": "09:30", "end": "10:20", "description": ""},
+        {"name": "Lamination PAC", "start": "10:20", "end": "12:40", "description": ""},
+        {"name": "Lunch", "start": "12:40", "end": "13:10", "description": ""},
+        {"name": "Shape PAC", "start": "13:10", "end": "15:10", "description": ""},
+        {"name": "Clean end of day", "start": "15:10", "end": "16:10", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "16:10", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Kasia",
+      "role": "S",
+      "tasks": [
+        {"name": "Unload PAC", "start": "09:00", "end": "09:30", "description": ""},
+        {"name": "Pick & Pack", "start": "09:30", "end": "12:30", "description": ""},
+        {"name": "Lunch", "start": "12:30", "end": "13:00", "description": ""},
+        {"name": "Shape WW / CTY", "start": "13:00", "end": "13:20", "description": ""},
+        {"name": "Shape PAC", "start": "13:20", "end": "15:10", "description": ""},
+        {"name": "Clean end of day", "start": "15:10", "end": "16:10", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "16:10", "end": "17:30", "description": ""}
+      ]
+    },
+    {
+      "name": "Raveena",
+      "role": "S",
+      "tasks": [
+        {"name": "Score LOAF D-1", "start": "09:00", "end": "09:30", "description": ""},
+        {"name": "Shape WW / CTY", "start": "09:30", "end": "10:50", "description": ""},
+        {"name": "Shape WW / CTY", "start": "10:50", "end": "12:10", "description": ""},
+        {"name": "Lunch", "start": "12:10", "end": "12:40", "description": ""},
+        {"name": "Shape WW / CTY", "start": "12:40", "end": "13:20", "description": ""},
+        {"name": "Shape PAC", "start": "13:20", "end": "15:10", "description": ""},
+        {"name": "Clean end of day", "start": "15:10", "end": "16:10", "description": ""},
+        {"name": "Vacuum/Box/Stick", "start": "16:10", "end": "17:30", "description": ""}
+      ]
+    }
+  ]
+}
