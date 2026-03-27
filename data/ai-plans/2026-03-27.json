@@ -1,52 +1,168 @@
 {
   "date": "2026-03-27",
   "dayOfWeek": "Friday",
-  "generatedAt": "2026-03-27T01:08:01.727005Z",
-  "notes": "No manufacturing orders today - only mandatory levain refresh and D+1 baguette prep scheduled, minimal production day.",
+  "generatedAt": "2026-03-27T01:52:15.429339Z",
+  "notes": "No MOs today — prep day with baguette dough for tomorrow, levain refresh, and full vacuum coverage.",
   "bakers": [
+    {
+      "name": "Mehdi",
+      "role": "M",
+      "tasks": [
+        {
+          "id": "meh1",
+          "name": "Mix BGT (D+1)",
+          "start": "07:00",
+          "end": "09:00",
+          "color": "#6366f1",
+          "description": "3 batches baguette dough for tomorrow"
+        },
+        {
+          "id": "meh2",
+          "name": "Fold BGT",
+          "start": "09:00",
+          "end": "09:30",
+          "color": "#6366f1",
+          "description": "All 3 batches"
+        },
+        {
+          "id": "meh3",
+          "name": "Refresh levain",
+          "start": "10:00",
+          "end": "11:00",
+          "color": "#8b5cf6",
+          "description": "Daily levain refresh"
+        },
+        {
+          "id": "meh4",
+          "name": "Clean Mixer",
+          "start": "11:00",
+          "end": "12:00",
+          "color": "#94a3b8",
+          "description": ""
+        },
+        {
+          "id": "meh5",
+          "name": "Kitchen Organization",
+          "start": "12:00",
+          "end": "13:00",
+          "color": "#94a3b8",
+          "description": ""
+        },
+        {
+          "id": "meh6",
+          "name": "Dishes",
+          "start": "13:00",
+          "end": "15:30",
+          "color": "#94a3b8",
+          "description": ""
+        },
+        {
+          "id": "meh7",
+          "name": "Vacuum/Box/Stick",
+          "start": "15:30",
+          "end": "15:30",
+          "color": "#64748b",
+          "description": "End of shift"
+        }
+      ]
+    },
+    {
+      "name": "Sebastien",
+      "role": "M",
+      "tasks": [
+        {
+          "id": "seb1",
+          "name": "Measuring future mixes",
+          "start": "07:00",
+          "end": "09:00",
+          "color": "#94a3b8",
+          "description": "Prepare ingredients for next production days"
+        },
+        {
+          "id": "seb2",
+          "name": "Fold BGT",
+          "start": "09:00",
+          "end": "09:30",
+          "color": "#6366f1",
+          "description": "Assist Mehdi"
+        },
+        {
+          "id": "seb3",
+          "name": "Kitchen Organization",
+          "start": "09:30",
+          "end": "11:00",
+          "color": "#94a3b8",
+          "description": ""
+        },
+        {
+          "id": "seb4",
+          "name": "Clean Mixer",
+          "start": "11:00",
+          "end": "12:00",
+          "color": "#94a3b8",
+          "description": ""
+        },
+        {
+          "id": "seb5",
+          "name": "Dishes",
+          "start": "12:00",
+          "end": "15:30",
+          "color": "#94a3b8",
+          "description": ""
+        },
+        {
+          "id": "seb6",
+          "name": "Vacuum/Box/Stick",
+          "start": "15:30",
+          "end": "17:30",
+          "color": "#64748b",
+          "description": ""
+        }
+      ]
+    },
     {
       "name": "Damien",
       "role": "S",
       "tasks": [
         {
-          "id": "damien-1",
-          "name": "Equipment cleaning and workspace organization",
+          "id": "dam1",
+          "name": "Score LOAF D-1",
           "start": "07:00",
           "end": "09:00",
-          "color": "#94a3b8",
-          "description": "Deep clean shaping tables and prep stations"
+          "color": "#06b6d4",
+          "description": "Score yesterday's loaves — extended time due to early start"
         },
         {
-          "id": "damien-2",
-          "name": "Dough storage organization",
+          "id": "dam2",
+          "name": "Preshape BGT",
           "start": "09:00",
-          "end": "11:00",
-          "color": "#94a3b8",
-          "description": "Organize coolers and retarder inventory"
+          "end": "10:00",
+          "color": "#f59e0b",
+          "description": "Preshape baguette dough with team"
         },
         {
-          "id": "damien-3",
-          "name": "Tool maintenance",
-          "start": "11:00",
-          "end": "13:00",
+          "id": "dam3",
+          "name": "Kitchen Organization",
+          "start": "10:00",
+          "end": "12:00",
           "color": "#94a3b8",
-          "description": "Clean and sharpen lames, organize shaping tools"
+          "description": ""
         },
         {
-          "id": "damien-4",
-          "name": "Prepare vacuum station",
-          "start": "13:00",
+          "id": "dam4",
+          "name": "Clean end of day",
+          "start": "12:00",
           "end": "15:30",
-          "color": "#64748b",
-          "description": "Set up bags, cartons, and stickers"
+          "color": "#94a3b8",
+          "description": "Deep clean preparation area"
         },
         {
-          "id": "damien-5",
-          "name": "Vacuum operations",
+          "id": "dam5",
+          "name": "Vacuum/Box/Stick",
           "start": "15:30",
           "end": "15:30",
           "color": "#64748b",
-          "description": "Sous vide packaging, cartons, stickers"
+          "description": "End of shift"
         }
       ]
     },
@@ -55,82 +171,44 @@
       "role": "S",
       "tasks": [
         {
-          "id": "joyie-1",
-          "name": "Proofing chamber maintenance",
+          "id": "joy1",
+          "name": "Score LOAF D-1",
           "start": "09:00",
-          "end": "11:00",
-          "color": "#94a3b8",
-          "description": "Clean and organize proofing chambers"
+          "end": "09:30",
+          "color": "#06b6d4",
+          "description": "Score yesterday's loaves"
         },
         {
-          "id": "joyie-2",
-          "name": "Banneton cleaning",
-          "start": "11:00",
-          "end": "13:00",
-          "color": "#94a3b8",
-          "description": "Clean and flour all bannetons"
+          "id": "joy2",
+          "name": "Preshape BGT",
+          "start": "09:30",
+          "end": "10:00",
+          "color": "#f59e0b",
+          "description": "Preshape baguette dough with team"
         },
         {
-          "id": "joyie-3",
-          "name": "Prepare vacuum station",
-          "start": "13:00",
+          "id": "joy3",
+          "name": "Kitchen Organization",
+          "start": "10:00",
+          "end": "12:00",
+          "color": "#94a3b8",
+          "description": ""
+        },
+        {
+          "id": "joy4",
+          "name": "Clean end of day",
+          "start": "12:00",
           "end": "15:30",
-          "color": "#64748b",
-          "description": "Organize vacuum supplies and labels"
+          "color": "#94a3b8",
+          "description": "Deep clean shaping area"
         },
         {
-          "id": "joyie-4",
-          "name": "Vacuum operations",
+          "id": "joy5",
+          "name": "Vacuum/Box/Stick",
           "start": "15:30",
           "end": "17:30",
           "color": "#64748b",
-          "description": "Sous vide packaging, cartons, stickers"
-        }
-      ]
-    },
-    {
-      "name": "Mehdi",
-      "role": "M",
-      "tasks": [
-        {
-          "id": "mehdi-1",
-          "name": "Mix baguette dough for D+1 (2026-03-28)",
-          "start": "07:00",
-          "end": "09:00",
-          "color": "#6366f1",
-          "description": "Prepare baguette dough for tomorrow"
-        },
-        {
-          "id": "mehdi-2",
-          "name": "Levain refresh",
-          "start": "10:00",
-          "end": "11:00",
-          "color": "#8b5cf6",
-          "description": "Daily levain maintenance"
-        },
-        {
-          "id": "mehdi-3",
-          "name": "Mixer deep clean",
-          "start": "11:00",
-          "end": "12:00",
-          "color": "#94a3b8",
-          "description": "Clean mixer and surrounding area"
-        },
-        {
-          "id": "mehdi-4",
-          "name": "Flour stock organization",
-          "start": "12:00",
-          "end": "13:00",
-          "color": "#94a3b8",
-          "description": "Organize flour bags and ingredient storage"
-        },
-        {
-          "id": "mehdi-5",
-          "name": "Prepare vacuum station",
-          "start": "13:00",
-          "end": "15:30",
-          "color": "#64748b",
-          "description": "Set up vacuum equipment and materials"
+          "description": ""
         }
       ]
     },
@@ -139,36 +217,44 @@
       "role": "S",
       "tasks": [
         {
-          "id": "natalia-1",
-          "name": "Workstation deep clean",
+          "id": "nat1",
+          "name": "Score LOAF D-1",
           "start": "09:00",
-          "end": "11:00",
-          "color": "#94a3b8",
-          "description": "Sanitize all work surfaces and equipment"
+          "end": "09:30",
+          "color": "#06b6d4",
+          "description": "Score yesterday's loaves"
         },
         {
-          "id": "natalia-2",
-          "name": "Couche fabric maintenance",
-          "start": "11:00",
-          "end": "13:00",
-          "color": "#94a3b8",
-          "description": "Clean and flour all couche fabrics"
+          "id": "nat2",
+          "name": "Preshape BGT",
+          "start": "09:30",
+          "end": "10:00",
+          "color": "#f59e0b",
+          "description": "Preshape baguette dough with team"
         },
         {
-          "id": "natalia-3",
-          "name": "Prepare vacuum station",
-          "start": "13:00",
+          "id": "nat3",
+          "name": "Kitchen Organization",
+          "start": "10:00",
+          "end": "12:00",
+          "color": "#94a3b8",
+          "description": ""
+        },
+        {
+          "id": "nat4",
+          "name": "Dishes",
+          "start": "12:00",
           "end": "15:30",
-          "color": "#64748b",
-          "description": "Prepare bags, cartons, and sticker materials"
+          "color": "#94a3b8",
+          "description": ""
         },
         {
-          "id": "natalia-4",
-          "name": "Vacuum operations",
+          "id": "nat5",
+          "name": "Vacuum/Box/Stick",
           "start": "15:30",
           "end": "17:30",
           "color": "#64748b",
-          "description": "Sous vide packaging, cartons, stickers"
+          "description": ""
         }
       ]
     },
@@ -177,36 +263,82 @@
       "role": "V",
       "tasks": [
         {
-          "id": "ysaline-1",
-          "name": "Vacuum equipment maintenance",
+          "id": "ysa1",
+          "name": "Preshape BGT",
           "start": "07:00",
-          "end": "09:00",
-          "color": "#94a3b8",
-          "description": "Clean and test vacuum machines"
+          "end": "10:00",
+          "color": "#f59e0b",
+          "description": "Prepare baguette dough from yesterday"
         },
         {
-          "id": "ysaline-2",
-          "name": "Packaging material inventory",
-          "start": "09:00",
-          "end": "11:00",
-          "color": "#94a3b8",
-          "description": "Count and organize all vacuum bags and cartons"
-        },
-        {
-          "id": "ysaline-3",
-          "name": "Sticker and label preparation",
-          "start": "11:00",
+          "id": "ysa2",
+          "name": "Kitchen Organization",
+          "start": "10:00",
           "end": "13:00",
           "color": "#94a3b8",
-          "description": "Organize labels and prepare sticker workstation"
+          "description": ""
         },
         {
-          "id": "ysaline-4",
-          "name": "Prepare vacuum station",
+          "id": "ysa3",
+          "name": "Sticker prep / Bag & carton prep",
           "start": "13:00",
           "end": "15:30",
           "color": "#64748b",
-          "description": "Final vacuum station setup and organization"
+          "description": "Prepare vacuum station"
+        },
+        {
+          "id": "ysa4",
+          "name": "Vacuum/Box/Stick",
+          "start": "15:30",
+          "end": "15:30",
+          "color": "#64748b",
+          "description": "End of shift"
+        }
+      ]
+    },
+    {
+      "name": "Angele",
+      "role": "V",
+      "tasks": [
+        {
+          "id": "ang1",
+          "name": "Score LOAF D-1",
+          "start": "09:00",
+          "end": "09:30",
+          "color": "#06b6d4",
+          "description": "Score yesterday's loaves"
+        },
+        {
+          "id": "ang2",
+          "name": "Preshape BGT",
+          "start": "09:30",
+          "end": "10:00",
+          "color": "#f59e0b",
+          "description": "Preshape baguette dough with team"
+        },
+        {
+          "id": "ang3",
+          "name": "Kitchen Organization",
+          "start": "10:00",
+          "end": "13:00",
+          "color": "#94a3b8",
+          "description": ""
+        },
+        {
+          "id": "ang4",
+          "name": "Sticker prep / Bag & carton prep",
+          "start": "13:00",
+          "end": "15:30",
+          "color": "#64748b",
+          "description": "Prepare vacuum station"
+        },
+        {
+          "id": "ang5",
+          "name": "Vacuum/Box/Stick",
+          "start": "15:30",
+          "end": "17:30",
+          "color": "#64748b",
+          "description": ""
         }
       ]
     }
