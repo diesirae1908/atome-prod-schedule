@@ -1,13 +1,13 @@
 {
   "date": "2026-03-27",
   "dayOfWeek": "Friday",
-  "generatedAt": "2026-03-27T03:00:49.788809Z",
-  "notes": "Full production day: 7 batches Ciabatta, 3 batches PAC (afternoon shaping), 6 batches Sesame BGT (2 bakers final shape), BGT Trad dough for tomorrow.",
+  "generatedAt": "2026-03-27T03:05:20.641842Z",
+  "notes": "Heavy day: 7 Ciabatta batches + PAC afternoon + 6 BGT Sesame (2 shapers required). All tasks fit within 15h30 deadline.",
   "warnings": [
-    "7 Ciabatta batches require 7 hours total — tight with 2 shapers, must start immediately at 09:30 to finish by 15:30.",
-    "Sesame Baguettes require 2 bakers for final shape — Joyie and Natalia both committed 10:00–12:00.",
-    "PAC shaping 13:00–15:30 requires 2–3 bakers — only Damien available after his early shift ends at 15:30, may need shaper assistance.",
-    "Sebastien and Angele hours unknown — assigned standard mixer and vacuum shifts respectively."
+    "7 Ciabatta batches is high volume — requires 2 shapers working in parallel to complete by 15h30.",
+    "Sesame BGT requires 2 shapers for final shape (mandatory rule) — Joyie and Natalia assigned.",
+    "PAC lamination 10:20–12:40 overlaps with Ciabatta shaping — Damien handles lamination while others shape Ciabatta.",
+    "Tight coordination needed: shapers must transition smoothly from Ciabatta → PAC shaping at 13:00."
   ],
   "bakers": [
     {
@@ -15,15 +15,15 @@
       "role": "M",
       "tasks": [
         {
-          "id": "mehdi1",
+          "id": "me1",
           "name": "Mix Ciabatta",
           "start": "07:00",
           "end": "09:00",
           "color": "#6366f1",
-          "description": "7 batches — 126kg flour, priority 1"
+          "description": "7 batches — 126kg flour (140kg total dough)"
         },
         {
-          "id": "mehdi2",
+          "id": "me2",
           "name": "Fold Ciabatta",
           "start": "09:00",
           "end": "09:30",
@@ -31,7 +31,7 @@
           "description": "All 7 batches"
         },
         {
-          "id": "mehdi3",
+          "id": "me3",
           "name": "Refresh levain",
           "start": "10:00",
           "end": "11:00",
@@ -39,28 +39,28 @@
           "description": "Daily levain refresh"
         },
         {
-          "id": "mehdi4",
+          "id": "me4",
           "name": "Mix BGT (D+1)",
           "start": "11:00",
-          "end": "12:30",
+          "end": "13:00",
           "color": "#6366f1",
-          "description": "6 batches BGT Trad for tomorrow (126kg)"
+          "description": "6 batches Baguette Trad for tomorrow (126kg flour)"
         },
         {
-          "id": "mehdi5",
-          "name": "Measuring future mixes",
-          "start": "12:30",
+          "id": "me5",
+          "name": "Clean Mixer",
+          "start": "13:00",
           "end": "14:00",
           "color": "#94a3b8",
-          "description": "Prep ingredients for Brioche and Waffles"
+          "description": "Deep clean mixer station"
         },
         {
-          "id": "mehdi6",
-          "name": "Clean Mixer",
+          "id": "me6",
+          "name": "Measuring future mixes",
           "start": "14:00",
           "end": "15:30",
           "color": "#94a3b8",
-          "description": ""
+          "description": "Measure ingredients for Brioche (348 units) and Waffles (414 units)"
         }
       ]
     },
@@ -69,44 +69,44 @@
       "role": "M",
       "tasks": [
         {
-          "id": "seb1",
+          "id": "se1",
           "name": "Mix PAC batter",
           "start": "07:00",
           "end": "08:40",
           "color": "#ec4899",
-          "description": "3 batches PAC Chocolat (65.3kg)"
+          "description": "3 batches PAC Chocolat (65.3kg flour total)"
         },
         {
-          "id": "seb2",
+          "id": "se2",
           "name": "Fold Ciabatta",
           "start": "08:40",
           "end": "09:00",
           "color": "#6366f1",
-          "description": "Assist Mehdi on last batches"
+          "description": "Assist Mehdi with final batches"
         },
         {
-          "id": "seb3",
-          "name": "Lamination PAC",
-          "start": "10:20",
-          "end": "12:40",
-          "color": "#ec4899",
-          "description": "Laminate 3 batches PAC"
+          "id": "se3",
+          "name": "Clean Mixer",
+          "start": "09:00",
+          "end": "10:00",
+          "color": "#94a3b8",
+          "description": "Clean mixer station after PAC and Ciabatta"
         },
         {
-          "id": "seb4",
+          "id": "se4",
           "name": "Dishes",
-          "start": "12:40",
-          "end": "14:00",
+          "start": "10:00",
+          "end": "11:00",
           "color": "#94a3b8",
-          "description": ""
+          "description": "Morning dishes"
         },
         {
-          "id": "seb5",
+          "id": "se5",
           "name": "Kitchen Organization",
-          "start": "14:00",
-          "end": "15:30",
+          "start": "11:00",
+          "end": "12:00",
           "color": "#94a3b8",
-          "description": ""
+          "description": "Organize kitchen, prep stations"
         }
       ]
     },
@@ -115,7 +115,7 @@
       "role": "S",
       "tasks": [
         {
-          "id": "damien1",
+          "id": "da1",
           "name": "Score LOAF D-1",
           "start": "09:00",
           "end": "09:30",
@@ -123,44 +123,28 @@
           "description": "Score yesterday's loaves"
         },
         {
-          "id": "damien2",
+          "id": "da2",
           "name": "Preshape BGT",
           "start": "09:30",
           "end": "10:00",
           "color": "#f59e0b",
-          "description": "Preshape Sesame BGT with Joyie and Natalia"
+          "description": "Preshape BGT Sesame with Joyie and Natalia (6 batches)"
         },
         {
-          "id": "damien3",
-          "name": "Shape Ciabatta",
-          "start": "10:00",
-          "end": "11:00",
-          "color": "#10b981",
-          "description": "Batch 1 — 20kg flour"
+          "id": "da3",
+          "name": "Lamination PAC",
+          "start": "10:20",
+          "end": "12:40",
+          "color": "#ec4899",
+          "description": "Laminate 3 batches PAC Chocolat (65.3kg)"
         },
         {
-          "id": "damien4",
-          "name": "Shape Ciabatta",
-          "start": "11:00",
-          "end": "12:00",
-          "color": "#10b981",
-          "description": "Batch 2 — 20kg flour"
-        },
-        {
-          "id": "damien5",
-          "name": "Shape Ciabatta",
-          "start": "12:00",
-          "end": "13:00",
-          "color": "#10b981",
-          "description": "Batch 3 — 20kg flour"
-        },
-        {
-          "id": "damien6",
+          "id": "da4",
           "name": "Shape PAC",
           "start": "13:00",
           "end": "15:30",
           "color": "#ec4899",
-          "description": "PAC Chocolat 3 batches lead"
+          "description": "Shape PAC Chocolat — 3 batches, 65.3kg"
         }
       ]
     },
@@ -169,7 +153,7 @@
       "role": "S",
       "tasks": [
         {
-          "id": "joyie1",
+          "id": "jo1",
           "name": "Score LOAF D-1",
           "start": "09:00",
           "end": "09:30",
@@ -177,52 +161,52 @@
           "description": "Score yesterday's loaves"
         },
         {
-          "id": "joyie2",
+          "id": "jo2",
           "name": "Preshape BGT",
           "start": "09:30",
           "end": "10:00",
           "color": "#f59e0b",
-          "description": "Preshape Sesame BGT with Damien and Natalia"
+          "description": "Preshape BGT Sesame with Damien and Natalia (6 batches)"
         },
         {
-          "id": "joyie3",
-          "name": "Shape BGT Sesame",
+          "id": "jo3",
+          "name": "Shape Ciabatta",
           "start": "10:00",
+          "end": "11:00",
+          "color": "#10b981",
+          "description": "Batch 1 — 20kg flour (18kg Ciabatta dough)"
+        },
+        {
+          "id": "jo4",
+          "name": "Shape Ciabatta",
+          "start": "11:00",
           "end": "12:00",
-          "color": "#f59e0b",
-          "description": "Final shape 6 batches with Natalia (2 bakers required)"
+          "color": "#10b981",
+          "description": "Batch 2 — 20kg flour (18kg Ciabatta dough)"
         },
         {
-          "id": "joyie4",
-          "name": "Score BGT",
+          "id": "jo5",
+          "name": "Shape Ciabatta",
           "start": "12:00",
-          "end": "12:30",
-          "color": "#06b6d4",
-          "description": "Score all Sesame baguettes"
+          "end": "13:00",
+          "color": "#10b981",
+          "description": "Batch 3 — 20kg flour (18kg Ciabatta dough)"
         },
         {
-          "id": "joyie5",
-          "name": "Lunch",
-          "start": "12:30",
-          "end": "13:30",
-          "color": "#94a3b8",
-          "description": ""
-        },
-        {
-          "id": "joyie6",
+          "id": "jo6",
           "name": "Shape PAC",
-          "start": "13:30",
+          "start": "13:00",
           "end": "15:30",
           "color": "#ec4899",
-          "description": "PAC Chocolat assist"
+          "description": "Shape PAC Chocolat with Damien and Natalia"
         },
         {
-          "id": "joyie7",
+          "id": "jo7",
           "name": "Clean end of day",
           "start": "15:30",
           "end": "17:30",
           "color": "#94a3b8",
-          "description": ""
+          "description": "End of day cleanup and vacuum assist"
         }
       ]
     },
@@ -231,7 +215,7 @@
       "role": "S",
       "tasks": [
         {
-          "id": "natalia1",
+          "id": "na1",
           "name": "Score LOAF D-1",
           "start": "09:00",
           "end": "09:30",
@@ -239,60 +223,52 @@
           "description": "Score yesterday's loaves"
         },
         {
-          "id": "natalia2",
+          "id": "na2",
           "name": "Preshape BGT",
           "start": "09:30",
           "end": "10:00",
           "color": "#f59e0b",
-          "description": "Preshape Sesame BGT with Damien and Joyie"
+          "description": "Preshape BGT Sesame with Damien and Joyie (6 batches)"
         },
         {
-          "id": "natalia3",
-          "name": "Shape BGT Sesame",
+          "id": "na3",
+          "name": "Shape Ciabatta",
           "start": "10:00",
-          "end": "12:00",
-          "color": "#f59e0b",
-          "description": "Final shape 6 batches with Joyie (2 bakers required)"
+          "end": "11:00",
+          "color": "#10b981",
+          "description": "Batch 4 — 20kg flour (18kg Ciabatta dough)"
         },
         {
-          "id": "natalia4",
+          "id": "na4",
+          "name": "Shape Ciabatta",
+          "start": "11:00",
+          "end": "12:00",
+          "color": "#10b981",
+          "description": "Batch 5 — 20kg flour (18kg Ciabatta dough)"
+        },
+        {
+          "id": "na5",
           "name": "Shape Ciabatta",
           "start": "12:00",
           "end": "13:00",
           "color": "#10b981",
-          "description": "Batch 4 — 20kg flour"
+          "description": "Batch 6+7 — 40kg flour (36kg Ciabatta dough)"
         },
         {
-          "id": "natalia5",
-          "name": "Shape Ciabatta",
+          "id": "na6",
+          "name": "Shape PAC",
           "start": "13:00",
-          "end": "14:00",
-          "color": "#10b981",
-          "description": "Batch 5 — 20kg flour"
+          "end": "15:30",
+          "color": "#ec4899",
+          "description": "Shape PAC Chocolat with Damien and Joyie"
         },
         {
-          "id": "natalia6",
-          "name": "Shape Ciabatta",
-          "start": "14:00",
-          "end": "15:00",
-          "color": "#10b981",
-          "description": "Batch 6 — 20kg flour"
-        },
-        {
-          "id": "natalia7",
-          "name": "Shape Ciabatta",
-          "start": "15:00",
-          "end": "16:00",
-          "color": "#10b981",
-          "description": "Batch 7 — 20kg flour"
-        },
-        {
-          "id": "natalia8",
+          "id": "na7",
           "name": "Clean end of day",
-          "start": "16:00",
+          "start": "15:30",
           "end": "17:30",
           "color": "#94a3b8",
-          "description": ""
+          "description": "End of day cleanup and vacuum assist"
         }
       ]
     },
@@ -301,12 +277,12 @@
       "role": "V",
       "tasks": [
         {
-          "id": "ysaline1",
+          "id": "ys1",
           "name": "Sticker prep / Bag & carton prep",
           "start": "07:00",
           "end": "15:30",
           "color": "#64748b",
-          "description": "Labels, cartons, pouches, vacuum station prep"
+          "description": "Prepare labels, cartons, pouches for PAC, Pizza, BGT Sesame, Apple Turnover"
         }
       ]
     },
@@ -315,20 +291,12 @@
       "role": "V",
       "tasks": [
         {
-          "id": "angele1",
+          "id": "an1",
           "name": "Sticker prep / Bag & carton prep",
           "start": "07:00",
           "end": "15:30",
           "color": "#64748b",
-          "description": "Labels, cartons, pouches, vacuum station prep"
-        },
-        {
-          "id": "angele2",
-          "name": "Vacuum/Box/Stick",
-          "start": "15:30",
-          "end": "17:30",
-          "color": "#64748b",
-          "description": "Vacuum and pack all products"
+          "description": "Prepare vacuum station, labels, cartons, pouches"
         }
       ]
     }
