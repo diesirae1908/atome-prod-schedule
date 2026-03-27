@@ -49,7 +49,7 @@ function bindUI() {
   document.getElementById("btn-lock").addEventListener("click", lockAdmin);
   document.getElementById("btn-save-pat").addEventListener("click", savePAT);
   document.getElementById("btn-save-password").addEventListener("click", savePassword);
-  document.getElementById("btn-trigger-generate").addEventListener("click", triggerGenerate);
+  document.getElementById("btn-trigger-generate").addEventListener("click", () => triggerGenerate());
 
   // Shift table save
   document.getElementById("btn-save-shifts").addEventListener("click", saveShifts);
