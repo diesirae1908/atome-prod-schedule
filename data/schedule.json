@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-29T21:19:38Z",
+  "generated_at": "2026-03-29T22:42:00Z",
   "week_number": 10,
   "week_start": "2026-03-02",
   "week_end": "2026-04-05",
@@ -628,17 +628,6 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Poppy Seed Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 126.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00594",
-          "products": [
-            "Poppy Seed Baguette (×3)"
-          ]
-        },
-        {
           "dough_type": "VIENNOISE",
           "label": "Viennoise (×2)",
           "unit": "kg",
@@ -715,6 +704,17 @@
           "products": [
             "Brioche Buns (×3)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Poppy Seed Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 126.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00594",
+          "products": [
+            "Poppy Seed Baguette (×3)"
+          ]
         }
       ],
       "shaping": [
@@ -744,15 +744,6 @@
           "total_kg": 144.0,
           "mo_ref": "WH/MO/00551",
           "d0": "2026-04-01"
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Poppy Seed Baguette (×3)",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 126.0,
-          "mo_ref": "WH/MO/00594",
-          "d0": "2026-04-01"
         }
       ],
       "vacuuming": [
@@ -779,7 +770,17 @@
       "label": "WEDNESDAY",
       "premix": [],
       "mix": [],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "PO3P-SGL",
+          "name": "Poppy Seed Baguette (×3)",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 126.0,
+          "mo_ref": "WH/MO/00594",
+          "d0": "2026-04-02"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "BR-SGL",
@@ -806,14 +807,6 @@
           "mo_ref": "WH/MO/00551"
         },
         {
-          "sku": "PO3P-SGL",
-          "name": "Poppy Seed Baguette (×3)",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "dluo": "2026-12-31",
-          "mo_ref": "WH/MO/00594"
-        },
-        {
           "sku": "LF2P",
           "name": "Sourdough Loaf (×2)",
           "qty_packs": 180.0,
@@ -829,7 +822,16 @@
       "premix": [],
       "mix": [],
       "shaping": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "PO3P-SGL",
+          "name": "Poppy Seed Baguette (×3)",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "dluo": "2027-01-01",
+          "mo_ref": "WH/MO/00594"
+        }
+      ]
     },
     {
       "date": "2026-04-03",
