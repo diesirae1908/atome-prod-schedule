@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T01:17:56Z",
+  "generated_at": "2026-03-30T01:21:14Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -474,14 +474,6 @@
           "mo_ref": "WH/MO/00565"
         },
         {
-          "sku": "1-PACB8P-SGL",
-          "name": "Choc. Croissant Bites (×8)",
-          "qty_packs": 240.0,
-          "qty_units": 1920.0,
-          "dluo": "2026-06-06",
-          "mo_ref": "WH/MO/00598"
-        },
-        {
           "sku": "1-CRB8P-SGL",
           "name": "Croissant Bites (×8)",
           "qty_packs": 200.0,
@@ -520,14 +512,6 @@
           "qty_units": 360.0,
           "dluo": "2026-12-28",
           "mo_ref": "WH/MO/00588"
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "[1-AT3P-SGL] Pack of 3 apple turnover",
-          "qty_packs": 480.0,
-          "qty_units": 480.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00583"
         }
       ]
     },
@@ -613,6 +597,14 @@
       ],
       "vacuuming": [
         {
+          "sku": "1-PACB8P-SGL",
+          "name": "Choc. Croissant Bites (×8)",
+          "qty_packs": 240.0,
+          "qty_units": 1920.0,
+          "dluo": "2026-06-06",
+          "mo_ref": "WH/MO/00598"
+        },
+        {
           "sku": "CIA3-SGL",
           "name": "Ciabatta (×3)",
           "qty_packs": 140.0,
@@ -627,6 +619,14 @@
           "qty_units": 360.0,
           "dluo": "2026-12-29",
           "mo_ref": "WH/MO/00596"
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "[1-AT3P-SGL] Pack of 3 apple turnover",
+          "qty_packs": 480.0,
+          "qty_units": 480.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/00583"
         }
       ]
     },
