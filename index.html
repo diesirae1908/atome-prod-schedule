@@ -18,6 +18,8 @@
       --vac-row:      #f0fdf4;
       --tasks-hd:     #475569;
       --tasks-row:    #f8fafc;
+      --qa-hd:        #be185d;
+      --qa-row:       #fdf2f8;
       --today-bg:     #fff8e1;
       --today-border: #f59e0b;
       --border:       #e5e7eb;
@@ -110,6 +112,7 @@
     .section-header.shape-hd  td { background: var(--shape-hd); }
     .section-header.vac-hd    td { background: var(--vac-hd); }
     .section-header.tasks-hd  td { background: var(--tasks-hd); }
+    .section-header.qa-hd     td { background: var(--qa-hd); }
 
     /* data rows */
     .data-row td {
@@ -127,6 +130,7 @@
     .shape-row  { background: var(--shape-row); }
     .vac-row    { background: var(--vac-row); }
     .tasks-row  { background: var(--tasks-row); }
+    .qa-row     { background: var(--qa-row); }
 
     /* ── product pill ── */
     .product-pill {
@@ -237,6 +241,33 @@
     .score-pill.freeze-only  { background: #e0f2fe; border-color: #38bdf8; }
     .score-pill .pill-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; }
     .score-pill .prod-name   { font-weight: 600; font-size: 12px; flex: 1; line-height: 1.35; }
+
+    /* ── QA Test pills ── */
+    .qa-pill {
+      border-radius: 6px; padding: 5px 6px; margin-bottom: 4px;
+      background: #fff; border: 1px solid #e5e7eb;
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .qa-pill.qa-ok  { background: #f0fdf4; border-color: #86efac; opacity: .9; }
+    .qa-pill.qa-nok { background: #fef2f2; border-color: #fca5a5; opacity: .9; }
+    .qa-pill .pill-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; }
+    .qa-pill .prod-name   { font-weight: 600; font-size: 12px; flex: 1; line-height: 1.35; }
+    .qa-actions { display: flex; gap: 4px; margin-top: 2px; }
+    .qa-btn {
+      font-size: 10px; padding: 2px 9px; border-radius: 10px;
+      border: 1px solid #d1d5db; background: #fff;
+      cursor: pointer; font-weight: 700; transition: all .1s;
+    }
+    .qa-btn.qa-ok-btn  { color: #16a34a; border-color: #86efac; }
+    .qa-btn.qa-ok-btn.active,  .qa-btn.qa-ok-btn:hover  { background: #dcfce7; border-color: #4ade80; }
+    .qa-btn.qa-nok-btn { color: #dc2626; border-color: #fca5a5; }
+    .qa-btn.qa-nok-btn.active, .qa-btn.qa-nok-btn:hover { background: #fee2e2; border-color: #f87171; }
+    .qa-note {
+      width: 100%; font-size: 10px; font-family: inherit; color: var(--text);
+      border: 1px solid #e5e7eb; border-radius: 4px;
+      padding: 3px 5px; resize: vertical; background: transparent; min-height: 36px;
+    }
+    .qa-note:focus { outline: none; border-color: var(--qa-hd); }
 
     .empty-cell { color: #d1d5db; font-size: 11px; }
 
@@ -485,6 +516,7 @@
   <div class="legend-item"><div class="legend-dot" style="background:var(--mix-hd)"></div> Mixing</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--shape-hd)"></div> Shaping / Scoring</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--vac-hd)"></div> Vacuuming / Packaging</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--qa-hd)"></div> QA Test</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--tasks-hd)"></div> Notes</div>
   <div class="legend-item">
     <span class="queue-badge">1st in queue</span>
@@ -799,6 +831,11 @@ function getDayData(iso) {
 // ── daily notes ───────────────────────────────────────────────────────────────
 
 // ── renderers ─────────────────────────────────────────────────────────────────
+function findMopId(name) {
+  if (typeof PRODUCT_MOP_MAP === "undefined" || !name) return null;
+  return PRODUCT_MOP_MAP[shortName(name)] || PRODUCT_MOP_MAP[name] || null;
+}
+
 function pillCheckBtn(key) {
   const done = lsGet(key) || false;
   return `<button class="pill-check${done ? " checked" : ""}" data-key="${key}">✓</button>`;
@@ -809,12 +846,16 @@ function renderPremixCell(day) {
   return day.premix.map(p => {
     const key  = `check_${day.date}_premix_${p.label}`;
     const done = lsGet(key) || false;
-    // strip pack counts from product names
     const prods  = (p.products || []).map(shortName).join(", ");
     const moRefs = (p.mo_refs || []).join(" · ");
+    // MOP button: try first product name as lookup key
+    const mopId = (p.products || []).reduce((found, name) => found || findMopId(name), null);
+    const mopBtn = mopId
+      ? `<button class="mop-btn" data-mop-id="${mopId}" data-mop-units="${p.total_units || 0}" data-mop-label="${escAttr(p.label)}" title="View MOP / Recipe">📖</button>`
+      : "";
     return `<div class="product-pill${done ? " done" : ""}">
       <div class="pill-header">
-        <span class="prod-name">${p.label}</span>
+        <span class="prod-name">${p.label}${mopBtn}</span>
         ${pillCheckBtn(key)}
       </div>
       <span class="prod-sub">${p.total_units} units · ${prods}</span>
@@ -841,9 +882,9 @@ function renderMixCell(day) {
     const done = lsGet(key) || false;
     const qty  = m.total_units ? `${m.total_units} units` : "";
     const sub  = [qty, m.mo_ref || ""].filter(Boolean).join(" · ");
-    const mopId = (typeof PRODUCT_MOP_MAP !== "undefined") ? (PRODUCT_MOP_MAP[shortName(m.label)] || PRODUCT_MOP_MAP[m.label] || null) : null;
+    const mopId = findMopId(m.label) || findMopId(m.cfg_name) || null;
     const mopBtn = mopId
-      ? `<button class="mop-btn" data-mop-id="${mopId}" data-mop-units="${m.total_units || 0}" data-mop-label="${escAttr(shortName(m.label))}" title="View MOP / Recipe">📖</button>`
+      ? `<button class="mop-btn" data-mop-id="${mopId}" data-mop-units="${m.total_units || 0}" data-mop-label="${escAttr(shortName(m.label || m.cfg_name || ""))}" title="View MOP / Recipe">📖</button>`
       : "";
     return `<div class="product-pill${done ? " done" : ""}">
       <div class="pill-header">
@@ -966,6 +1007,27 @@ function renderNotesCell(iso) {
   return `<textarea class="day-notes" data-day="${iso}" placeholder="Leave a note…" rows="3">${escaped}</textarea>`;
 }
 
+function renderQaCell(day) {
+  if (!day || !day.vacuuming || day.vacuuming.length === 0) return '<span class="empty-cell">–</span>';
+  return day.vacuuming.map(v => {
+    const key   = `qa_${day.date}_${v.mo_ref || v.sku}`;
+    const state = lsGet(key) || { status: null, note: "" };
+    const statusClass = state.status === "ok" ? " qa-ok" : state.status === "nok" ? " qa-nok" : "";
+    const noteEsc = (state.note || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    return `<div class="qa-pill${statusClass}">
+      <div class="pill-header">
+        <span class="prod-name">🧪 ${shortName(v.name)}</span>
+      </div>
+      <span class="prod-sub">${v.mo_ref || ""}</span>
+      <div class="qa-actions">
+        <button class="qa-btn qa-ok-btn${state.status === "ok" ? " active" : ""}" data-qakey="${key}" data-qaval="ok">✓ OK</button>
+        <button class="qa-btn qa-nok-btn${state.status === "nok" ? " active" : ""}" data-qakey="${key}" data-qaval="nok">✗ NOK</button>
+      </div>
+      <textarea class="qa-note" data-qakey="${key}" placeholder="Add a note…" rows="2">${noteEsc}</textarea>
+    </div>`;
+  }).join("");
+}
+
 // ── table builder ─────────────────────────────────────────────────────────────
 function buildTable(weekStart) {
   const today  = isoToday();
@@ -1018,6 +1080,7 @@ function buildTable(weekStart) {
   addSection("🟣", "MIXING",      "mix-hd",    "mix-row",    (d, day) => renderMixCell(day));
   addSection("🔵", "SHAPING",     "shape-hd",  "shape-row",  (d, day) => renderShapeCell(day));
   addSection("🟢", "VACUUMING",   "vac-hd",    "vac-row",    (d, day) => renderVacCell(day));
+  addSection("🧪", "QA TEST",     "qa-hd",     "qa-row",     (d, day) => renderQaCell(day));
   addSection("📝", "NOTES",       "tasks-hd",  "tasks-row",  (d)      => renderNotesCell(d));
 
   return table;
@@ -1120,11 +1183,32 @@ document.getElementById("scheduleRoot").addEventListener("click", e => {
 
 });
 
-// ── notes textarea auto-save ──────────────────────────────────────────────────
+// ── notes + QA textarea auto-save ────────────────────────────────────────────
 document.getElementById("scheduleRoot").addEventListener("input", e => {
   const ta = e.target.closest(".day-notes");
-  if (ta) { lsSet("notes_" + ta.dataset.day, ta.value); }
+  if (ta) { lsSet("notes_" + ta.dataset.day, ta.value); return; }
+
+  const qaNoteTA = e.target.closest(".qa-note");
+  if (qaNoteTA) {
+    const key   = qaNoteTA.dataset.qakey;
+    const state = lsGet(key) || { status: null, note: "" };
+    state.note  = qaNoteTA.value;
+    lsSet(key, state);
+  }
 });
+
+// ── QA OK / NOK button clicks ─────────────────────────────────────────────────
+document.getElementById("scheduleRoot").addEventListener("click", e => {
+  const qaBtn = e.target.closest(".qa-btn");
+  if (qaBtn) {
+    const key   = qaBtn.dataset.qakey;
+    const val   = qaBtn.dataset.qaval;
+    const state = lsGet(key) || { status: null, note: "" };
+    state.status = state.status === val ? null : val; // toggle off if same
+    lsSet(key, state);
+    render();
+  }
+}, true); // capture phase so it runs before the main delegated listener
 
 // ── week picker dropdown ──────────────────────────────────────────────────────
 function populateWeekPicker() {

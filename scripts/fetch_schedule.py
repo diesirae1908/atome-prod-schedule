@@ -238,6 +238,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                 day_map[mix_date]["mix"][mix_key] = {
                     "dough_type": dough_type,
                     "label": prod_name,
+                    "cfg_name": cfg.get("name") or "",
                     "unit": dt_cfg.get("unit", "kg"),
                     "total_kg": 0.0 if total_kg is not None else None,
                     "total_units": 0,
