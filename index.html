@@ -216,39 +216,27 @@
       color: #065f46; font-weight: 600;
     }
 
-    /* ── daily tasks ── */
-    .tasks-list { display: flex; flex-direction: column; gap: 2px; }
-    .task-item  { display: flex; align-items: center; gap: 5px; padding: 3px 2px; }
-    .task-item.done .task-text {
-      text-decoration: line-through; color: var(--muted); opacity: .6;
-    }
-    .task-check {
-      width: 15px; height: 15px; flex-shrink: 0;
-      border-radius: 3px;
-      border: 2px solid #d1d5db;
+    /* ── daily notes ── */
+    .day-notes {
+      width: 100%; min-height: 64px;
+      font-size: 11px; font-family: inherit; color: var(--text);
+      border: 1px solid #e5e7eb; border-radius: 5px;
+      padding: 5px 7px; resize: vertical;
       background: #fff;
-      cursor: pointer;
-      font-size: 9px; line-height: 1; color: transparent;
-      display: flex; align-items: center; justify-content: center;
-      padding: 0;
-      transition: all .1s;
+      transition: border-color .1s;
     }
-    .task-check:hover  { border-color: #4338ca; }
-    .task-check.checked { background: #4338ca; border-color: #4338ca; color: #fff; }
-    .task-text   { font-size: 11px; flex: 1; }
-    .remove-task {
-      font-size: 13px; border: none; background: none;
-      color: #d1d5db; cursor: pointer; padding: 0 1px; line-height: 1;
+    .day-notes:focus { outline: none; border-color: #4338ca; }
+
+    /* ── D-1 score / freeze pills ── */
+    .score-pill {
+      display: flex; flex-direction: column; gap: 2px;
+      border-radius: 6px; padding: 4px 6px; margin-bottom: 4px;
+      border: 1px solid rgba(0,0,0,.09);
     }
-    .remove-task:hover { color: #dc2626; }
-    .add-task-btn {
-      margin-top: 5px; width: 100%; text-align: center;
-      font-size: 10px; color: #9ca3af;
-      background: none; border: 1px dashed #d1d5db;
-      border-radius: 4px; padding: 3px 6px; cursor: pointer;
-      transition: all .1s;
-    }
-    .add-task-btn:hover { border-color: #4338ca; color: #4338ca; }
+    .score-pill.score-freeze { background: #fef3c7; border-color: #fbbf24; }
+    .score-pill.freeze-only  { background: #e0f2fe; border-color: #38bdf8; }
+    .score-pill .pill-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; }
+    .score-pill .prod-name   { font-weight: 600; font-size: 12px; flex: 1; line-height: 1.35; }
 
     .empty-cell { color: #d1d5db; font-size: 11px; }
 
@@ -497,7 +485,7 @@
   <div class="legend-item"><div class="legend-dot" style="background:var(--mix-hd)"></div> Mixing</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--shape-hd)"></div> Shaping / Scoring</div>
   <div class="legend-item"><div class="legend-dot" style="background:var(--vac-hd)"></div> Vacuuming / Packaging</div>
-  <div class="legend-item"><div class="legend-dot" style="background:var(--tasks-hd)"></div> Daily Tasks</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--tasks-hd)"></div> Notes</div>
   <div class="legend-item">
     <span class="queue-badge">1st in queue</span>
     <span style="font-size:11px;color:var(--muted);margin-left:3px"> Vac order</span>
@@ -808,23 +796,7 @@ function getDayData(iso) {
   return scheduleData.days.find(d => d.date === iso) || null;
 }
 
-// ── daily tasks ───────────────────────────────────────────────────────────────
-const FIXED_TASKS = [
-  { id: "fixed_checkin_vac",  text: "Check-in Vacuum",  fixed: true },
-  { id: "fixed_checkin_prod", text: "Check-in Prod",    fixed: true },
-  { id: "fixed_checkout_vac", text: "Check-out Vacuum", fixed: true },
-  { id: "fixed_checkout_prod",text: "Check-out Prod",   fixed: true },
-];
-
-function getTasksForDay(iso) {
-  const saved = lsGet("tasks_" + iso);
-  if (saved && Array.isArray(saved)) return saved;
-  return FIXED_TASKS.map(t => ({ ...t, done: false }));
-}
-
-function saveTasksForDay(iso, tasks) {
-  lsSet("tasks_" + iso, tasks);
-}
+// ── daily notes ───────────────────────────────────────────────────────────────
 
 // ── renderers ─────────────────────────────────────────────────────────────────
 function pillCheckBtn(key) {
@@ -886,8 +858,25 @@ function renderMixCell(day) {
 }
 
 function renderShapeCell(day) {
-  if (!day || !day.shaping || day.shaping.length === 0) return '<span class="empty-cell">–</span>';
-  return day.shaping.map(s => {
+  const scorePills = (day?.score_tasks || []).map(s => {
+    const key   = `check_${day.date}_score_${s.mo_ref || s.name}`;
+    const done  = lsGet(key) || false;
+    const label = s.action === "score_freeze" ? "🔪❄️ Score + Freeze" : "❄️ Move to Freezer";
+    const sub   = [s.qty_units ? `${s.qty_units} units` : "", s.mo_ref || ""].filter(Boolean).join(" · ");
+    const checkBtn = `<button class="pill-check${done ? " checked" : ""}" data-key="${key}">✓</button>`;
+    return `<div class="score-pill ${s.action}${done ? " done" : ""}">
+      <div class="pill-header">
+        <span class="prod-name">${label} ${shortName(s.name)}</span>
+        ${checkBtn}
+      </div>
+      <span class="prod-sub">${sub}</span>
+    </div>`;
+  }).join("");
+
+  if (!day || !day.shaping || day.shaping.length === 0) {
+    return scorePills || '<span class="empty-cell">–</span>';
+  }
+  const shapePills = day.shaping.map(s => {
     const key     = `check_${day.date}_shape_${s.mo_ref || s.name}`;
     const done    = lsGet(key) || false;
     const moRef   = s.mo_ref || s.name;
@@ -909,6 +898,7 @@ function renderShapeCell(day) {
       ${outBadge}
     </div>`;
   }).join("");
+  return scorePills + shapePills;
 }
 
 function renderVacCell(day) {
@@ -934,7 +924,7 @@ function renderVacCell(day) {
       : `<span class="prod-dluo dluo-missing">⚠ DLUO missing — update lot in Odoo</span>`;
 
     const qtyStr = v.qty_packs
-      ? `${Math.round(v.qty_packs)} bundles · ${Math.round(v.qty_units)} units`
+      ? `${Math.round(v.qty_units)} final products · ${Math.round(v.qty_pouches ?? v.qty_packs)} pouches`
       : "";
 
     const vacMoRef  = v.mo_ref || v.sku;
@@ -970,17 +960,10 @@ function renderVacCell(day) {
   }).join("");
 }
 
-function renderTasksCell(iso) {
-  const tasks = getTasksForDay(iso);
-  const items = tasks.map(t =>
-    `<div class="task-item${t.done ? " done" : ""}">
-      <button class="task-check${t.done ? " checked" : ""}" data-tday="${iso}" data-tid="${t.id}">✓</button>
-      <span class="task-text">${t.text}</span>
-      ${!t.fixed ? `<button class="remove-task" data-tday="${iso}" data-tid="${t.id}" title="Remove">×</button>` : ""}
-    </div>`
-  ).join("");
-  return `<div class="tasks-list">${items}</div>
-    <button class="add-task-btn" data-tday="${iso}">+ Add task</button>`;
+function renderNotesCell(iso) {
+  const val = lsGet("notes_" + iso) || "";
+  const escaped = val.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  return `<textarea class="day-notes" data-day="${iso}" placeholder="Leave a note…" rows="3">${escaped}</textarea>`;
 }
 
 // ── table builder ─────────────────────────────────────────────────────────────
@@ -1035,7 +1018,7 @@ function buildTable(weekStart) {
   addSection("🟣", "MIXING",      "mix-hd",    "mix-row",    (d, day) => renderMixCell(day));
   addSection("🔵", "SHAPING",     "shape-hd",  "shape-row",  (d, day) => renderShapeCell(day));
   addSection("🟢", "VACUUMING",   "vac-hd",    "vac-row",    (d, day) => renderVacCell(day));
-  addSection("📋", "DAILY TASKS", "tasks-hd",  "tasks-row",  (d)      => renderTasksCell(d));
+  addSection("📝", "NOTES",       "tasks-hd",  "tasks-row",  (d)      => renderNotesCell(d));
 
   return table;
 }
@@ -1135,34 +1118,12 @@ document.getElementById("scheduleRoot").addEventListener("click", e => {
     render(); return;
   }
 
-  const taskCheck = e.target.closest(".task-check");
-  if (taskCheck) {
-    const iso = taskCheck.dataset.tday, id = taskCheck.dataset.tid;
-    const tasks = getTasksForDay(iso);
-    const t = tasks.find(x => x.id === id);
-    if (t) { t.done = !t.done; saveTasksForDay(iso, tasks); }
-    render(); return;
-  }
+});
 
-  const removeBtn = e.target.closest(".remove-task");
-  if (removeBtn) {
-    const iso = removeBtn.dataset.tday, id = removeBtn.dataset.tid;
-    saveTasksForDay(iso, getTasksForDay(iso).filter(t => t.id !== id));
-    render(); return;
-  }
-
-  const addBtn = e.target.closest(".add-task-btn");
-  if (addBtn) {
-    const iso  = addBtn.dataset.tday;
-    const text = prompt("New task:");
-    if (text && text.trim()) {
-      const tasks = getTasksForDay(iso);
-      tasks.push({ id: "custom_" + Date.now(), text: text.trim(), fixed: false, done: false });
-      saveTasksForDay(iso, tasks);
-      render();
-    }
-    return;
-  }
+// ── notes textarea auto-save ──────────────────────────────────────────────────
+document.getElementById("scheduleRoot").addEventListener("input", e => {
+  const ta = e.target.closest(".day-notes");
+  if (ta) { lsSet("notes_" + ta.dataset.day, ta.value); }
 });
 
 // ── week picker dropdown ──────────────────────────────────────────────────────

@@ -30,6 +30,8 @@ const PRODUCT_MOP_MAP = {
   "Wholewheat Loaf (×2)":      "wholewheat",
   "Pizza Dough":               "pizza",
   "Pizza Dough (×2)":          "pizza",
+  "Brioche":                   "brioche-bun",
+  "Braided Brioche":           "brioche-bun",
   "Brioche Bun":               "brioche-bun",
   "Brioche Buns":              "brioche-bun",
   "Brioche Buns (×3)":         "brioche-bun",

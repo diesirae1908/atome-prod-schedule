@@ -21,7 +21,7 @@
       "dough_type": "TRAD",
       "mix_offset": -2, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
       "dluo_months": 9,
-      "units_per_pack": 1, "weight_g_per_unit": 400
+      "units_per_pack": 1, "pouches_per_pack": 1, "weight_g_per_unit": 400
     },
     "BR-SGL": {
       "name": "Brioche",
@@ -29,7 +29,7 @@
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
       "premix_offset": -2, "premix_label": "Prep mix Brioche",
       "dluo_months": 6,
-      "units_per_pack": 1, "weight_g_per_unit": 450
+      "units_per_pack": 1, "pouches_per_pack": 1, "weight_g_per_unit": 450
     },
     "BR3BN-SGL": {
       "name": "Brioche Buns (×3)",
@@ -37,7 +37,7 @@
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
       "premix_offset": -2, "premix_label": "Prep mix Brioche",
       "dluo_months": 6,
-      "units_per_pack": 3, "weight_g_per_unit": 150
+      "units_per_pack": 3, "pouches_per_pack": 1, "weight_g_per_unit": 150
     },
     "WA3P-SGL": {
       "name": "Liège Waffle (×3)",
@@ -45,14 +45,14 @@
       "mix_offset": 0, "shape_offset": 0, "score_offset": 0, "vacuum_offset": 0,
       "premix_offset": -1, "premix_label": "Prep mix Waffles",
       "dluo_months": 6,
-      "units_per_pack": 3, "weight_g_per_unit": 100
+      "units_per_pack": 3, "pouches_per_pack": 1, "weight_g_per_unit": 100
     },
     "CR3P-SGL": {
       "name": "Croissants (×3)",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": null, "copacked": true,
-      "units_per_pack": 3, "weight_g_per_unit": null
+      "units_per_pack": 3, "pouches_per_pack": 1, "weight_g_per_unit": null
     },
     "PAC3P-SGL": {
       "name": "Pain au Chocolat (×3)",
@@ -60,21 +60,23 @@
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
       "premix_offset": -2, "premix_label": "Prep mix PAC/CR",
       "dluo_months": 6,
-      "units_per_pack": 3, "weight_g_per_unit": 90
+      "units_per_pack": 3, "pouches_per_pack": 1, "weight_g_per_unit": 90
     },
     "CIA3-SGL": {
       "name": "Ciabatta (×3)",
       "dough_type": "CIABATTA",
       "mix_offset": -2, "shape_offset": -2, "score_offset": -1, "vacuum_offset": 0,
+      "d1_action": "freeze_only",
       "dluo_months": 9,
-      "units_per_pack": 3, "weight_g_per_unit": 300
+      "units_per_pack": 3, "pouches_per_pack": 1, "weight_g_per_unit": 300
     },
     "LF2P": {
       "name": "Sourdough Loaf (×2)",
       "dough_type": "TRAD",
       "mix_offset": -2, "shape_offset": -2, "score_offset": -1, "vacuum_offset": 0,
+      "d1_action": "score_freeze",
       "dluo_months": 9,
-      "units_per_pack": 2, "weight_g_per_unit": 700
+      "units_per_pack": 2, "pouches_per_pack": 2, "weight_g_per_unit": 700
     },
     "MG3P-SGL": {
       "name": "Multigrain Baguette (×3)",
@@ -82,35 +84,36 @@
       "mix_offset": -2, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
       "premix_offset": -3, "premix_label": "MG Grain Soak",
       "dluo_months": 9,
-      "units_per_pack": 3, "weight_g_per_unit": 375
+      "units_per_pack": 3, "pouches_per_pack": 3, "weight_g_per_unit": 375
     },
     "PIZ2-SGL": {
       "name": "Pizza Dough (×2)",
       "dough_type": "PIZZA",
       "mix_offset": -2, "shape_offset": -2, "score_offset": -1, "vacuum_offset": 0,
+      "d1_action": "freeze_only",
       "dluo_months": 9,
-      "units_per_pack": 2, "weight_g_per_unit": 200
+      "units_per_pack": 2, "pouches_per_pack": 2, "weight_g_per_unit": 200
     },
     "PO3P-SGL": {
       "name": "Poppy Seed Baguette (×3)",
       "dough_type": "TRAD",
       "mix_offset": -2, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
       "dluo_months": 9,
-      "units_per_pack": 3, "weight_g_per_unit": 350
+      "units_per_pack": 3, "pouches_per_pack": 3, "weight_g_per_unit": 350
     },
     "SE3P-SGL": {
       "name": "Sesame Baguette (×3)",
       "dough_type": "TRAD",
       "mix_offset": -2, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
       "dluo_months": 9,
-      "units_per_pack": 3, "weight_g_per_unit": 350
+      "units_per_pack": 3, "pouches_per_pack": 3, "weight_g_per_unit": 350
     },
     "TR3P-SGL": {
       "name": "Trad. Baguette (×3)",
       "dough_type": "TRAD",
       "mix_offset": -2, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
       "dluo_months": 9,
-      "units_per_pack": 3, "weight_g_per_unit": 350
+      "units_per_pack": 3, "pouches_per_pack": 3, "weight_g_per_unit": 350
     },
     "VI2P-SGL": {
       "name": "Viennoise (×2)",
@@ -118,91 +121,93 @@
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
       "premix_offset": -2, "premix_label": "Prep mix Viennoise",
       "dluo_months": 6,
-      "units_per_pack": 2, "weight_g_per_unit": 200
+      "units_per_pack": 2, "pouches_per_pack": 1, "weight_g_per_unit": 200
     },
     "WW2P-SGL": {
       "name": "Wholewheat Loaf (×2)",
       "dough_type": "WW",
       "mix_offset": -2, "shape_offset": -2, "score_offset": -1, "vacuum_offset": 0,
+      "d1_action": "score_freeze",
       "dluo_months": 9,
-      "units_per_pack": 2, "weight_g_per_unit": 600
+      "units_per_pack": 2, "pouches_per_pack": 2, "weight_g_per_unit": 600
     },
     "CTY2P-SGL": {
       "name": "Country Rye Loaf (×2)",
       "dough_type": "COUNTRY",
       "mix_offset": -2, "shape_offset": -2, "score_offset": -1, "vacuum_offset": 0,
+      "d1_action": "score_freeze",
       "dluo_months": 9,
-      "units_per_pack": 2, "weight_g_per_unit": 700
+      "units_per_pack": 2, "pouches_per_pack": 2, "weight_g_per_unit": 700
     },
     "PFP-SGL": {
       "name": "Puff Pastry",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": null, "copacked": true,
-      "units_per_pack": 1, "weight_g_per_unit": null
+      "units_per_pack": 1, "pouches_per_pack": 1, "weight_g_per_unit": null
     },
     "RIGA-330": {
       "name": "Rigatoni",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": 6, "copacked": true,
-      "units_per_pack": 1, "weight_g_per_unit": null
+      "units_per_pack": 1, "pouches_per_pack": 1, "weight_g_per_unit": null
     },
     "RAV-SPRI-330": {
       "name": "Spinach Ricotta Ravioli",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": 6, "copacked": true,
-      "units_per_pack": 1, "weight_g_per_unit": null
+      "units_per_pack": 1, "pouches_per_pack": 1, "weight_g_per_unit": null
     },
     "GNOC-330": {
       "name": "Gnocchi",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": 6, "copacked": true,
-      "units_per_pack": 1, "weight_g_per_unit": null
+      "units_per_pack": 1, "pouches_per_pack": 1, "weight_g_per_unit": null
     },
     "2-GCKVGN2P-SGL": {
       "name": "Vegan Cookie (×2)",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": 6, "copacked": true,
-      "units_per_pack": 2, "weight_g_per_unit": null
+      "units_per_pack": 2, "pouches_per_pack": 1, "weight_g_per_unit": null
     },
     "2-CRVGN3P-SGL": {
       "name": "Vegan Croissant (×3)",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": 6, "copacked": true,
-      "units_per_pack": 3, "weight_g_per_unit": null
+      "units_per_pack": 3, "pouches_per_pack": 1, "weight_g_per_unit": null
     },
     "1-APLTO3P-SGL": {
       "name": "Apple Turnover (×3)",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": null, "copacked": true,
-      "units_per_pack": 3, "weight_g_per_unit": null
+      "units_per_pack": 3, "pouches_per_pack": 1, "weight_g_per_unit": null
     },
     "1-MCR6P-SGL": {
       "name": "Macarons (×6)",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": null, "copacked": true,
-      "units_per_pack": 6, "weight_g_per_unit": null
+      "units_per_pack": 6, "pouches_per_pack": 1, "weight_g_per_unit": null
     },
     "1-CRB8P-SGL": {
       "name": "Croissant Bites (×8)",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": null, "copacked": true,
-      "units_per_pack": 8, "weight_g_per_unit": null
+      "units_per_pack": 8, "pouches_per_pack": 1, "weight_g_per_unit": null
     },
     "1-PACB8P-SGL": {
       "name": "Choc. Croissant Bites (×8)",
       "dough_type": null,
       "mix_offset": null, "shape_offset": null, "score_offset": null, "vacuum_offset": 0,
       "dluo_months": null, "copacked": true,
-      "units_per_pack": 8, "weight_g_per_unit": null
+      "units_per_pack": 8, "pouches_per_pack": 1, "weight_g_per_unit": null
     }
   }
 }

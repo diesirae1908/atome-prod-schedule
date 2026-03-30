@@ -111,7 +111,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
     span_end = end + timedelta(days=1)
     cursor = span_start
     while cursor <= span_end:
-        day_map[iso(cursor)] = {"premix": {}, "mix": {}, "shaping": [], "vacuuming": []}
+        day_map[iso(cursor)] = {"premix": {}, "mix": {}, "shaping": [], "score_tasks": [], "vacuuming": []}
         cursor += timedelta(days=1)
 
     for mo in mos:
@@ -169,12 +169,15 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
         # ── VACUUMING (D-0) ───────────────────────────────────────────────────
         vac_offset = cfg.get("vacuum_offset") or 0
         vac_date = iso(d0 + timedelta(days=vac_offset))
+        pouches_per_pack = cfg.get("pouches_per_pack") or 1
+        qty_pouches = qty_packs * pouches_per_pack
         if vac_date in day_map:
             day_map[vac_date]["vacuuming"].append({
                 "sku": sku or "?",
                 "name": cfg.get("name") or product_name,
                 "qty_packs": qty_packs,
                 "qty_units": qty_units,
+                "qty_pouches": qty_pouches,
                 "dluo": dluo,
                 "mo_ref": mo_ref,
             })
@@ -199,6 +202,22 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                 "mo_ref": mo_ref,
                 "d0": iso(d0),
             })
+
+        # ── SCORE / FREEZE TASK (D-score_offset, only when != shape_offset) ──
+        d1_action = cfg.get("d1_action")
+        score_offset = cfg.get("score_offset")
+        shape_off = cfg.get("shape_offset") or 0
+        if d1_action and score_offset is not None and score_offset != shape_off:
+            score_date = iso(d0 + timedelta(days=score_offset))
+            if score_date in day_map:
+                day_map[score_date]["score_tasks"].append({
+                    "action": d1_action,
+                    "name": cfg.get("name") or product_name,
+                    "qty_packs": int(round(qty_packs)),
+                    "qty_units": int(round(qty_units)),
+                    "mo_ref": mo_ref,
+                    "d0": iso(d0),
+                })
 
         # ── MIXING (D-mix_offset) ─────────────────────────────────────────────
         mix_offset = cfg.get("mix_offset") or 0
@@ -267,8 +286,9 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
             mix_list.append(entry)
         day["mix"] = mix_list
 
-        # Sort shaping / vacuuming by name for consistency
+        # Sort shaping / score_tasks / vacuuming by name for consistency
         day["shaping"].sort(key=lambda x: x["name"])
+        day["score_tasks"].sort(key=lambda x: x["name"])
         day["vacuuming"].sort(key=lambda x: x["name"])
 
     # Build final output (only include days in the requested window)
@@ -277,13 +297,14 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
     cursor = start
     while cursor <= end:
         d_str = iso(cursor)
-        day = day_map.get(d_str, {"mix": [], "shaping": [], "vacuuming": []})
+        day = day_map.get(d_str, {"mix": [], "shaping": [], "score_tasks": [], "vacuuming": []})
         days_out.append({
             "date": d_str,
             "label": day_labels[cursor.weekday()],
             "premix": day["premix"],
             "mix": day["mix"],
             "shaping": day["shaping"],
+            "score_tasks": day.get("score_tasks", []),
             "vacuuming": day["vacuuming"],
         })
         cursor += timedelta(days=1)
