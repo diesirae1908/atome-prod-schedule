@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T21:41:44Z",
+  "generated_at": "2026-03-30T22:01:07Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -432,9 +432,30 @@
           "products": [
             "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/00606",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/00606",
+          "d0": "2026-04-02"
+        },
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
@@ -470,7 +491,7 @@
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
           "qty_packs": 100.0,
           "qty_units": 200.0,
-          "qty_pouches": 100.0,
+          "qty_pouches": 200.0,
           "dluo": "2026-09-30",
           "mo_ref": "WH/MO/00595"
         },
@@ -577,7 +598,16 @@
           "d0": "2026-04-02"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/00606",
+          "d0": "2026-04-02"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -707,6 +737,15 @@
           "qty_pouches": 116.0,
           "dluo": "2026-10-01",
           "mo_ref": "WH/MO/00592"
+        },
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
+          "dluo": "2026-12-31",
+          "mo_ref": "WH/MO/00606"
         },
         {
           "sku": "PO3P-SGL",
