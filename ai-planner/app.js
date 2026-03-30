@@ -367,6 +367,51 @@ async function saveShifts() {
   }
 }
 
+function importShifts(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const status = document.getElementById("shift-save-status");
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const imported = JSON.parse(e.target.result);
+      // Basic validation — must have bakers + schedule keys
+      if (!imported.bakers || !imported.schedule) {
+        status.textContent = "✗ Invalid file: missing bakers or schedule";
+        return;
+      }
+      // Merge: keep existing meta, replace bakers + schedule + bakerHours
+      shiftsData = {
+        ...shiftsData,
+        bakers:     imported.bakers,
+        bakerHours: imported.bakerHours ?? shiftsData.bakerHours,
+        schedule:   imported.schedule,
+        meta:       { ...shiftsData.meta, ...imported.meta }
+      };
+      renderShiftTable();
+      status.textContent = "✓ Imported — review then hit Save to push to GitHub";
+    } catch {
+      status.textContent = "✗ Could not parse JSON file";
+    }
+  };
+  reader.readAsText(file);
+  // Reset input so the same file can be re-imported if needed
+  input.value = "";
+}
+
+function exportShifts() {
+  if (!shiftsData) return;
+  const blob = new Blob(
+    [JSON.stringify(shiftsData, null, 2)],
+    { type: "application/json" }
+  );
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `shifts_${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
 // ── Admin ───────────────────────────────────────────────────────
 async function tryUnlock() {
   const pw    = document.getElementById("admin-password-input").value;
