@@ -6,8 +6,11 @@
 // Mixer capacities in grams
 const MIXER_MAX = { large: 150000, small: 60000 };
 
-// Map from product names (as they appear in schedule.json) to MOP id
+// Map from product names (as they appear in schedule.json) to MOP id.
+// Includes both the short config names AND the full Odoo product names
+// (the levain planner uses the raw Odoo label, so both forms are needed).
 const PRODUCT_MOP_MAP = {
+  // ── Short / config names ──────────────────────────────────────────────────
   "Trad. Baguette":            "trad-baguette",
   "Trad. Baguette (×3)":       "trad-baguette",
   "Trad. Baguette (×1)":       "trad-baguette",
@@ -35,8 +38,6 @@ const PRODUCT_MOP_MAP = {
   "Brioche Bun":               "brioche-bun",
   "Brioche Buns":              "brioche-bun",
   "Brioche Buns (×3)":         "brioche-bun",
-  "Prep mix Braided Brioche":  "braided-brioche",
-  "Prep mix Brioche Buns":     "brioche-bun",
   "Viennoise":                 "viennoise",
   "Viennoise (×2)":            "viennoise",
   "Pain au Chocolat":          "pac",
@@ -44,6 +45,26 @@ const PRODUCT_MOP_MAP = {
   "Liège Waffle":              "waffle",
   "Liège Waffle (×3)":         "waffle",
   "Liege Waffle":              "waffle",
+  "Prep mix Braided Brioche":  "braided-brioche",
+  "Prep mix Brioche Buns":     "brioche-bun",
+
+  // ── Full Odoo product names (as they appear in schedule.json mix/vac) ─────
+  "Pack of 3 Traditional Sourdough Baguette":      "trad-baguette",
+  "Pack of 3 Sourdough Sesame Baguette":           "sesame-baguette",
+  "Pack of 3 Sourdough Poppy Seed Baguette":       "poppy-baguette",
+  "Sourdough Cheese Baguette (Gruyere Cheese)":    "cheese-baguette",
+  "Pack of 2 Sourdough Loaves (White Flour)":      "sourdough-loaf",
+  "Pack of 3 Ciabatta Sourdough (Sandwich Bread)": "ciabatta",
+  "Pack of 3 Multigrain Sourdough Baguette":       "multigrain-baguette",
+  "Pack of 2 Country Rye Sourdough Loaf":          "country-rye",
+  "Pack of 2 Wholewheat Sourdough Loaf":           "wholewheat",
+  "Pack of 2 Pizza Dough":                         "pizza",
+  "Brioche (Pastry)":                              "braided-brioche",
+  "Pack of 3 Brioche Buns":                        "brioche-bun",
+  "Pack of 2 Viennoise (Brioche Baguette)":        "viennoise",
+  "Pack of 3 Pain au Chocolat":                    "pac",
+  "Pack of 3 Croissant":                           "pac",
+  "Pack of 3 Liège Waffle":                        "waffle",
 };
 
 // Array of all MOPs
