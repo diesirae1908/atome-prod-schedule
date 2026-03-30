@@ -1,65 +1,9 @@
 {
-  "generated_at": "2026-03-29T22:42:00Z",
-  "week_number": 10,
-  "week_start": "2026-03-02",
-  "week_end": "2026-04-05",
+  "generated_at": "2026-03-30T01:17:56Z",
+  "week_number": 11,
+  "week_start": "2026-03-09",
+  "week_end": "2026-04-12",
   "days": [
-    {
-      "date": "2026-03-02",
-      "label": "MONDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-03-03",
-      "label": "TUESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-03-04",
-      "label": "WEDNESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-03-05",
-      "label": "THURSDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-03-06",
-      "label": "FRIDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-03-07",
-      "label": "SATURDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-03-08",
-      "label": "SUNDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "vacuuming": []
-    },
     {
       "date": "2026-03-09",
       "label": "MONDAY",
@@ -593,13 +537,21 @@
       "premix": [
         {
           "label": "Prep mix Brioche",
-          "total_units": 400,
+          "total_units": 100,
           "products": [
-            "Brioche",
+            "Brioche"
+          ],
+          "mo_refs": [
+            "WH/MO/00592"
+          ]
+        },
+        {
+          "label": "Prep mix Brioche",
+          "total_units": 300,
+          "products": [
             "Brioche Buns (×3)"
           ],
           "mo_refs": [
-            "WH/MO/00592",
             "WH/MO/00593"
           ]
         }
@@ -851,6 +803,62 @@
     },
     {
       "date": "2026-04-05",
+      "label": "SUNDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-04-06",
+      "label": "MONDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-04-07",
+      "label": "TUESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-04-08",
+      "label": "WEDNESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-04-09",
+      "label": "THURSDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-04-10",
+      "label": "FRIDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-04-11",
+      "label": "SATURDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-04-12",
       "label": "SUNDAY",
       "premix": [],
       "mix": [],
