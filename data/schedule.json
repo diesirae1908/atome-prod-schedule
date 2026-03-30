@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T21:25:49Z",
+  "generated_at": "2026-03-30T21:30:21Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -385,11 +385,11 @@
         {
           "sku": "1-AT3P-SGL",
           "name": "Pack of 3 apple turnover",
-          "qty_packs": 224.0,
-          "qty_units": 224.0,
-          "qty_pouches": 224.0,
+          "qty_packs": 192.0,
+          "qty_units": 192.0,
+          "qty_pouches": 192.0,
           "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00583-002"
+          "mo_ref": "WH/MO/00583-003"
         }
       ]
     },
