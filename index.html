@@ -448,6 +448,7 @@
     <a href="outputs.html" class="planner-btn">📊 Outputs</a>
     <a href="mops.html" class="planner-btn">📚 MOPs</a>
     <a href="levain.html" class="planner-btn">🫙 Levain</a>
+    <button onclick="openShiftsRo()" class="planner-btn">📋 Shifts</button>
     <div class="week-nav">
       <button id="prevWeek">◀</button>
       <div class="week-picker-wrap">
@@ -459,6 +460,24 @@
     <button class="refresh-btn" id="refreshBtn">🔄 Refresh from Odoo</button>
     <span class="sync-dot syncing" id="syncDot" title="Syncing…"></span>
     <div class="meta" id="metaLine">Loading…</div>
+  </div>
+</div>
+
+<!-- ── Read-only Shift Table Modal ── -->
+<div id="modal-shifts-ro" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.5);overflow:auto">
+  <div style="background:#fff;border-radius:12px;max-width:960px;margin:40px auto;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.2)">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#1e1b4b;color:#fff">
+      <div>
+        <div style="font-size:15px;font-weight:700">Team Shift Table</div>
+        <div id="shifts-ro-week-label" style="font-size:11px;color:#c7d2fe;margin-top:2px"></div>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center">
+        <button onclick="shiftRoNav(-1)" style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:6px;padding:5px 11px;font-size:14px;cursor:pointer">‹</button>
+        <button onclick="shiftRoNav(1)"  style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:6px;padding:5px 11px;font-size:14px;cursor:pointer">›</button>
+        <button onclick="closeShiftsRo()" style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:6px;padding:5px 11px;font-size:14px;cursor:pointer">✕</button>
+      </div>
+    </div>
+    <div id="shifts-ro-wrap" style="padding:16px;overflow-x:auto"></div>
   </div>
 </div>
 
@@ -1402,6 +1421,81 @@ document.addEventListener("visibilitychange", () => {
       <small>Make sure <code>data/schedule.json</code> exists.</small>`;
   }
 })();
+</script>
+<script>
+// ── Read-only Shift Table ──────────────────────────────────────────────────
+let shiftsRoData  = null;
+let shiftsRoStart = null;
+
+const SHIFT_BG = { S:"#d1fae5",M:"#ede9fe",V:"#e0f2fe","P&P":"#fce7f3",Waffle:"#ffedd5",H:"#f3f4f6",BD:"#fef9c3",Sick:"#fee2e2","":"#f9fafb" };
+const SHIFT_FG = { S:"#065f46",M:"#5b21b6",V:"#0369a1","P&P":"#9d174d",Waffle:"#c2410c",H:"#6b7280",BD:"#854d0e",Sick:"#b91c1c","":"#9ca3af" };
+
+function roWeekStart(d) {
+  const day = new Date(d); day.setUTCHours(12,0,0,0);
+  const dow = day.getUTCDay();
+  day.setUTCDate(day.getUTCDate() + (dow === 0 ? -6 : 1 - dow));
+  return day;
+}
+function roAddDays(d, n) { const r = new Date(d); r.setUTCDate(r.getUTCDate() + n); return r; }
+function roFmt(d) { return d.toISOString().slice(0, 10); }
+
+async function openShiftsRo() {
+  document.getElementById("modal-shifts-ro").style.display = "block";
+  if (!shiftsRoData) {
+    document.getElementById("shifts-ro-wrap").innerHTML = "<p style='padding:20px;color:#6b7280'>Loading…</p>";
+    try {
+      const r = await fetch(`data/shifts.json?_=${Date.now()}`);
+      if (r.ok) shiftsRoData = await r.json();
+    } catch { document.getElementById("shifts-ro-wrap").innerHTML = "<p style='padding:20px;color:#dc2626'>Could not load shifts data.</p>"; return; }
+  }
+  shiftsRoStart = shiftsRoStart || roWeekStart(new Date());
+  renderShiftsRo();
+}
+
+function closeShiftsRo() { document.getElementById("modal-shifts-ro").style.display = "none"; }
+
+function shiftRoNav(dir) { shiftsRoStart = roAddDays(shiftsRoStart, dir * 7); renderShiftsRo(); }
+
+function renderShiftsRo() {
+  if (!shiftsRoData) return;
+  const bakers = shiftsRoData.bakers || [];
+  const sched  = shiftsRoData.schedule || {};
+  const days   = Array.from({ length: 7 }, (_, i) => roAddDays(shiftsRoStart, i));
+
+  document.getElementById("shifts-ro-week-label").textContent =
+    `${days[0].toLocaleDateString("en-GB",{day:"numeric",month:"short"})} — ${days[6].toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})}`;
+
+  let html = `<table style="width:100%;border-collapse:collapse;font-size:12px">
+    <thead><tr><th style="text-align:left;padding:8px 12px;background:#f1f5f9;border:1px solid #e5e7eb">Day</th>`;
+  for (const b of bakers)
+    html += `<th style="text-align:center;padding:8px 10px;background:#f1f5f9;border:1px solid #e5e7eb;white-space:nowrap">${b.name}</th>`;
+  html += `</tr></thead><tbody>`;
+
+  const todayStr = roFmt(new Date());
+  for (const d of days) {
+    const ds      = roFmt(d);
+    const isToday = ds === todayStr;
+    const rowBg   = isToday ? "#fffbeb" : "#fff";
+    html += `<tr style="background:${rowBg}">
+      <td style="padding:8px 12px;border:1px solid #e5e7eb;font-weight:${isToday?"700":"500"};white-space:nowrap;color:${isToday?"#92400e":"#374151"}">
+        ${d.toLocaleDateString("en-GB",{weekday:"short"})}<br>
+        <span style="font-size:11px;color:${isToday?"#d97706":"#9ca3af"}">${d.getDate()} ${d.toLocaleDateString("en-GB",{month:"short"})}</span>
+      </td>`;
+    for (const b of bakers) {
+      const code = sched[ds]?.[b.name] || "";
+      html += `<td style="text-align:center;padding:6px 8px;border:1px solid #e5e7eb">
+        <span style="display:inline-block;padding:3px 10px;border-radius:5px;background:${SHIFT_BG[code]||"#f9fafb"};color:${SHIFT_FG[code]||"#9ca3af"};font-weight:600;font-size:11px">${code||"–"}</span>
+      </td>`;
+    }
+    html += `</tr>`;
+  }
+  html += `</tbody></table>`;
+  document.getElementById("shifts-ro-wrap").innerHTML = html;
+}
+
+document.getElementById("modal-shifts-ro").addEventListener("click", function(e) {
+  if (e.target === this) closeShiftsRo();
+});
 </script>
 </body>
 </html>

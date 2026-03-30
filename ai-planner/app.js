@@ -278,6 +278,11 @@ async function loadShifts() {
 
 // ── Shift table ─────────────────────────────────────────────────
 function openShiftTable() {
+  if (!isAdmin) {
+    alert("The shift table requires admin access.\nPlease unlock Admin first.");
+    openModal("modal-admin");
+    return;
+  }
   shiftWeekStart = weekStart(new Date(selectedDate + "T12:00:00Z"));
   renderShiftTable();
   openModal("modal-shifts");
@@ -285,24 +290,26 @@ function openShiftTable() {
 
 function renderShiftTable() {
   if (!shiftsData) return;
-  const days = Array.from({ length: 7 }, (_, i) => addDays(shiftWeekStart, i));
-  document.getElementById("shift-week-label").textContent =
-    `${fmtShort(days[0])} — ${fmtShort(days[6])}`;
-
+  const days   = Array.from({ length: 7 }, (_, i) => addDays(shiftWeekStart, i));
   const bakers = shiftsData.bakers || [];
   const sched  = shiftsData.schedule || {};
 
-  let html = `<div style="overflow-x:auto"><table class="shift-table"><thead><tr>
-    <th>Baker</th>`;
-  for (const d of days) {
-    html += `<th>${d.toLocaleDateString("en-GB",{weekday:"short"})}<br><small>${d.getDate()} ${d.toLocaleDateString("en-GB",{month:"short"})}</small></th>`;
+  document.getElementById("shift-week-label").textContent =
+    `${fmtShort(days[0])} — ${fmtShort(days[6])}`;
+
+  // Rows = days, columns = bakers (names on top)
+  let html = `<div style="overflow-x:auto"><table class="shift-table"><thead><tr><th>Day</th>`;
+  for (const baker of bakers) {
+    html += `<th>${escHtml(baker.name)}</th>`;
   }
   html += `</tr></thead><tbody>`;
 
-  for (const baker of bakers) {
-    html += `<tr><td class="td-name">${escHtml(baker.name)}</td>`;
-    for (const d of days) {
-      const ds   = fmtDate(d);
+  for (const d of days) {
+    const ds      = fmtDate(d);
+    const dayName = d.toLocaleDateString("en-GB", { weekday: "short" });
+    const dayDate = `${d.getDate()} ${d.toLocaleDateString("en-GB", { month: "short" })}`;
+    html += `<tr><td class="td-name">${dayName}<br><small>${dayDate}</small></td>`;
+    for (const baker of bakers) {
       const code = sched[ds]?.[baker.name] || "";
       html += `<td><select class="shift-cell ${shiftClass(code)}" data-baker="${escHtml(baker.name)}" data-date="${ds}" onchange="onShiftChange(this)">`;
       for (const c of SHIFT_CODES) {
