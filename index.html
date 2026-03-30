@@ -1201,7 +1201,7 @@ function renderMopModal(mopId, units) {
   const maxG = (typeof MIXER_MAX !== "undefined") ? (MIXER_MAX[mop.mixer] || 150000) : 150000;
   const loads = Math.ceil(doughOnly / maxG);
   const perLoad = Math.round(doughOnly / loads);
-  const mixerLabel = mop.mixer === "large" ? "Large mixer (150 kg max)" : "Small mixer (50 kg max)";
+  const mixerLabel = mop.mixer === "large" ? "Large mixer (150 kg max)" : "Small mixer (60 kg max)";
 
   // steps
   const stepsHtml = (mop.steps || []).map(s =>

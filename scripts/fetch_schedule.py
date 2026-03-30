@@ -125,6 +125,8 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
 
         product_name = mo["product_id"][1] if mo.get("product_id") else ""
         sku = extract_sku(product_name)
+        # Strip [SKU] prefix to get the clean display name from Odoo
+        clean_name = re.sub(r'^\[[^\]]+\]\s*', '', product_name).strip() if product_name else ""
         qty_packs = float(mo.get("product_qty") or 0)
         mo_ref = mo.get("name", "")
 
@@ -148,7 +150,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
         if cfg is None:
             # Unknown SKU – still show in vacuuming as packaging-only
             cfg = {
-                "name": product_name,
+                "name": clean_name or product_name,
                 "dough_type": None,
                 "mix_offset": None, "shape_offset": None,
                 "score_offset": None, "vacuum_offset": 0,
@@ -174,7 +176,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
         if vac_date in day_map:
             day_map[vac_date]["vacuuming"].append({
                 "sku": sku or "?",
-                "name": cfg.get("name") or product_name,
+                "name": clean_name or cfg.get("name") or product_name,
                 "qty_packs": qty_packs,
                 "qty_units": qty_units,
                 "qty_pouches": qty_pouches,
@@ -195,7 +197,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
 
             day_map[shape_date]["shaping"].append({
                 "sku": sku or "?",
-                "name": cfg.get("name") or product_name,
+                "name": clean_name or cfg.get("name") or product_name,
                 "qty_packs": int(round(qty_packs)),
                 "qty_units": int(round(qty_units)),
                 "total_kg": total_kg,
@@ -212,7 +214,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
             if score_date in day_map:
                 day_map[score_date]["score_tasks"].append({
                     "action": d1_action,
-                    "name": cfg.get("name") or product_name,
+                    "name": clean_name or cfg.get("name") or product_name,
                     "qty_packs": int(round(qty_packs)),
                     "qty_units": int(round(qty_units)),
                     "mo_ref": mo_ref,
@@ -228,7 +230,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
             units_per_pack = cfg.get("units_per_pack") or 1
             weight_g = cfg.get("weight_g_per_unit")
             total_kg = (qty_packs * units_per_pack * weight_g / 1000) if weight_g else None
-            prod_name = cfg.get("name") or sku or "?"
+            prod_name = clean_name or cfg.get("name") or sku or "?"
 
             # One mixing task per MO (keyed by mo_ref), not per dough type
             mix_key = mo_ref or f"{dough_type}_{prod_name}"
@@ -268,7 +270,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                     }
                 pm_entry = day_map[premix_date]["premix"][pm_key]
                 pm_entry["total_units"] += int(round(qty_packs * upp))
-                pm_prod = cfg.get("name") or sku or "?"
+                pm_prod = clean_name or cfg.get("name") or sku or "?"
                 if pm_prod not in pm_entry["products"]:
                     pm_entry["products"].append(pm_prod)
                 if mo_ref and mo_ref not in pm_entry["mo_refs"]:

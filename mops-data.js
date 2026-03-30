@@ -4,7 +4,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Mixer capacities in grams
-const MIXER_MAX = { large: 150000, small: 50000 };
+const MIXER_MAX = { large: 150000, small: 60000 };
 
 // Map from product names (as they appear in schedule.json) to MOP id
 const PRODUCT_MOP_MAP = {
