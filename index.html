@@ -239,6 +239,8 @@
     }
     .score-pill.score-freeze { background: #fef3c7; border-color: #fbbf24; }
     .score-pill.freeze-only  { background: #e0f2fe; border-color: #38bdf8; }
+    .score-pill.done         { opacity: .38; background: #f3f4f6; border-color: #e5e7eb; }
+    .score-pill.done .prod-name { text-decoration: line-through; color: var(--muted); }
     .score-pill .pill-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; }
     .score-pill .prod-name   { font-weight: 600; font-size: 12px; flex: 1; line-height: 1.35; }
 
@@ -966,7 +968,7 @@ function renderVacCell(day) {
       : `<span class="prod-dluo dluo-missing">⚠ DLUO missing — update lot in Odoo</span>`;
 
     const qtyStr = v.qty_packs
-      ? `${Math.round(v.qty_units)} final products · ${Math.round(v.qty_pouches ?? v.qty_packs)} pouches`
+      ? `${Math.round(v.qty_packs)} bundles · ${Math.round(v.qty_pouches ?? v.qty_packs)} pouches`
       : "";
 
     const vacMoRef  = v.mo_ref || v.sku;
@@ -1019,6 +1021,7 @@ function renderQaCell(day) {
       <div class="pill-header">
         <span class="prod-name">🧪 ${shortName(v.name)}</span>
       </div>
+      <span class="prod-sub">${v.mo_ref || ""}</span>
       <div class="qa-actions">
         <button class="qa-btn qa-ok-btn${state.status === "ok" ? " active" : ""}" data-qakey="${key}" data-qaval="ok">✓ OK</button>
         <button class="qa-btn qa-nok-btn${state.status === "nok" ? " active" : ""}" data-qakey="${key}" data-qaval="nok">✗ NOK</button>

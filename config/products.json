@@ -121,7 +121,7 @@
       "mix_offset": -1, "shape_offset": -1, "score_offset": -1, "vacuum_offset": 0,
       "premix_offset": -2, "premix_label": "Prep mix Viennoise",
       "dluo_months": 6,
-      "units_per_pack": 2, "pouches_per_pack": 1, "weight_g_per_unit": 200
+      "units_per_pack": 2, "pouches_per_pack": 2, "weight_g_per_unit": 200
     },
     "WW2P-SGL": {
       "name": "Wholewheat Loaf (×2)",
