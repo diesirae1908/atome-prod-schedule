@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T03:15:41Z",
+  "generated_at": "2026-03-30T16:27:56Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -160,31 +160,8 @@
     {
       "date": "2026-03-26",
       "label": "THURSDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 813,
-          "products": [
-            "Pain au Chocolat (×3)"
-          ],
-          "mo_refs": [
-            "WH/MO/00586"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Sesame Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 126.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00587",
-          "products": [
-            "Sesame Baguette (×3)"
-          ]
-        }
-      ],
+      "premix": [],
+      "mix": [],
       "shaping": [],
       "score_tasks": [],
       "vacuuming": []
@@ -192,242 +169,53 @@
     {
       "date": "2026-03-27",
       "label": "FRIDAY",
-      "premix": [
-        {
-          "label": "Prep mix Brioche",
-          "total_units": 348,
-          "products": [
-            "Brioche Buns (×3)"
-          ],
-          "mo_refs": [
-            "WH/MO/00565"
-          ]
-        },
-        {
-          "label": "Prep mix Waffles",
-          "total_units": 414,
-          "products": [
-            "Liège Waffle (×3)"
-          ],
-          "mo_refs": [
-            "WH/MO/00566"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 126.0,
-          "total_units": 180,
-          "mo_ref": "WH/MO/00560",
-          "products": [
-            "Sourdough Loaf (×2)"
-          ]
-        },
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 73.2,
-          "total_units": 813,
-          "mo_ref": "WH/MO/00586",
-          "products": [
-            "Pain au Chocolat (×3)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 126.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00588",
-          "products": [
-            "Trad. Baguette (×3)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pain au Chocolat (×3)",
-          "qty_packs": 271,
-          "qty_units": 813,
-          "total_kg": 73.2,
-          "mo_ref": "WH/MO/00586",
-          "d0": "2026-03-28"
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Sesame Baguette (×3)",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 126.0,
-          "mo_ref": "WH/MO/00587",
-          "d0": "2026-03-28"
-        },
-        {
-          "sku": "LF2P",
-          "name": "Sourdough Loaf (×2)",
-          "qty_packs": 90,
-          "qty_units": 180,
-          "total_kg": 126.0,
-          "mo_ref": "WH/MO/00560",
-          "d0": "2026-03-29"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
     {
       "date": "2026-03-28",
       "label": "SATURDAY",
-      "premix": [
-        {
-          "label": "Prep mix Waffles",
-          "total_units": 414,
-          "products": [
-            "Liège Waffle (×3)"
-          ],
-          "mo_refs": [
-            "WH/MO/00567"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "CIABATTA",
-          "label": "Ciabatta (×3)",
+          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "unit": "kg",
           "total_kg": 126.0,
           "total_units": 420,
           "mo_ref": "WH/MO/00559",
           "products": [
-            "Ciabatta (×3)"
-          ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/00565",
-          "products": [
-            "Brioche Buns (×3)"
-          ]
-        },
-        {
-          "dough_type": "WAFFLES",
-          "label": "Liège Waffle (×3)",
-          "unit": "kg",
-          "total_kg": 41.4,
-          "total_units": 414,
-          "mo_ref": "WH/MO/00566",
-          "products": [
-            "Liège Waffle (×3)"
+            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
           ]
         },
         {
           "dough_type": "TRAD",
-          "label": "Trad. Baguette (×3)",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
           "unit": "kg",
           "total_kg": 126.0,
           "total_units": 360,
           "mo_ref": "WH/MO/00596",
           "products": [
-            "Trad. Baguette (×3)"
+            "Pack of 3 Traditional Sourdough Baguette"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "BR3BN-SGL",
-          "name": "Brioche Buns (×3)",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00565",
-          "d0": "2026-03-29"
-        },
-        {
           "sku": "CIA3-SGL",
-          "name": "Ciabatta (×3)",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "qty_packs": 140,
           "qty_units": 420,
           "total_kg": 126.0,
           "mo_ref": "WH/MO/00559",
           "d0": "2026-03-30"
-        },
-        {
-          "sku": "WA3P-SGL",
-          "name": "Liège Waffle (×3)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 41.4,
-          "mo_ref": "WH/MO/00566",
-          "d0": "2026-03-28"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Trad. Baguette (×3)",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 126.0,
-          "mo_ref": "WH/MO/00588",
-          "d0": "2026-03-29"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Sourdough Loaf (×2)",
-          "qty_packs": 90,
-          "qty_units": 180,
-          "mo_ref": "WH/MO/00560",
-          "d0": "2026-03-29"
-        }
-      ],
-      "vacuuming": [
-        {
-          "sku": "GNOC-330",
-          "name": "Gnocchi",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2026-09-27",
-          "mo_ref": "WH/MO/00578"
-        },
-        {
-          "sku": "WA3P-SGL",
-          "name": "Liège Waffle (×3)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
-          "dluo": "2026-09-28",
-          "mo_ref": "WH/MO/00566"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pain au Chocolat (×3)",
-          "qty_packs": 271.0,
-          "qty_units": 813.0,
-          "qty_pouches": 271.0,
-          "dluo": "2026-09-27",
-          "mo_ref": "WH/MO/00586"
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Sesame Baguette (×3)",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2026-12-27",
-          "mo_ref": "WH/MO/00587"
-        }
-      ]
+      "score_tasks": [],
+      "vacuuming": []
     },
     {
       "date": "2026-03-29",
@@ -437,7 +225,7 @@
           "label": "Prep mix Viennoise",
           "total_units": 200,
           "products": [
-            "Viennoise (×2)"
+            "Pack of 2 Viennoise (Brioche Baguette)"
           ],
           "mo_refs": [
             "WH/MO/00595"
@@ -446,32 +234,21 @@
       ],
       "mix": [
         {
-          "dough_type": "WAFFLES",
-          "label": "Liège Waffle (×3)",
-          "unit": "kg",
-          "total_kg": 41.4,
-          "total_units": 414,
-          "mo_ref": "WH/MO/00567",
-          "products": [
-            "Liège Waffle (×3)"
-          ]
-        },
-        {
           "dough_type": "CIABATTA",
-          "label": "Ciabatta (×3)",
+          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "unit": "kg",
           "total_kg": 252.0,
           "total_units": 840,
           "mo_ref": "WH/MO/00589",
           "products": [
-            "Ciabatta (×3)"
+            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
           ]
         }
       ],
       "shaping": [
         {
           "sku": "CIA3-SGL",
-          "name": "Ciabatta (×3)",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "qty_packs": 280,
           "qty_units": 840,
           "total_kg": 252.0,
@@ -479,17 +256,8 @@
           "d0": "2026-03-31"
         },
         {
-          "sku": "WA3P-SGL",
-          "name": "Liège Waffle (×3)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 41.4,
-          "mo_ref": "WH/MO/00567",
-          "d0": "2026-03-29"
-        },
-        {
           "sku": "TR3P-SGL",
-          "name": "Trad. Baguette (×3)",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 120,
           "qty_units": 360,
           "total_kg": 126.0,
@@ -500,69 +268,14 @@
       "score_tasks": [
         {
           "action": "freeze_only",
-          "name": "Ciabatta (×3)",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "qty_packs": 140,
           "qty_units": 420,
           "mo_ref": "WH/MO/00559",
           "d0": "2026-03-30"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Brioche Buns (×3)",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-09-28",
-          "mo_ref": "WH/MO/00565"
-        },
-        {
-          "sku": "1-CRB8P-SGL",
-          "name": "Croissant Bites (×8)",
-          "qty_packs": 200.0,
-          "qty_units": 1600.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-10-11",
-          "mo_ref": "WH/MO/00599"
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Croissants (×3)",
-          "qty_packs": 420.0,
-          "qty_units": 1260.0,
-          "qty_pouches": 420.0,
-          "dluo": "2026-07-18",
-          "mo_ref": "WH/MO/00584"
-        },
-        {
-          "sku": "WA3P-SGL",
-          "name": "Liège Waffle (×3)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
-          "dluo": "2026-09-29",
-          "mo_ref": "WH/MO/00567"
-        },
-        {
-          "sku": "LF2P",
-          "name": "Sourdough Loaf (×2)",
-          "qty_packs": 90.0,
-          "qty_units": 180.0,
-          "qty_pouches": 180.0,
-          "dluo": "2026-12-27",
-          "mo_ref": "WH/MO/00560"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Trad. Baguette (×3)",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2026-12-28",
-          "mo_ref": "WH/MO/00588"
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-03-30",
@@ -572,7 +285,7 @@
           "label": "Prep mix Brioche",
           "total_units": 100,
           "products": [
-            "Brioche"
+            "Brioche (Pastry)"
           ],
           "mo_refs": [
             "WH/MO/00592"
@@ -582,7 +295,7 @@
           "label": "Prep mix Brioche",
           "total_units": 300,
           "products": [
-            "Brioche Buns (×3)"
+            "Pack of 3 Brioche Buns"
           ],
           "mo_refs": [
             "WH/MO/00593"
@@ -592,42 +305,42 @@
       "mix": [
         {
           "dough_type": "TRAD",
-          "label": "Cheese Baguette",
+          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "unit": "kg",
           "total_kg": 141.2,
           "total_units": 353,
           "mo_ref": "WH/MO/00551",
           "products": [
-            "Cheese Baguette"
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
         },
         {
           "dough_type": "TRAD",
-          "label": "Sourdough Loaf (×2)",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
           "unit": "kg",
           "total_kg": 246.4,
           "total_units": 352,
           "mo_ref": "WH/MO/00591",
           "products": [
-            "Sourdough Loaf (×2)"
+            "Pack of 2 Sourdough Loaves (White Flour)"
           ]
         },
         {
           "dough_type": "VIENNOISE",
-          "label": "Viennoise (×2)",
+          "label": "Pack of 2 Viennoise (Brioche Baguette)",
           "unit": "kg",
           "total_kg": 40.0,
           "total_units": 200,
           "mo_ref": "WH/MO/00595",
           "products": [
-            "Viennoise (×2)"
+            "Pack of 2 Viennoise (Brioche Baguette)"
           ]
         }
       ],
       "shaping": [
         {
           "sku": "LF2P",
-          "name": "Sourdough Loaf (×2)",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 176,
           "qty_units": 352,
           "total_kg": 246.4,
@@ -636,7 +349,7 @@
         },
         {
           "sku": "VI2P-SGL",
-          "name": "Viennoise (×2)",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
           "qty_packs": 100,
           "qty_units": 200,
           "total_kg": 40.0,
@@ -647,7 +360,7 @@
       "score_tasks": [
         {
           "action": "freeze_only",
-          "name": "Ciabatta (×3)",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "qty_packs": 280,
           "qty_units": 840,
           "mo_ref": "WH/MO/00589",
@@ -656,17 +369,8 @@
       ],
       "vacuuming": [
         {
-          "sku": "1-PACB8P-SGL",
-          "name": "Choc. Croissant Bites (×8)",
-          "qty_packs": 240.0,
-          "qty_units": 1920.0,
-          "qty_pouches": 240.0,
-          "dluo": "2026-06-06",
-          "mo_ref": "WH/MO/00598"
-        },
-        {
           "sku": "CIA3-SGL",
-          "name": "Ciabatta (×3)",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "qty_packs": 140.0,
           "qty_units": 420.0,
           "qty_pouches": 140.0,
@@ -675,7 +379,7 @@
         },
         {
           "sku": "TR3P-SGL",
-          "name": "Trad. Baguette (×3)",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 120.0,
           "qty_units": 360.0,
           "qty_pouches": 360.0,
@@ -684,12 +388,21 @@
         },
         {
           "sku": "1-AT3P-SGL",
-          "name": "[1-AT3P-SGL] Pack of 3 apple turnover",
+          "name": "Pack of 3 apple turnover",
           "qty_packs": 480.0,
           "qty_units": 480.0,
           "qty_pouches": 480.0,
           "dluo": "2026-11-11",
           "mo_ref": "WH/MO/00583"
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 240.0,
+          "qty_units": 1920.0,
+          "qty_pouches": 240.0,
+          "dluo": "2026-06-06",
+          "mo_ref": "WH/MO/00598"
         }
       ]
     },
@@ -701,7 +414,7 @@
           "label": "Prep mix Brioche",
           "total_units": 348,
           "products": [
-            "Brioche Buns (×3)"
+            "Pack of 3 Brioche Buns"
           ],
           "mo_refs": [
             "WH/MO/00601"
@@ -711,42 +424,42 @@
       "mix": [
         {
           "dough_type": "BRIOCHE",
-          "label": "Brioche",
+          "label": "Brioche (Pastry)",
           "unit": "kg",
           "total_kg": 45.0,
           "total_units": 100,
           "mo_ref": "WH/MO/00592",
           "products": [
-            "Brioche"
+            "Brioche (Pastry)"
           ]
         },
         {
           "dough_type": "BRIOCHE",
-          "label": "Brioche Buns (×3)",
+          "label": "Pack of 3 Brioche Buns",
           "unit": "kg",
           "total_kg": 45.0,
           "total_units": 300,
           "mo_ref": "WH/MO/00593",
           "products": [
-            "Brioche Buns (×3)"
+            "Pack of 3 Brioche Buns"
           ]
         },
         {
           "dough_type": "TRAD",
-          "label": "Poppy Seed Baguette (×3)",
+          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
           "unit": "kg",
           "total_kg": 122.8,
           "total_units": 351,
           "mo_ref": "WH/MO/00594",
           "products": [
-            "Poppy Seed Baguette (×3)"
+            "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
         }
       ],
       "shaping": [
         {
           "sku": "BR-SGL",
-          "name": "Brioche",
+          "name": "Brioche (Pastry)",
           "qty_packs": 100,
           "qty_units": 100,
           "total_kg": 45.0,
@@ -755,7 +468,7 @@
         },
         {
           "sku": "BR3BN-SGL",
-          "name": "Brioche Buns (×3)",
+          "name": "Pack of 3 Brioche Buns",
           "qty_packs": 100,
           "qty_units": 300,
           "total_kg": 45.0,
@@ -764,7 +477,7 @@
         },
         {
           "sku": "CH-SGL",
-          "name": "Cheese Baguette",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "qty_packs": 353,
           "qty_units": 353,
           "total_kg": 141.2,
@@ -775,7 +488,7 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Sourdough Loaf (×2)",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 176,
           "qty_units": 352,
           "mo_ref": "WH/MO/00591",
@@ -784,22 +497,22 @@
       ],
       "vacuuming": [
         {
-          "sku": "CIA3-SGL",
-          "name": "Ciabatta (×3)",
-          "qty_packs": 280.0,
-          "qty_units": 840.0,
-          "qty_pouches": 280.0,
-          "dluo": "2026-12-29",
-          "mo_ref": "WH/MO/00589"
-        },
-        {
           "sku": "VI2P-SGL",
-          "name": "Viennoise (×2)",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
           "qty_packs": 100.0,
           "qty_units": 200.0,
           "qty_pouches": 100.0,
           "dluo": "2026-09-30",
           "mo_ref": "WH/MO/00595"
+        },
+        {
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 280.0,
+          "qty_units": 840.0,
+          "qty_pouches": 280.0,
+          "dluo": "2026-12-29",
+          "mo_ref": "WH/MO/00589"
         }
       ]
     },
@@ -811,7 +524,7 @@
           "label": "Prep mix Brioche",
           "total_units": 116,
           "products": [
-            "Brioche"
+            "Brioche (Pastry)"
           ],
           "mo_refs": [
             "WH/MO/00602"
@@ -821,51 +534,42 @@
       "mix": [
         {
           "dough_type": "COUNTRY",
-          "label": "Country Rye Loaf (×2)",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
           "unit": "kg",
           "total_kg": 168.0,
           "total_units": 240,
           "mo_ref": "WH/MO/00600",
           "products": [
-            "Country Rye Loaf (×2)"
+            "Pack of 2 Country Rye Sourdough Loaf"
           ]
         },
         {
           "dough_type": "BRIOCHE",
-          "label": "Brioche Buns (×3)",
+          "label": "Pack of 3 Brioche Buns",
           "unit": "kg",
           "total_kg": 52.2,
           "total_units": 348,
           "mo_ref": "WH/MO/00601",
           "products": [
-            "Brioche Buns (×3)"
+            "Pack of 3 Brioche Buns"
           ]
         },
         {
           "dough_type": "TRAD",
-          "label": "Trad. Baguette (×3)",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
           "unit": "kg",
           "total_kg": 122.8,
           "total_units": 351,
           "mo_ref": "WH/MO/00603",
           "products": [
-            "Trad. Baguette (×3)"
+            "Pack of 3 Traditional Sourdough Baguette"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "BR3BN-SGL",
-          "name": "Brioche Buns (×3)",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00601",
-          "d0": "2026-04-02"
-        },
-        {
           "sku": "CTY2P-SGL",
-          "name": "Country Rye Loaf (×2)",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
           "qty_packs": 120,
           "qty_units": 240,
           "total_kg": 168.0,
@@ -873,8 +577,17 @@
           "d0": "2026-04-03"
         },
         {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00601",
+          "d0": "2026-04-02"
+        },
+        {
           "sku": "PO3P-SGL",
-          "name": "Poppy Seed Baguette (×3)",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
           "qty_packs": 117,
           "qty_units": 351,
           "total_kg": 122.8,
@@ -886,7 +599,7 @@
       "vacuuming": [
         {
           "sku": "BR-SGL",
-          "name": "Brioche",
+          "name": "Brioche (Pastry)",
           "qty_packs": 100.0,
           "qty_units": 100.0,
           "qty_pouches": 100.0,
@@ -894,8 +607,17 @@
           "mo_ref": "WH/MO/00592"
         },
         {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176.0,
+          "qty_units": 352.0,
+          "qty_pouches": 352.0,
+          "dluo": "2026-12-30",
+          "mo_ref": "WH/MO/00591"
+        },
+        {
           "sku": "BR3BN-SGL",
-          "name": "Brioche Buns (×3)",
+          "name": "Pack of 3 Brioche Buns",
           "qty_packs": 100.0,
           "qty_units": 300.0,
           "qty_pouches": 100.0,
@@ -904,21 +626,12 @@
         },
         {
           "sku": "CH-SGL",
-          "name": "Cheese Baguette",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "qty_packs": 353.0,
           "qty_units": 353.0,
           "qty_pouches": 353.0,
           "dluo": "2026-12-31",
           "mo_ref": "WH/MO/00551"
-        },
-        {
-          "sku": "LF2P",
-          "name": "Sourdough Loaf (×2)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2026-12-30",
-          "mo_ref": "WH/MO/00591"
         }
       ]
     },
@@ -929,31 +642,31 @@
       "mix": [
         {
           "dough_type": "BRIOCHE",
-          "label": "Brioche",
+          "label": "Brioche (Pastry)",
           "unit": "kg",
           "total_kg": 52.2,
           "total_units": 116,
           "mo_ref": "WH/MO/00602",
           "products": [
-            "Brioche"
+            "Brioche (Pastry)"
           ]
         },
         {
           "dough_type": "TRAD",
-          "label": "Sourdough Loaf (×2)",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
           "unit": "kg",
           "total_kg": 123.2,
           "total_units": 176,
           "mo_ref": "WH/MO/00604",
           "products": [
-            "Sourdough Loaf (×2)"
+            "Pack of 2 Sourdough Loaves (White Flour)"
           ]
         }
       ],
       "shaping": [
         {
           "sku": "BR-SGL",
-          "name": "Brioche",
+          "name": "Brioche (Pastry)",
           "qty_packs": 116,
           "qty_units": 116,
           "total_kg": 52.2,
@@ -962,7 +675,7 @@
         },
         {
           "sku": "LF2P",
-          "name": "Sourdough Loaf (×2)",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 88,
           "qty_units": 176,
           "total_kg": 123.2,
@@ -971,7 +684,7 @@
         },
         {
           "sku": "TR3P-SGL",
-          "name": "Trad. Baguette (×3)",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117,
           "qty_units": 351,
           "total_kg": 122.8,
@@ -982,7 +695,7 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Country Rye Loaf (×2)",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
           "qty_packs": 120,
           "qty_units": 240,
           "mo_ref": "WH/MO/00600",
@@ -992,7 +705,7 @@
       "vacuuming": [
         {
           "sku": "BR3BN-SGL",
-          "name": "Brioche Buns (×3)",
+          "name": "Pack of 3 Brioche Buns",
           "qty_packs": 116.0,
           "qty_units": 348.0,
           "qty_pouches": 116.0,
@@ -1001,7 +714,7 @@
         },
         {
           "sku": "PO3P-SGL",
-          "name": "Poppy Seed Baguette (×3)",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
@@ -1019,7 +732,7 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Sourdough Loaf (×2)",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 88,
           "qty_units": 176,
           "mo_ref": "WH/MO/00604",
@@ -1029,7 +742,7 @@
       "vacuuming": [
         {
           "sku": "BR-SGL",
-          "name": "Brioche",
+          "name": "Brioche (Pastry)",
           "qty_packs": 116.0,
           "qty_units": 116.0,
           "qty_pouches": 116.0,
@@ -1038,7 +751,7 @@
         },
         {
           "sku": "CTY2P-SGL",
-          "name": "Country Rye Loaf (×2)",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
           "qty_packs": 120.0,
           "qty_units": 240.0,
           "qty_pouches": 240.0,
@@ -1047,7 +760,7 @@
         },
         {
           "sku": "TR3P-SGL",
-          "name": "Trad. Baguette (×3)",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
@@ -1066,7 +779,7 @@
       "vacuuming": [
         {
           "sku": "LF2P",
-          "name": "Sourdough Loaf (×2)",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 88.0,
           "qty_units": 176.0,
           "qty_pouches": 176.0,
