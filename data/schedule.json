@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T19:50:56Z",
+  "generated_at": "2026-03-30T21:25:49Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -285,16 +285,6 @@
       "label": "MONDAY",
       "premix": [
         {
-          "label": "Prep mix Braided Brioche",
-          "total_units": 100,
-          "products": [
-            "Brioche (Pastry)"
-          ],
-          "mo_refs": [
-            "WH/MO/00592"
-          ]
-        },
-        {
           "label": "Prep mix Brioche Buns",
           "total_units": 300,
           "products": [
@@ -395,20 +385,11 @@
         {
           "sku": "1-AT3P-SGL",
           "name": "Pack of 3 apple turnover",
-          "qty_packs": 480.0,
-          "qty_units": 480.0,
-          "qty_pouches": 480.0,
+          "qty_packs": 224.0,
+          "qty_units": 224.0,
+          "qty_pouches": 224.0,
           "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00583"
-        },
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 240.0,
-          "qty_units": 1920.0,
-          "qty_pouches": 240.0,
-          "dluo": "2026-06-06",
-          "mo_ref": "WH/MO/00598"
+          "mo_ref": "WH/MO/00583-002"
         }
       ]
     },
@@ -417,29 +398,17 @@
       "label": "TUESDAY",
       "premix": [
         {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 348,
+          "label": "Prep mix Braided Brioche",
+          "total_units": 116,
           "products": [
-            "Pack of 3 Brioche Buns"
+            "Brioche (Pastry)"
           ],
           "mo_refs": [
-            "WH/MO/00601"
+            "WH/MO/00592"
           ]
         }
       ],
       "mix": [
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Brioche (Pastry)",
-          "cfg_name": "Braided Brioche",
-          "unit": "kg",
-          "total_kg": 45.0,
-          "total_units": 100,
-          "mo_ref": "WH/MO/00592",
-          "products": [
-            "Brioche (Pastry)"
-          ]
-        },
         {
           "dough_type": "BRIOCHE",
           "label": "Pack of 3 Brioche Buns",
@@ -466,15 +435,6 @@
         }
       ],
       "shaping": [
-        {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 100,
-          "qty_units": 100,
-          "total_kg": 45.0,
-          "mo_ref": "WH/MO/00592",
-          "d0": "2026-04-01"
-        },
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
@@ -538,19 +498,29 @@
           "mo_refs": [
             "WH/MO/00602"
           ]
+        },
+        {
+          "label": "Prep mix Brioche Buns",
+          "total_units": 348,
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ],
+          "mo_refs": [
+            "WH/MO/00601"
+          ]
         }
       ],
       "mix": [
         {
           "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
+          "label": "Brioche (Pastry)",
+          "cfg_name": "Braided Brioche",
           "unit": "kg",
           "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/00601",
+          "total_units": 116,
+          "mo_ref": "WH/MO/00592",
           "products": [
-            "Pack of 3 Brioche Buns"
+            "Brioche (Pastry)"
           ]
         },
         {
@@ -580,6 +550,15 @@
       ],
       "shaping": [
         {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116,
+          "qty_units": 116,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00592",
+          "d0": "2026-04-02"
+        },
+        {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
           "qty_packs": 120,
@@ -587,15 +566,6 @@
           "total_kg": 168.0,
           "mo_ref": "WH/MO/00605",
           "d0": "2026-04-03"
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00601",
-          "d0": "2026-04-02"
         },
         {
           "sku": "PO3P-SGL",
@@ -609,15 +579,6 @@
       ],
       "score_tasks": [],
       "vacuuming": [
-        {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 100.0,
-          "qty_units": 100.0,
-          "qty_pouches": 100.0,
-          "dluo": "2026-09-30",
-          "mo_ref": "WH/MO/00592"
-        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -652,6 +613,18 @@
       "label": "THURSDAY",
       "premix": [],
       "mix": [
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 348,
+          "mo_ref": "WH/MO/00601",
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ]
+        },
         {
           "dough_type": "BRIOCHE",
           "label": "Brioche (Pastry)",
@@ -697,6 +670,15 @@
           "d0": "2026-04-04"
         },
         {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00601",
+          "d0": "2026-04-03"
+        },
+        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117,
@@ -718,13 +700,13 @@
       ],
       "vacuuming": [
         {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
           "qty_packs": 116.0,
-          "qty_units": 348.0,
+          "qty_units": 116.0,
           "qty_pouches": 116.0,
           "dluo": "2026-10-01",
-          "mo_ref": "WH/MO/00601"
+          "mo_ref": "WH/MO/00592"
         },
         {
           "sku": "PO3P-SGL",
@@ -771,6 +753,15 @@
           "qty_pouches": 240.0,
           "dluo": "2027-01-01",
           "mo_ref": "WH/MO/00605"
+        },
+        {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116.0,
+          "qty_units": 348.0,
+          "qty_pouches": 116.0,
+          "dluo": "2026-10-02",
+          "mo_ref": "WH/MO/00601"
         },
         {
           "sku": "TR3P-SGL",
