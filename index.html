@@ -463,21 +463,32 @@
   </div>
 </div>
 
-<!-- ── Read-only Shift Table Modal ── -->
-<div id="modal-shifts-ro" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.5);overflow:auto">
-  <div style="background:#fff;border-radius:12px;max-width:960px;margin:40px auto;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.2)">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#1e1b4b;color:#fff">
-      <div>
-        <div style="font-size:15px;font-weight:700">Team Shift Table</div>
-        <div id="shifts-ro-week-label" style="font-size:11px;color:#c7d2fe;margin-top:2px"></div>
+<!-- ── Shift Table Modal ── -->
+<div id="modal-shifts-ro" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.55);overflow:auto;padding:20px 0">
+  <div style="background:#fff;border-radius:12px;max-width:min(980px,96vw);margin:0 auto;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.25)">
+    <!-- Header -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 18px;background:#1e1b4b;color:#fff;gap:10px">
+      <div style="font-size:15px;font-weight:700;white-space:nowrap;flex-shrink:0">Team Shifts</div>
+      <div style="display:flex;align-items:center;gap:5px;flex:1;justify-content:center">
+        <button onclick="shiftRoNav(-1)" style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:6px;padding:4px 10px;font-size:14px;cursor:pointer">‹</button>
+        <span id="shifts-ro-week-label" style="font-size:12px;color:#c7d2fe;min-width:80px;text-align:center;white-space:nowrap"></span>
+        <button onclick="shiftRoNav(1)"  style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:6px;padding:4px 10px;font-size:14px;cursor:pointer">›</button>
       </div>
-      <div style="display:flex;gap:6px;align-items:center">
-        <button onclick="shiftRoNav(-1)" style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:6px;padding:5px 11px;font-size:14px;cursor:pointer">‹</button>
-        <button onclick="shiftRoNav(1)"  style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:6px;padding:5px 11px;font-size:14px;cursor:pointer">›</button>
-        <button onclick="closeShiftsRo()" style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:6px;padding:5px 11px;font-size:14px;cursor:pointer">✕</button>
+      <div style="display:flex;gap:5px;align-items:center;flex-shrink:0">
+        <button id="shifts-ro-edit-btn" onclick="toggleShiftsEdit()" style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:6px;padding:4px 11px;font-size:12px;cursor:pointer;white-space:nowrap">✏️ Edit</button>
+        <button onclick="closeShiftsRo()" style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:6px;padding:4px 11px;font-size:14px;cursor:pointer">✕</button>
       </div>
     </div>
-    <div id="shifts-ro-wrap" style="padding:16px;overflow-x:auto"></div>
+    <!-- Save bar (edit mode only) -->
+    <div id="shifts-ro-save-bar" style="display:none;align-items:center;padding:7px 16px;background:#f0fdf4;border-bottom:1px solid #bbf7d0;gap:10px">
+      <span style="font-size:12px;color:#166534">Edit mode — changes not saved yet</span>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <span id="shifts-ro-save-status" style="font-size:11px;color:#6b7280"></span>
+        <button onclick="saveShiftsRo()" style="background:#16a34a;color:#fff;border:none;border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;font-weight:600">💾 Save to GitHub</button>
+      </div>
+    </div>
+    <!-- Table (scrollable body) -->
+    <div id="shifts-ro-wrap" style="overflow-x:auto;max-height:72vh;overflow-y:auto"></div>
   </div>
 </div>
 
@@ -1423,12 +1434,19 @@ document.addEventListener("visibilitychange", () => {
 })();
 </script>
 <script>
-// ── Read-only Shift Table ──────────────────────────────────────────────────
-let shiftsRoData  = null;
-let shiftsRoStart = null;
+// ── Shift Table (view + edit) ─────────────────────────────────────────────
+const RO_REPO         = "diesirae1908/atome-prod-schedule";
+const RO_API_BASE     = `https://api.github.com/repos/${RO_REPO}`;
+const RO_DEFAULT_HASH = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
+const RO_CODES        = ["S","M","V","P&P","Waffle","H","BD","Sick",""];
 
-const SHIFT_BG = { S:"#d1fae5",M:"#ede9fe",V:"#e0f2fe","P&P":"#fce7f3",Waffle:"#ffedd5",H:"#f3f4f6",BD:"#fef9c3",Sick:"#fee2e2","":"#f9fafb" };
-const SHIFT_FG = { S:"#065f46",M:"#5b21b6",V:"#0369a1","P&P":"#9d174d",Waffle:"#c2410c",H:"#6b7280",BD:"#854d0e",Sick:"#b91c1c","":"#9ca3af" };
+let shiftsRoData     = null;
+let shiftsRoStart    = null;
+let shiftsRoEditMode = false;
+let shiftsRoUnlocked = false;
+
+const SH_BG = {S:"#d1fae5",M:"#ede9fe",V:"#e0f2fe","P&P":"#fce7f3",Waffle:"#ffedd5",H:"#f3f4f6",BD:"#fef9c3",Sick:"#fee2e2","":"#f9fafb"};
+const SH_FG = {S:"#065f46",M:"#5b21b6",V:"#0369a1","P&P":"#9d174d",Waffle:"#c2410c",H:"#6b7280",BD:"#854d0e",Sick:"#b91c1c","":"#9ca3af"};
 
 function roWeekStart(d) {
   const day = new Date(d); day.setUTCHours(12,0,0,0);
@@ -1436,56 +1454,151 @@ function roWeekStart(d) {
   day.setUTCDate(day.getUTCDate() + (dow === 0 ? -6 : 1 - dow));
   return day;
 }
-function roAddDays(d, n) { const r = new Date(d); r.setUTCDate(r.getUTCDate() + n); return r; }
-function roFmt(d) { return d.toISOString().slice(0, 10); }
+function roAdd(d, n)  { const r = new Date(d); r.setUTCDate(r.getUTCDate() + n); return r; }
+function roFmt(d)     { return d.toISOString().slice(0, 10); }
+function roWeekNum(d) {
+  const dt = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  dt.setUTCDate(dt.getUTCDate() + 4 - (dt.getUTCDay() || 7));
+  const y1 = new Date(Date.UTC(dt.getUTCFullYear(), 0, 1));
+  return Math.ceil(((dt - y1) / 86400000 + 1) / 7);
+}
+async function roHash(msg) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
+}
 
 async function openShiftsRo() {
   document.getElementById("modal-shifts-ro").style.display = "block";
   if (!shiftsRoData) {
-    document.getElementById("shifts-ro-wrap").innerHTML = "<p style='padding:20px;color:#6b7280'>Loading…</p>";
+    document.getElementById("shifts-ro-wrap").innerHTML = "<p style='padding:24px;color:#6b7280;text-align:center'>Loading…</p>";
     try {
       const r = await fetch(`data/shifts.json?_=${Date.now()}`);
-      if (r.ok) shiftsRoData = await r.json();
-    } catch { document.getElementById("shifts-ro-wrap").innerHTML = "<p style='padding:20px;color:#dc2626'>Could not load shifts data.</p>"; return; }
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      shiftsRoData = await r.json();
+    } catch(e) {
+      document.getElementById("shifts-ro-wrap").innerHTML = `<p style='padding:24px;color:#dc2626'>Could not load shifts: ${e.message}</p>`;
+      return;
+    }
   }
-  shiftsRoStart = shiftsRoStart || roWeekStart(new Date());
+  if (!shiftsRoStart) shiftsRoStart = roWeekStart(new Date());
   renderShiftsRo();
 }
 
-function closeShiftsRo() { document.getElementById("modal-shifts-ro").style.display = "none"; }
+function closeShiftsRo() {
+  document.getElementById("modal-shifts-ro").style.display = "none";
+}
 
-function shiftRoNav(dir) { shiftsRoStart = roAddDays(shiftsRoStart, dir * 7); renderShiftsRo(); }
+function shiftRoNav(dir) { shiftsRoStart = roAdd(shiftsRoStart, dir * 7); renderShiftsRo(); }
+
+async function toggleShiftsEdit() {
+  if (!shiftsRoUnlocked) {
+    const pw = prompt("Admin password:");
+    if (!pw) return;
+    const hash  = await roHash(pw);
+    const saved = localStorage.getItem("atome_pw_hash") || RO_DEFAULT_HASH;
+    if (hash !== saved) { alert("Wrong password."); return; }
+    shiftsRoUnlocked = true;
+  }
+  shiftsRoEditMode = !shiftsRoEditMode;
+  document.getElementById("shifts-ro-edit-btn").textContent = shiftsRoEditMode ? "👁 View" : "✏️ Edit";
+  document.getElementById("shifts-ro-save-bar").style.display = shiftsRoEditMode ? "flex" : "none";
+  renderShiftsRo();
+}
+
+function onShiftRoChange(sel) {
+  const { baker, date } = sel.dataset;
+  if (!shiftsRoData.schedule[date]) shiftsRoData.schedule[date] = {};
+  if (sel.value === "") delete shiftsRoData.schedule[date][baker];
+  else shiftsRoData.schedule[date][baker] = sel.value;
+  sel.style.background = SH_BG[sel.value] || "#f9fafb";
+  sel.style.color      = SH_FG[sel.value] || "#9ca3af";
+  document.getElementById("shifts-ro-save-status").textContent = "Unsaved changes";
+}
+
+async function saveShiftsRo() {
+  const enc = localStorage.getItem("atome_pat_enc");
+  if (!enc) { alert("No PAT found — save your GitHub PAT in AI Planner → Admin first."); return; }
+  const pat    = atob(enc);
+  const status = document.getElementById("shifts-ro-save-status");
+  status.textContent = "Saving…";
+  try {
+    const info = await fetch(`${RO_API_BASE}/contents/prod-schedule/data/shifts.json`, {
+      headers: { Authorization: `token ${pat}`, Accept: "application/vnd.github.v3+json" }
+    }).then(r => r.json());
+    shiftsRoData.meta = { ...shiftsRoData.meta, lastUpdated: new Date().toISOString() };
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(shiftsRoData, null, 2))));
+    const put = await fetch(`${RO_API_BASE}/contents/prod-schedule/data/shifts.json`, {
+      method: "PUT",
+      headers: { Authorization: `token ${pat}`, Accept: "application/vnd.github.v3+json", "Content-Type": "application/json" },
+      body: JSON.stringify({ message: "Update shifts from Production Schedule", content, sha: info.sha })
+    });
+    if (!put.ok) throw new Error(await put.text());
+    status.textContent = "✓ Saved";
+  } catch(e) { status.textContent = "✗ " + e.message; }
+}
 
 function renderShiftsRo() {
   if (!shiftsRoData) return;
-  const bakers = shiftsRoData.bakers || [];
-  const sched  = shiftsRoData.schedule || {};
-  const days   = Array.from({ length: 7 }, (_, i) => roAddDays(shiftsRoStart, i));
-
-  document.getElementById("shifts-ro-week-label").textContent =
-    `${days[0].toLocaleDateString("en-GB",{day:"numeric",month:"short"})} — ${days[6].toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})}`;
-
-  let html = `<table style="width:100%;border-collapse:collapse;font-size:12px">
-    <thead><tr><th style="text-align:left;padding:8px 12px;background:#f1f5f9;border:1px solid #e5e7eb">Day</th>`;
-  for (const b of bakers)
-    html += `<th style="text-align:center;padding:8px 10px;background:#f1f5f9;border:1px solid #e5e7eb;white-space:nowrap">${b.name}</th>`;
-  html += `</tr></thead><tbody>`;
-
+  const bakers   = shiftsRoData.bakers || [];
+  const sched    = shiftsRoData.schedule || {};
+  const days     = Array.from({ length: 28 }, (_, i) => roAdd(shiftsRoStart, i));
   const todayStr = roFmt(new Date());
-  for (const d of days) {
-    const ds      = roFmt(d);
-    const isToday = ds === todayStr;
-    const rowBg   = isToday ? "#fffbeb" : "#fff";
+
+  // Week range label between arrows
+  const w1 = roWeekNum(days[0]);
+  const w4 = roWeekNum(days[27]);
+  document.getElementById("shifts-ro-week-label").textContent =
+    w1 === w4 ? `W${w1}` : `W${w1} – W${w4}`;
+
+  // Sticky header: day col + one col per baker
+  let html = `<table style="width:100%;border-collapse:collapse;font-size:12px">
+    <thead>
+      <tr>
+        <th style="position:sticky;top:0;z-index:2;text-align:left;padding:8px 12px;background:#1e1b4b;color:#c7d2fe;border:1px solid #374151;white-space:nowrap">Day</th>`;
+  for (const b of bakers)
+    html += `<th style="position:sticky;top:0;z-index:2;text-align:center;padding:8px 10px;background:#1e1b4b;color:#c7d2fe;border:1px solid #374151;white-space:nowrap">${b.name}</th>`;
+  html += `</tr>
+    </thead><tbody>`;
+
+  for (let i = 0; i < days.length; i++) {
+    const d        = days[i];
+    const ds       = roFmt(d);
+    const dow      = d.getUTCDay();           // 0=Sun, 6=Sat
+    const isWknd   = dow === 0 || dow === 6;
+    const isToday  = ds === todayStr;
+    const isMon    = dow === 1;
+
+    // Thin separator between weeks (except before first row)
+    if (isMon && i > 0)
+      html += `<tr><td colspan="${bakers.length + 1}" style="padding:0;height:3px;background:#e5e7eb;border:none"></td></tr>`;
+
+    const rowBg    = isToday ? "#fffbeb" : isWknd ? "#f4f6f8" : "#fff";
+    const dayColor = isToday ? "#92400e" : isWknd ? "#9ca3af" : "#374151";
+    const dateColor= isToday ? "#d97706" : isWknd ? "#d1d5db" : "#9ca3af";
+
     html += `<tr style="background:${rowBg}">
-      <td style="padding:8px 12px;border:1px solid #e5e7eb;font-weight:${isToday?"700":"500"};white-space:nowrap;color:${isToday?"#92400e":"#374151"}">
+      <td style="padding:6px 12px;border:1px solid #e5e7eb;white-space:nowrap;color:${dayColor};font-weight:${isToday?"700":"500"}">
+        ${isMon ? `<span style="float:right;font-size:10px;color:#6366f1;font-weight:700;background:#ede9fe;padding:1px 5px;border-radius:4px;margin-left:4px">W${roWeekNum(d)}</span>` : ""}
         ${d.toLocaleDateString("en-GB",{weekday:"short"})}<br>
-        <span style="font-size:11px;color:${isToday?"#d97706":"#9ca3af"}">${d.getDate()} ${d.toLocaleDateString("en-GB",{month:"short"})}</span>
+        <span style="font-size:10px;color:${dateColor}">${d.getDate()} ${d.toLocaleDateString("en-GB",{month:"short"})}</span>
       </td>`;
+
     for (const b of bakers) {
       const code = sched[ds]?.[b.name] || "";
-      html += `<td style="text-align:center;padding:6px 8px;border:1px solid #e5e7eb">
-        <span style="display:inline-block;padding:3px 10px;border-radius:5px;background:${SHIFT_BG[code]||"#f9fafb"};color:${SHIFT_FG[code]||"#9ca3af"};font-weight:600;font-size:11px">${code||"–"}</span>
-      </td>`;
+      const bg   = SH_BG[code] || "#f9fafb";
+      const fg   = SH_FG[code] || "#9ca3af";
+      if (shiftsRoEditMode) {
+        html += `<td style="padding:3px 5px;border:1px solid #e5e7eb;text-align:center">
+          <select data-baker="${b.name}" data-date="${ds}" onchange="onShiftRoChange(this)"
+            style="width:100%;border:1px solid #d1d5db;border-radius:5px;padding:3px 2px;font-size:11px;font-weight:600;cursor:pointer;background:${bg};color:${fg}">`;
+        for (const c of RO_CODES)
+          html += `<option value="${c}" ${c===code?"selected":""}>${c||"off"}</option>`;
+        html += `</select></td>`;
+      } else {
+        html += `<td style="text-align:center;padding:5px 6px;border:1px solid #e5e7eb">
+          <span style="display:inline-block;padding:2px 9px;border-radius:5px;background:${bg};color:${fg};font-weight:600;font-size:11px">${code||"–"}</span>
+        </td>`;
+      }
     }
     html += `</tr>`;
   }

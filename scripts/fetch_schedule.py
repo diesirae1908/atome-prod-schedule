@@ -238,14 +238,16 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
             premix_date = iso(d0 + timedelta(days=pm_offset))
             if premix_date in day_map:
                 upp = cfg.get("units_per_pack") or 1
-                if pm_label not in day_map[premix_date]["premix"]:
-                    day_map[premix_date]["premix"][pm_label] = {
+                # Key per (label, MO) so each MO gets its own pill
+                pm_key = f"{pm_label}|{mo_ref}" if mo_ref else pm_label
+                if pm_key not in day_map[premix_date]["premix"]:
+                    day_map[premix_date]["premix"][pm_key] = {
                         "label": pm_label,
                         "total_units": 0,
                         "products": [],
                         "mo_refs": [],
                     }
-                pm_entry = day_map[premix_date]["premix"][pm_label]
+                pm_entry = day_map[premix_date]["premix"][pm_key]
                 pm_entry["total_units"] += int(round(qty_packs * upp))
                 pm_prod = cfg.get("name") or sku or "?"
                 if pm_prod not in pm_entry["products"]:
