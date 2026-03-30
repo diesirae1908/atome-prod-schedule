@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T19:14:22Z",
+  "generated_at": "2026-03-30T19:50:56Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -285,7 +285,7 @@
       "label": "MONDAY",
       "premix": [
         {
-          "label": "Prep mix Brioche",
+          "label": "Prep mix Braided Brioche",
           "total_units": 100,
           "products": [
             "Brioche (Pastry)"
@@ -295,7 +295,7 @@
           ]
         },
         {
-          "label": "Prep mix Brioche",
+          "label": "Prep mix Brioche Buns",
           "total_units": 300,
           "products": [
             "Pack of 3 Brioche Buns"
@@ -417,7 +417,7 @@
       "label": "TUESDAY",
       "premix": [
         {
-          "label": "Prep mix Brioche",
+          "label": "Prep mix Brioche Buns",
           "total_units": 348,
           "products": [
             "Pack of 3 Brioche Buns"
@@ -431,7 +431,7 @@
         {
           "dough_type": "BRIOCHE",
           "label": "Brioche (Pastry)",
-          "cfg_name": "Brioche",
+          "cfg_name": "Braided Brioche",
           "unit": "kg",
           "total_kg": 45.0,
           "total_units": 100,
@@ -530,7 +530,7 @@
       "label": "WEDNESDAY",
       "premix": [
         {
-          "label": "Prep mix Brioche",
+          "label": "Prep mix Braided Brioche",
           "total_units": 116,
           "products": [
             "Brioche (Pastry)"
@@ -655,7 +655,7 @@
         {
           "dough_type": "BRIOCHE",
           "label": "Brioche (Pastry)",
-          "cfg_name": "Brioche",
+          "cfg_name": "Braided Brioche",
           "unit": "kg",
           "total_kg": 52.2,
           "total_units": 116,
