@@ -35,6 +35,8 @@ const PRODUCT_MOP_MAP = {
   "Brioche Bun":               "brioche-bun",
   "Brioche Buns":              "brioche-bun",
   "Brioche Buns (×3)":         "brioche-bun",
+  "Prep mix Braided Brioche":  "braided-brioche",
+  "Prep mix Brioche Buns":     "brioche-bun",
   "Viennoise":                 "viennoise",
   "Viennoise (×2)":            "viennoise",
   "Pain au Chocolat":          "pac",

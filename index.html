@@ -844,7 +844,8 @@ function pillCheckBtn(key) {
 function renderPremixCell(day) {
   if (!day || !day.premix || day.premix.length === 0) return '<span class="empty-cell">–</span>';
   return day.premix.map(p => {
-    const key  = `check_${day.date}_premix_${p.label}`;
+    const keyUniq = (p.mo_refs && p.mo_refs.length) ? p.mo_refs.join("_") : p.label;
+    const key  = `check_${day.date}_premix_${keyUniq}`;
     const done = lsGet(key) || false;
     const prods  = (p.products || []).map(shortName).join(", ");
     const moRefs = (p.mo_refs || []).join(" · ");
@@ -1018,7 +1019,6 @@ function renderQaCell(day) {
       <div class="pill-header">
         <span class="prod-name">🧪 ${shortName(v.name)}</span>
       </div>
-      <span class="prod-sub">${v.mo_ref || ""}</span>
       <div class="qa-actions">
         <button class="qa-btn qa-ok-btn${state.status === "ok" ? " active" : ""}" data-qakey="${key}" data-qaval="ok">✓ OK</button>
         <button class="qa-btn qa-nok-btn${state.status === "nok" ? " active" : ""}" data-qakey="${key}" data-qaval="nok">✗ NOK</button>
