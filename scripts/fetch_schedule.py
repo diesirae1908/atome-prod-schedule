@@ -182,6 +182,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                 "qty_pouches": qty_pouches,
                 "dluo": dluo,
                 "mo_ref": mo_ref,
+                "copacked": skip_prod,
             })
 
         if skip_prod:

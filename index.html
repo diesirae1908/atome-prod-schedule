@@ -1012,7 +1012,9 @@ function renderNotesCell(iso) {
 
 function renderQaCell(day) {
   if (!day || !day.vacuuming || day.vacuuming.length === 0) return '<span class="empty-cell">–</span>';
-  return day.vacuuming.map(v => {
+  const qaItems = day.vacuuming.filter(v => v.copacked !== true);
+  if (qaItems.length === 0) return '<span class="empty-cell">–</span>';
+  return qaItems.map(v => {
     const key   = `qa_${day.date}_${v.mo_ref || v.sku}`;
     const state = lsGet(key) || { status: null, note: "" };
     const statusClass = state.status === "ok" ? " qa-ok" : state.status === "nok" ? " qa-nok" : "";
