@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T01:21:14Z",
+  "generated_at": "2026-03-30T01:44:14Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -545,8 +545,8 @@
           "dough_type": "TRAD",
           "label": "Cheese Baguette",
           "unit": "kg",
-          "total_kg": 144.0,
-          "total_units": 360,
+          "total_kg": 141.2,
+          "total_units": 353,
           "mo_ref": "WH/MO/00551",
           "products": [
             "Cheese Baguette"
@@ -691,9 +691,9 @@
         {
           "sku": "CH-SGL",
           "name": "Cheese Baguette",
-          "qty_packs": 360,
-          "qty_units": 360,
-          "total_kg": 144.0,
+          "qty_packs": 353,
+          "qty_units": 353,
+          "total_kg": 141.2,
           "mo_ref": "WH/MO/00551",
           "d0": "2026-04-01"
         }
@@ -753,8 +753,8 @@
         {
           "sku": "CH-SGL",
           "name": "Cheese Baguette",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
+          "qty_packs": 353.0,
+          "qty_units": 353.0,
           "dluo": "2026-12-31",
           "mo_ref": "WH/MO/00551"
         },
