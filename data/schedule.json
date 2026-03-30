@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T16:27:56Z",
+  "generated_at": "2026-03-30T19:14:22Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -183,6 +183,7 @@
         {
           "dough_type": "CIABATTA",
           "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "cfg_name": "Ciabatta (×3)",
           "unit": "kg",
           "total_kg": 126.0,
           "total_units": 420,
@@ -194,6 +195,7 @@
         {
           "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
           "unit": "kg",
           "total_kg": 126.0,
           "total_units": 360,
@@ -236,6 +238,7 @@
         {
           "dough_type": "CIABATTA",
           "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "cfg_name": "Ciabatta (×3)",
           "unit": "kg",
           "total_kg": 252.0,
           "total_units": 840,
@@ -306,6 +309,7 @@
         {
           "dough_type": "TRAD",
           "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "cfg_name": "Cheese Baguette",
           "unit": "kg",
           "total_kg": 141.2,
           "total_units": 353,
@@ -317,6 +321,7 @@
         {
           "dough_type": "TRAD",
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
           "unit": "kg",
           "total_kg": 246.4,
           "total_units": 352,
@@ -328,6 +333,7 @@
         {
           "dough_type": "VIENNOISE",
           "label": "Pack of 2 Viennoise (Brioche Baguette)",
+          "cfg_name": "Viennoise (×2)",
           "unit": "kg",
           "total_kg": 40.0,
           "total_units": 200,
@@ -425,6 +431,7 @@
         {
           "dough_type": "BRIOCHE",
           "label": "Brioche (Pastry)",
+          "cfg_name": "Brioche",
           "unit": "kg",
           "total_kg": 45.0,
           "total_units": 100,
@@ -436,6 +443,7 @@
         {
           "dough_type": "BRIOCHE",
           "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
           "unit": "kg",
           "total_kg": 45.0,
           "total_units": 300,
@@ -447,6 +455,7 @@
         {
           "dough_type": "TRAD",
           "label": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "cfg_name": "Poppy Seed Baguette (×3)",
           "unit": "kg",
           "total_kg": 122.8,
           "total_units": 351,
@@ -533,19 +542,9 @@
       ],
       "mix": [
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "unit": "kg",
-          "total_kg": 168.0,
-          "total_units": 240,
-          "mo_ref": "WH/MO/00600",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
           "dough_type": "BRIOCHE",
           "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
           "unit": "kg",
           "total_kg": 52.2,
           "total_units": 348,
@@ -557,12 +556,25 @@
         {
           "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
           "unit": "kg",
           "total_kg": 122.8,
           "total_units": 351,
           "mo_ref": "WH/MO/00603",
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
+          ]
+        },
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 168.0,
+          "total_units": 240,
+          "mo_ref": "WH/MO/00605",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
           ]
         }
       ],
@@ -573,7 +585,7 @@
           "qty_packs": 120,
           "qty_units": 240,
           "total_kg": 168.0,
-          "mo_ref": "WH/MO/00600",
+          "mo_ref": "WH/MO/00605",
           "d0": "2026-04-03"
         },
         {
@@ -643,6 +655,7 @@
         {
           "dough_type": "BRIOCHE",
           "label": "Brioche (Pastry)",
+          "cfg_name": "Brioche",
           "unit": "kg",
           "total_kg": 52.2,
           "total_units": 116,
@@ -654,6 +667,7 @@
         {
           "dough_type": "TRAD",
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
           "unit": "kg",
           "total_kg": 123.2,
           "total_units": 176,
@@ -698,7 +712,7 @@
           "name": "Pack of 2 Country Rye Sourdough Loaf",
           "qty_packs": 120,
           "qty_units": 240,
-          "mo_ref": "WH/MO/00600",
+          "mo_ref": "WH/MO/00605",
           "d0": "2026-04-03"
         }
       ],
@@ -756,7 +770,7 @@
           "qty_units": 240.0,
           "qty_pouches": 240.0,
           "dluo": "2027-01-01",
-          "mo_ref": "WH/MO/00600"
+          "mo_ref": "WH/MO/00605"
         },
         {
           "sku": "TR3P-SGL",
