@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-03-31T01:46:12Z",
+  "generated_at": "2026-03-31T18:17:42Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
+  "odoo_url": "https://atome-bakery-sh.odoo.com",
   "days": [
     {
       "date": "2026-03-09",
@@ -351,30 +352,9 @@
           "products": [
             "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 123.2,
-          "total_units": 176,
-          "mo_ref": "WH/MO/00606",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "total_kg": 123.2,
-          "mo_ref": "WH/MO/00606",
-          "d0": "2026-04-02"
-        },
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
@@ -413,6 +393,7 @@
           "qty_pouches": 190.0,
           "dluo": "2026-06-17",
           "mo_ref": "WH/MO/00610",
+          "lot_id": 951,
           "copacked": true
         },
         {
@@ -423,6 +404,7 @@
           "qty_pouches": 200.0,
           "dluo": "2026-09-30",
           "mo_ref": "WH/MO/00595",
+          "lot_id": 934,
           "copacked": false
         },
         {
@@ -433,6 +415,7 @@
           "qty_pouches": 280.0,
           "dluo": "2026-12-29",
           "mo_ref": "WH/MO/00589",
+          "lot_id": 920,
           "copacked": false
         },
         {
@@ -443,6 +426,7 @@
           "qty_pouches": 160.0,
           "dluo": "2026-11-11",
           "mo_ref": "WH/MO/00607",
+          "lot_id": 694,
           "copacked": true
         },
         {
@@ -453,6 +437,7 @@
           "qty_pouches": 34.0,
           "dluo": "2026-06-02",
           "mo_ref": "WH/MO/00608",
+          "lot_id": 448,
           "copacked": true
         },
         {
@@ -463,6 +448,7 @@
           "qty_pouches": 84.0,
           "dluo": "2026-06-20",
           "mo_ref": "WH/MO/00609",
+          "lot_id": 950,
           "copacked": true
         }
       ]
@@ -559,16 +545,7 @@
           "d0": "2026-04-02"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "mo_ref": "WH/MO/00606",
-          "d0": "2026-04-02"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -578,6 +555,7 @@
           "qty_pouches": 352.0,
           "dluo": "2026-12-30",
           "mo_ref": "WH/MO/00591",
+          "lot_id": 929,
           "copacked": false
         },
         {
@@ -588,6 +566,7 @@
           "qty_pouches": 100.0,
           "dluo": "2026-09-30",
           "mo_ref": "WH/MO/00593",
+          "lot_id": 933,
           "copacked": false
         },
         {
@@ -598,6 +577,7 @@
           "qty_pouches": 353.0,
           "dluo": "2026-12-31",
           "mo_ref": "WH/MO/00551",
+          "lot_id": 935,
           "copacked": false
         }
       ]
@@ -701,16 +681,7 @@
           "qty_pouches": 116.0,
           "dluo": "2026-10-01",
           "mo_ref": "WH/MO/00592",
-          "copacked": false
-        },
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88.0,
-          "qty_units": 176.0,
-          "qty_pouches": 176.0,
-          "dluo": "2026-12-31",
-          "mo_ref": "WH/MO/00606",
+          "lot_id": 947,
           "copacked": false
         },
         {
@@ -721,6 +692,7 @@
           "qty_pouches": 351.0,
           "dluo": "2027-01-01",
           "mo_ref": "WH/MO/00594",
+          "lot_id": 940,
           "copacked": false
         }
       ]
@@ -750,6 +722,7 @@
           "qty_pouches": 116.0,
           "dluo": "2026-10-02",
           "mo_ref": "WH/MO/00602",
+          "lot_id": 943,
           "copacked": false
         },
         {
@@ -760,6 +733,7 @@
           "qty_pouches": 240.0,
           "dluo": "2027-01-01",
           "mo_ref": "WH/MO/00605",
+          "lot_id": 941,
           "copacked": false
         },
         {
@@ -770,6 +744,7 @@
           "qty_pouches": 116.0,
           "dluo": "2026-10-02",
           "mo_ref": "WH/MO/00601",
+          "lot_id": 948,
           "copacked": false
         },
         {
@@ -780,6 +755,7 @@
           "qty_pouches": 351.0,
           "dluo": "2027-01-02",
           "mo_ref": "WH/MO/00603",
+          "lot_id": 946,
           "copacked": false
         }
       ]
@@ -800,6 +776,7 @@
           "qty_pouches": 176.0,
           "dluo": "2027-01-02",
           "mo_ref": "WH/MO/00604",
+          "lot_id": 945,
           "copacked": false
         }
       ]
