@@ -30,25 +30,14 @@ app.post("/api/print-label", async (req, res) => {
   }
 
   try {
-    // 1. Authenticate with Odoo — API key works as the password in Odoo 16+
-    const authRes = await fetch(`${ODOO_URL}/web/session/authenticate`, {
-      method:  "POST",
-      headers: { "Content-Type": "application/json" },
-      body:    JSON.stringify({
-        jsonrpc: "2.0", method: "call", id: 1,
-        params:  { db: ODOO_DB, login: ODOO_USER, password: ODOO_KEY },
-      }),
-    });
-    const setCookie = authRes.headers.get("set-cookie") || "";
-    const sessionMatch = setCookie.match(/session_id=([^;,\s]+)/);
-    if (!sessionMatch) throw new Error("Odoo authentication failed — could not obtain session.");
+    // Odoo 16+ supports HTTP Basic Auth with API keys — no session cookie needed.
+    // Format: "login:api_key" base64-encoded in the Authorization header.
+    const basicAuth = Buffer.from(`${ODOO_USER}:${ODOO_KEY}`).toString("base64");
 
-    // 2. Fetch the lot-label PDF
-    //    Repeat lot_id N times → Odoo produces N copies in one PDF
     const docids  = Array(n).fill(lot_id).join(",");
     const pdfRes  = await fetch(
       `${ODOO_URL}/report/pdf/stock.report_lot_label/${docids}`,
-      { headers: { Cookie: `session_id=${sessionMatch[1]}` } }
+      { headers: { Authorization: `Basic ${basicAuth}` } }
     );
     if (!pdfRes.ok) throw new Error(`Odoo report error: HTTP ${pdfRes.status}`);
 
