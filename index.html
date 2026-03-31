@@ -591,7 +591,6 @@
       <input id="printCopiesInput" type="number" min="1" max="50" step="1" value="1" />
     </div>
     <button id="printConfirmBtn">Print</button>
-    <span class="print-modal-hint">Opens the Odoo label PDF in a new tab — make sure you're logged into Odoo.</span>
   </div>
 </div>
 
@@ -1502,22 +1501,40 @@ function openPrintModal(lotId, product, moRef) {
   inp.focus(); inp.select();
 }
 
-document.getElementById("printConfirmBtn").addEventListener("click", () => {
-  const copies = parseInt(document.getElementById("printCopiesInput").value, 10);
+document.getElementById("printConfirmBtn").addEventListener("click", async () => {
+  const inp    = document.getElementById("printCopiesInput");
+  const copies = parseInt(inp.value, 10);
   if (!copies || copies < 1) {
-    document.getElementById("printCopiesInput").style.borderColor = "#ef4444";
-    document.getElementById("printCopiesInput").focus();
+    inp.style.borderColor = "#ef4444";
+    inp.focus();
     return;
   }
-  document.getElementById("printModal").classList.remove("open");
-  const odooBase = scheduleData?.odoo_url || "";
-  if (!odooBase) {
-    alert("Odoo URL not available — refresh the schedule first.");
-    return;
+
+  const btn = document.getElementById("printConfirmBtn");
+  btn.textContent = "Generating…";
+  btn.disabled    = true;
+
+  try {
+    const resp = await fetch("/api/print-label", {
+      method:  "POST",
+      headers: { "Content-Type": "application/json" },
+      body:    JSON.stringify({ lot_id: _printLotId, copies }),
+    });
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({ error: resp.statusText }));
+      throw new Error(err.error || resp.statusText);
+    }
+    const blob = await resp.blob();
+    const url  = URL.createObjectURL(blob);
+    document.getElementById("printModal").classList.remove("open");
+    window.open(url, "_blank");
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+  } catch (err) {
+    alert("Could not generate label: " + err.message);
+  } finally {
+    btn.textContent = "Print";
+    btn.disabled    = false;
   }
-  // Repeat the lot ID N times for N copies (Odoo prints one label per ID in docids)
-  const docids = Array(copies).fill(_printLotId).join(",");
-  window.open(`${odooBase}/report/pdf/stock.report_lot_label/${docids}`, "_blank");
 });
 
 document.getElementById("printCopiesInput").addEventListener("keydown", e => {
