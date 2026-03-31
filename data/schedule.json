@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T22:01:07Z",
+  "generated_at": "2026-03-31T01:12:01Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -371,7 +371,8 @@
           "qty_units": 420.0,
           "qty_pouches": 140.0,
           "dluo": "2026-12-28",
-          "mo_ref": "WH/MO/00559"
+          "mo_ref": "WH/MO/00559",
+          "copacked": false
         },
         {
           "sku": "TR3P-SGL",
@@ -380,7 +381,8 @@
           "qty_units": 360.0,
           "qty_pouches": 360.0,
           "dluo": "2026-12-29",
-          "mo_ref": "WH/MO/00596"
+          "mo_ref": "WH/MO/00596",
+          "copacked": false
         },
         {
           "sku": "1-AT3P-SGL",
@@ -389,7 +391,8 @@
           "qty_units": 192.0,
           "qty_pouches": 192.0,
           "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00583-003"
+          "mo_ref": "WH/MO/00583-003",
+          "copacked": true
         }
       ]
     },
@@ -493,7 +496,8 @@
           "qty_units": 200.0,
           "qty_pouches": 200.0,
           "dluo": "2026-09-30",
-          "mo_ref": "WH/MO/00595"
+          "mo_ref": "WH/MO/00595",
+          "copacked": false
         },
         {
           "sku": "CIA3-SGL",
@@ -502,7 +506,8 @@
           "qty_units": 840.0,
           "qty_pouches": 280.0,
           "dluo": "2026-12-29",
-          "mo_ref": "WH/MO/00589"
+          "mo_ref": "WH/MO/00589",
+          "copacked": false
         }
       ]
     },
@@ -616,7 +621,8 @@
           "qty_units": 352.0,
           "qty_pouches": 352.0,
           "dluo": "2026-12-30",
-          "mo_ref": "WH/MO/00591"
+          "mo_ref": "WH/MO/00591",
+          "copacked": false
         },
         {
           "sku": "BR3BN-SGL",
@@ -625,7 +631,8 @@
           "qty_units": 300.0,
           "qty_pouches": 100.0,
           "dluo": "2026-09-30",
-          "mo_ref": "WH/MO/00593"
+          "mo_ref": "WH/MO/00593",
+          "copacked": false
         },
         {
           "sku": "CH-SGL",
@@ -634,7 +641,8 @@
           "qty_units": 353.0,
           "qty_pouches": 353.0,
           "dluo": "2026-12-31",
-          "mo_ref": "WH/MO/00551"
+          "mo_ref": "WH/MO/00551",
+          "copacked": false
         }
       ]
     },
@@ -736,7 +744,8 @@
           "qty_units": 116.0,
           "qty_pouches": 116.0,
           "dluo": "2026-10-01",
-          "mo_ref": "WH/MO/00592"
+          "mo_ref": "WH/MO/00592",
+          "copacked": false
         },
         {
           "sku": "LF2P",
@@ -745,7 +754,8 @@
           "qty_units": 176.0,
           "qty_pouches": 176.0,
           "dluo": "2026-12-31",
-          "mo_ref": "WH/MO/00606"
+          "mo_ref": "WH/MO/00606",
+          "copacked": false
         },
         {
           "sku": "PO3P-SGL",
@@ -754,7 +764,8 @@
           "qty_units": 351.0,
           "qty_pouches": 351.0,
           "dluo": "2027-01-01",
-          "mo_ref": "WH/MO/00594"
+          "mo_ref": "WH/MO/00594",
+          "copacked": false
         }
       ]
     },
@@ -782,7 +793,8 @@
           "qty_units": 116.0,
           "qty_pouches": 116.0,
           "dluo": "2026-10-02",
-          "mo_ref": "WH/MO/00602"
+          "mo_ref": "WH/MO/00602",
+          "copacked": false
         },
         {
           "sku": "CTY2P-SGL",
@@ -791,7 +803,8 @@
           "qty_units": 240.0,
           "qty_pouches": 240.0,
           "dluo": "2027-01-01",
-          "mo_ref": "WH/MO/00605"
+          "mo_ref": "WH/MO/00605",
+          "copacked": false
         },
         {
           "sku": "BR3BN-SGL",
@@ -800,7 +813,8 @@
           "qty_units": 348.0,
           "qty_pouches": 116.0,
           "dluo": "2026-10-02",
-          "mo_ref": "WH/MO/00601"
+          "mo_ref": "WH/MO/00601",
+          "copacked": false
         },
         {
           "sku": "TR3P-SGL",
@@ -809,7 +823,8 @@
           "qty_units": 351.0,
           "qty_pouches": 351.0,
           "dluo": "2027-01-02",
-          "mo_ref": "WH/MO/00603"
+          "mo_ref": "WH/MO/00603",
+          "copacked": false
         }
       ]
     },
@@ -828,7 +843,8 @@
           "qty_units": 176.0,
           "qty_pouches": 176.0,
           "dluo": "2027-01-02",
-          "mo_ref": "WH/MO/00604"
+          "mo_ref": "WH/MO/00604",
+          "copacked": false
         }
       ]
     },
