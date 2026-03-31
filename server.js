@@ -5,7 +5,6 @@
  */
 const express  = require("express");
 const path     = require("path");
-const { Readable } = require("stream");
 
 const app = express();
 app.use(express.json());
@@ -30,38 +29,17 @@ app.post("/api/print-label", async (req, res) => {
   }
 
   try {
-    // Step 1 — authenticate with Odoo and grab the session_id from the JSON body.
-    // Reading from the body is more reliable than parsing Set-Cookie headers
-    // (Odoo.sh sometimes doesn't echo the cookie back in the header).
-    const authRes  = await fetch(`${ODOO_URL}/web/session/authenticate`, {
-      method:  "POST",
-      headers: { "Content-Type": "application/json" },
-      body:    JSON.stringify({
-        jsonrpc: "2.0", method: "call", id: 1,
-        params:  { db: ODOO_DB, login: ODOO_USER, password: ODOO_KEY },
-      }),
-    });
-    const authData  = await authRes.json();
-    let   sessionId = authData?.result?.session_id;
+    // Odoo 17 blocks API keys from being used as web session passwords.
+    // HTTP Basic Auth (login:api_key) works for the /report/pdf/ controller instead.
+    const basicAuth = Buffer.from(`${ODOO_USER}:${ODOO_KEY}`).toString("base64");
 
-    // Fallback: try the Set-Cookie header
-    if (!sessionId) {
-      const m = (authRes.headers.get("set-cookie") || "").match(/session_id=([^;,\s]+)/);
-      sessionId = m?.[1];
-    }
-
-    if (!sessionId) {
-      const detail = JSON.stringify(authData?.error ?? authData).slice(0, 300);
-      throw new Error(`Odoo authentication failed: ${detail}`);
-    }
-
-    // Step 2 — fetch the lot-label PDF using the session.
     // Repeat lot_id N times → Odoo produces N label copies in one PDF.
     const docids  = Array(n).fill(lot_id).join(",");
     const pdfRes  = await fetch(
       `${ODOO_URL}/report/pdf/stock.report_lot_label/${docids}`,
-      { headers: { Cookie: `session_id=${sessionId}` } }
+      { headers: { Authorization: `Basic ${basicAuth}` } }
     );
+
     if (!pdfRes.ok) {
       const body = await pdfRes.text();
       throw new Error(`Odoo report HTTP ${pdfRes.status}: ${body.slice(0, 300)}`);
@@ -69,14 +47,16 @@ app.post("/api/print-label", async (req, res) => {
     const ct = pdfRes.headers.get("content-type") || "";
     if (!ct.includes("pdf")) {
       const body = await pdfRes.text();
-      throw new Error(`Expected PDF but Odoo returned ${ct}: ${body.slice(0, 300)}`);
+      throw new Error(`Odoo returned ${ct} instead of PDF: ${body.slice(0, 300)}`);
     }
 
+    // Buffer the full PDF in memory before sending — avoids Web-Stream
+    // compatibility issues with Readable.fromWeb on some Node versions.
+    const buffer = Buffer.from(await pdfRes.arrayBuffer());
     res.set("Content-Type", "application/pdf");
+    res.set("Content-Length", buffer.length);
     res.set("Content-Disposition", `inline; filename="label-${lot_id}.pdf"`);
-
-    // Stream the response body straight through to the client
-    Readable.fromWeb(pdfRes.body).pipe(res);
+    res.send(buffer);
 
   } catch (err) {
     console.error("[print-label]", err.message);
