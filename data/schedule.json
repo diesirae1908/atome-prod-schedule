@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-31T01:12:01Z",
+  "generated_at": "2026-03-31T01:21:18Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -383,16 +383,6 @@
           "dluo": "2026-12-29",
           "mo_ref": "WH/MO/00596",
           "copacked": false
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 192.0,
-          "qty_units": 192.0,
-          "qty_pouches": 192.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00583-003",
-          "copacked": true
         }
       ]
     },
@@ -508,6 +498,36 @@
           "dluo": "2026-12-29",
           "mo_ref": "WH/MO/00589",
           "copacked": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 160.0,
+          "qty_units": 160.0,
+          "qty_pouches": 160.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/00607",
+          "copacked": true
+        },
+        {
+          "sku": "1-MCR6P-SGL",
+          "name": "Pack of 6 macarons (mixed flavours)",
+          "qty_packs": 34.0,
+          "qty_units": 204.0,
+          "qty_pouches": 34.0,
+          "dluo": "2026-06-02",
+          "mo_ref": "WH/MO/00608",
+          "copacked": true
+        },
+        {
+          "sku": "1-MCR6P-SGL",
+          "name": "Pack of 6 macarons (mixed flavours)",
+          "qty_packs": 84.0,
+          "qty_units": 504.0,
+          "qty_pouches": 84.0,
+          "dluo": "2026-06-20",
+          "mo_ref": "WH/MO/00609",
+          "copacked": true
         }
       ]
     },
