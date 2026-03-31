@@ -1,0 +1,11 @@
+{
+  "name": "atome-prod-schedule",
+  "version": "1.0.0",
+  "description": "Atome Bakery production schedule web app",
+  "scripts": {
+    "start": "serve -l $PORT ."
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
