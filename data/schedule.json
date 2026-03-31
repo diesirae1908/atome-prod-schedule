@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-31T01:21:18Z",
+  "generated_at": "2026-03-31T01:29:01Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -364,6 +364,16 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "?",
+          "name": "1-CHTWI7P-ADN",
+          "qty_packs": 190.0,
+          "qty_units": 190.0,
+          "qty_pouches": 190.0,
+          "dluo": "2026-06-17",
+          "mo_ref": "WH/MO/00610",
+          "copacked": true
+        },
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
