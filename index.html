@@ -273,6 +273,49 @@
 
     .empty-cell { color: #d1d5db; font-size: 11px; }
 
+    /* ── print label button ── */
+    .print-label-btn {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 10px; padding: 2px 7px; border-radius: 10px;
+      border: 1px solid #c4b5fd; background: #f5f3ff;
+      color: #6d28d9; cursor: pointer; font-weight: 600;
+      transition: all .1s; white-space: nowrap; margin-top: 4px;
+    }
+    .print-label-btn:hover { background: #ede9fe; border-color: #7c3aed; }
+
+    /* ── print label modal ── */
+    #printModal {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,.55);
+      display: none; align-items: center; justify-content: center;
+    }
+    #printModal.open { display: flex; }
+    .print-modal-box {
+      background: #fff; border-radius: 14px;
+      padding: 28px 32px; max-width: 340px; width: 90%;
+      box-shadow: 0 12px 48px rgba(0,0,0,.28);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .print-modal-box h3 { font-size: 16px; font-weight: 700; color: #1e1b4b; }
+    .print-modal-box p  { font-size: 12px; color: #6b7280; margin: 0; }
+    .print-copies-row   { display: flex; align-items: center; gap: 10px; }
+    .print-copies-row label { font-size: 13px; font-weight: 600; color: #374151; }
+    #printCopiesInput {
+      width: 80px; padding: 8px 10px;
+      font-size: 22px; font-weight: 800; text-align: center;
+      border: 2px solid #e5e7eb; border-radius: 8px; outline: none;
+    }
+    #printCopiesInput:focus { border-color: #7c3aed; }
+    #printConfirmBtn {
+      width: 100%; padding: 11px;
+      background: #6d28d9; color: #fff;
+      border: none; border-radius: 8px;
+      font-size: 14px; font-weight: 700; cursor: pointer;
+      transition: background .15s;
+    }
+    #printConfirmBtn:hover { background: #5b21b6; }
+    .print-modal-hint { font-size: 10px; color: #9ca3af; text-align: center; }
+
     /* ── output badge (shown on done shaping / vacuuming pills) ── */
     .output-badge {
       display: inline-block; margin-top: 3px;
@@ -535,6 +578,20 @@
     <input id="outModalInput" type="number" min="0" step="1" placeholder="0" />
     <button id="outModalSave">Save</button>
     <span class="out-modal-hint">A number is required to validate this task.</span>
+  </div>
+</div>
+
+<!-- ── Print Label Modal ── -->
+<div id="printModal">
+  <div class="print-modal-box">
+    <h3 id="printModalTitle">🖨 Print Label</h3>
+    <p id="printModalSub"></p>
+    <div class="print-copies-row">
+      <label for="printCopiesInput">Copies:</label>
+      <input id="printCopiesInput" type="number" min="1" max="50" step="1" value="1" />
+    </div>
+    <button id="printConfirmBtn">Print</button>
+    <span class="print-modal-hint">Opens the Odoo label PDF in a new tab — make sure you're logged into Odoo.</span>
   </div>
 </div>
 
@@ -990,6 +1047,10 @@ function renderVacCell(day) {
       return `<button class="step-btn${step >= st.n ? " step-done" : ""}" data-vkey="${vKey}" data-step="${st.n}"${extra}>${step >= st.n ? "✓ " : ""}${st.label}</button>`;
     }).join("");
 
+    const printBtn = v.lot_id
+      ? `<button class="print-label-btn" data-lot-id="${v.lot_id}" data-product="${escAttr(shortName(v.name))}" data-mo="${escAttr(v.mo_ref || '')}">🖨 Print label</button>`
+      : "";
+
     return `<div class="product-pill${allDone ? " done" : ""}">
       <div class="pill-header">
         <span class="prod-name">${v.name}</span>
@@ -998,6 +1059,7 @@ function renderVacCell(day) {
       <span class="prod-sub">${qtyStr}</span>
       ${dluoStr}
       ${v.mo_ref ? `<span class="prod-sub">${v.mo_ref}</span>` : ""}
+      ${printBtn}
       <div class="vac-steps">${stepsHtml}</div>
       ${outBadge}
     </div>`;
@@ -1425,6 +1487,56 @@ document.getElementById("scheduleRoot").addEventListener("click", e => {
     openMopModal(mopBtn.dataset.mopId, parseInt(mopBtn.dataset.mopUnits) || 0, mopBtn.dataset.mopLabel);
   }
 }, true); // capture phase so it fires before other click handlers
+
+// ── print label modal ─────────────────────────────────────────────────────────
+let _printLotId   = null;
+
+function openPrintModal(lotId, product, moRef) {
+  _printLotId = lotId;
+  document.getElementById("printModalTitle").textContent = `🖨 Print Label — ${product}`;
+  document.getElementById("printModalSub").textContent   = moRef ? `MO: ${moRef}` : "";
+  const inp = document.getElementById("printCopiesInput");
+  inp.value = 1;
+  inp.style.borderColor = "";
+  document.getElementById("printModal").classList.add("open");
+  inp.focus(); inp.select();
+}
+
+document.getElementById("printConfirmBtn").addEventListener("click", () => {
+  const copies = parseInt(document.getElementById("printCopiesInput").value, 10);
+  if (!copies || copies < 1) {
+    document.getElementById("printCopiesInput").style.borderColor = "#ef4444";
+    document.getElementById("printCopiesInput").focus();
+    return;
+  }
+  document.getElementById("printModal").classList.remove("open");
+  const odooBase = scheduleData?.odoo_url || "";
+  if (!odooBase) {
+    alert("Odoo URL not available — refresh the schedule first.");
+    return;
+  }
+  // Repeat the lot ID N times for N copies (Odoo prints one label per ID in docids)
+  const docids = Array(copies).fill(_printLotId).join(",");
+  window.open(`${odooBase}/report/pdf/stock.report_lot_label/${docids}`, "_blank");
+});
+
+document.getElementById("printCopiesInput").addEventListener("keydown", e => {
+  if (e.key === "Enter") document.getElementById("printConfirmBtn").click();
+});
+
+document.getElementById("printModal").addEventListener("click", e => {
+  if (e.target === document.getElementById("printModal"))
+    document.getElementById("printModal").classList.remove("open");
+});
+
+// Wire print-label-btn clicks via delegation on scheduleRoot
+document.getElementById("scheduleRoot").addEventListener("click", e => {
+  const btn = e.target.closest(".print-label-btn");
+  if (btn) {
+    e.stopPropagation();
+    openPrintModal(parseInt(btn.dataset.lotId), btn.dataset.product, btn.dataset.mo);
+  }
+}, true);
 
 // ── week navigation ───────────────────────────────────────────────────────────
 document.getElementById("prevWeek").addEventListener("click", () => {

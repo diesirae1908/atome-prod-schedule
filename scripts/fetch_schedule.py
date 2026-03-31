@@ -130,9 +130,11 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
         qty_packs = float(mo.get("product_qty") or 0)
         mo_ref = mo.get("name", "")
 
-        # DLUO from Odoo lot, fallback to computed
+        # DLUO + lot ID from Odoo lot
         dluo_from_odoo = None
+        lot_id = None
         if mo.get("lot_producing_id"):
+            lot_id = mo["lot_producing_id"][0] if isinstance(mo["lot_producing_id"], (list, tuple)) else None
             lot_name = mo["lot_producing_id"][1] if isinstance(mo["lot_producing_id"], (list, tuple)) else str(mo["lot_producing_id"])
             # Odoo stores DLUO as the lot name in format MM/DD/YYYY or YYYY-MM-DD
             try:
@@ -182,6 +184,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                 "qty_pouches": qty_pouches,
                 "dluo": dluo,
                 "mo_ref": mo_ref,
+                "lot_id": lot_id,
                 "copacked": skip_prod,
             })
 
@@ -318,6 +321,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
         "week_number": week_number(start),
         "week_start": iso(start),
         "week_end": iso(end),
+        "odoo_url": os.environ.get("ODOO_URL", "").rstrip("/"),
         "days": days_out,
     }
 
