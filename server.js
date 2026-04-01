@@ -82,6 +82,33 @@ app.post("/api/print-label", async (req, res) => {
   }
 });
 
+// ── POST /api/trigger-refresh ─────────────────────────────────────────────────
+// Dispatches the GitHub Actions refresh workflow so the schedule re-fetches Odoo data.
+app.post("/api/trigger-refresh", async (req, res) => {
+  const token = process.env.GITHUB_TOKEN || "";
+  if (!token) return res.status(503).json({ error: "GITHUB_TOKEN not configured on server." });
+
+  const ghRes = await fetch(
+    "https://api.github.com/repos/diesirae1908/atome-prod-schedule/actions/workflows/refresh.yml/dispatches",
+    {
+      method:  "POST",
+      headers: {
+        Authorization:  `token ${token}`,
+        Accept:         "application/vnd.github+json",
+        "Content-Type": "application/json",
+        "User-Agent":   "atome-prod-schedule-server",
+      },
+      body: JSON.stringify({ ref: "main" }),
+    }
+  );
+
+  if (!ghRes.ok) {
+    const body = await ghRes.text();
+    return res.status(ghRes.status).json({ error: `GitHub API error ${ghRes.status}: ${body.slice(0, 200)}` });
+  }
+  res.json({ ok: true });
+});
+
 // ── Static files ──────────────────────────────────────────────────────────────
 app.use(express.static(path.join(__dirname), { index: "index.html" }));
 app.get("*", (_req, res) => res.sendFile(path.join(__dirname, "index.html")));

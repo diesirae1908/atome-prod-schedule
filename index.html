@@ -685,13 +685,9 @@ async function triggerRefresh() {
   btn.disabled = true;
   btn.innerHTML = '<span class="rspin">⏳</span> Triggering…';
   try {
-    const resp = await fetch(`${SUPA_URL}/functions/v1/trigger-refresh`, {
+    const resp = await fetch("/api/trigger-refresh", {
       method: "POST",
-      headers: {
-        "apikey": SUPA_KEY,
-        "Authorization": "Bearer " + SUPA_KEY,
-        "Content-Type": "application/json"
-      }
+      headers: { "Content-Type": "application/json" }
     });
     if (!resp.ok) {
       const body = await resp.text().catch(() => "");
