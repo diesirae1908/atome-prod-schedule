@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T20:01:56Z",
+  "generated_at": "2026-04-01T20:07:27Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -828,7 +828,28 @@
     {
       "date": "2026-04-07",
       "label": "TUESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Brioche Buns",
+          "total_units": 348,
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ],
+          "mo_refs": [
+            "WH/MO/00626"
+          ]
+        },
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 348,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/00624"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "VIENNOISE",
@@ -852,6 +873,18 @@
           "mo_ref": "WH/MO/00623",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00625",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
           ]
         }
       ],
@@ -933,9 +966,106 @@
     {
       "date": "2026-04-08",
       "label": "WEDNESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
+      "premix": [
+        {
+          "label": "Prep mix Braided Brioche",
+          "total_units": 117,
+          "products": [
+            "Brioche (Pastry)"
+          ],
+          "mo_refs": [
+            "WH/MO/00628"
+          ]
+        }
+      ],
+      "mix": [
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 31.3,
+          "total_units": 348,
+          "mo_ref": "WH/MO/00624",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
+        },
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 348,
+          "mo_ref": "WH/MO/00626",
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ]
+        },
+        {
+          "dough_type": "WW",
+          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "cfg_name": "Wholewheat Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 277.2,
+          "total_units": 462,
+          "mo_ref": "WH/MO/00627",
+          "products": [
+            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "cfg_name": "Cheese Baguette",
+          "unit": "kg",
+          "total_kg": 141.2,
+          "total_units": 353,
+          "mo_ref": "WH/MO/00629",
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 231,
+          "qty_units": 462,
+          "total_kg": 277.2,
+          "mo_ref": "WH/MO/00627",
+          "d0": "2026-04-10"
+        },
+        {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00626",
+          "d0": "2026-04-09"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 31.3,
+          "mo_ref": "WH/MO/00624",
+          "d0": "2026-04-09"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00625",
+          "d0": "2026-04-09"
+        }
+      ],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -986,9 +1116,50 @@
       "date": "2026-04-09",
       "label": "THURSDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
+      "mix": [
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Brioche (Pastry)",
+          "cfg_name": "Braided Brioche",
+          "unit": "kg",
+          "total_kg": 52.6,
+          "total_units": 117,
+          "mo_ref": "WH/MO/00628",
+          "products": [
+            "Brioche (Pastry)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 117,
+          "qty_units": 117,
+          "total_kg": 52.6,
+          "mo_ref": "WH/MO/00628",
+          "d0": "2026-04-10"
+        },
+        {
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 353,
+          "qty_units": 353,
+          "total_kg": 141.2,
+          "mo_ref": "WH/MO/00629",
+          "d0": "2026-04-10"
+        }
+      ],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 231,
+          "qty_units": 462,
+          "mo_ref": "WH/MO/00627",
+          "d0": "2026-04-10"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -998,6 +1169,39 @@
           "qty_pouches": 176.0,
           "dluo": null,
           "mo_ref": "WH/MO/00623",
+          "lot_id": null,
+          "copacked": false
+        },
+        {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116.0,
+          "qty_units": 348.0,
+          "qty_pouches": 116.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00626",
+          "lot_id": null,
+          "copacked": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 116.0,
+          "qty_units": 348.0,
+          "qty_pouches": 116.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00624",
+          "lot_id": null,
+          "copacked": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00625",
           "lot_id": null,
           "copacked": false
         }
@@ -1010,7 +1214,41 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 117.0,
+          "qty_units": 117.0,
+          "qty_pouches": 117.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00628",
+          "lot_id": null,
+          "copacked": false
+        },
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 231.0,
+          "qty_units": 462.0,
+          "qty_pouches": 462.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00627",
+          "lot_id": null,
+          "copacked": false
+        },
+        {
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 353.0,
+          "qty_units": 353.0,
+          "qty_pouches": 353.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00629",
+          "lot_id": null,
+          "copacked": false
+        }
+      ]
     },
     {
       "date": "2026-04-11",
