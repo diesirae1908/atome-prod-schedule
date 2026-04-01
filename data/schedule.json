@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T20:14:22Z",
+  "generated_at": "2026-04-01T20:17:20Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -538,7 +538,18 @@
     {
       "date": "2026-04-03",
       "label": "FRIDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/00633"
+          ]
+        }
+      ],
       "mix": [],
       "shaping": [],
       "score_tasks": [],
@@ -581,7 +592,18 @@
     {
       "date": "2026-04-04",
       "label": "SATURDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/00634"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -594,6 +616,18 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
+        },
+        {
+          "dough_type": "WAFFLES",
+          "label": "Pack of 3 Liege Waffle",
+          "cfg_name": "Liège Waffle (×3)",
+          "unit": "kg",
+          "total_kg": 62.4,
+          "total_units": 624,
+          "mo_ref": "WH/MO/00633",
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ]
         }
       ],
       "shaping": [
@@ -605,6 +639,15 @@
           "total_kg": 369.6,
           "mo_ref": "WH/MO/00617",
           "d0": "2026-04-06"
+        },
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208,
+          "qty_units": 624,
+          "total_kg": 62.4,
+          "mo_ref": "WH/MO/00633",
+          "d0": "2026-04-04"
         }
       ],
       "score_tasks": [],
@@ -630,6 +673,17 @@
           "mo_ref": "WH/MO/00615",
           "lot_id": 959,
           "copacked": true
+        },
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208.0,
+          "qty_units": 624.0,
+          "qty_pouches": 208.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00633",
+          "lot_id": null,
+          "copacked": false
         }
       ]
     },
@@ -682,6 +736,18 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "WAFFLES",
+          "label": "Pack of 3 Liege Waffle",
+          "cfg_name": "Liège Waffle (×3)",
+          "unit": "kg",
+          "total_kg": 62.4,
+          "total_units": 624,
+          "mo_ref": "WH/MO/00634",
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ]
         }
       ],
       "shaping": [
@@ -693,6 +759,15 @@
           "total_kg": 369.6,
           "mo_ref": "WH/MO/00616",
           "d0": "2026-04-07"
+        },
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208,
+          "qty_units": 624,
+          "total_kg": 62.4,
+          "mo_ref": "WH/MO/00634",
+          "d0": "2026-04-05"
         }
       ],
       "score_tasks": [
@@ -706,6 +781,17 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208.0,
+          "qty_units": 624.0,
+          "qty_pouches": 208.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00634",
+          "lot_id": null,
+          "copacked": false
+        },
         {
           "sku": "1-PACB8P-SGL",
           "name": "Pack of 8 chocolate croissant bites",
@@ -723,6 +809,16 @@
       "date": "2026-04-06",
       "label": "MONDAY",
       "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 351,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/00632"
+          ]
+        },
         {
           "label": "Prep mix Viennoise",
           "total_units": 200,
@@ -873,6 +969,18 @@
           "mo_ref": "WH/MO/00623",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        },
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 131.6,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00632",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         }
       ],
@@ -1033,6 +1141,15 @@
           "qty_units": 348,
           "total_kg": 52.2,
           "mo_ref": "WH/MO/00626",
+          "d0": "2026-04-09"
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 131.6,
+          "mo_ref": "WH/MO/00632",
           "d0": "2026-04-09"
         },
         {
@@ -1207,6 +1324,17 @@
           "copacked": false
         },
         {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00632",
+          "lot_id": null,
+          "copacked": false
+        },
+        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 116.0,
@@ -1222,7 +1350,18 @@
     {
       "date": "2026-04-10",
       "label": "FRIDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/00635"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "PAC_CR",
@@ -1306,9 +1445,43 @@
     {
       "date": "2026-04-11",
       "label": "SATURDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
+      "premix": [
+        {
+          "label": "Prep mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/00636"
+          ]
+        }
+      ],
+      "mix": [
+        {
+          "dough_type": "WAFFLES",
+          "label": "Pack of 3 Liege Waffle",
+          "cfg_name": "Liège Waffle (×3)",
+          "unit": "kg",
+          "total_kg": 62.4,
+          "total_units": 624,
+          "mo_ref": "WH/MO/00635",
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208,
+          "qty_units": 624,
+          "total_kg": 62.4,
+          "mo_ref": "WH/MO/00635",
+          "d0": "2026-04-11"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": [
         {
@@ -1319,6 +1492,17 @@
           "qty_pouches": 266.0,
           "dluo": null,
           "mo_ref": "WH/MO/00630",
+          "lot_id": null,
+          "copacked": false
+        },
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208.0,
+          "qty_units": 624.0,
+          "qty_pouches": 208.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00635",
           "lot_id": null,
           "copacked": false
         },
@@ -1350,10 +1534,45 @@
       "date": "2026-04-12",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "WAFFLES",
+          "label": "Pack of 3 Liege Waffle",
+          "cfg_name": "Liège Waffle (×3)",
+          "unit": "kg",
+          "total_kg": 62.4,
+          "total_units": 624,
+          "mo_ref": "WH/MO/00636",
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208,
+          "qty_units": 624,
+          "total_kg": 62.4,
+          "mo_ref": "WH/MO/00636",
+          "d0": "2026-04-12"
+        }
+      ],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208.0,
+          "qty_units": 624.0,
+          "qty_pouches": 208.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00636",
+          "lot_id": null,
+          "copacked": false
+        }
+      ]
     }
   ]
 }
