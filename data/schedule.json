@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T20:24:26Z",
+  "generated_at": "2026-04-01T20:32:23Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -1400,26 +1400,26 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
           "unit": "kg",
-          "total_kg": 123.2,
-          "total_units": 176,
-          "mo_ref": "WH/MO/00637",
+          "total_kg": 112.0,
+          "total_units": 160,
+          "mo_ref": "WH/MO/00641",
           "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
+            "Pack of 2 Country Rye Sourdough Loaf"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "total_kg": 123.2,
-          "mo_ref": "WH/MO/00637",
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "total_kg": 112.0,
+          "mo_ref": "WH/MO/00641",
           "d0": "2026-04-12"
         },
         {
@@ -1530,10 +1530,10 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "mo_ref": "WH/MO/00637",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "mo_ref": "WH/MO/00641",
           "d0": "2026-04-12"
         }
       ],
@@ -1616,13 +1616,13 @@
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88.0,
-          "qty_units": 176.0,
-          "qty_pouches": 176.0,
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80.0,
+          "qty_units": 160.0,
+          "qty_pouches": 160.0,
           "dluo": null,
-          "mo_ref": "WH/MO/00637",
+          "mo_ref": "WH/MO/00641",
           "lot_id": null,
           "copacked": false
         },
