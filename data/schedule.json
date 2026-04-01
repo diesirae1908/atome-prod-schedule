@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T20:20:16Z",
+  "generated_at": "2026-04-01T20:24:26Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -1025,18 +1025,6 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 123.2,
-          "total_units": 176,
-          "mo_ref": "WH/MO/00623",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
           "dough_type": "MG",
           "label": "Pack of 3 Multigrain Sourdough Baguettes",
           "cfg_name": "Multigrain Baguette (×3)",
@@ -1050,15 +1038,6 @@
         }
       ],
       "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "total_kg": 123.2,
-          "mo_ref": "WH/MO/00623",
-          "d0": "2026-04-09"
-        },
         {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
@@ -1227,16 +1206,7 @@
           "d0": "2026-04-09"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "mo_ref": "WH/MO/00623",
-          "d0": "2026-04-09"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -1366,17 +1336,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88.0,
-          "qty_units": 176.0,
-          "qty_pouches": 176.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/00623",
-          "lot_id": null,
-          "copacked": false
-        },
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
