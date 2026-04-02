@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T21:24:27Z",
+  "generated_at": "2026-04-02T21:51:58Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -197,55 +197,9 @@
     {
       "date": "2026-03-30",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 348,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/00593"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "cfg_name": "Cheese Baguette",
-          "unit": "kg",
-          "total_kg": 141.2,
-          "total_units": 353,
-          "mo_ref": "WH/MO/00551",
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00591",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00591",
-          "d0": "2026-04-01"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -276,18 +230,6 @@
       ],
       "mix": [
         {
-          "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/00593",
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ]
-        },
-        {
           "dough_type": "TRAD",
           "label": "Pack of 3 Sourdough Poppy Seed Baguette",
           "cfg_name": "Poppy Seed Baguette (×3)",
@@ -300,36 +242,8 @@
           ]
         }
       ],
-      "shaping": [
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00593",
-          "d0": "2026-04-01"
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 353,
-          "qty_units": 353,
-          "total_kg": 141.2,
-          "mo_ref": "WH/MO/00551",
-          "d0": "2026-04-01"
-        }
-      ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00591",
-          "d0": "2026-04-01"
-        }
-      ],
+      "shaping": [],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -415,52 +329,7 @@
         }
       ],
       "score_tasks": [],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2026-12-30",
-          "mo_ref": "WH/MO/00591",
-          "lot_id": 929,
-          "copacked": false
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-09-30",
-          "mo_ref": "WH/MO/00593",
-          "lot_id": 933,
-          "copacked": false
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 160.0,
-          "qty_units": 160.0,
-          "qty_pouches": 160.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00607",
-          "lot_id": 694,
-          "copacked": true
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 353.0,
-          "qty_units": 353.0,
-          "qty_pouches": 353.0,
-          "dluo": "2026-12-31",
-          "mo_ref": "WH/MO/00551",
-          "lot_id": 935,
-          "copacked": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-04-02",
