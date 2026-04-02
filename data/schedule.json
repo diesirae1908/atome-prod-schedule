@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T21:51:58Z",
+  "generated_at": "2026-04-02T23:27:41Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -216,32 +216,9 @@
           "mo_refs": [
             "WH/MO/00614"
           ]
-        },
-        {
-          "label": "Prep mix Braided Brioche",
-          "total_units": 116,
-          "products": [
-            "Brioche (Pastry)"
-          ],
-          "mo_refs": [
-            "WH/MO/00592"
-          ]
         }
       ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "cfg_name": "Poppy Seed Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00594",
-          "products": [
-            "Pack of 3 Sourdough Poppy Seed Baguette"
-          ]
-        }
-      ],
+      "mix": [],
       "shaping": [],
       "score_tasks": [],
       "vacuuming": []
@@ -263,30 +240,6 @@
       ],
       "mix": [
         {
-          "dough_type": "BRIOCHE",
-          "label": "Brioche (Pastry)",
-          "cfg_name": "Braided Brioche",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 116,
-          "mo_ref": "WH/MO/00592",
-          "products": [
-            "Brioche (Pastry)"
-          ]
-        },
-        {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 280.0,
-          "total_units": 400,
-          "mo_ref": "WH/MO/00605",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
           "dough_type": "MG",
           "label": "Pack of 3 Multigrain Sourdough Baguettes",
           "cfg_name": "Multigrain Baguette (×3)",
@@ -299,35 +252,7 @@
           ]
         }
       ],
-      "shaping": [
-        {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 116,
-          "qty_units": 116,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00592",
-          "d0": "2026-04-02"
-        },
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 200,
-          "qty_units": 400,
-          "total_kg": 280.0,
-          "mo_ref": "WH/MO/00605",
-          "d0": "2026-04-03"
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00594",
-          "d0": "2026-04-02"
-        }
-      ],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -347,9 +272,30 @@
           "products": [
             "Pack of 3 Brioche Buns"
           ]
+        },
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 280.0,
+          "total_units": 400,
+          "mo_ref": "WH/MO/00605",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 200,
+          "qty_units": 400,
+          "total_kg": 280.0,
+          "mo_ref": "WH/MO/00605",
+          "d0": "2026-04-04"
+        },
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
@@ -369,40 +315,8 @@
           "d0": "2026-04-03"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 200,
-          "qty_units": 400,
-          "mo_ref": "WH/MO/00605",
-          "d0": "2026-04-03"
-        }
-      ],
-      "vacuuming": [
-        {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 116.0,
-          "qty_units": 116.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-10-01",
-          "mo_ref": "WH/MO/00592",
-          "lot_id": 947,
-          "copacked": false
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-01-01",
-          "mo_ref": "WH/MO/00594",
-          "lot_id": 940,
-          "copacked": false
-        }
-      ]
+      "score_tasks": [],
+      "vacuuming": []
     },
     {
       "date": "2026-04-03",
@@ -434,19 +348,17 @@
         }
       ],
       "shaping": [],
-      "score_tasks": [],
-      "vacuuming": [
+      "score_tasks": [
         {
-          "sku": "CTY2P-SGL",
+          "action": "score_freeze",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 200.0,
-          "qty_units": 400.0,
-          "qty_pouches": 400.0,
-          "dluo": "2027-01-01",
+          "qty_packs": 200,
+          "qty_units": 400,
           "mo_ref": "WH/MO/00605",
-          "lot_id": 941,
-          "copacked": false
-        },
+          "d0": "2026-04-04"
+        }
+      ],
+      "vacuuming": [
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
@@ -555,6 +467,17 @@
       ],
       "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 200.0,
+          "qty_units": 400.0,
+          "qty_pouches": 400.0,
+          "dluo": "2027-01-01",
+          "mo_ref": "WH/MO/00605",
+          "lot_id": 941,
+          "copacked": false
+        },
         {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
@@ -755,18 +678,6 @@
       ],
       "mix": [
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 123.2,
-          "total_units": 176,
-          "mo_ref": "WH/MO/00619",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
           "dough_type": "BRIOCHE",
           "label": "Brioche (Pastry)",
           "cfg_name": "Braided Brioche",
@@ -789,6 +700,18 @@
           "products": [
             "Pack of 3 Multigrain Sourdough Baguettes"
           ]
+        },
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 168.0,
+          "total_units": 240,
+          "mo_ref": "WH/MO/00665",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
         }
       ],
       "shaping": [
@@ -802,12 +725,12 @@
           "d0": "2026-04-07"
         },
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "total_kg": 123.2,
-          "mo_ref": "WH/MO/00619",
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 120,
+          "qty_units": 240,
+          "total_kg": 168.0,
+          "mo_ref": "WH/MO/00665",
           "d0": "2026-04-08"
         },
         {
@@ -929,10 +852,10 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "mo_ref": "WH/MO/00619",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 120,
+          "qty_units": 240,
+          "mo_ref": "WH/MO/00665",
           "d0": "2026-04-08"
         }
       ],
@@ -1078,13 +1001,13 @@
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88.0,
-          "qty_units": 176.0,
-          "qty_pouches": 176.0,
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 120.0,
+          "qty_units": 240.0,
+          "qty_pouches": 240.0,
           "dluo": null,
-          "mo_ref": "WH/MO/00619",
+          "mo_ref": "WH/MO/00665",
           "lot_id": null,
           "copacked": false
         },
