@@ -574,7 +574,9 @@
   }
 
   function bagKgForMop(mop) {
-    return mop.id === 'pizza' ? 25 : 20;
+    if (mop.flour_bag_kg) return mop.flour_bag_kg;
+    if (mop.id === 'pizza') return 25;
+    return 20;
   }
 
   function renderLoadsBreakdown(mop, units, numLoads) {
