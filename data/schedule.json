@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T23:50:04Z",
+  "generated_at": "2026-04-02T23:53:04Z",
   "week_number": 11,
   "week_start": "2026-03-09",
   "week_end": "2026-04-12",
@@ -1112,9 +1112,9 @@
           "qty_packs": 120.0,
           "qty_units": 360.0,
           "qty_pouches": 360.0,
-          "dluo": null,
+          "dluo": "2027-01-08",
           "mo_ref": "WH/MO/00632",
-          "lot_id": null,
+          "lot_id": 988,
           "copacked": false
         },
         {
@@ -1217,9 +1217,9 @@
           "qty_packs": 117.0,
           "qty_units": 117.0,
           "qty_pouches": 117.0,
-          "dluo": null,
+          "dluo": "2026-10-09",
           "mo_ref": "WH/MO/00628",
-          "lot_id": null,
+          "lot_id": 990,
           "copacked": false
         },
         {
@@ -1228,9 +1228,9 @@
           "qty_packs": 231.0,
           "qty_units": 462.0,
           "qty_pouches": 462.0,
-          "dluo": null,
+          "dluo": "2027-01-08",
           "mo_ref": "WH/MO/00627",
-          "lot_id": null,
+          "lot_id": 989,
           "copacked": false
         },
         {
@@ -1239,9 +1239,9 @@
           "qty_packs": 353.0,
           "qty_units": 353.0,
           "qty_pouches": 353.0,
-          "dluo": null,
+          "dluo": "2027-01-09",
           "mo_ref": "WH/MO/00629",
-          "lot_id": null,
+          "lot_id": 991,
           "copacked": false
         }
       ]
@@ -1303,9 +1303,9 @@
           "qty_packs": 266.0,
           "qty_units": 798.0,
           "qty_pouches": 266.0,
-          "dluo": null,
+          "dluo": "2027-01-09",
           "mo_ref": "WH/MO/00630",
-          "lot_id": null,
+          "lot_id": 993,
           "copacked": false
         },
         {
@@ -1336,9 +1336,9 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": null,
+          "dluo": "2027-01-10",
           "mo_ref": "WH/MO/00625",
-          "lot_id": null,
+          "lot_id": 992,
           "copacked": false
         }
       ]
