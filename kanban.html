@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atome Bakery – Kanban</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pri-low:    #3b82f6;
+      --pri-med:    #f59e0b;
+      --pri-high:   #ef4444;
+      --border:     #e5e7eb;
+      --text:       #111827;
+      --muted:      #6b7280;
+      --radius:     10px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px; color: var(--text);
+      background: #f1f5f9;
+      padding-left: 56px;
+      min-height: 100vh;
+    }
+
+    /* ── Side Nav (same as index.html) ───────────────────────── */
+    .side-nav {
+      position: fixed; left: 0; top: 0; height: 100vh;
+      width: 56px; background: #0f172a;
+      z-index: 9000; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: width 0.22s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: 2px 0 12px rgba(0,0,0,0.18);
+    }
+    .side-nav.open { width: 240px; }
+    .side-nav-head {
+      display: flex; align-items: center;
+      height: 56px; padding: 0 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0; gap: 10px;
+    }
+    .side-nav-toggle {
+      background: none; border: none; color: #94a3b8;
+      font-size: 18px; cursor: pointer; padding: 6px;
+      border-radius: 6px; line-height: 1; flex-shrink: 0;
+      transition: color 0.15s, background 0.15s;
+    }
+    .side-nav-toggle:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    .side-nav-brand {
+      font-size: 13px; font-weight: 700; color: #fff;
+      white-space: nowrap; opacity: 0;
+      transition: opacity 0.18s; pointer-events: none;
+    }
+    .side-nav.open .side-nav-brand { opacity: 1; }
+    .side-nav-items { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 6px 0; }
+    .side-nav-items::-webkit-scrollbar { width: 4px; }
+    .side-nav-items::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+    .side-nav-item {
+      display: flex; align-items: center;
+      padding: 10px 16px; color: #94a3b8;
+      text-decoration: none; white-space: nowrap;
+      transition: background 0.13s, color 0.13s;
+      cursor: pointer; border: none;
+      background: none; width: 100%; text-align: left;
+      font-size: 13.5px; font-family: inherit;
+    }
+    .side-nav-item:hover { background: rgba(255,255,255,0.07); color: #e2e8f0; }
+    .side-nav-item.active { background: rgba(99,102,241,0.25); color: #a5b4fc; }
+    .side-nav-icon { font-size: 17px; min-width: 24px; text-align: center; flex-shrink: 0; }
+    .side-nav-label { margin-left: 12px; opacity: 0; transition: opacity 0.18s; pointer-events: none; }
+    .side-nav.open .side-nav-label { opacity: 1; }
+    .side-nav-sep { height: 1px; background: rgba(255,255,255,0.07); margin: 6px 12px; }
+    .side-nav-section {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+      color: #475569; padding: 10px 16px 4px; white-space: nowrap;
+      opacity: 0; transition: opacity 0.18s; text-transform: uppercase;
+    }
+    .side-nav.open .side-nav-section { opacity: 1; }
+    .side-nav-backdrop {
+      display: none; position: fixed; inset: 0;
+      z-index: 8999; background: rgba(0,0,0,0.25);
+    }
+    .side-nav-backdrop.visible { display: block; }
+
+    /* ── Topbar ──────────────────────────────────────────────── */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 20px;
+      background: #1e1b4b; color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+      min-height: 52px; gap: 16px;
+    }
+    .topbar h1 { font-size: 16px; font-weight: 700; }
+    .board-tabs { display: flex; gap: 4px; }
+    .board-tab {
+      padding: 6px 16px; border-radius: 6px;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      text-decoration: none; color: #c7d2fe;
+      background: #312e81; border: none; font-family: inherit;
+      transition: background 0.15s, color 0.15s;
+    }
+    .board-tab:hover { background: #3730a3; color: #fff; }
+    .board-tab.active { background: #6366f1; color: #fff; }
+
+    /* ── Board layout ────────────────────────────────────────── */
+    .board-wrap {
+      display: flex; gap: 16px; padding: 20px;
+      overflow-x: auto; min-height: calc(100vh - 52px);
+      align-items: flex-start;
+    }
+    .board-wrap::-webkit-scrollbar { height: 6px; }
+    .board-wrap::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+    /* ── Column ─────────────────────────────────────────────── */
+    .col {
+      background: #e2e8f0; border-radius: var(--radius);
+      width: 296px; flex-shrink: 0;
+      display: flex; flex-direction: column; max-height: calc(100vh - 92px);
+    }
+    .col-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 14px 10px;
+    }
+    .col-title {
+      font-size: 13px; font-weight: 700; color: #334155;
+      flex: 1; cursor: pointer; border: none; background: none;
+      font-family: inherit; text-align: left; padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .col-title:hover { background: rgba(0,0,0,0.06); }
+    .col-title-input {
+      font-size: 13px; font-weight: 700; color: #334155;
+      border: 2px solid #6366f1; border-radius: 4px;
+      padding: 2px 6px; background: #fff; font-family: inherit;
+      outline: none; width: 100%;
+    }
+    .col-count {
+      font-size: 11px; color: #64748b;
+      background: rgba(0,0,0,0.08); border-radius: 10px;
+      padding: 1px 7px; margin-left: 8px; flex-shrink: 0;
+    }
+    .col-menu-btn {
+      background: none; border: none; color: #94a3b8;
+      font-size: 16px; cursor: pointer; padding: 2px 6px;
+      border-radius: 4px; line-height: 1;
+    }
+    .col-menu-btn:hover { background: rgba(0,0,0,0.08); color: #475569; }
+    .col-cards {
+      flex: 1; overflow-y: auto; padding: 0 10px 8px;
+    }
+    .col-cards::-webkit-scrollbar { width: 4px; }
+    .col-cards::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+    .col-footer { padding: 6px 10px 10px; }
+    .add-card-btn {
+      display: flex; align-items: center; gap: 6px;
+      width: 100%; padding: 8px 10px;
+      background: none; border: none;
+      color: #64748b; font-size: 13px;
+      cursor: pointer; border-radius: 6px;
+      font-family: inherit; transition: background 0.13s, color 0.13s;
+    }
+    .add-card-btn:hover { background: rgba(0,0,0,0.08); color: #334155; }
+
+    /* ── Card ───────────────────────────────────────────────── */
+    .card {
+      background: #fff; border-radius: 8px;
+      padding: 11px 12px; margin-bottom: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      cursor: pointer; border: 1px solid rgba(0,0,0,0.04);
+      transition: box-shadow 0.15s, transform 0.1s;
+      position: relative;
+    }
+    .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.12); transform: translateY(-1px); }
+    .card.dragging { opacity: 0.5; }
+    .card-title { font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 8px; line-height: 1.4; }
+    .card-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .card-assignee {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; color: #475569;
+      background: #f1f5f9; border-radius: 20px;
+      padding: 2px 8px 2px 5px;
+    }
+    .assignee-avatar {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: #6366f1; color: #fff;
+      font-size: 9px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-due {
+      font-size: 11px; color: #64748b;
+      background: #f8fafc; border: 1px solid #e2e8f0;
+      border-radius: 4px; padding: 2px 7px;
+    }
+    .card-due.overdue { color: #ef4444; background: #fef2f2; border-color: #fecaca; }
+    .card-due.soon    { color: #f59e0b; background: #fffbeb; border-color: #fde68a; }
+    .pri-badge {
+      font-size: 10px; font-weight: 700; border-radius: 4px;
+      padding: 2px 7px; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .pri-low  { background: #dbeafe; color: #1d4ed8; }
+    .pri-med  { background: #fef3c7; color: #b45309; }
+    .pri-high { background: #fee2e2; color: #b91c1c; }
+
+    /* ── Add column button ──────────────────────────────────── */
+    .add-col-btn {
+      width: 260px; flex-shrink: 0;
+      background: rgba(226,232,240,0.6);
+      border: 2px dashed #cbd5e1; border-radius: var(--radius);
+      padding: 14px 20px; cursor: pointer;
+      color: #64748b; font-size: 13px; font-weight: 600;
+      display: flex; align-items: center; gap: 8px;
+      transition: background 0.13s, border-color 0.13s, color 0.13s;
+      font-family: inherit;
+    }
+    .add-col-btn:hover { background: #e2e8f0; border-color: #94a3b8; color: #334155; }
+
+    /* ── Drag-over column highlight ──────────────────────────── */
+    .col.drag-over .col-cards { background: rgba(99,102,241,0.06); border-radius: 6px; }
+
+    /* ── Modal overlay ──────────────────────────────────────── */
+    .modal-backdrop {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.45); z-index: 10000;
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: #fff; border-radius: 14px;
+      width: 100%; max-width: 520px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+    .modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .modal-title { font-size: 15px; font-weight: 700; }
+    .modal-close {
+      background: none; border: none; font-size: 20px;
+      color: #9ca3af; cursor: pointer; padding: 2px 6px;
+      border-radius: 4px; line-height: 1;
+    }
+    .modal-close:hover { color: #374151; background: #f3f4f6; }
+    .modal-body { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+    .field-group { display: flex; flex-direction: column; gap: 5px; }
+    .field-label {
+      font-size: 12px; font-weight: 600; color: #374151;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .field-required { color: #ef4444; }
+    .field-input, .field-select, .field-textarea {
+      padding: 9px 12px; border: 1px solid #d1d5db;
+      border-radius: 7px; font-size: 13px; font-family: inherit;
+      color: var(--text); outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .field-input:focus, .field-select:focus, .field-textarea:focus {
+      border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+    }
+    .field-input.invalid, .field-select.invalid { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239,68,68,0.1); }
+    .field-textarea { resize: vertical; min-height: 90px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .modal-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; border-top: 1px solid var(--border);
+    }
+    .btn-primary {
+      background: #6366f1; color: #fff; border: none;
+      padding: 9px 20px; border-radius: 7px;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      font-family: inherit; transition: background 0.15s;
+    }
+    .btn-primary:hover { background: #4f46e5; }
+    .btn-danger {
+      background: none; color: #ef4444; border: 1px solid #fca5a5;
+      padding: 7px 16px; border-radius: 7px;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      font-family: inherit; transition: background 0.15s;
+    }
+    .btn-danger:hover { background: #fef2f2; }
+    .btn-ghost {
+      background: none; color: #6b7280; border: 1px solid #e5e7eb;
+      padding: 7px 16px; border-radius: 7px;
+      font-size: 13px; cursor: pointer; font-family: inherit;
+    }
+    .btn-ghost:hover { background: #f9fafb; }
+
+    /* ── Column context menu ─────────────────────────────────── */
+    .ctx-menu {
+      position: fixed; background: #fff;
+      border: 1px solid var(--border); border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      z-index: 9500; min-width: 160px; padding: 4px;
+    }
+    .ctx-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border-radius: 5px; cursor: pointer;
+      font-size: 13px; color: #374151;
+      transition: background 0.1s;
+    }
+    .ctx-item:hover { background: #f3f4f6; }
+    .ctx-item.danger { color: #ef4444; }
+    .ctx-item.danger:hover { background: #fef2f2; }
+
+    /* ── Empty column placeholder ────────────────────────────── */
+    .empty-col {
+      text-align: center; padding: 24px 12px;
+      color: #94a3b8; font-size: 12px;
+    }
+    .empty-col-icon { font-size: 28px; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+<!-- ── Side Navigation ── -->
+<div class="side-nav-backdrop" id="sideNavBackdrop" onclick="closeSideNav()"></div>
+<nav class="side-nav" id="sideNav">
+  <div class="side-nav-head">
+    <button class="side-nav-toggle" onclick="toggleSideNav()" title="Toggle menu">☰</button>
+    <span class="side-nav-brand">🥖 Atome Bakery</span>
+  </div>
+  <div class="side-nav-items">
+    <div class="side-nav-section">Production</div>
+    <a href="index.html" class="side-nav-item">
+      <span class="side-nav-icon">📅</span>
+      <span class="side-nav-label">Schedule</span>
+    </a>
+    <a href="headpaper/index.html" class="side-nav-item">
+      <span class="side-nav-icon">📋</span>
+      <span class="side-nav-label">Daily Planner</span>
+    </a>
+    <a href="outputs.html" class="side-nav-item">
+      <span class="side-nav-icon">📊</span>
+      <span class="side-nav-label">Outputs</span>
+    </a>
+    <a href="levain.html" class="side-nav-item">
+      <span class="side-nav-icon">🫙</span>
+      <span class="side-nav-label">Levain</span>
+    </a>
+    <div class="side-nav-sep"></div>
+    <div class="side-nav-section">Tools</div>
+    <a href="mops.html" class="side-nav-item">
+      <span class="side-nav-icon">📚</span>
+      <span class="side-nav-label">MOPs</span>
+    </a>
+    <a href="ai-planner/index.html" class="side-nav-item">
+      <span class="side-nav-icon">⚡</span>
+      <span class="side-nav-label">AI Planner</span>
+    </a>
+    <div class="side-nav-sep"></div>
+    <div class="side-nav-section">Planning</div>
+    <a href="kanban.html?board=projects" class="side-nav-item" id="nav-projects">
+      <span class="side-nav-icon">🗂️</span>
+      <span class="side-nav-label">Projects</span>
+    </a>
+    <a href="kanban.html?board=new-products" class="side-nav-item" id="nav-new-products">
+      <span class="side-nav-icon">🆕</span>
+      <span class="side-nav-label">New Products</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ── Topbar ── -->
+<div class="topbar">
+  <h1 id="boardPageTitle">Kanban</h1>
+  <div class="board-tabs">
+    <a href="kanban.html?board=projects" class="board-tab" id="tab-projects">🗂️ Projects</a>
+    <a href="kanban.html?board=new-products" class="board-tab" id="tab-new-products">🆕 New Products</a>
+  </div>
+</div>
+
+<!-- ── Board ── -->
+<div class="board-wrap" id="boardWrap"></div>
+
+<!-- ── Task Modal ── -->
+<div class="modal-backdrop" id="taskModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="modalTitle">New task</span>
+      <button class="modal-close" onclick="closeTaskModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group">
+        <label class="field-label">Task name <span class="field-required">*</span></label>
+        <input id="fName" class="field-input" placeholder="What needs to be done?" />
+      </div>
+      <div class="field-group">
+        <label class="field-label">Assignee <span class="field-required">*</span></label>
+        <input id="fAssignee" class="field-input" placeholder="Who is responsible?" />
+      </div>
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Due date</label>
+          <input id="fDue" class="field-input" type="date" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Priority</label>
+          <select id="fPriority" class="field-select">
+            <option value="">— None —</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field-label">Description</label>
+        <textarea id="fDesc" class="field-textarea" placeholder="Add details, links, context…"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-danger" id="deleteTaskBtn" style="visibility:hidden" onclick="deleteCurrentTask()">🗑 Delete</button>
+      <div style="display:flex;gap:8px">
+        <button class="btn-ghost" onclick="closeTaskModal()">Cancel</button>
+        <button class="btn-primary" onclick="saveTask()">Save task</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Column context menu ── -->
+<div class="ctx-menu" id="ctxMenu" style="display:none">
+  <div class="ctx-item" onclick="ctxRename()">✏️ Rename column</div>
+  <div class="ctx-item" onclick="ctxMoveLeft()">← Move left</div>
+  <div class="ctx-item" onclick="ctxMoveRight()">→ Move right</div>
+  <div class="ctx-item danger" onclick="ctxDelete()">🗑 Delete column</div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+//  Kanban Board — Atome Bakery
+// ─────────────────────────────────────────────────────────────────────────────
+
+const SUPA_URL = "https://ktbbmtyesrprvxrseiph.supabase.co";
+const SUPA_KEY = "sb_publishable_1vfCHnng8kWfUGFtOt9Dmw_Rzkn8M62";
+
+// ── Determine current board ──────────────────────────────────────────────────
+const BOARD_ID = new URLSearchParams(location.search).get("board") || "projects";
+const BOARD_META = {
+  "projects":     { title: "Projects",     icon: "🗂️" },
+  "new-products": { title: "New Products", icon: "🆕" },
+};
+const meta = BOARD_META[BOARD_ID] || BOARD_META["projects"];
+const LS_KEY = `kanban_${BOARD_ID}`;
+
+document.title = `${meta.title} – Atome Bakery`;
+document.getElementById("boardPageTitle").textContent = `${meta.icon} ${meta.title}`;
+document.getElementById(`tab-${BOARD_ID}`)?.classList.add("active");
+document.getElementById(`nav-${BOARD_ID}`)?.classList.add("active");
+
+// ── Data model ───────────────────────────────────────────────────────────────
+// { columns: [{id,title,order}], tasks: [{id,column_id,title,assignee,due_date,priority,description,order,created_at}] }
+
+function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+
+const DEFAULT_BOARDS = {
+  "projects": {
+    columns: [
+      { id: "c1", title: "Backlog",     order: 0 },
+      { id: "c2", title: "In Progress", order: 1 },
+      { id: "c3", title: "Review",      order: 2 },
+      { id: "c4", title: "Done",        order: 3 },
+    ],
+    tasks: []
+  },
+  "new-products": {
+    columns: [
+      { id: "d1", title: "Ideas",       order: 0 },
+      { id: "d2", title: "Research",    order: 1 },
+      { id: "d3", title: "Development", order: 2 },
+      { id: "d4", title: "Launch",      order: 3 },
+    ],
+    tasks: []
+  }
+};
+
+let board = loadBoard();
+
+function loadBoard() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch {}
+  return JSON.parse(JSON.stringify(DEFAULT_BOARDS[BOARD_ID] || DEFAULT_BOARDS["projects"]));
+}
+
+function saveBoard() {
+  localStorage.setItem(LS_KEY, JSON.stringify(board));
+  syncToSupabase();
+}
+
+async function syncToSupabase() {
+  try {
+    await fetch(`${SUPA_URL}/rest/v1/checks`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": SUPA_KEY,
+        "Authorization": `Bearer ${SUPA_KEY}`,
+        "Prefer": "resolution=merge-duplicates",
+      },
+      body: JSON.stringify([{ key: LS_KEY, value: JSON.stringify(board), updated_at: new Date().toISOString() }])
+    });
+  } catch {}
+}
+
+async function loadFromSupabase() {
+  try {
+    const resp = await fetch(`${SUPA_URL}/rest/v1/checks?key=eq.${LS_KEY}&select=value`, {
+      headers: { "apikey": SUPA_KEY, "Authorization": `Bearer ${SUPA_KEY}` }
+    });
+    if (!resp.ok) return;
+    const rows = await resp.json();
+    if (rows?.[0]?.value) {
+      const remote = JSON.parse(rows[0].value);
+      board = remote;
+      localStorage.setItem(LS_KEY, JSON.stringify(board));
+    }
+  } catch {}
+}
+
+// ── Rendering ────────────────────────────────────────────────────────────────
+function sortedCols()  { return [...board.columns].sort((a,b) => a.order - b.order); }
+function tasksForCol(cid) { return board.tasks.filter(t => t.column_id === cid).sort((a,b) => a.order - b.order); }
+
+function renderBoard() {
+  const wrap = document.getElementById("boardWrap");
+  wrap.innerHTML = "";
+  for (const col of sortedCols()) {
+    wrap.appendChild(renderColumn(col));
+  }
+  // Add column button
+  const btn = document.createElement("button");
+  btn.className = "add-col-btn";
+  btn.innerHTML = `<span style="font-size:18px">＋</span> Add column`;
+  btn.onclick = addColumn;
+  wrap.appendChild(btn);
+}
+
+function renderColumn(col) {
+  const tasks = tasksForCol(col.id);
+  const div = document.createElement("div");
+  div.className = "col";
+  div.dataset.colId = col.id;
+
+  div.innerHTML = `
+    <div class="col-header">
+      <button class="col-title" data-col-id="${col.id}" onclick="startRenameCol('${col.id}')">${escHtml(col.title)}</button>
+      <span class="col-count">${tasks.length}</span>
+      <button class="col-menu-btn" onclick="openColMenu(event,'${col.id}')">⋯</button>
+    </div>
+    <div class="col-cards" id="cards-${col.id}"
+         ondragover="onDragOver(event,'${col.id}')"
+         ondragleave="onDragLeave(event,'${col.id}')"
+         ondrop="onDrop(event,'${col.id}')">
+      ${tasks.length === 0
+        ? `<div class="empty-col"><div class="empty-col-icon">📭</div>No tasks yet</div>`
+        : tasks.map(t => renderCardHtml(t)).join("")}
+    </div>
+    <div class="col-footer">
+      <button class="add-card-btn" onclick="openNewTask('${col.id}')">
+        <span style="font-size:16px">＋</span> Add task
+      </button>
+    </div>`;
+
+  // Attach drag events to cards after render
+  div.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("dragstart", e => onDragStart(e, card.dataset.taskId));
+    card.addEventListener("dragend",   e => card.classList.remove("dragging"));
+  });
+
+  return div;
+}
+
+function renderCardHtml(task) {
+  const dueHtml  = task.due_date  ? dueBadge(task.due_date) : "";
+  const priHtml  = task.priority  ? `<span class="pri-badge pri-${task.priority}">${task.priority}</span>` : "";
+  const initials = (task.assignee || "?").split(" ").map(w=>w[0]).slice(0,2).join("").toUpperCase();
+  return `
+    <div class="card" draggable="true" data-task-id="${task.id}" onclick="openEditTask('${task.id}')">
+      <div class="card-title">${escHtml(task.title)}</div>
+      <div class="card-meta">
+        <span class="card-assignee">
+          <span class="assignee-avatar" style="background:${avatarColor(task.assignee)}">${initials}</span>
+          ${escHtml(task.assignee)}
+        </span>
+        ${dueHtml}
+        ${priHtml}
+      </div>
+    </div>`;
+}
+
+function dueBadge(dateStr) {
+  const due  = new Date(dateStr);
+  const now  = new Date();
+  const diff = (due - now) / 86400000;
+  const cls  = diff < 0 ? "overdue" : diff <= 3 ? "soon" : "";
+  const label = due.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  return `<span class="card-due ${cls}">📅 ${label}</span>`;
+}
+
+const AVATAR_COLORS = ["#6366f1","#0891b2","#059669","#d97706","#dc2626","#7c3aed","#db2777"];
+function avatarColor(name) {
+  let h = 0;
+  for (const c of (name || "")) h = (h * 31 + c.charCodeAt(0)) & 0xffffffff;
+  return AVATAR_COLORS[Math.abs(h) % AVATAR_COLORS.length];
+}
+
+function escHtml(s) {
+  return String(s || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+// ── Add column ────────────────────────────────────────────────────────────────
+function addColumn() {
+  const title = prompt("Column name:");
+  if (!title?.trim()) return;
+  const maxOrder = board.columns.reduce((m, c) => Math.max(m, c.order), -1);
+  board.columns.push({ id: uid(), title: title.trim(), order: maxOrder + 1 });
+  saveBoard();
+  renderBoard();
+}
+
+// ── Rename column (inline) ────────────────────────────────────────────────────
+function startRenameCol(colId) {
+  const btn = document.querySelector(`.col-title[data-col-id="${colId}"]`);
+  if (!btn) return;
+  const col = board.columns.find(c => c.id === colId);
+  const input = document.createElement("input");
+  input.className = "col-title-input";
+  input.value = col.title;
+  btn.replaceWith(input);
+  input.focus(); input.select();
+  const commit = () => {
+    const val = input.value.trim();
+    if (val) { col.title = val; saveBoard(); }
+    renderBoard();
+  };
+  input.addEventListener("blur", commit);
+  input.addEventListener("keydown", e => { if (e.key === "Enter") input.blur(); if (e.key === "Escape") renderBoard(); });
+}
+
+// ── Column context menu ───────────────────────────────────────────────────────
+let _ctxColId = null;
+function openColMenu(e, colId) {
+  e.stopPropagation();
+  _ctxColId = colId;
+  const menu = document.getElementById("ctxMenu");
+  menu.style.display = "block";
+  menu.style.left = `${e.clientX}px`;
+  menu.style.top  = `${e.clientY}px`;
+}
+function closeCtxMenu() { document.getElementById("ctxMenu").style.display = "none"; _ctxColId = null; }
+function ctxRename() { closeCtxMenu(); startRenameCol(_ctxColId); }
+function ctxMoveLeft() {
+  const cols = sortedCols();
+  const idx  = cols.findIndex(c => c.id === _ctxColId);
+  if (idx <= 0) { closeCtxMenu(); return; }
+  [cols[idx].order, cols[idx-1].order] = [cols[idx-1].order, cols[idx].order];
+  saveBoard(); closeCtxMenu(); renderBoard();
+}
+function ctxMoveRight() {
+  const cols = sortedCols();
+  const idx  = cols.findIndex(c => c.id === _ctxColId);
+  if (idx >= cols.length - 1) { closeCtxMenu(); return; }
+  [cols[idx].order, cols[idx+1].order] = [cols[idx+1].order, cols[idx].order];
+  saveBoard(); closeCtxMenu(); renderBoard();
+}
+function ctxDelete() {
+  const col = board.columns.find(c => c.id === _ctxColId);
+  const taskCount = tasksForCol(_ctxColId).length;
+  const msg = taskCount > 0
+    ? `Delete "${col.title}" and its ${taskCount} task(s)? This cannot be undone.`
+    : `Delete column "${col.title}"?`;
+  if (!confirm(msg)) { closeCtxMenu(); return; }
+  board.columns = board.columns.filter(c => c.id !== _ctxColId);
+  board.tasks   = board.tasks.filter(t => t.column_id !== _ctxColId);
+  saveBoard(); closeCtxMenu(); renderBoard();
+}
+document.addEventListener("click", e => {
+  if (!e.target.closest(".ctx-menu") && !e.target.closest(".col-menu-btn")) closeCtxMenu();
+});
+
+// ── Task modal ────────────────────────────────────────────────────────────────
+let _editingTaskId  = null;
+let _editingColId   = null;
+
+function openNewTask(colId) {
+  _editingTaskId = null;
+  _editingColId  = colId;
+  document.getElementById("modalTitle").textContent = "New task";
+  document.getElementById("fName").value     = "";
+  document.getElementById("fAssignee").value = "";
+  document.getElementById("fDue").value      = "";
+  document.getElementById("fPriority").value = "";
+  document.getElementById("fDesc").value     = "";
+  document.getElementById("deleteTaskBtn").style.visibility = "hidden";
+  clearInvalid();
+  document.getElementById("taskModal").classList.add("open");
+  setTimeout(() => document.getElementById("fName").focus(), 50);
+}
+
+function openEditTask(taskId) {
+  const task = board.tasks.find(t => t.id === taskId);
+  if (!task) return;
+  _editingTaskId = taskId;
+  _editingColId  = task.column_id;
+  document.getElementById("modalTitle").textContent = "Edit task";
+  document.getElementById("fName").value     = task.title;
+  document.getElementById("fAssignee").value = task.assignee;
+  document.getElementById("fDue").value      = task.due_date || "";
+  document.getElementById("fPriority").value = task.priority || "";
+  document.getElementById("fDesc").value     = task.description || "";
+  document.getElementById("deleteTaskBtn").style.visibility = "visible";
+  clearInvalid();
+  document.getElementById("taskModal").classList.add("open");
+}
+
+function closeTaskModal() {
+  document.getElementById("taskModal").classList.remove("open");
+  _editingTaskId = null; _editingColId = null;
+}
+
+function clearInvalid() {
+  ["fName","fAssignee"].forEach(id => document.getElementById(id).classList.remove("invalid"));
+}
+
+function saveTask() {
+  const name     = document.getElementById("fName").value.trim();
+  const assignee = document.getElementById("fAssignee").value.trim();
+  let valid = true;
+  if (!name)     { document.getElementById("fName").classList.add("invalid");     valid = false; }
+  if (!assignee) { document.getElementById("fAssignee").classList.add("invalid"); valid = false; }
+  if (!valid) return;
+
+  const payload = {
+    title:       name,
+    assignee,
+    due_date:    document.getElementById("fDue").value      || null,
+    priority:    document.getElementById("fPriority").value || null,
+    description: document.getElementById("fDesc").value.trim() || null,
+  };
+
+  if (_editingTaskId) {
+    const task = board.tasks.find(t => t.id === _editingTaskId);
+    Object.assign(task, payload);
+  } else {
+    const maxOrder = board.tasks.filter(t => t.column_id === _editingColId)
+                                .reduce((m,t) => Math.max(m,t.order), -1);
+    board.tasks.push({
+      id: uid(), column_id: _editingColId,
+      order: maxOrder + 1, created_at: new Date().toISOString(),
+      ...payload
+    });
+  }
+
+  saveBoard();
+  renderBoard();
+  closeTaskModal();
+}
+
+function deleteCurrentTask() {
+  if (!_editingTaskId) return;
+  const task = board.tasks.find(t => t.id === _editingTaskId);
+  if (!confirm(`Delete task "${task?.title}"?`)) return;
+  board.tasks = board.tasks.filter(t => t.id !== _editingTaskId);
+  saveBoard(); renderBoard(); closeTaskModal();
+}
+
+// ── Drag & drop ───────────────────────────────────────────────────────────────
+let _dragTaskId = null;
+
+function onDragStart(e, taskId) {
+  _dragTaskId = taskId;
+  e.dataTransfer.effectAllowed = "move";
+  e.target.classList.add("dragging");
+}
+
+function onDragOver(e, colId) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = "move";
+  document.querySelector(`.col[data-col-id="${colId}"]`)?.classList.add("drag-over");
+}
+
+function onDragLeave(e, colId) {
+  if (!e.currentTarget.contains(e.relatedTarget)) {
+    document.querySelector(`.col[data-col-id="${colId}"]`)?.classList.remove("drag-over");
+  }
+}
+
+function onDrop(e, colId) {
+  e.preventDefault();
+  document.querySelector(`.col[data-col-id="${colId}"]`)?.classList.remove("drag-over");
+  if (!_dragTaskId) return;
+  const task = board.tasks.find(t => t.id === _dragTaskId);
+  if (!task) return;
+  task.column_id = colId;
+  const maxOrder = board.tasks.filter(t => t.column_id === colId && t.id !== task.id)
+                              .reduce((m,t) => Math.max(m,t.order), -1);
+  task.order = maxOrder + 1;
+  _dragTaskId = null;
+  saveBoard(); renderBoard();
+}
+
+// ── Modal keyboard shortcuts ──────────────────────────────────────────────────
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    closeTaskModal();
+    closeSideNav();
+  }
+  if (e.key === "Enter" && e.ctrlKey && document.getElementById("taskModal").classList.contains("open")) {
+    saveTask();
+  }
+});
+document.getElementById("taskModal").addEventListener("click", e => {
+  if (e.target === document.getElementById("taskModal")) closeTaskModal();
+});
+
+// ── Side nav ──────────────────────────────────────────────────────────────────
+function toggleSideNav() {
+  const nav = document.getElementById("sideNav");
+  nav.classList.toggle("open");
+  document.getElementById("sideNavBackdrop").classList.toggle("visible", nav.classList.contains("open"));
+}
+function closeSideNav() {
+  document.getElementById("sideNav").classList.remove("open");
+  document.getElementById("sideNavBackdrop").classList.remove("visible");
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+(async () => {
+  await loadFromSupabase();
+  renderBoard();
+})();
+</script>
+</body>
+</html>

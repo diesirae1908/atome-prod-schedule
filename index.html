@@ -32,7 +32,74 @@
       font-size: 13px;
       color: var(--text);
       background: #f3f4f6;
+      padding-left: 56px;
     }
+
+    /* ── Side Nav ─────────────────────────────────────────────── */
+    .side-nav {
+      position: fixed; left: 0; top: 0; height: 100vh;
+      width: 56px; background: #0f172a;
+      z-index: 9000; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: width 0.22s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: 2px 0 12px rgba(0,0,0,0.18);
+    }
+    .side-nav.open { width: 240px; }
+    .side-nav-head {
+      display: flex; align-items: center;
+      height: 56px; padding: 0 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0; gap: 10px;
+    }
+    .side-nav-toggle {
+      background: none; border: none; color: #94a3b8;
+      font-size: 18px; cursor: pointer; padding: 6px;
+      border-radius: 6px; line-height: 1; flex-shrink: 0;
+      transition: color 0.15s, background 0.15s;
+    }
+    .side-nav-toggle:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    .side-nav-brand {
+      font-size: 13px; font-weight: 700; color: #fff;
+      white-space: nowrap; opacity: 0;
+      transition: opacity 0.18s; pointer-events: none;
+    }
+    .side-nav.open .side-nav-brand { opacity: 1; }
+    .side-nav-items { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 6px 0; }
+    .side-nav-items::-webkit-scrollbar { width: 4px; }
+    .side-nav-items::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+    .side-nav-item {
+      display: flex; align-items: center;
+      padding: 10px 16px; color: #94a3b8;
+      text-decoration: none; white-space: nowrap;
+      transition: background 0.13s, color 0.13s;
+      cursor: pointer; border: none;
+      background: none; width: 100%; text-align: left;
+      font-size: 13.5px; font-family: inherit; gap: 0;
+    }
+    .side-nav-item:hover { background: rgba(255,255,255,0.07); color: #e2e8f0; }
+    .side-nav-item.active { background: rgba(99,102,241,0.25); color: #a5b4fc; }
+    .side-nav-icon { font-size: 17px; min-width: 24px; text-align: center; flex-shrink: 0; }
+    .side-nav-label {
+      margin-left: 12px; opacity: 0;
+      transition: opacity 0.18s; pointer-events: none;
+    }
+    .side-nav.open .side-nav-label { opacity: 1; }
+    .side-nav-sep {
+      height: 1px; background: rgba(255,255,255,0.07);
+      margin: 6px 12px;
+    }
+    .side-nav-section {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+      color: #475569; padding: 10px 16px 4px; white-space: nowrap;
+      opacity: 0; transition: opacity 0.18s; text-transform: uppercase;
+    }
+    .side-nav.open .side-nav-section { opacity: 1; }
+    /* backdrop when open */
+    .side-nav-backdrop {
+      display: none; position: fixed; inset: 0;
+      z-index: 8999; background: rgba(0,0,0,0.25);
+    }
+    .side-nav-backdrop.visible { display: block; }
 
     /* ── topbar ── */
     .topbar {
@@ -501,18 +568,63 @@
 </head>
 <body>
 
+<!-- ── Side Navigation ── -->
+<div class="side-nav-backdrop" id="sideNavBackdrop" onclick="closeSideNav()"></div>
+<nav class="side-nav" id="sideNav">
+  <div class="side-nav-head">
+    <button class="side-nav-toggle" onclick="toggleSideNav()" title="Toggle menu">☰</button>
+    <span class="side-nav-brand">🥖 Atome Bakery</span>
+  </div>
+  <div class="side-nav-items">
+    <div class="side-nav-section">Production</div>
+    <a href="index.html" class="side-nav-item active">
+      <span class="side-nav-icon">📅</span>
+      <span class="side-nav-label">Schedule</span>
+    </a>
+    <a href="headpaper/index.html" class="side-nav-item">
+      <span class="side-nav-icon">📋</span>
+      <span class="side-nav-label">Daily Planner</span>
+    </a>
+    <a href="outputs.html" class="side-nav-item">
+      <span class="side-nav-icon">📊</span>
+      <span class="side-nav-label">Outputs</span>
+    </a>
+    <a href="levain.html" class="side-nav-item">
+      <span class="side-nav-icon">🫙</span>
+      <span class="side-nav-label">Levain</span>
+    </a>
+    <button onclick="closeSideNav();openShiftsRo();" class="side-nav-item">
+      <span class="side-nav-icon">👥</span>
+      <span class="side-nav-label">Shifts</span>
+    </button>
+    <div class="side-nav-sep"></div>
+    <div class="side-nav-section">Tools</div>
+    <a href="mops.html" class="side-nav-item">
+      <span class="side-nav-icon">📚</span>
+      <span class="side-nav-label">MOPs</span>
+    </a>
+    <a href="ai-planner/index.html" class="side-nav-item">
+      <span class="side-nav-icon">⚡</span>
+      <span class="side-nav-label">AI Planner</span>
+    </a>
+    <div class="side-nav-sep"></div>
+    <div class="side-nav-section">Planning</div>
+    <a href="kanban.html?board=projects" class="side-nav-item">
+      <span class="side-nav-icon">🗂️</span>
+      <span class="side-nav-label">Projects</span>
+    </a>
+    <a href="kanban.html?board=new-products" class="side-nav-item">
+      <span class="side-nav-icon">🆕</span>
+      <span class="side-nav-label">New Products</span>
+    </a>
+  </div>
+</nav>
+
 <div class="topbar">
-  <div style="display:flex;align-items:center;gap:12px">
-    <span style="font-size:22px">🥖</span>
+  <div style="display:flex;align-items:center;gap:10px">
     <h1>Atome Bakery — Production Schedule</h1>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
-    <a href="headpaper/index.html" class="planner-btn">📋 Daily Planner</a>
-    <a href="ai-planner/index.html" class="planner-btn" style="background:#ede9fe;color:#5b21b6;border-color:#c4b5fd">⚡ AI Planner</a>
-    <a href="outputs.html" class="planner-btn">📊 Outputs</a>
-    <a href="mops.html" class="planner-btn">📚 MOPs</a>
-    <a href="levain.html" class="planner-btn">🫙 Levain</a>
-    <button onclick="openShiftsRo()" class="planner-btn">📋 Shifts</button>
     <div class="week-nav">
       <button id="prevWeek">◀</button>
       <div class="week-picker-wrap">
@@ -1784,6 +1896,19 @@ function renderShiftsRo() {
 document.getElementById("modal-shifts-ro").addEventListener("click", function(e) {
   if (e.target === this) closeShiftsRo();
 });
+
+// ── Side nav ──────────────────────────────────────────────────────────────────
+function toggleSideNav() {
+  const nav = document.getElementById("sideNav");
+  nav.classList.toggle("open");
+  document.getElementById("sideNavBackdrop").classList.toggle("visible", nav.classList.contains("open"));
+}
+function closeSideNav() {
+  document.getElementById("sideNav").classList.remove("open");
+  document.getElementById("sideNavBackdrop").classList.remove("visible");
+}
+// Close on Escape
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeSideNav(); });
 </script>
 </body>
 </html>
