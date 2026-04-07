@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T22:01:29Z",
+  "generated_at": "2026-04-07T22:49:08Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-04-19",
@@ -321,19 +321,7 @@
           "d0": "2026-04-07"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "qty_pouches": 120.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/00667",
-          "lot_id": 959,
-          "copacked": true
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-04-07",
@@ -459,6 +447,17 @@
           "mo_ref": "WH/MO/00618",
           "lot_id": 997,
           "copacked": false
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 200.0,
+          "qty_units": 1600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/00669",
+          "lot_id": 1011,
+          "copacked": true
         }
       ]
     },
@@ -608,6 +607,17 @@
           "mo_ref": "WH/MO/00622",
           "lot_id": 984,
           "copacked": false
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 200.0,
+          "qty_units": 1600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-09-26",
+          "mo_ref": "WH/MO/00670",
+          "lot_id": 1012,
+          "copacked": true
         }
       ]
     },
