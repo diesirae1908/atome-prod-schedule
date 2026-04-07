@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-06T21:26:36Z",
+  "generated_at": "2026-04-07T03:47:02Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-04-19",
@@ -180,20 +180,7 @@
       "date": "2026-04-04",
       "label": "SATURDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00639",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
-        }
-      ],
+      "mix": [],
       "shaping": [],
       "score_tasks": [],
       "vacuuming": []
@@ -210,16 +197,6 @@
           ],
           "mo_refs": [
             "WH/MO/00622"
-          ]
-        },
-        {
-          "label": "Prep mix Braided Brioche",
-          "total_units": 117,
-          "products": [
-            "Brioche (Pastry)"
-          ],
-          "mo_refs": [
-            "WH/MO/00620"
           ]
         }
       ],
@@ -258,15 +235,6 @@
           "total_kg": 369.6,
           "mo_ref": "WH/MO/00616",
           "d0": "2026-04-07"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00639",
-          "d0": "2026-04-06"
         }
       ],
       "score_tasks": [],
@@ -287,29 +255,17 @@
           ]
         },
         {
-          "label": "Prep mix Viennoise",
-          "total_units": 200,
+          "label": "Prep mix Braided Brioche",
+          "total_units": 117,
           "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
+            "Brioche (Pastry)"
           ],
           "mo_refs": [
-            "WH/MO/00621"
+            "WH/MO/00620"
           ]
         }
       ],
       "mix": [
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Brioche (Pastry)",
-          "cfg_name": "Braided Brioche",
-          "unit": "kg",
-          "total_kg": 52.6,
-          "total_units": 117,
-          "mo_ref": "WH/MO/00620",
-          "products": [
-            "Brioche (Pastry)"
-          ]
-        },
         {
           "dough_type": "MG",
           "label": "Pack of 3 Multigrain Sourdough Baguettes",
@@ -336,15 +292,6 @@
         }
       ],
       "shaping": [
-        {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 117,
-          "qty_units": 117,
-          "total_kg": 52.6,
-          "mo_ref": "WH/MO/00620",
-          "d0": "2026-04-07"
-        },
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
@@ -376,15 +323,15 @@
       ],
       "vacuuming": [
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-01-05",
-          "mo_ref": "WH/MO/00639",
-          "lot_id": 981,
-          "copacked": false
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 120.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00667",
+          "lot_id": 959,
+          "copacked": true
         }
       ]
     },
@@ -415,15 +362,15 @@
       ],
       "mix": [
         {
-          "dough_type": "VIENNOISE",
-          "label": "Pack of 2 Viennoise (Brioche Baguette)",
-          "cfg_name": "Viennoise (×2)",
+          "dough_type": "BRIOCHE",
+          "label": "Brioche (Pastry)",
+          "cfg_name": "Braided Brioche",
           "unit": "kg",
-          "total_kg": 40.0,
-          "total_units": 200,
-          "mo_ref": "WH/MO/00621",
+          "total_kg": 52.6,
+          "total_units": 117,
+          "mo_ref": "WH/MO/00620",
           "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
+            "Brioche (Pastry)"
           ]
         },
         {
@@ -453,6 +400,15 @@
       ],
       "shaping": [
         {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 117,
+          "qty_units": 117,
+          "total_kg": 52.6,
+          "mo_ref": "WH/MO/00620",
+          "d0": "2026-04-08"
+        },
+        {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 176,
@@ -460,15 +416,6 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00666",
           "d0": "2026-04-09"
-        },
-        {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100,
-          "qty_units": 200,
-          "total_kg": 40.0,
-          "mo_ref": "WH/MO/00621",
-          "d0": "2026-04-08"
         },
         {
           "sku": "MG3P-SGL",
@@ -491,17 +438,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 117.0,
-          "qty_units": 117.0,
-          "qty_pouches": 117.0,
-          "dluo": "2026-10-06",
-          "mo_ref": "WH/MO/00620",
-          "lot_id": 996,
-          "copacked": false
-        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -531,13 +467,13 @@
       "label": "WEDNESDAY",
       "premix": [
         {
-          "label": "Prep mix Braided Brioche",
-          "total_units": 117,
+          "label": "Prep mix Viennoise",
+          "total_units": 200,
           "products": [
-            "Brioche (Pastry)"
+            "Pack of 2 Viennoise (Brioche Baguette)"
           ],
           "mo_refs": [
-            "WH/MO/00628"
+            "WH/MO/00668"
           ]
         }
       ],
@@ -641,6 +577,17 @@
       ],
       "vacuuming": [
         {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 117.0,
+          "qty_units": 117.0,
+          "qty_pouches": 117.0,
+          "dluo": "2026-10-06",
+          "mo_ref": "WH/MO/00620",
+          "lot_id": 996,
+          "copacked": false
+        },
+        {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
           "qty_packs": 120.0,
@@ -649,17 +596,6 @@
           "dluo": "2027-01-06",
           "mo_ref": "WH/MO/00665",
           "lot_id": 985,
-          "copacked": false
-        },
-        {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-10-07",
-          "mo_ref": "WH/MO/00621",
-          "lot_id": 983,
           "copacked": false
         },
         {
@@ -704,18 +640,6 @@
           ]
         },
         {
-          "dough_type": "BRIOCHE",
-          "label": "Brioche (Pastry)",
-          "cfg_name": "Braided Brioche",
-          "unit": "kg",
-          "total_kg": 52.6,
-          "total_units": 117,
-          "mo_ref": "WH/MO/00628",
-          "products": [
-            "Brioche (Pastry)"
-          ]
-        },
-        {
           "dough_type": "CIABATTA",
           "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "cfg_name": "Ciabatta (×3)",
@@ -726,16 +650,28 @@
           "products": [
             "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
           ]
+        },
+        {
+          "dough_type": "VIENNOISE",
+          "label": "Pack of 2 Viennoise (Brioche Baguette)",
+          "cfg_name": "Viennoise (×2)",
+          "unit": "kg",
+          "total_kg": 40.0,
+          "total_units": 200,
+          "mo_ref": "WH/MO/00668",
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ]
         }
       ],
       "shaping": [
         {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 117,
-          "qty_units": 117,
-          "total_kg": 52.6,
-          "mo_ref": "WH/MO/00628",
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100,
+          "qty_units": 200,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/00668",
           "d0": "2026-04-10"
         },
         {
@@ -896,17 +832,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 117.0,
-          "qty_units": 117.0,
-          "qty_pouches": 117.0,
-          "dluo": "2026-10-09",
-          "mo_ref": "WH/MO/00628",
-          "lot_id": 990,
-          "copacked": false
-        },
-        {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "qty_packs": 231.0,
@@ -915,6 +840,17 @@
           "dluo": "2027-01-08",
           "mo_ref": "WH/MO/00627",
           "lot_id": 989,
+          "copacked": false
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-10-09",
+          "mo_ref": "WH/MO/00668",
+          "lot_id": 1010,
           "copacked": false
         },
         {
