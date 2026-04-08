@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T00:28:48Z",
+  "generated_at": "2026-04-08T15:07:23Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-04-19",
@@ -200,43 +200,8 @@
           ]
         }
       ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 369.6,
-          "total_units": 528,
-          "mo_ref": "WH/MO/00616",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00618",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 264,
-          "qty_units": 528,
-          "total_kg": 369.6,
-          "mo_ref": "WH/MO/00616",
-          "d0": "2026-04-07"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -300,27 +265,9 @@
           "total_kg": 168.0,
           "mo_ref": "WH/MO/00665",
           "d0": "2026-04-08"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00618",
-          "d0": "2026-04-07"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 264,
-          "qty_units": 528,
-          "mo_ref": "WH/MO/00616",
-          "d0": "2026-04-07"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -425,30 +372,7 @@
           "d0": "2026-04-08"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 264.0,
-          "qty_units": 528.0,
-          "qty_pouches": 528.0,
-          "dluo": "2027-01-05",
-          "mo_ref": "WH/MO/00616",
-          "lot_id": 961,
-          "copacked": false
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-01-06",
-          "mo_ref": "WH/MO/00618",
-          "lot_id": 997,
-          "copacked": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-04-08",
@@ -598,14 +522,14 @@
           "copacked": false
         },
         {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
           "qty_packs": 200.0,
           "qty_units": 1600.0,
           "qty_pouches": 200.0,
-          "dluo": "2026-09-26",
-          "mo_ref": "WH/MO/00670",
-          "lot_id": 1012,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/00669",
+          "lot_id": 1011,
           "copacked": true
         }
       ]
@@ -1004,14 +928,14 @@
           "copacked": false
         },
         {
-          "sku": "1-CRB8P-SGL",
-          "name": "Pack of 8 Mini croissants",
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
           "qty_packs": 200.0,
           "qty_units": 1600.0,
           "qty_pouches": 200.0,
-          "dluo": "2027-01-13",
-          "mo_ref": "WH/MO/00669",
-          "lot_id": 1011,
+          "dluo": "2026-09-26",
+          "mo_ref": "WH/MO/00670",
+          "lot_id": 1012,
           "copacked": true
         }
       ]
