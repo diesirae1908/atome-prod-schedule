@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T22:49:08Z",
+  "generated_at": "2026-04-08T00:28:48Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-04-19",
@@ -447,17 +447,6 @@
           "mo_ref": "WH/MO/00618",
           "lot_id": 997,
           "copacked": false
-        },
-        {
-          "sku": "1-CRB8P-SGL",
-          "name": "Pack of 8 Mini croissants",
-          "qty_packs": 200.0,
-          "qty_units": 1600.0,
-          "qty_pouches": 200.0,
-          "dluo": "2027-01-13",
-          "mo_ref": "WH/MO/00669",
-          "lot_id": 1011,
-          "copacked": true
         }
       ]
     },
@@ -726,6 +715,17 @@
           "copacked": false
         },
         {
+          "sku": "2-GCKVGN2P-SGL",
+          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
+          "qty_packs": 128.0,
+          "qty_units": 256.0,
+          "qty_pouches": 128.0,
+          "dluo": "2026-10-08",
+          "mo_ref": "WH/MO/00671",
+          "lot_id": 1013,
+          "copacked": true
+        },
+        {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
           "qty_packs": 116.0,
@@ -841,6 +841,17 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "RAV-SPRI-330",
+          "name": "Fresh Ravioli Ricotta Spinach (330g)",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2026-10-09",
+          "mo_ref": "WH/MO/00672",
+          "lot_id": 1015,
+          "copacked": true
+        },
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
@@ -991,6 +1002,17 @@
           "mo_ref": "WH/MO/00625",
           "lot_id": 992,
           "copacked": false
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 200.0,
+          "qty_units": 1600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/00669",
+          "lot_id": 1011,
+          "copacked": true
         }
       ]
     },
