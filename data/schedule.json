@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T14:47:50Z",
+  "generated_at": "2026-04-10T16:47:45Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-04-19",
@@ -197,18 +197,7 @@
     {
       "date": "2026-04-06",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "MG Grain Soak",
-          "total_units": 360,
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ],
-          "mo_refs": [
-            "WH/MO/00632"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [],
       "shaping": [],
       "score_tasks": [],
@@ -217,65 +206,9 @@
     {
       "date": "2026-04-07",
       "label": "TUESDAY",
-      "premix": [
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 348,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/00626"
-          ]
-        },
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 609,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/00624"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "MG",
-          "label": "Pack of 3 Multigrain Sourdough Baguettes",
-          "cfg_name": "Multigrain Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 135.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00632",
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00666",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00666",
-          "d0": "2026-04-09"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -295,30 +228,6 @@
         }
       ],
       "mix": [
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 54.8,
-          "total_units": 609,
-          "mo_ref": "WH/MO/00624",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/00626",
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ]
-        },
         {
           "dough_type": "WW",
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
@@ -353,45 +262,9 @@
           "total_kg": 138.0,
           "mo_ref": "WH/MO/00627",
           "d0": "2026-04-10"
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00626",
-          "d0": "2026-04-09"
-        },
-        {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 135.0,
-          "mo_ref": "WH/MO/00632",
-          "d0": "2026-04-09"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 203,
-          "qty_units": 609,
-          "total_kg": 54.8,
-          "mo_ref": "WH/MO/00624",
-          "d0": "2026-04-09"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00666",
-          "d0": "2026-04-09"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -475,63 +348,7 @@
           "d0": "2026-04-10"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2027-01-07",
-          "mo_ref": "WH/MO/00666",
-          "lot_id": 1016,
-          "copacked": false
-        },
-        {
-          "sku": "2-GCKVGN2P-SGL",
-          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
-          "qty_packs": 128.0,
-          "qty_units": 256.0,
-          "qty_pouches": 128.0,
-          "dluo": "2026-10-08",
-          "mo_ref": "WH/MO/00671",
-          "lot_id": 1013,
-          "copacked": true
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-10-08",
-          "mo_ref": "WH/MO/00626",
-          "lot_id": 987,
-          "copacked": false
-        },
-        {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-01-08",
-          "mo_ref": "WH/MO/00632",
-          "lot_id": 988,
-          "copacked": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 203.0,
-          "qty_units": 609.0,
-          "qty_pouches": 203.0,
-          "dluo": "2026-10-08",
-          "mo_ref": "WH/MO/00624",
-          "lot_id": 986,
-          "copacked": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-04-10",
@@ -608,12 +425,12 @@
         {
           "sku": "RAV-SPRI-330",
           "name": "Fresh Ravioli Ricotta Spinach (330g)",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2026-10-09",
-          "mo_ref": "WH/MO/00672",
-          "lot_id": 1015,
+          "qty_packs": 320.0,
+          "qty_units": 320.0,
+          "qty_pouches": 320.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00672-002",
+          "lot_id": null,
           "copacked": true
         },
         {
@@ -637,6 +454,39 @@
           "mo_ref": "WH/MO/00668",
           "lot_id": 1010,
           "copacked": false
+        },
+        {
+          "sku": "2-GCKVGN2P-SGL",
+          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
+          "qty_packs": 108.0,
+          "qty_units": 216.0,
+          "qty_pouches": 108.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00671-002",
+          "lot_id": null,
+          "copacked": true
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00674-002",
+          "lot_id": null,
+          "copacked": true
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 150.0,
+          "qty_units": 1200.0,
+          "qty_pouches": 150.0,
+          "dluo": "2026-06-06",
+          "mo_ref": "WH/MO/00670-002",
+          "lot_id": 446,
+          "copacked": true
         },
         {
           "sku": "CH-SGL",
@@ -764,17 +614,6 @@
           "mo_ref": "WH/MO/00673",
           "lot_id": 992,
           "copacked": false
-        },
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 200.0,
-          "qty_units": 1600.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-09-26",
-          "mo_ref": "WH/MO/00670",
-          "lot_id": 1012,
-          "copacked": true
         }
       ]
     },
