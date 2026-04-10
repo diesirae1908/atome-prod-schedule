@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T18:55:27Z",
+  "generated_at": "2026-04-10T21:23:44Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-04-19",
@@ -1297,6 +1297,17 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "RIGA-330",
+          "name": "Fresh Pasta Rigatoni (330g)",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2026-10-17",
+          "mo_ref": "WH/MO/00678",
+          "lot_id": 1023,
+          "copacked": true
+        },
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
