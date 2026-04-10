@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T18:26:44Z",
+  "generated_at": "2026-04-10T18:43:26Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-04-19",
@@ -925,26 +925,26 @@
           ]
         },
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
+          "dough_type": "WW",
+          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "cfg_name": "Wholewheat Loaf (×2)",
           "unit": "kg",
-          "total_kg": 168.0,
-          "total_units": 240,
-          "mo_ref": "WH/MO/00649",
+          "total_kg": 288.0,
+          "total_units": 480,
+          "mo_ref": "WH/MO/00676",
           "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
+            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 120,
-          "qty_units": 240,
-          "total_kg": 168.0,
-          "mo_ref": "WH/MO/00649",
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 240,
+          "qty_units": 480,
+          "total_kg": 288.0,
+          "mo_ref": "WH/MO/00676",
           "d0": "2026-04-16"
         },
         {
@@ -1086,10 +1086,10 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 120,
-          "qty_units": 240,
-          "mo_ref": "WH/MO/00649",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 240,
+          "qty_units": 480,
+          "mo_ref": "WH/MO/00676",
           "d0": "2026-04-16"
         }
       ],
@@ -1202,14 +1202,14 @@
       ],
       "vacuuming": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 120.0,
-          "qty_units": 240.0,
-          "qty_pouches": 240.0,
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 240.0,
+          "qty_units": 480.0,
+          "qty_pouches": 480.0,
           "dluo": "2027-01-14",
-          "mo_ref": "WH/MO/00649",
-          "lot_id": 1008,
+          "mo_ref": "WH/MO/00676",
+          "lot_id": 1021,
           "copacked": false
         },
         {
