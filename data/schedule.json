@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T21:23:44Z",
+  "generated_at": "2026-04-10T23:59:12Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-04-19",
@@ -778,8 +778,8 @@
           "label": "Pack of 2 Pizza Dough (Sourdough)",
           "cfg_name": "Pizza Dough (×2)",
           "unit": "kg",
-          "total_kg": 198.8,
-          "total_units": 994,
+          "total_kg": 99.2,
+          "total_units": 496,
           "mo_ref": "WH/MO/00642",
           "products": [
             "Pack of 2 Pizza Dough (Sourdough)"
@@ -814,9 +814,9 @@
         {
           "sku": "PIZ2-SGL",
           "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "total_kg": 198.8,
+          "qty_packs": 248,
+          "qty_units": 496,
+          "total_kg": 99.2,
           "mo_ref": "WH/MO/00642",
           "d0": "2026-04-15"
         },
@@ -970,8 +970,8 @@
         {
           "action": "freeze_only",
           "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
+          "qty_packs": 248,
+          "qty_units": 496,
           "mo_ref": "WH/MO/00642",
           "d0": "2026-04-15"
         }
@@ -1108,9 +1108,9 @@
         {
           "sku": "PIZ2-SGL",
           "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497.0,
-          "qty_units": 994.0,
-          "qty_pouches": 497.0,
+          "qty_packs": 248.0,
+          "qty_units": 496.0,
+          "qty_pouches": 248.0,
           "dluo": "2027-01-13",
           "mo_ref": "WH/MO/00642",
           "lot_id": 1003,
