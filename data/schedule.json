@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-11T23:28:59Z",
+  "generated_at": "2026-04-12T18:53:35Z",
   "week_number": 12,
   "week_start": "2026-03-16",
   "week_end": "2026-04-19",
@@ -867,9 +867,9 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": "2026-01-12",
+          "dluo": "2027-01-12",
           "mo_ref": "WH/MO/00675",
-          "lot_id": 1020,
+          "lot_id": 1027,
           "copacked": false
         }
       ]
@@ -1005,9 +1005,9 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": "2026-01-13",
+          "dluo": "2027-01-13",
           "mo_ref": "WH/MO/00646",
-          "lot_id": 1001,
+          "lot_id": 1028,
           "copacked": false
         }
       ]
@@ -1122,9 +1122,9 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": "2026-01-14",
+          "dluo": "2027-01-14",
           "mo_ref": "WH/MO/00647",
-          "lot_id": 1005,
+          "lot_id": 1029,
           "copacked": false
         }
       ]
@@ -1314,9 +1314,9 @@
           "qty_packs": 240.0,
           "qty_units": 480.0,
           "qty_pouches": 480.0,
-          "dluo": null,
+          "dluo": "2027-01-15",
           "mo_ref": "WH/MO/00650",
-          "lot_id": null,
+          "lot_id": 1030,
           "copacked": false
         },
         {
@@ -1325,9 +1325,9 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": null,
+          "dluo": "2027-01-16",
           "mo_ref": "WH/MO/00652",
-          "lot_id": null,
+          "lot_id": 1031,
           "copacked": false
         }
       ]
@@ -1398,9 +1398,9 @@
           "qty_packs": 266.0,
           "qty_units": 798.0,
           "qty_pouches": 266.0,
-          "dluo": null,
+          "dluo": "2027-01-16",
           "mo_ref": "WH/MO/00651",
-          "lot_id": null,
+          "lot_id": 1032,
           "copacked": false
         },
         {
@@ -1420,9 +1420,9 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": null,
+          "dluo": "2027-01-17",
           "mo_ref": "WH/MO/00654",
-          "lot_id": null,
+          "lot_id": 1033,
           "copacked": false
         }
       ]
@@ -1464,9 +1464,9 @@
           "qty_packs": 88.0,
           "qty_units": 176.0,
           "qty_pouches": 176.0,
-          "dluo": null,
+          "dluo": "2027-01-17",
           "mo_ref": "WH/MO/00662",
-          "lot_id": null,
+          "lot_id": 1035,
           "copacked": false
         },
         {
@@ -1486,9 +1486,9 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": null,
+          "dluo": "2027-01-18",
           "mo_ref": "WH/MO/00658",
-          "lot_id": null,
+          "lot_id": 1034,
           "copacked": false
         }
       ]
