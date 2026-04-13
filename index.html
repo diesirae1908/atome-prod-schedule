@@ -44,7 +44,7 @@
       transition: width 0.22s cubic-bezier(0.4,0,0.2,1);
       box-shadow: 2px 0 12px rgba(0,0,0,0.18);
     }
-    .side-nav.open { width: 240px; }
+    .side-nav:hover, .side-nav.pinned { width: 240px; }
     .side-nav-head {
       display: flex; align-items: center;
       height: 56px; padding: 0 14px;
@@ -63,7 +63,7 @@
       white-space: nowrap; opacity: 0;
       transition: opacity 0.18s; pointer-events: none;
     }
-    .side-nav.open .side-nav-brand { opacity: 1; }
+    .side-nav:hover .side-nav-brand, .side-nav.pinned .side-nav-brand { opacity: 1; }
     .side-nav-items { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 6px 0; }
     .side-nav-items::-webkit-scrollbar { width: 4px; }
     .side-nav-items::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
@@ -83,7 +83,7 @@
       margin-left: 12px; opacity: 0;
       transition: opacity 0.18s; pointer-events: none;
     }
-    .side-nav.open .side-nav-label { opacity: 1; }
+    .side-nav:hover .side-nav-label, .side-nav.pinned .side-nav-label { opacity: 1; }
     .side-nav-sep {
       height: 1px; background: rgba(255,255,255,0.07);
       margin: 6px 12px;
@@ -93,7 +93,8 @@
       color: #475569; padding: 10px 16px 4px; white-space: nowrap;
       opacity: 0; transition: opacity 0.18s; text-transform: uppercase;
     }
-    .side-nav.open .side-nav-section { opacity: 1; }
+    .side-nav:hover .side-nav-section, .side-nav.pinned .side-nav-section { opacity: 1; }
+    .side-nav.pinned .side-nav-toggle { color: #a5b4fc; }
     /* backdrop when open */
     .side-nav-backdrop {
       display: none; position: fixed; inset: 0;
@@ -572,7 +573,7 @@
 <div class="side-nav-backdrop" id="sideNavBackdrop" onclick="closeSideNav()"></div>
 <nav class="side-nav" id="sideNav">
   <div class="side-nav-head">
-    <button class="side-nav-toggle" onclick="toggleSideNav()" title="Toggle menu">☰</button>
+    <button class="side-nav-toggle" onclick="toggleSideNav()" title="Pin menu open">☰</button>
     <span class="side-nav-brand">🥖 Atome Bakery</span>
   </div>
   <div class="side-nav-items">
@@ -656,8 +657,9 @@
       </div>
     </div>
     <!-- Save bar (edit mode only) -->
-    <div id="shifts-ro-save-bar" style="display:none;align-items:center;padding:7px 16px;background:#f0fdf4;border-bottom:1px solid #bbf7d0;gap:10px">
+    <div id="shifts-ro-save-bar" style="display:none;align-items:center;padding:7px 16px;background:#f0fdf4;border-bottom:1px solid #bbf7d0;gap:10px;flex-wrap:wrap">
       <span style="font-size:12px;color:#166534">Edit mode — changes not saved yet</span>
+      <button type="button" onclick="shiftRoAddBaker()" style="background:#fff;color:#166534;border:1px solid #86efac;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-weight:600">➕ Add team member</button>
       <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
         <span id="shifts-ro-save-status" style="font-size:11px;color:#6b7280"></span>
         <button onclick="saveShiftsRo()" style="background:#16a34a;color:#fff;border:none;border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;font-weight:600">💾 Save to GitHub</button>
@@ -1754,6 +1756,41 @@ async function roHash(msg) {
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
 }
 
+function shiftRoEscHtml(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+}
+function shiftRoEscAttr(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+}
+
+function shiftRoRemoveBaker(name) {
+  if (!shiftsRoData || !shiftsRoEditMode) return;
+  if (!confirm(`Remove “${name}” from the team? Their shifts on all dates will be removed from this file.`)) return;
+  shiftsRoData.bakers = (shiftsRoData.bakers || []).filter(b => b.name !== name);
+  const sched = shiftsRoData.schedule || {};
+  for (const ds of Object.keys(sched)) {
+    if (sched[ds] && Object.prototype.hasOwnProperty.call(sched[ds], name)) delete sched[ds][name];
+  }
+  const st = document.getElementById("shifts-ro-save-status");
+  if (st) st.textContent = "Unsaved changes";
+  renderShiftsRo();
+}
+
+function shiftRoAddBaker() {
+  if (!shiftsRoData || !shiftsRoEditMode) return;
+  const raw = prompt("New team member name:");
+  if (raw == null) return;
+  const name = raw.trim();
+  if (!name) { alert("Name cannot be empty."); return; }
+  const bakers = shiftsRoData.bakers || [];
+  if (bakers.some(b => b.name === name)) { alert("A team member with that name already exists."); return; }
+  bakers.push({ name, defaultRole: "" });
+  shiftsRoData.bakers = bakers;
+  const st = document.getElementById("shifts-ro-save-status");
+  if (st) st.textContent = "Unsaved changes";
+  renderShiftsRo();
+}
+
 async function openShiftsRo() {
   document.getElementById("modal-shifts-ro").style.display = "block";
   if (!shiftsRoData) {
@@ -1762,6 +1799,7 @@ async function openShiftsRo() {
       const r = await fetch(`data/shifts.json?_=${Date.now()}`);
       if (!r.ok) throw new Error("HTTP " + r.status);
       shiftsRoData = await r.json();
+      if (!shiftsRoData.schedule) shiftsRoData.schedule = {};
     } catch(e) {
       document.getElementById("shifts-ro-wrap").innerHTML = `<p style='padding:24px;color:#dc2626'>Could not load shifts: ${e.message}</p>`;
       return;
@@ -1794,6 +1832,7 @@ async function toggleShiftsEdit() {
 
 function onShiftRoChange(sel) {
   const { baker, date } = sel.dataset;
+  if (!shiftsRoData.schedule) shiftsRoData.schedule = {};
   if (!shiftsRoData.schedule[date]) shiftsRoData.schedule[date] = {};
   if (sel.value === "") delete shiftsRoData.schedule[date][baker];
   else shiftsRoData.schedule[date][baker] = sel.value;
@@ -1802,22 +1841,87 @@ function onShiftRoChange(sel) {
   document.getElementById("shifts-ro-save-status").textContent = "Unsaved changes";
 }
 
+function shiftsRoDecodePat(enc) {
+  try {
+    const bin = atob(enc);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder().decode(bytes);
+  } catch {
+    return atob(enc);
+  }
+}
+
+/** Browser → api.github.com is CORS-blocked; use Supabase Edge Function or local /api proxy. */
+async function shiftsRoGithubFetch(method, pat, putBody) {
+  const ghJsonHeaders = {
+    Accept: "application/vnd.github.v3+json",
+    ...(putBody ? { "Content-Type": "application/json" } : {}),
+  };
+  const fnUrl = SUPA_URL + "/functions/v1/github-shifts";
+  const attempts = [];
+  const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  if (isLocal) {
+    attempts.push(() =>
+      fetch(method === "GET" ? "/api/github-shifts-meta" : "/api/github-shifts", {
+        method: method === "GET" ? "GET" : "PUT",
+        headers: { ...ghJsonHeaders, Authorization: "token " + pat },
+        body: putBody ? JSON.stringify(putBody) : undefined,
+      })
+    );
+  }
+  attempts.push(() =>
+    fetch(fnUrl, {
+      method,
+      headers: {
+        ...ghJsonHeaders,
+        Authorization: "Bearer " + SUPA_KEY,
+        apikey: SUPA_KEY,
+        "X-GitHub-Token": pat,
+      },
+      body: putBody ? JSON.stringify(putBody) : undefined,
+    })
+  );
+  attempts.push(() =>
+    fetch(RO_API_BASE + "/contents/prod-schedule/data/shifts.json", {
+      method,
+      headers: { ...ghJsonHeaders, Authorization: "token " + pat },
+      body: putBody ? JSON.stringify(putBody) : undefined,
+    })
+  );
+
+  let lastResp = null;
+  for (let i = 0; i < attempts.length; i++) {
+    try {
+      const r = await attempts[i]();
+      if (r.ok) return r;
+      lastResp = r;
+    } catch (e) {
+      lastResp = e;
+    }
+  }
+  if (lastResp && typeof lastResp.text === "function") {
+    throw new Error(await lastResp.text());
+  }
+  throw lastResp instanceof Error ? lastResp : new Error(String(lastResp));
+}
+
 async function saveShiftsRo() {
   const enc = localStorage.getItem("atome_pat_enc");
   if (!enc) { alert("No PAT found — save your GitHub PAT in AI Planner → Admin first."); return; }
-  const pat    = atob(enc);
+  const pat    = shiftsRoDecodePat(enc);
   const status = document.getElementById("shifts-ro-save-status");
   status.textContent = "Saving…";
   try {
-    const info = await fetch(`${RO_API_BASE}/contents/prod-schedule/data/shifts.json`, {
-      headers: { Authorization: `token ${pat}`, Accept: "application/vnd.github.v3+json" }
-    }).then(r => r.json());
+    const infoRes = await shiftsRoGithubFetch("GET", pat, null);
+    const info = await infoRes.json();
+    if (!info.sha) throw new Error(info.message || JSON.stringify(info).slice(0, 400));
     shiftsRoData.meta = { ...shiftsRoData.meta, lastUpdated: new Date().toISOString() };
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(shiftsRoData, null, 2))));
-    const put = await fetch(`${RO_API_BASE}/contents/prod-schedule/data/shifts.json`, {
-      method: "PUT",
-      headers: { Authorization: `token ${pat}`, Accept: "application/vnd.github.v3+json", "Content-Type": "application/json" },
-      body: JSON.stringify({ message: "Update shifts from Production Schedule", content, sha: info.sha })
+    const put = await shiftsRoGithubFetch("PUT", pat, {
+      message: "Update shifts from Production Schedule",
+      content,
+      sha: info.sha,
     });
     if (!put.ok) throw new Error(await put.text());
     status.textContent = "✓ Saved";
@@ -1842,8 +1946,15 @@ function renderShiftsRo() {
     <thead>
       <tr>
         <th style="position:sticky;top:0;z-index:2;text-align:left;padding:8px 12px;background:#1e1b4b;color:#c7d2fe;border:1px solid #374151;white-space:nowrap">Day</th>`;
-  for (const b of bakers)
-    html += `<th style="position:sticky;top:0;z-index:2;text-align:center;padding:8px 10px;background:#1e1b4b;color:#c7d2fe;border:1px solid #374151;white-space:nowrap">${b.name}</th>`;
+  const rmBtn =
+    "margin-left:4px;padding:0 6px;font-size:13px;line-height:1.15;border:none;background:rgba(248,113,113,.25);color:#fecaca;border-radius:4px;cursor:pointer;vertical-align:middle;font-weight:700";
+  for (const b of bakers) {
+    html += `<th style="position:sticky;top:0;z-index:2;text-align:center;padding:8px 10px;background:#1e1b4b;color:#c7d2fe;border:1px solid #374151;white-space:nowrap">`;
+    html += shiftRoEscHtml(b.name);
+    if (shiftsRoEditMode)
+      html += ` <button type="button" title="Remove column" onclick="shiftRoRemoveBaker(${JSON.stringify(b.name)})" style="${rmBtn}">×</button>`;
+    html += `</th>`;
+  }
   html += `</tr>
     </thead><tbody>`;
 
@@ -1876,7 +1987,7 @@ function renderShiftsRo() {
       const fg   = SH_FG[code] || "#9ca3af";
       if (shiftsRoEditMode) {
         html += `<td style="padding:3px 5px;border:1px solid #e5e7eb;text-align:center">
-          <select data-baker="${b.name}" data-date="${ds}" onchange="onShiftRoChange(this)"
+          <select data-baker="${shiftRoEscAttr(b.name)}" data-date="${ds}" onchange="onShiftRoChange(this)"
             style="width:100%;border:1px solid #d1d5db;border-radius:5px;padding:3px 2px;font-size:11px;font-weight:600;cursor:pointer;background:${bg};color:${fg}">`;
         for (const c of RO_CODES)
           html += `<option value="${c}" ${c===code?"selected":""}>${c||"off"}</option>`;
@@ -1900,11 +2011,11 @@ document.getElementById("modal-shifts-ro").addEventListener("click", function(e)
 // ── Side nav ──────────────────────────────────────────────────────────────────
 function toggleSideNav() {
   const nav = document.getElementById("sideNav");
-  nav.classList.toggle("open");
-  document.getElementById("sideNavBackdrop").classList.toggle("visible", nav.classList.contains("open"));
+  nav.classList.toggle("pinned");
+  document.getElementById("sideNavBackdrop").classList.toggle("visible", nav.classList.contains("pinned"));
 }
 function closeSideNav() {
-  document.getElementById("sideNav").classList.remove("open");
+  document.getElementById("sideNav").classList.remove("pinned");
   document.getElementById("sideNavBackdrop").classList.remove("visible");
 }
 // Close on Escape

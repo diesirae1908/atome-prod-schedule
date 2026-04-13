@@ -7,6 +7,11 @@ const BASE_RAW  = `https://raw.githubusercontent.com/${REPO}/main`;
 const API_BASE  = `https://api.github.com/repos/${REPO}`;
 const WORKFLOW  = "generate_ai_plan.yml";
 
+// Same Supabase project as Production Schedule — Edge Function proxies GitHub (browser CORS).
+const SUPA_URL    = "https://ktbbmtyesrprvxrseiph.supabase.co";
+const SUPA_KEY    = "sb_publishable_1vfCHnng8kWfUGFtOt9Dmw_Rzkn8M62";
+const GH_SHIFTS_FN = `${SUPA_URL}/functions/v1/github-shifts`;
+
 const SHIFT_CODES = ["S","M","V","P&P","Waffle","H","BD","Sick",""];
 const CODE_LABEL  = { S:"Shaper", M:"Mixer", V:"Vacuum", "P&P":"Pick&Pack", Waffle:"Waffle", H:"Holiday", BD:"Birthday", Sick:"Sick", "":"Off" };
 const DEFAULT_PW_HASH = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"; // "admin"
@@ -270,13 +275,44 @@ function renderNoPlan(ds) {
 // ── Load shifts.json ────────────────────────────────────────────
 async function loadShifts() {
   try {
-    const url = `${BASE_RAW}/data/shifts.json?_=${Date.now()}`;
+    const url = `${BASE_RAW}/prod-schedule/data/shifts.json?_=${Date.now()}`;
     const r   = await fetch(url);
-    if (r.ok) shiftsData = await r.json();
+    if (r.ok) {
+      shiftsData = await r.json();
+      if (!shiftsData.schedule) shiftsData.schedule = {};
+    }
   } catch { /* offline */ }
 }
 
 // ── Shift table ─────────────────────────────────────────────────
+function removeShiftTableBaker(name) {
+  if (!shiftsData) return;
+  if (!confirm(`Remove “${name}” from the team? Their shifts on all dates will be removed from this file.`)) return;
+  shiftsData.bakers = (shiftsData.bakers || []).filter(b => b.name !== name);
+  const sched = shiftsData.schedule || {};
+  for (const ds of Object.keys(sched)) {
+    if (sched[ds] && Object.prototype.hasOwnProperty.call(sched[ds], name)) delete sched[ds][name];
+  }
+  const status = document.getElementById("shift-save-status");
+  if (status) status.textContent = "Unsaved changes";
+  renderShiftTable();
+}
+
+function addShiftTableBaker() {
+  if (!shiftsData) return;
+  const raw = prompt("New team member name:");
+  if (raw == null) return;
+  const name = raw.trim();
+  if (!name) { alert("Name cannot be empty."); return; }
+  const bakers = shiftsData.bakers || [];
+  if (bakers.some(b => b.name === name)) { alert("A team member with that name already exists."); return; }
+  bakers.push({ name, defaultRole: "" });
+  shiftsData.bakers = bakers;
+  const status = document.getElementById("shift-save-status");
+  if (status) status.textContent = "Unsaved changes";
+  renderShiftTable();
+}
+
 function openShiftTable() {
   if (!isAdmin) {
     alert("The shift table requires admin access.\nPlease unlock Admin first.");
@@ -297,10 +333,12 @@ function renderShiftTable() {
   document.getElementById("shift-week-label").textContent =
     `${fmtShort(days[0])} — ${fmtShort(days[6])}`;
 
+  const rmBtn =
+    "margin-left:4px;padding:0 6px;font-size:13px;line-height:1.15;border:none;background:rgba(248,113,113,.2);color:#b91c1c;border-radius:4px;cursor:pointer;vertical-align:middle;font-weight:700";
   // Rows = days, columns = bakers (names on top)
   let html = `<div style="overflow-x:auto"><table class="shift-table"><thead><tr><th>Day</th>`;
   for (const baker of bakers) {
-    html += `<th>${escHtml(baker.name)}</th>`;
+    html += `<th>${escHtml(baker.name)} <button type="button" class="shift-col-remove" title="Remove column" onclick="removeShiftTableBaker(${JSON.stringify(baker.name)})" style="${rmBtn}">×</button></th>`;
   }
   html += `</tr></thead><tbody>`;
 
@@ -332,6 +370,7 @@ function onShiftChange(sel) {
   const baker = sel.dataset.baker;
   const date  = sel.dataset.date;
   const code  = sel.value;
+  if (!shiftsData.schedule) shiftsData.schedule = {};
   if (!shiftsData.schedule[date]) shiftsData.schedule[date] = {};
   if (code === "") {
     delete shiftsData.schedule[date][baker];
@@ -340,6 +379,60 @@ function onShiftChange(sel) {
   }
   sel.className = `shift-cell ${shiftClass(code)}`;
   document.getElementById("shift-save-status").textContent = "Unsaved changes";
+}
+
+/** GitHub Contents API from the browser is blocked by CORS — use Supabase Edge or local Node proxy. */
+async function shiftsGithubFetch(method, pat, putBody) {
+  const ghJsonHeaders = {
+    Accept: "application/vnd.github.v3+json",
+    ...(putBody ? { "Content-Type": "application/json" } : {}),
+  };
+  const attempts = [];
+  const isLocal =
+    location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  if (isLocal) {
+    attempts.push(() =>
+      fetch(method === "GET" ? "/api/github-shifts-meta" : "/api/github-shifts", {
+        method: method === "GET" ? "GET" : "PUT",
+        headers: { ...ghJsonHeaders, Authorization: `token ${pat}` },
+        body: putBody ? JSON.stringify(putBody) : undefined,
+      })
+    );
+  }
+  attempts.push(() =>
+    fetch(GH_SHIFTS_FN, {
+      method,
+      headers: {
+        ...ghJsonHeaders,
+        Authorization: `Bearer ${SUPA_KEY}`,
+        apikey: SUPA_KEY,
+        "X-GitHub-Token": pat,
+      },
+      body: putBody ? JSON.stringify(putBody) : undefined,
+    })
+  );
+  attempts.push(() =>
+    fetch(`${API_BASE}/contents/prod-schedule/data/shifts.json`, {
+      method,
+      headers: { ...ghJsonHeaders, Authorization: `token ${pat}` },
+      body: putBody ? JSON.stringify(putBody) : undefined,
+    })
+  );
+
+  let lastResp = null;
+  for (const run of attempts) {
+    try {
+      const r = await run();
+      if (r.ok) return r;
+      lastResp = r;
+    } catch (e) {
+      lastResp = e;
+    }
+  }
+  if (lastResp && typeof lastResp.text === "function") {
+    throw new Error(await lastResp.text());
+  }
+  throw lastResp instanceof Error ? lastResp : new Error(String(lastResp));
 }
 
 async function saveShifts() {
@@ -351,19 +444,17 @@ async function saveShifts() {
   status.textContent = "Saving…";
 
   try {
-    // Get current file SHA
-    const infoRes = await fetch(`${API_BASE}/contents/prod-schedule/data/shifts.json`, {
-      headers: { Authorization: `token ${pat}`, Accept: "application/vnd.github.v3+json" }
-    });
+    const infoRes = await shiftsGithubFetch("GET", pat, null);
     const info = await infoRes.json();
+    if (!info.sha) throw new Error(info.message || JSON.stringify(info).slice(0, 400));
 
     shiftsData.meta = { ...shiftsData.meta, lastUpdated: new Date().toISOString() };
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(shiftsData, null, 2))));
 
-    const putRes = await fetch(`${API_BASE}/contents/prod-schedule/data/shifts.json`, {
-      method: "PUT",
-      headers: { Authorization: `token ${pat}`, Accept: "application/vnd.github.v3+json", "Content-Type": "application/json" },
-      body: JSON.stringify({ message: "Update shifts via AI Planner", content, sha: info.sha })
+    const putRes = await shiftsGithubFetch("PUT", pat, {
+      message: "Update shifts via AI Planner",
+      content,
+      sha: info.sha,
     });
     if (!putRes.ok) throw new Error(await putRes.text());
     status.textContent = "✓ Saved to GitHub";
@@ -453,10 +544,25 @@ function lockAdmin() {
   closeModal("modal-admin");
 }
 
+function encodePATForStorage(pat) {
+  const bytes = new TextEncoder().encode(pat);
+  let bin = "";
+  for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+  return btoa(bin);
+}
+
 function savePAT() {
   const pat = document.getElementById("input-pat").value.trim();
-  if (!pat) return;
-  localStorage.setItem("atome_pat_enc", btoa(pat));
+  if (!pat) {
+    alert("Paste a PAT first, then Save.");
+    return;
+  }
+  try {
+    localStorage.setItem("atome_pat_enc", encodePATForStorage(pat));
+  } catch (e) {
+    alert("Could not save PAT: " + (e.message || String(e)) + "\nCheck private browsing / storage permissions.");
+    return;
+  }
   document.getElementById("input-pat").value = "";
   document.getElementById("input-pat").placeholder = "ghp_••••• (saved)";
   alert("PAT saved locally.");
@@ -471,9 +577,25 @@ async function savePassword() {
   alert("Password updated.");
 }
 
+function decodePATFromStorage(enc) {
+  const bin = atob(enc);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+
 function getPAT() {
   const enc = localStorage.getItem("atome_pat_enc");
-  return enc ? atob(enc) : null;
+  if (!enc) return null;
+  try {
+    return decodePATFromStorage(enc);
+  } catch {
+    try {
+      return atob(enc);
+    } catch {
+      return null;
+    }
+  }
 }
 
 async function triggerGenerate(feedback = "") {

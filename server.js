@@ -109,6 +109,68 @@ app.post("/api/trigger-refresh", async (req, res) => {
   res.json({ ok: true });
 });
 
+const GH_SHIFTS_CONTENTS =
+  "https://api.github.com/repos/diesirae1908/atome-prod-schedule/contents/prod-schedule/data/shifts.json";
+
+function githubPatFromRequest(req) {
+  const x = String(req.headers["x-github-token"] || "").trim();
+  if (x) return x;
+  const auth = String(req.headers.authorization || "");
+  const m = auth.match(/^(?:token|Bearer)\s+(.+)$/i);
+  return m ? m[1].trim() : "";
+}
+
+// ── GET /api/github-shifts-meta ─────────────────────────────────────────────
+// Returns the GitHub Contents API JSON (includes sha) using the caller's PAT.
+app.get("/api/github-shifts-meta", async (req, res) => {
+  const pat = githubPatFromRequest(req);
+  if (!pat) {
+    return res.status(401).json({
+      error: "Send your GitHub PAT as Authorization: token <pat> or X-GitHub-Token.",
+    });
+  }
+  try {
+    const ghRes = await fetch(GH_SHIFTS_CONTENTS, {
+      headers: {
+        Authorization: `token ${pat}`,
+        Accept: "application/vnd.github.v3+json",
+        "User-Agent": "atome-prod-schedule-server",
+      },
+    });
+    const body = await ghRes.text();
+    res.status(ghRes.status).type("json").send(body);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ── PUT /api/github-shifts ──────────────────────────────────────────────────
+// Body: { message, content, sha } — same as GitHub Contents API update file.
+app.put("/api/github-shifts", async (req, res) => {
+  const pat = githubPatFromRequest(req);
+  if (!pat) {
+    return res.status(401).json({
+      error: "Send your GitHub PAT as Authorization: token <pat> or X-GitHub-Token.",
+    });
+  }
+  try {
+    const ghRes = await fetch(GH_SHIFTS_CONTENTS, {
+      method: "PUT",
+      headers: {
+        Authorization: `token ${pat}`,
+        Accept: "application/vnd.github.v3+json",
+        "Content-Type": "application/json",
+        "User-Agent": "atome-prod-schedule-server",
+      },
+      body: JSON.stringify(req.body || {}),
+    });
+    const body = await ghRes.text();
+    res.status(ghRes.status).type("json").send(body);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // ── Static files ──────────────────────────────────────────────────────────────
 app.use(express.static(path.join(__dirname), { index: "index.html" }));
 app.get("*", (_req, res) => res.sendFile(path.join(__dirname, "index.html")));
