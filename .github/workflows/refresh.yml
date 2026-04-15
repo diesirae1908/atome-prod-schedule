@@ -30,7 +30,7 @@ jobs:
           ODOO_USER:    ${{ secrets.ODOO_USER }}
           ODOO_API_KEY: ${{ secrets.ODOO_API_KEY }}
         run: |
-          python scripts/fetch_schedule.py --weeks 2
+          python scripts/fetch_schedule.py --weeks 3
 
       - name: Commit and push updated schedule
         run: |

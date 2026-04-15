@@ -328,8 +328,8 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
 # ── main ────────────────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--weeks", type=int, default=2,
-                        help="How many weeks ahead to fetch (default: 2)")
+    parser.add_argument("--weeks", type=int, default=3,
+                        help="How many weeks ahead to fetch (default: 3)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Use sample data instead of calling Odoo (for testing)")
     args = parser.parse_args()

@@ -1277,7 +1277,7 @@ function render() {
     : "?";
   const moCount = (scheduleData?.days || []).reduce((s, d) => s + (d.vacuuming || []).length, 0);
   document.getElementById("metaLine").innerHTML =
-    `Last refresh: ${gen}<br/>MOs: ${moCount} this fortnight`;
+    `Last refresh: ${gen}<br/>MOs: ${moCount} next 3 weeks`;
 
   const todayMon2 = mondayOfWeek(isoToday());
   const earliestWeek = addDays(todayMon2, -12 * 7); // 3 months back
@@ -1687,7 +1687,7 @@ async function checkForScheduleUpdate() {
       scheduleData = data;
       render();
       document.getElementById("metaLine").innerHTML =
-        `Last refresh: ${data.generated_at?.replace("T"," ").slice(0,16)} UTC<br/>MOs: ${data.days?.reduce((s,d)=>s+(d.vacuuming||[]).length,0)*2} this fortnight`;
+        `Last refresh: ${data.generated_at?.replace("T"," ").slice(0,16)} UTC<br/>MOs: ${data.days?.reduce((s,d)=>s+(d.vacuuming||[]).length,0)*2} next 3 weeks`;
     }
   } catch {}
 }
