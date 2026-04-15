@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T23:28:37Z",
+  "generated_at": "2026-04-15T23:31:10Z",
   "week_number": 13,
   "week_start": "2026-03-23",
   "week_end": "2026-05-03",
@@ -672,17 +672,6 @@
           "copacked": false
         },
         {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 200.0,
-          "qty_units": 600.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/00723",
-          "lot_id": 959,
-          "copacked": true
-        },
-        {
           "sku": "MG3P-SGL",
           "name": "Pack of 3 Multigrain Sourdough Baguettes",
           "qty_packs": 120.0,
@@ -1101,9 +1090,9 @@
         {
           "sku": "1-AT3P-SGL",
           "name": "Pack of 3 apple turnover",
-          "qty_packs": 96.0,
-          "qty_units": 96.0,
-          "qty_pouches": 96.0,
+          "qty_packs": 150.0,
+          "qty_units": 150.0,
+          "qty_pouches": 150.0,
           "dluo": null,
           "mo_ref": "WH/MO/00727",
           "lot_id": null,
@@ -1204,6 +1193,17 @@
           "mo_ref": "WH/MO/00685",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00723",
+          "lot_id": 959,
+          "copacked": true
         },
         {
           "sku": "MG3P-SGL",
