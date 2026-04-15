@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T23:06:53Z",
+  "generated_at": "2026-04-15T23:14:49Z",
   "week_number": 13,
   "week_start": "2026-03-23",
   "week_end": "2026-04-26",
@@ -1287,6 +1287,17 @@
           "mo_ref": "WH/MO/00683",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "2-CRVGN3P-SGL",
+          "name": "Pack of 3 vegan croissant",
+          "qty_packs": 60.0,
+          "qty_units": 180.0,
+          "qty_pouches": 60.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00720",
+          "lot_id": null,
+          "copacked": true
         },
         {
           "sku": "CH-SGL",
