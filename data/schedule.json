@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-14T22:21:18Z",
+  "generated_at": "2026-04-15T21:39:13Z",
   "week_number": 13,
   "week_start": "2026-03-23",
   "week_end": "2026-04-26",
@@ -188,55 +188,9 @@
     {
       "date": "2026-04-12",
       "label": "SUNDAY",
-      "premix": [
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 348,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/00644"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 123.2,
-          "total_units": 176,
-          "mo_ref": "WH/MO/00640",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Sesame Baguette",
-          "cfg_name": "Sesame Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00646",
-          "products": [
-            "Pack of 3 Sourdough Sesame Baguette"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "total_kg": 123.2,
-          "mo_ref": "WH/MO/00640",
-          "d0": "2026-04-14"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -255,18 +209,6 @@
           "mo_ref": "WH/MO/00642",
           "products": [
             "Pack of 2 Pizza Dough (Sourdough)"
-          ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/00644",
-          "products": [
-            "Pack of 3 Brioche Buns"
           ]
         },
         {
@@ -291,36 +233,9 @@
           "total_kg": 99.2,
           "mo_ref": "WH/MO/00642",
           "d0": "2026-04-15"
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00644",
-          "d0": "2026-04-14"
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00646",
-          "d0": "2026-04-14"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "mo_ref": "WH/MO/00640",
-          "d0": "2026-04-14"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -404,52 +319,7 @@
           "d0": "2026-04-15"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88.0,
-          "qty_units": 176.0,
-          "qty_pouches": 176.0,
-          "dluo": "2027-01-12",
-          "mo_ref": "WH/MO/00640",
-          "lot_id": 999,
-          "copacked": false
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-10-13",
-          "mo_ref": "WH/MO/00644",
-          "lot_id": 1000,
-          "copacked": false
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-01-13",
-          "mo_ref": "WH/MO/00646",
-          "lot_id": 1028,
-          "copacked": false
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 160.0,
-          "qty_units": 160.0,
-          "qty_pouches": 160.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00681",
-          "lot_id": 694,
-          "copacked": true
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-04-15",
@@ -473,8 +343,8 @@
           "label": "Pack of 2 Country Rye Sourdough Loaf",
           "cfg_name": "Country Rye Loaf (×2)",
           "unit": "kg",
-          "total_kg": 336.0,
-          "total_units": 480,
+          "total_kg": 168.0,
+          "total_units": 240,
           "mo_ref": "WH/MO/00650",
           "products": [
             "Pack of 2 Country Rye Sourdough Loaf"
@@ -497,9 +367,9 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240,
-          "qty_units": 480,
-          "total_kg": 336.0,
+          "qty_packs": 120,
+          "qty_units": 240,
+          "total_kg": 168.0,
           "mo_ref": "WH/MO/00650",
           "d0": "2026-04-17"
         },
@@ -611,8 +481,8 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240,
-          "qty_units": 480,
+          "qty_packs": 120,
+          "qty_units": 240,
           "mo_ref": "WH/MO/00650",
           "d0": "2026-04-17"
         }
@@ -739,9 +609,9 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240.0,
-          "qty_units": 480.0,
-          "qty_pouches": 480.0,
+          "qty_packs": 120.0,
+          "qty_units": 240.0,
+          "qty_pouches": 240.0,
           "dluo": "2027-01-15",
           "mo_ref": "WH/MO/00650",
           "lot_id": 1030,
