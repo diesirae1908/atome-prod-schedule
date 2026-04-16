@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T23:31:10Z",
+  "generated_at": "2026-04-16T00:03:13Z",
   "week_number": 13,
   "week_start": "2026-03-23",
   "week_end": "2026-05-03",
@@ -1439,6 +1439,17 @@
           "mo_ref": "WH/MO/00689",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "1-MCR6P-SGL",
+          "name": "Pack of 6 macarons (mixed flavours)",
+          "qty_packs": 100.0,
+          "qty_units": 600.0,
+          "qty_pouches": 100.0,
+          "dluo": "2026-06-20",
+          "mo_ref": "WH/MO/00728",
+          "lot_id": 950,
+          "copacked": true
         }
       ]
     },
@@ -1556,6 +1567,17 @@
           "mo_ref": "WH/MO/00691",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 150.0,
+          "qty_units": 150.0,
+          "qty_pouches": 150.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/00729",
+          "lot_id": 694,
+          "copacked": true
         }
       ]
     },
@@ -1663,6 +1685,28 @@
           "mo_ref": "WH/MO/00692",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 141.0,
+          "qty_units": 1128.0,
+          "qty_pouches": 141.0,
+          "dluo": "2026-09-26",
+          "mo_ref": "WH/MO/00730",
+          "lot_id": 1012,
+          "copacked": true
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 59.0,
+          "qty_units": 472.0,
+          "qty_pouches": 59.0,
+          "dluo": "2026-10-11",
+          "mo_ref": "WH/MO/00731",
+          "lot_id": 1040,
+          "copacked": true
         }
       ]
     },
@@ -1748,6 +1792,17 @@
           "mo_ref": "WH/MO/00696",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00732",
+          "lot_id": 959,
+          "copacked": true
         },
         {
           "sku": "TR3P-SGL",
@@ -1855,6 +1910,17 @@
           "mo_ref": "WH/MO/00695",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 200.0,
+          "qty_units": 1600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/00733",
+          "lot_id": 1011,
+          "copacked": true
         }
       ]
     },
@@ -1961,6 +2027,17 @@
           "mo_ref": "WH/MO/00698",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00734",
+          "lot_id": 959,
+          "copacked": true
         },
         {
           "sku": "MG3P-SGL",
@@ -2239,6 +2316,17 @@
           "mo_ref": "WH/MO/00711",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 150.0,
+          "qty_units": 150.0,
+          "qty_pouches": 150.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/00735",
+          "lot_id": 694,
+          "copacked": true
         }
       ]
     },
@@ -2356,6 +2444,17 @@
           "mo_ref": "WH/MO/00712",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 200.0,
+          "qty_units": 1600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-10-11",
+          "mo_ref": "WH/MO/00736",
+          "lot_id": 1040,
+          "copacked": true
         }
       ]
     },
@@ -2407,6 +2506,17 @@
           "mo_ref": "WH/MO/00719",
           "lot_id": null,
           "copacked": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00737",
+          "lot_id": 959,
+          "copacked": true
         },
         {
           "sku": "CH-SGL",
