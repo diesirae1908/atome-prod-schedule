@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T21:32:03Z",
+  "generated_at": "2026-04-16T21:48:29Z",
   "week_number": 13,
   "week_start": "2026-03-23",
   "week_end": "2026-05-03",
@@ -457,14 +457,14 @@
         },
         {
           "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "cfg_name": "Poppy Seed Baguette (×3)",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
           "unit": "kg",
           "total_kg": 122.8,
           "total_units": 351,
-          "mo_ref": "WH/MO/00654",
+          "mo_ref": "WH/MO/00658",
           "products": [
-            "Pack of 3 Sourdough Poppy Seed Baguette"
+            "Pack of 3 Traditional Sourdough Baguette"
           ]
         }
       ],
@@ -563,14 +563,14 @@
       "mix": [
         {
           "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
+          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "cfg_name": "Poppy Seed Baguette (×3)",
           "unit": "kg",
           "total_kg": 122.8,
           "total_units": 351,
-          "mo_ref": "WH/MO/00658",
+          "mo_ref": "WH/MO/00654",
           "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
+            "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
         },
         {
@@ -578,8 +578,8 @@
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
           "cfg_name": "Sourdough Loaf (×2)",
           "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
+          "total_kg": 123.2,
+          "total_units": 176,
           "mo_ref": "WH/MO/00662",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
@@ -611,19 +611,19 @@
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
           "mo_ref": "WH/MO/00662",
           "d0": "2026-04-19"
         },
         {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117,
           "qty_units": 351,
           "total_kg": 122.8,
-          "mo_ref": "WH/MO/00654",
+          "mo_ref": "WH/MO/00658",
           "d0": "2026-04-18"
         }
       ],
@@ -746,12 +746,12 @@
           "d0": "2026-04-18"
         },
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
           "qty_packs": 117,
           "qty_units": 351,
           "total_kg": 122.8,
-          "mo_ref": "WH/MO/00658",
+          "mo_ref": "WH/MO/00654",
           "d0": "2026-04-19"
         }
       ],
@@ -759,8 +759,8 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
+          "qty_packs": 88,
+          "qty_units": 176,
           "mo_ref": "WH/MO/00662",
           "d0": "2026-04-19"
         }
@@ -800,14 +800,14 @@
           "copacked": false
         },
         {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
           "dluo": "2027-01-17",
-          "mo_ref": "WH/MO/00654",
-          "lot_id": 1033,
+          "mo_ref": "WH/MO/00658",
+          "lot_id": 1043,
           "copacked": false
         },
         {
@@ -898,23 +898,23 @@
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
           "dluo": "2027-01-17",
           "mo_ref": "WH/MO/00662",
           "lot_id": 1035,
           "copacked": false
         },
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
           "dluo": "2027-01-18",
-          "mo_ref": "WH/MO/00658",
-          "lot_id": 1034,
+          "mo_ref": "WH/MO/00654",
+          "lot_id": 1042,
           "copacked": false
         },
         {
