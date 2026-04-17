@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:12:30Z",
+  "generated_at": "2026-04-17T20:17:10Z",
   "week_number": 13,
   "week_start": "2026-03-23",
   "week_end": "2026-05-03",
@@ -2223,9 +2223,9 @@
           "qty_packs": 116.0,
           "qty_units": 116.0,
           "qty_pouches": 116.0,
-          "dluo": null,
+          "dluo": "2026-10-30",
           "mo_ref": "WH/MO/00718",
-          "lot_id": null,
+          "lot_id": 1076,
           "copacked": false
         },
         {
@@ -2296,9 +2296,9 @@
           "qty_packs": 176.0,
           "qty_units": 352.0,
           "qty_pouches": 352.0,
-          "dluo": null,
+          "dluo": "2027-01-31",
           "mo_ref": "WH/MO/00705",
-          "lot_id": null,
+          "lot_id": 1077,
           "copacked": false
         },
         {
@@ -2307,9 +2307,9 @@
           "qty_packs": 100.0,
           "qty_units": 200.0,
           "qty_pouches": 200.0,
-          "dluo": null,
+          "dluo": "2026-11-01",
           "mo_ref": "WH/MO/00719",
-          "lot_id": null,
+          "lot_id": 1079,
           "copacked": false
         },
         {
@@ -2329,9 +2329,9 @@
           "qty_packs": 360.0,
           "qty_units": 360.0,
           "qty_pouches": 360.0,
-          "dluo": null,
+          "dluo": "2027-02-01",
           "mo_ref": "WH/MO/00713",
-          "lot_id": null,
+          "lot_id": 1078,
           "copacked": false
         }
       ]
@@ -2350,9 +2350,9 @@
           "qty_packs": 400.0,
           "qty_units": 1200.0,
           "qty_pouches": 400.0,
-          "dluo": null,
+          "dluo": "2027-02-01",
           "mo_ref": "WH/MO/00706",
-          "lot_id": null,
+          "lot_id": 1080,
           "copacked": false
         },
         {
@@ -2361,9 +2361,9 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": null,
+          "dluo": "2027-02-02",
           "mo_ref": "WH/MO/00714",
-          "lot_id": null,
+          "lot_id": 944,
           "copacked": false
         }
       ]
