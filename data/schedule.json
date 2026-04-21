@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T21:07:26Z",
+  "generated_at": "2026-04-21T21:09:14Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -215,30 +215,7 @@
         }
       ],
       "score_tasks": [],
-      "vacuuming": [
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 41.0,
-          "qty_units": 328.0,
-          "qty_pouches": 41.0,
-          "dluo": "2026-06-06",
-          "mo_ref": "WH/MO/00725",
-          "lot_id": 446,
-          "copacked": true
-        },
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 159.0,
-          "qty_units": 1272.0,
-          "qty_pouches": 159.0,
-          "dluo": "2026-09-26",
-          "mo_ref": "WH/MO/00726",
-          "lot_id": 1012,
-          "copacked": true
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-04-20",
@@ -394,6 +371,28 @@
           "dluo": "2026-12-10",
           "mo_ref": "WH/MO/00723",
           "lot_id": 959,
+          "copacked": true
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 41.0,
+          "qty_units": 328.0,
+          "qty_pouches": 41.0,
+          "dluo": "2026-06-06",
+          "mo_ref": "WH/MO/00725",
+          "lot_id": 446,
+          "copacked": true
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 159.0,
+          "qty_units": 1272.0,
+          "qty_pouches": 159.0,
+          "dluo": "2026-09-26",
+          "mo_ref": "WH/MO/00726",
+          "lot_id": 1012,
           "copacked": true
         }
       ]
