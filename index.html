@@ -1265,7 +1265,7 @@ async function productsGithubFetch(method, pat, putBody) {
     })
   );
   attempts.push(() =>
-    fetch("https://api.github.com/repos/diesirae1908/atome-prod-schedule/contents/prod-schedule/config/products.json", {
+    fetch("https://api.github.com/repos/diesirae1908/atome-prod-schedule/contents/config/products.json", {
       method,
       headers: { ...ghJsonHeaders, Authorization: "token " + pat },
       body: putBody ? JSON.stringify(putBody) : undefined,
@@ -1460,6 +1460,42 @@ function setupValidateEntry(entry) {
   return null;
 }
 
+/** Immediately hides the yellow "Review: setup needed" badge for all MOs
+ * with this SKU, and toggles copacked styling if appropriate, so the user
+ * sees their decision reflected before the GitHub Actions refresh lands. */
+function applyOptimisticUpdate(sku, { copacked }) {
+  if (!scheduleData || !sku) return;
+  for (const day of (scheduleData.days || [])) {
+    for (const v of (day.vacuuming || [])) {
+      if (v.sku === sku) {
+        v.needs_setup = false;
+        if (copacked) v.copacked = true;
+      }
+    }
+  }
+  try { render(); } catch (e) { console.warn("render after save:", e); }
+}
+
+/** Turns a raw GitHub error into a friendly message for the setup modal. */
+function prettySaveError(e) {
+  const raw = String((e && e.message) || e || "");
+  // Try to parse as GitHub JSON error.
+  let parsed = null;
+  try { parsed = JSON.parse(raw); } catch {}
+  const msg = (parsed && parsed.message) || raw;
+  const status = (parsed && parsed.status) || "";
+  if (/does not match|is invalid/i.test(msg) && /sha/i.test(msg)) {
+    return "products.json changed on GitHub since this page loaded — please reload and try again.";
+  }
+  if (String(status) === "404" || /not found/i.test(msg)) {
+    return "GitHub said: file not found. The Edge Function path or your PAT's repo access may be wrong.";
+  }
+  if (String(status) === "401" || String(status) === "403" || /bad credentials|resource not accessible/i.test(msg)) {
+    return "GitHub rejected the token. Open AI Planner → Admin and re-enter a PAT with 'Contents: Read/Write' on this repo.";
+  }
+  return "Save failed: " + msg;
+}
+
 /** Writes the entry to config/products.json then triggers the refresh workflow. */
 async function setupSaveProductConfig(entry, commitMessage) {
   const file = await setupLoadProductsFile();
@@ -1564,15 +1600,13 @@ async function setupHandleAction(action) {
       try {
         await setupSaveProductConfig(entry, `Mark ${ctx.sku} as copacked (no production)`);
       } catch (e) {
-        const msg = String(e.message || e);
-        if (msg.toLowerCase().includes("sha") || msg.includes("409")) {
-          setupSetStatus("Someone else just updated products.json — reload the page and try again.", "err");
-          return;
-        }
-        throw e;
+        setupSetStatus(prettySaveError(e), "err");
+        return;
       }
-      setupSetStatus("Saved — refreshing schedule, tasks will appear shortly…", "ok");
+      applyOptimisticUpdate(ctx.sku, { copacked: true });
+      setupSetStatus("Saved — schedule will regenerate in the background.", "ok");
       setupPollForRefresh();
+      setTimeout(setupCloseModal, 900);
       return;
     }
     if (action === "save-setup") {
@@ -1584,18 +1618,15 @@ async function setupHandleAction(action) {
       try {
         await setupSaveProductConfig(entry, `Add production config for ${ctx.sku}`);
       } catch (e) {
-        const msg = String(e.message || e);
-        if (msg.toLowerCase().includes("sha") || msg.includes("409")) {
-          setupSetStatus("Someone else just updated products.json — reload the page and try again.", "err");
-          if (saveBtn) saveBtn.disabled = false;
-          return;
-        }
-        throw e;
+        setupSetStatus(prettySaveError(e), "err");
+        if (saveBtn) saveBtn.disabled = false;
+        return;
       }
-      setupSetStatus("Saved — refreshing schedule, tasks will appear shortly…", "ok");
+      applyOptimisticUpdate(ctx.sku, { copacked: false });
+      setupSetStatus("Saved — full production tasks will appear once schedule refreshes.", "ok");
       setupPollForRefresh();
-      // Re-enable the button after a moment in case user cancels before refresh finishes.
       setTimeout(() => { if (saveBtn) saveBtn.disabled = false; }, 2000);
+      setTimeout(setupCloseModal, 1200);
       return;
     }
   } catch (e) {
