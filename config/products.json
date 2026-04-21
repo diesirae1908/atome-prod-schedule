@@ -416,6 +416,19 @@
       "premix_offset": 2,
       "premix_label": "Prep Mix Shortbread Plain",
       "d1_action": "freeze_only"
+    },
+    "1-CHTWI7P-ADN": {
+      "name": "LIMITED EDITION: Chocolate Twists",
+      "dough_type": null,
+      "mix_offset": null,
+      "shape_offset": null,
+      "score_offset": null,
+      "vacuum_offset": 0,
+      "dluo_months": null,
+      "copacked": true,
+      "units_per_pack": 1,
+      "pouches_per_pack": 1,
+      "weight_g_per_unit": null
     }
   }
 }
