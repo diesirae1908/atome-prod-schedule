@@ -463,9 +463,9 @@ const MOPS = [
     mixer:         "small",
     base_flour:    2050,
     grams_per_unit: null,
-    base_units:    25,
+    base_units:    52,
     unit_label:    "PAC",
-    note:          "Recipe is per paton (3600g dough). Scale by number of patons = ceil(units / 25).",
+    note:          "Recipe is per paton (3600g dough → ~52 PAC). Scale by number of patons = ceil(units / 52). Confirmed via Odoo BOM: 414 PAC = 8 patons = ~28.8 kg dough.",
     ingredients: [
       { name: "Sun Peak flour",       g: 2050, is_flour: true,  is_topping: false },
       { name: "Salt",                 g:   36, is_flour: false, is_topping: false },
@@ -496,9 +496,9 @@ const MOPS = [
     mixer:         "small",
     base_flour:    2050,
     grams_per_unit: null,
-    base_units:    25,
+    base_units:    52,
     unit_label:    "croissants",
-    note:          "Same dough as PAC. Laminating butter added at lamination.",
+    note:          "Same dough as PAC (3600g/paton → ~52 units). Laminating butter added at lamination.",
     ingredients: [
       { name: "Sun Peak flour",       g: 2050, is_flour: true,  is_topping: false },
       { name: "Salt",                 g:   36, is_flour: false, is_topping: false },

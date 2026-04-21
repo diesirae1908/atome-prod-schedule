@@ -89,11 +89,23 @@
 
     .mo-ref { font-size: 10px; color: #9ca3af; }
 
+    .lot-cell {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px; font-weight: 600; color: #1e1b4b;
+      background: #ede9fe; border: 1px solid #c4b5fd;
+      padding: 2px 6px; border-radius: 6px; white-space: nowrap;
+    }
+    .lot-cell-empty { color: #9ca3af; font-size: 11px; }
+
     .empty-state {
       text-align: center; padding: 60px 20px;
       color: #9ca3af; font-size: 14px;
     }
     .empty-state .big { font-size: 40px; margin-bottom: 12px; }
+
+    .dluo-cell { font-size: 11px; font-weight: 600; white-space: nowrap; }
+    .dluo-ok   { color: #059669; }
+    .dluo-none { color: #9ca3af; }
   </style>
 </head>
 <body>
@@ -140,9 +152,11 @@
         <th>Type</th>
         <th>Product</th>
         <th>MO Ref</th>
+        <th>Lot</th>
         <th>Target</th>
         <th>Actual</th>
         <th>Variance</th>
+        <th>Expiry Date</th>
         <th>Recorded</th>
       </tr>
     </thead>
@@ -159,6 +173,58 @@ const SUPA_URL = "https://ktbbmtyesrprvxrseiph.supabase.co";
 const SUPA_KEY = "sb_publishable_1vfCHnng8kWfUGFtOt9Dmw_Rzkn8M62";
 
 let allRows = [];
+let _dluoByProduct = {}; // product name → dluo_months
+let _lotByMoRef = {};     // mo_ref → { lot_id, lot_name } from schedule.json
+
+async function loadProductConfig() {
+  try {
+    const r = await fetch("config/products.json");
+    const cfg = await r.json();
+    _dluoByProduct = {};
+    for (const [, p] of Object.entries(cfg.products || {})) {
+      if (p.name && p.dluo_months != null) _dluoByProduct[p.name] = p.dluo_months;
+    }
+  } catch(e) { console.warn("loadProductConfig:", e); }
+}
+
+async function loadScheduleLots() {
+  try {
+    const r = await fetch("data/schedule.json?t=" + Date.now());
+    if (!r.ok) return;
+    const data = await r.json();
+    _lotByMoRef = {};
+    for (const day of (data.days || [])) {
+      for (const v of (day.vacuuming || [])) {
+        if (!v.mo_ref) continue;
+        if (v.lot_id || v.lot_name) {
+          _lotByMoRef[v.mo_ref] = { lot_id: v.lot_id || null, lot_name: v.lot_name || null };
+        }
+      }
+    }
+  } catch (e) { console.warn("loadScheduleLots:", e); }
+}
+
+function lotCellHtml(moRef) {
+  const lot = moRef ? _lotByMoRef[moRef] : null;
+  if (!lot) return `<span class="lot-cell-empty">–</span>`;
+  const label = lot.lot_name || (lot.lot_id ? "#" + lot.lot_id : "");
+  if (!label) return `<span class="lot-cell-empty">–</span>`;
+  return `<span class="lot-cell" title="Lot ID: ${lot.lot_id ?? "–"}">${label}</span>`;
+}
+
+function computeDluo(recordedDate, productName) {
+  if (!recordedDate || !productName) return null;
+  const months = _dluoByProduct[productName];
+  if (months == null) return null;
+  const d = new Date(recordedDate + "T00:00:00");
+  d.setMonth(d.getMonth() + months);
+  return d;
+}
+
+function fmtDluo(date) {
+  if (!date) return null;
+  return date.toLocaleDateString("en-CA", { year: "numeric", month: "short", day: "numeric" });
+}
 
 async function fetchOutputs() {
   const r = await fetch(SUPA_URL + "/rest/v1/production_outputs?select=*&order=recorded_date.desc,recorded_at.desc", {
@@ -224,14 +290,20 @@ function render() {
       varHtml = `<span class="variance ${cls}">${sign}${Math.round(diff)}</span>`;
     }
     const typeBadge = `<span class="type-badge type-${r.task_type}">${r.task_type}</span>`;
+    const dluo = computeDluo(r.recorded_date, r.product_name);
+    const dluoHtml = dluo
+      ? `<span class="dluo-cell dluo-ok">${fmtDluo(dluo)}</span>`
+      : `<span class="dluo-cell dluo-none">–</span>`;
     return `<tr>
       <td>${fmtDate(r.recorded_date)}</td>
       <td>${typeBadge}</td>
       <td><strong>${r.product_name || "–"}</strong></td>
       <td><span class="mo-ref">${r.mo_ref || "–"}</span></td>
+      <td>${lotCellHtml(r.mo_ref)}</td>
       <td>${r.target_qty != null ? Math.round(r.target_qty) + " " + r.unit : "–"}</td>
       <td><strong>${Math.round(r.actual_qty)} ${r.unit}</strong></td>
       <td>${varHtml}</td>
+      <td>${dluoHtml}</td>
       <td>${fmtRecorded(r.updated_at || r.recorded_at)}</td>
     </tr>`;
   }).join("");
@@ -268,7 +340,13 @@ document.getElementById("btnReset").addEventListener("click", () => {
 
 (async () => {
   try {
-    allRows = await fetchOutputs();
+    // Load outputs + product config + schedule lots in parallel
+    const [rows] = await Promise.all([
+      fetchOutputs(),
+      loadProductConfig(),
+      loadScheduleLots(),
+    ]);
+    allRows = rows;
     initDateDefaults();
     populateProductFilter();
     render();

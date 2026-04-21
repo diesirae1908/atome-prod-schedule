@@ -133,6 +133,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
         # DLUO + lot ID from Odoo lot
         dluo_from_odoo = None
         lot_id = None
+        lot_name = None
         if mo.get("lot_producing_id"):
             lot_id = mo["lot_producing_id"][0] if isinstance(mo["lot_producing_id"], (list, tuple)) else None
             lot_name = mo["lot_producing_id"][1] if isinstance(mo["lot_producing_id"], (list, tuple)) else str(mo["lot_producing_id"])
@@ -187,6 +188,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                 "dluo": dluo,
                 "mo_ref": mo_ref,
                 "lot_id": lot_id,
+                "lot_name": lot_name,
                 "copacked": skip_prod,
                 "needs_setup": bool(cfg.get("needs_setup", False)),
             })
