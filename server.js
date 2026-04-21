@@ -110,7 +110,7 @@ app.post("/api/trigger-refresh", async (req, res) => {
 });
 
 const GH_SHIFTS_CONTENTS =
-  "https://api.github.com/repos/diesirae1908/atome-prod-schedule/contents/prod-schedule/data/shifts.json";
+  "https://api.github.com/repos/diesirae1908/atome-prod-schedule/contents/data/shifts.json";
 
 function githubPatFromRequest(req) {
   const x = String(req.headers["x-github-token"] || "").trim();
@@ -172,7 +172,7 @@ app.put("/api/github-shifts", async (req, res) => {
 });
 
 const GH_PRODUCTS_CONTENTS =
-  "https://api.github.com/repos/diesirae1908/atome-prod-schedule/contents/prod-schedule/config/products.json";
+  "https://api.github.com/repos/diesirae1908/atome-prod-schedule/contents/config/products.json";
 
 // ── GET /api/github-products-meta ───────────────────────────────────────────
 // Returns the GitHub Contents API JSON for config/products.json (includes sha).

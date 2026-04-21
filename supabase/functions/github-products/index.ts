@@ -9,7 +9,7 @@ const corsHeaders = {
 };
 
 const REPO = "diesirae1908/atome-prod-schedule";
-const PATH = "prod-schedule/config/products.json";
+const PATH = "config/products.json";
 const GH_URL = `https://api.github.com/repos/${REPO}/contents/${PATH}`;
 
 Deno.serve(async (req) => {
