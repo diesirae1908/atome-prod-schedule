@@ -1457,6 +1457,12 @@ function setupValidateEntry(entry) {
   if (entry.mix_offset === null)   return "Mix offset is required (e.g. -2).";
   if (entry.shape_offset === null) return "Shape offset is required (e.g. -1).";
   if (entry.weight_g_per_unit === null || entry.weight_g_per_unit <= 0) return "Raw dough weight per unit is required.";
+  // Guardrail: production steps must happen BEFORE (or on) packaging day.
+  // Positive offset = after packaging, which makes no sense and was a common mistake.
+  if (entry.mix_offset    > 0) return "Mix offset must be 0 or negative (days BEFORE packaging). Did you forget the minus sign?";
+  if (entry.shape_offset  > 0) return "Shape offset must be 0 or negative (days BEFORE packaging). Did you forget the minus sign?";
+  if (entry.score_offset != null && entry.score_offset > 0) return "Score offset must be 0 or negative (days BEFORE packaging).";
+  if (entry.premix_offset != null && entry.premix_offset > 0) return "Pre-mix offset must be negative (days BEFORE packaging). Did you forget the minus sign?";
   return null;
 }
 

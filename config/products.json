@@ -405,15 +405,15 @@
     "SBL-P-SGL": {
       "name": "Butter Shortbread Log (Plain)",
       "dough_type": "SHORTBREAD",
-      "mix_offset": 1,
-      "shape_offset": 1,
+      "mix_offset": -1,
+      "shape_offset": -1,
       "score_offset": null,
       "vacuum_offset": 0,
       "dluo_months": 6,
       "units_per_pack": 1,
       "pouches_per_pack": 1,
       "weight_g_per_unit": 400,
-      "premix_offset": 2,
+      "premix_offset": -2,
       "premix_label": "Prep Mix Shortbread Plain",
       "d1_action": "freeze_only"
     },
