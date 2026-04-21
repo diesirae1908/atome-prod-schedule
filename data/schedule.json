@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T23:28:20Z",
+  "generated_at": "2026-04-21T23:28:31Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -446,7 +446,7 @@
           "lot_id": 952,
           "lot_name": "06/17/2026",
           "copacked": true,
-          "needs_setup": true
+          "needs_setup": false
         },
         {
           "sku": "CTY2P-SGL",
