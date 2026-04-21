@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T22:38:36Z",
+  "generated_at": "2026-04-21T23:10:22Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -189,31 +189,8 @@
       "date": "2026-04-19",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00661",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00661",
-          "d0": "2026-04-21"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -269,16 +246,7 @@
           "d0": "2026-04-22"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00661",
-          "d0": "2026-04-21"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -375,19 +343,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2027-01-19",
-          "mo_ref": "WH/MO/00661",
-          "lot_id": 1038,
-          "lot_name": "01/19/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
           "qty_packs": 200.0,
@@ -397,32 +352,6 @@
           "mo_ref": "WH/MO/00723",
           "lot_id": 959,
           "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 41.0,
-          "qty_units": 328.0,
-          "qty_pouches": 41.0,
-          "dluo": "2026-06-06",
-          "mo_ref": "WH/MO/00725",
-          "lot_id": 446,
-          "lot_name": "06/06/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 159.0,
-          "qty_units": 1272.0,
-          "qty_pouches": 159.0,
-          "dluo": "2026-09-26",
-          "mo_ref": "WH/MO/00726",
-          "lot_id": 1012,
-          "lot_name": "09/26/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -860,9 +789,9 @@
         {
           "sku": "1-PACB8P-SGL",
           "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 141.0,
-          "qty_units": 1128.0,
-          "qty_pouches": 141.0,
+          "qty_packs": 121.0,
+          "qty_units": 968.0,
+          "qty_pouches": 121.0,
           "dluo": "2026-09-26",
           "mo_ref": "WH/MO/00730",
           "lot_id": 1012,
@@ -873,9 +802,9 @@
         {
           "sku": "1-PACB8P-SGL",
           "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 59.0,
-          "qty_units": 472.0,
-          "qty_pouches": 59.0,
+          "qty_packs": 79.0,
+          "qty_units": 632.0,
+          "qty_pouches": 79.0,
           "dluo": "2026-10-11",
           "mo_ref": "WH/MO/00731",
           "lot_id": 1040,
