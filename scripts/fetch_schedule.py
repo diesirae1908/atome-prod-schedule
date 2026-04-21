@@ -150,7 +150,8 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
         # Look up product config
         cfg = products.get(sku) if sku else None
         if cfg is None:
-            # Unknown SKU – still show in vacuuming as packaging-only
+            # Unknown SKU – still show in vacuuming as packaging-only,
+            # and flag it so the frontend can prompt the user to configure it.
             cfg = {
                 "name": clean_name or product_name,
                 "dough_type": None,
@@ -160,6 +161,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                 "copacked": True,
                 "units_per_pack": 1,
                 "dough_kg_per_pack": None,
+                "needs_setup": True,
             }
 
         skip_prod = cfg.get("copacked", False) or cfg.get("mix_offset") is None
@@ -186,6 +188,7 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                 "mo_ref": mo_ref,
                 "lot_id": lot_id,
                 "copacked": skip_prod,
+                "needs_setup": bool(cfg.get("needs_setup", False)),
             })
 
         if skip_prod:

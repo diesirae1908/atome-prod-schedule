@@ -426,6 +426,108 @@
     #outModalSave:hover { background: #3730a3; }
     .out-modal-hint { font-size: 10px; color: #9ca3af; text-align: center; }
 
+    /* ── setup-needed warning badge (new unknown-SKU MOs) ── */
+    .setup-warning-btn {
+      display: block; width: 100%;
+      margin-top: 4px;
+      padding: 5px 8px;
+      font-size: 11px; font-weight: 700;
+      color: #92400e; background: #fef3c7;
+      border: 1px solid #f59e0b; border-left: 3px solid #d97706;
+      border-radius: 6px; cursor: pointer; text-align: left;
+      transition: background .15s;
+    }
+    .setup-warning-btn:hover { background: #fde68a; }
+    .setup-warning-btn:disabled {
+      cursor: not-allowed; opacity: .55;
+      background: #fef3c7;
+    }
+
+    /* ── setup modal ── */
+    #setupModal {
+      position: fixed; inset: 0; z-index: 2100;
+      background: rgba(0,0,0,.55);
+      display: none; align-items: center; justify-content: center;
+    }
+    #setupModal.open { display: flex; }
+    .setup-modal-box {
+      background: #fff; border-radius: 14px;
+      padding: 24px 28px; max-width: 520px; width: 92%;
+      max-height: 88vh; overflow-y: auto;
+      box-shadow: 0 12px 48px rgba(0,0,0,.28);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .setup-modal-box h3 {
+      font-size: 17px; font-weight: 800; color: #1e1b4b;
+      line-height: 1.35; margin: 0;
+    }
+    .setup-modal-box .setup-sub { font-size: 12px; color: #6b7280; margin: 0; }
+    .setup-modal-box .setup-sku-chip {
+      display: inline-block; font-family: ui-monospace, monospace;
+      background: #f3f4f6; color: #374151;
+      padding: 2px 8px; border-radius: 6px;
+      font-size: 12px; font-weight: 600;
+    }
+    .setup-choice-row {
+      display: flex; flex-direction: column; gap: 10px; margin-top: 8px;
+    }
+    .setup-choice-btn {
+      padding: 16px 14px; border-radius: 10px;
+      border: 2px solid #e5e7eb; background: #fff;
+      text-align: left; cursor: pointer;
+      transition: border-color .15s, background .15s;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .setup-choice-btn:hover { border-color: #4338ca; background: #f5f3ff; }
+    .setup-choice-btn .sc-title { font-size: 14px; font-weight: 700; color: #1e1b4b; }
+    .setup-choice-btn .sc-desc  { font-size: 12px; color: #6b7280; }
+    .setup-choice-btn.danger { border-color: #fde68a; }
+    .setup-choice-btn.danger:hover { border-color: #d97706; background: #fffbeb; }
+
+    .setup-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; margin-top: 4px; }
+    .setup-form .full { grid-column: 1 / -1; }
+    .setup-form label {
+      display: flex; flex-direction: column; gap: 3px;
+      font-size: 11px; font-weight: 700; color: #374151;
+      text-transform: uppercase; letter-spacing: .4px;
+    }
+    .setup-form input, .setup-form select {
+      padding: 7px 9px; font-size: 13px;
+      border: 1px solid #d1d5db; border-radius: 6px;
+      background: #fff; color: #111827;
+      font-weight: 500; text-transform: none; letter-spacing: 0;
+      outline: none;
+    }
+    .setup-form input:focus, .setup-form select:focus { border-color: #4338ca; }
+    .setup-form .hint {
+      font-size: 10px; font-weight: 500; color: #9ca3af;
+      text-transform: none; letter-spacing: 0; margin-top: 1px;
+    }
+    .setup-section-title {
+      grid-column: 1 / -1;
+      font-size: 11px; font-weight: 800; color: #4338ca;
+      text-transform: uppercase; letter-spacing: .5px;
+      border-top: 1px solid #e5e7eb; padding-top: 10px; margin-top: 4px;
+    }
+    .setup-section-title:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+
+    .setup-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 10px; }
+    .setup-btn {
+      padding: 9px 16px; font-size: 13px; font-weight: 700;
+      border: none; border-radius: 7px; cursor: pointer;
+      transition: background .15s;
+    }
+    .setup-btn-primary { background: #4338ca; color: #fff; }
+    .setup-btn-primary:hover { background: #3730a3; }
+    .setup-btn-primary:disabled { background: #9ca3af; cursor: default; }
+    .setup-btn-secondary { background: #f3f4f6; color: #374151; }
+    .setup-btn-secondary:hover { background: #e5e7eb; }
+    .setup-status {
+      font-size: 12px; color: #6b7280; min-height: 16px;
+    }
+    .setup-status.err { color: #dc2626; font-weight: 600; }
+    .setup-status.ok  { color: #059669; font-weight: 600; }
+
     /* ── loading / error ── */
     #loading, #error {
       display: flex; flex-direction: column; align-items: center;
@@ -708,6 +810,107 @@
   </div>
 </div>
 
+<!-- ── Setup-needed Modal ── -->
+<div id="setupModal">
+  <div class="setup-modal-box">
+    <div>
+      <h3 id="setupModalTitle">Review: setup needed</h3>
+      <p class="setup-sub" id="setupModalSub"></p>
+      <div style="margin-top:6px"><span class="setup-sku-chip" id="setupModalSku"></span></div>
+    </div>
+
+    <!-- Stage 1 — choice -->
+    <div id="setupStage1" class="setup-choice-row">
+      <button class="setup-choice-btn" data-setup-action="ok">
+        <span class="sc-title">OK — no production needed</span>
+        <span class="sc-desc">We don't manufacture this product (copacked / received ready). It will stay in the vacuuming column only and this warning will not show again for this SKU.</span>
+      </button>
+      <button class="setup-choice-btn danger" data-setup-action="setup">
+        <span class="sc-title">Setup production</span>
+        <span class="sc-desc">We do manufacture this product. Define dough type, pre-mix, mix, shaping and scoring offsets so future MOs generate tasks automatically.</span>
+      </button>
+      <div class="setup-actions">
+        <button class="setup-btn setup-btn-secondary" data-setup-action="cancel">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Stage 2 — form -->
+    <div id="setupStage2" style="display:none">
+      <div class="setup-form">
+        <div class="setup-section-title">Product</div>
+        <label class="full">Product name
+          <input id="setupName" type="text" />
+        </label>
+        <label>Dough type
+          <select id="setupDoughType">
+            <option value="">— select —</option>
+          </select>
+          <span class="hint">Selecting a dough type auto-fills sensible defaults below.</span>
+        </label>
+        <label>DLUO (months)
+          <input id="setupDluoMonths" type="number" min="0" step="1" placeholder="e.g. 9" />
+        </label>
+
+        <div class="setup-section-title">Pack &amp; weight (from MO)</div>
+        <label>Units per pack
+          <input id="setupUnitsPerPack" type="number" min="1" step="1" value="1" />
+          <span class="hint">e.g. baguette ×3 → 3</span>
+        </label>
+        <label>Pouches per pack
+          <input id="setupPouchesPerPack" type="number" min="1" step="1" value="1" />
+          <span class="hint">Usually 1; individually-pouched = units per pack</span>
+        </label>
+        <label class="full">Raw dough weight per unit (g)
+          <input id="setupWeightG" type="number" min="0" step="1" placeholder="e.g. 350" />
+          <span class="hint">Drives the mixing kg from the MO quantity.</span>
+        </label>
+
+        <div class="setup-section-title">Offsets (days relative to packaging day)</div>
+        <label>Pre-mix offset
+          <input id="setupPremixOffset" type="number" step="1" placeholder="leave blank if none" />
+          <span class="hint">e.g. -3 = 3 days before packaging</span>
+        </label>
+        <label>Pre-mix label
+          <input id="setupPremixLabel" type="text" placeholder="e.g. MG Grain Soak" />
+          <span class="hint">Shown on the Pre-mix row.</span>
+        </label>
+        <label>Mix offset
+          <input id="setupMixOffset" type="number" step="1" placeholder="e.g. -2" />
+          <span class="hint">Day the dough is mixed. -2 = 2 days before packaging.</span>
+        </label>
+        <label>Shape offset
+          <input id="setupShapeOffset" type="number" step="1" placeholder="e.g. -1" />
+          <span class="hint">Day the dough is shaped.</span>
+        </label>
+        <label>Score offset
+          <input id="setupScoreOffset" type="number" step="1" placeholder="e.g. -1" />
+          <span class="hint">Day the product is scored / frozen. Often same as shape.</span>
+        </label>
+        <label>Vacuum offset
+          <input id="setupVacOffset" type="number" step="1" value="0" />
+          <span class="hint">0 = vacuumed on packaging day.</span>
+        </label>
+        <label class="full">D-1 action (optional)
+          <select id="setupD1Action">
+            <option value="">— none —</option>
+            <option value="score_freeze">score_freeze (score + freeze on D-1)</option>
+            <option value="freeze_only">freeze_only (just freeze on D-1)</option>
+          </select>
+          <span class="hint">Only set if Score offset ≠ Shape offset (i.e. separate scoring day).</span>
+        </label>
+      </div>
+
+      <div class="setup-actions">
+        <button class="setup-btn setup-btn-secondary" data-setup-action="back">Back</button>
+        <button class="setup-btn setup-btn-secondary" data-setup-action="cancel">Cancel</button>
+        <button class="setup-btn setup-btn-primary" data-setup-action="save-setup">Save &amp; refresh</button>
+      </div>
+    </div>
+
+    <div class="setup-status" id="setupStatus"></div>
+  </div>
+</div>
+
 <!-- ── MOP Modal ── -->
 <div id="mopModal">
   <div class="mop-modal-box">
@@ -798,19 +1001,47 @@ async function triggerRefresh() {
   const btn = document.getElementById("refreshBtn");
   btn.disabled = true;
   btn.innerHTML = '<span class="rspin">⏳</span> Triggering…';
-  try {
-    const resp = await fetch("/api/trigger-refresh", {
+
+  // Try the local Node proxy first (only present when running `node server.js`),
+  // then fall back to the Supabase Edge Function which works from GitHub Pages.
+  const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  const attempts = [];
+  if (isLocal) {
+    attempts.push(() =>
+      fetch("/api/trigger-refresh", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      })
+    );
+  }
+  attempts.push(() =>
+    fetch(SUPA_URL + "/functions/v1/trigger-refresh", {
       method: "POST",
-      headers: { "Content-Type": "application/json" }
-    });
-    if (!resp.ok) {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + SUPA_KEY,
+        apikey: SUPA_KEY,
+      },
+    })
+  );
+
+  let lastErr = null;
+  let ok = false;
+  for (const run of attempts) {
+    try {
+      const resp = await run();
+      if (resp.ok) { ok = true; break; }
       const body = await resp.text().catch(() => "");
-      throw new Error("Edge Function error " + resp.status + ": " + body);
+      lastErr = `HTTP ${resp.status}: ${body.slice(0, 200)}`;
+    } catch (e) {
+      lastErr = e.message || String(e);
     }
-  } catch (e) {
+  }
+
+  if (!ok) {
     btn.disabled = false;
     btn.textContent = "🔄 Refresh from Odoo";
-    alert("Could not trigger refresh: " + e.message);
+    alert("Could not trigger refresh: " + (lastErr || "unknown error"));
     return;
   }
 
@@ -979,6 +1210,420 @@ function showOutputModal({ title, subtitle, defaultValue, onSave }) {
 }
 
 function escAttr(s) { return (s || "").replace(/"/g, "&quot;"); }
+
+// ── Setup-needed modal ───────────────────────────────────────────────────────
+// Opens when the user clicks the ⚠ badge on an unknown-SKU vacuuming pill.
+// Stage 1 = choice (OK as copacked vs. Setup production).
+// Stage 2 = form to define dough type + offsets, committed to config/products.json.
+const _setupState = {
+  ctx: null,       // { sku, name, mo_ref, qty_packs }
+  productsFile: null, // { json, sha } loaded from GitHub on open
+};
+
+function utf8ToBase64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let bin = "";
+  for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+  return btoa(bin);
+}
+
+function base64ToUtf8(b64) {
+  const bin = atob((b64 || "").replace(/\s+/g, ""));
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+
+/** Clone of shiftsRoGithubFetch but targeting config/products.json. */
+async function productsGithubFetch(method, pat, putBody) {
+  const ghJsonHeaders = {
+    Accept: "application/vnd.github.v3+json",
+    ...(putBody ? { "Content-Type": "application/json" } : {}),
+  };
+  const fnUrl = SUPA_URL + "/functions/v1/github-products";
+  const attempts = [];
+  const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  if (isLocal) {
+    attempts.push(() =>
+      fetch(method === "GET" ? "/api/github-products-meta" : "/api/github-products", {
+        method: method === "GET" ? "GET" : "PUT",
+        headers: { ...ghJsonHeaders, Authorization: "token " + pat },
+        body: putBody ? JSON.stringify(putBody) : undefined,
+      })
+    );
+  }
+  attempts.push(() =>
+    fetch(fnUrl, {
+      method,
+      headers: {
+        ...ghJsonHeaders,
+        Authorization: "Bearer " + SUPA_KEY,
+        apikey: SUPA_KEY,
+        "X-GitHub-Token": pat,
+      },
+      body: putBody ? JSON.stringify(putBody) : undefined,
+    })
+  );
+  attempts.push(() =>
+    fetch("https://api.github.com/repos/diesirae1908/atome-prod-schedule/contents/prod-schedule/config/products.json", {
+      method,
+      headers: { ...ghJsonHeaders, Authorization: "token " + pat },
+      body: putBody ? JSON.stringify(putBody) : undefined,
+    })
+  );
+
+  let lastResp = null;
+  for (let i = 0; i < attempts.length; i++) {
+    try {
+      const r = await attempts[i]();
+      if (r.ok) return r;
+      lastResp = r;
+    } catch (e) {
+      lastResp = e;
+    }
+  }
+  if (lastResp && typeof lastResp.text === "function") {
+    throw new Error(await lastResp.text());
+  }
+  throw lastResp instanceof Error ? lastResp : new Error(String(lastResp));
+}
+
+function setupSetStatus(msg, kind) {
+  const el = document.getElementById("setupStatus");
+  if (!el) return;
+  el.textContent = msg || "";
+  el.className = "setup-status" + (kind ? " " + kind : "");
+}
+
+function setupCloseModal() {
+  document.getElementById("setupModal").classList.remove("open");
+  document.getElementById("setupStage1").style.display = "";
+  document.getElementById("setupStage2").style.display = "none";
+  setupSetStatus("");
+}
+
+async function openSetupModal(ctx) {
+  _setupState.ctx = ctx;
+  _setupState.productsFile = null;
+  document.getElementById("setupModalSub").textContent =
+    `New MO for an unconfigured product. Tell us whether ${ctx.name || ctx.sku} should generate production tasks.`;
+  document.getElementById("setupModalSku").textContent =
+    `SKU: ${ctx.sku}${ctx.mo_ref ? " · " + ctx.mo_ref : ""}`;
+  document.getElementById("setupStage1").style.display = "";
+  document.getElementById("setupStage2").style.display = "none";
+  setupSetStatus("");
+  document.getElementById("setupModal").classList.add("open");
+}
+
+/** Fetches config/products.json from GitHub. Caches on _setupState.productsFile. */
+async function setupLoadProductsFile() {
+  if (_setupState.productsFile) return _setupState.productsFile;
+  const enc = localStorage.getItem("atome_pat_enc");
+  if (!enc) {
+    throw new Error("No GitHub PAT saved. Open AI Planner → Admin to save your PAT first.");
+  }
+  const pat = shiftsRoDecodePat(enc);
+  const meta = await productsGithubFetch("GET", pat, null);
+  const info = await meta.json();
+  if (!info.sha || !info.content) {
+    throw new Error(info.message || "Could not read products.json from GitHub.");
+  }
+  const json = JSON.parse(base64ToUtf8(info.content));
+  _setupState.productsFile = { json, sha: info.sha, pat };
+  return _setupState.productsFile;
+}
+
+function setupPopulateDoughTypes(doughTypes) {
+  const sel = document.getElementById("setupDoughType");
+  sel.innerHTML = '<option value="">— select —</option>';
+  const keys = Object.keys(doughTypes || {}).sort();
+  keys.forEach(k => {
+    const opt = document.createElement("option");
+    opt.value = k;
+    opt.textContent = (doughTypes[k].label || k) + " (" + (doughTypes[k].unit || "kg") + ")";
+    sel.appendChild(opt);
+  });
+}
+
+/** Find an existing product with the same dough_type to seed default offsets. */
+function setupApplyDoughDefaults(doughType) {
+  if (!doughType || !_setupState.productsFile) return;
+  const products = _setupState.productsFile.json.products || {};
+  const match = Object.values(products).find(p => p && p.dough_type === doughType && p.mix_offset !== null && p.mix_offset !== undefined);
+  if (!match) return;
+  const set = (id, val) => {
+    const el = document.getElementById(id);
+    if (el && (el.value === "" || el.value == null)) {
+      if (val === null || val === undefined) return;
+      el.value = val;
+    }
+  };
+  set("setupMixOffset",   match.mix_offset);
+  set("setupShapeOffset", match.shape_offset);
+  set("setupScoreOffset", match.score_offset);
+  set("setupVacOffset",   match.vacuum_offset ?? 0);
+  set("setupPremixOffset", match.premix_offset);
+  if (match.premix_label && !document.getElementById("setupPremixLabel").value) {
+    document.getElementById("setupPremixLabel").value = match.premix_label;
+  }
+  set("setupDluoMonths",  match.dluo_months);
+  set("setupWeightG",     match.weight_g_per_unit);
+  set("setupUnitsPerPack", match.units_per_pack);
+  set("setupPouchesPerPack", match.pouches_per_pack);
+  if (match.d1_action) {
+    const d1 = document.getElementById("setupD1Action");
+    if (!d1.value) d1.value = match.d1_action;
+  }
+}
+
+async function setupShowStage2() {
+  setupSetStatus("Loading current product config…");
+  try {
+    const file = await setupLoadProductsFile();
+    setupPopulateDoughTypes(file.json.dough_types || {});
+    // Prefill name from MO
+    document.getElementById("setupName").value = _setupState.ctx.name || "";
+    // Reset offset fields (user will pick dough type → auto-fill)
+    ["setupMixOffset","setupShapeOffset","setupScoreOffset","setupPremixOffset","setupPremixLabel","setupDluoMonths","setupWeightG"].forEach(id => {
+      document.getElementById(id).value = "";
+    });
+    document.getElementById("setupVacOffset").value = 0;
+    document.getElementById("setupUnitsPerPack").value = 1;
+    document.getElementById("setupPouchesPerPack").value = 1;
+    document.getElementById("setupD1Action").value = "";
+
+    document.getElementById("setupStage1").style.display = "none";
+    document.getElementById("setupStage2").style.display = "";
+    setupSetStatus("");
+  } catch (e) {
+    setupSetStatus(e.message || String(e), "err");
+  }
+}
+
+function setupBuildCopackedEntry(name) {
+  return {
+    name: name || "",
+    dough_type: null,
+    mix_offset: null,
+    shape_offset: null,
+    score_offset: null,
+    vacuum_offset: 0,
+    dluo_months: null,
+    copacked: true,
+    units_per_pack: 1,
+    pouches_per_pack: 1,
+    weight_g_per_unit: null,
+  };
+}
+
+function setupReadFormEntry() {
+  const num = id => {
+    const v = document.getElementById(id).value;
+    return v === "" ? null : parseInt(v, 10);
+  };
+  const numFloat = id => {
+    const v = document.getElementById(id).value;
+    return v === "" ? null : parseFloat(v);
+  };
+  const name = document.getElementById("setupName").value.trim();
+  const doughType = document.getElementById("setupDoughType").value || null;
+  const premixOffset = num("setupPremixOffset");
+  const premixLabel = document.getElementById("setupPremixLabel").value.trim() || null;
+  const d1Action = document.getElementById("setupD1Action").value || null;
+
+  const entry = {
+    name,
+    dough_type: doughType,
+    mix_offset:    num("setupMixOffset"),
+    shape_offset:  num("setupShapeOffset"),
+    score_offset:  num("setupScoreOffset"),
+    vacuum_offset: num("setupVacOffset") ?? 0,
+    dluo_months:   num("setupDluoMonths"),
+    units_per_pack:   num("setupUnitsPerPack") || 1,
+    pouches_per_pack: num("setupPouchesPerPack") || 1,
+    weight_g_per_unit: numFloat("setupWeightG"),
+  };
+  if (premixOffset !== null && premixLabel) {
+    entry.premix_offset = premixOffset;
+    entry.premix_label  = premixLabel;
+  }
+  if (d1Action) entry.d1_action = d1Action;
+  return entry;
+}
+
+function setupValidateEntry(entry) {
+  if (!entry.name) return "Product name is required.";
+  if (!entry.dough_type) return "Please pick a dough type.";
+  if (entry.mix_offset === null)   return "Mix offset is required (e.g. -2).";
+  if (entry.shape_offset === null) return "Shape offset is required (e.g. -1).";
+  if (entry.weight_g_per_unit === null || entry.weight_g_per_unit <= 0) return "Raw dough weight per unit is required.";
+  return null;
+}
+
+/** Writes the entry to config/products.json then triggers the refresh workflow. */
+async function setupSaveProductConfig(entry, commitMessage) {
+  const file = await setupLoadProductsFile();
+  const pat = file.pat;
+  file.json.products = file.json.products || {};
+  file.json.products[_setupState.ctx.sku] = entry;
+
+  const payload = {
+    message: commitMessage,
+    content: utf8ToBase64(JSON.stringify(file.json, null, 2) + "\n"),
+    sha: file.sha,
+  };
+  const r = await productsGithubFetch("PUT", pat, payload);
+  const putInfo = await r.json().catch(() => ({}));
+  if (putInfo.content && putInfo.content.sha) {
+    file.sha = putInfo.content.sha;
+  } else {
+    _setupState.productsFile = null;
+  }
+
+  // Trigger the refresh workflow so schedule.json regenerates.
+  try {
+    await fetch("/api/trigger-refresh", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" }
+    }).then(resp => {
+      if (!resp.ok) throw new Error("local proxy " + resp.status);
+    });
+  } catch {
+    try {
+      await fetch(SUPA_URL + "/functions/v1/trigger-refresh", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + SUPA_KEY,
+          apikey: SUPA_KEY,
+        },
+      });
+    } catch {}
+  }
+}
+
+/** Polls data/schedule.json until generated_at changes, then re-renders. */
+function setupPollForRefresh() {
+  const beforeTs = scheduleData?.generated_at || "";
+  const MAX_WAIT = 5 * 60 * 1000;
+  const INTERVAL = 15000;
+  let elapsed = 0;
+  const poll = setInterval(async () => {
+    elapsed += INTERVAL;
+    const el = document.getElementById("setupStatus");
+    // Only update status if the modal is still open (user may have closed it).
+    if (el && el.textContent.includes("Refreshing")) {
+      setupSetStatus(`Refreshing schedule… (${Math.round(elapsed / 1000)}s)`, "ok");
+    }
+    if (elapsed >= MAX_WAIT) {
+      clearInterval(poll);
+      return;
+    }
+    try {
+      const r = await fetch("data/schedule.json?t=" + Date.now());
+      if (!r.ok) return;
+      const newData = await r.json();
+      if (newData.generated_at !== beforeTs) {
+        clearInterval(poll);
+        scheduleData = newData;
+        render();
+        // If the setup modal is still open, show success and auto-close.
+        const modal = document.getElementById("setupModal");
+        if (modal.classList.contains("open")) {
+          setupSetStatus("Done — schedule updated.", "ok");
+          setTimeout(setupCloseModal, 1200);
+        }
+      }
+    } catch {}
+  }, INTERVAL);
+}
+
+async function setupHandleAction(action) {
+  const ctx = _setupState.ctx;
+  if (!ctx) return;
+  const saveBtn = document.querySelector('#setupModal [data-setup-action="save-setup"]');
+
+  try {
+    if (action === "cancel") {
+      setupCloseModal();
+      return;
+    }
+    if (action === "back") {
+      document.getElementById("setupStage2").style.display = "none";
+      document.getElementById("setupStage1").style.display = "";
+      setupSetStatus("");
+      return;
+    }
+    if (action === "setup") {
+      await setupShowStage2();
+      return;
+    }
+    if (action === "ok") {
+      setupSetStatus("Saving (copacked)…");
+      const entry = setupBuildCopackedEntry(ctx.name);
+      try {
+        await setupSaveProductConfig(entry, `Mark ${ctx.sku} as copacked (no production)`);
+      } catch (e) {
+        const msg = String(e.message || e);
+        if (msg.toLowerCase().includes("sha") || msg.includes("409")) {
+          setupSetStatus("Someone else just updated products.json — reload the page and try again.", "err");
+          return;
+        }
+        throw e;
+      }
+      setupSetStatus("Saved — refreshing schedule, tasks will appear shortly…", "ok");
+      setupPollForRefresh();
+      return;
+    }
+    if (action === "save-setup") {
+      const entry = setupReadFormEntry();
+      const err = setupValidateEntry(entry);
+      if (err) { setupSetStatus(err, "err"); return; }
+      if (saveBtn) saveBtn.disabled = true;
+      setupSetStatus("Saving product config…");
+      try {
+        await setupSaveProductConfig(entry, `Add production config for ${ctx.sku}`);
+      } catch (e) {
+        const msg = String(e.message || e);
+        if (msg.toLowerCase().includes("sha") || msg.includes("409")) {
+          setupSetStatus("Someone else just updated products.json — reload the page and try again.", "err");
+          if (saveBtn) saveBtn.disabled = false;
+          return;
+        }
+        throw e;
+      }
+      setupSetStatus("Saved — refreshing schedule, tasks will appear shortly…", "ok");
+      setupPollForRefresh();
+      // Re-enable the button after a moment in case user cancels before refresh finishes.
+      setTimeout(() => { if (saveBtn) saveBtn.disabled = false; }, 2000);
+      return;
+    }
+  } catch (e) {
+    setupSetStatus((e && e.message) || String(e), "err");
+    if (saveBtn) saveBtn.disabled = false;
+  }
+}
+
+// Wire up setup modal clicks (on the modal box) and dough-type auto-fill.
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("setupModal");
+  if (modal) {
+    modal.addEventListener("click", e => {
+      if (e.target === modal) { setupCloseModal(); return; }
+      const btn = e.target.closest("[data-setup-action]");
+      if (btn) setupHandleAction(btn.dataset.setupAction);
+    });
+  }
+  const doughSel = document.getElementById("setupDoughType");
+  if (doughSel) {
+    doughSel.addEventListener("change", e => setupApplyDoughDefaults(e.target.value));
+  }
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && document.getElementById("setupModal").classList.contains("open")) {
+      setupCloseModal();
+    }
+  });
+});
 
 // ── state ─────────────────────────────────────────────────────────────────────
 let scheduleData = null;
@@ -1160,6 +1805,16 @@ function renderVacCell(day) {
       ? `<button class="print-label-btn" data-lot-id="${v.lot_id}" data-product="${escAttr(shortName(v.name))}" data-mo="${escAttr(v.mo_ref || '')}">🖨 Print label</button>`
       : "";
 
+    let setupBadge = "";
+    if (v.needs_setup) {
+      const hasSku = v.sku && v.sku !== "?";
+      if (hasSku) {
+        setupBadge = `<button class="setup-warning-btn" data-setup-sku="${escAttr(v.sku)}" data-setup-name="${escAttr(v.name)}" data-setup-mo="${escAttr(v.mo_ref || '')}" data-setup-qty="${Math.round(v.qty_packs || 0)}">⚠ Review: setup needed</button>`;
+      } else {
+        setupBadge = `<button class="setup-warning-btn" disabled title="This MO has no SKU in the product name. Fix the [SKU] prefix in Odoo.">⚠ MO missing SKU</button>`;
+      }
+    }
+
     return `<div class="product-pill${allDone ? " done" : ""}">
       <div class="pill-header">
         <span class="prod-name">${v.name}</span>
@@ -1168,6 +1823,7 @@ function renderVacCell(day) {
       <span class="prod-sub">${qtyStr}</span>
       ${dluoStr}
       ${v.mo_ref ? `<span class="prod-sub">${v.mo_ref}</span>` : ""}
+      ${setupBadge}
       ${printBtn}
       <div class="vac-steps">${stepsHtml}</div>
       ${outBadge}
@@ -1291,6 +1947,18 @@ function render() {
 
 // ── event delegation ──────────────────────────────────────────────────────────
 document.getElementById("scheduleRoot").addEventListener("click", e => {
+  // ── setup-needed warning badge click → open modal ──
+  const setupBtn = e.target.closest(".setup-warning-btn");
+  if (setupBtn && !setupBtn.disabled) {
+    openSetupModal({
+      sku:    setupBtn.dataset.setupSku,
+      name:   setupBtn.dataset.setupName,
+      mo_ref: setupBtn.dataset.setupMo,
+      qty_packs: parseInt(setupBtn.dataset.setupQty, 10) || 0,
+    });
+    return;
+  }
+
   // ── output badge click → re-edit ──
   const outBadge = e.target.closest(".output-badge");
   if (outBadge) {

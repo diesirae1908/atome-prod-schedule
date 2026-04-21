@@ -1,3 +1,6 @@
 # https://supabase.com/docs/guides/functions/function-configuration
 [functions.github-shifts]
 verify_jwt = false
+
+[functions.github-products]
+verify_jwt = false
