@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T22:46:17Z",
+  "generated_at": "2026-04-21T20:35:06Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -179,18 +179,7 @@
     {
       "date": "2026-04-18",
       "label": "SATURDAY",
-      "premix": [
-        {
-          "label": "MG Grain Soak",
-          "total_units": 360,
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ],
-          "mo_refs": [
-            "WH/MO/00684"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [],
       "shaping": [],
       "score_tasks": [],
@@ -199,18 +188,7 @@
     {
       "date": "2026-04-19",
       "label": "SUNDAY",
-      "premix": [
-        {
-          "label": "Prep mix Viennoise",
-          "total_units": 200,
-          "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
-          ],
-          "mo_refs": [
-            "WH/MO/00685"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -222,18 +200,6 @@
           "mo_ref": "WH/MO/00661",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
-          "dough_type": "MG",
-          "label": "Pack of 3 Multigrain Sourdough Baguettes",
-          "cfg_name": "Multigrain Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 135.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00684",
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         }
       ],
@@ -292,18 +258,6 @@
           ]
         },
         {
-          "dough_type": "VIENNOISE",
-          "label": "Pack of 2 Viennoise (Brioche Baguette)",
-          "cfg_name": "Viennoise (×2)",
-          "unit": "kg",
-          "total_kg": 40.0,
-          "total_units": 200,
-          "mo_ref": "WH/MO/00685",
-          "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
-          ]
-        },
-        {
           "dough_type": "TRAD",
           "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "cfg_name": "Cheese Baguette",
@@ -325,24 +279,6 @@
           "total_kg": 168.0,
           "mo_ref": "WH/MO/00683",
           "d0": "2026-04-22"
-        },
-        {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100,
-          "qty_units": 200,
-          "total_kg": 40.0,
-          "mo_ref": "WH/MO/00685",
-          "d0": "2026-04-21"
-        },
-        {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 135.0,
-          "mo_ref": "WH/MO/00684",
-          "d0": "2026-04-21"
         }
       ],
       "score_tasks": [
@@ -355,19 +291,7 @@
           "d0": "2026-04-21"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 150.0,
-          "qty_units": 150.0,
-          "qty_pouches": 150.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00727",
-          "lot_id": 694,
-          "copacked": true
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-04-21",
@@ -474,17 +398,6 @@
           "copacked": false
         },
         {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-10-20",
-          "mo_ref": "WH/MO/00685",
-          "lot_id": 1045,
-          "copacked": false
-        },
-        {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
           "qty_packs": 200.0,
@@ -494,17 +407,6 @@
           "mo_ref": "WH/MO/00723",
           "lot_id": 959,
           "copacked": true
-        },
-        {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-01-20",
-          "mo_ref": "WH/MO/00684",
-          "lot_id": 1044,
-          "copacked": false
         }
       ]
     },
@@ -598,6 +500,17 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "1-CHTWI7P-ADN",
+          "name": "LIMITED EDITION: Chocolate Twists",
+          "qty_packs": 56.0,
+          "qty_units": 56.0,
+          "qty_pouches": 56.0,
+          "dluo": "2026-06-17",
+          "mo_ref": "WH/MO/00739",
+          "lot_id": 952,
+          "copacked": true
+        },
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
