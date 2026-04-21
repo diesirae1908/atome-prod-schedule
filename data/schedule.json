@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T21:53:31Z",
+  "generated_at": "2026-04-21T22:32:08Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -220,7 +220,18 @@
     {
       "date": "2026-04-20",
       "label": "MONDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Cut Cheese",
+          "total_units": 360,
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ],
+          "mo_refs": [
+            "WH/MO/00686"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "COUNTRY",
@@ -372,6 +383,7 @@
           "dluo": "2027-01-19",
           "mo_ref": "WH/MO/00661",
           "lot_id": 1038,
+          "lot_name": "01/19/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -384,6 +396,7 @@
           "dluo": "2026-12-10",
           "mo_ref": "WH/MO/00723",
           "lot_id": 959,
+          "lot_name": "12/10/2026",
           "copacked": true,
           "needs_setup": false
         },
@@ -396,6 +409,7 @@
           "dluo": "2026-06-06",
           "mo_ref": "WH/MO/00725",
           "lot_id": 446,
+          "lot_name": "06/06/2026",
           "copacked": true,
           "needs_setup": false
         },
@@ -408,6 +422,7 @@
           "dluo": "2026-09-26",
           "mo_ref": "WH/MO/00726",
           "lot_id": 1012,
+          "lot_name": "09/26/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -435,7 +450,7 @@
           "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "cfg_name": "Pain au Chocolat (×3)",
           "unit": "pcs",
-          "total_kg": 37.3,
+          "total_kg": 29.0,
           "total_units": 414,
           "mo_ref": "WH/MO/00690",
           "products": [
@@ -458,7 +473,7 @@
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138,
           "qty_units": 414,
-          "total_kg": 37.3,
+          "total_kg": 29.0,
           "mo_ref": "WH/MO/00690",
           "d0": "2026-04-23"
         },
@@ -500,6 +515,7 @@
           "dluo": "2026-06-17",
           "mo_ref": "WH/MO/00739",
           "lot_id": 952,
+          "lot_name": "06/17/2026",
           "copacked": true,
           "needs_setup": true
         },
@@ -512,6 +528,7 @@
           "dluo": "2027-01-20",
           "mo_ref": "WH/MO/00683",
           "lot_id": 1046,
+          "lot_name": "01/20/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -524,6 +541,7 @@
           "dluo": "2026-10-22",
           "mo_ref": "WH/MO/00720",
           "lot_id": 1048,
+          "lot_name": "10/22/2026",
           "copacked": true,
           "needs_setup": false
         },
@@ -536,6 +554,7 @@
           "dluo": "2027-01-20",
           "mo_ref": "WH/MO/00686",
           "lot_id": 1047,
+          "lot_name": "01/20/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -601,6 +620,7 @@
           "dluo": "2027-01-21",
           "mo_ref": "WH/MO/00738",
           "lot_id": 1049,
+          "lot_name": "01/21/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -613,6 +633,7 @@
           "dluo": "2027-01-21",
           "mo_ref": "WH/MO/00687",
           "lot_id": 1050,
+          "lot_name": "01/21/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -625,6 +646,7 @@
           "dluo": "2026-10-22",
           "mo_ref": "WH/MO/00690",
           "lot_id": 1052,
+          "lot_name": "10/22/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -637,6 +659,7 @@
           "dluo": "2027-01-22",
           "mo_ref": "WH/MO/00740",
           "lot_id": 1051,
+          "lot_name": "01/22/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -649,6 +672,7 @@
           "dluo": "2026-06-20",
           "mo_ref": "WH/MO/00728",
           "lot_id": 950,
+          "lot_name": "06/20/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -724,6 +748,7 @@
           "dluo": "2027-01-23",
           "mo_ref": "WH/MO/00699",
           "lot_id": 1055,
+          "lot_name": "01/23/2027",
           "copacked": true,
           "needs_setup": true
         },
@@ -736,6 +761,7 @@
           "dluo": "2027-01-22",
           "mo_ref": "WH/MO/00688",
           "lot_id": 1053,
+          "lot_name": "01/22/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -748,6 +774,7 @@
           "dluo": "2026-11-11",
           "mo_ref": "WH/MO/00729",
           "lot_id": 694,
+          "lot_name": "11/11/2026",
           "copacked": true,
           "needs_setup": true
         }
@@ -813,6 +840,7 @@
           "dluo": "2026-10-24",
           "mo_ref": "WH/MO/00700",
           "lot_id": 1057,
+          "lot_name": "10/24/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -825,6 +853,7 @@
           "dluo": "2027-01-23",
           "mo_ref": "WH/MO/00701",
           "lot_id": 1058,
+          "lot_name": "01/23/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -837,6 +866,7 @@
           "dluo": "2026-09-26",
           "mo_ref": "WH/MO/00730",
           "lot_id": 1012,
+          "lot_name": "09/26/2026",
           "copacked": true,
           "needs_setup": false
         },
@@ -849,6 +879,7 @@
           "dluo": "2026-10-11",
           "mo_ref": "WH/MO/00731",
           "lot_id": 1040,
+          "lot_name": "10/11/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -926,6 +957,7 @@
           "dluo": "2027-01-24",
           "mo_ref": "WH/MO/00696",
           "lot_id": 1060,
+          "lot_name": "01/24/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -938,6 +970,7 @@
           "dluo": "2026-12-10",
           "mo_ref": "WH/MO/00732",
           "lot_id": 959,
+          "lot_name": "12/10/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -1024,6 +1057,7 @@
           "dluo": "2027-01-25",
           "mo_ref": "WH/MO/00697",
           "lot_id": 1062,
+          "lot_name": "01/25/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1036,6 +1070,7 @@
           "dluo": "2027-01-13",
           "mo_ref": "WH/MO/00733",
           "lot_id": 1011,
+          "lot_name": "01/13/2027",
           "copacked": true,
           "needs_setup": false
         }
@@ -1143,6 +1178,7 @@
           "dluo": "2027-01-26",
           "mo_ref": "WH/MO/00698",
           "lot_id": 1063,
+          "lot_name": "01/26/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1155,6 +1191,7 @@
           "dluo": "2026-12-10",
           "mo_ref": "WH/MO/00734",
           "lot_id": 959,
+          "lot_name": "12/10/2026",
           "copacked": true,
           "needs_setup": false
         },
@@ -1167,6 +1204,7 @@
           "dluo": "2027-01-27",
           "mo_ref": "WH/MO/00709",
           "lot_id": 1064,
+          "lot_name": "01/27/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1217,7 +1255,7 @@
           "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "cfg_name": "Pain au Chocolat (×3)",
           "unit": "pcs",
-          "total_kg": 33.8,
+          "total_kg": 26.2,
           "total_units": 375,
           "mo_ref": "WH/MO/00717",
           "products": [
@@ -1240,7 +1278,7 @@
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 125,
           "qty_units": 375,
-          "total_kg": 33.8,
+          "total_kg": 26.2,
           "mo_ref": "WH/MO/00717",
           "d0": "2026-04-30"
         },
@@ -1274,6 +1312,7 @@
           "dluo": "2027-01-27",
           "mo_ref": "WH/MO/00702",
           "lot_id": 1065,
+          "lot_name": "01/27/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1286,6 +1325,7 @@
           "dluo": "2026-10-28",
           "mo_ref": "WH/MO/00716",
           "lot_id": 1067,
+          "lot_name": "10/28/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1298,6 +1338,7 @@
           "dluo": "2027-01-28",
           "mo_ref": "WH/MO/00710",
           "lot_id": 1066,
+          "lot_name": "01/28/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1310,6 +1351,7 @@
           "dluo": "2026-10-29",
           "mo_ref": "WH/MO/00721",
           "lot_id": 1068,
+          "lot_name": "10/29/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -1319,6 +1361,16 @@
       "date": "2026-04-30",
       "label": "THURSDAY",
       "premix": [
+        {
+          "label": "Cut Cheese",
+          "total_units": 360,
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ],
+          "mo_refs": [
+            "WH/MO/00713"
+          ]
+        },
         {
           "label": "Prep mix Viennoise",
           "total_units": 200,
@@ -1417,6 +1469,7 @@
           "dluo": "2027-01-28",
           "mo_ref": "WH/MO/00703",
           "lot_id": 1069,
+          "lot_name": "01/28/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1429,6 +1482,7 @@
           "dluo": "2026-10-29",
           "mo_ref": "WH/MO/00717",
           "lot_id": 1071,
+          "lot_name": "10/29/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1441,6 +1495,7 @@
           "dluo": "2027-01-29",
           "mo_ref": "WH/MO/00711",
           "lot_id": 1070,
+          "lot_name": "01/29/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1453,6 +1508,7 @@
           "dluo": "2026-11-11",
           "mo_ref": "WH/MO/00735",
           "lot_id": 694,
+          "lot_name": "11/11/2026",
           "copacked": true,
           "needs_setup": true
         }
@@ -1549,6 +1605,7 @@
           "dluo": "2026-10-30",
           "mo_ref": "WH/MO/00718",
           "lot_id": 1076,
+          "lot_name": "10/30/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1561,6 +1618,7 @@
           "dluo": "2027-01-30",
           "mo_ref": "WH/MO/00704",
           "lot_id": 1073,
+          "lot_name": "01/30/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1573,6 +1631,7 @@
           "dluo": "2027-01-31",
           "mo_ref": "WH/MO/00712",
           "lot_id": 1074,
+          "lot_name": "01/31/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1585,6 +1644,7 @@
           "dluo": "2026-10-11",
           "mo_ref": "WH/MO/00736",
           "lot_id": 1040,
+          "lot_name": "10/11/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -1660,6 +1720,7 @@
           "dluo": "2027-01-31",
           "mo_ref": "WH/MO/00705",
           "lot_id": 1077,
+          "lot_name": "01/31/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1672,6 +1733,7 @@
           "dluo": "2026-11-01",
           "mo_ref": "WH/MO/00719",
           "lot_id": 1079,
+          "lot_name": "11/01/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1684,6 +1746,7 @@
           "dluo": "2026-12-10",
           "mo_ref": "WH/MO/00737",
           "lot_id": 959,
+          "lot_name": "12/10/2026",
           "copacked": true,
           "needs_setup": false
         },
@@ -1696,6 +1759,7 @@
           "dluo": "2027-02-01",
           "mo_ref": "WH/MO/00713",
           "lot_id": 1078,
+          "lot_name": "02/01/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1759,6 +1823,7 @@
           "dluo": "2027-02-01",
           "mo_ref": "WH/MO/00706",
           "lot_id": 1080,
+          "lot_name": "02/01/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1771,6 +1836,7 @@
           "dluo": "2027-02-02",
           "mo_ref": "WH/MO/00714",
           "lot_id": 944,
+          "lot_name": "02/02/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1802,6 +1868,7 @@
           "dluo": "2027-02-02",
           "mo_ref": "WH/MO/00707",
           "lot_id": 1081,
+          "lot_name": "02/02/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1814,6 +1881,7 @@
           "dluo": "2027-02-03",
           "mo_ref": "WH/MO/00715",
           "lot_id": 1082,
+          "lot_name": "02/03/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1836,6 +1904,7 @@
           "dluo": "2027-02-03",
           "mo_ref": "WH/MO/00708",
           "lot_id": 1083,
+          "lot_name": "02/03/2027",
           "copacked": false,
           "needs_setup": false
         }
