@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T23:28:31Z",
+  "generated_at": "2026-04-21T23:40:53Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -360,7 +360,18 @@
     {
       "date": "2026-04-22",
       "label": "WEDNESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep Mix Shortbread Plain",
+          "total_units": 100,
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ],
+          "mo_refs": [
+            "WH/MO/00699"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "PIZZA",
@@ -506,6 +517,18 @@
       ],
       "mix": [
         {
+          "dough_type": "SHORTBREAD",
+          "label": "Butter Shortbread Log (Plain)",
+          "cfg_name": "Butter Shortbread Log (Plain)",
+          "unit": "pcs",
+          "total_kg": 40.0,
+          "total_units": 100,
+          "mo_ref": "WH/MO/00699",
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ]
+        },
+        {
           "dough_type": "COUNTRY",
           "label": "Pack of 2 Country Rye Sourdough Loaf",
           "cfg_name": "Country Rye Loaf (×2)",
@@ -519,6 +542,15 @@
         }
       ],
       "shaping": [
+        {
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 100,
+          "qty_units": 100,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/00699",
+          "d0": "2026-04-24"
+        },
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
@@ -736,30 +768,9 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
-        },
-        {
-          "dough_type": "SHORTBREAD",
-          "label": "Butter Shortbread Log (Plain)",
-          "cfg_name": "Butter Shortbread Log (Plain)",
-          "unit": "pcs",
-          "total_kg": 40.0,
-          "total_units": 100,
-          "mo_ref": "WH/MO/00699",
-          "products": [
-            "Butter Shortbread Log (Plain)"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "SBL-P-SGL",
-          "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 100,
-          "qty_units": 100,
-          "total_kg": 40.0,
-          "mo_ref": "WH/MO/00699",
-          "d0": "2026-04-24"
-        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -847,16 +858,6 @@
           ],
           "mo_refs": [
             "WH/MO/00710"
-          ]
-        },
-        {
-          "label": "Prep Mix Shortbread Plain",
-          "total_units": 100,
-          "products": [
-            "Butter Shortbread Log (Plain)"
-          ],
-          "mo_refs": [
-            "WH/MO/00699"
           ]
         }
       ],
