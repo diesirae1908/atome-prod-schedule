@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T21:51:34Z",
+  "generated_at": "2026-04-21T21:53:31Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -372,7 +372,8 @@
           "dluo": "2027-01-19",
           "mo_ref": "WH/MO/00661",
           "lot_id": 1038,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "CR3P-SGL",
@@ -383,7 +384,8 @@
           "dluo": "2026-12-10",
           "mo_ref": "WH/MO/00723",
           "lot_id": 959,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         },
         {
           "sku": "1-PACB8P-SGL",
@@ -394,7 +396,8 @@
           "dluo": "2026-06-06",
           "mo_ref": "WH/MO/00725",
           "lot_id": 446,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         },
         {
           "sku": "1-PACB8P-SGL",
@@ -405,7 +408,8 @@
           "dluo": "2026-09-26",
           "mo_ref": "WH/MO/00726",
           "lot_id": 1012,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -496,7 +500,8 @@
           "dluo": "2026-06-17",
           "mo_ref": "WH/MO/00739",
           "lot_id": 952,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": true
         },
         {
           "sku": "CTY2P-SGL",
@@ -507,7 +512,8 @@
           "dluo": "2027-01-20",
           "mo_ref": "WH/MO/00683",
           "lot_id": 1046,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "2-CRVGN3P-SGL",
@@ -518,7 +524,8 @@
           "dluo": "2026-10-22",
           "mo_ref": "WH/MO/00720",
           "lot_id": 1048,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         },
         {
           "sku": "CH-SGL",
@@ -529,7 +536,8 @@
           "dluo": "2027-01-20",
           "mo_ref": "WH/MO/00686",
           "lot_id": 1047,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -593,7 +601,8 @@
           "dluo": "2027-01-21",
           "mo_ref": "WH/MO/00738",
           "lot_id": 1049,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "CIA3-SGL",
@@ -604,7 +613,8 @@
           "dluo": "2027-01-21",
           "mo_ref": "WH/MO/00687",
           "lot_id": 1050,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "PAC3P-SGL",
@@ -615,7 +625,8 @@
           "dluo": "2026-10-22",
           "mo_ref": "WH/MO/00690",
           "lot_id": 1052,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "TR3P-SGL",
@@ -626,7 +637,8 @@
           "dluo": "2027-01-22",
           "mo_ref": "WH/MO/00740",
           "lot_id": 1051,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "1-MCR6P-SGL",
@@ -637,7 +649,8 @@
           "dluo": "2026-06-20",
           "mo_ref": "WH/MO/00728",
           "lot_id": 950,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -711,7 +724,8 @@
           "dluo": "2027-01-23",
           "mo_ref": "WH/MO/00699",
           "lot_id": 1055,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": true
         },
         {
           "sku": "PIZ2-SGL",
@@ -722,7 +736,8 @@
           "dluo": "2027-01-22",
           "mo_ref": "WH/MO/00688",
           "lot_id": 1053,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "1-AT3P-SGL",
@@ -733,7 +748,8 @@
           "dluo": "2026-11-11",
           "mo_ref": "WH/MO/00729",
           "lot_id": 694,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
@@ -797,7 +813,8 @@
           "dluo": "2026-10-24",
           "mo_ref": "WH/MO/00700",
           "lot_id": 1057,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "CTY2P-SGL",
@@ -808,7 +825,8 @@
           "dluo": "2027-01-23",
           "mo_ref": "WH/MO/00701",
           "lot_id": 1058,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "1-PACB8P-SGL",
@@ -819,7 +837,8 @@
           "dluo": "2026-09-26",
           "mo_ref": "WH/MO/00730",
           "lot_id": 1012,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         },
         {
           "sku": "1-PACB8P-SGL",
@@ -830,7 +849,8 @@
           "dluo": "2026-10-11",
           "mo_ref": "WH/MO/00731",
           "lot_id": 1040,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -906,7 +926,8 @@
           "dluo": "2027-01-24",
           "mo_ref": "WH/MO/00696",
           "lot_id": 1060,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "CR3P-SGL",
@@ -917,7 +938,8 @@
           "dluo": "2026-12-10",
           "mo_ref": "WH/MO/00732",
           "lot_id": 959,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1002,7 +1024,8 @@
           "dluo": "2027-01-25",
           "mo_ref": "WH/MO/00697",
           "lot_id": 1062,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "1-CRB8P-SGL",
@@ -1013,7 +1036,8 @@
           "dluo": "2027-01-13",
           "mo_ref": "WH/MO/00733",
           "lot_id": 1011,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1119,7 +1143,8 @@
           "dluo": "2027-01-26",
           "mo_ref": "WH/MO/00698",
           "lot_id": 1063,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "CR3P-SGL",
@@ -1130,7 +1155,8 @@
           "dluo": "2026-12-10",
           "mo_ref": "WH/MO/00734",
           "lot_id": 959,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         },
         {
           "sku": "MG3P-SGL",
@@ -1141,7 +1167,8 @@
           "dluo": "2027-01-27",
           "mo_ref": "WH/MO/00709",
           "lot_id": 1064,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -1247,7 +1274,8 @@
           "dluo": "2027-01-27",
           "mo_ref": "WH/MO/00702",
           "lot_id": 1065,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "BR3BN-SGL",
@@ -1258,7 +1286,8 @@
           "dluo": "2026-10-28",
           "mo_ref": "WH/MO/00716",
           "lot_id": 1067,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "MG3P-SGL",
@@ -1269,7 +1298,8 @@
           "dluo": "2027-01-28",
           "mo_ref": "WH/MO/00710",
           "lot_id": 1066,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "2-CRVGN3P-SGL",
@@ -1280,7 +1310,8 @@
           "dluo": "2026-10-29",
           "mo_ref": "WH/MO/00721",
           "lot_id": 1068,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1386,7 +1417,8 @@
           "dluo": "2027-01-28",
           "mo_ref": "WH/MO/00703",
           "lot_id": 1069,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "PAC3P-SGL",
@@ -1397,7 +1429,8 @@
           "dluo": "2026-10-29",
           "mo_ref": "WH/MO/00717",
           "lot_id": 1071,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "SE3P-SGL",
@@ -1408,7 +1441,8 @@
           "dluo": "2027-01-29",
           "mo_ref": "WH/MO/00711",
           "lot_id": 1070,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "1-AT3P-SGL",
@@ -1419,7 +1453,8 @@
           "dluo": "2026-11-11",
           "mo_ref": "WH/MO/00735",
           "lot_id": 694,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
@@ -1514,7 +1549,8 @@
           "dluo": "2026-10-30",
           "mo_ref": "WH/MO/00718",
           "lot_id": 1076,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "LF2P",
@@ -1525,7 +1561,8 @@
           "dluo": "2027-01-30",
           "mo_ref": "WH/MO/00704",
           "lot_id": 1073,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "SE3P-SGL",
@@ -1536,7 +1573,8 @@
           "dluo": "2027-01-31",
           "mo_ref": "WH/MO/00712",
           "lot_id": 1074,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "1-PACB8P-SGL",
@@ -1547,7 +1585,8 @@
           "dluo": "2026-10-11",
           "mo_ref": "WH/MO/00736",
           "lot_id": 1040,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1621,7 +1660,8 @@
           "dluo": "2027-01-31",
           "mo_ref": "WH/MO/00705",
           "lot_id": 1077,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "VI2P-SGL",
@@ -1632,7 +1672,8 @@
           "dluo": "2026-11-01",
           "mo_ref": "WH/MO/00719",
           "lot_id": 1079,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "CR3P-SGL",
@@ -1643,7 +1684,8 @@
           "dluo": "2026-12-10",
           "mo_ref": "WH/MO/00737",
           "lot_id": 959,
-          "copacked": true
+          "copacked": true,
+          "needs_setup": false
         },
         {
           "sku": "CH-SGL",
@@ -1654,7 +1696,8 @@
           "dluo": "2027-02-01",
           "mo_ref": "WH/MO/00713",
           "lot_id": 1078,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -1716,7 +1759,8 @@
           "dluo": "2027-02-01",
           "mo_ref": "WH/MO/00706",
           "lot_id": 1080,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "TR3P-SGL",
@@ -1727,7 +1771,8 @@
           "dluo": "2027-02-02",
           "mo_ref": "WH/MO/00714",
           "lot_id": 944,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -1757,7 +1802,8 @@
           "dluo": "2027-02-02",
           "mo_ref": "WH/MO/00707",
           "lot_id": 1081,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "TR3P-SGL",
@@ -1768,7 +1814,8 @@
           "dluo": "2027-02-03",
           "mo_ref": "WH/MO/00715",
           "lot_id": 1082,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -1789,7 +1836,8 @@
           "dluo": "2027-02-03",
           "mo_ref": "WH/MO/00708",
           "lot_id": 1083,
-          "copacked": false
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
