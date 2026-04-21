@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T23:27:52Z",
+  "generated_at": "2026-04-21T23:28:20Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -678,8 +678,8 @@
           "mo_ref": "WH/MO/00699",
           "lot_id": 1055,
           "lot_name": "01/23/2027",
-          "copacked": true,
-          "needs_setup": true
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "PIZ2-SGL",
@@ -736,9 +736,30 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
+        },
+        {
+          "dough_type": "SHORTBREAD",
+          "label": "Butter Shortbread Log (Plain)",
+          "cfg_name": "Butter Shortbread Log (Plain)",
+          "unit": "pcs",
+          "total_kg": 40.0,
+          "total_units": 100,
+          "mo_ref": "WH/MO/00699",
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 100,
+          "qty_units": 100,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/00699",
+          "d0": "2026-04-24"
+        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -826,6 +847,16 @@
           ],
           "mo_refs": [
             "WH/MO/00710"
+          ]
+        },
+        {
+          "label": "Prep Mix Shortbread Plain",
+          "total_units": 100,
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ],
+          "mo_refs": [
+            "WH/MO/00699"
           ]
         }
       ],
