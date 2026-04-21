@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T21:00:56Z",
+  "generated_at": "2026-04-21T21:07:26Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -845,8 +845,8 @@
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
           "cfg_name": "Sourdough Loaf (×2)",
           "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
+          "total_kg": 369.6,
+          "total_units": 528,
           "mo_ref": "WH/MO/00698",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
@@ -869,9 +869,9 @@
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
+          "qty_packs": 264,
+          "qty_units": 528,
+          "total_kg": 369.6,
           "mo_ref": "WH/MO/00698",
           "d0": "2026-04-28"
         }
@@ -987,8 +987,8 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
+          "qty_packs": 264,
+          "qty_units": 528,
           "mo_ref": "WH/MO/00698",
           "d0": "2026-04-28"
         }
@@ -1114,9 +1114,9 @@
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
+          "qty_packs": 264.0,
+          "qty_units": 528.0,
+          "qty_pouches": 528.0,
           "dluo": "2027-01-26",
           "mo_ref": "WH/MO/00698",
           "lot_id": 1063,
