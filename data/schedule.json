@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T20:25:49Z",
+  "generated_at": "2026-04-22T21:29:53Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -736,10 +736,10 @@
           "qty_packs": 116.0,
           "qty_units": 116.0,
           "qty_pouches": 116.0,
-          "dluo": "2026-10-24",
+          "dluo": "2026-10-25",
           "mo_ref": "WH/MO/00700",
-          "lot_id": 1057,
-          "lot_name": "10/24/2026",
+          "lot_id": 1105,
+          "lot_name": "10/25/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1147,10 +1147,10 @@
           "qty_packs": 120.0,
           "qty_units": 360.0,
           "qty_pouches": 360.0,
-          "dluo": "2027-01-27",
+          "dluo": "2027-01-28",
           "mo_ref": "WH/MO/00709",
-          "lot_id": 1064,
-          "lot_name": "01/27/2027",
+          "lot_id": 1066,
+          "lot_name": "01/28/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1407,19 +1407,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "1-CHTWI7P-ADN",
-          "name": "LIMITED EDITION: Chocolate Twists",
-          "qty_packs": 56.0,
-          "qty_units": 56.0,
-          "qty_pouches": 56.0,
-          "dluo": "2026-06-17",
-          "mo_ref": "WH/MO/00743",
-          "lot_id": 952,
-          "lot_name": "06/17/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
           "qty_packs": 240.0,
@@ -1561,10 +1548,10 @@
           "qty_packs": 116.0,
           "qty_units": 116.0,
           "qty_pouches": 116.0,
-          "dluo": "2026-10-30",
+          "dluo": null,
           "mo_ref": "WH/MO/00718",
-          "lot_id": 1076,
-          "lot_name": "10/30/2026",
+          "lot_id": null,
+          "lot_name": null,
           "copacked": false,
           "needs_setup": false
         },
