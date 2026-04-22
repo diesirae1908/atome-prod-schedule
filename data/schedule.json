@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T21:39:34Z",
+  "generated_at": "2026-04-22T22:57:46Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -530,6 +530,19 @@
           "mo_ref": "WH/MO/00728",
           "lot_id": 950,
           "lot_name": "06/20/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "PFP-SGL",
+          "name": "Puff Pastry",
+          "qty_packs": 24.0,
+          "qty_units": 24.0,
+          "qty_pouches": 24.0,
+          "dluo": "2026-11-24",
+          "mo_ref": "WH/MO/00746",
+          "lot_id": 1120,
+          "lot_name": "11/24/2026",
           "copacked": true,
           "needs_setup": false
         }
