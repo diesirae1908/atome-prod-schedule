@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T17:40:23Z",
+  "generated_at": "2026-04-22T20:25:49Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -197,55 +197,9 @@
     {
       "date": "2026-04-20",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "Cut Cheese",
-          "total_units": 360,
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
-          ],
-          "mo_refs": [
-            "WH/MO/00686"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 168.0,
-          "total_units": 240,
-          "mo_ref": "WH/MO/00683",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "cfg_name": "Cheese Baguette",
-          "unit": "kg",
-          "total_kg": 144.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00686",
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 120,
-          "qty_units": 240,
-          "total_kg": 168.0,
-          "mo_ref": "WH/MO/00683",
-          "d0": "2026-04-22"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -320,27 +274,9 @@
           "total_kg": 239.4,
           "mo_ref": "WH/MO/00687",
           "d0": "2026-04-23"
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360,
-          "qty_units": 360,
-          "total_kg": 144.0,
-          "mo_ref": "WH/MO/00686",
-          "d0": "2026-04-22"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 120,
-          "qty_units": 240,
-          "mo_ref": "WH/MO/00683",
-          "d0": "2026-04-22"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -446,19 +382,6 @@
           "needs_setup": false
         },
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 120.0,
-          "qty_units": 240.0,
-          "qty_pouches": 240.0,
-          "dluo": "2027-01-20",
-          "mo_ref": "WH/MO/00683",
-          "lot_id": 1046,
-          "lot_name": "01/20/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "2-CRVGN3P-SGL",
           "name": "Pack of 3 vegan croissant",
           "qty_packs": 64.0,
@@ -469,19 +392,6 @@
           "lot_id": 1048,
           "lot_name": "10/22/2026",
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-01-20",
-          "mo_ref": "WH/MO/00686",
-          "lot_id": 1047,
-          "lot_name": "01/20/2027",
-          "copacked": false,
           "needs_setup": false
         }
       ]
@@ -1496,6 +1406,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "1-CHTWI7P-ADN",
+          "name": "LIMITED EDITION: Chocolate Twists",
+          "qty_packs": 56.0,
+          "qty_units": 56.0,
+          "qty_pouches": 56.0,
+          "dluo": "2026-06-17",
+          "mo_ref": "WH/MO/00743",
+          "lot_id": 952,
+          "lot_name": "06/17/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
