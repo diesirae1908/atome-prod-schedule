@@ -260,6 +260,23 @@
     .levain-pill.done { opacity: .38; }
     .levain-pill.done .prod-name { text-decoration: line-through; color: var(--muted); }
 
+    /* ── recurring reminder pill (weekday / monthday cleaning tasks) ── */
+    .recurring-pill {
+      display: flex; flex-direction: column; gap: 2px;
+      background: rgba(100,116,139,.08);
+      border: 1px dashed rgba(100,116,139,.35);
+      border-radius: 6px;
+      padding: 4px 6px;
+      margin-bottom: 4px;
+    }
+    .recurring-pill .pill-header {
+      display: flex; justify-content: space-between; align-items: center; gap: 4px;
+    }
+    .recurring-pill .prod-name { font-size: 11px; color: #475569; }
+    .recurring-pill .prod-sub  { font-size: 10px; color: #94a3b8; font-style: italic; }
+    .recurring-pill.done { opacity: .38; }
+    .recurring-pill.done .prod-name { text-decoration: line-through; color: var(--muted); }
+
     /* ── vac queue badge ── */
     .queue-badge {
       font-size: 9px; font-weight: 700; letter-spacing: .02em;
@@ -1090,6 +1107,47 @@ function lsSet(k, v) {
   saveToSupabase(fullKey, jsonVal); // async fire-and-forget
 }
 
+// ── recurring reminders (section-specific cleaning / prep tasks) ──────────────
+// section: "mix" or "shape" — matches the row they render in.
+// weekly_dow: array of day-of-week numbers (Sun=0, Mon=1, … Sat=6).
+// monthly_day: calendar day of month (1..31).
+// slug: short stable id used in the localStorage check key.
+const RECURRING_TASKS = [
+  { section: "mix",   slug: "waffle_makers",  weekly_dow: [1],    label: "🧇 Put waffle makers back in their proper place", note: "Monday morning" },
+  { section: "mix",   slug: "dry_ice",        weekly_dow: [1, 4], label: "🧊 Dry ice reception reminder" },
+  { section: "shape", slug: "divider_deep",   monthly_day: 1,     label: "🧽 Deep clean dough divider (remove white blocks)" },
+  { section: "shape", slug: "divider_inside", monthly_day: 15,    label: "🧽 Clean inside dough divider (keep white blocks)" },
+];
+
+function getRecurringForDay(iso, section) {
+  if (!iso) return [];
+  const d   = new Date(iso + "T00:00:00");
+  const dow = d.getDay();
+  const dom = d.getDate();
+  return RECURRING_TASKS.filter(t => {
+    if (t.section !== section) return false;
+    if (Array.isArray(t.weekly_dow) && t.weekly_dow.includes(dow)) return true;
+    if (typeof t.monthly_day === "number" && t.monthly_day === dom) return true;
+    return false;
+  });
+}
+
+function renderRecurringPills(iso, section) {
+  if (!iso) return "";
+  return getRecurringForDay(iso, section).map(t => {
+    const key  = `check_${iso}_${section}_recurring_${t.slug}`;
+    const done = lsGet(key) || false;
+    const subHtml = t.note ? `<span class="prod-sub">${t.note}</span>` : "";
+    return `<div class="recurring-pill${done ? " done" : ""}">
+      <div class="pill-header">
+        <span class="prod-name">${t.label}</span>
+        ${pillCheckBtn(key)}
+      </div>
+      ${subHtml}
+    </div>`;
+  }).join("");
+}
+
 // ── date helpers (local timezone, not UTC) ────────────────────────────────────
 function isoToday() {
   const d = new Date();
@@ -1724,8 +1782,10 @@ function renderMixCell(day) {
     ${pillCheckBtn(levainKey)}
   </div>`;
 
+  const recurringPills = day ? renderRecurringPills(day.date, "mix") : "";
+
   if (!day || !day.mix || day.mix.length === 0) {
-    return '<span class="empty-cell">–</span>' + levainPill;
+    return '<span class="empty-cell">–</span>' + levainPill + recurringPills;
   }
 
   const mixPills = day.mix.map(m => {
@@ -1746,10 +1806,12 @@ function renderMixCell(day) {
     </div>`;
   }).join("");
 
-  return mixPills + levainPill;
+  return mixPills + levainPill + recurringPills;
 }
 
 function renderShapeCell(day) {
+  const recurringPills = day ? renderRecurringPills(day.date, "shape") : "";
+
   const scorePills = (day?.score_tasks || []).map(s => {
     const key   = `check_${day.date}_score_${s.mo_ref || s.name}`;
     const done  = lsGet(key) || false;
@@ -1766,7 +1828,7 @@ function renderShapeCell(day) {
   }).join("");
 
   if (!day || !day.shaping || day.shaping.length === 0) {
-    return scorePills || '<span class="empty-cell">–</span>';
+    return recurringPills + (scorePills || (recurringPills ? "" : '<span class="empty-cell">–</span>'));
   }
   const shapePills = day.shaping.map(s => {
     const key     = `check_${day.date}_shape_${s.mo_ref || s.name}`;
@@ -1790,7 +1852,7 @@ function renderShapeCell(day) {
       ${outBadge}
     </div>`;
   }).join("");
-  return scorePills + shapePills;
+  return recurringPills + scorePills + shapePills;
 }
 
 function renderVacCell(day) {
