@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T23:17:05Z",
+  "generated_at": "2026-04-22T23:37:19Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -700,18 +700,6 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 369.6,
-          "total_units": 528,
-          "mo_ref": "WH/MO/00698",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
           "dough_type": "WAFFLES",
           "label": "Pack of 3 Liege Waffle",
           "cfg_name": "Liège Waffle (×3)",
@@ -732,15 +720,6 @@
           "qty_units": 352,
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00697",
-          "d0": "2026-04-27"
-        },
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 264,
-          "qty_units": 528,
-          "total_kg": 369.6,
-          "mo_ref": "WH/MO/00698",
           "d0": "2026-04-27"
         },
         {
@@ -848,6 +827,18 @@
       ],
       "mix": [
         {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 369.6,
+          "total_units": 528,
+          "mo_ref": "WH/MO/00698",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        },
+        {
           "dough_type": "MG",
           "label": "Pack of 3 Multigrain Sourdough Baguettes",
           "cfg_name": "Multigrain Baguette (×3)",
@@ -874,6 +865,15 @@
       ],
       "shaping": [
         {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 264,
+          "qty_units": 528,
+          "total_kg": 369.6,
+          "mo_ref": "WH/MO/00698",
+          "d0": "2026-04-28"
+        },
+        {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
           "qty_packs": 208,
@@ -890,14 +890,6 @@
           "qty_packs": 176,
           "qty_units": 352,
           "mo_ref": "WH/MO/00697",
-          "d0": "2026-04-27"
-        },
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 264,
-          "qty_units": 528,
-          "mo_ref": "WH/MO/00698",
           "d0": "2026-04-27"
         }
       ],
@@ -1004,7 +996,16 @@
           "d0": "2026-04-28"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 264,
+          "qty_units": 528,
+          "mo_ref": "WH/MO/00698",
+          "d0": "2026-04-28"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -1014,19 +1015,6 @@
           "qty_pouches": 352.0,
           "dluo": "2027-01-27",
           "mo_ref": "WH/MO/00697",
-          "lot_id": 1121,
-          "lot_name": "01/27/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 264.0,
-          "qty_units": 528.0,
-          "qty_pouches": 528.0,
-          "dluo": "2027-01-27",
-          "mo_ref": "WH/MO/00698",
           "lot_id": 1121,
           "lot_name": "01/27/2027",
           "copacked": false,
@@ -1140,6 +1128,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 264.0,
+          "qty_units": 528.0,
+          "qty_pouches": 528.0,
+          "dluo": "2027-01-28",
+          "mo_ref": "WH/MO/00698",
+          "lot_id": 1122,
+          "lot_name": "01/28/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
@@ -1267,10 +1268,10 @@
           "qty_packs": 230.0,
           "qty_units": 460.0,
           "qty_pouches": 460.0,
-          "dluo": "2027-01-27",
+          "dluo": "2027-01-29",
           "mo_ref": "WH/MO/00702",
-          "lot_id": 1065,
-          "lot_name": "01/27/2027",
+          "lot_id": 1124,
+          "lot_name": "01/29/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1280,10 +1281,10 @@
           "qty_packs": 116.0,
           "qty_units": 348.0,
           "qty_pouches": 116.0,
-          "dluo": "2026-10-28",
+          "dluo": "2026-10-29",
           "mo_ref": "WH/MO/00716",
-          "lot_id": 1067,
-          "lot_name": "10/28/2026",
+          "lot_id": 1128,
+          "lot_name": "10/29/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1293,10 +1294,10 @@
           "qty_packs": 120.0,
           "qty_units": 360.0,
           "qty_pouches": 360.0,
-          "dluo": "2027-01-28",
+          "dluo": "2027-01-29",
           "mo_ref": "WH/MO/00710",
-          "lot_id": 1066,
-          "lot_name": "01/28/2027",
+          "lot_id": 1125,
+          "lot_name": "01/29/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1424,10 +1425,10 @@
           "qty_packs": 240.0,
           "qty_units": 480.0,
           "qty_pouches": 480.0,
-          "dluo": "2027-01-28",
+          "dluo": "2027-01-30",
           "mo_ref": "WH/MO/00703",
-          "lot_id": 1069,
-          "lot_name": "01/28/2027",
+          "lot_id": 1129,
+          "lot_name": "01/30/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1437,10 +1438,10 @@
           "qty_packs": 125.0,
           "qty_units": 375.0,
           "qty_pouches": 125.0,
-          "dluo": "2026-10-29",
+          "dluo": "2026-10-30",
           "mo_ref": "WH/MO/00717",
-          "lot_id": 1071,
-          "lot_name": "10/29/2026",
+          "lot_id": 1132,
+          "lot_name": "10/30/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1450,10 +1451,10 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": "2027-01-29",
+          "dluo": "2027-01-30",
           "mo_ref": "WH/MO/00711",
-          "lot_id": 1070,
-          "lot_name": "01/29/2027",
+          "lot_id": 1130,
+          "lot_name": "01/30/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1560,10 +1561,10 @@
           "qty_packs": 116.0,
           "qty_units": 116.0,
           "qty_pouches": 116.0,
-          "dluo": null,
+          "dluo": "2026-11-01",
           "mo_ref": "WH/MO/00718",
-          "lot_id": null,
-          "lot_name": null,
+          "lot_id": 1140,
+          "lot_name": "11/01/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1573,10 +1574,10 @@
           "qty_packs": 176.0,
           "qty_units": 352.0,
           "qty_pouches": 352.0,
-          "dluo": "2027-01-30",
+          "dluo": "2027-02-01",
           "mo_ref": "WH/MO/00704",
-          "lot_id": 1073,
-          "lot_name": "01/30/2027",
+          "lot_id": 1134,
+          "lot_name": "02/01/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1586,10 +1587,10 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": "2027-01-31",
+          "dluo": "2027-02-01",
           "mo_ref": "WH/MO/00712",
-          "lot_id": 1074,
-          "lot_name": "01/31/2027",
+          "lot_id": 1136,
+          "lot_name": "02/01/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1675,10 +1676,10 @@
           "qty_packs": 176.0,
           "qty_units": 352.0,
           "qty_pouches": 352.0,
-          "dluo": "2027-01-31",
+          "dluo": "2027-02-02",
           "mo_ref": "WH/MO/00705",
-          "lot_id": 1077,
-          "lot_name": "01/31/2027",
+          "lot_id": 1081,
+          "lot_name": "02/02/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1714,10 +1715,10 @@
           "qty_packs": 360.0,
           "qty_units": 360.0,
           "qty_pouches": 360.0,
-          "dluo": "2027-02-01",
+          "dluo": "2027-02-02",
           "mo_ref": "WH/MO/00713",
-          "lot_id": 1078,
-          "lot_name": "02/01/2027",
+          "lot_id": 1141,
+          "lot_name": "02/02/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1778,10 +1779,10 @@
           "qty_packs": 400.0,
           "qty_units": 1200.0,
           "qty_pouches": 400.0,
-          "dluo": "2027-02-01",
+          "dluo": "2027-02-03",
           "mo_ref": "WH/MO/00706",
-          "lot_id": 1080,
-          "lot_name": "02/01/2027",
+          "lot_id": 1143,
+          "lot_name": "02/03/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1791,10 +1792,10 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": "2027-02-02",
+          "dluo": "2027-02-03",
           "mo_ref": "WH/MO/00714",
-          "lot_id": 944,
-          "lot_name": "02/02/2027",
+          "lot_id": 1082,
+          "lot_name": "02/03/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1823,10 +1824,10 @@
           "qty_packs": 176.0,
           "qty_units": 352.0,
           "qty_pouches": 352.0,
-          "dluo": "2027-02-02",
+          "dluo": "2027-02-04",
           "mo_ref": "WH/MO/00707",
-          "lot_id": 1081,
-          "lot_name": "02/02/2027",
+          "lot_id": 1144,
+          "lot_name": "02/04/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1836,10 +1837,10 @@
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
-          "dluo": "2027-02-03",
+          "dluo": "2027-02-04",
           "mo_ref": "WH/MO/00715",
-          "lot_id": 1082,
-          "lot_name": "02/03/2027",
+          "lot_id": 1145,
+          "lot_name": "02/04/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1859,10 +1860,10 @@
           "qty_packs": 176.0,
           "qty_units": 352.0,
           "qty_pouches": 352.0,
-          "dluo": "2027-02-03",
+          "dluo": "2027-02-05",
           "mo_ref": "WH/MO/00708",
-          "lot_id": 1083,
-          "lot_name": "02/03/2027",
+          "lot_id": 1146,
+          "lot_name": "02/05/2027",
           "copacked": false,
           "needs_setup": false
         }
