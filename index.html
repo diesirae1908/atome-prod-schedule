@@ -263,8 +263,8 @@
     /* ── recurring reminder pill (weekday / monthday cleaning tasks) ── */
     .recurring-pill {
       display: flex; flex-direction: column; gap: 2px;
-      background: rgba(100,116,139,.08);
-      border: 1px dashed rgba(100,116,139,.35);
+      background: rgba(249,115,22,.10);
+      border: 1px dashed rgba(249,115,22,.40);
       border-radius: 6px;
       padding: 4px 6px;
       margin-bottom: 4px;
@@ -272,8 +272,10 @@
     .recurring-pill .pill-header {
       display: flex; justify-content: space-between; align-items: center; gap: 4px;
     }
-    .recurring-pill .prod-name { font-size: 11px; color: #475569; }
-    .recurring-pill .prod-sub  { font-size: 10px; color: #94a3b8; font-style: italic; }
+    .recurring-pill .prod-name { font-size: 11px; color: #9a3412; }
+    .recurring-pill .prod-sub  { font-size: 10px; color: #c2410c; font-style: italic; }
+    .recurring-pill .pill-check:hover   { border-color: #ea580c; }
+    .recurring-pill .pill-check.checked { background: #ea580c; border-color: #ea580c; }
     .recurring-pill.done { opacity: .38; }
     .recurring-pill.done .prod-name { text-decoration: line-through; color: var(--muted); }
 
@@ -1111,12 +1113,15 @@ function lsSet(k, v) {
 // section: "mix" or "shape" — matches the row they render in.
 // weekly_dow: array of day-of-week numbers (Sun=0, Mon=1, … Sat=6).
 // monthly_day: calendar day of month (1..31).
+// biweekly_anchor: ISO date (YYYY-MM-DD) — task shows every 14 days starting from
+//                  (or aligned to) this date. The anchor itself determines the dow.
 // slug: short stable id used in the localStorage check key.
 const RECURRING_TASKS = [
-  { section: "mix",   slug: "waffle_makers",  weekly_dow: [1],    label: "🧇 Put waffle makers back in their proper place", note: "Monday morning" },
-  { section: "mix",   slug: "dry_ice",        weekly_dow: [1, 4], label: "🧊 Dry ice reception reminder" },
-  { section: "shape", slug: "divider_deep",   monthly_day: 1,     label: "🧽 Deep clean dough divider (remove white blocks)" },
-  { section: "shape", slug: "divider_inside", monthly_day: 15,    label: "🧽 Clean inside dough divider (keep white blocks)" },
+  { section: "mix",   slug: "waffle_makers",        weekly_dow: [1],          label: "🧇 Put waffle makers back in their proper place", note: "Monday morning" },
+  { section: "mix",   slug: "dry_ice",              weekly_dow: [1, 4],       label: "🧊 Dry ice reception reminder" },
+  { section: "mix",   slug: "empty_levain_machine", biweekly_anchor: "2026-05-01", label: "🫙 Empty and clean Levain machine", note: "every 2 weeks · Friday" },
+  { section: "shape", slug: "divider_deep",         monthly_day: 1,           label: "🧽 Deep clean dough divider (remove white blocks)" },
+  { section: "shape", slug: "divider_inside",       monthly_day: 15,          label: "🧽 Clean inside dough divider (keep white blocks)" },
 ];
 
 function getRecurringForDay(iso, section) {
@@ -1128,6 +1133,11 @@ function getRecurringForDay(iso, section) {
     if (t.section !== section) return false;
     if (Array.isArray(t.weekly_dow) && t.weekly_dow.includes(dow)) return true;
     if (typeof t.monthly_day === "number" && t.monthly_day === dom) return true;
+    if (typeof t.biweekly_anchor === "string") {
+      const anchor = new Date(t.biweekly_anchor + "T00:00:00");
+      const diffDays = Math.round((d - anchor) / 86400000);
+      if (diffDays % 14 === 0) return true;
+    }
     return false;
   });
 }
