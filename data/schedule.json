@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T23:37:19Z",
+  "generated_at": "2026-04-23T21:34:45Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -367,34 +367,7 @@
           "d0": "2026-04-23"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "1-CHTWI7P-ADN",
-          "name": "LIMITED EDITION: Chocolate Twists",
-          "qty_packs": 56.0,
-          "qty_units": 56.0,
-          "qty_pouches": 56.0,
-          "dluo": "2026-06-17",
-          "mo_ref": "WH/MO/00739",
-          "lot_id": 952,
-          "lot_name": "06/17/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "2-CRVGN3P-SGL",
-          "name": "Pack of 3 vegan croissant",
-          "qty_packs": 64.0,
-          "qty_units": 192.0,
-          "qty_pouches": 64.0,
-          "dluo": "2026-10-22",
-          "mo_ref": "WH/MO/00720",
-          "lot_id": 1048,
-          "lot_name": "10/22/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-04-23",
@@ -429,8 +402,8 @@
           "label": "Pack of 2 Country Rye Sourdough Loaf",
           "cfg_name": "Country Rye Loaf (×2)",
           "unit": "kg",
-          "total_kg": 504.0,
-          "total_units": 720,
+          "total_kg": 336.0,
+          "total_units": 480,
           "mo_ref": "WH/MO/00701",
           "products": [
             "Pack of 2 Country Rye Sourdough Loaf"
@@ -450,9 +423,9 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 360,
-          "qty_units": 720,
-          "total_kg": 504.0,
+          "qty_packs": 240,
+          "qty_units": 480,
+          "total_kg": 336.0,
           "mo_ref": "WH/MO/00701",
           "d0": "2026-04-25"
         }
@@ -551,18 +524,7 @@
     {
       "date": "2026-04-24",
       "label": "FRIDAY",
-      "premix": [
-        {
-          "label": "Prep mix Waffles",
-          "total_units": 624,
-          "products": [
-            "Pack of 3 Liege Waffle"
-          ],
-          "mo_refs": [
-            "WH/MO/00741"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -613,8 +575,8 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 360,
-          "qty_units": 720,
+          "qty_packs": 240,
+          "qty_units": 480,
           "mo_ref": "WH/MO/00701",
           "d0": "2026-04-25"
         }
@@ -698,18 +660,6 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
-        },
-        {
-          "dough_type": "WAFFLES",
-          "label": "Pack of 3 Liege Waffle",
-          "cfg_name": "Liège Waffle (×3)",
-          "unit": "kg",
-          "total_kg": 62.4,
-          "total_units": 624,
-          "mo_ref": "WH/MO/00741",
-          "products": [
-            "Pack of 3 Liege Waffle"
-          ]
         }
       ],
       "shaping": [
@@ -721,15 +671,6 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00697",
           "d0": "2026-04-27"
-        },
-        {
-          "sku": "WA3P-SGL",
-          "name": "Pack of 3 Liege Waffle",
-          "qty_packs": 208,
-          "qty_units": 624,
-          "total_kg": 62.4,
-          "mo_ref": "WH/MO/00741",
-          "d0": "2026-04-25"
         }
       ],
       "score_tasks": [
@@ -759,26 +700,13 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 360.0,
-          "qty_units": 720.0,
-          "qty_pouches": 720.0,
+          "qty_packs": 240.0,
+          "qty_units": 480.0,
+          "qty_pouches": 480.0,
           "dluo": "2027-01-23",
           "mo_ref": "WH/MO/00701",
           "lot_id": 1058,
           "lot_name": "01/23/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "WA3P-SGL",
-          "name": "Pack of 3 Liege Waffle",
-          "qty_packs": 208.0,
-          "qty_units": 624.0,
-          "qty_pouches": 208.0,
-          "dluo": "2026-10-25",
-          "mo_ref": "WH/MO/00741",
-          "lot_id": 1097,
-          "lot_name": "10/25/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -928,7 +856,7 @@
           "qty_pouches": 208.0,
           "dluo": "2026-10-26",
           "mo_ref": "WH/MO/00742",
-          "lot_id": 1098,
+          "lot_id": 1149,
           "lot_name": "10/26/2026",
           "copacked": false,
           "needs_setup": false
