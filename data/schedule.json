@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T18:52:47Z",
+  "generated_at": "2026-04-24T21:36:01Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -644,6 +644,16 @@
       "label": "MONDAY",
       "premix": [
         {
+          "label": "Prep mix Braided Brioche",
+          "total_units": 116,
+          "products": [
+            "Brioche (Pastry)"
+          ],
+          "mo_refs": [
+            "WH/MO/00718"
+          ]
+        },
+        {
           "label": "Prep mix Brioche Buns",
           "total_units": 348,
           "products": [
@@ -790,9 +800,30 @@
           "products": [
             "Pack of 3 Brioche Buns"
           ]
+        },
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Brioche (Pastry)",
+          "cfg_name": "Braided Brioche",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 116,
+          "mo_ref": "WH/MO/00718",
+          "products": [
+            "Brioche (Pastry)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116,
+          "qty_units": 116,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00718",
+          "d0": "2026-04-29"
+        },
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
@@ -876,18 +907,7 @@
     {
       "date": "2026-04-29",
       "label": "WEDNESDAY",
-      "premix": [
-        {
-          "label": "Prep mix Braided Brioche",
-          "total_units": 116,
-          "products": [
-            "Brioche (Pastry)"
-          ],
-          "mo_refs": [
-            "WH/MO/00718"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -966,6 +986,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116.0,
+          "qty_units": 116.0,
+          "qty_pouches": 116.0,
+          "dluo": "2026-10-29",
+          "mo_ref": "WH/MO/00718",
+          "lot_id": 1102,
+          "lot_name": "10/29/2026",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
@@ -1069,30 +1102,9 @@
           "products": [
             "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Brioche (Pastry)",
-          "cfg_name": "Braided Brioche",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 116,
-          "mo_ref": "WH/MO/00718",
-          "products": [
-            "Brioche (Pastry)"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 116,
-          "qty_units": 116,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00718",
-          "d0": "2026-05-01"
-        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -1259,19 +1271,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 116.0,
-          "qty_units": 116.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-11-01",
-          "mo_ref": "WH/MO/00718",
-          "lot_id": 1140,
-          "lot_name": "11/01/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
