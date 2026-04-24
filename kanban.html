@@ -34,7 +34,7 @@
       transition: width 0.22s cubic-bezier(0.4,0,0.2,1);
       box-shadow: 2px 0 12px rgba(0,0,0,0.18);
     }
-    .side-nav.open { width: 240px; }
+    .side-nav:hover, .side-nav.pinned { width: 240px; }
     .side-nav-head {
       display: flex; align-items: center;
       height: 56px; padding: 0 14px;
@@ -53,7 +53,7 @@
       white-space: nowrap; opacity: 0;
       transition: opacity 0.18s; pointer-events: none;
     }
-    .side-nav.open .side-nav-brand { opacity: 1; }
+    .side-nav:hover .side-nav-brand, .side-nav.pinned .side-nav-brand { opacity: 1; }
     .side-nav-items { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 6px 0; }
     .side-nav-items::-webkit-scrollbar { width: 4px; }
     .side-nav-items::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
@@ -70,14 +70,15 @@
     .side-nav-item.active { background: rgba(99,102,241,0.25); color: #a5b4fc; }
     .side-nav-icon { font-size: 17px; min-width: 24px; text-align: center; flex-shrink: 0; }
     .side-nav-label { margin-left: 12px; opacity: 0; transition: opacity 0.18s; pointer-events: none; }
-    .side-nav.open .side-nav-label { opacity: 1; }
+    .side-nav:hover .side-nav-label, .side-nav.pinned .side-nav-label { opacity: 1; }
     .side-nav-sep { height: 1px; background: rgba(255,255,255,0.07); margin: 6px 12px; }
     .side-nav-section {
       font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
       color: #475569; padding: 10px 16px 4px; white-space: nowrap;
       opacity: 0; transition: opacity 0.18s; text-transform: uppercase;
     }
-    .side-nav.open .side-nav-section { opacity: 1; }
+    .side-nav:hover .side-nav-section, .side-nav.pinned .side-nav-section { opacity: 1; }
+    .side-nav.pinned .side-nav-toggle { color: #a5b4fc; }
     .side-nav-backdrop {
       display: none; position: fixed; inset: 0;
       z-index: 8999; background: rgba(0,0,0,0.25);
@@ -205,6 +206,37 @@
     .pri-med  { background: #fef3c7; color: #b45309; }
     .pri-high { background: #fee2e2; color: #b91c1c; }
 
+    /* ── Completion progress bar on card ──────────────────── */
+    .card-progress {
+      margin-top: 8px; display: flex; align-items: center; gap: 6px;
+    }
+    .card-progress-track {
+      flex: 1; height: 4px; background: #e5e7eb;
+      border-radius: 2px; overflow: hidden;
+    }
+    .card-progress-bar {
+      height: 100%; border-radius: 2px;
+      transition: width 0.2s ease;
+    }
+    .card-progress-bar.pct-low  { background: #ef4444; }
+    .card-progress-bar.pct-mid  { background: #f59e0b; }
+    .card-progress-bar.pct-high { background: #10b981; }
+    .card-progress-bar.pct-full { background: #059669; }
+    .card-progress-label {
+      font-size: 10px; font-weight: 600; color: #64748b;
+      min-width: 28px; text-align: right;
+    }
+
+    /* ── Completion slider in modal ───────────────────────── */
+    .completion-row {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .completion-slider { flex: 1; accent-color: #6366f1; }
+    .completion-value {
+      min-width: 44px; text-align: right;
+      font-size: 13px; font-weight: 600; color: #374151;
+    }
+
     /* ── Add column button ──────────────────────────────────── */
     .add-col-btn {
       width: 260px; flex-shrink: 0;
@@ -321,7 +353,7 @@
 <div class="side-nav-backdrop" id="sideNavBackdrop" onclick="closeSideNav()"></div>
 <nav class="side-nav" id="sideNav">
   <div class="side-nav-head">
-    <button class="side-nav-toggle" onclick="toggleSideNav()" title="Toggle menu">☰</button>
+    <button class="side-nav-toggle" onclick="toggleSideNav()" title="Pin menu open">☰</button>
     <span class="side-nav-brand">🥖 Atome Bakery</span>
   </div>
   <div class="side-nav-items">
@@ -406,6 +438,14 @@
             <option value="medium">Medium</option>
             <option value="high">High</option>
           </select>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field-label">Completion</label>
+        <div class="completion-row">
+          <input id="fCompletion" type="range" class="completion-slider" min="0" max="100" step="5" value="0"
+                 oninput="document.getElementById('fCompletionVal').textContent = this.value + '%'" />
+          <span id="fCompletionVal" class="completion-value">0%</span>
         </div>
       </div>
       <div class="field-group">
@@ -581,6 +621,8 @@ function renderCardHtml(task) {
   const dueHtml  = task.due_date  ? dueBadge(task.due_date) : "";
   const priHtml  = task.priority  ? `<span class="pri-badge pri-${task.priority}">${task.priority}</span>` : "";
   const initials = (task.assignee || "?").split(" ").map(w=>w[0]).slice(0,2).join("").toUpperCase();
+  const pct = Number.isFinite(task.completion) ? Math.max(0, Math.min(100, task.completion)) : 0;
+  const progressHtml = pct > 0 ? renderProgressHtml(pct) : "";
   return `
     <div class="card" draggable="true" data-task-id="${task.id}" onclick="openEditTask('${task.id}')">
       <div class="card-title">${escHtml(task.title)}</div>
@@ -592,7 +634,21 @@ function renderCardHtml(task) {
         ${dueHtml}
         ${priHtml}
       </div>
+      ${progressHtml}
     </div>`;
+}
+
+function renderProgressHtml(pct) {
+  let cls = "pct-low";
+  if (pct >= 100)      cls = "pct-full";
+  else if (pct >= 67)  cls = "pct-high";
+  else if (pct >= 34)  cls = "pct-mid";
+  return `<div class="card-progress">
+    <div class="card-progress-track">
+      <div class="card-progress-bar ${cls}" style="width:${pct}%"></div>
+    </div>
+    <span class="card-progress-label">${pct}%</span>
+  </div>`;
 }
 
 function dueBadge(dateStr) {
@@ -689,6 +745,12 @@ document.addEventListener("click", e => {
 let _editingTaskId  = null;
 let _editingColId   = null;
 
+function setCompletionField(value) {
+  const pct = Math.max(0, Math.min(100, Number(value) || 0));
+  document.getElementById("fCompletion").value = pct;
+  document.getElementById("fCompletionVal").textContent = pct + "%";
+}
+
 function openNewTask(colId) {
   _editingTaskId = null;
   _editingColId  = colId;
@@ -698,6 +760,7 @@ function openNewTask(colId) {
   document.getElementById("fDue").value      = "";
   document.getElementById("fPriority").value = "";
   document.getElementById("fDesc").value     = "";
+  setCompletionField(0);
   document.getElementById("deleteTaskBtn").style.visibility = "hidden";
   clearInvalid();
   document.getElementById("taskModal").classList.add("open");
@@ -715,6 +778,7 @@ function openEditTask(taskId) {
   document.getElementById("fDue").value      = task.due_date || "";
   document.getElementById("fPriority").value = task.priority || "";
   document.getElementById("fDesc").value     = task.description || "";
+  setCompletionField(task.completion || 0);
   document.getElementById("deleteTaskBtn").style.visibility = "visible";
   clearInvalid();
   document.getElementById("taskModal").classList.add("open");
@@ -737,22 +801,37 @@ function saveTask() {
   if (!assignee) { document.getElementById("fAssignee").classList.add("invalid"); valid = false; }
   if (!valid) return;
 
+  const completion = Math.max(0, Math.min(100, parseInt(document.getElementById("fCompletion").value, 10) || 0));
+
   const payload = {
     title:       name,
     assignee,
     due_date:    document.getElementById("fDue").value      || null,
     priority:    document.getElementById("fPriority").value || null,
     description: document.getElementById("fDesc").value.trim() || null,
+    completion,
   };
+
+  let targetColId = _editingColId;
+  if (completion === 100) {
+    const doneCol = findDoneColumn();
+    if (doneCol) targetColId = doneCol.id;
+  }
 
   if (_editingTaskId) {
     const task = board.tasks.find(t => t.id === _editingTaskId);
     Object.assign(task, payload);
+    if (task.column_id !== targetColId) {
+      const maxOrder = board.tasks.filter(t => t.column_id === targetColId && t.id !== task.id)
+                                  .reduce((m,t) => Math.max(m,t.order), -1);
+      task.column_id = targetColId;
+      task.order = maxOrder + 1;
+    }
   } else {
-    const maxOrder = board.tasks.filter(t => t.column_id === _editingColId)
+    const maxOrder = board.tasks.filter(t => t.column_id === targetColId)
                                 .reduce((m,t) => Math.max(m,t.order), -1);
     board.tasks.push({
-      id: uid(), column_id: _editingColId,
+      id: uid(), column_id: targetColId,
       order: maxOrder + 1, created_at: new Date().toISOString(),
       ...payload
     });
@@ -761,6 +840,10 @@ function saveTask() {
   saveBoard();
   renderBoard();
   closeTaskModal();
+}
+
+function findDoneColumn() {
+  return board.columns.find(c => /done/i.test(c.title));
 }
 
 function deleteCurrentTask() {
@@ -823,17 +906,92 @@ document.getElementById("taskModal").addEventListener("click", e => {
 // ── Side nav ──────────────────────────────────────────────────────────────────
 function toggleSideNav() {
   const nav = document.getElementById("sideNav");
-  nav.classList.toggle("open");
-  document.getElementById("sideNavBackdrop").classList.toggle("visible", nav.classList.contains("open"));
+  nav.classList.toggle("pinned");
+  document.getElementById("sideNavBackdrop").classList.toggle("visible", nav.classList.contains("pinned"));
 }
 function closeSideNav() {
-  document.getElementById("sideNav").classList.remove("open");
+  document.getElementById("sideNav").classList.remove("pinned");
   document.getElementById("sideNavBackdrop").classList.remove("visible");
+}
+
+// ── Seed data (Projects board) ───────────────────────────────────────────────
+const PROJECTS_SEED_VERSION = 1;
+const PROJECTS_SEED_TASKS = [
+  // Improvement — HP
+  { id: "seed_recipe_mop",         title: "Recipe / MOP (Shortbread)",                  assignee: "Baptiste", priority: "high",   completion: 100 },
+  { id: "seed_lines_perf",         title: "Lines Performance / Cost reduction (HitBay)", assignee: "Doriane",  priority: "high",   completion: 60 },
+  { id: "seed_pouch_armada",       title: "Pouch Armada",                                assignee: "Baptiste", priority: "high",   completion: 40 },
+  { id: "seed_more_dolly",         title: "More Dolly (Sunday latest + 4 dolly)",        assignee: "Baptiste", priority: "high",   completion: 0 },
+  { id: "seed_ramp_screws",        title: "Ramp Screws / Sand Paper (CoLP)",             assignee: "Baptiste", priority: "high",   completion: 50 },
+  { id: "seed_process_standard",   title: "Process Standardisation",                     assignee: "Baptiste", priority: "high",   completion: 0 },
+  // Improvement — MP
+  { id: "seed_washing_machine",    title: "Washing Machine (LP)",                        assignee: "Baptiste", priority: "medium", completion: 0 },
+  { id: "seed_freezer_space",      title: "Freezer Space Management",                    assignee: "Doriane",  priority: "medium", completion: 0 },
+  { id: "seed_location_id",        title: "Location Identification (WH + Freezer)",      assignee: "Doriane",  priority: "medium", completion: 0 },
+  // Improvement — LP / unmarked
+  { id: "seed_box_id_3pl",         title: "Box ID (+3PL)",                               assignee: "Doriane",  priority: "low",    completion: 100 },
+  { id: "seed_storage_box",        title: "Improve Storage Box + Sourcing (On Hold)",    assignee: "Baptiste", priority: "low",    completion: 0 },
+  { id: "seed_waffles_exhaust",    title: "Waffles Exhaust",                             assignee: "Baptiste", priority: "low",    completion: 0 },
+  // New Project
+  { id: "seed_training_lead",      title: "Training Lead",                               assignee: "Lucas",    priority: "high",   completion: 0 },
+  { id: "seed_scanette_order",     title: "Scanette order (LDLP)",                       assignee: "Lucas",    priority: "high",   completion: 75 },
+  { id: "seed_blast_freezer",      title: "Blast Freezer (Freezer Burn)",                assignee: "Lucas",    priority: "medium", completion: 0 },
+  { id: "seed_team_improvement",   title: "Team Improvement Ideas Identification",       assignee: "Baptiste", priority: "low",    completion: 0 },
+  // New Topics (no priority)
+  { id: "seed_blast_freezer_proc", title: "How to include the Blast Freezer in our process?", assignee: "Baptiste", priority: null, completion: 0 },
+  { id: "seed_cast_iron",          title: "Cast iron shipment",                          assignee: "Doriane",  priority: null,     completion: 0 },
+  { id: "seed_we_shift_comm",      title: "WE shift communication (people or paper)",    assignee: "Baptiste", priority: null,     completion: 0 },
+  { id: "seed_mop_ingredients",    title: "Order of ingredients in MOP",                 assignee: "Kasia",    priority: null,     completion: 0 },
+  { id: "seed_floor_tape",         title: "Floor tape",                                  assignee: "Doriane",  priority: null,     completion: 0 },
+  { id: "seed_trash_removal",      title: "Trash Removal",                               assignee: "Baptiste", priority: null,     completion: 0 },
+  { id: "seed_mop_archive",        title: "MOP Archive",                                 assignee: "Kasia",    priority: null,     completion: 0 },
+  { id: "seed_drying_covers",      title: "Drying Covers Process",                       assignee: "Kasia",    priority: null,     completion: 0 },
+  { id: "seed_install_fan",        title: "Install fan in Compressor Room (next meeting: next Thursday)", assignee: "Baptiste", priority: null, completion: 0 },
+  { id: "seed_flow_storage",       title: "ID Flow Storage",                             assignee: "Kasia",    priority: null,     completion: 0 },
+  { id: "seed_onboarding",         title: "Onboarding Checklist",                        assignee: "Kasia",    priority: null,     completion: 0 },
+];
+
+function applyProjectsSeed() {
+  if (BOARD_ID !== "projects") return false;
+  if ((board.seed_version || 0) >= PROJECTS_SEED_VERSION) return false;
+
+  const existingIds = new Set(board.tasks.map(t => t.id));
+  const colByTitle = (needle) => board.columns.find(c => new RegExp(needle, "i").test(c.title));
+  const backlog    = colByTitle("backlog")     || board.columns[0];
+  const inProgress = colByTitle("in.?progress") || backlog;
+  const done       = colByTitle("done")        || backlog;
+
+  let added = 0;
+  for (const seed of PROJECTS_SEED_TASKS) {
+    if (existingIds.has(seed.id)) continue;
+    const pct = seed.completion || 0;
+    const col = pct === 100 ? done : (pct > 0 ? inProgress : backlog);
+    const maxOrder = board.tasks.filter(t => t.column_id === col.id)
+                                .reduce((m,t) => Math.max(m,t.order), -1);
+    board.tasks.push({
+      id: seed.id,
+      column_id: col.id,
+      order: maxOrder + 1 + added,
+      created_at: new Date().toISOString(),
+      title: seed.title,
+      assignee: seed.assignee,
+      due_date: null,
+      priority: seed.priority || null,
+      description: null,
+      completion: pct,
+    });
+    added++;
+  }
+
+  board.seed_version = PROJECTS_SEED_VERSION;
+  saveBoard();
+  return added > 0;
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 (async () => {
   await loadFromSupabase();
+  applyProjectsSeed();
   renderBoard();
 })();
 </script>

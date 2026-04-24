@@ -317,6 +317,19 @@
       transition: border-color .1s;
     }
     .day-notes:focus { outline: none; border-color: #4338ca; }
+    .note-add {
+      width: 100%; min-height: 36px;
+      border: 1px dashed #cbd5e1; border-radius: 5px;
+      background: #f8fafc; color: #94a3b8;
+      font-size: 18px; font-weight: 600;
+      cursor: pointer; font-family: inherit;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .1s, border-color .1s, color .1s;
+      padding: 0;
+    }
+    .note-add:hover {
+      background: #eef2ff; border-color: #6366f1; color: #6366f1;
+    }
 
     /* ── D-1 score / freeze pills ── */
     .score-pill {
@@ -1942,6 +1955,9 @@ function renderVacCell(day) {
 
 function renderNotesCell(iso) {
   const val = lsGet("notes_" + iso) || "";
+  if (!val.trim()) {
+    return `<button type="button" class="note-add" data-day="${iso}" title="Add note">+</button>`;
+  }
   const escaped = val.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
   return `<textarea class="day-notes" data-day="${iso}" placeholder="Leave a note…" rows="3">${escaped}</textarea>`;
 }
@@ -2017,12 +2033,12 @@ function buildTable(weekStart) {
     table.appendChild(row);
   }
 
+  addSection("📝", "NOTES",       "tasks-hd",  "tasks-row",  (d)      => renderNotesCell(d));
   addSection("🟠", "PREP MIXING", "premix-hd", "premix-row", (d, day) => renderPremixCell(day));
   addSection("🟣", "MIXING",      "mix-hd",    "mix-row",    (d, day) => renderMixCell(day));
   addSection("🔵", "SHAPING",     "shape-hd",  "shape-row",  (d, day) => renderShapeCell(day));
   addSection("🟢", "VACUUMING",   "vac-hd",    "vac-row",    (d, day) => renderVacCell(day));
   addSection("🧪", "QA TEST",     "qa-hd",     "qa-row",     (d, day) => renderQaCell(day));
-  addSection("📝", "NOTES",       "tasks-hd",  "tasks-row",  (d)      => renderNotesCell(d));
 
   return table;
 }
@@ -2149,6 +2165,37 @@ document.getElementById("scheduleRoot").addEventListener("input", e => {
     lsSet(key, state);
   }
 });
+
+// ── notes: "+" placeholder → swap to textarea on click ──────────────────────
+document.getElementById("scheduleRoot").addEventListener("click", e => {
+  const btn = e.target.closest(".note-add");
+  if (!btn) return;
+  const iso = btn.dataset.day;
+  const ta = document.createElement("textarea");
+  ta.className = "day-notes";
+  ta.dataset.day = iso;
+  ta.placeholder = "Leave a note…";
+  ta.rows = 3;
+  ta.value = "";
+  btn.replaceWith(ta);
+  ta.focus();
+});
+
+// ── notes: revert empty textarea back to "+" on blur ───────────────────────
+document.getElementById("scheduleRoot").addEventListener("blur", e => {
+  const ta = e.target.closest(".day-notes");
+  if (!ta) return;
+  if (ta.value.trim()) return;
+  const iso = ta.dataset.day;
+  lsSet("notes_" + iso, "");
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "note-add";
+  btn.dataset.day = iso;
+  btn.title = "Add note";
+  btn.textContent = "+";
+  ta.replaceWith(btn);
+}, true);
 
 // ── QA OK / NOK button clicks ─────────────────────────────────────────────────
 document.getElementById("scheduleRoot").addEventListener("click", e => {
