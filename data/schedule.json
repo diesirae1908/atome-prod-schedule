@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23T21:34:45Z",
+  "generated_at": "2026-04-24T00:12:11Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -206,18 +206,7 @@
     {
       "date": "2026-04-21",
       "label": "TUESDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 414,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/00690"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "CIABATTA",
@@ -230,42 +219,9 @@
           "products": [
             "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
           ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 123.2,
-          "total_units": 176,
-          "mo_ref": "WH/MO/00738",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00740",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "total_kg": 123.2,
-          "mo_ref": "WH/MO/00738",
-          "d0": "2026-04-23"
-        },
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
@@ -306,18 +262,6 @@
           "products": [
             "Pack of 2 Pizza Dough (Sourdough)"
           ]
-        },
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 29.0,
-          "total_units": 414,
-          "mo_ref": "WH/MO/00690",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
         }
       ],
       "shaping": [
@@ -329,35 +273,9 @@
           "total_kg": 132.0,
           "mo_ref": "WH/MO/00688",
           "d0": "2026-04-24"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 29.0,
-          "mo_ref": "WH/MO/00690",
-          "d0": "2026-04-23"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00740",
-          "d0": "2026-04-23"
         }
       ],
       "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "mo_ref": "WH/MO/00738",
-          "d0": "2026-04-23"
-        },
         {
           "action": "freeze_only",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
@@ -381,6 +299,16 @@
           ],
           "mo_refs": [
             "WH/MO/00700"
+          ]
+        },
+        {
+          "label": "Prep mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/00751"
           ]
         }
       ],
@@ -442,19 +370,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88.0,
-          "qty_units": 176.0,
-          "qty_pouches": 176.0,
-          "dluo": "2027-01-21",
-          "mo_ref": "WH/MO/00738",
-          "lot_id": 1049,
-          "lot_name": "01/21/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "qty_packs": 266.0,
@@ -464,32 +379,6 @@
           "mo_ref": "WH/MO/00687",
           "lot_id": 1050,
           "lot_name": "01/21/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
-          "dluo": "2026-10-22",
-          "mo_ref": "WH/MO/00690",
-          "lot_id": 1052,
-          "lot_name": "10/22/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-01-22",
-          "mo_ref": "WH/MO/00740",
-          "lot_id": 1051,
-          "lot_name": "01/22/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -549,6 +438,18 @@
           "products": [
             "Brioche (Pastry)"
           ]
+        },
+        {
+          "dough_type": "WAFFLES",
+          "label": "Pack of 3 Liege Waffle",
+          "cfg_name": "Liège Waffle (×3)",
+          "unit": "kg",
+          "total_kg": 62.4,
+          "total_units": 624,
+          "mo_ref": "WH/MO/00751",
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ]
         }
       ],
       "shaping": [
@@ -569,6 +470,15 @@
           "total_kg": 369.6,
           "mo_ref": "WH/MO/00696",
           "d0": "2026-04-26"
+        },
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208,
+          "qty_units": 624,
+          "total_kg": 62.4,
+          "mo_ref": "WH/MO/00751",
+          "d0": "2026-04-24"
         }
       ],
       "score_tasks": [
@@ -605,6 +515,19 @@
           "mo_ref": "WH/MO/00688",
           "lot_id": 1053,
           "lot_name": "01/22/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208.0,
+          "qty_units": 624.0,
+          "qty_pouches": 208.0,
+          "dluo": "2026-10-24",
+          "mo_ref": "WH/MO/00751",
+          "lot_id": 1188,
+          "lot_name": "10/24/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1656,30 +1579,8 @@
       "date": "2026-05-03",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00708",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
+      "mix": [],
       "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00708",
-          "d0": "2026-05-05"
-        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
@@ -1733,18 +1634,32 @@
       "date": "2026-05-04",
       "label": "MONDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [
+      "mix": [
         {
-          "action": "score_freeze",
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 246.4,
+          "total_units": 352,
+          "mo_ref": "WH/MO/00708",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 176,
           "qty_units": 352,
+          "total_kg": 246.4,
           "mo_ref": "WH/MO/00708",
-          "d0": "2026-05-05"
+          "d0": "2026-05-06"
         }
       ],
+      "score_tasks": [],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -1780,22 +1695,17 @@
       "premix": [],
       "mix": [],
       "shaping": [],
-      "score_tasks": [],
-      "vacuuming": [
+      "score_tasks": [
         {
-          "sku": "LF2P",
+          "action": "score_freeze",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2027-02-05",
+          "qty_packs": 176,
+          "qty_units": 352,
           "mo_ref": "WH/MO/00708",
-          "lot_id": 1146,
-          "lot_name": "02/05/2027",
-          "copacked": false,
-          "needs_setup": false
+          "d0": "2026-05-06"
         }
-      ]
+      ],
+      "vacuuming": []
     },
     {
       "date": "2026-05-06",
@@ -1804,7 +1714,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176.0,
+          "qty_units": 352.0,
+          "qty_pouches": 352.0,
+          "dluo": "2027-02-06",
+          "mo_ref": "WH/MO/00708",
+          "lot_id": 1182,
+          "lot_name": "02/06/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-05-07",
