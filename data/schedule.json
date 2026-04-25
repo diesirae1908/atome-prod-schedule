@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T00:30:16Z",
+  "generated_at": "2026-04-25T00:30:38Z",
   "week_number": 14,
   "week_start": "2026-03-30",
   "week_end": "2026-05-10",
@@ -527,6 +527,16 @@
           "mo_refs": [
             "WH/MO/00710"
           ]
+        },
+        {
+          "label": "Prep mix Brioche Buns",
+          "total_units": 348,
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ],
+          "mo_refs": [
+            "WH/MO/00716"
+          ]
         }
       ],
       "mix": [
@@ -652,16 +662,6 @@
           "mo_refs": [
             "WH/MO/00718"
           ]
-        },
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 348,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/00716"
-          ]
         }
       ],
       "mix": [
@@ -688,6 +688,18 @@
           "products": [
             "Pack of 3 Multigrain Sourdough Baguettes"
           ]
+        },
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 348,
+          "mo_ref": "WH/MO/00716",
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ]
         }
       ],
       "shaping": [
@@ -699,6 +711,15 @@
           "total_kg": 276.0,
           "mo_ref": "WH/MO/00702",
           "d0": "2026-04-29"
+        },
+        {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00716",
+          "d0": "2026-04-28"
         },
         {
           "sku": "MG3P-SGL",
@@ -791,18 +812,6 @@
         },
         {
           "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/00716",
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ]
-        },
-        {
-          "dough_type": "BRIOCHE",
           "label": "Brioche (Pastry)",
           "cfg_name": "Braided Brioche",
           "unit": "kg",
@@ -832,15 +841,6 @@
           "total_kg": 336.0,
           "mo_ref": "WH/MO/00703",
           "d0": "2026-04-30"
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00716",
-          "d0": "2026-04-29"
         },
         {
           "sku": "MG3P-SGL",
@@ -873,6 +873,19 @@
           "mo_ref": "WH/MO/00698",
           "lot_id": 1122,
           "lot_name": "01/28/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116.0,
+          "qty_units": 348.0,
+          "qty_pouches": 116.0,
+          "dluo": "2026-10-28",
+          "mo_ref": "WH/MO/00716",
+          "lot_id": 1067,
+          "lot_name": "10/28/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1009,19 +1022,6 @@
           "mo_ref": "WH/MO/00702",
           "lot_id": 1124,
           "lot_name": "01/29/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-10-29",
-          "mo_ref": "WH/MO/00716",
-          "lot_id": 1128,
-          "lot_name": "10/29/2026",
           "copacked": false,
           "needs_setup": false
         },
