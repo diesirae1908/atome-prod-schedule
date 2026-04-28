@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T22:41:55Z",
+  "generated_at": "2026-04-28T22:43:26Z",
   "week_number": 15,
   "week_start": "2026-04-06",
   "week_end": "2026-05-17",
@@ -1695,6 +1695,16 @@
           "mo_refs": [
             "WH/MO/00775"
           ]
+        },
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/00781"
+          ]
         }
       ],
       "mix": [
@@ -1798,6 +1808,18 @@
           "products": [
             "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
           ]
+        },
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 135.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00781",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ]
         }
       ],
       "shaping": [
@@ -1886,6 +1908,15 @@
           "total_kg": 276.0,
           "mo_ref": "WH/MO/00773",
           "d0": "2026-05-14"
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 135.0,
+          "mo_ref": "WH/MO/00781",
+          "d0": "2026-05-13"
         }
       ],
       "score_tasks": [
@@ -1976,6 +2007,19 @@
           "dluo": "2027-02-13",
           "mo_ref": "WH/MO/00774",
           "lot_id": 1230,
+          "lot_name": "02/13/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-02-13",
+          "mo_ref": "WH/MO/00781",
+          "lot_id": 1238,
           "lot_name": "02/13/2027",
           "copacked": false,
           "needs_setup": false
