@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T22:07:28Z",
+  "generated_at": "2026-04-28T22:08:45Z",
   "week_number": 15,
   "week_start": "2026-04-06",
   "week_end": "2026-05-17",
@@ -895,8 +895,30 @@
       "date": "2026-05-03",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 246.4,
+          "total_units": 352,
+          "mo_ref": "WH/MO/00708",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        }
+      ],
       "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "total_kg": 246.4,
+          "mo_ref": "WH/MO/00708",
+          "d0": "2026-05-05"
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
@@ -952,30 +974,39 @@
       "premix": [],
       "mix": [
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
+          "dough_type": "PIZZA",
+          "label": "Pack of 2 Pizza Dough (Sourdough)",
+          "cfg_name": "Pizza Dough (×2)",
           "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00708",
+          "total_kg": 0.4,
+          "total_units": 2,
+          "mo_ref": "WH/MO/00754",
           "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
+            "Pack of 2 Pizza Dough (Sourdough)"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00708",
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 1,
+          "qty_units": 2,
+          "total_kg": 0.4,
+          "mo_ref": "WH/MO/00754",
           "d0": "2026-05-06"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "mo_ref": "WH/MO/00708",
+          "d0": "2026-05-05"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -1013,15 +1044,29 @@
       "shaping": [],
       "score_tasks": [
         {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00708",
+          "action": "freeze_only",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 1,
+          "qty_units": 2,
+          "mo_ref": "WH/MO/00754",
           "d0": "2026-05-06"
         }
       ],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176.0,
+          "qty_units": 352.0,
+          "qty_pouches": 352.0,
+          "dluo": "2027-02-05",
+          "mo_ref": "WH/MO/00708",
+          "lot_id": 1146,
+          "lot_name": "02/05/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-05-06",
@@ -1032,14 +1077,14 @@
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 1.0,
+          "qty_units": 2.0,
+          "qty_pouches": 1.0,
           "dluo": "2027-02-06",
-          "mo_ref": "WH/MO/00708",
-          "lot_id": 1182,
+          "mo_ref": "WH/MO/00754",
+          "lot_id": 1209,
           "lot_name": "02/06/2027",
           "copacked": false,
           "needs_setup": false
