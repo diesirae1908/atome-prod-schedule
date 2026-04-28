@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T22:43:26Z",
+  "generated_at": "2026-04-28T22:45:03Z",
   "week_number": 15,
   "week_start": "2026-04-06",
   "week_end": "2026-05-17",
@@ -1319,6 +1319,18 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00783",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1430,6 +1442,18 @@
           "products": [
             "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00784",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1449,6 +1473,15 @@
           "qty_units": 360,
           "total_kg": 135.0,
           "mo_ref": "WH/MO/00764",
+          "d0": "2026-05-08"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00783",
           "d0": "2026-05-08"
         }
       ],
@@ -1532,6 +1565,18 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00785",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1551,6 +1596,15 @@
           "qty_units": 351,
           "total_kg": 122.8,
           "mo_ref": "WH/MO/00768",
+          "d0": "2026-05-09"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00784",
           "d0": "2026-05-09"
         }
       ],
@@ -1590,6 +1644,19 @@
           "lot_name": "02/08/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-02-08",
+          "mo_ref": "WH/MO/00783",
+          "lot_id": 1240,
+          "lot_name": "02/08/2027",
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -1621,6 +1688,18 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00786",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1640,6 +1719,15 @@
           "qty_units": 351,
           "total_kg": 122.8,
           "mo_ref": "WH/MO/00766",
+          "d0": "2026-05-10"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00785",
           "d0": "2026-05-10"
         }
       ],
@@ -1676,6 +1764,19 @@
           "dluo": "2027-02-09",
           "mo_ref": "WH/MO/00768",
           "lot_id": 1224,
+          "lot_name": "02/09/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-02-09",
+          "mo_ref": "WH/MO/00784",
+          "lot_id": 1221,
           "lot_name": "02/09/2027",
           "copacked": false,
           "needs_setup": false
@@ -1751,6 +1852,15 @@
           "total_kg": 122.8,
           "mo_ref": "WH/MO/00767",
           "d0": "2026-05-11"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00786",
+          "d0": "2026-05-11"
         }
       ],
       "score_tasks": [
@@ -1789,13 +1899,37 @@
           "lot_name": "02/10/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-02-10",
+          "mo_ref": "WH/MO/00785",
+          "lot_id": 1222,
+          "lot_name": "02/10/2027",
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
     {
       "date": "2026-05-11",
       "label": "MONDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/00782"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "CIABATTA",
@@ -1878,6 +2012,19 @@
           "lot_name": "02/11/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-02-11",
+          "mo_ref": "WH/MO/00786",
+          "lot_id": 1223,
+          "lot_name": "02/11/2027",
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -1896,6 +2043,18 @@
           "mo_ref": "WH/MO/00773",
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+          ]
+        },
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 135.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00782",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         }
       ],
@@ -1985,6 +2144,15 @@
           "total_kg": 198.8,
           "mo_ref": "WH/MO/00776",
           "d0": "2026-05-15"
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 135.0,
+          "mo_ref": "WH/MO/00782",
+          "d0": "2026-05-14"
         }
       ],
       "score_tasks": [
@@ -2075,6 +2243,19 @@
           "dluo": "2027-02-14",
           "mo_ref": "WH/MO/00773",
           "lot_id": 1229,
+          "lot_name": "02/14/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-02-14",
+          "mo_ref": "WH/MO/00782",
+          "lot_id": 1239,
           "lot_name": "02/14/2027",
           "copacked": false,
           "needs_setup": false
