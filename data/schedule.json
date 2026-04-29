@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T23:24:47Z",
+  "generated_at": "2026-04-29T00:42:29Z",
   "week_number": 15,
   "week_start": "2026-04-06",
   "week_end": "2026-05-17",
@@ -371,18 +371,7 @@
     {
       "date": "2026-04-29",
       "label": "WEDNESDAY",
-      "premix": [
-        {
-          "label": "Prep mix Viennoise",
-          "total_units": 200,
-          "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
-          ],
-          "mo_refs": [
-            "WH/MO/00772"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -564,18 +553,6 @@
           "products": [
             "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
-        },
-        {
-          "dough_type": "VIENNOISE",
-          "label": "Pack of 2 Viennoise (Brioche Baguette)",
-          "cfg_name": "Viennoise (×2)",
-          "unit": "kg",
-          "total_kg": 40.0,
-          "total_units": 200,
-          "mo_ref": "WH/MO/00772",
-          "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
-          ]
         }
       ],
       "shaping": [
@@ -587,15 +564,6 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00705",
           "d0": "2026-05-02"
-        },
-        {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100,
-          "qty_units": 200,
-          "total_kg": 40.0,
-          "mo_ref": "WH/MO/00772",
-          "d0": "2026-05-01"
         },
         {
           "sku": "SE3P-SGL",
@@ -777,19 +745,6 @@
           "mo_ref": "WH/MO/00704",
           "lot_id": 1134,
           "lot_name": "02/01/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-11-01",
-          "mo_ref": "WH/MO/00772",
-          "lot_id": 1079,
-          "lot_name": "11/01/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -1292,6 +1247,16 @@
           "mo_refs": [
             "WH/MO/00787"
           ]
+        },
+        {
+          "label": "Prep mix Viennoise",
+          "total_units": 200,
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ],
+          "mo_refs": [
+            "WH/MO/00772"
+          ]
         }
       ],
       "mix": [
@@ -1466,6 +1431,18 @@
           ]
         },
         {
+          "dough_type": "VIENNOISE",
+          "label": "Pack of 2 Viennoise (Brioche Baguette)",
+          "cfg_name": "Viennoise (×2)",
+          "unit": "kg",
+          "total_kg": 40.0,
+          "total_units": 200,
+          "mo_ref": "WH/MO/00772",
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ]
+        },
+        {
           "dough_type": "SHORTBREAD",
           "label": "Butter Shortbread Log (Plain)",
           "cfg_name": "Butter Shortbread Log (Plain)",
@@ -1496,6 +1473,15 @@
           "total_kg": 336.0,
           "mo_ref": "WH/MO/00757",
           "d0": "2026-05-09"
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100,
+          "qty_units": 200,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/00772",
+          "d0": "2026-05-08"
         },
         {
           "sku": "MG3P-SGL",
@@ -1673,6 +1659,19 @@
           "mo_ref": "WH/MO/00756",
           "lot_id": 1211,
           "lot_name": "02/08/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-11-08",
+          "mo_ref": "WH/MO/00772",
+          "lot_id": 1247,
+          "lot_name": "11/08/2026",
           "copacked": false,
           "needs_setup": false
         },
