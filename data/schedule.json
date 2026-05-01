@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T21:43:13Z",
+  "generated_at": "2026-05-01T21:39:57Z",
   "week_number": 15,
   "week_start": "2026-04-06",
   "week_end": "2026-05-17",
@@ -206,55 +206,9 @@
     {
       "date": "2026-04-28",
       "label": "TUESDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 414,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/00717"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 336.0,
-          "total_units": 480,
-          "mo_ref": "WH/MO/00703",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Sesame Baguette",
-          "cfg_name": "Sesame Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00711",
-          "products": [
-            "Pack of 3 Sourdough Sesame Baguette"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240,
-          "qty_units": 480,
-          "total_kg": 336.0,
-          "mo_ref": "WH/MO/00703",
-          "d0": "2026-04-30"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -286,18 +240,6 @@
           "products": [
             "Pack of 3 Sourdough Sesame Baguette"
           ]
-        },
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 29.0,
-          "total_units": 414,
-          "mo_ref": "WH/MO/00717",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
         }
       ],
       "shaping": [
@@ -309,51 +251,10 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00704",
           "d0": "2026-05-01"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 29.0,
-          "mo_ref": "WH/MO/00717",
-          "d0": "2026-04-30"
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00711",
-          "d0": "2026-04-30"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240,
-          "qty_units": 480,
-          "mo_ref": "WH/MO/00703",
-          "d0": "2026-04-30"
-        }
-      ],
-      "vacuuming": [
-        {
-          "sku": "2-CRVGN3P-SGL",
-          "name": "Pack of 3 vegan croissant",
-          "qty_packs": 56.0,
-          "qty_units": 168.0,
-          "qty_pouches": 56.0,
-          "dluo": "2026-10-29",
-          "mo_ref": "WH/MO/00721",
-          "lot_id": 1068,
-          "lot_name": "10/29/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "score_tasks": [],
+      "vacuuming": []
     },
     {
       "date": "2026-04-30",
@@ -426,60 +327,7 @@
           "d0": "2026-05-01"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240.0,
-          "qty_units": 480.0,
-          "qty_pouches": 480.0,
-          "dluo": "2027-01-30",
-          "mo_ref": "WH/MO/00703",
-          "lot_id": 1129,
-          "lot_name": "01/30/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
-          "dluo": "2026-10-30",
-          "mo_ref": "WH/MO/00717",
-          "lot_id": 1132,
-          "lot_name": "10/30/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-01-30",
-          "mo_ref": "WH/MO/00711",
-          "lot_id": 1130,
-          "lot_name": "01/30/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 150.0,
-          "qty_units": 150.0,
-          "qty_pouches": 150.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00735",
-          "lot_id": 694,
-          "lot_name": "11/11/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-05-01",
