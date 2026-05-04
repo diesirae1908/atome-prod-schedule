@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T18:42:04Z",
+  "generated_at": "2026-05-04T20:07:46Z",
   "week_number": 16,
   "week_start": "2026-04-13",
   "week_end": "2026-05-24",
@@ -529,32 +529,29 @@
     {
       "date": "2026-05-03",
       "label": "SUNDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep Mix Shortbread Plain",
+          "total_units": 50,
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ],
+          "mo_refs": [
+            "WH/MO/00787"
+          ]
+        },
+        {
+          "label": "Prep mix Brioche Buns",
+          "total_units": 348,
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ],
+          "mo_refs": [
+            "WH/MO/00769"
+          ]
+        }
+      ],
       "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00708",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00761",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
-        },
         {
           "dough_type": "WAFFLES",
           "label": "Pack of 3 Liege Waffle",
@@ -569,15 +566,6 @@
         }
       ],
       "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00708",
-          "d0": "2026-05-05"
-        },
         {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
@@ -675,31 +663,9 @@
           "mo_refs": [
             "WH/MO/00763"
           ]
-        },
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 348,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/00769"
-          ]
         }
       ],
       "mix": [
-        {
-          "dough_type": "PIZZA",
-          "label": "Pack of 2 Pizza Dough (Sourdough)",
-          "cfg_name": "Pizza Dough (×2)",
-          "unit": "kg",
-          "total_kg": 198.8,
-          "total_units": 994,
-          "mo_ref": "WH/MO/00754",
-          "products": [
-            "Pack of 2 Pizza Dough (Sourdough)"
-          ]
-        },
         {
           "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
@@ -711,38 +677,53 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 348,
+          "mo_ref": "WH/MO/00769",
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ]
+        },
+        {
+          "dough_type": "SHORTBREAD",
+          "label": "Butter Shortbread Log (Plain)",
+          "cfg_name": "Butter Shortbread Log (Plain)",
+          "unit": "pcs",
+          "total_kg": 20.0,
+          "total_units": 50,
+          "mo_ref": "WH/MO/00787",
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ]
         }
       ],
       "shaping": [
         {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "total_kg": 198.8,
-          "mo_ref": "WH/MO/00754",
-          "d0": "2026-05-06"
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 50,
+          "qty_units": 50,
+          "total_kg": 20.0,
+          "mo_ref": "WH/MO/00787",
+          "d0": "2026-05-05"
         },
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00761",
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00769",
           "d0": "2026-05-05"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00708",
-          "d0": "2026-05-05"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": [
         {
           "sku": "GNOC-330",
@@ -834,18 +815,6 @@
           "products": [
             "Pack of 3 Multigrain Sourdough Baguettes"
           ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/00769",
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ]
         }
       ],
       "shaping": [
@@ -859,15 +828,6 @@
           "d0": "2026-05-07"
         },
         {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00769",
-          "d0": "2026-05-06"
-        },
-        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117,
@@ -877,40 +837,31 @@
           "d0": "2026-05-06"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "freeze_only",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "mo_ref": "WH/MO/00754",
-          "d0": "2026-05-06"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 50.0,
+          "qty_units": 50.0,
+          "qty_pouches": 50.0,
           "dluo": "2027-02-05",
-          "mo_ref": "WH/MO/00708",
-          "lot_id": 1146,
+          "mo_ref": "WH/MO/00787",
+          "lot_id": 1257,
           "lot_name": "02/05/2027",
           "copacked": false,
           "needs_setup": false
         },
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-02-05",
-          "mo_ref": "WH/MO/00761",
-          "lot_id": 1217,
-          "lot_name": "02/05/2027",
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116.0,
+          "qty_units": 348.0,
+          "qty_pouches": 116.0,
+          "dluo": "2026-11-05",
+          "mo_ref": "WH/MO/00769",
+          "lot_id": 1254,
+          "lot_name": "11/05/2026",
           "copacked": false,
           "needs_setup": false
         }
@@ -919,29 +870,18 @@
     {
       "date": "2026-05-06",
       "label": "WEDNESDAY",
-      "premix": [
-        {
-          "label": "Prep Mix Shortbread Plain",
-          "total_units": 100,
-          "products": [
-            "Butter Shortbread Log (Plain)"
-          ],
-          "mo_refs": [
-            "WH/MO/00787"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
+          "dough_type": "PIZZA",
+          "label": "Pack of 2 Pizza Dough (Sourdough)",
+          "cfg_name": "Pizza Dough (×2)",
           "unit": "kg",
-          "total_kg": 336.0,
-          "total_units": 480,
-          "mo_ref": "WH/MO/00756",
+          "total_kg": 198.8,
+          "total_units": 994,
+          "mo_ref": "WH/MO/00754",
           "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
+            "Pack of 2 Pizza Dough (Sourdough)"
           ]
         },
         {
@@ -971,12 +911,12 @@
       ],
       "shaping": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240,
-          "qty_units": 480,
-          "total_kg": 336.0,
-          "mo_ref": "WH/MO/00756",
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497,
+          "qty_units": 994,
+          "total_kg": 198.8,
+          "mo_ref": "WH/MO/00754",
           "d0": "2026-05-08"
         },
         {
@@ -1009,32 +949,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497.0,
-          "qty_units": 994.0,
-          "qty_pouches": 497.0,
-          "dluo": "2027-02-06",
-          "mo_ref": "WH/MO/00754",
-          "lot_id": 1209,
-          "lot_name": "02/06/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-11-06",
-          "mo_ref": "WH/MO/00769",
-          "lot_id": 1225,
-          "lot_name": "11/06/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
@@ -1089,30 +1003,9 @@
           "products": [
             "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
-        },
-        {
-          "dough_type": "SHORTBREAD",
-          "label": "Butter Shortbread Log (Plain)",
-          "cfg_name": "Butter Shortbread Log (Plain)",
-          "unit": "pcs",
-          "total_kg": 40.0,
-          "total_units": 100,
-          "mo_ref": "WH/MO/00787",
-          "products": [
-            "Butter Shortbread Log (Plain)"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "SBL-P-SGL",
-          "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 100,
-          "qty_units": 100,
-          "total_kg": 40.0,
-          "mo_ref": "WH/MO/00787",
-          "d0": "2026-05-08"
-        },
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
@@ -1134,11 +1027,11 @@
       ],
       "score_tasks": [
         {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240,
-          "qty_units": 480,
-          "mo_ref": "WH/MO/00756",
+          "action": "freeze_only",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497,
+          "qty_units": 994,
+          "mo_ref": "WH/MO/00754",
           "d0": "2026-05-08"
         }
       ],
@@ -1190,15 +1083,15 @@
       "premix": [],
       "mix": [
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
           "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00758",
+          "total_kg": 336.0,
+          "total_units": 480,
+          "mo_ref": "WH/MO/00756",
           "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
+            "Pack of 2 Country Rye Sourdough Loaf"
           ]
         },
         {
@@ -1228,12 +1121,12 @@
       ],
       "shaping": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00758",
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 240,
+          "qty_units": 480,
+          "total_kg": 336.0,
+          "mo_ref": "WH/MO/00756",
           "d0": "2026-05-10"
         },
         {
@@ -1267,27 +1160,14 @@
       ],
       "vacuuming": [
         {
-          "sku": "SBL-P-SGL",
-          "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 100.0,
-          "qty_units": 100.0,
-          "qty_pouches": 100.0,
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497.0,
+          "qty_units": 994.0,
+          "qty_pouches": 497.0,
           "dluo": "2027-02-08",
-          "mo_ref": "WH/MO/00787",
-          "lot_id": 1244,
-          "lot_name": "02/08/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240.0,
-          "qty_units": 480.0,
-          "qty_pouches": 480.0,
-          "dluo": "2027-02-08",
-          "mo_ref": "WH/MO/00756",
-          "lot_id": 1211,
+          "mo_ref": "WH/MO/00754",
+          "lot_id": 1255,
           "lot_name": "02/08/2027",
           "copacked": false,
           "needs_setup": false
@@ -1373,10 +1253,10 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00758",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 240,
+          "qty_units": 480,
+          "mo_ref": "WH/MO/00756",
           "d0": "2026-05-10"
         }
       ],
@@ -1515,14 +1395,14 @@
       ],
       "vacuuming": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 240.0,
+          "qty_units": 480.0,
+          "qty_pouches": 480.0,
           "dluo": "2027-02-10",
-          "mo_ref": "WH/MO/00758",
-          "lot_id": 1213,
+          "mo_ref": "WH/MO/00756",
+          "lot_id": 1256,
           "lot_name": "02/10/2027",
           "copacked": false,
           "needs_setup": false
