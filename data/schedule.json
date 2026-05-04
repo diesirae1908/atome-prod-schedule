@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T21:49:20Z",
+  "generated_at": "2026-05-04T23:52:17Z",
   "week_number": 16,
   "week_start": "2026-04-13",
   "week_end": "2026-05-24",
@@ -153,43 +153,8 @@
       "date": "2026-04-29",
       "label": "WEDNESDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00704",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Sesame Baguette",
-          "cfg_name": "Sesame Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00712",
-          "products": [
-            "Pack of 3 Sourdough Sesame Baguette"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00704",
-          "d0": "2026-05-01"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -243,27 +208,9 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00705",
           "d0": "2026-05-02"
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00712",
-          "d0": "2026-05-01"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00704",
-          "d0": "2026-05-01"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -337,47 +284,7 @@
           "d0": "2026-05-02"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2027-02-01",
-          "mo_ref": "WH/MO/00704",
-          "lot_id": 1134,
-          "lot_name": "02/01/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-02-01",
-          "mo_ref": "WH/MO/00712",
-          "lot_id": 1136,
-          "lot_name": "02/01/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 200.0,
-          "qty_units": 1600.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-10-11",
-          "mo_ref": "WH/MO/00736",
-          "lot_id": 1040,
-          "lot_name": "10/11/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-05-02",
@@ -663,6 +570,16 @@
           "mo_refs": [
             "WH/MO/00763"
           ]
+        },
+        {
+          "label": "Prep Mix Shortbread Plain",
+          "total_units": 100,
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ],
+          "mo_refs": [
+            "WH/MO/00793"
+          ]
         }
       ],
       "mix": [
@@ -797,8 +714,8 @@
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "cfg_name": "Wholewheat Loaf (×2)",
           "unit": "kg",
-          "total_kg": 276.0,
-          "total_units": 460,
+          "total_kg": 138.0,
+          "total_units": 230,
           "mo_ref": "WH/MO/00755",
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
@@ -815,15 +732,36 @@
           "products": [
             "Pack of 3 Multigrain Sourdough Baguettes"
           ]
+        },
+        {
+          "dough_type": "SHORTBREAD",
+          "label": "Butter Shortbread Log (Plain)",
+          "cfg_name": "Butter Shortbread Log (Plain)",
+          "unit": "pcs",
+          "total_kg": 40.0,
+          "total_units": 100,
+          "mo_ref": "WH/MO/00793",
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ]
         }
       ],
       "shaping": [
         {
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 100,
+          "qty_units": 100,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/00793",
+          "d0": "2026-05-06"
+        },
+        {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
-          "total_kg": 276.0,
+          "qty_packs": 115,
+          "qty_units": 230,
+          "total_kg": 138.0,
           "mo_ref": "WH/MO/00755",
           "d0": "2026-05-07"
         },
@@ -942,13 +880,26 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
+          "qty_packs": 115,
+          "qty_units": 230,
           "mo_ref": "WH/MO/00755",
           "d0": "2026-05-07"
         }
       ],
       "vacuuming": [
+        {
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": "2027-02-06",
+          "mo_ref": "WH/MO/00793",
+          "lot_id": 1271,
+          "lot_name": "02/06/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
@@ -1039,9 +990,9 @@
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230.0,
-          "qty_units": 460.0,
-          "qty_pouches": 460.0,
+          "qty_packs": 115.0,
+          "qty_units": 230.0,
+          "qty_pouches": 230.0,
           "dluo": "2027-02-07",
           "mo_ref": "WH/MO/00755",
           "lot_id": 1210,
