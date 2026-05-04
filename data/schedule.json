@@ -1,73 +1,10 @@
 {
-  "generated_at": "2026-05-03T21:30:11Z",
-  "week_number": 15,
-  "week_start": "2026-04-06",
-  "week_end": "2026-05-17",
+  "generated_at": "2026-05-04T16:37:14Z",
+  "week_number": 16,
+  "week_start": "2026-04-13",
+  "week_end": "2026-05-24",
   "odoo_url": "https://atome-bakery-sh.odoo.com",
   "days": [
-    {
-      "date": "2026-04-06",
-      "label": "MONDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-04-07",
-      "label": "TUESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-04-08",
-      "label": "WEDNESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-04-09",
-      "label": "THURSDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-04-10",
-      "label": "FRIDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-04-11",
-      "label": "SATURDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-04-12",
-      "label": "SUNDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
     {
       "date": "2026-04-13",
       "label": "MONDAY",
@@ -2143,8 +2080,42 @@
       "date": "2026-05-16",
       "label": "SATURDAY",
       "premix": [],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/00779",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00786",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
+        }
+      ],
       "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/00779",
+          "d0": "2026-05-18"
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
@@ -2198,9 +2169,50 @@
       "date": "2026-05-17",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 246.4,
+          "total_units": 352,
+          "mo_ref": "WH/MO/00780",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "total_kg": 246.4,
+          "mo_ref": "WH/MO/00780",
+          "d0": "2026-05-19"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00786",
+          "d0": "2026-05-18"
+        }
+      ],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/00779",
+          "d0": "2026-05-18"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -2229,6 +2241,119 @@
           "needs_setup": false
         }
       ]
+    },
+    {
+      "date": "2026-05-18",
+      "label": "MONDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "mo_ref": "WH/MO/00780",
+          "d0": "2026-05-19"
+        }
+      ],
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
+          "dluo": "2027-02-18",
+          "mo_ref": "WH/MO/00779",
+          "lot_id": 1236,
+          "lot_name": "02/18/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-02-18",
+          "mo_ref": "WH/MO/00786",
+          "lot_id": 1243,
+          "lot_name": "02/18/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "label": "TUESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176.0,
+          "qty_units": 352.0,
+          "qty_pouches": 352.0,
+          "dluo": "2027-02-19",
+          "mo_ref": "WH/MO/00780",
+          "lot_id": 1237,
+          "lot_name": "02/19/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "label": "WEDNESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-05-21",
+      "label": "THURSDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-05-22",
+      "label": "FRIDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-05-23",
+      "label": "SATURDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-05-24",
+      "label": "SUNDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
     }
   ]
 }
