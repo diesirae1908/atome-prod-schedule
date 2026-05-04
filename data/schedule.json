@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T20:12:24Z",
+  "generated_at": "2026-05-04T21:13:43Z",
   "week_number": 16,
   "week_start": "2026-04-13",
   "week_end": "2026-05-24",
@@ -731,10 +731,10 @@
           "qty_packs": 360.0,
           "qty_units": 360.0,
           "qty_pouches": 360.0,
-          "dluo": null,
+          "dluo": "2026-11-04",
           "mo_ref": "WH/MO/00753",
-          "lot_id": null,
-          "lot_name": null,
+          "lot_id": 1260,
+          "lot_name": "11/04/2026",
           "copacked": true,
           "needs_setup": false
         },
