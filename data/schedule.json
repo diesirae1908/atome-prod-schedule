@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T16:51:21Z",
+  "generated_at": "2026-05-05T18:59:11Z",
   "week_number": 16,
   "week_start": "2026-04-13",
   "week_end": "2026-05-24",
@@ -188,28 +188,7 @@
     {
       "date": "2026-05-03",
       "label": "SUNDAY",
-      "premix": [
-        {
-          "label": "Prep Mix Shortbread Plain",
-          "total_units": 50,
-          "products": [
-            "Butter Shortbread Log (Plain)"
-          ],
-          "mo_refs": [
-            "WH/MO/00787"
-          ]
-        },
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 348,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/00769"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [],
       "shaping": [],
       "score_tasks": [],
@@ -252,52 +231,9 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/00769",
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ]
-        },
-        {
-          "dough_type": "SHORTBREAD",
-          "label": "Butter Shortbread Log (Plain)",
-          "cfg_name": "Butter Shortbread Log (Plain)",
-          "unit": "pcs",
-          "total_kg": 20.0,
-          "total_units": 50,
-          "mo_ref": "WH/MO/00787",
-          "products": [
-            "Butter Shortbread Log (Plain)"
-          ]
         }
       ],
-      "shaping": [
-        {
-          "sku": "SBL-P-SGL",
-          "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 50,
-          "qty_units": 50,
-          "total_kg": 20.0,
-          "mo_ref": "WH/MO/00787",
-          "d0": "2026-05-05"
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00769",
-          "d0": "2026-05-05"
-        }
-      ],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": [
         {
@@ -410,19 +346,6 @@
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "SBL-P-SGL",
-          "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 50.0,
-          "qty_units": 50.0,
-          "qty_pouches": 50.0,
-          "dluo": "2027-02-05",
-          "mo_ref": "WH/MO/00787",
-          "lot_id": 1257,
-          "lot_name": "02/05/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "4-CHLAV2P",
           "name": "Pack of 2 Chocolate Lava Cakes",
           "qty_packs": 100.0,
@@ -462,19 +385,6 @@
           "needs_setup": true
         },
         {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-11-05",
-          "mo_ref": "WH/MO/00769",
-          "lot_id": 1254,
-          "lot_name": "11/05/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "4-CHTWI4P",
           "name": "Pack of 4 Chocolate Twists",
           "qty_packs": 100.0,
@@ -508,15 +418,15 @@
       "premix": [],
       "mix": [
         {
-          "dough_type": "PIZZA",
-          "label": "Pack of 2 Pizza Dough (Sourdough)",
-          "cfg_name": "Pizza Dough (×2)",
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
           "unit": "kg",
-          "total_kg": 198.8,
-          "total_units": 994,
-          "mo_ref": "WH/MO/00754",
+          "total_kg": 336.0,
+          "total_units": 480,
+          "mo_ref": "WH/MO/00757",
           "products": [
-            "Pack of 2 Pizza Dough (Sourdough)"
+            "Pack of 2 Country Rye Sourdough Loaf"
           ]
         },
         {
@@ -546,12 +456,12 @@
       ],
       "shaping": [
         {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "total_kg": 198.8,
-          "mo_ref": "WH/MO/00754",
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 240,
+          "qty_units": 480,
+          "total_kg": 336.0,
+          "mo_ref": "WH/MO/00757",
           "d0": "2026-05-08"
         },
         {
@@ -629,15 +539,15 @@
       ],
       "mix": [
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
+          "dough_type": "PIZZA",
+          "label": "Pack of 2 Pizza Dough (Sourdough)",
+          "cfg_name": "Pizza Dough (×2)",
           "unit": "kg",
-          "total_kg": 336.0,
-          "total_units": 480,
-          "mo_ref": "WH/MO/00757",
+          "total_kg": 198.8,
+          "total_units": 994,
+          "mo_ref": "WH/MO/00754",
           "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
+            "Pack of 2 Pizza Dough (Sourdough)"
           ]
         },
         {
@@ -655,12 +565,12 @@
       ],
       "shaping": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240,
-          "qty_units": 480,
-          "total_kg": 336.0,
-          "mo_ref": "WH/MO/00757",
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497,
+          "qty_units": 994,
+          "total_kg": 198.8,
+          "mo_ref": "WH/MO/00754",
           "d0": "2026-05-09"
         },
         {
@@ -675,11 +585,11 @@
       ],
       "score_tasks": [
         {
-          "action": "freeze_only",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "mo_ref": "WH/MO/00754",
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 240,
+          "qty_units": 480,
+          "mo_ref": "WH/MO/00757",
           "d0": "2026-05-08"
         }
       ],
@@ -798,24 +708,24 @@
       ],
       "score_tasks": [
         {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240,
-          "qty_units": 480,
-          "mo_ref": "WH/MO/00757",
+          "action": "freeze_only",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497,
+          "qty_units": 994,
+          "mo_ref": "WH/MO/00754",
           "d0": "2026-05-09"
         }
       ],
       "vacuuming": [
         {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497.0,
-          "qty_units": 994.0,
-          "qty_pouches": 497.0,
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 240.0,
+          "qty_units": 480.0,
+          "qty_pouches": 480.0,
           "dluo": "2027-02-08",
-          "mo_ref": "WH/MO/00754",
-          "lot_id": 1255,
+          "mo_ref": "WH/MO/00757",
+          "lot_id": 1211,
           "lot_name": "02/08/2027",
           "copacked": false,
           "needs_setup": false
@@ -910,14 +820,14 @@
       ],
       "vacuuming": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240.0,
-          "qty_units": 480.0,
-          "qty_pouches": 480.0,
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497.0,
+          "qty_units": 994.0,
+          "qty_pouches": 497.0,
           "dluo": "2027-02-09",
-          "mo_ref": "WH/MO/00757",
-          "lot_id": 1212,
+          "mo_ref": "WH/MO/00754",
+          "lot_id": 1277,
           "lot_name": "02/09/2027",
           "copacked": false,
           "needs_setup": false
