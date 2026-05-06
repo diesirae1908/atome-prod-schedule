@@ -65,6 +65,13 @@ const PRODUCT_MOP_MAP = {
   "Pack of 3 Pain au Chocolat":                    "pac",
   "Pack of 3 Croissant":                           "pac",
   "Pack of 3 Liège Waffle":                        "waffle",
+
+  // ── Additional Odoo name variants (plural / suffix forms) ────────────────
+  "Pack of 3 Multigrain Sourdough Baguettes":                "multigrain-baguette",
+  "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)": "wholewheat",
+  "Pack of 2 Pizza Dough (Sourdough)":                       "pizza",
+  "Pack of 3 Pain au Chocolat (Chocolate Croissant)":        "pac",
+  "Pack of 3 Liege Waffle":                                  "waffle",
 };
 
 // Array of all MOPs
