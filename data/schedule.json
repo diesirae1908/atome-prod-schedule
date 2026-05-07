@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T15:18:07Z",
+  "generated_at": "2026-05-07T17:55:45Z",
   "week_number": 16,
   "week_start": "2026-04-13",
   "week_end": "2026-05-24",
@@ -591,9 +591,9 @@
         {
           "sku": "1-CRB8P-SGL",
           "name": "Pack of 8 Mini croissants",
-          "qty_packs": 150.0,
-          "qty_units": 1200.0,
-          "qty_pouches": 150.0,
+          "qty_packs": 160.0,
+          "qty_units": 1280.0,
+          "qty_pouches": 160.0,
           "dluo": "2027-01-13",
           "mo_ref": "WH/MO/00802",
           "lot_id": 1011,
@@ -620,18 +620,6 @@
       ],
       "mix": [
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 336.0,
-          "total_units": 480,
-          "mo_ref": "WH/MO/00756",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
           "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
           "cfg_name": "Trad. Baguette (×3)",
@@ -657,15 +645,6 @@
         }
       ],
       "shaping": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240,
-          "qty_units": 480,
-          "total_kg": 336.0,
-          "mo_ref": "WH/MO/00756",
-          "d0": "2026-05-10"
-        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
@@ -819,16 +798,7 @@
           "d0": "2026-05-10"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240,
-          "qty_units": 480,
-          "mo_ref": "WH/MO/00756",
-          "d0": "2026-05-10"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": [
         {
           "sku": "PIZ2-SGL",
@@ -841,6 +811,19 @@
           "lot_id": 1277,
           "lot_name": "02/09/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 240.0,
+          "qty_units": 720.0,
+          "qty_pouches": 240.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00803",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
           "needs_setup": false
         },
         {
@@ -896,16 +879,6 @@
           ],
           "mo_refs": [
             "WH/MO/00775"
-          ]
-        },
-        {
-          "label": "MG Grain Soak",
-          "total_units": 360,
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ],
-          "mo_refs": [
-            "WH/MO/00781"
           ]
         },
         {
@@ -998,19 +971,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 240.0,
-          "qty_units": 480.0,
-          "qty_pouches": 480.0,
-          "dluo": "2027-02-10",
-          "mo_ref": "WH/MO/00756",
-          "lot_id": 1256,
-          "lot_name": "02/10/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
           "qty_packs": 208.0,
@@ -1034,6 +994,19 @@
           "lot_id": 1222,
           "lot_name": "02/10/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 200.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00804",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
           "needs_setup": false
         }
       ]
@@ -1077,15 +1050,15 @@
           ]
         },
         {
-          "dough_type": "MG",
-          "label": "Pack of 3 Multigrain Sourdough Baguettes",
-          "cfg_name": "Multigrain Baguette (×3)",
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
           "unit": "kg",
-          "total_kg": 135.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00781",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00783",
           "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
+            "Pack of 3 Traditional Sourdough Baguette"
           ]
         },
         {
@@ -1155,6 +1128,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 240.0,
+          "qty_units": 720.0,
+          "qty_pouches": 240.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00808",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117.0,
@@ -1166,13 +1152,47 @@
           "lot_name": "02/11/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 160.0,
+          "qty_units": 1280.0,
+          "qty_pouches": 160.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00809",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
     {
       "date": "2026-05-12",
       "label": "TUESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/00781"
+          ]
+        },
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 414,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/00806"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "VIENNOISE",
@@ -1231,12 +1251,12 @@
           "d0": "2026-05-13"
         },
         {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 135.0,
-          "mo_ref": "WH/MO/00781",
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00783",
           "d0": "2026-05-13"
         }
       ],
@@ -1295,7 +1315,18 @@
     {
       "date": "2026-05-13",
       "label": "WEDNESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Brioche Buns",
+          "total_units": 348,
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ],
+          "mo_refs": [
+            "WH/MO/00807"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "PIZZA",
@@ -1310,15 +1341,27 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
           "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00783",
+          "total_kg": 135.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00781",
           "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ]
+        },
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 29.0,
+          "total_units": 414,
+          "mo_ref": "WH/MO/00806",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
         }
       ],
@@ -1339,6 +1382,15 @@
           "qty_units": 360,
           "total_kg": 135.0,
           "mo_ref": "WH/MO/00782",
+          "d0": "2026-05-14"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
+          "mo_ref": "WH/MO/00806",
           "d0": "2026-05-14"
         }
       ],
@@ -1380,14 +1432,14 @@
           "needs_setup": false
         },
         {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
           "dluo": "2027-02-13",
-          "mo_ref": "WH/MO/00781",
-          "lot_id": 1238,
+          "mo_ref": "WH/MO/00783",
+          "lot_id": 1285,
           "lot_name": "02/13/2027",
           "copacked": false,
           "needs_setup": false
@@ -1422,6 +1474,18 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 348,
+          "mo_ref": "WH/MO/00807",
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ]
         }
       ],
       "shaping": [
@@ -1435,12 +1499,21 @@
           "d0": "2026-05-16"
         },
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00783",
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00807",
+          "d0": "2026-05-15"
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 135.0,
+          "mo_ref": "WH/MO/00781",
           "d0": "2026-05-15"
         }
       ],
@@ -1478,6 +1551,19 @@
           "mo_ref": "WH/MO/00782",
           "lot_id": 1239,
           "lot_name": "02/14/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
+          "dluo": "2026-11-14",
+          "mo_ref": "WH/MO/00806",
+          "lot_id": 1282,
+          "lot_name": "11/14/2026",
           "copacked": false,
           "needs_setup": false
         }
@@ -1545,6 +1631,19 @@
       ],
       "vacuuming": [
         {
+          "sku": "RAV-SPRI-330",
+          "name": "Fresh Ravioli Ricotta Spinach (330g)",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00805",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "PIZ2-SGL",
           "name": "Pack of 2 Pizza Dough (Sourdough)",
           "qty_packs": 497.0,
@@ -1558,14 +1657,27 @@
           "needs_setup": false
         },
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116.0,
+          "qty_units": 348.0,
+          "qty_pouches": 116.0,
+          "dluo": "2026-11-15",
+          "mo_ref": "WH/MO/00807",
+          "lot_id": 1283,
+          "lot_name": "11/15/2026",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
           "dluo": "2027-02-15",
-          "mo_ref": "WH/MO/00783",
-          "lot_id": 1248,
+          "mo_ref": "WH/MO/00781",
+          "lot_id": 1284,
           "lot_name": "02/15/2027",
           "copacked": false,
           "needs_setup": false
