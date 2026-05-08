@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T17:53:00Z",
+  "generated_at": "2026-05-08T18:56:15Z",
   "week_number": 16,
   "week_start": "2026-04-13",
   "week_end": "2026-05-24",
@@ -247,18 +247,7 @@
     {
       "date": "2026-05-07",
       "label": "THURSDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 414,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/00770"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "PIZZA",
@@ -335,30 +324,9 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
-        },
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 29.0,
-          "total_units": 414,
-          "mo_ref": "WH/MO/00770",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 29.0,
-          "mo_ref": "WH/MO/00770",
-          "d0": "2026-05-09"
-        },
         {
           "sku": "PO3P-SGL",
           "name": "Pack of 3 Sourdough Poppy Seed Baguette",
@@ -527,19 +495,6 @@
           "dluo": "2026-11-09",
           "mo_ref": "WH/MO/00799",
           "lot_id": 1279,
-          "lot_name": "11/09/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
-          "dluo": "2026-11-09",
-          "mo_ref": "WH/MO/00770",
-          "lot_id": 1281,
           "lot_name": "11/09/2026",
           "copacked": false,
           "needs_setup": false
