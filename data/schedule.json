@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T18:56:15Z",
+  "generated_at": "2026-05-08T21:01:23Z",
   "week_number": 16,
   "week_start": "2026-04-13",
   "week_end": "2026-05-24",
@@ -362,6 +362,19 @@
           "needs_setup": false
         },
         {
+          "sku": "4-PFP-GCSP2P",
+          "name": "Pack of 2 Spinach Goat Cheese Puff Pastries",
+          "qty_packs": 142.0,
+          "qty_units": 142.0,
+          "qty_pouches": 142.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00832",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": true
+        },
+        {
           "sku": "2-GCKVGN2P-SGL",
           "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
           "qty_packs": 126.0,
@@ -371,6 +384,32 @@
           "mo_ref": "WH/MO/00790",
           "lot_id": 1318,
           "lot_name": "11/07/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "4-CHTWI4P",
+          "name": "Pack of 4 Chocolate Twists",
+          "qty_packs": 200.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00833",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": true
+        },
+        {
+          "sku": "PFP-SGL",
+          "name": "Puff Pastry",
+          "qty_packs": 264.0,
+          "qty_units": 264.0,
+          "qty_pouches": 264.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00834",
+          "lot_id": null,
+          "lot_name": null,
           "copacked": true,
           "needs_setup": false
         }
