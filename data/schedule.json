@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T23:43:38Z",
+  "generated_at": "2026-05-11T23:54:08Z",
   "week_number": 17,
   "week_start": "2026-04-20",
   "week_end": "2026-05-31",
@@ -330,18 +330,6 @@
       ],
       "mix": [
         {
-          "dough_type": "WW",
-          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "cfg_name": "Wholewheat Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 276.0,
-          "total_units": 460,
-          "mo_ref": "WH/MO/00773",
-          "products": [
-            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
-          ]
-        },
-        {
           "dough_type": "TRAD",
           "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "cfg_name": "Cheese Baguette",
@@ -375,15 +363,6 @@
           "total_kg": 52.2,
           "mo_ref": "WH/MO/00789",
           "d0": "2026-05-12"
-        },
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
-          "total_kg": 276.0,
-          "mo_ref": "WH/MO/00773",
-          "d0": "2026-05-13"
         },
         {
           "sku": "TR3P-SGL",
@@ -499,15 +478,15 @@
           ]
         },
         {
-          "dough_type": "CIABATTA",
-          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "cfg_name": "Ciabatta (×3)",
+          "dough_type": "WW",
+          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "cfg_name": "Wholewheat Loaf (×2)",
           "unit": "kg",
-          "total_kg": 239.4,
-          "total_units": 798,
-          "mo_ref": "WH/MO/00774",
+          "total_kg": 138.0,
+          "total_units": 230,
+          "mo_ref": "WH/MO/00773",
           "products": [
-            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
+            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
           ]
         },
         {
@@ -525,6 +504,15 @@
       ],
       "shaping": [
         {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 115,
+          "qty_units": 230,
+          "total_kg": 138.0,
+          "mo_ref": "WH/MO/00773",
+          "d0": "2026-05-14"
+        },
+        {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
           "qty_packs": 100,
@@ -532,15 +520,6 @@
           "total_kg": 40.0,
           "mo_ref": "WH/MO/00772",
           "d0": "2026-05-13"
-        },
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 266,
-          "qty_units": 798,
-          "total_kg": 239.4,
-          "mo_ref": "WH/MO/00774",
-          "d0": "2026-05-14"
         },
         {
           "sku": "CH-SGL",
@@ -552,16 +531,7 @@
           "d0": "2026-05-13"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
-          "mo_ref": "WH/MO/00773",
-          "d0": "2026-05-13"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": [
         {
           "sku": "BR-SGL",
@@ -621,15 +591,15 @@
       ],
       "mix": [
         {
-          "dough_type": "PIZZA",
-          "label": "Pack of 2 Pizza Dough (Sourdough)",
-          "cfg_name": "Pizza Dough (×2)",
+          "dough_type": "CIABATTA",
+          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "cfg_name": "Ciabatta (×3)",
           "unit": "kg",
-          "total_kg": 198.8,
-          "total_units": 994,
-          "mo_ref": "WH/MO/00776",
+          "total_kg": 239.4,
+          "total_units": 798,
+          "mo_ref": "WH/MO/00774",
           "products": [
-            "Pack of 2 Pizza Dough (Sourdough)"
+            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
           ]
         },
         {
@@ -659,12 +629,12 @@
       ],
       "shaping": [
         {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "total_kg": 198.8,
-          "mo_ref": "WH/MO/00776",
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 266,
+          "qty_units": 798,
+          "total_kg": 239.4,
+          "mo_ref": "WH/MO/00774",
           "d0": "2026-05-15"
         },
         {
@@ -688,28 +658,15 @@
       ],
       "score_tasks": [
         {
-          "action": "freeze_only",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 266,
-          "qty_units": 798,
-          "mo_ref": "WH/MO/00774",
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 115,
+          "qty_units": 230,
+          "mo_ref": "WH/MO/00773",
           "d0": "2026-05-14"
         }
       ],
       "vacuuming": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230.0,
-          "qty_units": 460.0,
-          "qty_pouches": 460.0,
-          "dluo": "2027-02-13",
-          "mo_ref": "WH/MO/00773",
-          "lot_id": 1228,
-          "lot_name": "02/13/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
@@ -755,15 +712,15 @@
       ],
       "mix": [
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
+          "dough_type": "PIZZA",
+          "label": "Pack of 2 Pizza Dough (Sourdough)",
+          "cfg_name": "Pizza Dough (×2)",
           "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00777",
+          "total_kg": 198.8,
+          "total_units": 994,
+          "mo_ref": "WH/MO/00776",
           "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
+            "Pack of 2 Pizza Dough (Sourdough)"
           ]
         },
         {
@@ -793,12 +750,12 @@
       ],
       "shaping": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00777",
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497,
+          "qty_units": 994,
+          "total_kg": 198.8,
+          "mo_ref": "WH/MO/00776",
           "d0": "2026-05-16"
         },
         {
@@ -823,23 +780,23 @@
       "score_tasks": [
         {
           "action": "freeze_only",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "mo_ref": "WH/MO/00776",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 266,
+          "qty_units": 798,
+          "mo_ref": "WH/MO/00774",
           "d0": "2026-05-15"
         }
       ],
       "vacuuming": [
         {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 266.0,
-          "qty_units": 798.0,
-          "qty_pouches": 266.0,
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 115.0,
+          "qty_units": 230.0,
+          "qty_pouches": 230.0,
           "dluo": "2027-02-14",
-          "mo_ref": "WH/MO/00774",
-          "lot_id": 1325,
+          "mo_ref": "WH/MO/00773",
+          "lot_id": 1229,
           "lot_name": "02/14/2027",
           "copacked": false,
           "needs_setup": false
@@ -956,11 +913,11 @@
       ],
       "score_tasks": [
         {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00777",
+          "action": "freeze_only",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497,
+          "qty_units": 994,
+          "mo_ref": "WH/MO/00776",
           "d0": "2026-05-16"
         }
       ],
@@ -979,19 +936,6 @@
           "needs_setup": false
         },
         {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497.0,
-          "qty_units": 994.0,
-          "qty_pouches": 497.0,
-          "dluo": "2027-02-15",
-          "mo_ref": "WH/MO/00776",
-          "lot_id": 1233,
-          "lot_name": "02/15/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
           "qty_packs": 116.0,
@@ -1001,6 +945,19 @@
           "mo_ref": "WH/MO/00807",
           "lot_id": 1283,
           "lot_name": "11/15/2026",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 266.0,
+          "qty_units": 798.0,
+          "qty_pouches": 266.0,
+          "dluo": "2027-02-15",
+          "mo_ref": "WH/MO/00774",
+          "lot_id": 1338,
+          "lot_name": "02/15/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1114,14 +1071,14 @@
       ],
       "vacuuming": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497.0,
+          "qty_units": 994.0,
+          "qty_pouches": 497.0,
           "dluo": "2027-02-16",
-          "mo_ref": "WH/MO/00777",
-          "lot_id": 1234,
+          "mo_ref": "WH/MO/00776",
+          "lot_id": 1339,
           "lot_name": "02/16/2027",
           "copacked": false,
           "needs_setup": false
