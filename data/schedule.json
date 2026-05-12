@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T22:21:44Z",
+  "generated_at": "2026-05-12T22:26:52Z",
   "week_number": 17,
   "week_start": "2026-04-20",
   "week_end": "2026-05-31",
@@ -909,10 +909,10 @@
           "qty_packs": 240.0,
           "qty_units": 240.0,
           "qty_pouches": 240.0,
-          "dluo": null,
+          "dluo": "2026-11-11",
           "mo_ref": "WH/MO/00838",
-          "lot_id": null,
-          "lot_name": null,
+          "lot_id": 694,
+          "lot_name": "11/11/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -1035,10 +1035,10 @@
           "qty_packs": 200.0,
           "qty_units": 1600.0,
           "qty_pouches": 200.0,
-          "dluo": null,
+          "dluo": "2026-10-11",
           "mo_ref": "WH/MO/00839",
-          "lot_id": null,
-          "lot_name": null,
+          "lot_id": 1040,
+          "lot_name": "10/11/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -1281,18 +1281,6 @@
       ],
       "mix": [
         {
-          "dough_type": "CIABATTA",
-          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "cfg_name": "Ciabatta (×3)",
-          "unit": "kg",
-          "total_kg": 239.4,
-          "total_units": 798,
-          "mo_ref": "WH/MO/00820",
-          "products": [
-            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
-          ]
-        },
-        {
           "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
           "cfg_name": "Trad. Baguette (×3)",
@@ -1315,16 +1303,28 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
+        },
+        {
+          "dough_type": "PIZZA",
+          "label": "Pack of 2 Pizza Dough (Sourdough)",
+          "cfg_name": "Pizza Dough (×2)",
+          "unit": "kg",
+          "total_kg": 198.8,
+          "total_units": 994,
+          "mo_ref": "WH/MO/00840",
+          "products": [
+            "Pack of 2 Pizza Dough (Sourdough)"
+          ]
         }
       ],
       "shaping": [
         {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 266,
-          "qty_units": 798,
-          "total_kg": 239.4,
-          "mo_ref": "WH/MO/00820",
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497,
+          "qty_units": 994,
+          "total_kg": 198.8,
+          "mo_ref": "WH/MO/00840",
           "d0": "2026-05-22"
         },
         {
@@ -1483,10 +1483,10 @@
       "score_tasks": [
         {
           "action": "freeze_only",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 266,
-          "qty_units": 798,
-          "mo_ref": "WH/MO/00820",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497,
+          "qty_units": 994,
+          "mo_ref": "WH/MO/00840",
           "d0": "2026-05-22"
         }
       ],
@@ -1614,14 +1614,14 @@
       ],
       "vacuuming": [
         {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 266.0,
-          "qty_units": 798.0,
-          "qty_pouches": 266.0,
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497.0,
+          "qty_units": 994.0,
+          "qty_pouches": 497.0,
           "dluo": "2027-02-22",
-          "mo_ref": "WH/MO/00820",
-          "lot_id": 1299,
+          "mo_ref": "WH/MO/00840",
+          "lot_id": 1341,
           "lot_name": "02/22/2027",
           "copacked": false,
           "needs_setup": false
