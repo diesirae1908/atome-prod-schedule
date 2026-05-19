@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T15:29:48Z",
+  "generated_at": "2026-05-19T16:38:14Z",
   "week_number": 18,
   "week_start": "2026-04-27",
   "week_end": "2026-06-07",
@@ -386,10 +386,10 @@
           "qty_packs": 200.0,
           "qty_units": 600.0,
           "qty_pouches": 200.0,
-          "dluo": null,
+          "dluo": "2026-12-10",
           "mo_ref": "WH/MO/00843",
-          "lot_id": null,
-          "lot_name": null,
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
           "copacked": true,
           "needs_setup": false
         },
@@ -449,26 +449,26 @@
           ]
         },
         {
-          "dough_type": "PIZZA",
-          "label": "Pack of 2 Pizza Dough (Sourdough)",
-          "cfg_name": "Pizza Dough (×2)",
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
           "unit": "kg",
-          "total_kg": 198.8,
-          "total_units": 994,
-          "mo_ref": "WH/MO/00840",
+          "total_kg": 224.0,
+          "total_units": 320,
+          "mo_ref": "WH/MO/00841",
           "products": [
-            "Pack of 2 Pizza Dough (Sourdough)"
+            "Pack of 2 Country Rye Sourdough Loaf"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "total_kg": 198.8,
-          "mo_ref": "WH/MO/00840",
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160,
+          "qty_units": 320,
+          "total_kg": 224.0,
+          "mo_ref": "WH/MO/00841",
           "d0": "2026-05-22"
         },
         {
@@ -526,8 +526,8 @@
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "cfg_name": "Wholewheat Loaf (×2)",
           "unit": "kg",
-          "total_kg": 276.0,
-          "total_units": 460,
+          "total_kg": 183.6,
+          "total_units": 306,
           "mo_ref": "WH/MO/00821",
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
@@ -562,9 +562,9 @@
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
-          "total_kg": 276.0,
+          "qty_packs": 153,
+          "qty_units": 306,
+          "total_kg": 183.6,
           "mo_ref": "WH/MO/00821",
           "d0": "2026-05-23"
         },
@@ -589,11 +589,11 @@
       ],
       "score_tasks": [
         {
-          "action": "freeze_only",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "mo_ref": "WH/MO/00840",
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160,
+          "qty_units": 320,
+          "mo_ref": "WH/MO/00841",
           "d0": "2026-05-22"
         }
       ],
@@ -656,26 +656,26 @@
       ],
       "mix": [
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
+          "dough_type": "PIZZA",
+          "label": "Pack of 2 Pizza Dough (Sourdough)",
+          "cfg_name": "Pizza Dough (×2)",
           "unit": "kg",
-          "total_kg": 224.0,
-          "total_units": 320,
-          "mo_ref": "WH/MO/00841",
+          "total_kg": 198.8,
+          "total_units": 994,
+          "mo_ref": "WH/MO/00840",
           "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
+            "Pack of 2 Pizza Dough (Sourdough)"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "total_kg": 224.0,
-          "mo_ref": "WH/MO/00841",
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497,
+          "qty_units": 994,
+          "total_kg": 198.8,
+          "mo_ref": "WH/MO/00840",
           "d0": "2026-05-24"
         },
         {
@@ -692,22 +692,22 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
+          "qty_packs": 153,
+          "qty_units": 306,
           "mo_ref": "WH/MO/00821",
           "d0": "2026-05-23"
         }
       ],
       "vacuuming": [
         {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497.0,
-          "qty_units": 994.0,
-          "qty_pouches": 497.0,
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160.0,
+          "qty_units": 320.0,
+          "qty_pouches": 320.0,
           "dluo": "2027-02-22",
-          "mo_ref": "WH/MO/00840",
-          "lot_id": 1341,
+          "mo_ref": "WH/MO/00841",
+          "lot_id": 1347,
           "lot_name": "02/22/2027",
           "copacked": false,
           "needs_setup": false
@@ -803,11 +803,11 @@
       ],
       "score_tasks": [
         {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "mo_ref": "WH/MO/00841",
+          "action": "freeze_only",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497,
+          "qty_units": 994,
+          "mo_ref": "WH/MO/00840",
           "d0": "2026-05-24"
         }
       ],
@@ -815,9 +815,9 @@
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230.0,
-          "qty_units": 460.0,
-          "qty_pouches": 460.0,
+          "qty_packs": 153.0,
+          "qty_units": 306.0,
+          "qty_pouches": 306.0,
           "dluo": "2027-02-23",
           "mo_ref": "WH/MO/00821",
           "lot_id": 1300,
@@ -915,14 +915,14 @@
       ],
       "vacuuming": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160.0,
-          "qty_units": 320.0,
-          "qty_pouches": 320.0,
+          "sku": "PIZ2-SGL",
+          "name": "Pack of 2 Pizza Dough (Sourdough)",
+          "qty_packs": 497.0,
+          "qty_units": 994.0,
+          "qty_pouches": 497.0,
           "dluo": "2027-02-24",
-          "mo_ref": "WH/MO/00841",
-          "lot_id": 1343,
+          "mo_ref": "WH/MO/00840",
+          "lot_id": 1348,
           "lot_name": "02/24/2027",
           "copacked": false,
           "needs_setup": false
