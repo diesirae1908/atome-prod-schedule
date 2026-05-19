@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T23:03:48Z",
+  "generated_at": "2026-05-19T23:21:01Z",
   "week_number": 18,
   "week_start": "2026-04-27",
   "week_end": "2026-06-07",
@@ -189,31 +189,8 @@
       "date": "2026-05-17",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 247.8,
-          "total_units": 354,
-          "mo_ref": "WH/MO/00780",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 177,
-          "qty_units": 354,
-          "total_kg": 247.8,
-          "mo_ref": "WH/MO/00780",
-          "d0": "2026-05-19"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -234,16 +211,7 @@
       ],
       "mix": [],
       "shaping": [],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 177,
-          "qty_units": 354,
-          "mo_ref": "WH/MO/00780",
-          "d0": "2026-05-19"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -310,19 +278,6 @@
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 177.0,
-          "qty_units": 354.0,
-          "qty_pouches": 354.0,
-          "dluo": "2027-02-19",
-          "mo_ref": "WH/MO/00780",
-          "lot_id": 1237,
-          "lot_name": "02/19/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
           "qty_packs": 200.0,
@@ -332,19 +287,6 @@
           "mo_ref": "WH/MO/00843",
           "lot_id": 959,
           "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-MCR6P-SGL",
-          "name": "Pack of 6 macarons (mixed flavours)",
-          "qty_packs": 62.0,
-          "qty_units": 372.0,
-          "qty_pouches": 62.0,
-          "dluo": "2026-06-20",
-          "mo_ref": "WH/MO/00845",
-          "lot_id": 950,
-          "lot_name": "06/20/2026",
           "copacked": true,
           "needs_setup": false
         },
@@ -790,7 +732,18 @@
     {
       "date": "2026-05-24",
       "label": "SUNDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Braided Brioche",
+          "total_units": 116,
+          "products": [
+            "Brioche (Pastry)"
+          ],
+          "mo_refs": [
+            "WH/MO/00858"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -869,6 +822,16 @@
           ]
         },
         {
+          "label": "Prep mix Viennoise",
+          "total_units": 200,
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ],
+          "mo_refs": [
+            "WH/MO/00859"
+          ]
+        },
+        {
           "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
@@ -903,9 +866,30 @@
           "products": [
             "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
+        },
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Brioche (Pastry)",
+          "cfg_name": "Braided Brioche",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 116,
+          "mo_ref": "WH/MO/00858",
+          "products": [
+            "Brioche (Pastry)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116,
+          "qty_units": 116,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00858",
+          "d0": "2026-05-26"
+        },
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
@@ -955,6 +939,16 @@
       "date": "2026-05-26",
       "label": "TUESDAY",
       "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 414,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/00860"
+          ]
+        },
         {
           "label": "Prep mix Waffles",
           "total_units": 624,
@@ -1062,6 +1056,18 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "VIENNOISE",
+          "label": "Pack of 2 Viennoise (Brioche Baguette)",
+          "cfg_name": "Viennoise (×2)",
+          "unit": "kg",
+          "total_kg": 40.0,
+          "total_units": 200,
+          "mo_ref": "WH/MO/00859",
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ]
         }
       ],
       "shaping": [
@@ -1102,6 +1108,15 @@
           "d0": "2026-05-28"
         },
         {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100,
+          "qty_units": 200,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/00859",
+          "d0": "2026-05-27"
+        },
+        {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
           "qty_packs": 208,
@@ -1131,6 +1146,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116.0,
+          "qty_units": 116.0,
+          "qty_pouches": 116.0,
+          "dluo": "2026-11-26",
+          "mo_ref": "WH/MO/00858",
+          "lot_id": 1364,
+          "lot_name": "11/26/2026",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -1188,6 +1216,18 @@
           "products": [
             "Pack of 3 Liege Waffle"
           ]
+        },
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 29.0,
+          "total_units": 414,
+          "mo_ref": "WH/MO/00860",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
         }
       ],
       "shaping": [
@@ -1199,6 +1239,15 @@
           "total_kg": 62.4,
           "mo_ref": "WH/MO/00817",
           "d0": "2026-05-27"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
+          "mo_ref": "WH/MO/00860",
+          "d0": "2026-05-28"
         },
         {
           "sku": "TR3P-SGL",
@@ -1263,6 +1312,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-11-27",
+          "mo_ref": "WH/MO/00859",
+          "lot_id": 729,
+          "lot_name": "11/27/2026",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
@@ -1372,6 +1434,19 @@
           "mo_ref": "WH/MO/00849",
           "lot_id": 1356,
           "lot_name": "02/28/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
+          "dluo": "2026-11-28",
+          "mo_ref": "WH/MO/00860",
+          "lot_id": 1367,
+          "lot_name": "11/28/2026",
           "copacked": false,
           "needs_setup": false
         },
