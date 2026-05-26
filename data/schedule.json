@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T16:37:58Z",
+  "generated_at": "2026-05-26T16:57:57Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -188,55 +188,9 @@
     {
       "date": "2026-05-24",
       "label": "SUNDAY",
-      "premix": [
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 348,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/00864"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00823",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "cfg_name": "Poppy Seed Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00847",
-          "products": [
-            "Pack of 3 Sourdough Poppy Seed Baguette"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00823",
-          "d0": "2026-05-26"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -289,30 +243,9 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/00864",
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00864",
-          "d0": "2026-05-26"
-        },
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
@@ -321,27 +254,9 @@
           "total_kg": 239.4,
           "mo_ref": "WH/MO/00846",
           "d0": "2026-05-27"
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00847",
-          "d0": "2026-05-26"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00823",
-          "d0": "2026-05-26"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -469,32 +384,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2027-02-26",
-          "mo_ref": "WH/MO/00823",
-          "lot_id": 1303,
-          "lot_name": "02/26/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-11-26",
-          "mo_ref": "WH/MO/00864",
-          "lot_id": 1402,
-          "lot_name": "11/26/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
           "qty_packs": 208.0,
@@ -504,19 +393,6 @@
           "mo_ref": "WH/MO/00816",
           "lot_id": 1293,
           "lot_name": "11/26/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-02-26",
-          "mo_ref": "WH/MO/00847",
-          "lot_id": 1352,
-          "lot_name": "02/26/2027",
           "copacked": false,
           "needs_setup": false
         }
