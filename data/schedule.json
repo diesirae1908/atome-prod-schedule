@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T17:16:47Z",
+  "generated_at": "2026-05-26T17:17:18Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -403,16 +403,6 @@
       "label": "WEDNESDAY",
       "premix": [
         {
-          "label": "Cut Cheese",
-          "total_units": 360,
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
-          ],
-          "mo_refs": [
-            "WH/MO/00854"
-          ]
-        },
-        {
           "label": "Prep mix Braided Brioche",
           "total_units": 116,
           "products": [
@@ -446,18 +436,6 @@
           "mo_ref": "WH/MO/00849",
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "cfg_name": "Cheese Baguette",
-          "unit": "kg",
-          "total_kg": 144.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00854",
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
         },
         {
@@ -591,7 +569,18 @@
     {
       "date": "2026-05-28",
       "label": "THURSDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Cut Cheese",
+          "total_units": 360,
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ],
+          "mo_refs": [
+            "WH/MO/00854"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -603,6 +592,18 @@
           "mo_ref": "WH/MO/00850",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "cfg_name": "Cheese Baguette",
+          "unit": "kg",
+          "total_kg": 144.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00854",
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
         },
         {
@@ -644,15 +645,6 @@
           "qty_units": 351,
           "total_kg": 122.8,
           "mo_ref": "WH/MO/00856",
-          "d0": "2026-05-29"
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360,
-          "qty_units": 360,
-          "total_kg": 144.0,
-          "mo_ref": "WH/MO/00854",
           "d0": "2026-05-29"
         }
       ],
@@ -735,6 +727,15 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00851",
           "d0": "2026-05-31"
+        },
+        {
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360,
+          "qty_units": 360,
+          "total_kg": 144.0,
+          "mo_ref": "WH/MO/00854",
+          "d0": "2026-05-30"
         }
       ],
       "score_tasks": [
@@ -783,19 +784,6 @@
           "dluo": "2027-02-28",
           "mo_ref": "WH/MO/00856",
           "lot_id": 1363,
-          "lot_name": "02/28/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-02-28",
-          "mo_ref": "WH/MO/00854",
-          "lot_id": 1404,
           "lot_name": "02/28/2027",
           "copacked": false,
           "needs_setup": false
@@ -851,6 +839,19 @@
           "dluo": "2027-02-28",
           "mo_ref": "WH/MO/00850",
           "lot_id": 1357,
+          "lot_name": "02/28/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-02-28",
+          "mo_ref": "WH/MO/00854",
+          "lot_id": 1404,
           "lot_name": "02/28/2027",
           "copacked": false,
           "needs_setup": false
