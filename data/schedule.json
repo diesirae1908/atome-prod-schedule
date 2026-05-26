@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T22:13:28Z",
+  "generated_at": "2026-05-26T23:51:28Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -1135,6 +1135,19 @@
           "lot_id": 1359,
           "lot_name": "03/02/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "2-GCKVGN2P-SGL",
+          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
+          "qty_packs": 126.0,
+          "qty_units": 252.0,
+          "qty_pouches": 126.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00884",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
           "needs_setup": false
         },
         {
