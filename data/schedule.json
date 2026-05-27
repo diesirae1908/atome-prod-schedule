@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T16:08:27Z",
+  "generated_at": "2026-05-27T20:32:06Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -219,16 +219,6 @@
       "label": "TUESDAY",
       "premix": [
         {
-          "label": "Prep mix PAC/CR",
-          "total_units": 414,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/00860"
-          ]
-        },
-        {
           "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
@@ -343,8 +333,8 @@
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "cfg_name": "Wholewheat Loaf (×2)",
           "unit": "kg",
-          "total_kg": 183.6,
-          "total_units": 306,
+          "total_kg": 276.0,
+          "total_units": 460,
           "mo_ref": "WH/MO/00849",
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
@@ -361,27 +351,15 @@
           "products": [
             "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
-        },
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 29.0,
-          "total_units": 414,
-          "mo_ref": "WH/MO/00860",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
         }
       ],
       "shaping": [
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 153,
-          "qty_units": 306,
-          "total_kg": 183.6,
+          "qty_packs": 230,
+          "qty_units": 460,
+          "total_kg": 276.0,
           "mo_ref": "WH/MO/00849",
           "d0": "2026-05-29"
         },
@@ -393,15 +371,6 @@
           "total_kg": 62.4,
           "mo_ref": "WH/MO/00817",
           "d0": "2026-05-27"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 29.0,
-          "mo_ref": "WH/MO/00860",
-          "d0": "2026-05-28"
         },
         {
           "sku": "TR3P-SGL",
@@ -527,8 +496,8 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 153,
-          "qty_units": 306,
+          "qty_packs": 230,
+          "qty_units": 460,
           "mo_ref": "WH/MO/00849",
           "d0": "2026-05-29"
         }
@@ -544,19 +513,6 @@
           "mo_ref": "WH/MO/00848",
           "lot_id": 1354,
           "lot_name": "02/28/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
-          "dluo": "2026-11-28",
-          "mo_ref": "WH/MO/00860",
-          "lot_id": 1367,
-          "lot_name": "11/28/2026",
           "copacked": false,
           "needs_setup": false
         },
@@ -640,9 +596,9 @@
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 153.0,
-          "qty_units": 306.0,
-          "qty_pouches": 306.0,
+          "qty_packs": 230.0,
+          "qty_units": 460.0,
+          "qty_pouches": 460.0,
           "dluo": "2027-02-28",
           "mo_ref": "WH/MO/00849",
           "lot_id": 1356,
