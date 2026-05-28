@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T22:37:23Z",
+  "generated_at": "2026-05-28T23:08:14Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -612,6 +612,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00909",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117.0,
@@ -709,6 +722,19 @@
           "lot_id": 1357,
           "lot_name": "02/28/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00910",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
           "needs_setup": false
         },
         {
@@ -843,6 +869,19 @@
           "lot_id": 1410,
           "lot_name": "03/01/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 200.0,
+          "qty_units": 1600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/00914",
+          "lot_id": 1011,
+          "lot_name": "01/13/2027",
+          "copacked": true,
           "needs_setup": false
         }
       ]
@@ -1135,6 +1174,19 @@
           "lot_name": "03/03/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 200.0,
+          "qty_units": 1600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-10-11",
+          "mo_ref": "WH/MO/00915",
+          "lot_id": 1040,
+          "lot_name": "10/11/2026",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1247,6 +1299,19 @@
           "needs_setup": false
         },
         {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 200.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/00913",
+          "lot_id": 694,
+          "lot_name": "11/11/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "CH-SGL",
           "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "qty_packs": 360.0,
@@ -1333,6 +1398,19 @@
           "lot_id": 1383,
           "lot_name": "03/05/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00916",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
           "needs_setup": false
         },
         {
@@ -1449,6 +1527,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00912",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117.0,
@@ -1556,6 +1647,19 @@
           "lot_id": 1385,
           "lot_name": "03/07/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00911",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
           "needs_setup": false
         },
         {
