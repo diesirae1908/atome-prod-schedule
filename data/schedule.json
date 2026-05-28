@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T22:30:13Z",
+  "generated_at": "2026-05-28T22:32:17Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -1831,7 +1831,18 @@
     {
       "date": "2026-06-10",
       "label": "WEDNESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Brioche Buns",
+          "total_units": 348,
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ],
+          "mo_refs": [
+            "WH/MO/00908"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "COUNTRY",
@@ -1990,6 +2001,18 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 348,
+          "mo_ref": "WH/MO/00908",
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ]
         }
       ],
       "shaping": [
@@ -2001,6 +2024,15 @@
           "total_kg": 224.0,
           "mo_ref": "WH/MO/00894",
           "d0": "2026-06-13"
+        },
+        {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00908",
+          "d0": "2026-06-12"
         },
         {
           "sku": "TR3P-SGL",
@@ -2144,6 +2176,19 @@
           "mo_ref": "WH/MO/00893",
           "lot_id": 1418,
           "lot_name": "03/12/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116.0,
+          "qty_units": 348.0,
+          "qty_pouches": 116.0,
+          "dluo": "2026-12-12",
+          "mo_ref": "WH/MO/00908",
+          "lot_id": 1440,
+          "lot_name": "12/12/2026",
           "copacked": false,
           "needs_setup": false
         },
