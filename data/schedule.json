@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T23:08:14Z",
+  "generated_at": "2026-05-28T23:14:00Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -1021,10 +1021,10 @@
           "qty_packs": 126.0,
           "qty_units": 252.0,
           "qty_pouches": 126.0,
-          "dluo": null,
+          "dluo": "2026-12-02",
           "mo_ref": "WH/MO/00884",
-          "lot_id": null,
-          "lot_name": null,
+          "lot_id": 1441,
+          "lot_name": "12/02/2026",
           "copacked": true,
           "needs_setup": false
         },
@@ -1401,19 +1401,6 @@
           "needs_setup": false
         },
         {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 200.0,
-          "qty_units": 600.0,
-          "qty_pouches": 200.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/00916",
-          "lot_id": null,
-          "lot_name": null,
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138.0,
@@ -1437,6 +1424,19 @@
           "lot_id": 1378,
           "lot_name": "03/05/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "2-CRVGN3P-SGL",
+          "name": "Pack of 3 vegan croissant",
+          "qty_packs": 60.0,
+          "qty_units": 180.0,
+          "qty_pouches": 60.0,
+          "dluo": "2026-12-05",
+          "mo_ref": "WH/MO/00918",
+          "lot_id": 1442,
+          "lot_name": "12/05/2026",
+          "copacked": true,
           "needs_setup": false
         }
       ]
@@ -1781,6 +1781,19 @@
           "lot_id": 1386,
           "lot_name": "03/08/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00916",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
           "needs_setup": false
         },
         {
@@ -2307,6 +2320,19 @@
           "lot_id": 1429,
           "lot_name": "03/12/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "2-CRVGN3P-SGL",
+          "name": "Pack of 3 vegan croissant",
+          "qty_packs": 60.0,
+          "qty_units": 180.0,
+          "qty_pouches": 60.0,
+          "dluo": "2026-12-12",
+          "mo_ref": "WH/MO/00919",
+          "lot_id": 1443,
+          "lot_name": "12/12/2026",
+          "copacked": true,
           "needs_setup": false
         }
       ]
