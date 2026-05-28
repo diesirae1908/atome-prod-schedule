@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T21:55:05Z",
+  "generated_at": "2026-05-28T22:10:20Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -1277,6 +1277,18 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00899",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1361,11 +1373,23 @@
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
           "cfg_name": "Sourdough Loaf (×2)",
           "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
+          "total_kg": 123.2,
+          "total_units": 176,
           "mo_ref": "WH/MO/00875",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00900",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
           ]
         }
       ],
@@ -1373,11 +1397,20 @@
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
           "mo_ref": "WH/MO/00875",
           "d0": "2026-06-08"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00899",
+          "d0": "2026-06-07"
         }
       ],
       "score_tasks": [
@@ -1422,7 +1455,18 @@
     {
       "date": "2026-06-07",
       "label": "SUNDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/00898"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -1446,14 +1490,23 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00876",
           "d0": "2026-06-09"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00900",
+          "d0": "2026-06-08"
         }
       ],
       "score_tasks": [
         {
           "action": "score_freeze",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
+          "qty_packs": 88,
+          "qty_units": 176,
           "mo_ref": "WH/MO/00875",
           "d0": "2026-06-08"
         }
@@ -1468,6 +1521,19 @@
           "dluo": "2027-03-07",
           "mo_ref": "WH/MO/00874",
           "lot_id": 1385,
+          "lot_name": "03/07/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-03-07",
+          "mo_ref": "WH/MO/00899",
+          "lot_id": 1392,
           "lot_name": "03/07/2027",
           "copacked": false,
           "needs_setup": false
@@ -1489,6 +1555,18 @@
           "mo_ref": "WH/MO/00891",
           "products": [
             "Pack of 2 Pizza Dough (Sourdough)"
+          ]
+        },
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 135.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00898",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         }
       ],
@@ -1517,12 +1595,25 @@
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
           "dluo": "2027-03-08",
           "mo_ref": "WH/MO/00875",
           "lot_id": 1386,
+          "lot_name": "03/08/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-03-08",
+          "mo_ref": "WH/MO/00900",
+          "lot_id": 1393,
           "lot_name": "03/08/2027",
           "copacked": false,
           "needs_setup": false
@@ -1556,6 +1647,15 @@
           "total_kg": 360.0,
           "mo_ref": "WH/MO/00892",
           "d0": "2026-06-11"
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 135.0,
+          "mo_ref": "WH/MO/00898",
+          "d0": "2026-06-10"
         }
       ],
       "score_tasks": [
@@ -1633,6 +1733,19 @@
           "dluo": "2027-03-10",
           "mo_ref": "WH/MO/00891",
           "lot_id": 1415,
+          "lot_name": "03/10/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-03-10",
+          "mo_ref": "WH/MO/00898",
+          "lot_id": 1424,
           "lot_name": "03/10/2027",
           "copacked": false,
           "needs_setup": false
