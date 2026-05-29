@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T16:43:23Z",
+  "generated_at": "2026-05-29T17:01:17Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -327,21 +327,7 @@
           "d0": "2026-05-29"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "1-MCR6P-SGL",
-          "name": "Pack of 6 macarons (mixed flavours)",
-          "qty_packs": 153.0,
-          "qty_units": 918.0,
-          "qty_pouches": 153.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/00890",
-          "lot_id": null,
-          "lot_name": null,
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-05-29",
@@ -415,6 +401,32 @@
           "lot_id": 1356,
           "lot_name": "02/28/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-MCR6P-SGL",
+          "name": "Pack of 6 macarons (mixed flavours)",
+          "qty_packs": 89.0,
+          "qty_units": 534.0,
+          "qty_pouches": 89.0,
+          "dluo": "2026-09-20",
+          "mo_ref": "WH/MO/00890",
+          "lot_id": 1449,
+          "lot_name": "09/20/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-MCR6P-SGL",
+          "name": "Pack of 6 macarons (mixed flavours)",
+          "qty_packs": 100.0,
+          "qty_units": 600.0,
+          "qty_pouches": 100.0,
+          "dluo": "2027-01-19",
+          "mo_ref": "WH/MO/00923",
+          "lot_id": 1450,
+          "lot_name": "01/19/2027",
+          "copacked": true,
           "needs_setup": false
         },
         {
