@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T18:59:24Z",
+  "generated_at": "2026-05-29T21:46:03Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -413,6 +413,19 @@
           "mo_ref": "WH/MO/00890",
           "lot_id": 1449,
           "lot_name": "09/20/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-MCR6P-SGL",
+          "name": "Pack of 6 macarons (mixed flavours)",
+          "qty_packs": 42.0,
+          "qty_units": 252.0,
+          "qty_pouches": 42.0,
+          "dluo": "2027-01-19",
+          "mo_ref": "WH/MO/00926",
+          "lot_id": 1450,
+          "lot_name": "01/19/2027",
           "copacked": true,
           "needs_setup": false
         },
