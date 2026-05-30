@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T22:21:51Z",
+  "generated_at": "2026-05-30T21:45:53Z",
   "week_number": 19,
   "week_start": "2026-05-04",
   "week_end": "2026-06-14",
@@ -215,55 +215,9 @@
     {
       "date": "2026-05-27",
       "label": "WEDNESDAY",
-      "premix": [
-        {
-          "label": "Cut Cheese",
-          "total_units": 360,
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
-          ],
-          "mo_refs": [
-            "WH/MO/00854"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "WW",
-          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "cfg_name": "Wholewheat Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 276.0,
-          "total_units": 460,
-          "mo_ref": "WH/MO/00849",
-          "products": [
-            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "cfg_name": "Cheese Baguette",
-          "unit": "kg",
-          "total_kg": 144.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00854",
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
-          "total_kg": 276.0,
-          "mo_ref": "WH/MO/00849",
-          "d0": "2026-05-29"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -306,27 +260,9 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00850",
           "d0": "2026-05-30"
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360,
-          "qty_units": 360,
-          "total_kg": 144.0,
-          "mo_ref": "WH/MO/00854",
-          "d0": "2026-05-29"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
-          "mo_ref": "WH/MO/00849",
-          "d0": "2026-05-29"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -391,19 +327,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230.0,
-          "qty_units": 460.0,
-          "qty_pouches": 460.0,
-          "dluo": "2027-02-28",
-          "mo_ref": "WH/MO/00849",
-          "lot_id": 1356,
-          "lot_name": "02/28/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "1-MCR6P-SGL",
           "name": "Pack of 6 macarons (mixed flavours)",
           "qty_packs": 89.0,
@@ -427,19 +350,6 @@
           "lot_id": 1450,
           "lot_name": "01/19/2027",
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-02-28",
-          "mo_ref": "WH/MO/00854",
-          "lot_id": 1404,
-          "lot_name": "02/28/2027",
-          "copacked": false,
           "needs_setup": false
         }
       ]
