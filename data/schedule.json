@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T00:31:25Z",
+  "generated_at": "2026-06-02T16:44:46Z",
   "week_number": 20,
   "week_start": "2026-05-11",
   "week_end": "2026-06-21",
@@ -509,18 +509,7 @@
     {
       "date": "2026-06-01",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 414,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/00879"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -689,18 +678,6 @@
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
           ]
-        },
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 29.0,
-          "total_units": 414,
-          "mo_ref": "WH/MO/00879",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
         }
       ],
       "shaping": [
@@ -712,15 +689,6 @@
           "total_kg": 138.0,
           "mo_ref": "WH/MO/00871",
           "d0": "2026-06-04"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 29.0,
-          "mo_ref": "WH/MO/00879",
-          "d0": "2026-06-03"
         },
         {
           "sku": "SE3P-SGL",
@@ -808,7 +776,7 @@
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ],
           "mo_refs": [
-            "WH/MO/00880"
+            "WH/MO/00879"
           ]
         }
       ],
@@ -904,19 +872,6 @@
           "needs_setup": false
         },
         {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
-          "dluo": "2026-12-03",
-          "mo_ref": "WH/MO/00879",
-          "lot_id": 1389,
-          "lot_name": "12/03/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "SE3P-SGL",
           "name": "Pack of 3 Sourdough Sesame Baguette",
           "qty_packs": 117.0,
@@ -947,7 +902,18 @@
     {
       "date": "2026-06-04",
       "label": "THURSDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 414,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/00880"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -980,7 +946,7 @@
           "unit": "pcs",
           "total_kg": 29.0,
           "total_units": 414,
-          "mo_ref": "WH/MO/00880",
+          "mo_ref": "WH/MO/00879",
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
@@ -1002,7 +968,7 @@
           "qty_packs": 138,
           "qty_units": 414,
           "total_kg": 29.0,
-          "mo_ref": "WH/MO/00880",
+          "mo_ref": "WH/MO/00879",
           "d0": "2026-06-05"
         },
         {
@@ -1101,11 +1067,23 @@
           "label": "Pack of 2 Pizza Dough (Sourdough)",
           "cfg_name": "Pizza Dough (×2)",
           "unit": "kg",
-          "total_kg": 132.0,
-          "total_units": 660,
+          "total_kg": 46.0,
+          "total_units": 230,
           "mo_ref": "WH/MO/00870",
           "products": [
             "Pack of 2 Pizza Dough (Sourdough)"
+          ]
+        },
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 29.0,
+          "total_units": 414,
+          "mo_ref": "WH/MO/00880",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
         },
         {
@@ -1125,11 +1103,20 @@
         {
           "sku": "PIZ2-SGL",
           "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 330,
-          "qty_units": 660,
-          "total_kg": 132.0,
+          "qty_packs": 115,
+          "qty_units": 230,
+          "total_kg": 46.0,
           "mo_ref": "WH/MO/00870",
           "d0": "2026-06-07"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
+          "mo_ref": "WH/MO/00880",
+          "d0": "2026-06-06"
         },
         {
           "sku": "TR3P-SGL",
@@ -1172,7 +1159,7 @@
           "qty_units": 414.0,
           "qty_pouches": 138.0,
           "dluo": "2026-12-05",
-          "mo_ref": "WH/MO/00880",
+          "mo_ref": "WH/MO/00879",
           "lot_id": 1408,
           "lot_name": "12/05/2026",
           "copacked": false,
@@ -1302,8 +1289,8 @@
         {
           "action": "freeze_only",
           "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 330,
-          "qty_units": 660,
+          "qty_packs": 115,
+          "qty_units": 230,
           "mo_ref": "WH/MO/00870",
           "d0": "2026-06-07"
         }
@@ -1344,6 +1331,19 @@
           "dluo": "2026-12-06",
           "mo_ref": "WH/MO/00924",
           "lot_id": 1453,
+          "lot_name": "12/06/2026",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
+          "dluo": "2026-12-06",
+          "mo_ref": "WH/MO/00880",
+          "lot_id": 1455,
           "lot_name": "12/06/2026",
           "copacked": false,
           "needs_setup": false
@@ -1469,9 +1469,9 @@
         {
           "sku": "PIZ2-SGL",
           "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 330.0,
-          "qty_units": 660.0,
-          "qty_pouches": 330.0,
+          "qty_packs": 115.0,
+          "qty_units": 230.0,
+          "qty_pouches": 115.0,
           "dluo": "2027-03-07",
           "mo_ref": "WH/MO/00870",
           "lot_id": 1446,
