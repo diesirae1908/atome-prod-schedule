@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T22:07:28Z",
+  "generated_at": "2026-06-03T22:55:40Z",
   "week_number": 20,
   "week_start": "2026-05-11",
   "week_end": "2026-06-21",
@@ -174,21 +174,7 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": [
-        {
-          "sku": "1-MCR6P-SGL",
-          "name": "Pack of 6 macarons (mixed flavours)",
-          "qty_packs": 42.0,
-          "qty_units": 252.0,
-          "qty_pouches": 42.0,
-          "dluo": "2027-01-19",
-          "mo_ref": "WH/MO/00926",
-          "lot_id": 1450,
-          "lot_name": "01/19/2027",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-05-30",
@@ -1617,6 +1603,19 @@
       ],
       "vacuuming": [
         {
+          "sku": "4-CXC20P",
+          "name": "Pack of 20 Cheese Gougères",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/00948",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": true
+        },
+        {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "qty_packs": 400.0,
@@ -1653,19 +1652,6 @@
           "lot_id": 1430,
           "lot_name": "03/11/2027",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 200.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00944",
-          "lot_id": 694,
-          "lot_name": "11/11/2026",
-          "copacked": true,
           "needs_setup": false
         }
       ]
@@ -1994,6 +1980,19 @@
       ],
       "vacuuming": [
         {
+          "sku": "4-CHLAV2P",
+          "name": "Pack of 2 Chocolate Lava Cakes",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": "2027-07-16",
+          "mo_ref": "WH/MO/00950",
+          "lot_id": 1276,
+          "lot_name": "07/16/2027",
+          "copacked": true,
+          "needs_setup": true
+        },
+        {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 176.0,
@@ -2007,19 +2006,6 @@
           "needs_setup": false
         },
         {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 200.0,
-          "qty_units": 600.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/00945",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117.0,
@@ -2030,6 +2016,19 @@
           "lot_id": 1480,
           "lot_name": "03/14/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 200.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/00944",
+          "lot_id": 694,
+          "lot_name": "11/11/2026",
+          "copacked": true,
           "needs_setup": false
         }
       ]
@@ -2151,6 +2150,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00945",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117.0,
@@ -2161,6 +2173,19 @@
           "lot_id": 1481,
           "lot_name": "03/15/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-MCR6P-SGL",
+          "name": "Pack of 6 macarons (mixed flavours)",
+          "qty_packs": 64.0,
+          "qty_units": 384.0,
+          "qty_pouches": 64.0,
+          "dluo": "2027-01-19",
+          "mo_ref": "WH/MO/00949",
+          "lot_id": 1450,
+          "lot_name": "01/19/2027",
+          "copacked": true,
           "needs_setup": false
         }
       ]
@@ -2292,6 +2317,19 @@
           "lot_id": 1475,
           "lot_name": "12/16/2026",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00951",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
           "needs_setup": false
         },
         {
@@ -2429,6 +2467,19 @@
           "needs_setup": false
         },
         {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 200.0,
+          "qty_units": 1600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-10-11",
+          "mo_ref": "WH/MO/00952",
+          "lot_id": 1040,
+          "lot_name": "10/11/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "CH-SGL",
           "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "qty_packs": 360.0,
@@ -2547,6 +2598,19 @@
           "lot_id": 1461,
           "lot_name": "03/18/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00953",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
           "needs_setup": false
         },
         {
@@ -2685,6 +2749,19 @@
           "lot_name": "03/19/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 200.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/00954",
+          "lot_id": 694,
+          "lot_name": "11/11/2026",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -2716,6 +2793,19 @@
           "lot_id": 1464,
           "lot_name": "03/20/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00955",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
           "needs_setup": false
         },
         {
@@ -2765,6 +2855,19 @@
           "lot_id": 1465,
           "lot_name": "03/21/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00956",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
           "needs_setup": false
         }
       ]
