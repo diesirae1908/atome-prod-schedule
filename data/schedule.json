@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T20:01:38Z",
+  "generated_at": "2026-06-03T21:45:14Z",
   "week_number": 20,
   "week_start": "2026-05-11",
   "week_end": "2026-06-21",
@@ -1496,6 +1496,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00943",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "MG3P-SGL",
           "name": "Pack of 3 Multigrain Sourdough Baguettes",
           "qty_packs": 120.0,
@@ -1641,6 +1654,19 @@
           "lot_name": "03/11/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 200.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/00944",
+          "lot_id": 694,
+          "lot_name": "11/11/2026",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1778,8 +1804,8 @@
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
           "cfg_name": "Sourdough Loaf (×2)",
           "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
+          "total_kg": 123.2,
+          "total_units": 176,
           "mo_ref": "WH/MO/00896",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
@@ -1790,9 +1816,9 @@
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
           "mo_ref": "WH/MO/00896",
           "d0": "2026-06-15"
         }
@@ -1866,14 +1892,27 @@
       "date": "2026-06-14",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "cfg_name": "Poppy Seed Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00935",
+          "products": [
+            "Pack of 3 Sourdough Poppy Seed Baguette"
+          ]
+        }
+      ],
       "shaping": [],
       "score_tasks": [
         {
           "action": "score_freeze",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
+          "qty_packs": 88,
+          "qty_units": 176,
           "mo_ref": "WH/MO/00896",
           "d0": "2026-06-15"
         }
@@ -1891,6 +1930,19 @@
           "lot_name": "03/14/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 200.0,
+          "qty_units": 600.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00945",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1899,15 +1951,25 @@
       "label": "MONDAY",
       "premix": [],
       "mix": [],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00935",
+          "d0": "2026-06-16"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": [
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
           "dluo": "2027-03-15",
           "mo_ref": "WH/MO/00896",
           "lot_id": 1421,
@@ -1924,7 +1986,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-03-16",
+          "mo_ref": "WH/MO/00935",
+          "lot_id": 1469,
+          "lot_name": "03/16/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-06-17",
