@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T23:04:00Z",
+  "generated_at": "2026-06-04T23:20:30Z",
   "week_number": 20,
   "week_start": "2026-05-11",
   "week_end": "2026-06-21",
@@ -360,19 +360,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "4-CHLAV2P",
-          "name": "Pack of 2 Chocolate Lava Cakes",
-          "qty_packs": 125.0,
-          "qty_units": 125.0,
-          "qty_pouches": 125.0,
-          "dluo": "2027-07-16",
-          "mo_ref": "WH/MO/00959",
-          "lot_id": 1276,
-          "lot_name": "07/16/2027",
-          "copacked": true,
-          "needs_setup": true
-        },
         {
           "sku": "1-AT3P-SGL",
           "name": "Pack of 3 apple turnover",
@@ -1200,8 +1187,8 @@
           "label": "Pack of 2 Country Rye Sourdough Loaf",
           "cfg_name": "Country Rye Loaf (×2)",
           "unit": "kg",
-          "total_kg": 224.0,
-          "total_units": 320,
+          "total_kg": 112.0,
+          "total_units": 160,
           "mo_ref": "WH/MO/00893",
           "products": [
             "Pack of 2 Country Rye Sourdough Loaf"
@@ -1236,9 +1223,9 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "total_kg": 224.0,
+          "qty_packs": 80,
+          "qty_units": 160,
+          "total_kg": 112.0,
           "mo_ref": "WH/MO/00893",
           "d0": "2026-06-12"
         },
@@ -1343,15 +1330,15 @@
       ],
       "mix": [
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
           "unit": "kg",
-          "total_kg": 224.0,
-          "total_units": 320,
-          "mo_ref": "WH/MO/00894",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/00895",
           "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
+            "Pack of 2 Sourdough Loaves (White Flour)"
           ]
         },
         {
@@ -1381,12 +1368,12 @@
       ],
       "shaping": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "total_kg": 224.0,
-          "mo_ref": "WH/MO/00894",
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/00895",
           "d0": "2026-06-13"
         },
         {
@@ -1412,8 +1399,8 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
+          "qty_packs": 80,
+          "qty_units": 160,
           "mo_ref": "WH/MO/00893",
           "d0": "2026-06-12"
         }
@@ -1479,18 +1466,6 @@
       "premix": [],
       "mix": [
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00895",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
           "dough_type": "PAC_CR",
           "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "cfg_name": "Pain au Chocolat (×3)",
@@ -1504,15 +1479,6 @@
         }
       ],
       "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00895",
-          "d0": "2026-06-14"
-        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
@@ -1535,10 +1501,10 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "mo_ref": "WH/MO/00894",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/00895",
           "d0": "2026-06-13"
         }
       ],
@@ -1559,9 +1525,9 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160.0,
-          "qty_units": 320.0,
-          "qty_pouches": 320.0,
+          "qty_packs": 80.0,
+          "qty_units": 160.0,
+          "qty_pouches": 160.0,
           "dluo": "2027-03-12",
           "mo_ref": "WH/MO/00893",
           "lot_id": 1418,
@@ -1626,26 +1592,17 @@
           "d0": "2026-06-15"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00895",
-          "d0": "2026-06-14"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160.0,
-          "qty_units": 320.0,
-          "qty_pouches": 320.0,
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
           "dluo": "2027-03-13",
-          "mo_ref": "WH/MO/00894",
-          "lot_id": 1419,
+          "mo_ref": "WH/MO/00895",
+          "lot_id": 1504,
           "lot_name": "03/13/2027",
           "copacked": false,
           "needs_setup": false
@@ -1742,19 +1699,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2027-03-14",
-          "mo_ref": "WH/MO/00895",
-          "lot_id": 1420,
-          "lot_name": "03/14/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "1-AT3P-SGL",
           "name": "Pack of 3 apple turnover",
