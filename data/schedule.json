@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T17:33:42Z",
+  "generated_at": "2026-06-04T17:42:07Z",
   "week_number": 20,
   "week_start": "2026-05-11",
   "week_end": "2026-06-21",
@@ -958,6 +958,16 @@
       "label": "MONDAY",
       "premix": [
         {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/00957"
+          ]
+        },
+        {
           "label": "Prep mix Braided Brioche",
           "total_units": 116,
           "products": [
@@ -1141,15 +1151,15 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "cfg_name": "Poppy Seed Baguette (×3)",
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
           "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00935",
+          "total_kg": 135.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00957",
           "products": [
-            "Pack of 3 Sourdough Poppy Seed Baguette"
+            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         }
       ],
@@ -1286,6 +1296,18 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "cfg_name": "Poppy Seed Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00935",
+          "products": [
+            "Pack of 3 Sourdough Poppy Seed Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1299,21 +1321,21 @@
           "d0": "2026-06-12"
         },
         {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 135.0,
+          "mo_ref": "WH/MO/00957",
+          "d0": "2026-06-11"
+        },
+        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138,
           "qty_units": 414,
           "total_kg": 29.0,
           "mo_ref": "WH/MO/00904",
-          "d0": "2026-06-11"
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00935",
           "d0": "2026-06-11"
         }
       ],
@@ -1411,18 +1433,6 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00903",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
-        },
-        {
           "dough_type": "BRIOCHE",
           "label": "Pack of 3 Brioche Buns",
           "cfg_name": "Brioche Buns (×3)",
@@ -1452,6 +1462,15 @@
           "qty_units": 348,
           "total_kg": 52.2,
           "mo_ref": "WH/MO/00908",
+          "d0": "2026-06-12"
+        },
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00935",
           "d0": "2026-06-12"
         }
       ],
@@ -1493,6 +1512,19 @@
           "needs_setup": false
         },
         {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-03-11",
+          "mo_ref": "WH/MO/00957",
+          "lot_id": 1487,
+          "lot_name": "03/11/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138.0,
@@ -1502,19 +1534,6 @@
           "mo_ref": "WH/MO/00904",
           "lot_id": 1434,
           "lot_name": "12/11/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-03-11",
-          "mo_ref": "WH/MO/00935",
-          "lot_id": 1484,
-          "lot_name": "03/11/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1580,15 +1599,6 @@
           "total_kg": 29.0,
           "mo_ref": "WH/MO/00905",
           "d0": "2026-06-13"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00903",
-          "d0": "2026-06-13"
         }
       ],
       "score_tasks": [
@@ -1638,6 +1648,19 @@
           "mo_ref": "WH/MO/00908",
           "lot_id": 1440,
           "lot_name": "12/12/2026",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-03-12",
+          "mo_ref": "WH/MO/00935",
+          "lot_id": 1485,
+          "lot_name": "03/12/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1731,19 +1754,6 @@
           "needs_setup": false
         },
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-03-13",
-          "mo_ref": "WH/MO/00903",
-          "lot_id": 1431,
-          "lot_name": "03/13/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "2-CRVGN3P-SGL",
           "name": "Pack of 3 vegan croissant",
           "qty_packs": 60.0,
@@ -1774,6 +1784,18 @@
         }
       ],
       "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00903",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
+        },
         {
           "dough_type": "TRAD",
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -1952,6 +1974,15 @@
           "qty_units": 200,
           "total_kg": 40.0,
           "mo_ref": "WH/MO/00940",
+          "d0": "2026-06-16"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00903",
           "d0": "2026-06-16"
         }
       ],
@@ -2160,6 +2191,19 @@
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-03-16",
+          "mo_ref": "WH/MO/00903",
+          "lot_id": 1483,
+          "lot_name": "03/16/2027",
+          "copacked": false,
           "needs_setup": false
         }
       ]
