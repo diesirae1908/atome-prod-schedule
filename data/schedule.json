@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T19:53:58Z",
+  "generated_at": "2026-06-04T19:56:19Z",
   "week_number": 20,
   "week_start": "2026-05-11",
   "week_end": "2026-06-21",
@@ -1774,6 +1774,16 @@
       "label": "SUNDAY",
       "premix": [
         {
+          "label": "Cut Cheese",
+          "total_units": 360,
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ],
+          "mo_refs": [
+            "WH/MO/00933"
+          ]
+        },
+        {
           "label": "Prep mix Viennoise",
           "total_units": 200,
           "products": [
@@ -1795,6 +1805,18 @@
           "mo_ref": "WH/MO/00927",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "cfg_name": "Cheese Baguette",
+          "unit": "kg",
+          "total_kg": 144.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00933",
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
         }
       ],
@@ -1872,7 +1894,7 @@
             "Sourdough Cheese Baguette (Gruyere Cheese)"
           ],
           "mo_refs": [
-            "WH/MO/00933"
+            "WH/MO/00934"
           ]
         },
         {
@@ -1906,7 +1928,7 @@
           "unit": "kg",
           "total_kg": 144.0,
           "total_units": 360,
-          "mo_ref": "WH/MO/00933",
+          "mo_ref": "WH/MO/00934",
           "products": [
             "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
@@ -1941,6 +1963,15 @@
           "qty_units": 200,
           "total_kg": 40.0,
           "mo_ref": "WH/MO/00940",
+          "d0": "2026-06-16"
+        },
+        {
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360,
+          "qty_units": 360,
+          "total_kg": 144.0,
+          "mo_ref": "WH/MO/00933",
           "d0": "2026-06-16"
         }
       ],
@@ -2001,16 +2032,6 @@
       "label": "TUESDAY",
       "premix": [
         {
-          "label": "Cut Cheese",
-          "total_units": 360,
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
-          ],
-          "mo_refs": [
-            "WH/MO/00934"
-          ]
-        },
-        {
           "label": "Prep mix PAC/CR",
           "total_units": 414,
           "products": [
@@ -2044,18 +2065,6 @@
           "mo_ref": "WH/MO/00929",
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "cfg_name": "Cheese Baguette",
-          "unit": "kg",
-          "total_kg": 144.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00934",
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
         },
         {
@@ -2096,7 +2105,7 @@
           "qty_packs": 360,
           "qty_units": 360,
           "total_kg": 144.0,
-          "mo_ref": "WH/MO/00933",
+          "mo_ref": "WH/MO/00934",
           "d0": "2026-06-17"
         }
       ],
@@ -2148,6 +2157,19 @@
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-03-16",
+          "mo_ref": "WH/MO/00933",
+          "lot_id": 1496,
+          "lot_name": "03/16/2027",
+          "copacked": false,
           "needs_setup": false
         }
       ]
@@ -2232,15 +2254,6 @@
           "total_kg": 122.8,
           "mo_ref": "WH/MO/00903",
           "d0": "2026-06-18"
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360,
-          "qty_units": 360,
-          "total_kg": 144.0,
-          "mo_ref": "WH/MO/00934",
-          "d0": "2026-06-18"
         }
       ],
       "score_tasks": [
@@ -2300,7 +2313,7 @@
           "qty_units": 360.0,
           "qty_pouches": 360.0,
           "dluo": "2027-03-17",
-          "mo_ref": "WH/MO/00933",
+          "mo_ref": "WH/MO/00934",
           "lot_id": 1467,
           "lot_name": "03/17/2027",
           "copacked": false,
@@ -2449,19 +2462,6 @@
           "dluo": "2027-03-18",
           "mo_ref": "WH/MO/00903",
           "lot_id": 1495,
-          "lot_name": "03/18/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-03-18",
-          "mo_ref": "WH/MO/00934",
-          "lot_id": 1468,
           "lot_name": "03/18/2027",
           "copacked": false,
           "needs_setup": false
