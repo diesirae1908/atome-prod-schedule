@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T19:26:09Z",
+  "generated_at": "2026-06-04T19:33:53Z",
   "week_number": 20,
   "week_start": "2026-05-11",
   "week_end": "2026-06-21",
@@ -1443,6 +1443,18 @@
           "products": [
             "Pack of 3 Brioche Buns"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Sesame Baguette",
+          "cfg_name": "Sesame Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00936",
+          "products": [
+            "Pack of 3 Sourdough Sesame Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1567,18 +1579,6 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00946",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
         }
       ],
       "shaping": [
@@ -1598,6 +1598,15 @@
           "qty_units": 414,
           "total_kg": 29.0,
           "mo_ref": "WH/MO/00905",
+          "d0": "2026-06-13"
+        },
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00936",
           "d0": "2026-06-13"
         }
       ],
@@ -1682,18 +1691,6 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00947",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
         }
       ],
       "shaping": [
@@ -1705,15 +1702,6 @@
           "total_kg": 123.2,
           "mo_ref": "WH/MO/00896",
           "d0": "2026-06-15"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00946",
-          "d0": "2026-06-14"
         }
       ],
       "score_tasks": [
@@ -1750,6 +1738,19 @@
           "mo_ref": "WH/MO/00905",
           "lot_id": 1433,
           "lot_name": "12/13/2026",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-03-13",
+          "mo_ref": "WH/MO/00936",
+          "lot_id": 1489,
+          "lot_name": "03/13/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1818,15 +1819,6 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00927",
           "d0": "2026-06-16"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00947",
-          "d0": "2026-06-15"
         }
       ],
       "score_tasks": [
@@ -1862,19 +1854,6 @@
           "dluo": "2027-03-14",
           "mo_ref": "WH/MO/00895",
           "lot_id": 1420,
-          "lot_name": "03/14/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-03-14",
-          "mo_ref": "WH/MO/00946",
-          "lot_id": 1480,
           "lot_name": "03/14/2027",
           "copacked": false,
           "needs_setup": false
@@ -2024,19 +2003,6 @@
           "needs_setup": false
         },
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-03-15",
-          "mo_ref": "WH/MO/00947",
-          "lot_id": 1481,
-          "lot_name": "03/15/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "1-MCR6P-SGL",
           "name": "Pack of 6 macarons (mixed flavours)",
           "qty_packs": 64.0,
@@ -2099,6 +2065,18 @@
           "mo_ref": "WH/MO/00934",
           "products": [
             "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Sesame Baguette",
+          "cfg_name": "Sesame Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00937",
+          "products": [
+            "Pack of 3 Sourdough Sesame Baguette"
           ]
         },
         {
@@ -2237,18 +2215,6 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Sesame Baguette",
-          "cfg_name": "Sesame Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00936",
-          "products": [
-            "Pack of 3 Sourdough Sesame Baguette"
-          ]
-        },
-        {
           "dough_type": "PAC_CR",
           "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "cfg_name": "Pain au Chocolat (×3)",
@@ -2258,6 +2224,18 @@
           "mo_ref": "WH/MO/00938",
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Sesame Baguette",
+          "cfg_name": "Sesame Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00958",
+          "products": [
+            "Pack of 3 Sourdough Sesame Baguette"
           ]
         }
       ],
@@ -2278,6 +2256,15 @@
           "qty_units": 414,
           "total_kg": 29.0,
           "mo_ref": "WH/MO/00938",
+          "d0": "2026-06-18"
+        },
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00937",
           "d0": "2026-06-18"
         },
         {
@@ -2384,18 +2371,6 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Sesame Baguette",
-          "cfg_name": "Sesame Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00937",
-          "products": [
-            "Pack of 3 Sourdough Sesame Baguette"
-          ]
-        },
-        {
           "dough_type": "PAC_CR",
           "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "cfg_name": "Pain au Chocolat (×3)",
@@ -2433,7 +2408,7 @@
           "qty_packs": 117,
           "qty_units": 351,
           "total_kg": 122.8,
-          "mo_ref": "WH/MO/00936",
+          "mo_ref": "WH/MO/00958",
           "d0": "2026-06-19"
         }
       ],
@@ -2488,6 +2463,19 @@
           "needs_setup": false
         },
         {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-03-18",
+          "mo_ref": "WH/MO/00937",
+          "lot_id": 1491,
+          "lot_name": "03/18/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
           "sku": "CH-SGL",
           "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "qty_packs": 360.0,
@@ -2530,6 +2518,18 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/00946",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -2549,15 +2549,6 @@
           "qty_units": 414,
           "total_kg": 29.0,
           "mo_ref": "WH/MO/00939",
-          "d0": "2026-06-20"
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00937",
           "d0": "2026-06-20"
         }
       ],
@@ -2605,7 +2596,7 @@
           "qty_units": 351.0,
           "qty_pouches": 351.0,
           "dluo": "2027-03-19",
-          "mo_ref": "WH/MO/00936",
+          "mo_ref": "WH/MO/00958",
           "lot_id": 1470,
           "lot_name": "03/19/2027",
           "copacked": false,
@@ -2631,7 +2622,17 @@
       "label": "SATURDAY",
       "premix": [],
       "mix": [],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/00946",
+          "d0": "2026-06-21"
+        }
+      ],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -2681,19 +2682,6 @@
           "lot_name": "12/20/2026",
           "copacked": false,
           "needs_setup": false
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-03-20",
-          "mo_ref": "WH/MO/00937",
-          "lot_id": 1471,
-          "lot_name": "03/20/2027",
-          "copacked": false,
-          "needs_setup": false
         }
       ]
     },
@@ -2729,6 +2717,19 @@
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-03-21",
+          "mo_ref": "WH/MO/00946",
+          "lot_id": 1493,
+          "lot_name": "03/21/2027",
+          "copacked": false,
           "needs_setup": false
         }
       ]
