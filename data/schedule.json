@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T00:21:25Z",
+  "generated_at": "2026-06-05T00:46:29Z",
   "week_number": 20,
   "week_start": "2026-05-11",
   "week_end": "2026-06-21",
@@ -1183,18 +1183,6 @@
       ],
       "mix": [
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 112.0,
-          "total_units": 160,
-          "mo_ref": "WH/MO/00893",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
           "dough_type": "PAC_CR",
           "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "cfg_name": "Pain au Chocolat (×3)",
@@ -1204,6 +1192,18 @@
           "mo_ref": "WH/MO/00904",
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/00932",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
           ]
         },
         {
@@ -1221,12 +1221,12 @@
       ],
       "shaping": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "total_kg": 112.0,
-          "mo_ref": "WH/MO/00893",
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/00932",
           "d0": "2026-06-12"
         },
         {
@@ -1398,10 +1398,10 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "mo_ref": "WH/MO/00893",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/00932",
           "d0": "2026-06-12"
         }
       ],
@@ -1523,14 +1523,14 @@
           "needs_setup": false
         },
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80.0,
-          "qty_units": 160.0,
-          "qty_pouches": 160.0,
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
           "dluo": "2027-03-12",
-          "mo_ref": "WH/MO/00893",
-          "lot_id": 1418,
+          "mo_ref": "WH/MO/00932",
+          "lot_id": 1520,
           "lot_name": "03/12/2027",
           "copacked": false,
           "needs_setup": false
@@ -1958,13 +1958,13 @@
       "label": "WEDNESDAY",
       "premix": [
         {
-          "label": "Prep mix PAC/CR",
-          "total_units": 414,
+          "label": "Prep mix Brioche Buns",
+          "total_units": 348,
           "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+            "Pack of 3 Brioche Buns"
           ],
           "mo_refs": [
-            "WH/MO/00942"
+            "WH/MO/00961"
           ]
         }
       ],
@@ -2106,15 +2106,15 @@
           ]
         },
         {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 29.0,
-          "total_units": 414,
-          "mo_ref": "WH/MO/00942",
+          "dough_type": "BRIOCHE",
+          "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 348,
+          "mo_ref": "WH/MO/00961",
           "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+            "Pack of 3 Brioche Buns"
           ]
         }
       ],
@@ -2129,12 +2129,12 @@
           "d0": "2026-06-20"
         },
         {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 29.0,
-          "mo_ref": "WH/MO/00942",
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/00961",
           "d0": "2026-06-19"
         },
         {
@@ -2274,14 +2274,14 @@
           "needs_setup": false
         },
         {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116.0,
+          "qty_units": 348.0,
+          "qty_pouches": 116.0,
           "dluo": "2026-12-19",
-          "mo_ref": "WH/MO/00942",
-          "lot_id": 1478,
+          "mo_ref": "WH/MO/00961",
+          "lot_id": 1511,
           "lot_name": "12/19/2026",
           "copacked": false,
           "needs_setup": false
