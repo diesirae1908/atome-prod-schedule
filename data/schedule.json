@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T20:29:41Z",
+  "generated_at": "2026-06-10T20:31:47Z",
   "week_number": 21,
   "week_start": "2026-05-18",
   "week_end": "2026-06-28",
@@ -1929,18 +1929,6 @@
       ],
       "mix": [
         {
-          "dough_type": "CIABATTA",
-          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "cfg_name": "Ciabatta (×3)",
-          "unit": "kg",
-          "total_kg": 360.0,
-          "total_units": 1200,
-          "mo_ref": "WH/MO/00970",
-          "products": [
-            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
-          ]
-        },
-        {
           "dough_type": "WW",
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "cfg_name": "Wholewheat Loaf (×2)",
@@ -1961,15 +1949,6 @@
           "qty_units": 230,
           "total_kg": 138.0,
           "mo_ref": "WH/MO/00976",
-          "d0": "2026-06-25"
-        },
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 400,
-          "qty_units": 1200,
-          "total_kg": 360.0,
-          "mo_ref": "WH/MO/00970",
           "d0": "2026-06-25"
         },
         {
@@ -2104,14 +2083,6 @@
           "qty_units": 230,
           "mo_ref": "WH/MO/00976",
           "d0": "2026-06-25"
-        },
-        {
-          "action": "freeze_only",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 400,
-          "qty_units": 1200,
-          "mo_ref": "WH/MO/00970",
-          "d0": "2026-06-25"
         }
       ],
       "vacuuming": [
@@ -2160,6 +2131,18 @@
       ],
       "mix": [
         {
+          "dough_type": "CIABATTA",
+          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "cfg_name": "Ciabatta (×3)",
+          "unit": "kg",
+          "total_kg": 360.0,
+          "total_units": 1200,
+          "mo_ref": "WH/MO/00970",
+          "products": [
+            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
+          ]
+        },
+        {
           "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
           "cfg_name": "Trad. Baguette (×3)",
@@ -2173,6 +2156,15 @@
         }
       ],
       "shaping": [
+        {
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 400,
+          "qty_units": 1200,
+          "total_kg": 360.0,
+          "mo_ref": "WH/MO/00970",
+          "d0": "2026-06-27"
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
@@ -2203,19 +2195,6 @@
           "dluo": "2027-03-25",
           "mo_ref": "WH/MO/00976",
           "lot_id": 1560,
-          "lot_name": "03/25/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 400.0,
-          "qty_units": 1200.0,
-          "qty_pouches": 400.0,
-          "dluo": "2027-03-25",
-          "mo_ref": "WH/MO/00970",
-          "lot_id": 1548,
           "lot_name": "03/25/2027",
           "copacked": false,
           "needs_setup": false
@@ -2294,7 +2273,16 @@
           "d0": "2026-06-27"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "freeze_only",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 400,
+          "qty_units": 1200,
+          "mo_ref": "WH/MO/00970",
+          "d0": "2026-06-27"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -2341,6 +2329,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 400.0,
+          "qty_units": 1200.0,
+          "qty_pouches": 400.0,
+          "dluo": "2027-03-27",
+          "mo_ref": "WH/MO/00970",
+          "lot_id": 1562,
+          "lot_name": "03/27/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
