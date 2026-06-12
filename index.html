@@ -980,14 +980,15 @@ function setSyncStatus(s) {
             : "⚠ Sync error — using local data";
 }
 
-async function supaFetch(method, path, body) {
+async function supaFetch(method, path, body, extraHeaders) {
   const resp = await fetch(SUPA_URL + "/rest/v1" + path, {
     method,
     headers: {
       "Content-Type": "application/json",
       "apikey": SUPA_KEY,
       "Authorization": "Bearer " + SUPA_KEY,
-      "Prefer": "return=minimal,resolution=merge-duplicates"
+      "Prefer": "return=minimal,resolution=merge-duplicates",
+      ...(extraHeaders || {})
     },
     body: body != null ? JSON.stringify(body) : undefined
   });
@@ -998,11 +999,28 @@ async function supaFetch(method, path, body) {
   try { return await resp.json(); } catch { return null; }
 }
 
+// Supabase REST silently caps each response at 1000 rows, so page through the
+// whole table. Newest first, so the most recent checks arrive even if a later
+// page fails.
+async function fetchAllChecks(select) {
+  const PAGE = 1000;
+  const all = [];
+  for (let from = 0; ; from += PAGE) {
+    const rows = await supaFetch(
+      "GET", `/checks?select=${select}&order=updated_at.desc`,
+      null, { "Range": `${from}-${from + PAGE - 1}` }
+    );
+    all.push(...(rows || []));
+    if (!rows || rows.length < PAGE) break;
+  }
+  return all;
+}
+
 async function syncFromSupabase() {
   setSyncStatus("syncing");
   try {
     const rows = await Promise.race([
-      supaFetch("GET", "/checks?select=key,value"),
+      fetchAllChecks("key,value"),
       new Promise(res => setTimeout(() => res([]), 5000))
     ]);
     (rows || []).forEach(r => {
@@ -1014,6 +1032,34 @@ async function syncFromSupabase() {
     console.warn("Supabase sync error:", e);
     setSyncStatus("error");
     return false;
+  }
+}
+
+// Check rows for past dates are never read again — purge anything older than
+// STALE_DAYS so the table stays small. Only keys with an embedded YYYY-MM-DD
+// date are touched; non-dated keys (kanban boards, headpaper, …) are kept.
+const STALE_DAYS = 60;
+async function cleanupOldChecks() {
+  try {
+    const cutoff = new Date(Date.now() - STALE_DAYS * 864e5).toISOString().slice(0, 10);
+    const isStale = k => {
+      const m = k.match(/(\d{4}-\d{2}-\d{2})/);
+      return m && m[1] < cutoff;
+    };
+    const stale = (await fetchAllChecks("key")).map(r => r.key).filter(isStale);
+    for (let i = 0; i < stale.length; i += 100) {
+      const list = stale.slice(i, i + 100)
+        .map(k => encodeURIComponent('"' + k + '"'))
+        .join(",");
+      await supaFetch("DELETE", `/checks?key=in.(${list})`);
+    }
+    // Tidy this device's localStorage too
+    Object.keys(localStorage).filter(isStale).forEach(k => {
+      try { localStorage.removeItem(k); } catch {}
+    });
+    if (stale.length) console.log(`cleanupOldChecks: removed ${stale.length} stale rows`);
+  } catch (e) {
+    console.warn("checks cleanup error:", e);
   }
 }
 
@@ -2532,6 +2578,7 @@ document.addEventListener("visibilitychange", () => {
       loadOutputs()
     ]);
     scheduleData = sched;
+    cleanupOldChecks(); // async fire-and-forget
     const todayMon = mondayOfWeek(isoToday());
     const ds = scheduleData.week_start, de = scheduleData.week_end;
     viewWeekStart = (todayMon >= ds && todayMon <= de) ? todayMon : mondayOfWeek(ds);
