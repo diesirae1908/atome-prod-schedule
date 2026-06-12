@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T23:08:11Z",
+  "generated_at": "2026-06-12T00:34:10Z",
   "week_number": 21,
   "week_start": "2026-05-18",
   "week_end": "2026-06-28",
@@ -197,18 +197,7 @@
     {
       "date": "2026-06-08",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "MG Grain Soak",
-          "total_units": 360,
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ],
-          "mo_refs": [
-            "WH/MO/00957"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [],
       "shaping": [],
       "score_tasks": [],
@@ -218,59 +207,10 @@
       "date": "2026-06-09",
       "label": "TUESDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "CIABATTA",
-          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "cfg_name": "Ciabatta (×3)",
-          "unit": "kg",
-          "total_kg": 119.7,
-          "total_units": 399,
-          "mo_ref": "WH/MO/00892",
-          "products": [
-            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
-          ]
-        },
-        {
-          "dough_type": "MG",
-          "label": "Pack of 3 Multigrain Sourdough Baguettes",
-          "cfg_name": "Multigrain Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 135.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00957",
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133,
-          "qty_units": 399,
-          "total_kg": 119.7,
-          "mo_ref": "WH/MO/00892",
-          "d0": "2026-06-11"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
-      "vacuuming": [
-        {
-          "sku": "RIGA-330",
-          "name": "Fresh Pasta Rigatoni (330g)",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2026-12-09",
-          "mo_ref": "WH/MO/00921",
-          "lot_id": 1536,
-          "lot_name": "12/09/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-06-10",
@@ -283,7 +223,7 @@
             "Brioche (Pastry)"
           ],
           "mo_refs": [
-            "WH/MO/00907"
+            "WH/MO/00982"
           ]
         }
       ],
@@ -310,27 +250,9 @@
           "total_kg": 123.2,
           "mo_ref": "WH/MO/00932",
           "d0": "2026-06-12"
-        },
-        {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 135.0,
-          "mo_ref": "WH/MO/00957",
-          "d0": "2026-06-11"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "freeze_only",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133,
-          "qty_units": 399,
-          "mo_ref": "WH/MO/00892",
-          "d0": "2026-06-11"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -368,7 +290,7 @@
           "unit": "kg",
           "total_kg": 52.2,
           "total_units": 116,
-          "mo_ref": "WH/MO/00907",
+          "mo_ref": "WH/MO/00982",
           "products": [
             "Brioche (Pastry)"
           ]
@@ -381,7 +303,7 @@
           "qty_packs": 116,
           "qty_units": 116,
           "total_kg": 52.2,
-          "mo_ref": "WH/MO/00907",
+          "mo_ref": "WH/MO/00982",
           "d0": "2026-06-12"
         },
         {
@@ -417,32 +339,6 @@
           "lot_name": "01/19/2027",
           "copacked": true,
           "needs_setup": true
-        },
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133.0,
-          "qty_units": 399.0,
-          "qty_pouches": 133.0,
-          "dluo": "2027-03-11",
-          "mo_ref": "WH/MO/00892",
-          "lot_id": 1417,
-          "lot_name": "03/11/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-03-11",
-          "mo_ref": "WH/MO/00957",
-          "lot_id": 1487,
-          "lot_name": "03/11/2027",
-          "copacked": false,
-          "needs_setup": false
         },
         {
           "sku": "1-AT3P-SGL",
@@ -527,7 +423,7 @@
           "qty_units": 116.0,
           "qty_pouches": 116.0,
           "dluo": "2026-12-12",
-          "mo_ref": "WH/MO/00907",
+          "mo_ref": "WH/MO/00982",
           "lot_id": 1534,
           "lot_name": "12/12/2026",
           "copacked": false,
