@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T23:53:34Z",
+  "generated_at": "2026-06-16T23:54:58Z",
   "week_number": 22,
   "week_start": "2026-05-25",
   "week_end": "2026-07-05",
@@ -542,18 +542,6 @@
       ],
       "mix": [
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 224.0,
-          "total_units": 320,
-          "mo_ref": "WH/MO/00893",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
           "dough_type": "TRAD",
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
           "cfg_name": "Sourdough Loaf (×2)",
@@ -591,15 +579,6 @@
         }
       ],
       "shaping": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "total_kg": 224.0,
-          "mo_ref": "WH/MO/00893",
-          "d0": "2026-06-20"
-        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -767,14 +746,6 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "mo_ref": "WH/MO/00893",
-          "d0": "2026-06-20"
-        },
-        {
-          "action": "score_freeze",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 88,
           "qty_units": 176,
@@ -843,6 +814,18 @@
       "premix": [],
       "mix": [
         {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 224.0,
+          "total_units": 320,
+          "mo_ref": "WH/MO/00893",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
+        },
+        {
           "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
           "cfg_name": "Trad. Baguette (×3)",
@@ -856,6 +839,15 @@
         }
       ],
       "shaping": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160,
+          "qty_units": 320,
+          "total_kg": 224.0,
+          "mo_ref": "WH/MO/00893",
+          "d0": "2026-06-22"
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
@@ -877,19 +869,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160.0,
-          "qty_units": 320.0,
-          "qty_pouches": 320.0,
-          "dluo": "2027-03-20",
-          "mo_ref": "WH/MO/00893",
-          "lot_id": 1571,
-          "lot_name": "03/20/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -1015,7 +994,16 @@
           "d0": "2026-06-22"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160,
+          "qty_units": 320,
+          "mo_ref": "WH/MO/00893",
+          "d0": "2026-06-22"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -1161,6 +1149,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160.0,
+          "qty_units": 320.0,
+          "qty_pouches": 320.0,
+          "dluo": "2027-03-22",
+          "mo_ref": "WH/MO/00893",
+          "lot_id": 1558,
+          "lot_name": "03/22/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
