@@ -728,10 +728,6 @@
       <span class="side-nav-icon">🫙</span>
       <span class="side-nav-label">Levain</span>
     </a>
-    <button onclick="closeSideNav();openShiftsRo();" class="side-nav-item">
-      <span class="side-nav-icon">👥</span>
-      <span class="side-nav-label">Shifts</span>
-    </button>
     <div class="side-nav-sep"></div>
     <div class="side-nav-section">Tools</div>
     <a href="mops.html" class="side-nav-item">
@@ -1177,7 +1173,8 @@ function lsSet(k, v) {
 // slug: short stable id used in the localStorage check key.
 const RECURRING_TASKS = [
   { section: "mix",   slug: "waffle_makers",        weekly_dow: [1],          label: "🧇 Put waffle makers back in their proper place", note: "Monday morning" },
-  { section: "mix",   slug: "dry_ice",              weekly_dow: [1, 4],       label: "🧊 Dry ice reception reminder" },
+  { section: "mix",   slug: "dry_ice",              weekly_dow: [1, 2],       label: "🧊 Dry ice reception reminder" },
+  { section: "mix",   slug: "emergency_levain",     weekly_dow: [1, 4],       label: "🪣 Make emergency levain bucket 10 kg" },
   { section: "mix",   slug: "empty_levain_machine", biweekly_anchor: "2026-05-01", label: "🫙 Empty and clean Levain machine", note: "every 2 weeks · Friday" },
   { section: "shape", slug: "divider_deep",         monthly_day: 1,           label: "🧽 Deep clean dough divider (remove white blocks)" },
   { section: "shape", slug: "divider_inside",       monthly_day: 15,          label: "🧽 Clean inside dough divider (keep white blocks)" },
@@ -1370,7 +1367,7 @@ async function productsGithubFetch(method, pat, putBody) {
   const fnUrl = SUPA_URL + "/functions/v1/github-products";
   const attempts = [];
   const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
-  if (isLocal) {
+  if (isLocal && pat) {
     attempts.push(() =>
       fetch(method === "GET" ? "/api/github-products-meta" : "/api/github-products", {
         method: method === "GET" ? "GET" : "PUT",
@@ -1386,18 +1383,20 @@ async function productsGithubFetch(method, pat, putBody) {
         ...ghJsonHeaders,
         Authorization: "Bearer " + SUPA_KEY,
         apikey: SUPA_KEY,
-        "X-GitHub-Token": pat,
+        ...(pat ? { "X-GitHub-Token": pat } : {}),
       },
       body: putBody ? JSON.stringify(putBody) : undefined,
     })
   );
-  attempts.push(() =>
-    fetch("https://api.github.com/repos/diesirae1908/atome-prod-schedule/contents/config/products.json", {
-      method,
-      headers: { ...ghJsonHeaders, Authorization: "token " + pat },
-      body: putBody ? JSON.stringify(putBody) : undefined,
-    })
-  );
+  if (pat) {
+    attempts.push(() =>
+      fetch("https://api.github.com/repos/diesirae1908/atome-prod-schedule/contents/config/products.json", {
+        method,
+        headers: { ...ghJsonHeaders, Authorization: "token " + pat },
+        body: putBody ? JSON.stringify(putBody) : undefined,
+      })
+    );
+  }
 
   let lastResp = null;
   for (let i = 0; i < attempts.length; i++) {
@@ -1446,10 +1445,7 @@ async function openSetupModal(ctx) {
 async function setupLoadProductsFile() {
   if (_setupState.productsFile) return _setupState.productsFile;
   const enc = localStorage.getItem("atome_pat_enc");
-  if (!enc) {
-    throw new Error("No GitHub PAT saved. Open AI Planner → Admin to save your PAT first.");
-  }
-  const pat = shiftsRoDecodePat(enc);
+  const pat = enc ? shiftsRoDecodePat(enc) : "";
   const meta = await productsGithubFetch("GET", pat, null);
   const info = await meta.json();
   if (!info.sha || !info.content) {

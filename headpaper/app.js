@@ -20,6 +20,7 @@
 const state = {
     tasks: [],
     categories: ['Preparation', 'Baking', 'Packaging', 'Cleaning', 'Other'], // Default categories
+    deletedDefaults: [], // Names of default tasks the user explicitly deleted (prevents re-merge)
     bakers: {}, // { date: ['Baker 1', 'Baker 2', ...] } - bakers are date-specific
     schedule: {}, // { date: { bakerIndex: { timeSlot: task } } }
     customTaskNames: {}, // { date: { bakerIndex: { startTime: customName } } }
@@ -241,8 +242,10 @@ function mergeDefaultTasks() {
     
     let addedCount = 0;
     defaultTasks.forEach(defaultTask => {
-        const exists = state.tasks.some(t => t.name.toLowerCase() === defaultTask.name.toLowerCase());
-        if (!exists) {
+        const nameLower = defaultTask.name.toLowerCase();
+        const exists = state.tasks.some(t => t.name.toLowerCase() === nameLower);
+        const deleted = state.deletedDefaults.some(n => n.toLowerCase() === nameLower);
+        if (!exists && !deleted) {
             state.tasks.push(defaultTask);
             addedCount++;
         }
@@ -723,6 +726,7 @@ function createTaskLibraryItem(task, index) {
     taskItem.style.borderLeft = `4px solid ${taskColor}`;
 
     taskItem.innerHTML = `
+        <button class="task-item-delete" onclick="quickDeleteTask('${task.id}'); event.stopPropagation();" title="Delete task">×</button>
         <div class="task-item-header">${task.name}</div>
         <div class="task-item-details">
             <span>${task.duration} min</span>
@@ -3390,6 +3394,16 @@ function saveTask() {
 
 function deleteTask() {
     const taskId = state.editingTask;
+    const task = state.tasks.find(t => t.id === taskId);
+
+    // Track deleted default names so mergeDefaultTasks won't re-add them
+    if (task) {
+        const nameLower = task.name.toLowerCase();
+        if (!state.deletedDefaults.some(n => n.toLowerCase() === nameLower)) {
+            state.deletedDefaults.push(task.name);
+        }
+    }
+
     state.tasks = state.tasks.filter(t => t.id !== taskId);
 
     // Remove from all schedules
@@ -3413,8 +3427,35 @@ function editTask(taskId) {
     openTaskModal(taskId);
 }
 
+function quickDeleteTask(taskId) {
+    const task = state.tasks.find(t => t.id === taskId);
+    if (!task) return;
+
+    const nameLower = task.name.toLowerCase();
+    if (!state.deletedDefaults.some(n => n.toLowerCase() === nameLower)) {
+        state.deletedDefaults.push(task.name);
+    }
+
+    state.tasks = state.tasks.filter(t => t.id !== taskId);
+
+    Object.keys(state.schedule).forEach(date => {
+        Object.keys(state.schedule[date]).forEach(bakerIndex => {
+            Object.keys(state.schedule[date][bakerIndex]).forEach(time => {
+                if (state.schedule[date][bakerIndex][time] === taskId) {
+                    delete state.schedule[date][bakerIndex][time];
+                }
+            });
+        });
+    });
+
+    saveToStorage();
+    renderTaskLibrary();
+    renderSchedule();
+}
+
 // Expose functions to global scope for onclick handlers
 window.editTask = editTask;
+window.quickDeleteTask = quickDeleteTask;
 window.renameBaker = renameBaker;
 window.deleteBaker = deleteBaker;
 window.removeScheduledTask = removeScheduledTask;
@@ -4730,6 +4771,7 @@ function saveToStorage() {
         localStorage.setItem('bakerySchedule', JSON.stringify({
             tasks: state.tasks,
             categories: state.categories,
+            deletedDefaults: state.deletedDefaults,
             bakers: state.bakers,
             schedule: state.schedule,
             customTaskNames: state.customTaskNames,
@@ -4750,6 +4792,7 @@ function loadFromStorage() {
         const data = JSON.parse(saved);
         state.tasks = data.tasks || [];
         state.categories = data.categories || ['Preparation', 'Baking', 'Packaging', 'Cleaning'];
+        state.deletedDefaults = data.deletedDefaults || [];
         
         // Handle bakers migration: old format (array) -> new format (date-specific object)
         if (Array.isArray(data.bakers)) {

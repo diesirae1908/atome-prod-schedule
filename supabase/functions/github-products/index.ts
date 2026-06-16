@@ -1,6 +1,6 @@
 // Supabase Edge Function: proxy GitHub Contents API for prod-schedule/config/products.json
 // Browsers cannot call api.github.com with a user PAT (CORS). This forwards the request.
-// Invoke with: Authorization: Bearer <Supabase anon key>, header X-GitHub-Token: <ghp_…>
+// Falls back to server-side GH_TOKEN when no client PAT is provided.
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -17,12 +17,12 @@ Deno.serve(async (req) => {
     return new Response("ok", { headers: corsHeaders });
   }
 
-  // Never read GitHub PAT from Authorization — Supabase uses that for the anon JWT.
-  const pat = (req.headers.get("X-GitHub-Token") || "").trim();
+  const clientPat = (req.headers.get("X-GitHub-Token") || "").trim();
+  const pat = clientPat || Deno.env.get("GH_TOKEN") || "";
   if (!pat) {
     return new Response(
-      JSON.stringify({ error: "Missing X-GitHub-Token (GitHub PAT)." }),
-      { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      JSON.stringify({ error: "No GitHub token available (neither client PAT nor server GH_TOKEN)." }),
+      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
   }
 

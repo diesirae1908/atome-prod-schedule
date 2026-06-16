@@ -516,6 +516,35 @@ body {
   cursor: grab;
   transition: box-shadow 0.15s, transform 0.1s;
   user-select: none;
+  position: relative;
+}
+
+.task-item-delete {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, background 0.15s, color 0.15s;
+}
+
+.task-item:hover .task-item-delete {
+  opacity: 1;
+}
+
+.task-item-delete:hover {
+  background: #fee2e2;
+  color: #dc2626;
 }
 
 .task-item:hover {

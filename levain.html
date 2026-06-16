@@ -247,6 +247,7 @@
 <script>
 // ── Constants ────────────────────────────────────────────────────────────────
 const RATIO_LEVAIN = 6, RATIO_FLOUR = 4, RATIO_WATER = 5, RATIO_TOTAL = 15;
+const MIN_FLOUR_KG = 20, MIN_WATER_KG = 26;
 
 const LEVAIN_GROUPS = [
   { label: "TRAD / MG / PIZ", mopIds: new Set(["trad-baguette","sesame-baguette","poppy-baguette","cheese-baguette","sourdough-loaf","ciabatta","multigrain-baguette","pizza"]) },
@@ -339,8 +340,13 @@ function calcSchedule(days) {
   return days.map((d, i) => {
     const hasNext    = i < n - 1;
     const starterKg  = hasNext ? total[i + 1] * (RATIO_LEVAIN / RATIO_TOTAL) : null;
-    const flourToAdd = hasNext ? total[i + 1] * (RATIO_FLOUR  / RATIO_TOTAL) : null;
-    const waterToAdd = hasNext ? total[i + 1] * (RATIO_WATER  / RATIO_TOTAL) : null;
+    let   flourToAdd = hasNext ? total[i + 1] * (RATIO_FLOUR  / RATIO_TOTAL) : null;
+    let   waterToAdd = hasNext ? total[i + 1] * (RATIO_WATER  / RATIO_TOTAL) : null;
+    if (flourToAdd !== null && flourToAdd < MIN_FLOUR_KG) {
+      flourToAdd = MIN_FLOUR_KG;
+      waterToAdd = MIN_WATER_KG;
+    }
+    const minApplied = flourToAdd === MIN_FLOUR_KG && hasNext && total[i + 1] * (RATIO_FLOUR / RATIO_TOTAL) < MIN_FLOUR_KG;
     const dow = new Date(d.date + "T12:00:00").getDay();
     const isEmergency = dow === emergencyDay;
 
@@ -355,6 +361,7 @@ function calcSchedule(days) {
       total: total[i],
       flourToAdd,
       waterToAdd,
+      minApplied,
     };
   });
 }
@@ -469,7 +476,9 @@ function render() {
     const dc = dayCalc[i];
     const cc = colClass(iso);
     if (!dc || dc.flourToAdd === null) { html += `<td class="no-data${cc}">–</td>`; return; }
-    html += `<td class="${cc}" title="= tomorrow's total × ${RATIO_FLOUR}/${RATIO_TOTAL}">${fmt1(dc.flourToAdd)} kg</td>`;
+    const minTag = dc.minApplied ? ' style="font-style:italic"' : '';
+    const title = dc.minApplied ? `Minimum ${MIN_FLOUR_KG} kg applied (calculated was lower)` : `= tomorrow's total × ${RATIO_FLOUR}/${RATIO_TOTAL}`;
+    html += `<td class="${cc}" title="${title}"${minTag}>${fmt1(dc.flourToAdd)} kg${dc.minApplied ? ' *' : ''}</td>`;
   });
   html += `</tr>`;
 
@@ -478,11 +487,18 @@ function render() {
     const dc = dayCalc[i];
     const cc = colClass(iso);
     if (!dc || dc.waterToAdd === null) { html += `<td class="no-data${cc}">–</td>`; return; }
-    html += `<td class="${cc}" title="= tomorrow's total × ${RATIO_WATER}/${RATIO_TOTAL}">${fmt1(dc.waterToAdd)} kg</td>`;
+    const minTag = dc.minApplied ? ' style="font-style:italic"' : '';
+    const title = dc.minApplied ? `Minimum ${MIN_WATER_KG} L applied (calculated was lower)` : `= tomorrow's total × ${RATIO_WATER}/${RATIO_TOTAL}`;
+    html += `<td class="${cc}" title="${title}"${minTag}>${fmt1(dc.waterToAdd)} kg${dc.minApplied ? ' *' : ''}</td>`;
   });
   html += `</tr>`;
 
   html += `</tbody></table>`;
+
+  const anyMin = dayCalc.some(dc => dc && dc.minApplied);
+  if (anyMin) {
+    html += `<div style="margin-top:6px;font-size:12px;color:#78716c;font-style:italic">* Minimum refresh applied: ${MIN_FLOUR_KG} kg flour / ${MIN_WATER_KG} L water</div>`;
+  }
 
   document.getElementById("tableContainer").innerHTML = html;
   document.getElementById("tableContainer").style.display = "block";
