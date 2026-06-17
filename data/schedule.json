@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T22:54:37Z",
+  "generated_at": "2026-06-17T22:55:56Z",
   "week_number": 22,
   "week_start": "2026-05-25",
   "week_end": "2026-07-05",
@@ -797,18 +797,7 @@
     {
       "date": "2026-06-20",
       "label": "SATURDAY",
-      "premix": [
-        {
-          "label": "MG Grain Soak",
-          "total_units": 360,
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ],
-          "mo_refs": [
-            "WH/MO/00999"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "COUNTRY",
@@ -925,6 +914,16 @@
       "label": "SUNDAY",
       "premix": [
         {
+          "label": "Cut Cheese",
+          "total_units": 360,
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ],
+          "mo_refs": [
+            "WH/MO/00933"
+          ]
+        },
+        {
           "label": "MG Grain Soak",
           "total_units": 360,
           "products": [
@@ -947,6 +946,18 @@
       ],
       "mix": [
         {
+          "dough_type": "TRAD",
+          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "cfg_name": "Cheese Baguette",
+          "unit": "kg",
+          "total_kg": 144.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00933",
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ]
+        },
+        {
           "dough_type": "COUNTRY",
           "label": "Pack of 2 Country Rye Sourdough Loaf",
           "cfg_name": "Country Rye Loaf (×2)",
@@ -956,18 +967,6 @@
           "mo_ref": "WH/MO/00960",
           "products": [
             "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
-          "dough_type": "MG",
-          "label": "Pack of 3 Multigrain Sourdough Baguettes",
-          "cfg_name": "Multigrain Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 135.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00999",
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         }
       ],
@@ -1107,21 +1106,21 @@
           "d0": "2026-06-24"
         },
         {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 135.0,
-          "mo_ref": "WH/MO/00999",
-          "d0": "2026-06-23"
-        },
-        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138,
           "qty_units": 414,
           "total_kg": 29.0,
           "mo_ref": "WH/MO/00942",
+          "d0": "2026-06-23"
+        },
+        {
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360,
+          "qty_units": 360,
+          "total_kg": 144.0,
+          "mo_ref": "WH/MO/00933",
           "d0": "2026-06-23"
         }
       ],
@@ -1181,6 +1180,16 @@
       "date": "2026-06-23",
       "label": "TUESDAY",
       "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/00999"
+          ]
+        },
         {
           "label": "Prep mix PAC/CR",
           "total_units": 309,
@@ -1297,19 +1306,6 @@
           "needs_setup": false
         },
         {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-03-23",
-          "mo_ref": "WH/MO/00999",
-          "lot_id": 1619,
-          "lot_name": "03/23/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138.0,
@@ -1321,6 +1317,19 @@
           "lot_name": "12/23/2026",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-03-23",
+          "mo_ref": "WH/MO/00933",
+          "lot_id": 1498,
+          "lot_name": "03/23/2027",
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -1328,16 +1337,6 @@
       "date": "2026-06-24",
       "label": "WEDNESDAY",
       "premix": [
-        {
-          "label": "Cut Cheese",
-          "total_units": 360,
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
-          ],
-          "mo_refs": [
-            "WH/MO/00933"
-          ]
-        },
         {
           "label": "Prep mix PAC/CR",
           "total_units": 414,
@@ -1350,18 +1349,6 @@
         }
       ],
       "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "cfg_name": "Cheese Baguette",
-          "unit": "kg",
-          "total_kg": 144.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/00933",
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
-          ]
-        },
         {
           "dough_type": "PAC_CR",
           "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
@@ -1384,6 +1371,18 @@
           "mo_ref": "WH/MO/00969",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        },
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 135.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/00999",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         }
       ],
@@ -1545,21 +1544,21 @@
           "d0": "2026-06-27"
         },
         {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 135.0,
+          "mo_ref": "WH/MO/00999",
+          "d0": "2026-06-26"
+        },
+        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138,
           "qty_units": 414,
           "total_kg": 29.0,
           "mo_ref": "WH/MO/00963",
-          "d0": "2026-06-26"
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360,
-          "qty_units": 360,
-          "total_kg": 144.0,
-          "mo_ref": "WH/MO/00933",
           "d0": "2026-06-26"
         }
       ],
@@ -1682,6 +1681,19 @@
           "needs_setup": false
         },
         {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-03-26",
+          "mo_ref": "WH/MO/00999",
+          "lot_id": 1588,
+          "lot_name": "03/26/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138.0,
@@ -1705,19 +1717,6 @@
           "lot_id": 694,
           "lot_name": "11/11/2026",
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-03-26",
-          "mo_ref": "WH/MO/00933",
-          "lot_id": 1617,
-          "lot_name": "03/26/2027",
-          "copacked": false,
           "needs_setup": false
         }
       ]
