@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T16:30:48Z",
+  "generated_at": "2026-06-17T16:32:12Z",
   "week_number": 22,
   "week_start": "2026-05-25",
   "week_end": "2026-07-05",
@@ -1732,7 +1732,18 @@
     {
       "date": "2026-06-27",
       "label": "SATURDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 414,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/00964"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -1857,19 +1868,21 @@
           "mo_refs": [
             "WH/MO/00993"
           ]
-        },
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 414,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/00964"
-          ]
         }
       ],
       "mix": [
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 29.0,
+          "total_units": 414,
+          "mo_ref": "WH/MO/00964",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
+        },
         {
           "dough_type": "TRAD",
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -1904,6 +1917,15 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/00980",
           "d0": "2026-06-30"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
+          "mo_ref": "WH/MO/00964",
+          "d0": "2026-06-29"
         },
         {
           "sku": "TR3P-SGL",
@@ -1973,18 +1995,6 @@
       "premix": [],
       "mix": [
         {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 29.0,
-          "total_units": 414,
-          "mo_ref": "WH/MO/00964",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        },
-        {
           "dough_type": "COUNTRY",
           "label": "Pack of 2 Country Rye Sourdough Loaf",
           "cfg_name": "Country Rye Loaf (×2)",
@@ -2041,15 +2051,6 @@
           "d0": "2026-06-30"
         },
         {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 29.0,
-          "mo_ref": "WH/MO/00964",
-          "d0": "2026-06-30"
-        },
-        {
           "sku": "SE3P-SGL",
           "name": "Pack of 3 Sourdough Sesame Baguette",
           "qty_packs": 117,
@@ -2094,6 +2095,19 @@
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
+          "dluo": "2026-12-29",
+          "mo_ref": "WH/MO/00964",
+          "lot_id": 1516,
+          "lot_name": "12/29/2026",
+          "copacked": false,
           "needs_setup": false
         },
         {
@@ -2208,19 +2222,6 @@
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
-          "dluo": "2026-12-30",
-          "mo_ref": "WH/MO/00964",
-          "lot_id": 1555,
-          "lot_name": "12/30/2026",
-          "copacked": false,
           "needs_setup": false
         },
         {
