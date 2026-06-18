@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T15:42:55Z",
+  "generated_at": "2026-06-18T15:45:34Z",
   "week_number": 22,
   "week_start": "2026-05-25",
   "week_end": "2026-07-05",
@@ -174,21 +174,7 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": [
-        {
-          "sku": "4-CXC20P",
-          "name": "Pack of 20 Cheese Gougères",
-          "qty_packs": 101.0,
-          "qty_units": 101.0,
-          "qty_pouches": 101.0,
-          "dluo": "2027-01-19",
-          "mo_ref": "WH/MO/00948-002",
-          "lot_id": 1275,
-          "lot_name": "01/19/2027",
-          "copacked": true,
-          "needs_setup": true
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-06-13",
@@ -206,37 +192,12 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": [
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 200.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/00944",
-          "lot_id": 694,
-          "lot_name": "11/11/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-06-15",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 309,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/00938"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -294,18 +255,6 @@
           ]
         },
         {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 21.6,
-          "total_units": 309,
-          "mo_ref": "WH/MO/00938",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        },
-        {
           "dough_type": "TRAD",
           "label": "Pack of 3 Sourdough Poppy Seed Baguette",
           "cfg_name": "Poppy Seed Baguette (×3)",
@@ -327,15 +276,6 @@
           "total_kg": 99.2,
           "mo_ref": "WH/MO/00930",
           "d0": "2026-06-18"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103,
-          "qty_units": 309,
-          "total_kg": 21.6,
-          "mo_ref": "WH/MO/00938",
-          "d0": "2026-06-17"
         }
       ],
       "score_tasks": [
@@ -467,19 +407,6 @@
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103.0,
-          "qty_units": 309.0,
-          "qty_pouches": 103.0,
-          "dluo": "2026-12-17",
-          "mo_ref": "WH/MO/00938",
-          "lot_id": 1505,
-          "lot_name": "12/17/2026",
-          "copacked": false,
           "needs_setup": false
         },
         {
