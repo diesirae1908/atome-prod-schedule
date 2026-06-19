@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T22:47:59Z",
+  "generated_at": "2026-06-19T18:32:13Z",
   "week_number": 22,
   "week_start": "2026-05-25",
   "week_end": "2026-07-05",
@@ -229,18 +229,7 @@
     {
       "date": "2026-06-16",
       "label": "TUESDAY",
-      "premix": [
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 348,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/00961"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "PIZZA",
@@ -252,18 +241,6 @@
           "mo_ref": "WH/MO/00930",
           "products": [
             "Pack of 2 Pizza Dough (Sourdough)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "cfg_name": "Poppy Seed Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00967",
-          "products": [
-            "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
         }
       ],
@@ -329,18 +306,6 @@
           "products": [
             "Pack of 3 Sourdough Sesame Baguette"
           ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/00961",
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ]
         }
       ],
       "shaping": [
@@ -352,24 +317,6 @@
           "total_kg": 138.0,
           "mo_ref": "WH/MO/00929",
           "d0": "2026-06-19"
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/00961",
-          "d0": "2026-06-18"
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00967",
-          "d0": "2026-06-18"
         }
       ],
       "score_tasks": [
@@ -406,19 +353,6 @@
           "mo_ref": "WH/MO/00943",
           "lot_id": 959,
           "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "2-CRVGN3P-SGL",
-          "name": "Pack of 3 vegan croissant",
-          "qty_packs": 30.0,
-          "qty_units": 90.0,
-          "qty_pouches": 30.0,
-          "dluo": "2026-12-12",
-          "mo_ref": "WH/MO/00919-002",
-          "lot_id": 1443,
-          "lot_name": "12/12/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -531,19 +465,6 @@
           "needs_setup": false
         },
         {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "qty_pouches": 116.0,
-          "dluo": "2026-12-18",
-          "mo_ref": "WH/MO/00961",
-          "lot_id": 1595,
-          "lot_name": "12/18/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
           "qty_packs": 213.0,
@@ -554,19 +475,6 @@
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-03-18",
-          "mo_ref": "WH/MO/00967",
-          "lot_id": 1546,
-          "lot_name": "03/18/2027",
-          "copacked": false,
           "needs_setup": false
         }
       ]
