@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T23:56:08Z",
+  "generated_at": "2026-06-24T00:04:55Z",
   "week_number": 23,
   "week_start": "2026-06-01",
   "week_end": "2026-07-12",
@@ -212,9 +212,31 @@
           "products": [
             "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
+        },
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 224.0,
+          "total_units": 320,
+          "mo_ref": "WH/MO/00960",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
         }
       ],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160,
+          "qty_units": 320,
+          "total_kg": 224.0,
+          "mo_ref": "WH/MO/00960",
+          "d0": "2026-06-23"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -245,18 +267,6 @@
       ],
       "mix": [
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 224.0,
-          "total_units": 320,
-          "mo_ref": "WH/MO/00960",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
           "dough_type": "WW",
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "cfg_name": "Wholewheat Loaf (×2)",
@@ -283,15 +293,6 @@
       ],
       "shaping": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "total_kg": 224.0,
-          "mo_ref": "WH/MO/00960",
-          "d0": "2026-06-24"
-        },
-        {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "qty_packs": 77,
@@ -310,7 +311,16 @@
           "d0": "2026-06-23"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160,
+          "qty_units": 320,
+          "mo_ref": "WH/MO/00960",
+          "d0": "2026-06-23"
+        }
+      ],
       "vacuuming": []
     },
     {
@@ -398,14 +408,6 @@
       "score_tasks": [
         {
           "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "mo_ref": "WH/MO/00960",
-          "d0": "2026-06-24"
-        },
-        {
-          "action": "score_freeze",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "qty_packs": 77,
           "qty_units": 154,
@@ -414,6 +416,32 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160.0,
+          "qty_units": 320.0,
+          "qty_pouches": 320.0,
+          "dluo": "2027-03-23",
+          "mo_ref": "WH/MO/00960",
+          "lot_id": 1518,
+          "lot_name": "03/23/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 213.0,
+          "qty_units": 639.0,
+          "qty_pouches": 213.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/00956",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
         {
           "sku": "CH-SGL",
           "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
@@ -502,19 +530,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160.0,
-          "qty_units": 320.0,
-          "qty_pouches": 320.0,
-          "dluo": "2027-03-24",
-          "mo_ref": "WH/MO/00960",
-          "lot_id": 1519,
-          "lot_name": "03/24/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "qty_packs": 77.0,
@@ -538,19 +553,6 @@
           "lot_id": 1567,
           "lot_name": "12/24/2026",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/00956",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
           "needs_setup": false
         },
         {
@@ -685,6 +687,19 @@
           "needs_setup": false
         },
         {
+          "sku": "2-GCKVGN2P-SGL",
+          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
+          "qty_packs": 126.0,
+          "qty_units": 252.0,
+          "qty_pouches": 126.0,
+          "dluo": "2026-12-24",
+          "mo_ref": "WH/MO/01016",
+          "lot_id": 1596,
+          "lot_name": "12/24/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "MG3P-SGL",
           "name": "Pack of 3 Multigrain Sourdough Baguettes",
           "qty_packs": 120.0,
@@ -760,19 +775,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "2-GCKVGN2P-SGL",
-          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
-          "qty_packs": 126.0,
-          "qty_units": 252.0,
-          "qty_pouches": 126.0,
-          "dluo": "2026-12-24",
-          "mo_ref": "WH/MO/01016",
-          "lot_id": 1596,
-          "lot_name": "12/24/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
