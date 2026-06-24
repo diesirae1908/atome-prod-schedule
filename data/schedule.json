@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T00:04:55Z",
+  "generated_at": "2026-06-24T01:44:48Z",
   "week_number": 23,
   "week_start": "2026-06-01",
   "week_end": "2026-07-12",
@@ -994,6 +994,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 213.0,
+          "qty_units": 639.0,
+          "qty_pouches": 213.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01023",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": false
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
