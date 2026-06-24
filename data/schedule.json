@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T22:34:13Z",
+  "generated_at": "2026-06-24T23:50:04Z",
   "week_number": 23,
   "week_start": "2026-06-01",
   "week_end": "2026-07-12",
@@ -207,55 +207,10 @@
           "mo_refs": [
             "WH/MO/00999"
           ]
-        },
-        {
-          "label": "Prep mix Viennoise",
-          "total_units": 200,
-          "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
-          ],
-          "mo_refs": [
-            "WH/MO/00984"
-          ]
         }
       ],
-      "mix": [
-        {
-          "dough_type": "WW",
-          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "cfg_name": "Wholewheat Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 92.4,
-          "total_units": 154,
-          "mo_ref": "WH/MO/00971",
-          "products": [
-            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00985",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 77,
-          "qty_units": 154,
-          "total_kg": 92.4,
-          "mo_ref": "WH/MO/00971",
-          "d0": "2026-06-24"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -298,18 +253,6 @@
           ]
         },
         {
-          "dough_type": "VIENNOISE",
-          "label": "Pack of 2 Viennoise (Brioche Baguette)",
-          "cfg_name": "Viennoise (×2)",
-          "unit": "kg",
-          "total_kg": 40.0,
-          "total_units": 200,
-          "mo_ref": "WH/MO/00984",
-          "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
-          ]
-        },
-        {
           "dough_type": "MG",
           "label": "Pack of 3 Multigrain Sourdough Baguettes",
           "cfg_name": "Multigrain Baguette (×3)",
@@ -331,51 +274,10 @@
           "total_kg": 138.0,
           "mo_ref": "WH/MO/00976",
           "d0": "2026-06-25"
-        },
-        {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100,
-          "qty_units": 200,
-          "total_kg": 40.0,
-          "mo_ref": "WH/MO/00984",
-          "d0": "2026-06-24"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00985",
-          "d0": "2026-06-24"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 77,
-          "qty_units": 154,
-          "mo_ref": "WH/MO/00971",
-          "d0": "2026-06-24"
-        }
-      ],
-      "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/00956",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "score_tasks": [],
+      "vacuuming": []
     },
     {
       "date": "2026-06-24",
@@ -471,32 +373,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 77.0,
-          "qty_units": 154.0,
-          "qty_pouches": 154.0,
-          "dluo": "2027-03-24",
-          "mo_ref": "WH/MO/00971",
-          "lot_id": 1561,
-          "lot_name": "03/24/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-12-24",
-          "mo_ref": "WH/MO/00984",
-          "lot_id": 1567,
-          "lot_name": "12/24/2026",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
           "qty_packs": 213.0,
@@ -507,19 +383,6 @@
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-03-24",
-          "mo_ref": "WH/MO/00985",
-          "lot_id": 1629,
-          "lot_name": "03/24/2027",
-          "copacked": false,
           "needs_setup": false
         }
       ]
@@ -923,10 +786,10 @@
           "qty_packs": 213.0,
           "qty_units": 639.0,
           "qty_pouches": 213.0,
-          "dluo": null,
+          "dluo": "2026-12-10",
           "mo_ref": "WH/MO/01023",
-          "lot_id": null,
-          "lot_name": null,
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
           "copacked": true,
           "needs_setup": false
         },
@@ -1650,10 +1513,10 @@
           "qty_packs": 126.0,
           "qty_units": 252.0,
           "qty_pouches": 126.0,
-          "dluo": null,
+          "dluo": "2027-01-08",
           "mo_ref": "WH/MO/01025",
-          "lot_id": null,
-          "lot_name": null,
+          "lot_id": 1636,
+          "lot_name": "01/08/2027",
           "copacked": true,
           "needs_setup": false
         }
