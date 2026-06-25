@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T19:16:42Z",
+  "generated_at": "2026-06-25T19:47:44Z",
   "week_number": 23,
   "week_start": "2026-06-01",
   "week_end": "2026-07-12",
@@ -426,6 +426,19 @@
           "mo_ref": "WH/MO/01016",
           "lot_id": 1596,
           "lot_name": "12/24/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 40.0,
+          "qty_units": 120.0,
+          "qty_pouches": 40.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/01053",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
           "copacked": true,
           "needs_setup": false
         }
@@ -1750,19 +1763,6 @@
           "needs_setup": false
         },
         {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01009",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117.0,
@@ -1774,6 +1774,32 @@
           "lot_name": "04/08/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CHTWI4P",
+          "name": "Pack of 4 Chocolate Twists",
+          "qty_packs": 18.0,
+          "qty_units": 18.0,
+          "qty_pouches": 18.0,
+          "dluo": "2026-10-27",
+          "mo_ref": "WH/MO/01050",
+          "lot_id": 1272,
+          "lot_name": "10/27/2026",
+          "copacked": true,
+          "needs_setup": true
+        },
+        {
+          "sku": "4-CHTWI4P",
+          "name": "Pack of 4 Chocolate Twists",
+          "qty_packs": 114.0,
+          "qty_units": 114.0,
+          "qty_pouches": 114.0,
+          "dluo": "2026-11-25",
+          "mo_ref": "WH/MO/01051",
+          "lot_id": 1666,
+          "lot_name": "11/25/2026",
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
