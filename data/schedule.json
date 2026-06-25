@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T19:06:17Z",
+  "generated_at": "2026-06-25T19:14:13Z",
   "week_number": 23,
   "week_start": "2026-06-01",
   "week_end": "2026-07-12",
@@ -1263,7 +1263,18 @@
     {
       "date": "2026-07-05",
       "label": "SUNDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Braided Brioche",
+          "total_units": 116,
+          "products": [
+            "Brioche (Pastry)"
+          ],
+          "mo_refs": [
+            "WH/MO/01046"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "COUNTRY",
@@ -1390,9 +1401,30 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Brioche (Pastry)",
+          "cfg_name": "Braided Brioche",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 116,
+          "mo_ref": "WH/MO/01046",
+          "products": [
+            "Brioche (Pastry)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116,
+          "qty_units": 116,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/01046",
+          "d0": "2026-07-07"
+        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -1525,6 +1557,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116.0,
+          "qty_units": 116.0,
+          "qty_pouches": 116.0,
+          "dluo": "2027-01-07",
+          "mo_ref": "WH/MO/01046",
+          "lot_id": 1661,
+          "lot_name": "01/07/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
@@ -1662,6 +1707,18 @@
       "mix": [
         {
           "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 247.8,
+          "total_units": 354,
+          "mo_ref": "WH/MO/01035",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
           "cfg_name": "Trad. Baguette (×3)",
           "unit": "kg",
@@ -1671,28 +1728,16 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
-        },
-        {
-          "dough_type": "PIZZA",
-          "label": "Pack of 2 Pizza Dough (Sourdough)",
-          "cfg_name": "Pizza Dough (×2)",
-          "unit": "kg",
-          "total_kg": 100.0,
-          "total_units": 500,
-          "mo_ref": "WH/MO/01042",
-          "products": [
-            "Pack of 2 Pizza Dough (Sourdough)"
-          ]
         }
       ],
       "shaping": [
         {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 250,
-          "qty_units": 500,
-          "total_kg": 100.0,
-          "mo_ref": "WH/MO/01042",
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 177,
+          "qty_units": 354,
+          "total_kg": 247.8,
+          "mo_ref": "WH/MO/01035",
           "d0": "2026-07-11"
         },
         {
@@ -1764,18 +1809,6 @@
       "mix": [
         {
           "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 247.8,
-          "total_units": 354,
-          "mo_ref": "WH/MO/01035",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
           "cfg_name": "Trad. Baguette (×3)",
           "unit": "kg",
@@ -1784,6 +1817,18 @@
           "mo_ref": "WH/MO/01041",
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 247.8,
+          "total_units": 354,
+          "mo_ref": "WH/MO/01045",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
           ]
         }
       ],
@@ -1794,7 +1839,7 @@
           "qty_packs": 177,
           "qty_units": 354,
           "total_kg": 247.8,
-          "mo_ref": "WH/MO/01035",
+          "mo_ref": "WH/MO/01045",
           "d0": "2026-07-12"
         },
         {
@@ -1809,15 +1854,28 @@
       ],
       "score_tasks": [
         {
-          "action": "freeze_only",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 250,
-          "qty_units": 500,
-          "mo_ref": "WH/MO/01042",
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 177,
+          "qty_units": 354,
+          "mo_ref": "WH/MO/01035",
           "d0": "2026-07-11"
         }
       ],
       "vacuuming": [
+        {
+          "sku": "4-CHLAV2P",
+          "name": "Pack of 2 Chocolate Lava Cakes",
+          "qty_packs": 180.0,
+          "qty_units": 180.0,
+          "qty_pouches": 180.0,
+          "dluo": "2027-09-11",
+          "mo_ref": "WH/MO/01044",
+          "lot_id": 1593,
+          "lot_name": "09/11/2027",
+          "copacked": true,
+          "needs_setup": true
+        },
         {
           "sku": "PIZ2-SGL",
           "name": "Pack of 2 Pizza Dough (Sourdough)",
@@ -1842,19 +1900,6 @@
           "lot_id": 1586,
           "lot_name": "04/10/2027",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 200.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/01011",
-          "lot_id": 694,
-          "lot_name": "11/11/2026",
-          "copacked": true,
           "needs_setup": false
         }
       ]
@@ -1881,20 +1926,20 @@
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 177,
           "qty_units": 354,
-          "mo_ref": "WH/MO/01035",
+          "mo_ref": "WH/MO/01045",
           "d0": "2026-07-12"
         }
       ],
       "vacuuming": [
         {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 250.0,
-          "qty_units": 500.0,
-          "qty_pouches": 250.0,
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 177.0,
+          "qty_units": 354.0,
+          "qty_pouches": 354.0,
           "dluo": "2027-04-11",
-          "mo_ref": "WH/MO/01042",
-          "lot_id": 1658,
+          "mo_ref": "WH/MO/01035",
+          "lot_id": 1648,
           "lot_name": "04/11/2027",
           "copacked": false,
           "needs_setup": false
@@ -1929,23 +1974,10 @@
           "qty_units": 354.0,
           "qty_pouches": 354.0,
           "dluo": "2027-04-12",
-          "mo_ref": "WH/MO/01035",
+          "mo_ref": "WH/MO/01045",
           "lot_id": 1652,
           "lot_name": "04/12/2027",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01015",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
           "needs_setup": false
         },
         {
@@ -1959,6 +1991,19 @@
           "lot_id": 1657,
           "lot_name": "04/12/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 200.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/01011",
+          "lot_id": 694,
+          "lot_name": "11/11/2026",
+          "copacked": true,
           "needs_setup": false
         }
       ]
