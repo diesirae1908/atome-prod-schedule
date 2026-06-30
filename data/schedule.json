@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T21:26:33Z",
+  "generated_at": "2026-06-30T21:28:01Z",
   "week_number": 24,
   "week_start": "2026-06-08",
   "week_end": "2026-07-19",
@@ -1549,19 +1549,6 @@
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 200.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/01011",
-          "lot_id": 694,
-          "lot_name": "11/11/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "2-CRVGN3P-SGL",
           "name": "Pack of 3 vegan croissant",
           "qty_packs": 60.0,
@@ -1594,7 +1581,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 200.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/01011",
+          "lot_id": 694,
+          "lot_name": "11/11/2026",
+          "copacked": true,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-07-18",
