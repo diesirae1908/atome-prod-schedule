@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T21:28:01Z",
+  "generated_at": "2026-06-30T21:31:25Z",
   "week_number": 24,
   "week_start": "2026-06-08",
   "week_end": "2026-07-19",
@@ -1125,7 +1125,18 @@
     {
       "date": "2026-07-08",
       "label": "WEDNESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 414,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/01058"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "PIZZA",
@@ -1251,6 +1262,18 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
+        },
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 29.0,
+          "total_units": 414,
+          "mo_ref": "WH/MO/01058",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
         }
       ],
       "shaping": [
@@ -1262,6 +1285,15 @@
           "total_kg": 247.8,
           "mo_ref": "WH/MO/01035",
           "d0": "2026-07-11"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
+          "mo_ref": "WH/MO/01058",
+          "d0": "2026-07-10"
         }
       ],
       "score_tasks": [
@@ -1415,6 +1447,19 @@
           "lot_name": "01/19/2027",
           "copacked": true,
           "needs_setup": true
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
+          "dluo": "2027-01-10",
+          "mo_ref": "WH/MO/01058",
+          "lot_id": 1676,
+          "lot_name": "01/10/2027",
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
