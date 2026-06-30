@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T22:51:19Z",
+  "generated_at": "2026-06-30T23:02:35Z",
   "week_number": 24,
   "week_start": "2026-06-08",
   "week_end": "2026-07-19",
@@ -1468,7 +1468,18 @@
     {
       "date": "2026-07-12",
       "label": "SUNDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 414,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/01070"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -1561,6 +1572,18 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 29.0,
+          "total_units": 414,
+          "mo_ref": "WH/MO/01070",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
         }
       ],
       "shaping": [
@@ -1572,6 +1595,15 @@
           "total_kg": 183.6,
           "mo_ref": "WH/MO/01063",
           "d0": "2026-07-15"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
+          "mo_ref": "WH/MO/01070",
+          "d0": "2026-07-14"
         }
       ],
       "score_tasks": [
@@ -1603,7 +1635,18 @@
     {
       "date": "2026-07-14",
       "label": "TUESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 414,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/01071"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "WW",
@@ -1686,6 +1729,19 @@
           "lot_name": "12/10/2026",
           "copacked": true,
           "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
+          "dluo": "2027-01-14",
+          "mo_ref": "WH/MO/01070",
+          "lot_id": 1691,
+          "lot_name": "01/14/2027",
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -1705,6 +1761,18 @@
           "products": [
             "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
           ]
+        },
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 29.0,
+          "total_units": 414,
+          "mo_ref": "WH/MO/01071",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
         }
       ],
       "shaping": [
@@ -1716,6 +1784,15 @@
           "total_kg": 239.4,
           "mo_ref": "WH/MO/01065",
           "d0": "2026-07-17"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
+          "mo_ref": "WH/MO/01071",
+          "d0": "2026-07-16"
         },
         {
           "sku": "TR3P-SGL",
@@ -1769,9 +1846,43 @@
     {
       "date": "2026-07-16",
       "label": "THURSDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
+      "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 414,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/01072"
+          ]
+        }
+      ],
+      "mix": [
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 112.0,
+          "total_units": 160,
+          "mo_ref": "WH/MO/01068",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "total_kg": 112.0,
+          "mo_ref": "WH/MO/01068",
+          "d0": "2026-07-18"
+        }
+      ],
       "score_tasks": [
         {
           "action": "freeze_only",
@@ -1793,6 +1904,19 @@
           "mo_ref": "WH/MO/01064",
           "lot_id": 1684,
           "lot_name": "04/16/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
+          "dluo": "2027-01-16",
+          "mo_ref": "WH/MO/01071",
+          "lot_id": 1692,
+          "lot_name": "01/16/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -1839,9 +1963,62 @@
           ]
         }
       ],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
+      "mix": [
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 112.0,
+          "total_units": 160,
+          "mo_ref": "WH/MO/01069",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
+        },
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 29.0,
+          "total_units": 414,
+          "mo_ref": "WH/MO/01072",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "total_kg": 112.0,
+          "mo_ref": "WH/MO/01069",
+          "d0": "2026-07-19"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
+          "mo_ref": "WH/MO/01072",
+          "d0": "2026-07-18"
+        }
+      ],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "mo_ref": "WH/MO/01068",
+          "d0": "2026-07-18"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "CIA3-SGL",
@@ -1911,8 +2088,30 @@
           "d0": "2026-07-18"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "mo_ref": "WH/MO/01069",
+          "d0": "2026-07-19"
+        }
+      ],
       "vacuuming": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80.0,
+          "qty_units": 160.0,
+          "qty_pouches": 160.0,
+          "dluo": "2027-04-18",
+          "mo_ref": "WH/MO/01068",
+          "lot_id": 1689,
+          "lot_name": "04/18/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
@@ -1922,6 +2121,19 @@
           "dluo": "2027-01-18",
           "mo_ref": "WH/MO/01029",
           "lot_id": 1643,
+          "lot_name": "01/18/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
+          "dluo": "2027-01-18",
+          "mo_ref": "WH/MO/01072",
+          "lot_id": 1693,
           "lot_name": "01/18/2027",
           "copacked": false,
           "needs_setup": false
@@ -1971,6 +2183,19 @@
           "lot_name": "09/11/2027",
           "copacked": true,
           "needs_setup": true
+        },
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80.0,
+          "qty_units": 160.0,
+          "qty_pouches": 160.0,
+          "dluo": "2027-04-19",
+          "mo_ref": "WH/MO/01069",
+          "lot_id": 1690,
+          "lot_name": "04/19/2027",
+          "copacked": false,
+          "needs_setup": false
         },
         {
           "sku": "WA3P-SGL",
