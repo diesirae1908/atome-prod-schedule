@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T22:44:05Z",
+  "generated_at": "2026-06-30T22:51:19Z",
   "week_number": 24,
   "week_start": "2026-06-08",
   "week_end": "2026-07-19",
@@ -1537,8 +1537,43 @@
       "date": "2026-07-13",
       "label": "MONDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "WW",
+          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "cfg_name": "Wholewheat Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 183.6,
+          "total_units": 306,
+          "mo_ref": "WH/MO/01063",
+          "products": [
+            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01066",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 153,
+          "qty_units": 306,
+          "total_kg": 183.6,
+          "mo_ref": "WH/MO/01063",
+          "d0": "2026-07-15"
+        }
+      ],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -1569,9 +1604,62 @@
       "date": "2026-07-14",
       "label": "TUESDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
+      "mix": [
+        {
+          "dough_type": "WW",
+          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "cfg_name": "Wholewheat Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 183.6,
+          "total_units": 306,
+          "mo_ref": "WH/MO/01064",
+          "products": [
+            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01067",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 153,
+          "qty_units": 306,
+          "total_kg": 183.6,
+          "mo_ref": "WH/MO/01064",
+          "d0": "2026-07-16"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01066",
+          "d0": "2026-07-15"
+        }
+      ],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 153,
+          "qty_units": 306,
+          "mo_ref": "WH/MO/01063",
+          "d0": "2026-07-15"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -1605,10 +1693,78 @@
       "date": "2026-07-15",
       "label": "WEDNESDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
+      "mix": [
+        {
+          "dough_type": "CIABATTA",
+          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "cfg_name": "Ciabatta (×3)",
+          "unit": "kg",
+          "total_kg": 239.4,
+          "total_units": 798,
+          "mo_ref": "WH/MO/01065",
+          "products": [
+            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 266,
+          "qty_units": 798,
+          "total_kg": 239.4,
+          "mo_ref": "WH/MO/01065",
+          "d0": "2026-07-17"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01067",
+          "d0": "2026-07-16"
+        }
+      ],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 153,
+          "qty_units": 306,
+          "mo_ref": "WH/MO/01064",
+          "d0": "2026-07-16"
+        }
+      ],
+      "vacuuming": [
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 153.0,
+          "qty_units": 306.0,
+          "qty_pouches": 306.0,
+          "dluo": "2027-04-15",
+          "mo_ref": "WH/MO/01063",
+          "lot_id": 1683,
+          "lot_name": "04/15/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-04-15",
+          "mo_ref": "WH/MO/01066",
+          "lot_id": 1686,
+          "lot_name": "04/15/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-07-16",
@@ -1616,8 +1772,43 @@
       "premix": [],
       "mix": [],
       "shaping": [],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "freeze_only",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 266,
+          "qty_units": 798,
+          "mo_ref": "WH/MO/01065",
+          "d0": "2026-07-17"
+        }
+      ],
       "vacuuming": [
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 153.0,
+          "qty_units": 306.0,
+          "qty_pouches": 306.0,
+          "dluo": "2027-04-16",
+          "mo_ref": "WH/MO/01064",
+          "lot_id": 1684,
+          "lot_name": "04/16/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-04-16",
+          "mo_ref": "WH/MO/01067",
+          "lot_id": 1687,
+          "lot_name": "04/16/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "2-CRVGN3P-SGL",
           "name": "Pack of 3 vegan croissant",
@@ -1652,6 +1843,19 @@
       "shaping": [],
       "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 266.0,
+          "qty_units": 798.0,
+          "qty_pouches": 266.0,
+          "dluo": "2027-04-17",
+          "mo_ref": "WH/MO/01065",
+          "lot_id": 1685,
+          "lot_name": "04/17/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "1-AT3P-SGL",
           "name": "Pack of 3 apple turnover",
