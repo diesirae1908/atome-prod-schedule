@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T00:39:20Z",
+  "generated_at": "2026-06-30T20:51:02Z",
   "week_number": 24,
   "week_start": "2026-06-08",
   "week_end": "2026-07-19",
@@ -1173,6 +1173,19 @@
           "lot_name": "11/25/2026",
           "copacked": true,
           "needs_setup": true
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 140.0,
+          "qty_units": 1120.0,
+          "qty_pouches": 140.0,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/01056",
+          "lot_id": 1011,
+          "lot_name": "01/13/2027",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1521,19 +1534,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "4-CHLAV2P",
-          "name": "Pack of 2 Chocolate Lava Cakes",
-          "qty_packs": 180.0,
-          "qty_units": 180.0,
-          "qty_pouches": 180.0,
-          "dluo": "2027-09-11",
-          "mo_ref": "WH/MO/01044",
-          "lot_id": 1593,
-          "lot_name": "09/11/2027",
-          "copacked": true,
-          "needs_setup": true
-        },
-        {
           "sku": "PIZ2-SGL",
           "name": "Pack of 2 Pizza Dough (Sourdough)",
           "qty_packs": 250.0,
@@ -1545,6 +1545,19 @@
           "lot_name": "04/10/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CXC20P",
+          "name": "Pack of 20 Cheese Gougères",
+          "qty_packs": 57.0,
+          "qty_units": 57.0,
+          "qty_pouches": 57.0,
+          "dluo": "2027-01-19",
+          "mo_ref": "WH/MO/01052",
+          "lot_id": 1275,
+          "lot_name": "01/19/2027",
+          "copacked": true,
+          "needs_setup": true
         },
         {
           "sku": "TR3P-SGL",
@@ -1696,15 +1709,15 @@
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "4-CXC20P",
-          "name": "Pack of 20 Cheese Gougères",
-          "qty_packs": 57.0,
-          "qty_units": 57.0,
-          "qty_pouches": 57.0,
-          "dluo": "2027-01-19",
-          "mo_ref": "WH/MO/01052",
-          "lot_id": 1275,
-          "lot_name": "01/19/2027",
+          "sku": "4-CHLAV2P",
+          "name": "Pack of 2 Chocolate Lava Cakes",
+          "qty_packs": 180.0,
+          "qty_units": 180.0,
+          "qty_pouches": 180.0,
+          "dluo": "2027-09-11",
+          "mo_ref": "WH/MO/01044",
+          "lot_id": 1593,
+          "lot_name": "09/11/2027",
           "copacked": true,
           "needs_setup": true
         }
