@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T23:16:36Z",
+  "generated_at": "2026-07-01T00:24:26Z",
   "week_number": 24,
   "week_start": "2026-06-08",
   "week_end": "2026-07-19",
@@ -189,31 +189,8 @@
       "date": "2026-06-28",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/00980",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/00980",
-          "d0": "2026-06-30"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -269,16 +246,7 @@
           "d0": "2026-07-01"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/00980",
-          "d0": "2026-06-30"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -329,34 +297,7 @@
           "d0": "2026-07-01"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2027-03-30",
-          "mo_ref": "WH/MO/00980",
-          "lot_id": 1563,
-          "lot_name": "03/30/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 200.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/01007",
-          "lot_id": 694,
-          "lot_name": "11/11/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-01",
@@ -592,6 +533,19 @@
           "mo_ref": "WH/MO/01008",
           "lot_id": 959,
           "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 60.0,
+          "qty_units": 60.0,
+          "qty_pouches": 60.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/01007-002",
+          "lot_id": 694,
+          "lot_name": "11/11/2026",
           "copacked": true,
           "needs_setup": false
         },
