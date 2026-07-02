@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T20:32:24Z",
+  "generated_at": "2026-07-02T20:34:51Z",
   "week_number": 24,
   "week_start": "2026-06-08",
   "week_end": "2026-07-19",
@@ -764,7 +764,7 @@
       "premix": [
         {
           "label": "Prep mix Brioche Buns",
-          "total_units": 522,
+          "total_units": 696,
           "products": [
             "Pack of 3 Brioche Buns"
           ],
@@ -904,8 +904,8 @@
           "label": "Pack of 3 Brioche Buns",
           "cfg_name": "Brioche Buns (×3)",
           "unit": "kg",
-          "total_kg": 78.3,
-          "total_units": 522,
+          "total_kg": 104.4,
+          "total_units": 696,
           "mo_ref": "WH/MO/01060",
           "products": [
             "Pack of 3 Brioche Buns"
@@ -925,9 +925,9 @@
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 174,
-          "qty_units": 522,
-          "total_kg": 78.3,
+          "qty_packs": 232,
+          "qty_units": 696,
+          "total_kg": 104.4,
           "mo_ref": "WH/MO/01060",
           "d0": "2026-07-08"
         }
@@ -1085,9 +1085,9 @@
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 174.0,
-          "qty_units": 522.0,
-          "qty_pouches": 174.0,
+          "qty_packs": 232.0,
+          "qty_units": 696.0,
+          "qty_pouches": 232.0,
           "dluo": "2027-01-08",
           "mo_ref": "WH/MO/01060",
           "lot_id": 1701,
