@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T21:46:09Z",
+  "generated_at": "2026-07-03T21:47:36Z",
   "week_number": 24,
   "week_start": "2026-06-08",
   "week_end": "2026-07-19",
@@ -351,19 +351,6 @@
           "needs_setup": false
         },
         {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01078",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "4-GD3P",
           "name": "Pack of 3 Gratin Dauphinois",
           "qty_packs": 81.0,
@@ -552,6 +539,19 @@
           "qty_pouches": 160.0,
           "dluo": "2026-12-10",
           "mo_ref": "WH/MO/01014",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 213.0,
+          "qty_units": 639.0,
+          "qty_pouches": 213.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/01078",
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
