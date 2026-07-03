@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T21:40:21Z",
+  "generated_at": "2026-07-03T21:46:09Z",
   "week_number": 24,
   "week_start": "2026-06-08",
   "week_end": "2026-07-19",
@@ -351,6 +351,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 213.0,
+          "qty_units": 639.0,
+          "qty_pouches": 213.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/01078",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "4-GD3P",
           "name": "Pack of 3 Gratin Dauphinois",
           "qty_packs": 81.0,
@@ -555,19 +568,6 @@
           "lot_id": 1607,
           "lot_name": "04/05/2027",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 200.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/01043",
-          "lot_id": 694,
-          "lot_name": "11/11/2026",
-          "copacked": true,
           "needs_setup": false
         }
       ]
