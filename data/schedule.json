@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T22:42:39Z",
+  "generated_at": "2026-07-04T00:54:52Z",
   "week_number": 24,
   "week_start": "2026-06-08",
   "week_end": "2026-07-19",
@@ -349,19 +349,6 @@
           "lot_name": "12/10/2026",
           "copacked": true,
           "needs_setup": false
-        },
-        {
-          "sku": "4-GD3P",
-          "name": "Pack of 3 Gratin Dauphinois",
-          "qty_packs": 81.0,
-          "qty_units": 81.0,
-          "qty_pouches": 81.0,
-          "dluo": "2027-07-21",
-          "mo_ref": "WH/MO/01054-002",
-          "lot_id": 1667,
-          "lot_name": "07/21/2027",
-          "copacked": true,
-          "needs_setup": true
         }
       ]
     },
