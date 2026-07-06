@@ -1,73 +1,10 @@
 {
-  "generated_at": "2026-07-05T21:45:35Z",
-  "week_number": 24,
-  "week_start": "2026-06-08",
-  "week_end": "2026-07-19",
+  "generated_at": "2026-07-06T15:55:39Z",
+  "week_number": 25,
+  "week_start": "2026-06-15",
+  "week_end": "2026-07-26",
   "odoo_url": "https://atome-bakery-sh.odoo.com",
   "days": [
-    {
-      "date": "2026-06-08",
-      "label": "MONDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-09",
-      "label": "TUESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-10",
-      "label": "WEDNESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-11",
-      "label": "THURSDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-12",
-      "label": "FRIDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-13",
-      "label": "SATURDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-14",
-      "label": "SUNDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
     {
       "date": "2026-06-15",
       "label": "MONDAY",
@@ -336,21 +273,7 @@
           "d0": "2026-07-04"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 160.0,
-          "qty_units": 480.0,
-          "qty_pouches": 160.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01008",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-04",
@@ -415,19 +338,6 @@
           "lot_id": 1600,
           "lot_name": "04/04/2027",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 160.0,
-          "qty_units": 480.0,
-          "qty_pouches": 160.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01077",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
           "needs_setup": false
         },
         {
@@ -521,24 +431,11 @@
         {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
-          "qty_packs": 160.0,
-          "qty_units": 480.0,
-          "qty_pouches": 160.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01014",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
           "qty_packs": 213.0,
           "qty_units": 639.0,
           "qty_pouches": 213.0,
           "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01078",
+          "mo_ref": "WH/MO/01014",
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
@@ -645,6 +542,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 213.0,
+          "qty_units": 639.0,
+          "qty_pouches": 213.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/01078",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117.0,
@@ -655,19 +565,6 @@
           "lot_id": 1608,
           "lot_name": "04/06/2027",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-CRB8P-SGL",
-          "name": "Pack of 8 Mini croissants",
-          "qty_packs": 140.0,
-          "qty_units": 1120.0,
-          "qty_pouches": 140.0,
-          "dluo": "2027-01-13",
-          "mo_ref": "WH/MO/01056",
-          "lot_id": 1011,
-          "lot_name": "01/13/2027",
-          "copacked": true,
           "needs_setup": false
         }
       ]
@@ -906,6 +803,19 @@
           "mo_ref": "WH/MO/00955",
           "lot_id": 959,
           "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 140.0,
+          "qty_units": 1120.0,
+          "qty_pouches": 140.0,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/01056",
+          "lot_id": 1011,
+          "lot_name": "01/13/2027",
           "copacked": true,
           "needs_setup": false
         },
@@ -2090,6 +2000,69 @@
           "needs_setup": false
         }
       ]
+    },
+    {
+      "date": "2026-07-20",
+      "label": "MONDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-07-21",
+      "label": "TUESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-07-22",
+      "label": "WEDNESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-07-23",
+      "label": "THURSDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-07-24",
+      "label": "FRIDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-07-25",
+      "label": "SATURDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-07-26",
+      "label": "SUNDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
     }
   ]
 }
