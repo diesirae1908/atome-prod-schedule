@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T15:55:39Z",
+  "generated_at": "2026-07-06T18:33:19Z",
   "week_number": 25,
   "week_start": "2026-06-15",
   "week_end": "2026-07-26",
@@ -161,55 +161,9 @@
     {
       "date": "2026-07-02",
       "label": "THURSDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 510,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/00965"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "cfg_name": "Poppy Seed Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01002",
-          "products": [
-            "Pack of 3 Sourdough Poppy Seed Baguette"
-          ]
-        },
-        {
-          "dough_type": "PIZZA",
-          "label": "Pack of 2 Pizza Dough (Sourdough)",
-          "cfg_name": "Pizza Dough (×2)",
-          "unit": "kg",
-          "total_kg": 166.0,
-          "total_units": 830,
-          "mo_ref": "WH/MO/01017",
-          "products": [
-            "Pack of 2 Pizza Dough (Sourdough)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 415,
-          "qty_units": 830,
-          "total_kg": 166.0,
-          "mo_ref": "WH/MO/01017",
-          "d0": "2026-07-04"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -217,62 +171,9 @@
       "date": "2026-07-03",
       "label": "FRIDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 35.7,
-          "total_units": 510,
-          "mo_ref": "WH/MO/00965",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00977",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 170,
-          "qty_units": 510,
-          "total_kg": 35.7,
-          "mo_ref": "WH/MO/00965",
-          "d0": "2026-07-04"
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/01002",
-          "d0": "2026-07-04"
-        }
-      ],
-      "score_tasks": [
-        {
-          "action": "freeze_only",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 415,
-          "qty_units": 830,
-          "mo_ref": "WH/MO/01017",
-          "d0": "2026-07-04"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -280,18 +181,6 @@
       "label": "SATURDAY",
       "premix": [],
       "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/00978",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
-        },
         {
           "dough_type": "COUNTRY",
           "label": "Pack of 2 Country Rye Sourdough Loaf",
@@ -314,59 +203,10 @@
           "total_kg": 112.0,
           "mo_ref": "WH/MO/01018",
           "d0": "2026-07-06"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00977",
-          "d0": "2026-07-05"
         }
       ],
       "score_tasks": [],
-      "vacuuming": [
-        {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 415.0,
-          "qty_units": 830.0,
-          "qty_pouches": 415.0,
-          "dluo": "2027-04-04",
-          "mo_ref": "WH/MO/01017",
-          "lot_id": 1600,
-          "lot_name": "04/04/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 170.0,
-          "qty_units": 510.0,
-          "qty_pouches": 170.0,
-          "dluo": "2027-01-04",
-          "mo_ref": "WH/MO/00965",
-          "lot_id": 1635,
-          "lot_name": "01/04/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-04-04",
-          "mo_ref": "WH/MO/01002",
-          "lot_id": 1592,
-          "lot_name": "04/04/2027",
-          "copacked": false,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-05",
@@ -406,15 +246,6 @@
           "total_kg": 224.0,
           "mo_ref": "WH/MO/01028",
           "d0": "2026-07-07"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/00978",
-          "d0": "2026-07-06"
         }
       ],
       "score_tasks": [
@@ -427,34 +258,7 @@
           "d0": "2026-07-06"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01014",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-04-05",
-          "mo_ref": "WH/MO/00977",
-          "lot_id": 1607,
-          "lot_name": "04/05/2027",
-          "copacked": false,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-06",
@@ -544,6 +348,19 @@
         {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
+          "qty_packs": 13.0,
+          "qty_units": 39.0,
+          "qty_pouches": 13.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/01014-002",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
           "qty_packs": 213.0,
           "qty_units": 639.0,
           "qty_pouches": 213.0,
@@ -552,19 +369,6 @@
           "lot_id": 959,
           "lot_name": "12/10/2026",
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-04-06",
-          "mo_ref": "WH/MO/00978",
-          "lot_id": 1608,
-          "lot_name": "04/06/2027",
-          "copacked": false,
           "needs_setup": false
         }
       ]
