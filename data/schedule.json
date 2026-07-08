@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T22:30:16Z",
+  "generated_at": "2026-07-08T22:33:37Z",
   "week_number": 25,
   "week_start": "2026-06-15",
   "week_end": "2026-07-26",
@@ -1603,8 +1603,8 @@
           "label": "Pack of 2 Country Rye Sourdough Loaf",
           "cfg_name": "Country Rye Loaf (×2)",
           "unit": "kg",
-          "total_kg": 112.0,
-          "total_units": 160,
+          "total_kg": 168.0,
+          "total_units": 240,
           "mo_ref": "WH/MO/01091",
           "products": [
             "Pack of 2 Country Rye Sourdough Loaf"
@@ -1615,9 +1615,9 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "total_kg": 112.0,
+          "qty_packs": 120,
+          "qty_units": 240,
+          "total_kg": 168.0,
           "mo_ref": "WH/MO/01091",
           "d0": "2026-07-22"
         },
@@ -1722,8 +1722,8 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
+          "qty_packs": 120,
+          "qty_units": 240,
           "mo_ref": "WH/MO/01091",
           "d0": "2026-07-22"
         }
@@ -1769,6 +1769,16 @@
           ],
           "mo_refs": [
             "WH/MO/01087"
+          ]
+        },
+        {
+          "label": "MG Grain Soak",
+          "total_units": 351,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/01093"
           ]
         },
         {
@@ -1867,9 +1877,9 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80.0,
-          "qty_units": 160.0,
-          "qty_pouches": 160.0,
+          "qty_packs": 120.0,
+          "qty_units": 240.0,
+          "qty_pouches": 240.0,
           "dluo": "2027-04-22",
           "mo_ref": "WH/MO/01091",
           "lot_id": 1729,
@@ -1897,6 +1907,16 @@
       "label": "THURSDAY",
       "premix": [
         {
+          "label": "MG Grain Soak",
+          "total_units": 351,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/01094"
+          ]
+        },
+        {
           "label": "Prep mix PAC/CR",
           "total_units": 414,
           "products": [
@@ -1918,6 +1938,18 @@
           "mo_ref": "WH/MO/01084",
           "products": [
             "Pack of 2 Viennoise (Brioche Baguette)"
+          ]
+        },
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 131.6,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01093",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         }
       ],
@@ -1998,27 +2030,27 @@
           ]
         },
         {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
           "unit": "kg",
-          "total_kg": 224.0,
-          "total_units": 320,
-          "mo_ref": "WH/MO/01092",
+          "total_kg": 131.6,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01094",
           "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
+            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "total_kg": 224.0,
-          "mo_ref": "WH/MO/01092",
-          "d0": "2026-07-26"
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 131.6,
+          "mo_ref": "WH/MO/01093",
+          "d0": "2026-07-25"
         },
         {
           "sku": "PAC3P-SGL",
@@ -2078,18 +2110,32 @@
       "label": "SATURDAY",
       "premix": [],
       "mix": [],
-      "shaping": [],
-      "score_tasks": [
+      "shaping": [
         {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "mo_ref": "WH/MO/01092",
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 131.6,
+          "mo_ref": "WH/MO/01094",
           "d0": "2026-07-26"
         }
       ],
+      "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-04-25",
+          "mo_ref": "WH/MO/01093",
+          "lot_id": 1732,
+          "lot_name": "04/25/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
@@ -2114,14 +2160,14 @@
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160.0,
-          "qty_units": 320.0,
-          "qty_pouches": 320.0,
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
           "dluo": "2027-04-26",
-          "mo_ref": "WH/MO/01092",
-          "lot_id": 1731,
+          "mo_ref": "WH/MO/01094",
+          "lot_id": 1734,
           "lot_name": "04/26/2027",
           "copacked": false,
           "needs_setup": false
