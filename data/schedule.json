@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T22:48:41Z",
+  "generated_at": "2026-07-08T22:52:52Z",
   "week_number": 25,
   "week_start": "2026-06-15",
   "week_end": "2026-07-26",
@@ -1656,6 +1656,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 213.0,
+          "qty_units": 639.0,
+          "qty_pouches": 213.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/01101",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "1-AT3P-SGL",
           "name": "Pack of 3 apple turnover",
           "qty_packs": 200.0,
@@ -1780,6 +1793,19 @@
           "lot_name": "01/21/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CHTWI4P",
+          "name": "Pack of 4 Chocolate Twists",
+          "qty_packs": 134.0,
+          "qty_units": 134.0,
+          "qty_pouches": 134.0,
+          "dluo": "2026-10-27",
+          "mo_ref": "WH/MO/01102",
+          "lot_id": 1272,
+          "lot_name": "10/27/2026",
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
