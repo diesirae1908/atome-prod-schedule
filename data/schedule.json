@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T16:02:46Z",
+  "generated_at": "2026-07-08T21:54:37Z",
   "week_number": 25,
   "week_start": "2026-06-15",
   "week_end": "2026-07-26",
@@ -197,43 +197,9 @@
     {
       "date": "2026-07-06",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 696,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/01060"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 81.2,
-          "total_units": 116,
-          "mo_ref": "WH/MO/01027",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 58,
-          "qty_units": 116,
-          "total_kg": 81.2,
-          "mo_ref": "WH/MO/01027",
-          "d0": "2026-07-08"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -264,18 +230,6 @@
           "products": [
             "Pack of 2 Pizza Dough (Sourdough)"
           ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 104.4,
-          "total_units": 696,
-          "mo_ref": "WH/MO/01060",
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ]
         }
       ],
       "shaping": [
@@ -287,27 +241,9 @@
           "total_kg": 100.0,
           "mo_ref": "WH/MO/01034",
           "d0": "2026-07-09"
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 232,
-          "qty_units": 696,
-          "total_kg": 104.4,
-          "mo_ref": "WH/MO/01060",
-          "d0": "2026-07-08"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 58,
-          "qty_units": 116,
-          "mo_ref": "WH/MO/01027",
-          "d0": "2026-07-08"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -382,32 +318,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 58.0,
-          "qty_units": 116.0,
-          "qty_pouches": 116.0,
-          "dluo": "2027-04-08",
-          "mo_ref": "WH/MO/01027",
-          "lot_id": 1640,
-          "lot_name": "04/08/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 232.0,
-          "qty_units": 696.0,
-          "qty_pouches": 232.0,
-          "dluo": "2027-01-08",
-          "mo_ref": "WH/MO/01060",
-          "lot_id": 1701,
-          "lot_name": "01/08/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "1-CRB8P-SGL",
           "name": "Pack of 8 Mini croissants",
