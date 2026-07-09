@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T22:09:49Z",
+  "generated_at": "2026-07-09T22:57:21Z",
   "week_number": 25,
   "week_start": "2026-06-15",
   "week_end": "2026-07-26",
@@ -405,19 +405,6 @@
           "needs_setup": false
         },
         {
-          "sku": "2-GCKVGN2P-SGL",
-          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
-          "qty_packs": 126.0,
-          "qty_units": 252.0,
-          "qty_pouches": 126.0,
-          "dluo": "2027-01-08",
-          "mo_ref": "WH/MO/01025",
-          "lot_id": 1636,
-          "lot_name": "01/08/2027",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 172.0,
@@ -530,6 +517,19 @@
           "lot_id": 1677,
           "lot_name": "04/10/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "2-GCKVGN2P-SGL",
+          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
+          "qty_packs": 126.0,
+          "qty_units": 252.0,
+          "qty_pouches": 126.0,
+          "dluo": "2027-01-08",
+          "mo_ref": "WH/MO/01025",
+          "lot_id": 1636,
+          "lot_name": "01/08/2027",
+          "copacked": true,
           "needs_setup": false
         },
         {
