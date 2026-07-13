@@ -1,73 +1,10 @@
 {
-  "generated_at": "2026-07-12T21:35:31Z",
-  "week_number": 25,
-  "week_start": "2026-06-15",
-  "week_end": "2026-07-26",
+  "generated_at": "2026-07-13T16:44:10Z",
+  "week_number": 26,
+  "week_start": "2026-06-22",
+  "week_end": "2026-08-02",
   "odoo_url": "https://atome-bakery-sh.odoo.com",
   "days": [
-    {
-      "date": "2026-06-15",
-      "label": "MONDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-16",
-      "label": "TUESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-17",
-      "label": "WEDNESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-18",
-      "label": "THURSDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-19",
-      "label": "FRIDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-20",
-      "label": "SATURDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-06-21",
-      "label": "SUNDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
     {
       "date": "2026-06-22",
       "label": "MONDAY",
@@ -494,19 +431,6 @@
           "mo_ref": "WH/MO/01009",
           "lot_id": 959,
           "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-CRB8P-SGL",
-          "name": "Pack of 8 Mini croissants",
-          "qty_packs": 281.0,
-          "qty_units": 2248.0,
-          "qty_pouches": 281.0,
-          "dluo": "2027-01-13",
-          "mo_ref": "WH/MO/01116",
-          "lot_id": 1011,
-          "lot_name": "01/13/2027",
           "copacked": true,
           "needs_setup": false
         }
@@ -2094,8 +2018,42 @@
       "date": "2026-07-25",
       "label": "SATURDAY",
       "premix": [],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 112.0,
+          "total_units": 160,
+          "mo_ref": "WH/MO/01095",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01098",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
+        }
+      ],
       "shaping": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "total_kg": 112.0,
+          "mo_ref": "WH/MO/01095",
+          "d0": "2026-07-27"
+        },
         {
           "sku": "MG3P-SGL",
           "name": "Pack of 3 Multigrain Sourdough Baguettes",
@@ -2153,10 +2111,64 @@
       "date": "2026-07-26",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
+      "mix": [
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 224.0,
+          "total_units": 320,
+          "mo_ref": "WH/MO/01096",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160,
+          "qty_units": 320,
+          "total_kg": 224.0,
+          "mo_ref": "WH/MO/01096",
+          "d0": "2026-07-28"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01098",
+          "d0": "2026-07-27"
+        }
+      ],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "mo_ref": "WH/MO/01095",
+          "d0": "2026-07-27"
+        }
+      ],
       "vacuuming": [
+        {
+          "sku": "RAV-SPRI-330",
+          "name": "Fresh Ravioli Ricotta Spinach (330g)",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01115",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": false
+        },
         {
           "sku": "MG3P-SGL",
           "name": "Pack of 3 Multigrain Sourdough Baguettes",
@@ -2171,6 +2183,119 @@
           "needs_setup": false
         }
       ]
+    },
+    {
+      "date": "2026-07-27",
+      "label": "MONDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160,
+          "qty_units": 320,
+          "mo_ref": "WH/MO/01096",
+          "d0": "2026-07-28"
+        }
+      ],
+      "vacuuming": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80.0,
+          "qty_units": 160.0,
+          "qty_pouches": 160.0,
+          "dluo": "2027-04-27",
+          "mo_ref": "WH/MO/01095",
+          "lot_id": 1735,
+          "lot_name": "04/27/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-04-27",
+          "mo_ref": "WH/MO/01098",
+          "lot_id": 1738,
+          "lot_name": "04/27/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "label": "TUESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 160.0,
+          "qty_units": 320.0,
+          "qty_pouches": 320.0,
+          "dluo": "2027-04-28",
+          "mo_ref": "WH/MO/01096",
+          "lot_id": 1736,
+          "lot_name": "04/28/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "label": "WEDNESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-07-30",
+      "label": "THURSDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-07-31",
+      "label": "FRIDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-08-01",
+      "label": "SATURDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-08-02",
+      "label": "SUNDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
     }
   ]
 }
