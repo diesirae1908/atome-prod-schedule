@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T20:48:59Z",
+  "generated_at": "2026-07-13T21:11:59Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -987,8 +987,8 @@
           "label": "Pack of 2 Country Rye Sourdough Loaf",
           "cfg_name": "Country Rye Loaf (×2)",
           "unit": "kg",
-          "total_kg": 224.0,
-          "total_units": 320,
+          "total_kg": 168.0,
+          "total_units": 240,
           "mo_ref": "WH/MO/01069",
           "products": [
             "Pack of 2 Country Rye Sourdough Loaf"
@@ -1005,15 +1005,27 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01120",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "total_kg": 224.0,
+          "qty_packs": 120,
+          "qty_units": 240,
+          "total_kg": 168.0,
           "mo_ref": "WH/MO/01069",
           "d0": "2026-07-19"
         },
@@ -1102,11 +1114,23 @@
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
           "cfg_name": "Sourdough Loaf (×2)",
           "unit": "kg",
-          "total_kg": 372.4,
-          "total_units": 532,
+          "total_kg": 186.2,
+          "total_units": 266,
           "mo_ref": "WH/MO/01088",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01121",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
           ]
         }
       ],
@@ -1114,19 +1138,28 @@
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 266,
-          "qty_units": 532,
-          "total_kg": 372.4,
+          "qty_packs": 133,
+          "qty_units": 266,
+          "total_kg": 186.2,
           "mo_ref": "WH/MO/01088",
           "d0": "2026-07-20"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01120",
+          "d0": "2026-07-19"
         }
       ],
       "score_tasks": [
         {
           "action": "score_freeze",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
+          "qty_packs": 120,
+          "qty_units": 240,
           "mo_ref": "WH/MO/01069",
           "d0": "2026-07-19"
         }
@@ -1221,14 +1254,23 @@
           "total_kg": 132.0,
           "mo_ref": "WH/MO/01118",
           "d0": "2026-07-21"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01121",
+          "d0": "2026-07-20"
         }
       ],
       "score_tasks": [
         {
           "action": "score_freeze",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 266,
-          "qty_units": 532,
+          "qty_packs": 133,
+          "qty_units": 266,
           "mo_ref": "WH/MO/01088",
           "d0": "2026-07-20"
         }
@@ -1263,12 +1305,25 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160.0,
-          "qty_units": 320.0,
-          "qty_pouches": 320.0,
+          "qty_packs": 120.0,
+          "qty_units": 240.0,
+          "qty_pouches": 240.0,
           "dluo": "2027-04-19",
           "mo_ref": "WH/MO/01069",
           "lot_id": 1690,
+          "lot_name": "04/19/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-04-19",
+          "mo_ref": "WH/MO/01120",
+          "lot_id": 1749,
           "lot_name": "04/19/2027",
           "copacked": false,
           "needs_setup": false
@@ -1403,9 +1458,9 @@
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 266.0,
-          "qty_units": 532.0,
-          "qty_pouches": 532.0,
+          "qty_packs": 133.0,
+          "qty_units": 266.0,
+          "qty_pouches": 266.0,
           "dluo": "2027-04-20",
           "mo_ref": "WH/MO/01088",
           "lot_id": 1726,
@@ -1436,6 +1491,19 @@
           "mo_ref": "WH/MO/01029",
           "lot_id": 1741,
           "lot_name": "01/20/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-04-20",
+          "mo_ref": "WH/MO/01121",
+          "lot_id": 1750,
+          "lot_name": "04/20/2027",
           "copacked": false,
           "needs_setup": false
         },
