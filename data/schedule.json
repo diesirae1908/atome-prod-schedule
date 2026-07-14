@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T21:40:28Z",
+  "generated_at": "2026-07-14T00:15:25Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -311,34 +311,7 @@
           "d0": "2026-07-14"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 160.0,
-          "qty_units": 480.0,
-          "qty_pouches": 160.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01108",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 200.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2026-11-11",
-          "mo_ref": "WH/MO/01106",
-          "lot_id": 694,
-          "lot_name": "11/11/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-14",
@@ -444,6 +417,19 @@
           "lot_id": 1681,
           "lot_name": "04/14/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 53.0,
+          "qty_units": 159.0,
+          "qty_pouches": 53.0,
+          "dluo": "2026-12-10",
+          "mo_ref": "WH/MO/01015",
+          "lot_id": 959,
+          "lot_name": "12/10/2026",
+          "copacked": true,
           "needs_setup": false
         },
         {
@@ -591,19 +577,6 @@
           "lot_id": 1694,
           "lot_name": "01/15/2027",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01015",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
           "needs_setup": false
         },
         {
@@ -1282,19 +1255,6 @@
           "needs_setup": false
         },
         {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01101",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
           "qty_packs": 208.0,
@@ -1452,19 +1412,6 @@
           "lot_id": 1743,
           "lot_name": "04/21/2027",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2026-12-10",
-          "mo_ref": "WH/MO/01100",
-          "lot_id": 959,
-          "lot_name": "12/10/2026",
-          "copacked": true,
           "needs_setup": false
         },
         {
@@ -1748,19 +1695,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/01109",
-          "lot_id": null,
-          "lot_name": null,
-          "copacked": true,
-          "needs_setup": false
-        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
