@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T00:15:25Z",
+  "generated_at": "2026-07-14T00:21:51Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -591,6 +591,19 @@
           "lot_name": "04/15/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": "2026-11-11",
+          "mo_ref": "WH/MO/01124",
+          "lot_id": 694,
+          "lot_name": "11/11/2026",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -959,9 +972,9 @@
         {
           "sku": "1-CRB8P-SGL",
           "name": "Pack of 8 Mini croissants",
-          "qty_packs": 168.0,
-          "qty_units": 1344.0,
-          "qty_pouches": 168.0,
+          "qty_packs": 112.0,
+          "qty_units": 896.0,
+          "qty_pouches": 112.0,
           "dluo": "2027-01-13",
           "mo_ref": "WH/MO/01123",
           "lot_id": 1011,
