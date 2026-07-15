@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T21:43:54Z",
+  "generated_at": "2026-07-15T22:28:24Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -197,55 +197,9 @@
     {
       "date": "2026-07-13",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 348,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/01073"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "WW",
-          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "cfg_name": "Wholewheat Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 184.8,
-          "total_units": 308,
-          "mo_ref": "WH/MO/01063",
-          "products": [
-            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01066",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 154,
-          "qty_units": 308,
-          "total_kg": 184.8,
-          "mo_ref": "WH/MO/01063",
-          "d0": "2026-07-15"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -288,18 +242,6 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 348,
-          "mo_ref": "WH/MO/01073",
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ]
         }
       ],
       "shaping": [
@@ -311,36 +253,9 @@
           "total_kg": 138.0,
           "mo_ref": "WH/MO/01064",
           "d0": "2026-07-16"
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116,
-          "qty_units": 348,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/01073",
-          "d0": "2026-07-15"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/01066",
-          "d0": "2026-07-15"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 154,
-          "qty_units": 308,
-          "mo_ref": "WH/MO/01063",
-          "d0": "2026-07-15"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -436,58 +351,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "4-CHLAV2P",
-          "name": "Pack of 2 Chocolate Lava Cakes",
-          "qty_packs": 10.0,
-          "qty_units": 10.0,
-          "qty_pouches": 10.0,
-          "dluo": "2027-09-11",
-          "mo_ref": "WH/MO/01126",
-          "lot_id": 1593,
-          "lot_name": "09/11/2027",
-          "copacked": true,
-          "needs_setup": true
-        },
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 154.0,
-          "qty_units": 308.0,
-          "qty_pouches": 308.0,
-          "dluo": "2027-04-15",
-          "mo_ref": "WH/MO/01063",
-          "lot_id": 1683,
-          "lot_name": "04/15/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 116.0,
-          "qty_units": 348.0,
-          "qty_pouches": 116.0,
-          "dluo": "2027-01-15",
-          "mo_ref": "WH/MO/01073",
-          "lot_id": 1694,
-          "lot_name": "01/15/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-04-15",
-          "mo_ref": "WH/MO/01066",
-          "lot_id": 1686,
-          "lot_name": "04/15/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "1-AT3P-SGL",
           "name": "Pack of 3 apple turnover",
