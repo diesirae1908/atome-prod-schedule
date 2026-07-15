@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T23:23:23Z",
+  "generated_at": "2026-07-15T23:24:56Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -2054,18 +2054,6 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "cfg_name": "Poppy Seed Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01143",
-          "products": [
-            "Pack of 3 Sourdough Poppy Seed Baguette"
-          ]
-        },
-        {
           "dough_type": "WW",
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "cfg_name": "Wholewheat Loaf (×2)",
@@ -2075,6 +2063,18 @@
           "mo_ref": "WH/MO/01144",
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Sesame Baguette",
+          "cfg_name": "Sesame Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01146",
+          "products": [
+            "Pack of 3 Sourdough Sesame Baguette"
           ]
         }
       ],
@@ -2142,16 +2142,6 @@
       "label": "WEDNESDAY",
       "premix": [
         {
-          "label": "MG Grain Soak",
-          "total_units": 351,
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ],
-          "mo_refs": [
-            "WH/MO/01141"
-          ]
-        },
-        {
           "label": "Prep mix Viennoise",
           "total_units": 200,
           "products": [
@@ -2187,12 +2177,12 @@
           "d0": "2026-07-30"
         },
         {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
           "qty_packs": 117,
           "qty_units": 351,
           "total_kg": 122.8,
-          "mo_ref": "WH/MO/01143",
+          "mo_ref": "WH/MO/01146",
           "d0": "2026-07-30"
         }
       ],
@@ -2264,15 +2254,15 @@
           ]
         },
         {
-          "dough_type": "MG",
-          "label": "Pack of 3 Multigrain Sourdough Baguettes",
-          "cfg_name": "Multigrain Baguette (×3)",
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "cfg_name": "Poppy Seed Baguette (×3)",
           "unit": "kg",
-          "total_kg": 131.6,
+          "total_kg": 122.8,
           "total_units": 351,
-          "mo_ref": "WH/MO/01141",
+          "mo_ref": "WH/MO/01143",
           "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
+            "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
         },
         {
@@ -2337,14 +2327,14 @@
           "needs_setup": false
         },
         {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
           "dluo": "2027-04-30",
-          "mo_ref": "WH/MO/01143",
-          "lot_id": 1771,
+          "mo_ref": "WH/MO/01146",
+          "lot_id": 1768,
           "lot_name": "04/30/2027",
           "copacked": false,
           "needs_setup": false
@@ -2382,21 +2372,21 @@
       ],
       "shaping": [
         {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 131.6,
-          "mo_ref": "WH/MO/01141",
-          "d0": "2026-08-01"
-        },
-        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138,
           "qty_units": 414,
           "total_kg": 29.0,
           "mo_ref": "WH/MO/01134",
+          "d0": "2026-08-01"
+        },
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01143",
           "d0": "2026-08-01"
         }
       ],
@@ -2495,19 +2485,6 @@
           "needs_setup": false
         },
         {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-05-01",
-          "mo_ref": "WH/MO/01141",
-          "lot_id": 1767,
-          "lot_name": "05/01/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138.0,
@@ -2517,6 +2494,19 @@
           "mo_ref": "WH/MO/01134",
           "lot_id": 1761,
           "lot_name": "02/01/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-05-01",
+          "mo_ref": "WH/MO/01143",
+          "lot_id": 1774,
+          "lot_name": "05/01/2027",
           "copacked": false,
           "needs_setup": false
         }
