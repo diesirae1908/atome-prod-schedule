@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T23:03:51Z",
+  "generated_at": "2026-07-15T23:05:35Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -1624,6 +1624,19 @@
           "needs_setup": false
         },
         {
+          "sku": "1-MCR6P-SGL",
+          "name": "Pack of 6 macarons (mixed flavours)",
+          "qty_packs": 128.0,
+          "qty_units": 768.0,
+          "qty_pouches": 128.0,
+          "dluo": "2027-01-19",
+          "mo_ref": "WH/MO/01138",
+          "lot_id": 1450,
+          "lot_name": "01/19/2027",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "CH-SGL",
           "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "qty_packs": 360.0,
@@ -1730,6 +1743,19 @@
           "qty_pouches": 120.0,
           "dluo": null,
           "mo_ref": "WH/MO/01114",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 160.0,
+          "qty_units": 480.0,
+          "qty_pouches": 160.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01139",
           "lot_id": null,
           "lot_name": null,
           "copacked": true,
@@ -1865,6 +1891,19 @@
           "qty_pouches": 100.0,
           "dluo": null,
           "mo_ref": "WH/MO/01115",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 160.0,
+          "qty_units": 480.0,
+          "qty_pouches": 160.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01140",
           "lot_id": null,
           "lot_name": null,
           "copacked": true,
