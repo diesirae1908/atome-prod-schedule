@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T00:24:12Z",
+  "generated_at": "2026-07-15T18:40:40Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -436,6 +436,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "4-CHLAV2P",
+          "name": "Pack of 2 Chocolate Lava Cakes",
+          "qty_packs": 10.0,
+          "qty_units": 10.0,
+          "qty_pouches": 10.0,
+          "dluo": "2027-09-11",
+          "mo_ref": "WH/MO/01126",
+          "lot_id": 1593,
+          "lot_name": "09/11/2027",
+          "copacked": true,
+          "needs_setup": true
+        },
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
