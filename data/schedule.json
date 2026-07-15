@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T23:05:35Z",
+  "generated_at": "2026-07-15T23:20:33Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -871,19 +871,6 @@
           "qty_units": 896.0,
           "qty_pouches": 112.0,
           "dluo": "2027-01-13",
-          "mo_ref": "WH/MO/01131",
-          "lot_id": 1011,
-          "lot_name": "01/13/2027",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-CRB8P-SGL",
-          "name": "Pack of 8 Mini croissants",
-          "qty_packs": 112.0,
-          "qty_units": 896.0,
-          "qty_pouches": 112.0,
-          "dluo": "2027-01-13",
           "mo_ref": "WH/MO/01125",
           "lot_id": 1011,
           "lot_name": "01/13/2027",
@@ -1086,7 +1073,7 @@
       "premix": [
         {
           "label": "Prep mix PAC/CR",
-          "total_units": 510,
+          "total_units": 414,
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ],
@@ -1281,8 +1268,8 @@
           "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "cfg_name": "Pain au Chocolat (×3)",
           "unit": "pcs",
-          "total_kg": 35.7,
-          "total_units": 510,
+          "total_kg": 29.0,
+          "total_units": 414,
           "mo_ref": "WH/MO/01081",
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
@@ -1326,9 +1313,9 @@
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 170,
-          "qty_units": 510,
-          "total_kg": 35.7,
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
           "mo_ref": "WH/MO/01081",
           "d0": "2026-07-23"
         },
@@ -1414,7 +1401,7 @@
         },
         {
           "label": "Prep mix PAC/CR",
-          "total_units": 510,
+          "total_units": 414,
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ],
@@ -1483,9 +1470,9 @@
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 170.0,
-          "qty_units": 510.0,
-          "qty_pouches": 170.0,
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
           "dluo": "2027-01-23",
           "mo_ref": "WH/MO/01081",
           "lot_id": 1717,
@@ -1542,8 +1529,8 @@
           "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "cfg_name": "Pain au Chocolat (×3)",
           "unit": "pcs",
-          "total_kg": 35.7,
-          "total_units": 510,
+          "total_kg": 29.0,
+          "total_units": 414,
           "mo_ref": "WH/MO/01082",
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
@@ -1575,9 +1562,9 @@
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 170,
-          "qty_units": 510,
-          "total_kg": 35.7,
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
           "mo_ref": "WH/MO/01082",
           "d0": "2026-07-25"
         }
@@ -1790,9 +1777,9 @@
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 170.0,
-          "qty_units": 510.0,
-          "qty_pouches": 170.0,
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
           "dluo": "2027-01-25",
           "mo_ref": "WH/MO/01082",
           "lot_id": 1718,
@@ -2065,6 +2052,30 @@
           "products": [
             "Pack of 3 Brioche Buns"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "cfg_name": "Poppy Seed Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01143",
+          "products": [
+            "Pack of 3 Sourdough Poppy Seed Baguette"
+          ]
+        },
+        {
+          "dough_type": "WW",
+          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "cfg_name": "Wholewheat Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 276.0,
+          "total_units": 460,
+          "mo_ref": "WH/MO/01144",
+          "products": [
+            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+          ]
         }
       ],
       "shaping": [
@@ -2076,6 +2087,15 @@
           "total_kg": 26.1,
           "mo_ref": "WH/MO/01135",
           "d0": "2026-07-29"
+        },
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 230,
+          "qty_units": 460,
+          "total_kg": 276.0,
+          "mo_ref": "WH/MO/01144",
+          "d0": "2026-07-30"
         },
         {
           "sku": "BR3BN-SGL",
@@ -2122,6 +2142,16 @@
       "label": "WEDNESDAY",
       "premix": [
         {
+          "label": "MG Grain Soak",
+          "total_units": 351,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/01141"
+          ]
+        },
+        {
           "label": "Prep mix Viennoise",
           "total_units": 200,
           "products": [
@@ -2155,9 +2185,27 @@
           "total_kg": 29.0,
           "mo_ref": "WH/MO/01133",
           "d0": "2026-07-30"
+        },
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01143",
+          "d0": "2026-07-30"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 230,
+          "qty_units": 460,
+          "mo_ref": "WH/MO/01144",
+          "d0": "2026-07-30"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "BR-SGL",
@@ -2214,6 +2262,18 @@
           "products": [
             "Pack of 2 Viennoise (Brioche Baguette)"
           ]
+        },
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 131.6,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01141",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ]
         }
       ],
       "shaping": [
@@ -2230,6 +2290,19 @@
       "score_tasks": [],
       "vacuuming": [
         {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 230.0,
+          "qty_units": 460.0,
+          "qty_pouches": 460.0,
+          "dluo": "2027-04-30",
+          "mo_ref": "WH/MO/01144",
+          "lot_id": 1770,
+          "lot_name": "04/30/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138.0,
@@ -2239,6 +2312,19 @@
           "mo_ref": "WH/MO/01133",
           "lot_id": 1760,
           "lot_name": "01/30/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-04-30",
+          "mo_ref": "WH/MO/01143",
+          "lot_id": 1771,
+          "lot_name": "04/30/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -2274,6 +2360,15 @@
         }
       ],
       "shaping": [
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 131.6,
+          "mo_ref": "WH/MO/01141",
+          "d0": "2026-08-01"
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
@@ -2353,6 +2448,19 @@
           "mo_ref": "WH/MO/01129",
           "lot_id": 1756,
           "lot_name": "02/01/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-05-01",
+          "mo_ref": "WH/MO/01141",
+          "lot_id": 1767,
+          "lot_name": "05/01/2027",
           "copacked": false,
           "needs_setup": false
         },
