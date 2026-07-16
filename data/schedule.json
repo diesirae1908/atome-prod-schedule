@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T00:50:06Z",
+  "generated_at": "2026-07-16T00:52:38Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -2190,9 +2190,30 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/01160",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/01160",
+          "d0": "2026-07-31"
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
@@ -2350,7 +2371,16 @@
           "d0": "2026-07-31"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/01160",
+          "d0": "2026-07-31"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "WW2P-SGL",
@@ -2478,6 +2508,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
+          "dluo": "2027-04-30",
+          "mo_ref": "WH/MO/01160",
+          "lot_id": 1780,
+          "lot_name": "04/30/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
