@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T00:41:17Z",
+  "generated_at": "2026-07-16T00:44:15Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -2136,6 +2136,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 213.0,
+          "qty_units": 639.0,
+          "qty_pouches": 213.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01154",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 138.0,
@@ -2147,19 +2160,6 @@
           "lot_name": "01/28/2027",
           "copacked": false,
           "needs_setup": false
-        },
-        {
-          "sku": "4-CHTWI4P",
-          "name": "Pack of 4 Chocolate Twists",
-          "qty_packs": 132.0,
-          "qty_units": 132.0,
-          "qty_pouches": 132.0,
-          "dluo": "2026-11-25",
-          "mo_ref": "WH/MO/01152",
-          "lot_id": 1666,
-          "lot_name": "11/25/2026",
-          "copacked": true,
-          "needs_setup": true
         }
       ]
     },
@@ -2248,6 +2248,19 @@
           "lot_name": "01/29/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CHTWI4P",
+          "name": "Pack of 4 Chocolate Twists",
+          "qty_packs": 132.0,
+          "qty_units": 132.0,
+          "qty_pouches": 132.0,
+          "dluo": "2026-11-25",
+          "mo_ref": "WH/MO/01152",
+          "lot_id": 1666,
+          "lot_name": "11/25/2026",
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
@@ -2337,6 +2350,19 @@
           "lot_id": 1770,
           "lot_name": "04/30/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 213.0,
+          "qty_units": 639.0,
+          "qty_pouches": 213.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01155",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
           "needs_setup": false
         },
         {
@@ -2450,6 +2476,32 @@
           "lot_id": 1764,
           "lot_name": "01/31/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 213.0,
+          "qty_units": 639.0,
+          "qty_pouches": 213.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01156",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 112.0,
+          "qty_units": 896.0,
+          "qty_pouches": 112.0,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/01157",
+          "lot_id": 1011,
+          "lot_name": "01/13/2027",
+          "copacked": true,
           "needs_setup": false
         }
       ]
