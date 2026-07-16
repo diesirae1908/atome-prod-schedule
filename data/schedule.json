@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T23:12:31Z",
+  "generated_at": "2026-07-16T23:16:44Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -502,9 +502,9 @@
         {
           "sku": "4-MAD4P",
           "name": "Pack of 4 Madeleines",
-          "qty_packs": 70.0,
-          "qty_units": 70.0,
-          "qty_pouches": 70.0,
+          "qty_packs": 105.0,
+          "qty_units": 105.0,
+          "qty_pouches": 105.0,
           "dluo": "2028-01-23",
           "mo_ref": "WH/MO/01162",
           "lot_id": 1413,
