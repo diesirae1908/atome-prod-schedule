@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T19:41:59Z",
+  "generated_at": "2026-07-17T20:28:44Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -239,18 +239,6 @@
           "products": [
             "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
           ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01075",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
         }
       ],
       "shaping": [
@@ -326,15 +314,6 @@
           "total_kg": 224.0,
           "mo_ref": "WH/MO/01068",
           "d0": "2026-07-18"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/01075",
-          "d0": "2026-07-17"
         }
       ],
       "score_tasks": [
@@ -347,21 +326,7 @@
           "d0": "2026-07-17"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "2-CRVGN3P-SGL",
-          "name": "Pack of 3 vegan croissant",
-          "qty_packs": 30.0,
-          "qty_units": 90.0,
-          "qty_pouches": 30.0,
-          "dluo": "2027-01-15",
-          "mo_ref": "WH/MO/01026",
-          "lot_id": 1637,
-          "lot_name": "01/15/2027",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-17",
@@ -474,19 +439,6 @@
           "lot_name": "04/17/2027",
           "copacked": false,
           "needs_setup": false
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-04-17",
-          "mo_ref": "WH/MO/01075",
-          "lot_id": 1697,
-          "lot_name": "04/17/2027",
-          "copacked": false,
-          "needs_setup": false
         }
       ]
     },
@@ -593,9 +545,9 @@
         {
           "sku": "1-CRB8P-SGL",
           "name": "Pack of 8 Mini croissants",
-          "qty_packs": 112.0,
-          "qty_units": 896.0,
-          "qty_pouches": 112.0,
+          "qty_packs": 168.0,
+          "qty_units": 1344.0,
+          "qty_pouches": 168.0,
           "dluo": "2027-01-13",
           "mo_ref": "WH/MO/01123",
           "lot_id": 1011,
