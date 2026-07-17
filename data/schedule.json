@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T00:40:56Z",
+  "generated_at": "2026-07-17T19:41:59Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -1326,6 +1326,18 @@
           "products": [
             "Pack of 3 Multigrain Sourdough Baguettes"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/01164",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
         }
       ],
       "shaping": [
@@ -1337,6 +1349,15 @@
           "total_kg": 52.2,
           "mo_ref": "WH/MO/01083",
           "d0": "2026-07-24"
+        },
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/01164",
+          "d0": "2026-07-25"
         },
         {
           "sku": "CH-SGL",
@@ -1474,7 +1495,16 @@
           "d0": "2026-07-25"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/01164",
+          "d0": "2026-07-25"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "BR-SGL",
@@ -1638,6 +1668,19 @@
           "lot_id": null,
           "lot_name": null,
           "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
+          "dluo": "2027-04-25",
+          "mo_ref": "WH/MO/01164",
+          "lot_id": 1796,
+          "lot_name": "04/25/2027",
+          "copacked": false,
           "needs_setup": false
         },
         {
@@ -1866,9 +1909,30 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 246.4,
+          "total_units": 352,
+          "mo_ref": "WH/MO/01165",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "total_kg": 246.4,
+          "mo_ref": "WH/MO/01165",
+          "d0": "2026-07-29"
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
@@ -2025,7 +2089,16 @@
           "d0": "2026-07-29"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "mo_ref": "WH/MO/01165",
+          "d0": "2026-07-29"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "CTY2P-SGL",
@@ -2159,6 +2232,19 @@
           "mo_ref": "WH/MO/01135",
           "lot_id": 1762,
           "lot_name": "01/29/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176.0,
+          "qty_units": 352.0,
+          "qty_pouches": 352.0,
+          "dluo": "2027-04-29",
+          "mo_ref": "WH/MO/01165",
+          "lot_id": 1797,
+          "lot_name": "04/29/2027",
           "copacked": false,
           "needs_setup": false
         },
