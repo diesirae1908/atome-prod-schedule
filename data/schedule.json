@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T23:47:09Z",
+  "generated_at": "2026-07-17T23:50:39Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -735,6 +735,19 @@
           "lot_name": "04/20/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CXC20P",
+          "name": "Pack of 20 Cheese Gougères",
+          "qty_packs": 57.0,
+          "qty_units": 57.0,
+          "qty_pouches": 57.0,
+          "dluo": "2027-01-19",
+          "mo_ref": "WH/MO/01169",
+          "lot_id": 1275,
+          "lot_name": "01/19/2027",
+          "copacked": true,
+          "needs_setup": true
         },
         {
           "sku": "WA3P-SGL",
