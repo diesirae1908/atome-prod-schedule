@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T23:39:51Z",
+  "generated_at": "2026-07-17T23:42:11Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -215,43 +215,9 @@
     {
       "date": "2026-07-15",
       "label": "WEDNESDAY",
-      "premix": [
-        {
-          "label": "Prep mix Braided Brioche",
-          "total_units": 116,
-          "products": [
-            "Brioche (Pastry)"
-          ],
-          "mo_refs": [
-            "WH/MO/01074"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "CIABATTA",
-          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "cfg_name": "Ciabatta (×3)",
-          "unit": "kg",
-          "total_kg": 239.4,
-          "total_units": 798,
-          "mo_ref": "WH/MO/01065",
-          "products": [
-            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 266,
-          "qty_units": 798,
-          "total_kg": 239.4,
-          "mo_ref": "WH/MO/01065",
-          "d0": "2026-07-17"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -282,30 +248,9 @@
           "products": [
             "Pack of 2 Country Rye Sourdough Loaf"
           ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Brioche (Pastry)",
-          "cfg_name": "Braided Brioche",
-          "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 116,
-          "mo_ref": "WH/MO/01074",
-          "products": [
-            "Brioche (Pastry)"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 116,
-          "qty_units": 116,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/01074",
-          "d0": "2026-07-17"
-        },
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
@@ -316,16 +261,7 @@
           "d0": "2026-07-18"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "freeze_only",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 266,
-          "qty_units": 798,
-          "mo_ref": "WH/MO/01065",
-          "d0": "2026-07-17"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -402,19 +338,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 116.0,
-          "qty_units": 116.0,
-          "qty_pouches": 116.0,
-          "dluo": "2027-01-17",
-          "mo_ref": "WH/MO/01074",
-          "lot_id": 1696,
-          "lot_name": "01/17/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "GNOC-330",
           "name": "Fresh gnocchi (330g)",
           "qty_packs": 120.0,
@@ -425,32 +348,6 @@
           "lot_id": 1798,
           "lot_name": "01/16/2027",
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "4-CHLAV2P",
-          "name": "Pack of 2 Chocolate Lava Cakes",
-          "qty_packs": 108.0,
-          "qty_units": 108.0,
-          "qty_pouches": 108.0,
-          "dluo": "2027-09-11",
-          "mo_ref": "WH/MO/01167",
-          "lot_id": 1593,
-          "lot_name": "09/11/2027",
-          "copacked": true,
-          "needs_setup": true
-        },
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 266.0,
-          "qty_units": 798.0,
-          "qty_pouches": 266.0,
-          "dluo": "2027-04-17",
-          "mo_ref": "WH/MO/01065",
-          "lot_id": 1685,
-          "lot_name": "04/17/2027",
-          "copacked": false,
           "needs_setup": false
         }
       ]
