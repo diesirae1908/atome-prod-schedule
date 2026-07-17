@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T21:04:26Z",
+  "generated_at": "2026-07-17T21:27:11Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -428,6 +428,19 @@
           "needs_setup": false
         },
         {
+          "sku": "4-CHLAV2P",
+          "name": "Pack of 2 Chocolate Lava Cakes",
+          "qty_packs": 108.0,
+          "qty_units": 108.0,
+          "qty_pouches": 108.0,
+          "dluo": "2027-09-11",
+          "mo_ref": "WH/MO/01167",
+          "lot_id": 1593,
+          "lot_name": "09/11/2027",
+          "copacked": true,
+          "needs_setup": true
+        },
+        {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "qty_packs": 266.0,
@@ -439,19 +452,6 @@
           "lot_name": "04/17/2027",
           "copacked": false,
           "needs_setup": false
-        },
-        {
-          "sku": "4-CHTWI4P",
-          "name": "Pack of 4 Chocolate Twists",
-          "qty_packs": 66.0,
-          "qty_units": 66.0,
-          "qty_pouches": 66.0,
-          "dluo": "2026-11-25",
-          "mo_ref": "WH/MO/01166",
-          "lot_id": 1666,
-          "lot_name": "11/25/2026",
-          "copacked": true,
-          "needs_setup": true
         }
       ]
     },
