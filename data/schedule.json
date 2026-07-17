@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T23:50:01Z",
+  "generated_at": "2026-07-17T00:29:55Z",
   "week_number": 26,
   "week_start": "2026-06-22",
   "week_end": "2026-08-02",
@@ -993,9 +993,30 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/01163",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/01163",
+          "d0": "2026-07-23"
+        },
         {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
@@ -1204,7 +1225,16 @@
           "d0": "2026-07-23"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/01163",
+          "d0": "2026-07-23"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "CTY2P-SGL",
@@ -1342,6 +1372,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
+          "dluo": "2027-04-23",
+          "mo_ref": "WH/MO/01163",
+          "lot_id": 1783,
+          "lot_name": "04/23/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
