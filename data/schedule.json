@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T23:00:04Z",
+  "generated_at": "2026-07-20T23:08:47Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-09",
@@ -198,16 +198,6 @@
           "mo_refs": [
             "WH/MO/01119"
           ]
-        },
-        {
-          "label": "Prep mix Waffles",
-          "total_units": 624,
-          "products": [
-            "Pack of 3 Liege Waffle"
-          ],
-          "mo_refs": [
-            "WH/MO/01029"
-          ]
         }
       ],
       "mix": [
@@ -301,18 +291,6 @@
       ],
       "mix": [
         {
-          "dough_type": "WAFFLES",
-          "label": "Pack of 3 Liege Waffle",
-          "cfg_name": "Liège Waffle (×3)",
-          "unit": "kg",
-          "total_kg": 62.4,
-          "total_units": 624,
-          "mo_ref": "WH/MO/01029",
-          "products": [
-            "Pack of 3 Liege Waffle"
-          ]
-        },
-        {
           "dough_type": "TRAD",
           "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "cfg_name": "Cheese Baguette",
@@ -369,15 +347,6 @@
           "d0": "2026-07-22"
         },
         {
-          "sku": "WA3P-SGL",
-          "name": "Pack of 3 Liege Waffle",
-          "qty_packs": 208,
-          "qty_units": 624,
-          "total_kg": 62.4,
-          "mo_ref": "WH/MO/01029",
-          "d0": "2026-07-20"
-        },
-        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117,
@@ -398,19 +367,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "WA3P-SGL",
-          "name": "Pack of 3 Liege Waffle",
-          "qty_packs": 208.0,
-          "qty_units": 624.0,
-          "qty_pouches": 208.0,
-          "dluo": "2027-01-20",
-          "mo_ref": "WH/MO/01029",
-          "lot_id": 1741,
-          "lot_name": "01/20/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "1-AT3P-SGL",
           "name": "Pack of 3 apple turnover",
@@ -660,8 +616,8 @@
           "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "cfg_name": "Ciabatta (×3)",
           "unit": "kg",
-          "total_kg": 159.3,
-          "total_units": 531,
+          "total_kg": 119.7,
+          "total_units": 399,
           "mo_ref": "WH/MO/01085",
           "products": [
             "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
@@ -684,9 +640,9 @@
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 177,
-          "qty_units": 531,
-          "total_kg": 159.3,
+          "qty_packs": 133,
+          "qty_units": 399,
+          "total_kg": 119.7,
           "mo_ref": "WH/MO/01085",
           "d0": "2026-07-24"
         },
@@ -870,8 +826,8 @@
         {
           "action": "freeze_only",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 177,
-          "qty_units": 531,
+          "qty_packs": 133,
+          "qty_units": 399,
           "mo_ref": "WH/MO/01085",
           "d0": "2026-07-24"
         }
@@ -1032,9 +988,9 @@
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 177.0,
-          "qty_units": 531.0,
-          "qty_pouches": 177.0,
+          "qty_packs": 133.0,
+          "qty_units": 399.0,
+          "qty_pouches": 133.0,
           "dluo": "2027-04-24",
           "mo_ref": "WH/MO/01085",
           "lot_id": 1722,
