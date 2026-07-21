@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T23:23:27Z",
+  "generated_at": "2026-07-21T23:28:32Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-09",
@@ -1388,6 +1388,19 @@
           "lot_name": "01/28/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CHTWI4P",
+          "name": "Pack of 4 Chocolate Twists",
+          "qty_packs": 132.0,
+          "qty_units": 132.0,
+          "qty_pouches": 132.0,
+          "dluo": "2026-11-25",
+          "mo_ref": "WH/MO/01152",
+          "lot_id": 1666,
+          "lot_name": "11/25/2026",
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
@@ -1510,19 +1523,6 @@
           "lot_name": "01/29/2027",
           "copacked": false,
           "needs_setup": false
-        },
-        {
-          "sku": "4-CHTWI4P",
-          "name": "Pack of 4 Chocolate Twists",
-          "qty_packs": 132.0,
-          "qty_units": 132.0,
-          "qty_pouches": 132.0,
-          "dluo": "2026-11-25",
-          "mo_ref": "WH/MO/01152",
-          "lot_id": 1666,
-          "lot_name": "11/25/2026",
-          "copacked": true,
-          "needs_setup": true
         }
       ]
     },
@@ -1648,6 +1648,19 @@
           "lot_name": "04/30/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 112.0,
+          "qty_units": 896.0,
+          "qty_pouches": 112.0,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/01157",
+          "lot_id": 1011,
+          "lot_name": "01/13/2027",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1747,19 +1760,6 @@
           "lot_id": 1764,
           "lot_name": "01/31/2027",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-CRB8P-SGL",
-          "name": "Pack of 8 Mini croissants",
-          "qty_packs": 112.0,
-          "qty_units": 896.0,
-          "qty_pouches": 112.0,
-          "dluo": "2027-01-13",
-          "mo_ref": "WH/MO/01157",
-          "lot_id": 1011,
-          "lot_name": "01/13/2027",
-          "copacked": true,
           "needs_setup": false
         }
       ]
