@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T23:49:36Z",
+  "generated_at": "2026-07-22T23:53:19Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-09",
@@ -1944,6 +1944,16 @@
       "label": "MONDAY",
       "premix": [
         {
+          "label": "MG Grain Soak",
+          "total_units": 351,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/01187"
+          ]
+        },
+        {
           "label": "Prep mix Brioche Buns",
           "total_units": 348,
           "products": [
@@ -2057,6 +2067,18 @@
           "products": [
             "Pack of 3 Brioche Buns"
           ]
+        },
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 131.6,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01187",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ]
         }
       ],
       "shaping": [
@@ -2114,6 +2136,16 @@
       "label": "WEDNESDAY",
       "premix": [
         {
+          "label": "Cut Cheese",
+          "total_units": 360,
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ],
+          "mo_refs": [
+            "WH/MO/01185"
+          ]
+        },
+        {
           "label": "Prep mix Braided Brioche",
           "total_units": 116,
           "products": [
@@ -2136,9 +2168,30 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "cfg_name": "Cheese Baguette",
+          "unit": "kg",
+          "total_kg": 144.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/01185",
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 131.6,
+          "mo_ref": "WH/MO/01187",
+          "d0": "2026-08-06"
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
@@ -2180,13 +2233,13 @@
       "label": "THURSDAY",
       "premix": [
         {
-          "label": "Prep mix PAC/CR",
-          "total_units": 414,
+          "label": "Cut Cheese",
+          "total_units": 360,
           "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
           ],
           "mo_refs": [
-            "WH/MO/01182"
+            "WH/MO/01186"
           ]
         }
       ],
@@ -2202,6 +2255,18 @@
           "products": [
             "Brioche (Pastry)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "cfg_name": "Cheese Baguette",
+          "unit": "kg",
+          "total_kg": 144.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/01186",
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ]
         }
       ],
       "shaping": [
@@ -2212,6 +2277,15 @@
           "qty_units": 116,
           "total_kg": 52.2,
           "mo_ref": "WH/MO/01184",
+          "d0": "2026-08-07"
+        },
+        {
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360,
+          "qty_units": 360,
+          "total_kg": 144.0,
+          "mo_ref": "WH/MO/01185",
           "d0": "2026-08-07"
         }
       ],
@@ -2226,6 +2300,19 @@
           "dluo": "2027-05-06",
           "mo_ref": "WH/MO/01179",
           "lot_id": 1817,
+          "lot_name": "05/06/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-05-06",
+          "mo_ref": "WH/MO/01187",
+          "lot_id": 1828,
           "lot_name": "05/06/2027",
           "copacked": false,
           "needs_setup": false
@@ -2249,28 +2336,15 @@
       "date": "2026-08-07",
       "label": "FRIDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 29.0,
-          "total_units": 414,
-          "mo_ref": "WH/MO/01182",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        }
-      ],
+      "mix": [],
       "shaping": [
         {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 29.0,
-          "mo_ref": "WH/MO/01182",
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360,
+          "qty_units": 360,
+          "total_kg": 144.0,
+          "mo_ref": "WH/MO/01186",
           "d0": "2026-08-08"
         }
       ],
@@ -2288,6 +2362,19 @@
           "lot_name": "02/07/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-05-07",
+          "mo_ref": "WH/MO/01185",
+          "lot_id": 1825,
+          "lot_name": "05/07/2027",
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -2300,15 +2387,15 @@
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
-          "dluo": "2027-02-08",
-          "mo_ref": "WH/MO/01182",
-          "lot_id": 1821,
-          "lot_name": "02/08/2027",
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-05-08",
+          "mo_ref": "WH/MO/01186",
+          "lot_id": 1826,
+          "lot_name": "05/08/2027",
           "copacked": false,
           "needs_setup": false
         }
