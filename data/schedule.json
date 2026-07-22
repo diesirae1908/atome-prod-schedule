@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T00:45:25Z",
+  "generated_at": "2026-07-22T21:53:59Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-09",
@@ -217,16 +217,6 @@
           "mo_refs": [
             "WH/MO/01084"
           ]
-        },
-        {
-          "label": "Prep mix Waffles",
-          "total_units": 624,
-          "products": [
-            "Pack of 3 Liege Waffle"
-          ],
-          "mo_refs": [
-            "WH/MO/01030"
-          ]
         }
       ],
       "mix": [
@@ -286,18 +276,6 @@
       ],
       "mix": [
         {
-          "dough_type": "WAFFLES",
-          "label": "Pack of 3 Liege Waffle",
-          "cfg_name": "Liège Waffle (×3)",
-          "unit": "kg",
-          "total_kg": 62.4,
-          "total_units": 624,
-          "mo_ref": "WH/MO/01030",
-          "products": [
-            "Pack of 3 Liege Waffle"
-          ]
-        },
-        {
           "dough_type": "VIENNOISE",
           "label": "Pack of 2 Viennoise (Brioche Baguette)",
           "cfg_name": "Viennoise (×2)",
@@ -354,15 +332,6 @@
           "d0": "2026-07-22"
         },
         {
-          "sku": "WA3P-SGL",
-          "name": "Pack of 3 Liege Waffle",
-          "qty_packs": 208,
-          "qty_units": 624,
-          "total_kg": 62.4,
-          "mo_ref": "WH/MO/01030",
-          "d0": "2026-07-21"
-        },
-        {
           "sku": "CH-SGL",
           "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "qty_packs": 360,
@@ -382,21 +351,7 @@
           "d0": "2026-07-22"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "WA3P-SGL",
-          "name": "Pack of 3 Liege Waffle",
-          "qty_packs": 208.0,
-          "qty_units": 624.0,
-          "qty_pouches": 208.0,
-          "dluo": "2027-01-21",
-          "mo_ref": "WH/MO/01030",
-          "lot_id": 1742,
-          "lot_name": "01/21/2027",
-          "copacked": false,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-22",
@@ -535,6 +490,19 @@
           "lot_id": 1747,
           "lot_name": "01/22/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "2-CRVGN3P-SGL",
+          "name": "Pack of 3 vegan croissant",
+          "qty_packs": 30.0,
+          "qty_units": 90.0,
+          "qty_pouches": 30.0,
+          "dluo": "2027-01-22",
+          "mo_ref": "WH/MO/01172",
+          "lot_id": 1807,
+          "lot_name": "01/22/2027",
+          "copacked": true,
           "needs_setup": false
         },
         {
