@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T00:18:58Z",
+  "generated_at": "2026-07-23T00:22:40Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-09",
@@ -1999,16 +1999,6 @@
       "label": "TUESDAY",
       "premix": [
         {
-          "label": "MG Grain Soak",
-          "total_units": 351,
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ],
-          "mo_refs": [
-            "WH/MO/01189"
-          ]
-        },
-        {
           "label": "Prep mix PAC/CR",
           "total_units": 414,
           "products": [
@@ -2099,6 +2089,26 @@
       "label": "WEDNESDAY",
       "premix": [
         {
+          "label": "Cut Cheese",
+          "total_units": 360,
+          "products": [
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
+          ],
+          "mo_refs": [
+            "WH/MO/01186"
+          ]
+        },
+        {
+          "label": "MG Grain Soak",
+          "total_units": 351,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/01189"
+          ]
+        },
+        {
           "label": "Prep mix Brioche Buns",
           "total_units": 348,
           "products": [
@@ -2135,15 +2145,15 @@
           ]
         },
         {
-          "dough_type": "MG",
-          "label": "Pack of 3 Multigrain Sourdough Baguettes",
-          "cfg_name": "Multigrain Baguette (×3)",
+          "dough_type": "TRAD",
+          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "cfg_name": "Cheese Baguette",
           "unit": "kg",
-          "total_kg": 131.6,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01189",
+          "total_kg": 144.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/01186",
           "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
+            "Sourdough Cheese Baguette (Gruyere Cheese)"
           ]
         }
       ],
@@ -2205,18 +2215,7 @@
     {
       "date": "2026-08-06",
       "label": "THURSDAY",
-      "premix": [
-        {
-          "label": "Cut Cheese",
-          "total_units": 360,
-          "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
-          ],
-          "mo_refs": [
-            "WH/MO/01186"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "BRIOCHE",
@@ -2231,15 +2230,15 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "cfg_name": "Cheese Baguette",
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
           "unit": "kg",
-          "total_kg": 144.0,
-          "total_units": 360,
-          "mo_ref": "WH/MO/01186",
+          "total_kg": 131.6,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01189",
           "products": [
-            "Sourdough Cheese Baguette (Gruyere Cheese)"
+            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         },
         {
@@ -2275,12 +2274,12 @@
           "d0": "2026-08-07"
         },
         {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 131.6,
-          "mo_ref": "WH/MO/01189",
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360,
+          "qty_units": 360,
+          "total_kg": 144.0,
+          "mo_ref": "WH/MO/01186",
           "d0": "2026-08-07"
         }
       ],
@@ -2339,16 +2338,27 @@
     {
       "date": "2026-08-07",
       "label": "FRIDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/01194"
+          ]
+        }
+      ],
       "mix": [],
       "shaping": [
         {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360,
-          "qty_units": 360,
-          "total_kg": 144.0,
-          "mo_ref": "WH/MO/01186",
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 131.6,
+          "mo_ref": "WH/MO/01189",
           "d0": "2026-08-08"
         }
       ],
@@ -2390,14 +2400,14 @@
           "needs_setup": false
         },
         {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
+          "sku": "CH-SGL",
+          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
           "dluo": "2027-05-07",
-          "mo_ref": "WH/MO/01189",
-          "lot_id": 1829,
+          "mo_ref": "WH/MO/01186",
+          "lot_id": 1825,
           "lot_name": "05/07/2027",
           "copacked": false,
           "needs_setup": false
@@ -2408,8 +2418,31 @@
       "date": "2026-08-08",
       "label": "SATURDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "WAFFLES",
+          "label": "Pack of 3 Liege Waffle",
+          "cfg_name": "Liège Waffle (×3)",
+          "unit": "kg",
+          "total_kg": 62.4,
+          "total_units": 624,
+          "mo_ref": "WH/MO/01194",
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208,
+          "qty_units": 624,
+          "total_kg": 62.4,
+          "mo_ref": "WH/MO/01194",
+          "d0": "2026-08-08"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": [
         {
@@ -2426,14 +2459,27 @@
           "needs_setup": false
         },
         {
-          "sku": "CH-SGL",
-          "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208.0,
+          "qty_units": 624.0,
+          "qty_pouches": 208.0,
+          "dluo": "2027-02-08",
+          "mo_ref": "WH/MO/01194",
+          "lot_id": 1842,
+          "lot_name": "02/08/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
           "dluo": "2027-05-08",
-          "mo_ref": "WH/MO/01186",
-          "lot_id": 1826,
+          "mo_ref": "WH/MO/01189",
+          "lot_id": 1844,
           "lot_name": "05/08/2027",
           "copacked": false,
           "needs_setup": false
