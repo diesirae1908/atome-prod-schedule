@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T22:56:39Z",
+  "generated_at": "2026-07-24T23:00:24Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-23",
@@ -2576,6 +2576,18 @@
           "products": [
             "Brioche (Pastry)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "cfg_name": "Poppy Seed Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01224",
+          "products": [
+            "Pack of 3 Sourdough Poppy Seed Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -2643,6 +2655,18 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Sesame Baguette",
+          "cfg_name": "Sesame Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01225",
+          "products": [
+            "Pack of 3 Sourdough Sesame Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -2653,6 +2677,15 @@
           "qty_units": 414,
           "total_kg": 29.0,
           "mo_ref": "WH/MO/01220",
+          "d0": "2026-08-14"
+        },
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01224",
           "d0": "2026-08-14"
         }
       ],
@@ -2743,6 +2776,15 @@
           "total_kg": 52.2,
           "mo_ref": "WH/MO/01223",
           "d0": "2026-08-15"
+        },
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01225",
+          "d0": "2026-08-15"
         }
       ],
       "score_tasks": [],
@@ -2757,6 +2799,19 @@
           "mo_ref": "WH/MO/01220",
           "lot_id": 1863,
           "lot_name": "02/14/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-05-14",
+          "mo_ref": "WH/MO/01224",
+          "lot_id": 1871,
+          "lot_name": "05/14/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -2879,6 +2934,19 @@
           "mo_ref": "WH/MO/01213",
           "lot_id": 1864,
           "lot_name": "02/15/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-05-15",
+          "mo_ref": "WH/MO/01225",
+          "lot_id": 1872,
+          "lot_name": "05/15/2027",
           "copacked": false,
           "needs_setup": false
         }
