@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T21:50:47Z",
+  "generated_at": "2026-07-24T22:17:48Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-23",
@@ -357,21 +357,7 @@
           "d0": "2026-07-25"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "RAV-SPRI-330",
-          "name": "Fresh Ravioli Ricotta Spinach (330g)",
-          "qty_packs": 360.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-01-23",
-          "mo_ref": "WH/MO/01115",
-          "lot_id": 1851,
-          "lot_name": "01/23/2027",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-25",
@@ -425,6 +411,19 @@
       ],
       "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "RAV-SPRI-330",
+          "name": "Fresh Ravioli Ricotta Spinach (330g)",
+          "qty_packs": 180.0,
+          "qty_units": 180.0,
+          "qty_pouches": 180.0,
+          "dluo": "2027-01-23",
+          "mo_ref": "WH/MO/01115-002",
+          "lot_id": 1851,
+          "lot_name": "01/23/2027",
+          "copacked": true,
+          "needs_setup": false
+        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
