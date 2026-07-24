@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T23:12:55Z",
+  "generated_at": "2026-07-24T23:15:04Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-23",
@@ -2621,6 +2621,18 @@
           "products": [
             "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
+        },
+        {
+          "dough_type": "CIABATTA",
+          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "cfg_name": "Ciabatta (×3)",
+          "unit": "kg",
+          "total_kg": 119.7,
+          "total_units": 399,
+          "mo_ref": "WH/MO/01228",
+          "products": [
+            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
+          ]
         }
       ],
       "shaping": [
@@ -2632,6 +2644,15 @@
           "total_kg": 52.2,
           "mo_ref": "WH/MO/01222",
           "d0": "2026-08-13"
+        },
+        {
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 133,
+          "qty_units": 399,
+          "total_kg": 119.7,
+          "mo_ref": "WH/MO/01228",
+          "d0": "2026-08-14"
         },
         {
           "sku": "TR3P-SGL",
@@ -2744,7 +2765,16 @@
           "d0": "2026-08-14"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "freeze_only",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 133,
+          "qty_units": 399,
+          "mo_ref": "WH/MO/01228",
+          "d0": "2026-08-14"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "BR-SGL",
@@ -2857,6 +2887,19 @@
       ],
       "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 133.0,
+          "qty_units": 399.0,
+          "qty_pouches": 133.0,
+          "dluo": "2027-05-14",
+          "mo_ref": "WH/MO/01228",
+          "lot_id": 1878,
+          "lot_name": "05/14/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
