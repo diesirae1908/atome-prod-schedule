@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T22:53:43Z",
+  "generated_at": "2026-07-24T22:56:39Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-23",
@@ -2281,7 +2281,18 @@
     {
       "date": "2026-08-09",
       "label": "SUNDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Viennoise",
+          "total_units": 200,
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ],
+          "mo_refs": [
+            "WH/MO/01221"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "WAFFLES",
@@ -2404,8 +2415,31 @@
           ]
         }
       ],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "VIENNOISE",
+          "label": "Pack of 2 Viennoise (Brioche Baguette)",
+          "cfg_name": "Viennoise (×2)",
+          "unit": "kg",
+          "total_kg": 40.0,
+          "total_units": 200,
+          "mo_ref": "WH/MO/01221",
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100,
+          "qty_units": 200,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/01221",
+          "d0": "2026-08-11"
+        }
+      ],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -2448,7 +2482,18 @@
     {
       "date": "2026-08-11",
       "label": "TUESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Braided Brioche",
+          "total_units": 58,
+          "products": [
+            "Brioche (Pastry)"
+          ],
+          "mo_refs": [
+            "WH/MO/01222"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "PAC_CR",
@@ -2488,6 +2533,19 @@
           "lot_name": "05/11/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2027-02-11",
+          "mo_ref": "WH/MO/01221",
+          "lot_id": 1868,
+          "lot_name": "02/11/2027",
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -2506,8 +2564,31 @@
           ]
         }
       ],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Brioche (Pastry)",
+          "cfg_name": "Braided Brioche",
+          "unit": "kg",
+          "total_kg": 26.1,
+          "total_units": 58,
+          "mo_ref": "WH/MO/01222",
+          "products": [
+            "Brioche (Pastry)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 58,
+          "qty_units": 58,
+          "total_kg": 26.1,
+          "mo_ref": "WH/MO/01222",
+          "d0": "2026-08-13"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": [
         {
@@ -2529,6 +2610,16 @@
       "date": "2026-08-13",
       "label": "THURSDAY",
       "premix": [
+        {
+          "label": "Prep mix Brioche Buns",
+          "total_units": 348,
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ],
+          "mo_refs": [
+            "WH/MO/01223"
+          ]
+        },
         {
           "label": "Take butter out of the freezer",
           "total_units": 624,
@@ -2566,7 +2657,21 @@
         }
       ],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 58.0,
+          "qty_units": 58.0,
+          "qty_pouches": 58.0,
+          "dluo": "2027-02-13",
+          "mo_ref": "WH/MO/01222",
+          "lot_id": 1869,
+          "lot_name": "02/13/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-08-14",
@@ -2615,9 +2720,31 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 348,
+          "mo_ref": "WH/MO/01223",
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ]
         }
       ],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/01223",
+          "d0": "2026-08-15"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": [
         {
@@ -2729,6 +2856,19 @@
       ],
       "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116.0,
+          "qty_units": 348.0,
+          "qty_pouches": 116.0,
+          "dluo": "2027-02-15",
+          "mo_ref": "WH/MO/01223",
+          "lot_id": 1870,
+          "lot_name": "02/15/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
