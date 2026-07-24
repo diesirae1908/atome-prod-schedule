@@ -48,6 +48,25 @@ def extract_sku(product_name: str) -> str | None:
     m = re.match(r"^\[([^\]]+)\]", product_name or "")
     return m.group(1) if m else None
 
+def get_premix_tasks(cfg: dict) -> list[tuple[int, str]]:
+    """Return the list of (offset, label) pre-tasks for a product config.
+
+    Supports two forms, and both can be combined on the same product:
+      - list form:   "premix_tasks": [{"offset": -1, "label": "Cut butter"}, ...]
+      - single form (legacy): "premix_offset": -2, "premix_label": "Cut Cheese"
+    """
+    tasks: list[tuple[int, str]] = []
+    for t in cfg.get("premix_tasks") or []:
+        offset = t.get("offset")
+        label = t.get("label")
+        if offset is not None and label:
+            tasks.append((offset, label))
+    pm_offset = cfg.get("premix_offset")
+    pm_label = cfg.get("premix_label")
+    if pm_offset is not None and pm_label:
+        tasks.append((pm_offset, pm_label))
+    return tasks
+
 def compute_dluo(packaging_date: date, dluo_months: int | None) -> str | None:
     if dluo_months is None:
         return None
@@ -262,10 +281,13 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
                 entry["total_kg"] += total_kg
             entry["total_units"] += int(round(qty_packs * units_per_pack))
 
-        # ── PRE-MIXING (premix_offset) ────────────────────────────────────────
-        pm_offset = cfg.get("premix_offset")
-        pm_label  = cfg.get("premix_label")
-        if pm_offset is not None and pm_label:
+        # ── PRE-MIXING (premix_offset / premix_tasks) ──────────────────────────
+        # A product can have multiple pre-tasks (e.g. waffles: "Cut butter" on
+        # D-1 + "Take butter out of the freezer" on D-2, plus the pre-mix
+        # itself). `premix_tasks` is the list form: [{"offset": -1, "label": "..."}, ...].
+        # `premix_offset` + `premix_label` (singular) is kept for backward
+        # compatibility with existing single-pre-task products.
+        for pm_offset, pm_label in get_premix_tasks(cfg):
             premix_date = iso(d0 + timedelta(days=pm_offset))
             if premix_date in day_map:
                 upp = cfg.get("units_per_pack") or 1
@@ -333,8 +355,8 @@ def build_schedule(mos: list[dict], products_cfg: dict, start: date, end: date) 
 # ── main ────────────────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--weeks", type=int, default=3,
-                        help="How many weeks ahead to fetch (default: 3)")
+    parser.add_argument("--weeks", type=int, default=5,
+                        help="How many weeks ahead to fetch (default: 5)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Use sample data instead of calling Odoo (for testing)")
     args = parser.parse_args()

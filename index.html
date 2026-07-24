@@ -1176,8 +1176,14 @@ const RECURRING_TASKS = [
   { section: "mix",   slug: "dry_ice",              weekly_dow: [1, 2],       label: "🧊 Dry ice reception reminder" },
   { section: "mix",   slug: "emergency_levain",     weekly_dow: [1, 4],       label: "🪣 Make emergency levain bucket 10 kg" },
   { section: "mix",   slug: "empty_levain_machine", biweekly_anchor: "2026-05-01", label: "🫙 Empty and clean Levain machine", note: "every 2 weeks · Friday" },
+  // divider_deep (day 1) and divider_inside (day 15) are intentionally 14
+  // calendar days apart. Since a week is a fixed 7-day block, any two
+  // monthly_day anchors 14 days apart always land in different Mon–Sun
+  // weeks (verified for every month 2025–2027 — gap is always 14–17 days,
+  // never less, and never in the same week). Keep them ~14 days apart if
+  // these anchors are ever changed.
   { section: "shape", slug: "divider_deep",         monthly_day: 1,           label: "🧽 Deep clean dough divider (remove white blocks)" },
-  { section: "shape", slug: "divider_inside",       monthly_day: 15,          label: "🧽 Clean inside dough divider (keep white blocks)" },
+  { section: "shape", slug: "divider_inside",       monthly_day: 15,          label: "🧽 Clean inside dough divider (don't remove white blocks)" },
 ];
 
 function getRecurringForDay(iso, section) {
@@ -2100,7 +2106,7 @@ function render() {
     : "?";
   const moCount = (scheduleData?.days || []).reduce((s, d) => s + (d.vacuuming || []).length, 0);
   document.getElementById("metaLine").innerHTML =
-    `Last refresh: ${gen}<br/>MOs: ${moCount} next 3 weeks`;
+    `Last refresh: ${gen}<br/>MOs: ${moCount} next 5 weeks`;
 
   const todayMon2 = mondayOfWeek(isoToday());
   const earliestWeek = addDays(todayMon2, -12 * 7); // 3 months back
@@ -2553,7 +2559,7 @@ async function checkForScheduleUpdate() {
       scheduleData = data;
       render();
       document.getElementById("metaLine").innerHTML =
-        `Last refresh: ${data.generated_at?.replace("T"," ").slice(0,16)} UTC<br/>MOs: ${data.days?.reduce((s,d)=>s+(d.vacuuming||[]).length,0)*2} next 3 weeks`;
+        `Last refresh: ${data.generated_at?.replace("T"," ").slice(0,16)} UTC<br/>MOs: ${data.days?.reduce((s,d)=>s+(d.vacuuming||[]).length,0)*2} next 5 weeks`;
     }
   } catch {}
 }

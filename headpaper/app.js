@@ -3392,6 +3392,61 @@ function saveTask() {
     closeModal(document.getElementById('task-modal'));
 }
 
+// Extract the taskId portion from a scheduled-task instanceId, regardless of
+// format: "taskId|startTime|bakerIndex|timestamp" (new) or
+// "taskId_startTime_bakerIndex" (old).
+function taskIdFromInstanceId(instanceId) {
+    if (!instanceId) return null;
+    const pipeParts = String(instanceId).split('|');
+    if (pipeParts.length >= 3) return pipeParts[0];
+    const underscoreParts = String(instanceId).split('_');
+    if (underscoreParts.length >= 3) return underscoreParts[0];
+    return null;
+}
+
+// Root-cause fix for "deleted tasks come back": state.schedule stores
+// instanceId strings (or arrays of them) per slot — NEVER the bare taskId.
+// The old code compared `slotValue === taskId`, which never matches an
+// instanceId, so deleting a task from the library left every already-placed
+// instance of it dangling in state.schedule (and in scheduledTaskInstances)
+// forever. Those dangling instances resurface any time the underlying bug
+// that skips rendering for missing tasks is touched/fixed, and they bloat
+// storage indefinitely. This walks every date/baker/slot and actually
+// removes any instance belonging to taskId.
+function purgeTaskFromSchedule(taskId) {
+    if (!state.schedule) return;
+    Object.keys(state.schedule).forEach(date => {
+        const dateSchedule = state.schedule[date];
+        Object.keys(dateSchedule).forEach(bakerIndex => {
+            const bakerSchedule = dateSchedule[bakerIndex];
+            Object.keys(bakerSchedule).forEach(time => {
+                const value = bakerSchedule[time];
+                if (Array.isArray(value)) {
+                    const filtered = value.filter(id => taskIdFromInstanceId(id) !== taskId);
+                    if (filtered.length === 0) {
+                        delete bakerSchedule[time];
+                    } else if (filtered.length === 1) {
+                        bakerSchedule[time] = filtered[0];
+                    } else {
+                        bakerSchedule[time] = filtered;
+                    }
+                } else if (taskIdFromInstanceId(value) === taskId) {
+                    delete bakerSchedule[time];
+                }
+            });
+        });
+    });
+
+    // Purge any orphaned scheduledTaskInstances entries for this task
+    if (state.scheduledTaskInstances) {
+        Object.keys(state.scheduledTaskInstances).forEach(instanceId => {
+            if (taskIdFromInstanceId(instanceId) === taskId) {
+                delete state.scheduledTaskInstances[instanceId];
+            }
+        });
+    }
+}
+
 function deleteTask() {
     const taskId = state.editingTask;
     const task = state.tasks.find(t => t.id === taskId);
@@ -3406,16 +3461,8 @@ function deleteTask() {
 
     state.tasks = state.tasks.filter(t => t.id !== taskId);
 
-    // Remove from all schedules
-    Object.keys(state.schedule).forEach(date => {
-        Object.keys(state.schedule[date]).forEach(bakerIndex => {
-            Object.keys(state.schedule[date][bakerIndex]).forEach(time => {
-                if (state.schedule[date][bakerIndex][time] === taskId) {
-                    delete state.schedule[date][bakerIndex][time];
-                }
-            });
-        });
-    });
+    // Remove from all schedules (all dates, all bakers, all placed instances)
+    purgeTaskFromSchedule(taskId);
 
     saveToStorage();
     renderTaskLibrary();
@@ -3438,15 +3485,7 @@ function quickDeleteTask(taskId) {
 
     state.tasks = state.tasks.filter(t => t.id !== taskId);
 
-    Object.keys(state.schedule).forEach(date => {
-        Object.keys(state.schedule[date]).forEach(bakerIndex => {
-            Object.keys(state.schedule[date][bakerIndex]).forEach(time => {
-                if (state.schedule[date][bakerIndex][time] === taskId) {
-                    delete state.schedule[date][bakerIndex][time];
-                }
-            });
-        });
-    });
+    purgeTaskFromSchedule(taskId);
 
     saveToStorage();
     renderTaskLibrary();

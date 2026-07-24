@@ -1,5 +1,5 @@
 {
-  "_comment": "mix/shape/score/vacuum_offset = days before D-0 (MO scheduled date = packaging day). premix_offset = day of pre-mixing (levain build, butter block, grain soak…). weight_g_per_unit = raw dough weight of one item. dluo_months = null means FIXED (copacked).",
+  "_comment": "mix/shape/score/vacuum_offset = days before D-0 (MO scheduled date = packaging day). premix_offset = day of pre-mixing (levain build, butter block, grain soak…). premix_tasks (list form) supports MULTIPLE pre-tasks per product, e.g. [{\"offset\": -1, \"label\": \"Cut butter\"}, {\"offset\": -2, \"label\": \"Take butter out of the freezer\"}] — premix_offset/premix_label (singular) still works and both forms can combine. weight_g_per_unit = raw dough weight of one item. dluo_months = null means FIXED (copacked).",
   "dough_types": {
     "TRAD": {
       "label": "TRAD",
@@ -96,8 +96,11 @@
       "shape_offset": 0,
       "score_offset": 0,
       "vacuum_offset": 0,
-      "premix_offset": -1,
-      "premix_label": "Prep mix Waffles",
+      "premix_tasks": [
+        { "offset": -1, "label": "Prep mix Waffles" },
+        { "offset": -1, "label": "Cut butter" },
+        { "offset": -2, "label": "Take butter out of the freezer" }
+      ],
       "dluo_months": 6,
       "units_per_pack": 3,
       "pouches_per_pack": 1,
