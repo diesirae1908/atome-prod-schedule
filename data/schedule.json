@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T23:24:51Z",
+  "generated_at": "2026-07-24T23:27:28Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-23",
@@ -2539,9 +2539,30 @@
           "products": [
             "Pack of 3 Sourdough Sesame Baguette"
           ]
+        },
+        {
+          "dough_type": "WW",
+          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "cfg_name": "Wholewheat Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 138.0,
+          "total_units": 230,
+          "mo_ref": "WH/MO/01231",
+          "products": [
+            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 115,
+          "qty_units": 230,
+          "total_kg": 138.0,
+          "mo_ref": "WH/MO/01231",
+          "d0": "2026-08-13"
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
@@ -2673,7 +2694,16 @@
           "d0": "2026-08-13"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 115,
+          "qty_units": 230,
+          "mo_ref": "WH/MO/01231",
+          "d0": "2026-08-13"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -2773,6 +2803,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 115.0,
+          "qty_units": 230.0,
+          "qty_pouches": 230.0,
+          "dluo": "2027-05-13",
+          "mo_ref": "WH/MO/01231",
+          "lot_id": 1885,
+          "lot_name": "05/13/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
