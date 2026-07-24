@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T23:31:24Z",
+  "generated_at": "2026-07-24T00:07:23Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-09",
@@ -821,6 +821,19 @@
           "lot_name": "04/27/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CHTWI4P",
+          "name": "Pack of 4 Chocolate Twists",
+          "qty_packs": 49.0,
+          "qty_units": 49.0,
+          "qty_pouches": 49.0,
+          "dluo": "2026-11-25",
+          "mo_ref": "WH/MO/01209",
+          "lot_id": 1666,
+          "lot_name": "11/25/2026",
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
@@ -958,9 +971,9 @@
         {
           "sku": "4-CHTWI4P",
           "name": "Pack of 4 Chocolate Twists",
-          "qty_packs": 132.0,
-          "qty_units": 132.0,
-          "qty_pouches": 132.0,
+          "qty_packs": 99.0,
+          "qty_units": 99.0,
+          "qty_pouches": 99.0,
           "dluo": "2026-11-25",
           "mo_ref": "WH/MO/01152",
           "lot_id": 1666,
@@ -1382,6 +1395,19 @@
           "lot_name": "04/30/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CHTWI4P",
+          "name": "Pack of 4 Chocolate Twists",
+          "qty_packs": 49.0,
+          "qty_units": 49.0,
+          "qty_pouches": 49.0,
+          "dluo": "2027-03-14",
+          "mo_ref": "WH/MO/01210",
+          "lot_id": 1854,
+          "lot_name": "03/14/2027",
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
@@ -1796,6 +1822,19 @@
           "lot_name": "05/04/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 90.0,
+          "qty_units": 720.0,
+          "qty_pouches": 90.0,
+          "dluo": "2026-10-11",
+          "mo_ref": "WH/MO/01205",
+          "lot_id": 1040,
+          "lot_name": "10/11/2026",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1924,6 +1963,19 @@
           "lot_name": "02/05/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CXC20P",
+          "name": "Pack of 20 Cheese Gougères",
+          "qty_packs": 50.0,
+          "qty_units": 50.0,
+          "qty_pouches": 50.0,
+          "dluo": "2027-01-19",
+          "mo_ref": "WH/MO/01206",
+          "lot_id": 1275,
+          "lot_name": "01/19/2027",
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
@@ -2047,6 +2099,19 @@
           "lot_name": "02/06/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": "2027-02-03",
+          "mo_ref": "WH/MO/01207",
+          "lot_id": 1853,
+          "lot_name": "02/03/2027",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -2113,6 +2178,19 @@
           "lot_name": "05/07/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CHTWI4P",
+          "name": "Pack of 4 Chocolate Twists",
+          "qty_packs": 99.0,
+          "qty_units": 99.0,
+          "qty_pouches": 99.0,
+          "dluo": "2026-11-25",
+          "mo_ref": "WH/MO/01208",
+          "lot_id": 1666,
+          "lot_name": "11/25/2026",
+          "copacked": true,
+          "needs_setup": true
         },
         {
           "sku": "CH-SGL",
