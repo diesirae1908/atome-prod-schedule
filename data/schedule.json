@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T23:15:04Z",
+  "generated_at": "2026-07-24T23:17:24Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-23",
@@ -2283,13 +2283,13 @@
       "label": "SUNDAY",
       "premix": [
         {
-          "label": "Prep mix PAC/CR",
-          "total_units": 414,
+          "label": "Prep mix Braided Brioche",
+          "total_units": 116,
           "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+            "Brioche (Pastry)"
           ],
           "mo_refs": [
-            "WH/MO/01219"
+            "WH/MO/01222"
           ]
         }
       ],
@@ -2405,27 +2405,27 @@
       "label": "MONDAY",
       "premix": [
         {
-          "label": "Prep mix Viennoise",
-          "total_units": 200,
+          "label": "Prep mix PAC/CR",
+          "total_units": 414,
           "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ],
           "mo_refs": [
-            "WH/MO/01221"
+            "WH/MO/01219"
           ]
         }
       ],
       "mix": [
         {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 29.0,
-          "total_units": 414,
-          "mo_ref": "WH/MO/01219",
+          "dough_type": "BRIOCHE",
+          "label": "Brioche (Pastry)",
+          "cfg_name": "Braided Brioche",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 116,
+          "mo_ref": "WH/MO/01222",
           "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+            "Brioche (Pastry)"
           ]
         },
         {
@@ -2443,12 +2443,12 @@
       ],
       "shaping": [
         {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 29.0,
-          "mo_ref": "WH/MO/01219",
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116,
+          "qty_units": 116,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/01222",
           "d0": "2026-08-11"
         }
       ],
@@ -2496,27 +2496,27 @@
       "label": "TUESDAY",
       "premix": [
         {
-          "label": "Prep mix Braided Brioche",
-          "total_units": 116,
+          "label": "Prep mix Viennoise",
+          "total_units": 200,
           "products": [
-            "Brioche (Pastry)"
+            "Pack of 2 Viennoise (Brioche Baguette)"
           ],
           "mo_refs": [
-            "WH/MO/01222"
+            "WH/MO/01221"
           ]
         }
       ],
       "mix": [
         {
-          "dough_type": "VIENNOISE",
-          "label": "Pack of 2 Viennoise (Brioche Baguette)",
-          "cfg_name": "Viennoise (×2)",
-          "unit": "kg",
-          "total_kg": 40.0,
-          "total_units": 200,
-          "mo_ref": "WH/MO/01221",
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 29.0,
+          "total_units": 414,
+          "mo_ref": "WH/MO/01219",
           "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
         },
         {
@@ -2534,12 +2534,12 @@
       ],
       "shaping": [
         {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100,
-          "qty_units": 200,
-          "total_kg": 40.0,
-          "mo_ref": "WH/MO/01221",
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
+          "mo_ref": "WH/MO/01219",
           "d0": "2026-08-12"
         },
         {
@@ -2555,6 +2555,19 @@
       "score_tasks": [],
       "vacuuming": [
         {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116.0,
+          "qty_units": 116.0,
+          "qty_pouches": 116.0,
+          "dluo": "2027-02-11",
+          "mo_ref": "WH/MO/01222",
+          "lot_id": 1880,
+          "lot_name": "02/11/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 176.0,
@@ -2564,19 +2577,6 @@
           "mo_ref": "WH/MO/01199",
           "lot_id": 1848,
           "lot_name": "05/11/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
-          "dluo": "2027-02-11",
-          "mo_ref": "WH/MO/01219",
-          "lot_id": 1874,
-          "lot_name": "02/11/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -2599,15 +2599,15 @@
       ],
       "mix": [
         {
-          "dough_type": "BRIOCHE",
-          "label": "Brioche (Pastry)",
-          "cfg_name": "Braided Brioche",
+          "dough_type": "VIENNOISE",
+          "label": "Pack of 2 Viennoise (Brioche Baguette)",
+          "cfg_name": "Viennoise (×2)",
           "unit": "kg",
-          "total_kg": 52.2,
-          "total_units": 116,
-          "mo_ref": "WH/MO/01222",
+          "total_kg": 40.0,
+          "total_units": 200,
+          "mo_ref": "WH/MO/01221",
           "products": [
-            "Brioche (Pastry)"
+            "Pack of 2 Viennoise (Brioche Baguette)"
           ]
         },
         {
@@ -2637,12 +2637,12 @@
       ],
       "shaping": [
         {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 116,
-          "qty_units": 116,
-          "total_kg": 52.2,
-          "mo_ref": "WH/MO/01222",
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100,
+          "qty_units": 200,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/01221",
           "d0": "2026-08-13"
         },
         {
@@ -2667,14 +2667,14 @@
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
           "dluo": "2027-02-12",
-          "mo_ref": "WH/MO/01221",
-          "lot_id": 1875,
+          "mo_ref": "WH/MO/01219",
+          "lot_id": 1862,
           "lot_name": "02/12/2027",
           "copacked": false,
           "needs_setup": false
@@ -2777,14 +2777,14 @@
       ],
       "vacuuming": [
         {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 116.0,
-          "qty_units": 116.0,
-          "qty_pouches": 116.0,
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
           "dluo": "2027-02-13",
-          "mo_ref": "WH/MO/01222",
-          "lot_id": 1869,
+          "mo_ref": "WH/MO/01221",
+          "lot_id": 1879,
           "lot_name": "02/13/2027",
           "copacked": false,
           "needs_setup": false
