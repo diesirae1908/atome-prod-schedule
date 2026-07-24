@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T22:39:32Z",
+  "generated_at": "2026-07-24T22:51:10Z",
   "week_number": 27,
   "week_start": "2026-06-29",
   "week_end": "2026-08-23",
@@ -1854,6 +1854,16 @@
           "mo_refs": [
             "WH/MO/01194"
           ]
+        },
+        {
+          "label": "Take butter out of the freezer",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/01213"
+          ]
         }
       ],
       "mix": [
@@ -2003,6 +2013,16 @@
           ]
         },
         {
+          "label": "Cut butter",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/01213"
+          ]
+        },
+        {
           "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
@@ -2013,6 +2033,16 @@
           ]
         },
         {
+          "label": "Prep mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/01213"
+          ]
+        },
+        {
           "label": "Take butter out of the freezer",
           "total_units": 624,
           "products": [
@@ -2020,6 +2050,16 @@
           ],
           "mo_refs": [
             "WH/MO/01195"
+          ]
+        },
+        {
+          "label": "Take butter out of the freezer",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/01214"
           ]
         }
       ],
@@ -2044,6 +2084,18 @@
           "total_kg": 122.8,
           "total_units": 351,
           "mo_ref": "WH/MO/01196",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01215",
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
@@ -2149,6 +2201,16 @@
           ]
         },
         {
+          "label": "Cut butter",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/01214"
+          ]
+        },
+        {
           "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
@@ -2156,6 +2218,16 @@
           ],
           "mo_refs": [
             "WH/MO/01195"
+          ]
+        },
+        {
+          "label": "Prep mix Waffles",
+          "total_units": 624,
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ],
+          "mo_refs": [
+            "WH/MO/01214"
           ]
         }
       ],
@@ -2195,6 +2267,30 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
+        },
+        {
+          "dough_type": "WAFFLES",
+          "label": "Pack of 3 Liege Waffle",
+          "cfg_name": "Liège Waffle (×3)",
+          "unit": "kg",
+          "total_kg": 62.4,
+          "total_units": 624,
+          "mo_ref": "WH/MO/01213",
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01216",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -2213,8 +2309,26 @@
           "qty_packs": 208,
           "qty_units": 624,
           "total_kg": 62.4,
+          "mo_ref": "WH/MO/01213",
+          "d0": "2026-08-08"
+        },
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208,
+          "qty_units": 624,
+          "total_kg": 62.4,
           "mo_ref": "WH/MO/01194",
           "d0": "2026-08-08"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01215",
+          "d0": "2026-08-09"
         },
         {
           "sku": "TR3P-SGL",
@@ -2247,6 +2361,19 @@
           "mo_ref": "WH/MO/01193",
           "lot_id": 1840,
           "lot_name": "05/08/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208.0,
+          "qty_units": 624.0,
+          "qty_pouches": 208.0,
+          "dluo": "2027-02-08",
+          "mo_ref": "WH/MO/01213",
+          "lot_id": 1842,
+          "lot_name": "02/08/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -2306,6 +2433,18 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
+        },
+        {
+          "dough_type": "WAFFLES",
+          "label": "Pack of 3 Liege Waffle",
+          "cfg_name": "Liège Waffle (×3)",
+          "unit": "kg",
+          "total_kg": 62.4,
+          "total_units": 624,
+          "mo_ref": "WH/MO/01214",
+          "products": [
+            "Pack of 3 Liege Waffle"
+          ]
         }
       ],
       "shaping": [
@@ -2324,8 +2463,26 @@
           "qty_packs": 208,
           "qty_units": 624,
           "total_kg": 62.4,
+          "mo_ref": "WH/MO/01214",
+          "d0": "2026-08-09"
+        },
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208,
+          "qty_units": 624,
+          "total_kg": 62.4,
           "mo_ref": "WH/MO/01195",
           "d0": "2026-08-09"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01216",
+          "d0": "2026-08-10"
         },
         {
           "sku": "TR3P-SGL",
@@ -2368,9 +2525,35 @@
           "qty_units": 624.0,
           "qty_pouches": 208.0,
           "dluo": "2027-02-09",
+          "mo_ref": "WH/MO/01214",
+          "lot_id": 1843,
+          "lot_name": "02/09/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "WA3P-SGL",
+          "name": "Pack of 3 Liege Waffle",
+          "qty_packs": 208.0,
+          "qty_units": 624.0,
+          "qty_pouches": 208.0,
+          "dluo": "2027-02-09",
           "mo_ref": "WH/MO/01195",
           "lot_id": 1843,
           "lot_name": "02/09/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-05-09",
+          "mo_ref": "WH/MO/01215",
+          "lot_id": 1845,
+          "lot_name": "05/09/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -2415,6 +2598,19 @@
           "dluo": "2027-05-10",
           "mo_ref": "WH/MO/01198",
           "lot_id": 1847,
+          "lot_name": "05/10/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-05-10",
+          "mo_ref": "WH/MO/01216",
+          "lot_id": 1846,
           "lot_name": "05/10/2027",
           "copacked": false,
           "needs_setup": false
@@ -2488,8 +2684,31 @@
       "date": "2026-08-15",
       "label": "SATURDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/01217",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/01217",
+          "d0": "2026-08-17"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -2497,9 +2716,41 @@
       "date": "2026-08-16",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 246.4,
+          "total_units": 352,
+          "mo_ref": "WH/MO/01218",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "total_kg": 246.4,
+          "mo_ref": "WH/MO/01218",
+          "d0": "2026-08-18"
+        }
+      ],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/01217",
+          "d0": "2026-08-17"
+        }
+      ],
       "vacuuming": []
     },
     {
@@ -2508,8 +2759,31 @@
       "premix": [],
       "mix": [],
       "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "mo_ref": "WH/MO/01218",
+          "d0": "2026-08-18"
+        }
+      ],
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
+          "dluo": "2027-05-17",
+          "mo_ref": "WH/MO/01217",
+          "lot_id": 1860,
+          "lot_name": "05/17/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-08-18",
@@ -2518,7 +2792,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176.0,
+          "qty_units": 352.0,
+          "qty_pouches": 352.0,
+          "dluo": "2027-05-18",
+          "mo_ref": "WH/MO/01218",
+          "lot_id": 1859,
+          "lot_name": "05/18/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-08-19",
