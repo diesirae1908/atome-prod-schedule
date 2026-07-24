@@ -4,6 +4,12 @@ Dated work log for the `atome-prod-schedule` repo, newest entry first.
 
 ---
 
+## 2026-07-23 — Deployed to main (Lucas's go, ~5:12 PM PT)
+
+Merged `sam/baptiste-jul23` → main (`145e424`, after merging in the day's auto-refresh commits). GitHub Pages rebuilt successfully; refresh workflow triggered manually — live `data/schedule.json` now spans 5 weeks ahead (through Aug 23) and the waffle butter tasks verified in prod (4 WA3P-SGL MOs, butter-out on D-2 / cut-butter on D-1 for each). Note: `remind-rotate-api-key.yml` fails on every push (0s, pre-existing since ≤Jun 12) — unrelated, flagged for cleanup.
+
+---
+
 ## 2026-07-23 — Baptiste's 4 requests (branch `sam/baptiste-jul23`)
 
 Dispatched by Sam (Lucas's assistant) to implement 4 fixes Baptiste (ops) requested. Worked in an isolated git worktree (`../prod-schedule-baptiste`, branched from `origin/main` at `c250bcf`) because the primary working tree had unrelated uncommitted WIP (Apex bridge + sidebar refactor) that had to stay untouched, and was 281 commits behind `origin/main`.
