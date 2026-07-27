@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T22:10:02Z",
+  "generated_at": "2026-07-27T22:11:44Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -180,31 +180,8 @@
       "date": "2026-07-25",
       "label": "SATURDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 112.0,
-          "total_units": 160,
-          "mo_ref": "WH/MO/01095",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "total_kg": 112.0,
-          "mo_ref": "WH/MO/01095",
-          "d0": "2026-07-27"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -248,16 +225,7 @@
           "d0": "2026-07-28"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "mo_ref": "WH/MO/01095",
-          "d0": "2026-07-27"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -342,19 +310,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80.0,
-          "qty_units": 160.0,
-          "qty_pouches": 160.0,
-          "dluo": "2027-04-27",
-          "mo_ref": "WH/MO/01095",
-          "lot_id": 1735,
-          "lot_name": "04/27/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "4-CHTWI4P",
           "name": "Pack of 4 Chocolate Twists",
