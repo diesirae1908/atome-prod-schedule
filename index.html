@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atome Bakery – Production Schedule</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/auth.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -982,7 +984,7 @@ async function supaFetch(method, path, body, extraHeaders) {
     headers: {
       "Content-Type": "application/json",
       "apikey": SUPA_KEY,
-      "Authorization": "Bearer " + SUPA_KEY,
+      "Authorization": "Bearer " + (window.AtomeAuth?.getAccessToken() || SUPA_KEY),
       "Prefer": "return=minimal,resolution=merge-duplicates",
       ...(extraHeaders || {})
     },
@@ -2573,6 +2575,7 @@ document.addEventListener("visibilitychange", () => {
 // ── init ──────────────────────────────────────────────────────────────────────
 (async () => {
   try {
+    await window.AtomeAuth?.ready;
     // Load schedule + sync checks + load output records in parallel
     const [sched] = await Promise.all([
       loadSchedule(),

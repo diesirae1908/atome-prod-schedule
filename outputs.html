@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atome Bakery – Production Outputs</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/auth.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; background: #f3f4f6; color: #111827; }
@@ -228,7 +230,7 @@ function fmtDluo(date) {
 
 async function fetchOutputs() {
   const r = await fetch(SUPA_URL + "/rest/v1/production_outputs?select=*&order=recorded_date.desc,recorded_at.desc", {
-    headers: { "apikey": SUPA_KEY, "Authorization": "Bearer " + SUPA_KEY }
+    headers: { "apikey": SUPA_KEY, "Authorization": "Bearer " + (window.AtomeAuth?.getAccessToken() || SUPA_KEY) }
   });
   if (!r.ok) throw new Error("Supabase " + r.status);
   return r.json();
@@ -340,6 +342,7 @@ document.getElementById("btnReset").addEventListener("click", () => {
 
 (async () => {
   try {
+    await window.AtomeAuth?.ready;
     // Load outputs + product config + schedule lots in parallel
     const [rows] = await Promise.all([
       fetchOutputs(),

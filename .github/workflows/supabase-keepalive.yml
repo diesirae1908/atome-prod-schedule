@@ -10,12 +10,16 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Supabase REST API
+      - name: Ping Supabase Auth health endpoint
         run: |
+          # Uses the GoTrue health check instead of querying `checks` directly:
+          # this table now requires an authenticated user JWT (RLS tightened
+          # 2026-07-26), which this workflow doesn't have. The health endpoint
+          # only needs the publishable key, is unaffected by table RLS, and
+          # still counts as project activity for keepalive purposes.
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            "https://ktbbmtyesrprvxrseiph.supabase.co/rest/v1/checks?select=key&limit=1" \
-            -H "apikey: sb_publishable_1vfCHnng8kWfUGFtOt9Dmw_Rzkn8M62" \
-            -H "Authorization: Bearer sb_publishable_1vfCHnng8kWfUGFtOt9Dmw_Rzkn8M62")
+            "https://ktbbmtyesrprvxrseiph.supabase.co/auth/v1/health" \
+            -H "apikey: sb_publishable_1vfCHnng8kWfUGFtOt9Dmw_Rzkn8M62")
           echo "Supabase responded: HTTP $STATUS"
           if [ "$STATUS" != "200" ]; then
             echo "⚠️  Unexpected status — Supabase may be paused. Check https://supabase.com/dashboard"

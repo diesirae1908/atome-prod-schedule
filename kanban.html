@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atome Bakery – Kanban</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/auth.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -541,7 +543,7 @@ async function syncToSupabase() {
       headers: {
         "Content-Type": "application/json",
         "apikey": SUPA_KEY,
-        "Authorization": `Bearer ${SUPA_KEY}`,
+        "Authorization": `Bearer ${window.AtomeAuth?.getAccessToken() || SUPA_KEY}`,
         "Prefer": "resolution=merge-duplicates",
       },
       body: JSON.stringify([{ key: LS_KEY, value: JSON.stringify(board), updated_at: new Date().toISOString() }])
@@ -552,7 +554,7 @@ async function syncToSupabase() {
 async function loadFromSupabase() {
   try {
     const resp = await fetch(`${SUPA_URL}/rest/v1/checks?key=eq.${LS_KEY}&select=value`, {
-      headers: { "apikey": SUPA_KEY, "Authorization": `Bearer ${SUPA_KEY}` }
+      headers: { "apikey": SUPA_KEY, "Authorization": `Bearer ${window.AtomeAuth?.getAccessToken() || SUPA_KEY}` }
     });
     if (!resp.ok) return;
     const rows = await resp.json();
@@ -990,6 +992,7 @@ function applyProjectsSeed() {
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 (async () => {
+  await window.AtomeAuth?.ready;
   await loadFromSupabase();
   applyProjectsSeed();
   renderBoard();
