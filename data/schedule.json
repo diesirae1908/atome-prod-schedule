@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T22:48:11Z",
+  "generated_at": "2026-07-27T23:12:32Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -309,21 +309,7 @@
           "d0": "2026-07-28"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "4-CHTWI4P",
-          "name": "Pack of 4 Chocolate Twists",
-          "qty_packs": 148.0,
-          "qty_units": 148.0,
-          "qty_pouches": 148.0,
-          "dluo": "2026-11-25",
-          "mo_ref": "WH/MO/01209",
-          "lot_id": 1666,
-          "lot_name": "11/25/2026",
-          "copacked": true,
-          "needs_setup": true
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-28",
