@@ -4,6 +4,44 @@ Dated work log for the `atome-prod-schedule` repo, newest entry first.
 
 ---
 
+## 2026-07-26 — Supabase Auth login gate built; RLS flip blocked, needs Sam/Lucas (branch `security/supabase-auth-login`)
+
+Dispatched by Sam (Lucas's assistant) after tonight's security audit found this app ships its Supabase anon (`sb_publishable_...`) key into browser JS with zero authentication, and RLS on `checks` + `production_outputs` (project `ktbbmtyesrprvxrseiph`) is effectively `USING (true)` — anyone with the URL can read/edit/delete the bakery's production data (~1,500 rows). Sam snapshotted both tables first (`~/Documents/atome/backups/supabase-snapshots-2026-07-26/`), so worst case is recoverable. Lucas approved the fix.
+
+### Shipped (this branch, not yet merged to `main`)
+
+- **`assets/auth.js`** (new): shared Supabase Auth gate. Loads supabase-js from the jsDelivr CDN, shows a full-screen email/password login overlay (curtain hides the rest of the page instantly, before any protected content can flash through) until `getSession()` resolves a valid session, then injects a small "signed in as … / Sign out" pill (bottom-right) on every gated page. `persistSession: true` + `autoRefreshToken: true` so shared bakery tablets stay logged in long-term. **No sign-up UI anywhere** — accounts are provisioned out-of-band only, by design.
+- Wired into the **4 pages that actually touch Supabase** (checked every HTML entry point — `levain.html`, `mops.html`, `ai-planner/index.html` don't call Supabase at all, so left alone):
+  - `index.html`, `kanban.html`, `outputs.html`, `headpaper/index.html` — each now includes the CDN script + `assets/auth.js` as early as possible in `<head>`, awaits `window.AtomeAuth.ready` before their init IIFE/`DOMContentLoaded` handler does anything, and sends the logged-in user's `access_token` as the `Authorization` bearer on `/rest/v1/checks` and `/rest/v1/production_outputs` calls (was the anon key). The `apikey` header stays the publishable key (Supabase gateway still needs it).
+  - Left untouched on purpose: the 4 `/functions/v1/...` Edge Function calls in `index.html` (`trigger-refresh`, `github-products`, `github-shifts`) — those have `verify_jwt = false` in `supabase/config.toml` and don't touch the two RLS-tightened tables, so they're out of scope.
+- **`.github/workflows/supabase-keepalive.yml`**: switched from pinging `checks` with the anon key (will start failing once RLS goes authenticated-only) to GoTrue's `/auth/v1/health`, which only needs the publishable key and is unaffected by table RLS either way. Verified live: `200` before this change, `200` after.
+
+### Blocked — did NOT do, and did NOT touch RLS (escalating per my brief's explicit fallback)
+
+The brief's ordering constraint requires shipping + deploying the login UI, then verifying a real authenticated login + read/write round-trip against production, **before** touching RLS at all — and only flipping policies once that's proven. I could not complete either prerequisite:
+
+1. **No way to create the two accounts** (`lucas@atomebakery.com` + a shared `team@atomebakery.com`). Tried, in the order specified: (a) no Supabase MCP server is exposed to this session (`plugin-supabase-supabase` isn't in this subagent's tool list — only `cursor-app-control`, `cursor-ide-browser`, and the Google/Meta/Search-Console servers are); (b) searched this whole workspace (`prod-schedule-workspace/`) plus `~/.supabase`, the macOS keychain, shell env vars, and GitHub Actions repo secrets (only `ANTHROPIC_API_KEY`/`ODOO_*` exist there) for a `service_role` key or `SUPABASE_ACCESS_TOKEN` — found none. Per the brief, stopping here rather than improvising (e.g. self-serve `signUp()`, or raw SQL into `auth.users`, both explicitly out of bounds).
+2. **RLS policy flip not attempted** — also needs `execute_sql` via the Supabase MCP, which isn't available here, and is blocked anyway on (1) above per the ordering constraint.
+3. **Other tables/policies in the project** — couldn't enumerate. The project uses Supabase's newer key format, which now requires a *secret* key (not the publishable one) even to read the PostgREST OpenAPI schema (`GET /rest/v1/` → `403 Secret API key required`), so this needs the same admin access as (1)/(2).
+4. **Deploy held on `main`** — deliberately did not merge/push this branch to `main` (which is what GitHub Pages serves — confirmed via `gh api repos/.../pages`: `source.branch = main`, `path = /`, `build_type = legacy`, so merging = instant live deploy). Shipping the login gate with zero valid accounts would lock out the entire bakery team with no way in, which is strictly worse than tonight's exposure. Pushed to `security/supabase-auth-login` instead: https://github.com/diesirae1908/atome-prod-schedule/pull/new/security/supabase-auth-login
+
+### What Sam/Lucas need to do to finish this
+
+1. Create the 2 accounts via the Supabase MCP (if it has user-admin tooling) or the dashboard (Authentication → Users → Add user), or hand this session a `service_role` key for a single `POST /auth/v1/admin/users` call each.
+2. Merge `security/supabase-auth-login` → `main` (GitHub Pages deploys immediately).
+3. Verify live: log in with each account, confirm a schedule check-box (writes `checks`) and an outputs entry (writes `production_outputs`) round-trip correctly.
+4. Only then flip RLS: drop the permissive anon policies on `checks` and `production_outputs`, add `FOR ALL TO authenticated USING (true) WITH CHECK (true)` on both (via Supabase MCP `execute_sql`).
+5. Verify: unauthenticated REST with the anon key now gets `401`/empty on both tables; logged-in app still works end-to-end. If it doesn't, restore the previous policies immediately and come back to Sam.
+
+### Verification performed
+
+- `node --check` on every inline `<script>` block extracted from the 4 edited HTML files, plus `assets/auth.js` directly — all clean.
+- Confirmed (`curl`) both tables are still fully open to the anon key right now (pre-flip baseline, for before/after comparison later): `GET /rest/v1/checks` → `200` with live rows returned, `GET /rest/v1/production_outputs` → `200`.
+- Served the branch locally (`python3 -m http.server`) — page loads, no syntax errors. Could not do a full interactive login round-trip test (no test account exists yet — see "Blocked" above); browser MCP tooling wasn't available in this session to drive a headless check either.
+- `GET /auth/v1/health` (new keepalive target) → `200` both before and after the workflow edit.
+
+---
+
 ## 2026-07-23 — Deployed to main (Lucas's go, ~5:12 PM PT)
 
 Merged `sam/baptiste-jul23` → main (`145e424`, after merging in the day's auto-refresh commits). GitHub Pages rebuilt successfully; refresh workflow triggered manually — live `data/schedule.json` now spans 5 weeks ahead (through Aug 23) and the waffle butter tasks verified in prod (4 WA3P-SGL MOs, butter-out on D-2 / cut-butter on D-1 for each). Note: `remind-rotate-api-key.yml` fails on every push (0s, pre-existing since ≤Jun 12) — unrelated, flagged for cleanup.
