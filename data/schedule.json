@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T22:01:13Z",
+  "generated_at": "2026-07-27T22:10:02Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -2175,7 +2175,7 @@
       "premix": [
         {
           "label": "Prep mix Viennoise",
-          "total_units": 200,
+          "total_units": 100,
           "products": [
             "Pack of 2 Viennoise (Brioche Baguette)"
           ],
@@ -2302,8 +2302,8 @@
           "label": "Pack of 2 Viennoise (Brioche Baguette)",
           "cfg_name": "Viennoise (×2)",
           "unit": "kg",
-          "total_kg": 40.0,
-          "total_units": 200,
+          "total_kg": 20.0,
+          "total_units": 100,
           "mo_ref": "WH/MO/01221",
           "products": [
             "Pack of 2 Viennoise (Brioche Baguette)"
@@ -2320,38 +2320,17 @@
           "products": [
             "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
-        },
-        {
-          "dough_type": "CIABATTA",
-          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "cfg_name": "Ciabatta (×3)",
-          "unit": "kg",
-          "total_kg": 119.7,
-          "total_units": 399,
-          "mo_ref": "WH/MO/01228",
-          "products": [
-            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
-          ]
         }
       ],
       "shaping": [
         {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100,
-          "qty_units": 200,
-          "total_kg": 40.0,
+          "qty_packs": 50,
+          "qty_units": 100,
+          "total_kg": 20.0,
           "mo_ref": "WH/MO/01221",
           "d0": "2026-08-13"
-        },
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133,
-          "qty_units": 399,
-          "total_kg": 119.7,
-          "mo_ref": "WH/MO/01228",
-          "d0": "2026-08-14"
         },
         {
           "sku": "SE3P-SGL",
@@ -2461,16 +2440,7 @@
           "d0": "2026-08-14"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "freeze_only",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133,
-          "qty_units": 399,
-          "mo_ref": "WH/MO/01228",
-          "d0": "2026-08-14"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": [
         {
           "sku": "WW2P-SGL",
@@ -2488,9 +2458,9 @@
         {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
+          "qty_packs": 50.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
           "dluo": "2027-02-13",
           "mo_ref": "WH/MO/01221",
           "lot_id": 1879,
@@ -2608,19 +2578,6 @@
       ],
       "score_tasks": [],
       "vacuuming": [
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133.0,
-          "qty_units": 399.0,
-          "qty_pouches": 133.0,
-          "dluo": "2027-05-14",
-          "mo_ref": "WH/MO/01228",
-          "lot_id": 1878,
-          "lot_name": "05/14/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
