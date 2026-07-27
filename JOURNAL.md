@@ -4,6 +4,38 @@ Dated work log for the `atome-prod-schedule` repo, newest entry first.
 
 ---
 
+## 2026-07-26 — RLS lockdown phase 2 complete + login gate merged live (Sam)
+
+Phase 1 (login gate on branch `security/supabase-auth-login`, below) shipped by
+the dispatched agent, which correctly did NOT merge or touch RLS — no Supabase
+admin access in its session and no working accounts yet (merging would've locked
+out the whole team). Sam finished it out-of-band via the Supabase Management API
+(personal access token found on disk, used transiently — never written anywhere).
+
+Ordering held so the tool was never broken nor more open than before: created +
+login-verified both accounts → merged the login gate to `main` (GitHub Pages,
+live) → confirmed the live site serves the gate → only then flipped RLS.
+
+- **Accounts**: `lucas@atomebakery.com` + shared `team@atomebakery.com`, both
+  email-confirmed via GoTrue admin. Credentials handed to Lucas in chat, not stored.
+- **Merged**: `security/supabase-auth-login` fast-forwarded into `main` (login gate
+  live on all 4 Supabase-touching pages). The pre-existing WIP `git stash@{0}` was
+  left untouched.
+- **Policies flipped** (mirrored the old semantics, scoped to `authenticated`, not a
+  blanket replace): `checks` → auth SELECT/UPDATE/INSERT + the 60-day `auth purge
+  stale` DELETE (same date qual as the old anon purge policy, preserved); 
+  `production_outputs` → auth SELECT/UPDATE/INSERT (no DELETE, as before). Revoked
+  all anon table grants; authenticated grants kept.
+- **Signup closed**: Management API `disable_signup=true`.
+- **Verified live**: anon read/write on both tables → HTTP 401 permission denied;
+  logged-in user read → 200, no-op write → 204; AND a real end-to-end browser login
+  with the team account loaded the full schedule with live data.
+- **Keepalive**: the agent's repoint to `/auth/v1/health` returns 200 with the
+  publishable-key apikey header (how the workflow calls it) — survives the flip.
+- Snapshot insurance at `~/Documents/atome/backups/supabase-snapshots-2026-07-26/`.
+
+---
+
 ## 2026-07-26 — Supabase Auth login gate built; RLS flip blocked, needs Sam/Lucas (branch `security/supabase-auth-login`)
 
 Dispatched by Sam (Lucas's assistant) after tonight's security audit found this app ships its Supabase anon (`sb_publishable_...`) key into browser JS with zero authentication, and RLS on `checks` + `production_outputs` (project `ktbbmtyesrprvxrseiph`) is effectively `USING (true)` — anyone with the URL can read/edit/delete the bakery's production data (~1,500 rows). Sam snapshotted both tables first (`~/Documents/atome/backups/supabase-snapshots-2026-07-26/`), so worst case is recoverable. Lucas approved the fix.
