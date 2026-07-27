@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T23:31:43Z",
+  "generated_at": "2026-07-27T23:42:18Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -2803,7 +2803,18 @@
     {
       "date": "2026-08-17",
       "label": "MONDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Viennoise",
+          "total_units": 200,
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ],
+          "mo_refs": [
+            "WH/MO/01235"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "PAC_CR",
@@ -2893,8 +2904,52 @@
       "date": "2026-08-18",
       "label": "TUESDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "VIENNOISE",
+          "label": "Pack of 2 Viennoise (Brioche Baguette)",
+          "cfg_name": "Viennoise (×2)",
+          "unit": "kg",
+          "total_kg": 40.0,
+          "total_units": 200,
+          "mo_ref": "WH/MO/01235",
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 163.8,
+          "total_units": 234,
+          "mo_ref": "WH/MO/01236",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117,
+          "qty_units": 234,
+          "total_kg": 163.8,
+          "mo_ref": "WH/MO/01236",
+          "d0": "2026-08-20"
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100,
+          "qty_units": 200,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/01235",
+          "d0": "2026-08-19"
+        }
+      ],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -2940,7 +2995,16 @@
       "premix": [],
       "mix": [],
       "shaping": [],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117,
+          "qty_units": 234,
+          "mo_ref": "WH/MO/01236",
+          "d0": "2026-08-20"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -2954,6 +3018,19 @@
           "lot_name": "05/19/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2027-02-19",
+          "mo_ref": "WH/MO/01235",
+          "lot_id": 1890,
+          "lot_name": "02/19/2027",
+          "copacked": false,
+          "needs_setup": false
         }
       ]
     },
@@ -2964,7 +3041,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117.0,
+          "qty_units": 234.0,
+          "qty_pouches": 234.0,
+          "dluo": "2027-05-20",
+          "mo_ref": "WH/MO/01236",
+          "lot_id": 1891,
+          "lot_name": "05/20/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-08-21",
