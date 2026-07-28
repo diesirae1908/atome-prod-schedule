@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T21:52:15Z",
+  "generated_at": "2026-07-28T22:50:56Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -189,31 +189,8 @@
       "date": "2026-07-26",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 224.0,
-          "total_units": 320,
-          "mo_ref": "WH/MO/01096",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "total_kg": 224.0,
-          "mo_ref": "WH/MO/01096",
-          "d0": "2026-07-28"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -267,16 +244,7 @@
           "d0": "2026-07-29"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "mo_ref": "WH/MO/01096",
-          "d0": "2026-07-28"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -384,19 +352,6 @@
         }
       ],
       "vacuuming": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160.0,
-          "qty_units": 320.0,
-          "qty_pouches": 320.0,
-          "dluo": "2027-04-28",
-          "mo_ref": "WH/MO/01096",
-          "lot_id": 1736,
-          "lot_name": "04/28/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "4-CHTWI4P",
           "name": "Pack of 4 Chocolate Twists",
@@ -691,9 +646,9 @@
         {
           "sku": "1-CRB8P-SGL",
           "name": "Pack of 8 Mini croissants",
-          "qty_packs": 112.0,
-          "qty_units": 896.0,
-          "qty_pouches": 112.0,
+          "qty_packs": 281.0,
+          "qty_units": 2248.0,
+          "qty_pouches": 281.0,
           "dluo": "2027-01-13",
           "mo_ref": "WH/MO/01157",
           "lot_id": 1011,
@@ -3116,8 +3071,31 @@
       "date": "2026-08-21",
       "label": "FRIDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/01240",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/01240",
+          "d0": "2026-08-23"
+        }
+      ],
       "score_tasks": [
         {
           "action": "freeze_only",
@@ -3150,7 +3128,16 @@
       "premix": [],
       "mix": [],
       "shaping": [],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/01240",
+          "d0": "2026-08-23"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "PIZ2-SGL",
@@ -3174,7 +3161,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
+          "dluo": "2027-05-23",
+          "mo_ref": "WH/MO/01240",
+          "lot_id": 1898,
+          "lot_name": "05/23/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-08-24",
