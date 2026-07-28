@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T23:06:28Z",
+  "generated_at": "2026-07-28T23:07:37Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -1036,17 +1036,17 @@
           "needs_setup": false
         },
         {
-          "sku": "4-PFP-BULK",
-          "name": "Puff pastry bulk of 2",
-          "qty_packs": 96.0,
-          "qty_units": 96.0,
-          "qty_pouches": 96.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/01241",
-          "lot_id": null,
-          "lot_name": null,
+          "sku": "PFP-SGL",
+          "name": "Puff Pastry",
+          "qty_packs": 120.0,
+          "qty_units": 120.0,
+          "qty_pouches": 120.0,
+          "dluo": "2026-11-24",
+          "mo_ref": "WH/MO/01242",
+          "lot_id": 1120,
+          "lot_name": "11/24/2026",
           "copacked": true,
-          "needs_setup": true
+          "needs_setup": false
         }
       ]
     },
