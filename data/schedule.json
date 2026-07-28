@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T23:07:37Z",
+  "generated_at": "2026-07-28T23:24:33Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -351,21 +351,7 @@
           "d0": "2026-07-29"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "4-CHTWI4P",
-          "name": "Pack of 4 Chocolate Twists",
-          "qty_packs": 181.0,
-          "qty_units": 181.0,
-          "qty_pouches": 181.0,
-          "dluo": "2026-11-25",
-          "mo_ref": "WH/MO/01152",
-          "lot_id": 1666,
-          "lot_name": "11/25/2026",
-          "copacked": true,
-          "needs_setup": true
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-29",
@@ -3126,8 +3112,31 @@
       "date": "2026-08-22",
       "label": "SATURDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 163.8,
+          "total_units": 234,
+          "mo_ref": "WH/MO/01243",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117,
+          "qty_units": 234,
+          "total_kg": 163.8,
+          "mo_ref": "WH/MO/01243",
+          "d0": "2026-08-24"
+        }
+      ],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -3158,9 +3167,41 @@
       "date": "2026-08-23",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/01244",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/01244",
+          "d0": "2026-08-25"
+        }
+      ],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117,
+          "qty_units": 234,
+          "mo_ref": "WH/MO/01243",
+          "d0": "2026-08-24"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -3183,8 +3224,31 @@
       "premix": [],
       "mix": [],
       "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/01244",
+          "d0": "2026-08-25"
+        }
+      ],
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117.0,
+          "qty_units": 234.0,
+          "qty_pouches": 234.0,
+          "dluo": "2027-05-24",
+          "mo_ref": "WH/MO/01243",
+          "lot_id": 1899,
+          "lot_name": "05/24/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-08-25",
@@ -3193,7 +3257,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
+          "dluo": "2027-05-25",
+          "mo_ref": "WH/MO/01244",
+          "lot_id": 1900,
+          "lot_name": "05/25/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-08-26",
