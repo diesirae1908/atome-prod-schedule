@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T00:11:25Z",
+  "generated_at": "2026-07-28T19:28:58Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -882,13 +882,13 @@
         {
           "sku": "4-CHTWI4P",
           "name": "Pack of 4 Chocolate Twists",
-          "qty_packs": 49.0,
-          "qty_units": 49.0,
-          "qty_pouches": 49.0,
-          "dluo": "2027-03-14",
-          "mo_ref": "WH/MO/01210",
-          "lot_id": 1854,
-          "lot_name": "03/14/2027",
+          "qty_packs": 99.0,
+          "qty_units": 99.0,
+          "qty_pouches": 99.0,
+          "dluo": "2026-11-25",
+          "mo_ref": "WH/MO/01208",
+          "lot_id": 1666,
+          "lot_name": "11/25/2026",
           "copacked": true,
           "needs_setup": true
         }
@@ -1728,13 +1728,13 @@
         {
           "sku": "4-CHTWI4P",
           "name": "Pack of 4 Chocolate Twists",
-          "qty_packs": 99.0,
-          "qty_units": 99.0,
-          "qty_pouches": 99.0,
-          "dluo": "2026-11-25",
-          "mo_ref": "WH/MO/01208",
-          "lot_id": 1666,
-          "lot_name": "11/25/2026",
+          "qty_packs": 49.0,
+          "qty_units": 49.0,
+          "qty_pouches": 49.0,
+          "dluo": "2027-03-14",
+          "mo_ref": "WH/MO/01210",
+          "lot_id": 1854,
+          "lot_name": "03/14/2027",
           "copacked": true,
           "needs_setup": true
         },
