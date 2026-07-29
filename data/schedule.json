@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T21:28:37Z",
+  "generated_at": "2026-07-29T21:37:24Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -617,6 +617,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 240.0,
+          "qty_units": 720.0,
+          "qty_pouches": 240.0,
+          "dluo": "2027-04-16",
+          "mo_ref": "WH/MO/01248",
+          "lot_id": 1905,
+          "lot_name": "04/16/2027",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 103.0,
@@ -640,19 +653,6 @@
           "lot_id": 1768,
           "lot_name": "04/30/2027",
           "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-CRB8P-SGL",
-          "name": "Pack of 8 Mini croissants",
-          "qty_packs": 281.0,
-          "qty_units": 2248.0,
-          "qty_pouches": 281.0,
-          "dluo": "2027-01-13",
-          "mo_ref": "WH/MO/01157",
-          "lot_id": 1011,
-          "lot_name": "01/13/2027",
-          "copacked": true,
           "needs_setup": false
         }
       ]
@@ -956,6 +956,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 240.0,
+          "qty_units": 720.0,
+          "qty_pouches": 240.0,
+          "dluo": "2027-04-16",
+          "mo_ref": "WH/MO/01249",
+          "lot_id": 1905,
+          "lot_name": "04/16/2027",
+          "copacked": true,
+          "needs_setup": false
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
