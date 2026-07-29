@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T23:17:44Z",
+  "generated_at": "2026-07-29T23:22:45Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -2041,6 +2041,19 @@
           "lot_name": "02/12/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CHTWI4P",
+          "name": "Pack of 4 Chocolate Twists",
+          "qty_packs": 99.0,
+          "qty_units": 99.0,
+          "qty_pouches": 99.0,
+          "dluo": "2027-03-14",
+          "mo_ref": "WH/MO/01262",
+          "lot_id": 1854,
+          "lot_name": "03/14/2027",
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
@@ -2256,6 +2269,19 @@
           "lot_name": "05/14/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 140.0,
+          "qty_units": 1120.0,
+          "qty_pouches": 140.0,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/01263",
+          "lot_id": 1011,
+          "lot_name": "01/13/2027",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -2355,6 +2381,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 26.0,
+          "qty_units": 78.0,
+          "qty_pouches": 26.0,
+          "dluo": "2027-04-16",
+          "mo_ref": "WH/MO/01264",
+          "lot_id": 1905,
+          "lot_name": "04/16/2027",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
           "qty_packs": 208.0,
@@ -2440,6 +2479,19 @@
           "lot_id": 1881,
           "lot_name": "05/16/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 240.0,
+          "qty_units": 720.0,
+          "qty_pouches": 240.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01265",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
           "needs_setup": false
         },
         {
