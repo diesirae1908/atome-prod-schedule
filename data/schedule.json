@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T21:59:17Z",
+  "generated_at": "2026-07-29T22:00:22Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -1044,15 +1044,15 @@
           "needs_setup": false
         },
         {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 90.0,
-          "qty_units": 720.0,
-          "qty_pouches": 90.0,
-          "dluo": "2026-10-11",
-          "mo_ref": "WH/MO/01205",
-          "lot_id": 1040,
-          "lot_name": "10/11/2026",
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 106.0,
+          "qty_units": 318.0,
+          "qty_pouches": 106.0,
+          "dluo": "2027-04-16",
+          "mo_ref": "WH/MO/01252",
+          "lot_id": 1905,
+          "lot_name": "04/16/2027",
           "copacked": true,
           "needs_setup": false
         }
