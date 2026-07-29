@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T23:05:39Z",
+  "generated_at": "2026-07-29T23:17:44Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -1915,6 +1915,19 @@
           "lot_name": "02/11/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-CHLAV2P",
+          "name": "Pack of 2 Chocolate Lava Cakes",
+          "qty_packs": 90.0,
+          "qty_units": 90.0,
+          "qty_pouches": 90.0,
+          "dluo": "2027-09-11",
+          "mo_ref": "WH/MO/01261",
+          "lot_id": 1593,
+          "lot_name": "09/11/2027",
+          "copacked": true,
+          "needs_setup": true
         },
         {
           "sku": "LF2P",
