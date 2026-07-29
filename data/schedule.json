@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T23:26:07Z",
+  "generated_at": "2026-07-29T23:27:22Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -485,9 +485,9 @@
         {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
-          "qty_packs": 240.0,
-          "qty_units": 720.0,
-          "qty_pouches": 240.0,
+          "qty_packs": 133.0,
+          "qty_units": 399.0,
+          "qty_pouches": 133.0,
           "dluo": "2027-04-16",
           "mo_ref": "WH/MO/01248",
           "lot_id": 1905,
