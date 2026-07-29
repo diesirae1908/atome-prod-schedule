@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T22:18:10Z",
+  "generated_at": "2026-07-29T22:28:11Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -350,21 +350,7 @@
           "d0": "2026-07-30"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 106.0,
-          "qty_units": 318.0,
-          "qty_pouches": 106.0,
-          "dluo": "2027-04-16",
-          "mo_ref": "WH/MO/01247",
-          "lot_id": 1905,
-          "lot_name": "04/16/2027",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-30",
@@ -1942,6 +1928,19 @@
           "lot_name": "05/11/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 80.0,
+          "qty_units": 240.0,
+          "qty_pouches": 80.0,
+          "dluo": "2027-04-16",
+          "mo_ref": "WH/MO/01258",
+          "lot_id": 1905,
+          "lot_name": "04/16/2027",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -2028,6 +2027,19 @@
           "lot_id": 1882,
           "lot_name": "05/12/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 160.0,
+          "qty_units": 480.0,
+          "qty_pouches": 160.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01259",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
           "needs_setup": false
         },
         {
@@ -2130,6 +2142,19 @@
           "lot_id": 1879,
           "lot_name": "02/13/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 80.0,
+          "qty_units": 240.0,
+          "qty_pouches": 80.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01260",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
           "needs_setup": false
         },
         {
