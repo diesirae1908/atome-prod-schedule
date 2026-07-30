@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T18:16:30Z",
+  "generated_at": "2026-07-30T18:19:17Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -3113,7 +3113,7 @@
         },
         {
           "label": "Prep mix Viennoise",
-          "total_units": 200,
+          "total_units": 100,
           "products": [
             "Pack of 2 Viennoise (Brioche Baguette)"
           ],
@@ -3218,8 +3218,8 @@
           "label": "Pack of 2 Viennoise (Brioche Baguette)",
           "cfg_name": "Viennoise (×2)",
           "unit": "kg",
-          "total_kg": 40.0,
-          "total_units": 200,
+          "total_kg": 20.0,
+          "total_units": 100,
           "mo_ref": "WH/MO/01273",
           "products": [
             "Pack of 2 Viennoise (Brioche Baguette)"
@@ -3239,9 +3239,9 @@
         {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100,
-          "qty_units": 200,
-          "total_kg": 40.0,
+          "qty_packs": 50,
+          "qty_units": 100,
+          "total_kg": 20.0,
           "mo_ref": "WH/MO/01273",
           "d0": "2026-08-26"
         }
@@ -3349,9 +3349,9 @@
         {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
+          "qty_packs": 50.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
           "dluo": "2027-02-26",
           "mo_ref": "WH/MO/01273",
           "lot_id": 1912,
