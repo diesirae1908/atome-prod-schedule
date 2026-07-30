@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T18:19:17Z",
+  "generated_at": "2026-07-30T18:20:28Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -3366,6 +3366,16 @@
       "label": "THURSDAY",
       "premix": [
         {
+          "label": "Prep mix PAC/CR",
+          "total_units": 414,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/01277"
+          ]
+        },
+        {
           "label": "Take butter out of the freezer",
           "total_units": 624,
           "products": [
@@ -3452,8 +3462,31 @@
           ]
         }
       ],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 29.0,
+          "total_units": 414,
+          "mo_ref": "WH/MO/01277",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138,
+          "qty_units": 414,
+          "total_kg": 29.0,
+          "mo_ref": "WH/MO/01277",
+          "d0": "2026-08-29"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": [
         {
@@ -3524,6 +3557,19 @@
           "dluo": "2027-02-28",
           "mo_ref": "WH/MO/01269",
           "lot_id": 1907,
+          "lot_name": "02/28/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 138.0,
+          "qty_units": 414.0,
+          "qty_pouches": 138.0,
+          "dluo": "2027-02-28",
+          "mo_ref": "WH/MO/01277",
+          "lot_id": 1916,
           "lot_name": "02/28/2027",
           "copacked": false,
           "needs_setup": false
