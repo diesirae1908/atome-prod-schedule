@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T18:13:52Z",
+  "generated_at": "2026-07-30T18:16:30Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -3288,9 +3288,30 @@
           "products": [
             "Pack of 3 Multigrain Sourdough Baguettes"
           ]
+        },
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 112.0,
+          "total_units": 160,
+          "mo_ref": "WH/MO/01275",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "total_kg": 112.0,
+          "mo_ref": "WH/MO/01275",
+          "d0": "2026-08-28"
+        },
         {
           "sku": "MG3P-SGL",
           "name": "Pack of 3 Multigrain Sourdough Baguettes",
@@ -3367,7 +3388,16 @@
           "d0": "2026-08-28"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "mo_ref": "WH/MO/01275",
+          "d0": "2026-08-28"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "CTY2P-SGL",
@@ -3426,6 +3456,19 @@
       "shaping": [],
       "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80.0,
+          "qty_units": 160.0,
+          "qty_pouches": 160.0,
+          "dluo": "2027-05-28",
+          "mo_ref": "WH/MO/01275",
+          "lot_id": 1915,
+          "lot_name": "05/28/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "MG3P-SGL",
           "name": "Pack of 3 Multigrain Sourdough Baguettes",
