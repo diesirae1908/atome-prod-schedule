@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T20:03:08Z",
+  "generated_at": "2026-07-31T20:08:11Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -931,6 +931,16 @@
           ]
         },
         {
+          "label": "Prep Mix Shortbread Plain",
+          "total_units": 100,
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ],
+          "mo_refs": [
+            "WH/MO/01284"
+          ]
+        },
+        {
           "label": "Prep mix Brioche Buns",
           "total_units": 348,
           "products": [
@@ -1124,27 +1134,27 @@
           ]
         },
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 123.2,
-          "total_units": 176,
-          "mo_ref": "WH/MO/01193",
+          "dough_type": "SHORTBREAD",
+          "label": "Butter Shortbread Log (Plain)",
+          "cfg_name": "Butter Shortbread Log (Plain)",
+          "unit": "pcs",
+          "total_kg": 40.0,
+          "total_units": 100,
+          "mo_ref": "WH/MO/01284",
           "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
+            "Butter Shortbread Log (Plain)"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "total_kg": 123.2,
-          "mo_ref": "WH/MO/01193",
-          "d0": "2026-08-08"
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 100,
+          "qty_units": 100,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/01284",
+          "d0": "2026-08-07"
         },
         {
           "sku": "BR3BN-SGL",
@@ -1301,17 +1311,21 @@
           "d0": "2026-08-08"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "mo_ref": "WH/MO/01193",
-          "d0": "2026-08-08"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": "2027-05-07",
+          "mo_ref": "WH/MO/01284",
+          "lot_id": 1930,
+          "lot_name": "05/07/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
@@ -1439,19 +1453,6 @@
       ],
       "score_tasks": [],
       "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88.0,
-          "qty_units": 176.0,
-          "qty_pouches": 176.0,
-          "dluo": "2027-05-08",
-          "mo_ref": "WH/MO/01193",
-          "lot_id": 1840,
-          "lot_name": "05/08/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
