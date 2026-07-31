@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T00:16:40Z",
+  "generated_at": "2026-07-31T19:46:04Z",
   "week_number": 28,
   "week_start": "2026-07-06",
   "week_end": "2026-08-30",
@@ -369,21 +369,7 @@
           "d0": "2026-07-31"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 186.0,
-          "qty_units": 558.0,
-          "qty_pouches": 186.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/01248-002",
-          "lot_id": null,
-          "lot_name": null,
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-07-31",
@@ -735,19 +721,6 @@
           "lot_name": "05/02/2027",
           "copacked": false,
           "needs_setup": false
-        },
-        {
-          "sku": "PFP-SGL",
-          "name": "Puff Pastry",
-          "qty_packs": 120.0,
-          "qty_units": 120.0,
-          "qty_pouches": 120.0,
-          "dluo": "2026-11-24",
-          "mo_ref": "WH/MO/01242",
-          "lot_id": 1120,
-          "lot_name": "11/24/2026",
-          "copacked": true,
-          "needs_setup": false
         }
       ]
     },
@@ -1069,6 +1042,19 @@
           "mo_ref": "WH/MO/01253",
           "lot_id": 1905,
           "lot_name": "04/16/2027",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "PFP-SGL",
+          "name": "Puff Pastry",
+          "qty_packs": 120.0,
+          "qty_units": 120.0,
+          "qty_pouches": 120.0,
+          "dluo": "2026-11-24",
+          "mo_ref": "WH/MO/01242",
+          "lot_id": 1120,
+          "lot_name": "11/24/2026",
           "copacked": true,
           "needs_setup": false
         }
