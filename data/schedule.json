@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T23:24:05Z",
+  "generated_at": "2026-08-05T23:46:17Z",
   "week_number": 29,
   "week_start": "2026-07-13",
   "week_end": "2026-09-06",
@@ -852,6 +852,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "4-GD3P",
+          "name": "Pack of 3 Gratin Dauphinois",
+          "qty_packs": 1.0,
+          "qty_units": 1.0,
+          "qty_pouches": 1.0,
+          "dluo": "2027-07-21",
+          "mo_ref": "WH/MO/01287",
+          "lot_id": 1667,
+          "lot_name": "07/21/2027",
+          "copacked": true,
+          "needs_setup": true
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
