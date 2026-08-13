@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T21:31:01Z",
+  "generated_at": "2026-08-13T21:31:25Z",
   "week_number": 30,
   "week_start": "2026-07-20",
   "week_end": "2026-09-13",
@@ -197,43 +197,9 @@
     {
       "date": "2026-08-10",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 309,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/01219"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/01230",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/01230",
-          "d0": "2026-08-12"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -253,18 +219,6 @@
         }
       ],
       "mix": [
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 21.6,
-          "total_units": 309,
-          "mo_ref": "WH/MO/01219",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        },
         {
           "dough_type": "TRAD",
           "label": "Pack of 3 Sourdough Sesame Baguette",
@@ -299,42 +253,10 @@
           "total_kg": 91.2,
           "mo_ref": "WH/MO/01231",
           "d0": "2026-08-13"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103,
-          "qty_units": 309,
-          "total_kg": 21.6,
-          "mo_ref": "WH/MO/01219",
-          "d0": "2026-08-12"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/01230",
-          "d0": "2026-08-12"
-        }
-      ],
-      "vacuuming": [
-        {
-          "sku": "4-CHLAV2P",
-          "name": "Pack of 2 Chocolate Lava Cakes",
-          "qty_packs": 90.0,
-          "qty_units": 90.0,
-          "qty_pouches": 90.0,
-          "dluo": "2027-09-11",
-          "mo_ref": "WH/MO/01261",
-          "lot_id": 1593,
-          "lot_name": "09/11/2027",
-          "copacked": true,
-          "needs_setup": true
-        }
-      ]
+      "score_tasks": [],
+      "vacuuming": []
     },
     {
       "date": "2026-08-12",
@@ -407,60 +329,7 @@
           "d0": "2026-08-13"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2027-05-12",
-          "mo_ref": "WH/MO/01230",
-          "lot_id": 1882,
-          "lot_name": "05/12/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103.0,
-          "qty_units": 309.0,
-          "qty_pouches": 103.0,
-          "dluo": "2027-02-12",
-          "mo_ref": "WH/MO/01219",
-          "lot_id": 1862,
-          "lot_name": "02/12/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "4-CHTWI4P",
-          "name": "Pack of 4 Chocolate Twists",
-          "qty_packs": 99.0,
-          "qty_units": 99.0,
-          "qty_pouches": 99.0,
-          "dluo": "2027-03-14",
-          "mo_ref": "WH/MO/01262",
-          "lot_id": 1854,
-          "lot_name": "03/14/2027",
-          "copacked": true,
-          "needs_setup": true
-        },
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 120.0,
-          "qty_units": 960.0,
-          "qty_pouches": 120.0,
-          "dluo": "2026-10-11",
-          "mo_ref": "WH/MO/01293",
-          "lot_id": 1040,
-          "lot_name": "10/11/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-08-13",
