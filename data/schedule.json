@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T21:12:20Z",
+  "generated_at": "2026-08-15T21:08:35Z",
   "week_number": 30,
   "week_start": "2026-07-20",
   "week_end": "2026-09-13",
@@ -206,55 +206,9 @@
     {
       "date": "2026-08-11",
       "label": "TUESDAY",
-      "premix": [
-        {
-          "label": "Prep mix Viennoise",
-          "total_units": 100,
-          "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
-          ],
-          "mo_refs": [
-            "WH/MO/01221"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Sesame Baguette",
-          "cfg_name": "Sesame Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01225",
-          "products": [
-            "Pack of 3 Sourdough Sesame Baguette"
-          ]
-        },
-        {
-          "dough_type": "WW",
-          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "cfg_name": "Wholewheat Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 91.2,
-          "total_units": 152,
-          "mo_ref": "WH/MO/01231",
-          "products": [
-            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 76,
-          "qty_units": 152,
-          "total_kg": 91.2,
-          "mo_ref": "WH/MO/01231",
-          "d0": "2026-08-13"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -275,18 +229,6 @@
       ],
       "mix": [
         {
-          "dough_type": "VIENNOISE",
-          "label": "Pack of 2 Viennoise (Brioche Baguette)",
-          "cfg_name": "Viennoise (×2)",
-          "unit": "kg",
-          "total_kg": 20.0,
-          "total_units": 100,
-          "mo_ref": "WH/MO/01221",
-          "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
-          ]
-        },
-        {
           "dough_type": "TRAD",
           "label": "Pack of 3 Sourdough Poppy Seed Baguette",
           "cfg_name": "Poppy Seed Baguette (×3)",
@@ -299,36 +241,8 @@
           ]
         }
       ],
-      "shaping": [
-        {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 50,
-          "qty_units": 100,
-          "total_kg": 20.0,
-          "mo_ref": "WH/MO/01221",
-          "d0": "2026-08-13"
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/01225",
-          "d0": "2026-08-13"
-        }
-      ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 76,
-          "qty_units": 152,
-          "mo_ref": "WH/MO/01231",
-          "d0": "2026-08-13"
-        }
-      ],
+      "shaping": [],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -391,47 +305,7 @@
         }
       ],
       "score_tasks": [],
-      "vacuuming": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 76.0,
-          "qty_units": 152.0,
-          "qty_pouches": 152.0,
-          "dluo": "2027-05-13",
-          "mo_ref": "WH/MO/01231",
-          "lot_id": 1885,
-          "lot_name": "05/13/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 50.0,
-          "qty_units": 100.0,
-          "qty_pouches": 100.0,
-          "dluo": "2027-02-13",
-          "mo_ref": "WH/MO/01221",
-          "lot_id": 1879,
-          "lot_name": "02/13/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-05-13",
-          "mo_ref": "WH/MO/01225",
-          "lot_id": 1883,
-          "lot_name": "05/13/2027",
-          "copacked": false,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-08-14",
