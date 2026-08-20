@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T18:20:40Z",
+  "generated_at": "2026-08-20T20:29:42Z",
   "week_number": 31,
   "week_start": "2026-07-27",
   "week_end": "2026-09-20",
@@ -206,43 +206,9 @@
     {
       "date": "2026-08-18",
       "label": "TUESDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 309,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/01237"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 163.8,
-          "total_units": 234,
-          "mo_ref": "WH/MO/01236",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 117,
-          "qty_units": 234,
-          "total_kg": 163.8,
-          "mo_ref": "WH/MO/01236",
-          "d0": "2026-08-20"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -251,18 +217,6 @@
       "label": "WEDNESDAY",
       "premix": [],
       "mix": [
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 21.6,
-          "total_units": 309,
-          "mo_ref": "WH/MO/01237",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        },
         {
           "dough_type": "CIABATTA",
           "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
@@ -285,42 +239,10 @@
           "total_kg": 239.4,
           "mo_ref": "WH/MO/01238",
           "d0": "2026-08-21"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103,
-          "qty_units": 309,
-          "total_kg": 21.6,
-          "mo_ref": "WH/MO/01237",
-          "d0": "2026-08-20"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 117,
-          "qty_units": 234,
-          "mo_ref": "WH/MO/01236",
-          "d0": "2026-08-20"
-        }
-      ],
-      "vacuuming": [
-        {
-          "sku": "4-GD3P",
-          "name": "Pack of 3 Gratin Dauphinois",
-          "qty_packs": 212.0,
-          "qty_units": 212.0,
-          "qty_pouches": 212.0,
-          "dluo": "2027-07-21",
-          "mo_ref": "WH/MO/01300",
-          "lot_id": 1667,
-          "lot_name": "07/21/2027",
-          "copacked": true,
-          "needs_setup": true
-        }
-      ]
+      "score_tasks": [],
+      "vacuuming": []
     },
     {
       "date": "2026-08-20",
@@ -363,42 +285,16 @@
       ],
       "vacuuming": [
         {
-          "sku": "4-CHLAV2P",
-          "name": "Pack of 2 Chocolate Lava Cakes",
-          "qty_packs": 108.0,
-          "qty_units": 108.0,
-          "qty_pouches": 108.0,
-          "dluo": "2027-09-11",
-          "mo_ref": "WH/MO/01296",
-          "lot_id": 1593,
-          "lot_name": "09/11/2027",
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 133.0,
+          "qty_units": 133.0,
+          "qty_pouches": 133.0,
+          "dluo": "2027-02-03",
+          "mo_ref": "WH/MO/01305",
+          "lot_id": 1853,
+          "lot_name": "02/03/2027",
           "copacked": true,
-          "needs_setup": true
-        },
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 117.0,
-          "qty_units": 234.0,
-          "qty_pouches": 234.0,
-          "dluo": "2027-05-20",
-          "mo_ref": "WH/MO/01236",
-          "lot_id": 1891,
-          "lot_name": "05/20/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103.0,
-          "qty_units": 309.0,
-          "qty_pouches": 103.0,
-          "dluo": "2027-02-20",
-          "mo_ref": "WH/MO/01237",
-          "lot_id": 1892,
-          "lot_name": "02/20/2027",
-          "copacked": false,
           "needs_setup": false
         }
       ]
@@ -468,6 +364,19 @@
           "lot_name": null,
           "copacked": true,
           "needs_setup": false
+        },
+        {
+          "sku": "4-GD3P",
+          "name": "Pack of 3 Gratin Dauphinois",
+          "qty_packs": 133.0,
+          "qty_units": 133.0,
+          "qty_pouches": 133.0,
+          "dluo": "2027-07-21",
+          "mo_ref": "WH/MO/01306",
+          "lot_id": 1667,
+          "lot_name": "07/21/2027",
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
