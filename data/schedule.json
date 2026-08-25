@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T21:14:00Z",
+  "generated_at": "2026-08-25T23:07:18Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -189,31 +189,8 @@
       "date": "2026-08-23",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 123.2,
-          "total_units": 176,
-          "mo_ref": "WH/MO/01244",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "total_kg": 123.2,
-          "mo_ref": "WH/MO/01244",
-          "d0": "2026-08-25"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -257,16 +234,7 @@
           "d0": "2026-08-26"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88,
-          "qty_units": 176,
-          "mo_ref": "WH/MO/01244",
-          "d0": "2026-08-25"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -352,34 +320,7 @@
           "d0": "2026-08-26"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 88.0,
-          "qty_units": 176.0,
-          "qty_pouches": 176.0,
-          "dluo": "2027-05-25",
-          "mo_ref": "WH/MO/01244",
-          "lot_id": 1900,
-          "lot_name": "05/25/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 212.0,
-          "qty_units": 636.0,
-          "qty_pouches": 212.0,
-          "dluo": "2027-04-23",
-          "mo_ref": "WH/MO/01302",
-          "lot_id": 1966,
-          "lot_name": "04/23/2027",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-08-26",
