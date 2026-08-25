@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T17:07:05Z",
+  "generated_at": "2026-08-25T17:24:43Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -736,7 +736,18 @@
     {
       "date": "2026-08-29",
       "label": "SATURDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/01311"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "WAFFLES",
@@ -864,6 +875,18 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
+        },
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 135.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/01311",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ]
         }
       ],
       "shaping": [
@@ -908,7 +931,17 @@
       "label": "MONDAY",
       "premix": [],
       "mix": [],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 135.0,
+          "mo_ref": "WH/MO/01311",
+          "d0": "2026-09-01"
+        }
+      ],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -952,6 +985,19 @@
           "dluo": "2027-06-01",
           "mo_ref": "WH/MO/01282",
           "lot_id": 1927,
+          "lot_name": "06/01/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-06-01",
+          "mo_ref": "WH/MO/01311",
+          "lot_id": 1968,
           "lot_name": "06/01/2027",
           "copacked": false,
           "needs_setup": false
