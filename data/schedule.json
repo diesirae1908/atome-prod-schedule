@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T17:02:56Z",
+  "generated_at": "2026-08-25T17:07:05Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -497,7 +497,7 @@
       "premix": [
         {
           "label": "Prep mix PAC/CR",
-          "total_units": 414,
+          "total_units": 309,
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ],
@@ -645,21 +645,42 @@
           "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "cfg_name": "Pain au Chocolat (×3)",
           "unit": "pcs",
-          "total_kg": 29.0,
-          "total_units": 414,
+          "total_kg": 21.6,
+          "total_units": 309,
           "mo_ref": "WH/MO/01277",
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/01310",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
           ]
         }
       ],
       "shaping": [
         {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/01310",
+          "d0": "2026-08-30"
+        },
+        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138,
-          "qty_units": 414,
-          "total_kg": 29.0,
+          "qty_packs": 103,
+          "qty_units": 309,
+          "total_kg": 21.6,
           "mo_ref": "WH/MO/01277",
           "d0": "2026-08-29"
         },
@@ -762,7 +783,16 @@
           "d0": "2026-08-29"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/01310",
+          "d0": "2026-08-30"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -793,9 +823,9 @@
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 138.0,
-          "qty_units": 414.0,
-          "qty_pouches": 138.0,
+          "qty_packs": 103.0,
+          "qty_units": 309.0,
+          "qty_pouches": 103.0,
           "dluo": "2027-02-28",
           "mo_ref": "WH/MO/01277",
           "lot_id": 1916,
@@ -857,7 +887,21 @@
           "d0": "2026-08-31"
         }
       ],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
+          "dluo": "2027-05-30",
+          "mo_ref": "WH/MO/01310",
+          "lot_id": 1967,
+          "lot_name": "05/30/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-08-31",
