@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T23:50:36Z",
+  "generated_at": "2026-08-25T23:53:41Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -934,7 +934,18 @@
     {
       "date": "2026-09-01",
       "label": "TUESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix Viennoise",
+          "total_units": 200,
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ],
+          "mo_refs": [
+            "WH/MO/01324"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "PIZZA",
@@ -1050,9 +1061,30 @@
           "products": [
             "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
           ]
+        },
+        {
+          "dough_type": "VIENNOISE",
+          "label": "Pack of 2 Viennoise (Brioche Baguette)",
+          "cfg_name": "Viennoise (×2)",
+          "unit": "kg",
+          "total_kg": 40.0,
+          "total_units": 200,
+          "mo_ref": "WH/MO/01324",
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100,
+          "qty_units": 200,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/01324",
+          "d0": "2026-09-03"
+        },
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
@@ -1159,6 +1191,19 @@
           "mo_ref": "WH/MO/01315",
           "lot_id": 1972,
           "lot_name": "06/03/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2027-03-03",
+          "mo_ref": "WH/MO/01324",
+          "lot_id": 1986,
+          "lot_name": "03/03/2027",
           "copacked": false,
           "needs_setup": false
         },
