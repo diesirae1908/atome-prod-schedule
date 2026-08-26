@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T23:33:27Z",
+  "generated_at": "2026-08-26T23:35:43Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -1585,13 +1585,13 @@
       "label": "MONDAY",
       "premix": [
         {
-          "label": "Prep mix PAC/CR",
-          "total_units": 309,
+          "label": "Prep mix Braided Brioche",
+          "total_units": 58,
           "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+            "Brioche (Pastry)"
           ],
           "mo_refs": [
-            "WH/MO/01331"
+            "WH/MO/01338"
           ]
         }
       ],
@@ -1628,27 +1628,27 @@
       "label": "TUESDAY",
       "premix": [
         {
-          "label": "Prep mix Braided Brioche",
-          "total_units": 58,
+          "label": "Prep mix PAC/CR",
+          "total_units": 309,
           "products": [
-            "Brioche (Pastry)"
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ],
           "mo_refs": [
-            "WH/MO/01338"
+            "WH/MO/01331"
           ]
         }
       ],
       "mix": [
         {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 21.6,
-          "total_units": 309,
-          "mo_ref": "WH/MO/01331",
+          "dough_type": "BRIOCHE",
+          "label": "Brioche (Pastry)",
+          "cfg_name": "Braided Brioche",
+          "unit": "kg",
+          "total_kg": 26.1,
+          "total_units": 58,
+          "mo_ref": "WH/MO/01338",
           "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+            "Brioche (Pastry)"
           ]
         },
         {
@@ -1678,6 +1678,15 @@
       ],
       "shaping": [
         {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 58,
+          "qty_units": 58,
+          "total_kg": 26.1,
+          "mo_ref": "WH/MO/01338",
+          "d0": "2026-09-09"
+        },
+        {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "qty_packs": 230,
@@ -1685,15 +1694,6 @@
           "total_kg": 276.0,
           "mo_ref": "WH/MO/01340",
           "d0": "2026-09-10"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103,
-          "qty_units": 309,
-          "total_kg": 21.6,
-          "mo_ref": "WH/MO/01331",
-          "d0": "2026-09-09"
         }
       ],
       "score_tasks": [],
@@ -1731,15 +1731,15 @@
           ]
         },
         {
-          "dough_type": "BRIOCHE",
-          "label": "Brioche (Pastry)",
-          "cfg_name": "Braided Brioche",
-          "unit": "kg",
-          "total_kg": 26.1,
-          "total_units": 58,
-          "mo_ref": "WH/MO/01338",
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 21.6,
+          "total_units": 309,
+          "mo_ref": "WH/MO/01331",
           "products": [
-            "Brioche (Pastry)"
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
         },
         {
@@ -1757,15 +1757,6 @@
       ],
       "shaping": [
         {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 58,
-          "qty_units": 58,
-          "total_kg": 26.1,
-          "mo_ref": "WH/MO/01338",
-          "d0": "2026-09-10"
-        },
-        {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
           "qty_packs": 80,
@@ -1773,6 +1764,15 @@
           "total_kg": 112.0,
           "mo_ref": "WH/MO/01341",
           "d0": "2026-09-11"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103,
+          "qty_units": 309,
+          "total_kg": 21.6,
+          "mo_ref": "WH/MO/01331",
+          "d0": "2026-09-10"
         },
         {
           "sku": "TR3P-SGL",
@@ -1796,14 +1796,14 @@
       ],
       "vacuuming": [
         {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103.0,
-          "qty_units": 309.0,
-          "qty_pouches": 103.0,
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 58.0,
+          "qty_units": 58.0,
+          "qty_pouches": 58.0,
           "dluo": "2027-03-09",
-          "mo_ref": "WH/MO/01331",
-          "lot_id": 2007,
+          "mo_ref": "WH/MO/01338",
+          "lot_id": 2011,
           "lot_name": "03/09/2027",
           "copacked": false,
           "needs_setup": false
@@ -1872,19 +1872,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "BR-SGL",
-          "name": "Brioche (Pastry)",
-          "qty_packs": 58.0,
-          "qty_units": 58.0,
-          "qty_pouches": 58.0,
-          "dluo": "2027-03-10",
-          "mo_ref": "WH/MO/01338",
-          "lot_id": 2004,
-          "lot_name": "03/10/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "qty_packs": 230.0,
@@ -1894,6 +1881,19 @@
           "mo_ref": "WH/MO/01340",
           "lot_id": 2009,
           "lot_name": "06/10/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103.0,
+          "qty_units": 309.0,
+          "qty_pouches": 103.0,
+          "dluo": "2027-03-10",
+          "mo_ref": "WH/MO/01331",
+          "lot_id": 1996,
+          "lot_name": "03/10/2027",
           "copacked": false,
           "needs_setup": false
         },
