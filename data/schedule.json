@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T23:27:43Z",
+  "generated_at": "2026-08-26T23:29:37Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -1583,7 +1583,18 @@
     {
       "date": "2026-09-07",
       "label": "MONDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 309,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/01331"
+          ]
+        }
+      ],
       "mix": [],
       "shaping": [],
       "score_tasks": [
@@ -1625,19 +1636,21 @@
           "mo_refs": [
             "WH/MO/01338"
           ]
-        },
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 309,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/01331"
-          ]
         }
       ],
       "mix": [
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 21.6,
+          "total_units": 309,
+          "mo_ref": "WH/MO/01331",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
+        },
         {
           "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
@@ -1651,7 +1664,17 @@
           ]
         }
       ],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103,
+          "qty_units": 309,
+          "total_kg": 21.6,
+          "mo_ref": "WH/MO/01331",
+          "d0": "2026-09-09"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": [
         {
@@ -1687,18 +1710,6 @@
           ]
         },
         {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 21.6,
-          "total_units": 309,
-          "mo_ref": "WH/MO/01331",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        },
-        {
           "dough_type": "BRIOCHE",
           "label": "Brioche (Pastry)",
           "cfg_name": "Braided Brioche",
@@ -1722,15 +1733,6 @@
           "d0": "2026-09-10"
         },
         {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103,
-          "qty_units": 309,
-          "total_kg": 21.6,
-          "mo_ref": "WH/MO/01331",
-          "d0": "2026-09-10"
-        },
-        {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
           "qty_packs": 117,
@@ -1741,7 +1743,21 @@
         }
       ],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103.0,
+          "qty_units": 309.0,
+          "qty_pouches": 103.0,
+          "dluo": "2027-03-09",
+          "mo_ref": "WH/MO/01331",
+          "lot_id": 2007,
+          "lot_name": "03/09/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-09-10",
@@ -1804,19 +1820,6 @@
           "dluo": "2027-03-10",
           "mo_ref": "WH/MO/01338",
           "lot_id": 2004,
-          "lot_name": "03/10/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103.0,
-          "qty_units": 309.0,
-          "qty_pouches": 103.0,
-          "dluo": "2027-03-10",
-          "mo_ref": "WH/MO/01331",
-          "lot_id": 1996,
           "lot_name": "03/10/2027",
           "copacked": false,
           "needs_setup": false
