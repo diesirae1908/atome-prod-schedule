@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T00:14:16Z",
+  "generated_at": "2026-08-26T00:16:58Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -1708,26 +1708,26 @@
           ]
         },
         {
-          "dough_type": "CIABATTA",
-          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "cfg_name": "Ciabatta (×3)",
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
           "unit": "kg",
-          "total_kg": 119.7,
-          "total_units": 399,
-          "mo_ref": "WH/MO/01330",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/01332",
           "products": [
-            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
+            "Pack of 2 Sourdough Loaves (White Flour)"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133,
-          "qty_units": 399,
-          "total_kg": 119.7,
-          "mo_ref": "WH/MO/01330",
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/01332",
           "d0": "2026-09-12"
         },
         {
@@ -1774,13 +1774,25 @@
       ],
       "mix": [
         {
+          "dough_type": "CIABATTA",
+          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "cfg_name": "Ciabatta (×3)",
+          "unit": "kg",
+          "total_kg": 119.7,
+          "total_units": 399,
+          "mo_ref": "WH/MO/01330",
+          "products": [
+            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
+          ]
+        },
+        {
           "dough_type": "TRAD",
           "label": "Pack of 2 Sourdough Loaves (White Flour)",
           "cfg_name": "Sourdough Loaf (×2)",
           "unit": "kg",
           "total_kg": 123.2,
           "total_units": 176,
-          "mo_ref": "WH/MO/01332",
+          "mo_ref": "WH/MO/01337",
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
@@ -1793,7 +1805,16 @@
           "qty_packs": 88,
           "qty_units": 176,
           "total_kg": 123.2,
-          "mo_ref": "WH/MO/01332",
+          "mo_ref": "WH/MO/01337",
+          "d0": "2026-09-13"
+        },
+        {
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 133,
+          "qty_units": 399,
+          "total_kg": 119.7,
+          "mo_ref": "WH/MO/01330",
           "d0": "2026-09-13"
         },
         {
@@ -1808,11 +1829,11 @@
       ],
       "score_tasks": [
         {
-          "action": "freeze_only",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133,
-          "qty_units": 399,
-          "mo_ref": "WH/MO/01330",
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/01332",
           "d0": "2026-09-12"
         }
       ],
@@ -1888,20 +1909,28 @@
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 88,
           "qty_units": 176,
-          "mo_ref": "WH/MO/01332",
+          "mo_ref": "WH/MO/01337",
+          "d0": "2026-09-13"
+        },
+        {
+          "action": "freeze_only",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 133,
+          "qty_units": 399,
+          "mo_ref": "WH/MO/01330",
           "d0": "2026-09-13"
         }
       ],
       "vacuuming": [
         {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133.0,
-          "qty_units": 399.0,
-          "qty_pouches": 133.0,
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
           "dluo": "2027-06-12",
-          "mo_ref": "WH/MO/01330",
-          "lot_id": 1994,
+          "mo_ref": "WH/MO/01332",
+          "lot_id": 2003,
           "lot_name": "06/12/2027",
           "copacked": false,
           "needs_setup": false
@@ -1989,8 +2018,21 @@
           "qty_units": 176.0,
           "qty_pouches": 176.0,
           "dluo": "2027-06-13",
-          "mo_ref": "WH/MO/01332",
+          "mo_ref": "WH/MO/01337",
           "lot_id": 1997,
+          "lot_name": "06/13/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CIA3-SGL",
+          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
+          "qty_packs": 133.0,
+          "qty_units": 399.0,
+          "qty_pouches": 133.0,
+          "dluo": "2027-06-13",
+          "mo_ref": "WH/MO/01330",
+          "lot_id": 2002,
           "lot_name": "06/13/2027",
           "copacked": false,
           "needs_setup": false
