@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T00:00:14Z",
+  "generated_at": "2026-08-26T00:02:00Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -1349,6 +1349,19 @@
       ],
       "vacuuming": [
         {
+          "sku": "RIGA-330",
+          "name": "Fresh Pasta Rigatoni (330g)",
+          "qty_packs": 360.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01329",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "qty_packs": 133.0,
@@ -1613,7 +1626,20 @@
       "date": "2026-09-09",
       "label": "WEDNESDAY",
       "premix": [],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Sesame Baguette",
+          "cfg_name": "Sesame Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01327",
+          "products": [
+            "Pack of 3 Sourdough Sesame Baguette"
+          ]
+        }
+      ],
       "shaping": [],
       "score_tasks": [],
       "vacuuming": []
@@ -1622,8 +1648,31 @@
       "date": "2026-09-10",
       "label": "THURSDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Sesame Baguette",
+          "cfg_name": "Sesame Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01328",
+          "products": [
+            "Pack of 3 Sourdough Sesame Baguette"
+          ]
+        }
+      ],
+      "shaping": [
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01327",
+          "d0": "2026-09-11"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -1632,9 +1681,33 @@
       "label": "FRIDAY",
       "premix": [],
       "mix": [],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01328",
+          "d0": "2026-09-12"
+        }
+      ],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-06-11",
+          "mo_ref": "WH/MO/01327",
+          "lot_id": 1990,
+          "lot_name": "06/11/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-09-12",
@@ -1643,7 +1716,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-06-12",
+          "mo_ref": "WH/MO/01328",
+          "lot_id": 1992,
+          "lot_name": "06/12/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-09-13",
