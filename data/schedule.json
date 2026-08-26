@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T23:31:50Z",
+  "generated_at": "2026-08-26T23:33:27Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -1741,6 +1741,18 @@
           "products": [
             "Brioche (Pastry)"
           ]
+        },
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 112.0,
+          "total_units": 160,
+          "mo_ref": "WH/MO/01341",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
         }
       ],
       "shaping": [
@@ -1752,6 +1764,15 @@
           "total_kg": 26.1,
           "mo_ref": "WH/MO/01338",
           "d0": "2026-09-10"
+        },
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "total_kg": 112.0,
+          "mo_ref": "WH/MO/01341",
+          "d0": "2026-09-11"
         },
         {
           "sku": "TR3P-SGL",
@@ -1839,7 +1860,16 @@
           "d0": "2026-09-11"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "mo_ref": "WH/MO/01341",
+          "d0": "2026-09-11"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "BR-SGL",
@@ -1963,6 +1993,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80.0,
+          "qty_units": 160.0,
+          "qty_pouches": 160.0,
+          "dluo": "2027-06-11",
+          "mo_ref": "WH/MO/01341",
+          "lot_id": 2010,
+          "lot_name": "06/11/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "SE3P-SGL",
           "name": "Pack of 3 Sourdough Sesame Baguette",
