@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T21:27:15Z",
+  "generated_at": "2026-08-27T21:29:08Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -616,7 +616,18 @@
     {
       "date": "2026-08-30",
       "label": "SUNDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep Mix Shortbread Plain",
+          "total_units": 50,
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ],
+          "mo_refs": [
+            "WH/MO/01348"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -697,9 +708,30 @@
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
           ]
+        },
+        {
+          "dough_type": "SHORTBREAD",
+          "label": "Butter Shortbread Log (Plain)",
+          "cfg_name": "Butter Shortbread Log (Plain)",
+          "unit": "pcs",
+          "total_kg": 20.0,
+          "total_units": 50,
+          "mo_ref": "WH/MO/01348",
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 50,
+          "qty_units": 50,
+          "total_kg": 20.0,
+          "mo_ref": "WH/MO/01348",
+          "d0": "2026-09-01"
+        },
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
@@ -812,6 +844,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 50.0,
+          "qty_units": 50.0,
+          "qty_pouches": 50.0,
+          "dluo": "2027-06-01",
+          "mo_ref": "WH/MO/01348",
+          "lot_id": 2016,
+          "lot_name": "06/01/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
@@ -1267,18 +1312,7 @@
     {
       "date": "2026-09-06",
       "label": "SUNDAY",
-      "premix": [
-        {
-          "label": "Prep Mix Shortbread Plain",
-          "total_units": 50,
-          "products": [
-            "Butter Shortbread Log (Plain)"
-          ],
-          "mo_refs": [
-            "WH/MO/01348"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "WAFFLES",
@@ -1379,31 +1413,8 @@
           ]
         }
       ],
-      "mix": [
-        {
-          "dough_type": "SHORTBREAD",
-          "label": "Butter Shortbread Log (Plain)",
-          "cfg_name": "Butter Shortbread Log (Plain)",
-          "unit": "pcs",
-          "total_kg": 20.0,
-          "total_units": 50,
-          "mo_ref": "WH/MO/01348",
-          "products": [
-            "Butter Shortbread Log (Plain)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "SBL-P-SGL",
-          "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 50,
-          "qty_units": 50,
-          "total_kg": 20.0,
-          "mo_ref": "WH/MO/01348",
-          "d0": "2026-09-08"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -1505,19 +1516,6 @@
       ],
       "score_tasks": [],
       "vacuuming": [
-        {
-          "sku": "SBL-P-SGL",
-          "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 50.0,
-          "qty_units": 50.0,
-          "qty_pouches": 50.0,
-          "dluo": "2027-06-08",
-          "mo_ref": "WH/MO/01348",
-          "lot_id": 2015,
-          "lot_name": "06/08/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
         {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
