@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T04:57:55Z",
+  "generated_at": "2026-08-28T21:35:32Z",
   "week_number": 32,
   "week_start": "2026-08-03",
   "week_end": "2026-09-27",
@@ -216,43 +216,8 @@
       "date": "2026-08-26",
       "label": "WEDNESDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 112.0,
-          "total_units": 160,
-          "mo_ref": "WH/MO/01275",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01280",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "total_kg": 112.0,
-          "mo_ref": "WH/MO/01275",
-          "d0": "2026-08-28"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -316,27 +281,9 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/01279",
           "d0": "2026-08-29"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/01280",
-          "d0": "2026-08-28"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "mo_ref": "WH/MO/01275",
-          "d0": "2026-08-28"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -429,60 +376,7 @@
           "d0": "2026-08-29"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80.0,
-          "qty_units": 160.0,
-          "qty_pouches": 160.0,
-          "dluo": "2027-05-28",
-          "mo_ref": "WH/MO/01275",
-          "lot_id": 1915,
-          "lot_name": "05/28/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "4-GD3P",
-          "name": "Pack of 3 Gratin Dauphinois",
-          "qty_packs": 67.0,
-          "qty_units": 67.0,
-          "qty_pouches": 67.0,
-          "dluo": "2027-07-21",
-          "mo_ref": "WH/MO/01342",
-          "lot_id": 1667,
-          "lot_name": "07/21/2027",
-          "copacked": true,
-          "needs_setup": true
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-05-28",
-          "mo_ref": "WH/MO/01280",
-          "lot_id": 1924,
-          "lot_name": "05/28/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-MCR6P-SGL",
-          "name": "Pack of 6 macarons (mixed flavours)",
-          "qty_packs": 80.0,
-          "qty_units": 480.0,
-          "qty_pouches": 80.0,
-          "dluo": "2027-05-05",
-          "mo_ref": "WH/MO/01343",
-          "lot_id": 1805,
-          "lot_name": "05/05/2027",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-08-29",
