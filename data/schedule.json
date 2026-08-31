@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T22:58:39Z",
+  "generated_at": "2026-08-31T23:00:38Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -849,19 +849,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "1-AT-BULK",
-          "name": "Apple turnover bulk",
-          "qty_packs": 100.0,
-          "qty_units": 100.0,
-          "qty_pouches": 100.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/01353",
-          "lot_id": null,
-          "lot_name": null,
-          "copacked": true,
-          "needs_setup": true
-        },
-        {
           "sku": "LF2P",
           "name": "Pack of 2 Sourdough Loaves (White Flour)",
           "qty_packs": 176.0,
@@ -872,6 +859,19 @@
           "lot_id": 1987,
           "lot_name": "06/05/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": "2027-04-08",
+          "mo_ref": "WH/MO/01354",
+          "lot_id": 2034,
+          "lot_name": "04/08/2027",
+          "copacked": true,
           "needs_setup": false
         },
         {
