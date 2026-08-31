@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T22:45:47Z",
+  "generated_at": "2026-08-31T22:47:59Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -862,6 +862,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 106.0,
+          "qty_units": 318.0,
+          "qty_pouches": 106.0,
+          "dluo": "2027-04-23",
+          "mo_ref": "WH/MO/01351",
+          "lot_id": 1966,
+          "lot_name": "04/23/2027",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "CH-SGL",
           "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "qty_packs": 352.0,
@@ -948,6 +961,19 @@
           "lot_id": 1988,
           "lot_name": "06/06/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 106.0,
+          "qty_units": 318.0,
+          "qty_pouches": 106.0,
+          "dluo": "2027-04-23",
+          "mo_ref": "WH/MO/01352",
+          "lot_id": 1966,
+          "lot_name": "04/23/2027",
+          "copacked": true,
           "needs_setup": false
         },
         {
