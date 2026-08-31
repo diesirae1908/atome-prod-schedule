@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T23:05:52Z",
+  "generated_at": "2026-08-31T23:07:56Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -1235,9 +1235,9 @@
         {
           "sku": "4-GD3P",
           "name": "Pack of 3 Gratin Dauphinois",
-          "qty_packs": 133.0,
-          "qty_units": 133.0,
-          "qty_pouches": 133.0,
+          "qty_packs": 266.0,
+          "qty_units": 266.0,
+          "qty_pouches": 266.0,
           "dluo": null,
           "mo_ref": "WH/MO/01357",
           "lot_id": null,
@@ -1457,6 +1457,19 @@
           "needs_setup": false
         },
         {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 160.0,
+          "qty_units": 480.0,
+          "qty_pouches": 160.0,
+          "dluo": "2027-04-23",
+          "mo_ref": "WH/MO/01358",
+          "lot_id": 1966,
+          "lot_name": "04/23/2027",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "SE3P-SGL",
           "name": "Pack of 3 Sourdough Sesame Baguette",
           "qty_packs": 117.0,
@@ -1551,6 +1564,19 @@
           "lot_id": 2003,
           "lot_name": "06/12/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 160.0,
+          "qty_units": 480.0,
+          "qty_pouches": 160.0,
+          "dluo": "2027-04-23",
+          "mo_ref": "WH/MO/01359",
+          "lot_id": 1966,
+          "lot_name": "04/23/2027",
+          "copacked": true,
           "needs_setup": false
         },
         {
