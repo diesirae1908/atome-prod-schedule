@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T23:00:38Z",
+  "generated_at": "2026-08-31T23:05:52Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -1121,6 +1121,19 @@
           "lot_name": "06/08/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 106.0,
+          "qty_units": 318.0,
+          "qty_pouches": 106.0,
+          "dluo": "2027-04-23",
+          "mo_ref": "WH/MO/01355",
+          "lot_id": 1966,
+          "lot_name": "04/23/2027",
+          "copacked": true,
+          "needs_setup": false
         }
       ]
     },
@@ -1218,6 +1231,32 @@
           "lot_name": "03/09/2027",
           "copacked": false,
           "needs_setup": false
+        },
+        {
+          "sku": "4-GD3P",
+          "name": "Pack of 3 Gratin Dauphinois",
+          "qty_packs": 133.0,
+          "qty_units": 133.0,
+          "qty_pouches": 133.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01357",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": true
+        },
+        {
+          "sku": "4-MAD4P",
+          "name": "Pack of 4 Madeleines",
+          "qty_packs": 87.0,
+          "qty_units": 87.0,
+          "qty_pouches": 87.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01356",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
+          "needs_setup": true
         }
       ]
     },
