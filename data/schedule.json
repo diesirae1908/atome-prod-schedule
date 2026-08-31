@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T17:38:58Z",
+  "generated_at": "2026-08-31T22:45:47Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -299,21 +299,7 @@
           "d0": "2026-09-01"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2027-04-23",
-          "mo_ref": "WH/MO/01346",
-          "lot_id": 1966,
-          "lot_name": "04/23/2027",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-09-01",
@@ -428,9 +414,9 @@
         {
           "sku": "CR3P-SGL",
           "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
+          "qty_packs": 106.0,
+          "qty_units": 318.0,
+          "qty_pouches": 106.0,
           "dluo": "2027-04-23",
           "mo_ref": "WH/MO/01347",
           "lot_id": 1966,
@@ -547,19 +533,6 @@
           "needs_setup": false
         },
         {
-          "sku": "2-GCKVGN2P-SGL",
-          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
-          "qty_packs": 128.0,
-          "qty_units": 256.0,
-          "qty_pouches": 128.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/01336",
-          "lot_id": null,
-          "lot_name": null,
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
           "qty_packs": 58.0,
@@ -570,6 +543,19 @@
           "lot_id": 2018,
           "lot_name": "03/02/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "CR3P-SGL",
+          "name": "Pack of 3 Croissants",
+          "qty_packs": 106.0,
+          "qty_units": 318.0,
+          "qty_pouches": 106.0,
+          "dluo": "2027-04-23",
+          "mo_ref": "WH/MO/01350",
+          "lot_id": 1966,
+          "lot_name": "04/23/2027",
+          "copacked": true,
           "needs_setup": false
         }
       ]
@@ -670,6 +656,19 @@
           "lot_id": 1986,
           "lot_name": "03/03/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "2-GCKVGN2P-SGL",
+          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
+          "qty_packs": 128.0,
+          "qty_units": 256.0,
+          "qty_pouches": 128.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01336",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
           "needs_setup": false
         },
         {
