@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T21:57:48Z",
+  "generated_at": "2026-09-01T21:58:56Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -1609,7 +1609,18 @@
     {
       "date": "2026-09-14",
       "label": "MONDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/01364"
+          ]
+        }
+      ],
       "mix": [],
       "shaping": [],
       "score_tasks": [
@@ -1653,7 +1664,20 @@
           ]
         }
       ],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 135.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/01364",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ]
+        }
+      ],
       "shaping": [],
       "score_tasks": [],
       "vacuuming": [
@@ -1701,7 +1725,17 @@
           ]
         }
       ],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 135.0,
+          "mo_ref": "WH/MO/01364",
+          "d0": "2026-09-17"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -1767,7 +1801,21 @@
         }
       ],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-06-17",
+          "mo_ref": "WH/MO/01364",
+          "lot_id": 2041,
+          "lot_name": "06/17/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-09-18",
