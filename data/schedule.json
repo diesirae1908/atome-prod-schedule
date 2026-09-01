@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T21:53:46Z",
+  "generated_at": "2026-09-01T21:57:48Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -1641,7 +1641,18 @@
     {
       "date": "2026-09-15",
       "label": "TUESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/01363"
+          ]
+        }
+      ],
       "mix": [],
       "shaping": [],
       "score_tasks": [],
@@ -1676,7 +1687,20 @@
           ]
         }
       ],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 135.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/01363",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ]
+        }
+      ],
       "shaping": [],
       "score_tasks": [],
       "vacuuming": []
@@ -1730,6 +1754,15 @@
           "qty_units": 348,
           "total_kg": 52.2,
           "mo_ref": "WH/MO/01361",
+          "d0": "2026-09-18"
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120,
+          "qty_units": 360,
+          "total_kg": 135.0,
+          "mo_ref": "WH/MO/01363",
           "d0": "2026-09-18"
         }
       ],
@@ -1786,6 +1819,19 @@
           "mo_ref": "WH/MO/01361",
           "lot_id": 2037,
           "lot_name": "03/18/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-06-18",
+          "mo_ref": "WH/MO/01363",
+          "lot_id": 2040,
+          "lot_name": "06/18/2027",
           "copacked": false,
           "needs_setup": false
         }
