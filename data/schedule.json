@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T22:28:13Z",
+  "generated_at": "2026-09-01T22:29:47Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -2242,9 +2242,30 @@
           "products": [
             "Pack of 3 Liege Waffle"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 163.8,
+          "total_units": 234,
+          "mo_ref": "WH/MO/01375",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117,
+          "qty_units": 234,
+          "total_kg": 163.8,
+          "mo_ref": "WH/MO/01375",
+          "d0": "2026-09-22"
+        },
         {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
@@ -2291,7 +2312,16 @@
       "premix": [],
       "mix": [],
       "shaping": [],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117,
+          "qty_units": 234,
+          "mo_ref": "WH/MO/01375",
+          "d0": "2026-09-22"
+        }
+      ],
       "vacuuming": []
     },
     {
@@ -2301,7 +2331,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117.0,
+          "qty_units": 234.0,
+          "qty_pouches": 234.0,
+          "dluo": "2027-06-22",
+          "mo_ref": "WH/MO/01375",
+          "lot_id": 2056,
+          "lot_name": "06/22/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-09-23",
