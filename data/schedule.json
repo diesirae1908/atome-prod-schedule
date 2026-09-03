@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T19:20:57Z",
+  "generated_at": "2026-09-03T19:28:27Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -197,61 +197,16 @@
     {
       "date": "2026-08-31",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "Prep mix Brioche Buns",
-          "total_units": 174,
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ],
-          "mo_refs": [
-            "WH/MO/01349"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "PIZZA",
-          "label": "Pack of 2 Pizza Dough (Sourdough)",
-          "cfg_name": "Pizza Dough (×2)",
-          "unit": "kg",
-          "total_kg": 198.8,
-          "total_units": 994,
-          "mo_ref": "WH/MO/01315",
-          "products": [
-            "Pack of 2 Pizza Dough (Sourdough)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "total_kg": 198.8,
-          "mo_ref": "WH/MO/01315",
-          "d0": "2026-09-02"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
     {
       "date": "2026-09-01",
       "label": "TUESDAY",
-      "premix": [
-        {
-          "label": "Prep mix Viennoise",
-          "total_units": 200,
-          "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
-          ],
-          "mo_refs": [
-            "WH/MO/01324"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "WW",
@@ -264,30 +219,6 @@
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
           ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "cfg_name": "Poppy Seed Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01318",
-          "products": [
-            "Pack of 3 Sourdough Poppy Seed Baguette"
-          ]
-        },
-        {
-          "dough_type": "BRIOCHE",
-          "label": "Pack of 3 Brioche Buns",
-          "cfg_name": "Brioche Buns (×3)",
-          "unit": "kg",
-          "total_kg": 26.1,
-          "total_units": 174,
-          "mo_ref": "WH/MO/01349",
-          "products": [
-            "Pack of 3 Brioche Buns"
-          ]
         }
       ],
       "shaping": [
@@ -299,27 +230,9 @@
           "total_kg": 138.0,
           "mo_ref": "WH/MO/01313",
           "d0": "2026-09-03"
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 58,
-          "qty_units": 174,
-          "total_kg": 26.1,
-          "mo_ref": "WH/MO/01349",
-          "d0": "2026-09-02"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "freeze_only",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497,
-          "qty_units": 994,
-          "mo_ref": "WH/MO/01315",
-          "d0": "2026-09-02"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -361,30 +274,9 @@
           "products": [
             "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
           ]
-        },
-        {
-          "dough_type": "VIENNOISE",
-          "label": "Pack of 2 Viennoise (Brioche Baguette)",
-          "cfg_name": "Viennoise (×2)",
-          "unit": "kg",
-          "total_kg": 40.0,
-          "total_units": 200,
-          "mo_ref": "WH/MO/01324",
-          "products": [
-            "Pack of 2 Viennoise (Brioche Baguette)"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100,
-          "qty_units": 200,
-          "total_kg": 40.0,
-          "mo_ref": "WH/MO/01324",
-          "d0": "2026-09-03"
-        },
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
@@ -393,15 +285,6 @@
           "total_kg": 119.7,
           "mo_ref": "WH/MO/01322",
           "d0": "2026-09-04"
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/01318",
-          "d0": "2026-09-03"
         }
       ],
       "score_tasks": [
@@ -414,47 +297,7 @@
           "d0": "2026-09-03"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "PIZ2-SGL",
-          "name": "Pack of 2 Pizza Dough (Sourdough)",
-          "qty_packs": 497.0,
-          "qty_units": 994.0,
-          "qty_pouches": 497.0,
-          "dluo": "2027-06-02",
-          "mo_ref": "WH/MO/01315",
-          "lot_id": 2020,
-          "lot_name": "06/02/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "BR3BN-SGL",
-          "name": "Pack of 3 Brioche Buns",
-          "qty_packs": 58.0,
-          "qty_units": 174.0,
-          "qty_pouches": 58.0,
-          "dluo": "2027-03-02",
-          "mo_ref": "WH/MO/01349",
-          "lot_id": 2018,
-          "lot_name": "03/02/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 106.0,
-          "qty_units": 318.0,
-          "qty_pouches": 106.0,
-          "dluo": "2027-04-23",
-          "mo_ref": "WH/MO/01350",
-          "lot_id": 1966,
-          "lot_name": "04/23/2027",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-09-03",
@@ -552,19 +395,6 @@
           "needs_setup": false
         },
         {
-          "sku": "VI2P-SGL",
-          "name": "Pack of 2 Viennoise (Brioche Baguette)",
-          "qty_packs": 100.0,
-          "qty_units": 200.0,
-          "qty_pouches": 200.0,
-          "dluo": "2027-03-03",
-          "mo_ref": "WH/MO/01324",
-          "lot_id": 1986,
-          "lot_name": "03/03/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
           "sku": "2-GCKVGN2P-SGL",
           "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
           "qty_packs": 128.0,
@@ -575,19 +405,6 @@
           "lot_id": 2062,
           "lot_name": "03/02/2027",
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-06-03",
-          "mo_ref": "WH/MO/01318",
-          "lot_id": 1978,
-          "lot_name": "06/03/2027",
-          "copacked": false,
           "needs_setup": false
         }
       ]
