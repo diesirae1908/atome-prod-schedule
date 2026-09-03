@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T22:22:02Z",
+  "generated_at": "2026-09-03T22:28:43Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -207,31 +207,8 @@
       "date": "2026-09-01",
       "label": "TUESDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "WW",
-          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "cfg_name": "Wholewheat Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 138.0,
-          "total_units": 230,
-          "mo_ref": "WH/MO/01313",
-          "products": [
-            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 115,
-          "qty_units": 230,
-          "total_kg": 138.0,
-          "mo_ref": "WH/MO/01313",
-          "d0": "2026-09-03"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -287,16 +264,7 @@
           "d0": "2026-09-04"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 115,
-          "qty_units": 230,
-          "mo_ref": "WH/MO/01313",
-          "d0": "2026-09-03"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -380,34 +348,7 @@
           "d0": "2026-09-04"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 115.0,
-          "qty_units": 230.0,
-          "qty_pouches": 230.0,
-          "dluo": "2027-06-03",
-          "mo_ref": "WH/MO/01313",
-          "lot_id": 2019,
-          "lot_name": "06/03/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "2-GCKVGN2P-SGL",
-          "name": "Pack of 2 giant vegan cookie (Walnut chocolate)",
-          "qty_packs": 128.0,
-          "qty_units": 256.0,
-          "qty_pouches": 128.0,
-          "dluo": "2027-03-02",
-          "mo_ref": "WH/MO/01336",
-          "lot_id": 2062,
-          "lot_name": "03/02/2027",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-09-04",
