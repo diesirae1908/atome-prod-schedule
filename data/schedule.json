@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T22:34:56Z",
+  "generated_at": "2026-09-04T23:29:41Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -734,8 +734,8 @@
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "cfg_name": "Wholewheat Loaf (×2)",
           "unit": "kg",
-          "total_kg": 276.0,
-          "total_units": 460,
+          "total_kg": 138.0,
+          "total_units": 230,
           "mo_ref": "WH/MO/01340",
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
@@ -746,9 +746,9 @@
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
-          "total_kg": 276.0,
+          "qty_packs": 115,
+          "qty_units": 230,
+          "total_kg": 138.0,
           "mo_ref": "WH/MO/01340",
           "d0": "2026-09-11"
         },
@@ -877,8 +877,8 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
+          "qty_packs": 115,
+          "qty_units": 230,
           "mo_ref": "WH/MO/01340",
           "d0": "2026-09-11"
         }
@@ -998,9 +998,9 @@
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230.0,
-          "qty_units": 460.0,
-          "qty_pouches": 460.0,
+          "qty_packs": 115.0,
+          "qty_units": 230.0,
+          "qty_pouches": 230.0,
           "dluo": "2027-06-11",
           "mo_ref": "WH/MO/01340",
           "lot_id": 2013,
