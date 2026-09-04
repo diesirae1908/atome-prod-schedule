@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T21:57:30Z",
+  "generated_at": "2026-09-04T22:09:37Z",
   "week_number": 33,
   "week_start": "2026-08-10",
   "week_end": "2026-10-04",
@@ -459,19 +459,6 @@
           "needs_setup": false
         },
         {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 100.0,
-          "qty_units": 100.0,
-          "qty_pouches": 100.0,
-          "dluo": "2027-04-08",
-          "mo_ref": "WH/MO/01354",
-          "lot_id": 2034,
-          "lot_name": "04/08/2027",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "CH-SGL",
           "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
           "qty_packs": 352.0,
@@ -549,6 +536,19 @@
           "mo_ref": "WH/MO/01352",
           "lot_id": 1966,
           "lot_name": "04/23/2027",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": "2027-04-08",
+          "mo_ref": "WH/MO/01354",
+          "lot_id": 2034,
+          "lot_name": "04/08/2027",
           "copacked": true,
           "needs_setup": false
         }
