@@ -1,73 +1,10 @@
 {
-  "generated_at": "2026-09-06T22:28:21Z",
-  "week_number": 33,
-  "week_start": "2026-08-10",
-  "week_end": "2026-10-04",
+  "generated_at": "2026-09-07T23:03:50Z",
+  "week_number": 34,
+  "week_start": "2026-08-17",
+  "week_end": "2026-10-11",
   "odoo_url": "https://atome-bakery-sh.odoo.com",
   "days": [
-    {
-      "date": "2026-08-10",
-      "label": "MONDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-11",
-      "label": "TUESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-12",
-      "label": "WEDNESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-13",
-      "label": "THURSDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-14",
-      "label": "FRIDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-15",
-      "label": "SATURDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-16",
-      "label": "SUNDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
     {
       "date": "2026-08-17",
       "label": "MONDAY",
@@ -2079,6 +2016,69 @@
     },
     {
       "date": "2026-10-04",
+      "label": "SUNDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-05",
+      "label": "MONDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-06",
+      "label": "TUESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-07",
+      "label": "WEDNESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-08",
+      "label": "THURSDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-09",
+      "label": "FRIDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-10",
+      "label": "SATURDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-11",
       "label": "SUNDAY",
       "premix": [],
       "mix": [],
