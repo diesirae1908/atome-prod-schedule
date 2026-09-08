@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T22:47:26Z",
+  "generated_at": "2026-09-08T22:48:48Z",
   "week_number": 34,
   "week_start": "2026-08-17",
   "week_end": "2026-10-11",
@@ -1775,6 +1775,16 @@
           "mo_refs": [
             "WH/MO/01392"
           ]
+        },
+        {
+          "label": "Prep mix Viennoise",
+          "total_units": 200,
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ],
+          "mo_refs": [
+            "WH/MO/01399"
+          ]
         }
       ],
       "mix": [
@@ -1898,6 +1908,18 @@
           "products": [
             "Butter Shortbread Log (Plain)"
           ]
+        },
+        {
+          "dough_type": "VIENNOISE",
+          "label": "Pack of 2 Viennoise (Brioche Baguette)",
+          "cfg_name": "Viennoise (×2)",
+          "unit": "kg",
+          "total_kg": 40.0,
+          "total_units": 200,
+          "mo_ref": "WH/MO/01399",
+          "products": [
+            "Pack of 2 Viennoise (Brioche Baguette)"
+          ]
         }
       ],
       "shaping": [
@@ -1908,6 +1930,15 @@
           "qty_units": 50,
           "total_kg": 20.0,
           "mo_ref": "WH/MO/01392",
+          "d0": "2026-09-25"
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100,
+          "qty_units": 200,
+          "total_kg": 40.0,
+          "mo_ref": "WH/MO/01399",
           "d0": "2026-09-25"
         },
         {
@@ -2056,6 +2087,19 @@
           "mo_ref": "WH/MO/01394",
           "lot_id": 2092,
           "lot_name": "06/25/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "VI2P-SGL",
+          "name": "Pack of 2 Viennoise (Brioche Baguette)",
+          "qty_packs": 100.0,
+          "qty_units": 200.0,
+          "qty_pouches": 200.0,
+          "dluo": "2027-03-25",
+          "mo_ref": "WH/MO/01399",
+          "lot_id": 2099,
+          "lot_name": "03/25/2027",
           "copacked": false,
           "needs_setup": false
         },
