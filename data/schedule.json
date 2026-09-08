@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T23:03:50Z",
+  "generated_at": "2026-09-08T16:01:55Z",
   "week_number": 34,
   "week_start": "2026-08-17",
   "week_end": "2026-10-11",
@@ -539,13 +539,13 @@
       "label": "TUESDAY",
       "premix": [
         {
-          "label": "Prep mix PAC/CR",
-          "total_units": 309,
+          "label": "Prep mix Braided Brioche",
+          "total_units": 116,
           "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+            "Brioche (Pastry)"
           ],
           "mo_refs": [
-            "WH/MO/01331"
+            "WH/MO/01378"
           ]
         }
       ],
@@ -655,18 +655,6 @@
           ]
         },
         {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 21.6,
-          "total_units": 309,
-          "mo_ref": "WH/MO/01331",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        },
-        {
           "dough_type": "WW",
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "cfg_name": "Wholewheat Loaf (×2)",
@@ -677,9 +665,30 @@
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
           ]
+        },
+        {
+          "dough_type": "BRIOCHE",
+          "label": "Brioche (Pastry)",
+          "cfg_name": "Braided Brioche",
+          "unit": "kg",
+          "total_kg": 52.2,
+          "total_units": 116,
+          "mo_ref": "WH/MO/01378",
+          "products": [
+            "Brioche (Pastry)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116,
+          "qty_units": 116,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/01378",
+          "d0": "2026-09-10"
+        },
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
@@ -688,15 +697,6 @@
           "total_kg": 138.0,
           "mo_ref": "WH/MO/01340",
           "d0": "2026-09-11"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103,
-          "qty_units": 309,
-          "total_kg": 21.6,
-          "mo_ref": "WH/MO/01331",
-          "d0": "2026-09-10"
         },
         {
           "sku": "TR3P-SGL",
@@ -822,6 +822,19 @@
       ],
       "vacuuming": [
         {
+          "sku": "BR-SGL",
+          "name": "Brioche (Pastry)",
+          "qty_packs": 116.0,
+          "qty_units": 116.0,
+          "qty_pouches": 116.0,
+          "dluo": "2027-03-10",
+          "mo_ref": "WH/MO/01378",
+          "lot_id": 2004,
+          "lot_name": "03/10/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
           "qty_packs": 160.0,
@@ -831,19 +844,6 @@
           "mo_ref": "WH/MO/01341",
           "lot_id": 2012,
           "lot_name": "06/10/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103.0,
-          "qty_units": 309.0,
-          "qty_pouches": 103.0,
-          "dluo": "2027-03-10",
-          "mo_ref": "WH/MO/01331",
-          "lot_id": 1996,
-          "lot_name": "03/10/2027",
           "copacked": false,
           "needs_setup": false
         },
