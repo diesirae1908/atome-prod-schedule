@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T22:39:45Z",
+  "generated_at": "2026-09-08T22:44:55Z",
   "week_number": 34,
   "week_start": "2026-08-17",
   "week_end": "2026-10-11",
@@ -1709,6 +1709,16 @@
       "label": "TUESDAY",
       "premix": [
         {
+          "label": "MG Grain Soak",
+          "total_units": 360,
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
+          ],
+          "mo_refs": [
+            "WH/MO/01387"
+          ]
+        },
+        {
           "label": "Prep mix PAC/CR",
           "total_units": 309,
           "products": [
@@ -1799,18 +1809,7 @@
     {
       "date": "2026-09-23",
       "label": "WEDNESDAY",
-      "premix": [
-        {
-          "label": "MG Grain Soak",
-          "total_units": 360,
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ],
-          "mo_refs": [
-            "WH/MO/01387"
-          ]
-        }
-      ],
+      "premix": [],
       "mix": [
         {
           "dough_type": "PAC_CR",
@@ -1822,6 +1821,18 @@
           "mo_ref": "WH/MO/01384",
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
+        },
+        {
+          "dough_type": "MG",
+          "label": "Pack of 3 Multigrain Sourdough Baguettes",
+          "cfg_name": "Multigrain Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 135.0,
+          "total_units": 360,
+          "mo_ref": "WH/MO/01387",
+          "products": [
+            "Pack of 3 Multigrain Sourdough Baguettes"
           ]
         },
         {
@@ -1908,21 +1919,18 @@
           ]
         }
       ],
-      "mix": [
+      "mix": [],
+      "shaping": [
         {
-          "dough_type": "MG",
-          "label": "Pack of 3 Multigrain Sourdough Baguettes",
-          "cfg_name": "Multigrain Baguette (×3)",
-          "unit": "kg",
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120,
+          "qty_units": 360,
           "total_kg": 135.0,
-          "total_units": 360,
           "mo_ref": "WH/MO/01387",
-          "products": [
-            "Pack of 3 Multigrain Sourdough Baguettes"
-          ]
+          "d0": "2026-09-25"
         }
       ],
-      "shaping": [],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -2025,15 +2033,6 @@
       ],
       "shaping": [
         {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120,
-          "qty_units": 360,
-          "total_kg": 135.0,
-          "mo_ref": "WH/MO/01387",
-          "d0": "2026-09-26"
-        },
-        {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
           "qty_packs": 103,
@@ -2054,6 +2053,19 @@
           "dluo": "2027-06-25",
           "mo_ref": "WH/MO/01394",
           "lot_id": 2092,
+          "lot_name": "06/25/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "MG3P-SGL",
+          "name": "Pack of 3 Multigrain Sourdough Baguettes",
+          "qty_packs": 120.0,
+          "qty_units": 360.0,
+          "qty_pouches": 360.0,
+          "dluo": "2027-06-25",
+          "mo_ref": "WH/MO/01387",
+          "lot_id": 2079,
           "lot_name": "06/25/2027",
           "copacked": false,
           "needs_setup": false
@@ -2131,19 +2143,6 @@
           "mo_ref": "WH/MO/01382",
           "lot_id": 2073,
           "lot_name": "03/26/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "MG3P-SGL",
-          "name": "Pack of 3 Multigrain Sourdough Baguettes",
-          "qty_packs": 120.0,
-          "qty_units": 360.0,
-          "qty_pouches": 360.0,
-          "dluo": "2027-06-26",
-          "mo_ref": "WH/MO/01387",
-          "lot_id": 2097,
-          "lot_name": "06/26/2027",
           "copacked": false,
           "needs_setup": false
         },
