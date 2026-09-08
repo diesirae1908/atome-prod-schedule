@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T22:35:48Z",
+  "generated_at": "2026-09-08T22:37:03Z",
   "week_number": 34,
   "week_start": "2026-08-17",
   "week_end": "2026-10-11",
@@ -1717,7 +1717,18 @@
     {
       "date": "2026-09-22",
       "label": "TUESDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 309,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/01384"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "PIZZA",
@@ -1798,19 +1809,20 @@
     {
       "date": "2026-09-23",
       "label": "WEDNESDAY",
-      "premix": [
+      "premix": [],
+      "mix": [
         {
-          "label": "Prep mix PAC/CR",
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 21.6,
           "total_units": 309,
+          "mo_ref": "WH/MO/01384",
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/01384"
           ]
-        }
-      ],
-      "mix": [
+        },
         {
           "dough_type": "WW",
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
@@ -1833,6 +1845,15 @@
           "total_kg": 276.0,
           "mo_ref": "WH/MO/01394",
           "d0": "2026-09-25"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103,
+          "qty_units": 309,
+          "total_kg": 21.6,
+          "mo_ref": "WH/MO/01384",
+          "d0": "2026-09-24"
         }
       ],
       "score_tasks": [
@@ -1866,6 +1887,16 @@
       "label": "THURSDAY",
       "premix": [
         {
+          "label": "Prep mix PAC/CR",
+          "total_units": 309,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/01398"
+          ]
+        },
+        {
           "label": "Take butter out of the freezer",
           "total_units": 624,
           "products": [
@@ -1877,18 +1908,6 @@
         }
       ],
       "mix": [
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 21.6,
-          "total_units": 309,
-          "mo_ref": "WH/MO/01384",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        },
         {
           "dough_type": "TRAD",
           "label": "Pack of 3 Traditional Sourdough Baguette",
@@ -1902,17 +1921,7 @@
           ]
         }
       ],
-      "shaping": [
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103,
-          "qty_units": 309,
-          "total_kg": 21.6,
-          "mo_ref": "WH/MO/01384",
-          "d0": "2026-09-25"
-        }
-      ],
+      "shaping": [],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -1934,6 +1943,19 @@
           "mo_ref": "WH/MO/01393",
           "lot_id": 2088,
           "lot_name": "06/24/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103.0,
+          "qty_units": 309.0,
+          "qty_pouches": 103.0,
+          "dluo": "2027-03-24",
+          "mo_ref": "WH/MO/01384",
+          "lot_id": 2093,
+          "lot_name": "03/24/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -1986,9 +2008,30 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 21.6,
+          "total_units": 309,
+          "mo_ref": "WH/MO/01398",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103,
+          "qty_units": 309,
+          "total_kg": 21.6,
+          "mo_ref": "WH/MO/01398",
+          "d0": "2026-09-26"
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
@@ -2011,19 +2054,6 @@
           "mo_ref": "WH/MO/01394",
           "lot_id": 2092,
           "lot_name": "06/25/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103.0,
-          "qty_units": 309.0,
-          "qty_pouches": 103.0,
-          "dluo": "2027-03-25",
-          "mo_ref": "WH/MO/01384",
-          "lot_id": 2086,
-          "lot_name": "03/25/2027",
           "copacked": false,
           "needs_setup": false
         }
@@ -2099,6 +2129,19 @@
           "dluo": "2027-03-26",
           "mo_ref": "WH/MO/01382",
           "lot_id": 2073,
+          "lot_name": "03/26/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103.0,
+          "qty_units": 309.0,
+          "qty_pouches": 103.0,
+          "dluo": "2027-03-26",
+          "mo_ref": "WH/MO/01398",
+          "lot_id": 2095,
           "lot_name": "03/26/2027",
           "copacked": false,
           "needs_setup": false
