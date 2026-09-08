@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T23:01:02Z",
+  "generated_at": "2026-09-08T23:02:34Z",
   "week_number": 34,
   "week_start": "2026-08-17",
   "week_end": "2026-10-11",
@@ -1666,6 +1666,19 @@
           "lot_id": 2053,
           "lot_name": "06/20/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-CRB8P-SGL",
+          "name": "Pack of 8 Mini croissants",
+          "qty_packs": 168.0,
+          "qty_units": 1344.0,
+          "qty_pouches": 168.0,
+          "dluo": "2027-01-13",
+          "mo_ref": "WH/MO/01406",
+          "lot_id": 1011,
+          "lot_name": "01/13/2027",
+          "copacked": true,
           "needs_setup": false
         }
       ]
