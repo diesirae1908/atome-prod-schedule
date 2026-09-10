@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T22:48:53Z",
+  "generated_at": "2026-09-10T23:07:41Z",
   "week_number": 34,
   "week_start": "2026-08-17",
   "week_end": "2026-10-11",
@@ -207,64 +207,8 @@
       "date": "2026-09-08",
       "label": "TUESDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01339",
-          "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
-          ]
-        },
-        {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 112.0,
-          "total_units": 160,
-          "mo_ref": "WH/MO/01341",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
-          "dough_type": "WW",
-          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "cfg_name": "Wholewheat Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 91.2,
-          "total_units": 152,
-          "mo_ref": "WH/MO/01379",
-          "products": [
-            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "total_kg": 112.0,
-          "mo_ref": "WH/MO/01341",
-          "d0": "2026-09-10"
-        },
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 76,
-          "qty_units": 152,
-          "total_kg": 91.2,
-          "mo_ref": "WH/MO/01379",
-          "d0": "2026-09-10"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -307,35 +251,9 @@
           "total_kg": 112.0,
           "mo_ref": "WH/MO/01380",
           "d0": "2026-09-11"
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/01339",
-          "d0": "2026-09-10"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "mo_ref": "WH/MO/01341",
-          "d0": "2026-09-10"
-        },
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 76,
-          "qty_units": 152,
-          "mo_ref": "WH/MO/01379",
-          "d0": "2026-09-10"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -398,47 +316,7 @@
           "d0": "2026-09-11"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80.0,
-          "qty_units": 160.0,
-          "qty_pouches": 160.0,
-          "dluo": "2027-06-10",
-          "mo_ref": "WH/MO/01341",
-          "lot_id": 2012,
-          "lot_name": "06/10/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 76.0,
-          "qty_units": 152.0,
-          "qty_pouches": 152.0,
-          "dluo": "2027-06-10",
-          "mo_ref": "WH/MO/01379",
-          "lot_id": 2009,
-          "lot_name": "06/10/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-06-10",
-          "mo_ref": "WH/MO/01339",
-          "lot_id": 2006,
-          "lot_name": "06/10/2027",
-          "copacked": false,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-09-11",
