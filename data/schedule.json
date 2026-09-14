@@ -1,73 +1,10 @@
 {
-  "generated_at": "2026-09-13T22:41:09Z",
-  "week_number": 34,
-  "week_start": "2026-08-17",
-  "week_end": "2026-10-11",
+  "generated_at": "2026-09-14T17:10:47Z",
+  "week_number": 35,
+  "week_start": "2026-08-24",
+  "week_end": "2026-10-18",
   "odoo_url": "https://atome-bakery-sh.odoo.com",
   "days": [
-    {
-      "date": "2026-08-17",
-      "label": "MONDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-18",
-      "label": "TUESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-19",
-      "label": "WEDNESDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-20",
-      "label": "THURSDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-21",
-      "label": "FRIDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-22",
-      "label": "SATURDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
-    {
-      "date": "2026-08-23",
-      "label": "SUNDAY",
-      "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": []
-    },
     {
       "date": "2026-08-24",
       "label": "MONDAY",
@@ -225,43 +162,8 @@
       "date": "2026-09-10",
       "label": "THURSDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Sesame Baguette",
-          "cfg_name": "Sesame Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01328",
-          "products": [
-            "Pack of 3 Sourdough Sesame Baguette"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/01332",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/01332",
-          "d0": "2026-09-12"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -269,71 +171,9 @@
       "date": "2026-09-11",
       "label": "FRIDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "CIABATTA",
-          "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "cfg_name": "Ciabatta (×3)",
-          "unit": "kg",
-          "total_kg": 119.7,
-          "total_units": 399,
-          "mo_ref": "WH/MO/01330",
-          "products": [
-            "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 2 Sourdough Loaves (White Flour)",
-          "cfg_name": "Sourdough Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 246.4,
-          "total_units": 352,
-          "mo_ref": "WH/MO/01337",
-          "products": [
-            "Pack of 2 Sourdough Loaves (White Flour)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "total_kg": 246.4,
-          "mo_ref": "WH/MO/01337",
-          "d0": "2026-09-13"
-        },
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133,
-          "qty_units": 399,
-          "total_kg": 119.7,
-          "mo_ref": "WH/MO/01330",
-          "d0": "2026-09-13"
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/01328",
-          "d0": "2026-09-12"
-        }
-      ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/01332",
-          "d0": "2026-09-12"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -365,65 +205,8 @@
           "d0": "2026-09-14"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176,
-          "qty_units": 352,
-          "mo_ref": "WH/MO/01337",
-          "d0": "2026-09-13"
-        },
-        {
-          "action": "freeze_only",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133,
-          "qty_units": 399,
-          "mo_ref": "WH/MO/01330",
-          "d0": "2026-09-13"
-        }
-      ],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2027-06-12",
-          "mo_ref": "WH/MO/01332",
-          "lot_id": 2003,
-          "lot_name": "06/12/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 160.0,
-          "qty_units": 480.0,
-          "qty_pouches": 160.0,
-          "dluo": "2027-04-23",
-          "mo_ref": "WH/MO/01359",
-          "lot_id": 1966,
-          "lot_name": "04/23/2027",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-06-12",
-          "mo_ref": "WH/MO/01328",
-          "lot_id": 1992,
-          "lot_name": "06/12/2027",
-          "copacked": false,
-          "needs_setup": false
-        }
-      ]
+      "score_tasks": [],
+      "vacuuming": []
     },
     {
       "date": "2026-09-13",
@@ -475,47 +258,7 @@
           "d0": "2026-09-14"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "LF2P",
-          "name": "Pack of 2 Sourdough Loaves (White Flour)",
-          "qty_packs": 176.0,
-          "qty_units": 352.0,
-          "qty_pouches": 352.0,
-          "dluo": "2027-06-13",
-          "mo_ref": "WH/MO/01337",
-          "lot_id": 1997,
-          "lot_name": "06/13/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "CIA3-SGL",
-          "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 133.0,
-          "qty_units": 399.0,
-          "qty_pouches": 133.0,
-          "dluo": "2027-06-13",
-          "mo_ref": "WH/MO/01330",
-          "lot_id": 2002,
-          "lot_name": "06/13/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 100.0,
-          "qty_units": 100.0,
-          "qty_pouches": 100.0,
-          "dluo": "2027-04-08",
-          "mo_ref": "WH/MO/01407",
-          "lot_id": 2034,
-          "lot_name": "04/08/2027",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-09-14",
@@ -2261,6 +2004,69 @@
     },
     {
       "date": "2026-10-11",
+      "label": "SUNDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-12",
+      "label": "MONDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-13",
+      "label": "TUESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-14",
+      "label": "WEDNESDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-15",
+      "label": "THURSDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-16",
+      "label": "FRIDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-17",
+      "label": "SATURDAY",
+      "premix": [],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
+      "vacuuming": []
+    },
+    {
+      "date": "2026-10-18",
       "label": "SUNDAY",
       "premix": [],
       "mix": [],
