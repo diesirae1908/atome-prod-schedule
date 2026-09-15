@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T21:50:54Z",
+  "generated_at": "2026-09-15T21:53:29Z",
   "week_number": 35,
   "week_start": "2026-08-24",
   "week_end": "2026-10-18",
@@ -1888,16 +1888,6 @@
       "label": "WEDNESDAY",
       "premix": [
         {
-          "label": "Prep Mix Shortbread Plain",
-          "total_units": 1,
-          "products": [
-            "Butter Shortbread Log (Plain)"
-          ],
-          "mo_refs": [
-            "WH/MO/01423"
-          ]
-        },
-        {
           "label": "Prep mix Brioche Buns",
           "total_units": 3,
           "products": [
@@ -1905,16 +1895,6 @@
           ],
           "mo_refs": [
             "WH/MO/01424"
-          ]
-        },
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 309,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/01425"
           ]
         }
       ],
@@ -2006,20 +1986,29 @@
     {
       "date": "2026-10-01",
       "label": "THURSDAY",
-      "premix": [],
-      "mix": [
+      "premix": [
         {
-          "dough_type": "SHORTBREAD",
-          "label": "Butter Shortbread Log (Plain)",
-          "cfg_name": "Butter Shortbread Log (Plain)",
-          "unit": "pcs",
-          "total_kg": 0.4,
+          "label": "Prep Mix Shortbread Plain",
           "total_units": 1,
-          "mo_ref": "WH/MO/01423",
           "products": [
             "Butter Shortbread Log (Plain)"
+          ],
+          "mo_refs": [
+            "WH/MO/01423"
           ]
         },
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 309,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/01425"
+          ]
+        }
+      ],
+      "mix": [
         {
           "dough_type": "BRIOCHE",
           "label": "Pack of 3 Brioche Buns",
@@ -2031,30 +2020,9 @@
           "products": [
             "Pack of 3 Brioche Buns"
           ]
-        },
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 21.6,
-          "total_units": 309,
-          "mo_ref": "WH/MO/01425",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
         }
       ],
       "shaping": [
-        {
-          "sku": "SBL-P-SGL",
-          "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 1,
-          "qty_units": 1,
-          "total_kg": 0.4,
-          "mo_ref": "WH/MO/01423",
-          "d0": "2026-10-02"
-        },
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
@@ -2062,15 +2030,6 @@
           "qty_units": 3,
           "total_kg": 0.5,
           "mo_ref": "WH/MO/01424",
-          "d0": "2026-10-02"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103,
-          "qty_units": 309,
-          "total_kg": 21.6,
-          "mo_ref": "WH/MO/01425",
           "d0": "2026-10-02"
         },
         {
@@ -2126,23 +2085,54 @@
       "date": "2026-10-02",
       "label": "FRIDAY",
       "premix": [],
-      "mix": [],
-      "shaping": [],
-      "score_tasks": [],
-      "vacuuming": [
+      "mix": [
+        {
+          "dough_type": "SHORTBREAD",
+          "label": "Butter Shortbread Log (Plain)",
+          "cfg_name": "Butter Shortbread Log (Plain)",
+          "unit": "pcs",
+          "total_kg": 0.4,
+          "total_units": 1,
+          "mo_ref": "WH/MO/01423",
+          "products": [
+            "Butter Shortbread Log (Plain)"
+          ]
+        },
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 21.6,
+          "total_units": 309,
+          "mo_ref": "WH/MO/01425",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
+        }
+      ],
+      "shaping": [
         {
           "sku": "SBL-P-SGL",
           "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 1.0,
-          "qty_units": 1.0,
-          "qty_pouches": 1.0,
-          "dluo": "2027-07-02",
+          "qty_packs": 1,
+          "qty_units": 1,
+          "total_kg": 0.4,
           "mo_ref": "WH/MO/01423",
-          "lot_id": 2121,
-          "lot_name": "07/02/2027",
-          "copacked": false,
-          "needs_setup": false
+          "d0": "2026-10-03"
         },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103,
+          "qty_units": 309,
+          "total_kg": 21.6,
+          "mo_ref": "WH/MO/01425",
+          "d0": "2026-10-03"
+        }
+      ],
+      "score_tasks": [],
+      "vacuuming": [
         {
           "sku": "BR3BN-SGL",
           "name": "Pack of 3 Brioche Buns",
@@ -2166,19 +2156,6 @@
           "mo_ref": "WH/MO/01422",
           "lot_id": 2118,
           "lot_name": "07/02/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103.0,
-          "qty_units": 309.0,
-          "qty_pouches": 103.0,
-          "dluo": "2027-04-02",
-          "mo_ref": "WH/MO/01425",
-          "lot_id": 2124,
-          "lot_name": "04/02/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -2227,7 +2204,34 @@
         }
       ],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "SBL-P-SGL",
+          "name": "Butter Shortbread Log (Plain)",
+          "qty_packs": 1.0,
+          "qty_units": 1.0,
+          "qty_pouches": 1.0,
+          "dluo": "2027-07-03",
+          "mo_ref": "WH/MO/01423",
+          "lot_id": 2126,
+          "lot_name": "07/03/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103.0,
+          "qty_units": 309.0,
+          "qty_pouches": 103.0,
+          "dluo": "2027-04-03",
+          "mo_ref": "WH/MO/01425",
+          "lot_id": 2125,
+          "lot_name": "04/03/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-10-04",
