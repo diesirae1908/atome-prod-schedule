@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T22:13:54Z",
+  "generated_at": "2026-09-15T22:16:19Z",
   "week_number": 35,
   "week_start": "2026-08-24",
   "week_end": "2026-10-18",
@@ -1933,7 +1933,7 @@
       "premix": [
         {
           "label": "Prep Mix Shortbread Plain",
-          "total_units": 1,
+          "total_units": 50,
           "products": [
             "Butter Shortbread Log (Plain)"
           ],
@@ -2046,8 +2046,8 @@
           "label": "Butter Shortbread Log (Plain)",
           "cfg_name": "Butter Shortbread Log (Plain)",
           "unit": "pcs",
-          "total_kg": 0.4,
-          "total_units": 1,
+          "total_kg": 20.0,
+          "total_units": 50,
           "mo_ref": "WH/MO/01423",
           "products": [
             "Butter Shortbread Log (Plain)"
@@ -2070,9 +2070,9 @@
         {
           "sku": "SBL-P-SGL",
           "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 1,
-          "qty_units": 1,
-          "total_kg": 0.4,
+          "qty_packs": 50,
+          "qty_units": 50,
+          "total_kg": 20.0,
           "mo_ref": "WH/MO/01423",
           "d0": "2026-10-03"
         },
@@ -2154,9 +2154,9 @@
         {
           "sku": "SBL-P-SGL",
           "name": "Butter Shortbread Log (Plain)",
-          "qty_packs": 1.0,
-          "qty_units": 1.0,
-          "qty_pouches": 1.0,
+          "qty_packs": 50.0,
+          "qty_units": 50.0,
+          "qty_pouches": 50.0,
           "dluo": "2027-07-03",
           "mo_ref": "WH/MO/01423",
           "lot_id": 2126,
