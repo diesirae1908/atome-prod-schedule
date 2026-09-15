@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T21:36:54Z",
+  "generated_at": "2026-09-15T21:38:40Z",
   "week_number": 35,
   "week_start": "2026-08-24",
   "week_end": "2026-10-18",
@@ -1789,7 +1789,20 @@
       "date": "2026-09-29",
       "label": "TUESDAY",
       "premix": [],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "cfg_name": "Poppy Seed Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01416",
+          "products": [
+            "Pack of 3 Sourdough Poppy Seed Baguette"
+          ]
+        }
+      ],
       "shaping": [
         {
           "sku": "SE3P-SGL",
@@ -1836,7 +1849,17 @@
           ]
         }
       ],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01416",
+          "d0": "2026-10-01"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": [
         {
@@ -1871,7 +1894,21 @@
         }
       ],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-07-01",
+          "mo_ref": "WH/MO/01416",
+          "lot_id": 2111,
+          "lot_name": "07/01/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-10-02",
