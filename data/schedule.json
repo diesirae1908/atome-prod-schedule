@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T21:34:05Z",
+  "generated_at": "2026-09-15T21:36:54Z",
   "week_number": 35,
   "week_start": "2026-08-24",
   "week_end": "2026-10-18",
@@ -1761,14 +1761,14 @@
       "mix": [
         {
           "dough_type": "TRAD",
-          "label": "Pack of 3 Traditional Sourdough Baguette",
-          "cfg_name": "Trad. Baguette (×3)",
+          "label": "Pack of 3 Sourdough Sesame Baguette",
+          "cfg_name": "Sesame Baguette (×3)",
           "unit": "kg",
           "total_kg": 122.8,
           "total_units": 351,
-          "mo_ref": "WH/MO/01414",
+          "mo_ref": "WH/MO/01415",
           "products": [
-            "Pack of 3 Traditional Sourdough Baguette"
+            "Pack of 3 Sourdough Sesame Baguette"
           ]
         }
       ],
@@ -1792,12 +1792,12 @@
       "mix": [],
       "shaping": [
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
           "qty_packs": 117,
           "qty_units": 351,
           "total_kg": 122.8,
-          "mo_ref": "WH/MO/01414",
+          "mo_ref": "WH/MO/01415",
           "d0": "2026-09-30"
         }
       ],
@@ -1822,19 +1822,32 @@
       "date": "2026-09-30",
       "label": "WEDNESDAY",
       "premix": [],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01414",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
+        }
+      ],
       "shaping": [],
       "score_tasks": [],
       "vacuuming": [
         {
-          "sku": "TR3P-SGL",
-          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
           "dluo": "2027-06-30",
-          "mo_ref": "WH/MO/01414",
-          "lot_id": 2107,
+          "mo_ref": "WH/MO/01415",
+          "lot_id": 2109,
           "lot_name": "06/30/2027",
           "copacked": false,
           "needs_setup": false
@@ -1846,7 +1859,17 @@
       "label": "THURSDAY",
       "premix": [],
       "mix": [],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01414",
+          "d0": "2026-10-02"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -1857,7 +1880,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-07-02",
+          "mo_ref": "WH/MO/01414",
+          "lot_id": 2108,
+          "lot_name": "07/02/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-10-03",
