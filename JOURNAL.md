@@ -4,6 +4,19 @@ Dated work log for the `atome-prod-schedule` repo, newest entry first.
 
 ---
 
+## 2026-09-20 — Kasia schedule cleanup (recurring tasks, divider cadence, waffle premix)
+
+Per ops@ request (Kasia email to Lucas):
+
+- **RECURRING_TASKS** (`index.html`): removed `waffle_makers`, `dry_ice`, `emergency_levain`; kept `empty_levain_machine`.
+- **Divider cleaning**: replaced `monthly_day` with `interval_anchor` + `interval_days: 56` (8 weeks). `divider_inside` anchor `2026-10-15`, `divider_deep` anchor `2026-11-12`; notes say "every 8 weeks". Extended `getRecurringForDay` to honor `interval_anchor` (biweekly still uses `biweekly_anchor`, default 14 days).
+- **WA3P-SGL** (`config/products.json`): dropped butter premix tasks; kept `Prep mix Waffles` only.
+- **`data/schedule.json`**: surgically removed `Cut butter` / `Take butter out of the freezer` premix rows (no Odoo refresh in this session; nightly `refresh.yml` will stay aligned with `products.json`).
+
+Branch: `feat/kasia-schedule-cleanup-2026-09-20` (not merged to `main` / Pages).
+
+---
+
 ## 2026-07-26 — RLS lockdown phase 2 complete + login gate merged live (Sam)
 
 Phase 1 (login gate on branch `security/supabase-auth-login`, below) shipped by

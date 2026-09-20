@@ -849,16 +849,6 @@
           "mo_refs": [
             "WH/MO/01398"
           ]
-        },
-        {
-          "label": "Take butter out of the freezer",
-          "total_units": 624,
-          "products": [
-            "Pack of 3 Liege Waffle"
-          ],
-          "mo_refs": [
-            "WH/MO/01382"
-          ]
         }
       ],
       "mix": [
@@ -973,16 +963,6 @@
       "label": "FRIDAY",
       "premix": [
         {
-          "label": "Cut butter",
-          "total_units": 624,
-          "products": [
-            "Pack of 3 Liege Waffle"
-          ],
-          "mo_refs": [
-            "WH/MO/01382"
-          ]
-        },
-        {
           "label": "Prep mix Waffles",
           "total_units": 624,
           "products": [
@@ -990,16 +970,6 @@
           ],
           "mo_refs": [
             "WH/MO/01382"
-          ]
-        },
-        {
-          "label": "Take butter out of the freezer",
-          "total_units": 624,
-          "products": [
-            "Pack of 3 Liege Waffle"
-          ],
-          "mo_refs": [
-            "WH/MO/01383"
           ]
         }
       ],
@@ -1134,16 +1104,6 @@
       "date": "2026-09-26",
       "label": "SATURDAY",
       "premix": [
-        {
-          "label": "Cut butter",
-          "total_units": 624,
-          "products": [
-            "Pack of 3 Liege Waffle"
-          ],
-          "mo_refs": [
-            "WH/MO/01383"
-          ]
-        },
         {
           "label": "Prep mix Waffles",
           "total_units": 624,

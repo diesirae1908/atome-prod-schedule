@@ -1172,20 +1172,16 @@ function lsSet(k, v) {
 // monthly_day: calendar day of month (1..31).
 // biweekly_anchor: ISO date (YYYY-MM-DD) — task shows every 14 days starting from
 //                  (or aligned to) this date. The anchor itself determines the dow.
+// interval_anchor + interval_days: same alignment as biweekly_anchor, but interval_days
+//                  defaults to 14 for biweekly_anchor only; use interval_days for other cadences.
 // slug: short stable id used in the localStorage check key.
 const RECURRING_TASKS = [
-  { section: "mix",   slug: "waffle_makers",        weekly_dow: [1],          label: "🧇 Put waffle makers back in their proper place", note: "Monday morning" },
-  { section: "mix",   slug: "dry_ice",              weekly_dow: [1, 2],       label: "🧊 Dry ice reception reminder" },
-  { section: "mix",   slug: "emergency_levain",     weekly_dow: [1, 4],       label: "🪣 Make emergency levain bucket 10 kg" },
   { section: "mix",   slug: "empty_levain_machine", biweekly_anchor: "2026-05-01", label: "🫙 Empty and clean Levain machine", note: "every 2 weeks · Friday" },
-  // divider_deep (day 1) and divider_inside (day 15) are intentionally 14
-  // calendar days apart. Since a week is a fixed 7-day block, any two
-  // monthly_day anchors 14 days apart always land in different Mon–Sun
-  // weeks (verified for every month 2025–2027 — gap is always 14–17 days,
-  // never less, and never in the same week). Keep them ~14 days apart if
-  // these anchors are ever changed.
-  { section: "shape", slug: "divider_deep",         monthly_day: 1,           label: "🧽 Deep clean dough divider (remove white blocks)" },
-  { section: "shape", slug: "divider_inside",       monthly_day: 15,          label: "🧽 Clean inside dough divider (don't remove white blocks)" },
+  // divider_deep and divider_inside use staggered 8-week anchors (56 days apart) so they
+  // never share the same Mon–Sun week. If anchors change, keep interval_days: 56 and
+  // maintain ~56 days between anchors (e.g. deep Nov 12, inside Oct 15).
+  { section: "shape", slug: "divider_deep",         interval_anchor: "2026-11-12", interval_days: 56, label: "🧽 Deep clean dough divider (remove white blocks)", note: "every 8 weeks" },
+  { section: "shape", slug: "divider_inside",       interval_anchor: "2026-10-15", interval_days: 56, label: "🧽 Clean inside dough divider (don't remove white blocks)", note: "every 8 weeks" },
 ];
 
 function getRecurringForDay(iso, section) {
@@ -1197,10 +1193,12 @@ function getRecurringForDay(iso, section) {
     if (t.section !== section) return false;
     if (Array.isArray(t.weekly_dow) && t.weekly_dow.includes(dow)) return true;
     if (typeof t.monthly_day === "number" && t.monthly_day === dom) return true;
-    if (typeof t.biweekly_anchor === "string") {
-      const anchor = new Date(t.biweekly_anchor + "T00:00:00");
+    const anchorIso = t.interval_anchor || t.biweekly_anchor;
+    if (typeof anchorIso === "string") {
+      const anchor = new Date(anchorIso + "T00:00:00");
       const diffDays = Math.round((d - anchor) / 86400000);
-      if (diffDays % 14 === 0) return true;
+      const interval = typeof t.interval_days === "number" ? t.interval_days : 14;
+      if (diffDays >= 0 && diffDays % interval === 0) return true;
     }
     return false;
   });
