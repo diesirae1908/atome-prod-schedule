@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T14:22:32Z",
+  "generated_at": "2026-09-21T17:27:50Z",
   "week_number": 36,
   "week_start": "2026-08-31",
   "week_end": "2026-10-25",
@@ -384,6 +384,16 @@
           "mo_refs": [
             "WH/MO/01387"
           ]
+        },
+        {
+          "label": "Prep mix Brioche Buns",
+          "total_units": 348,
+          "products": [
+            "Pack of 3 Brioche Buns"
+          ],
+          "mo_refs": [
+            "WH/MO/01436"
+          ]
         }
       ],
       "mix": [
@@ -544,27 +554,27 @@
           ]
         },
         {
-          "dough_type": "WW",
-          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "cfg_name": "Wholewheat Loaf (×2)",
+          "dough_type": "BRIOCHE",
+          "label": "Pack of 3 Brioche Buns",
+          "cfg_name": "Brioche Buns (×3)",
           "unit": "kg",
-          "total_kg": 276.0,
-          "total_units": 460,
-          "mo_ref": "WH/MO/01394",
+          "total_kg": 52.2,
+          "total_units": 348,
+          "mo_ref": "WH/MO/01436",
           "products": [
-            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+            "Pack of 3 Brioche Buns"
           ]
         }
       ],
       "shaping": [
         {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
-          "total_kg": 276.0,
-          "mo_ref": "WH/MO/01394",
-          "d0": "2026-09-25"
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116,
+          "qty_units": 348,
+          "total_kg": 52.2,
+          "mo_ref": "WH/MO/01436",
+          "d0": "2026-09-24"
         },
         {
           "sku": "CH-SGL",
@@ -711,16 +721,7 @@
           "d0": "2026-09-25"
         }
       ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
-          "mo_ref": "WH/MO/01394",
-          "d0": "2026-09-25"
-        }
-      ],
+      "score_tasks": [],
       "vacuuming": [
         {
           "sku": "PIZ2-SGL",
@@ -732,6 +733,19 @@
           "mo_ref": "WH/MO/01393",
           "lot_id": 2088,
           "lot_name": "06/24/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "BR3BN-SGL",
+          "name": "Pack of 3 Brioche Buns",
+          "qty_packs": 116.0,
+          "qty_units": 348.0,
+          "qty_pouches": 116.0,
+          "dluo": "2027-03-24",
+          "mo_ref": "WH/MO/01436",
+          "lot_id": 2148,
+          "lot_name": "03/24/2027",
           "copacked": false,
           "needs_setup": false
         },
@@ -862,19 +876,6 @@
           "lot_id": null,
           "lot_name": null,
           "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230.0,
-          "qty_units": 460.0,
-          "qty_pouches": 460.0,
-          "dluo": "2027-06-25",
-          "mo_ref": "WH/MO/01394",
-          "lot_id": 2092,
-          "lot_name": "06/25/2027",
-          "copacked": false,
           "needs_setup": false
         },
         {
