@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T14:53:10Z",
+  "generated_at": "2026-09-24T15:02:33Z",
   "week_number": 36,
   "week_start": "2026-08-31",
   "week_end": "2026-10-25",
@@ -933,6 +933,19 @@
           "lot_id": 2149,
           "lot_name": "06/28/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 100.0,
+          "qty_units": 100.0,
+          "qty_pouches": 100.0,
+          "dluo": "2027-04-08",
+          "mo_ref": "WH/MO/01440",
+          "lot_id": 2034,
+          "lot_name": "04/08/2027",
+          "copacked": true,
           "needs_setup": false
         }
       ]
