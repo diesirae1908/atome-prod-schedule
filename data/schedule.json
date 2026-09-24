@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T15:46:00Z",
+  "generated_at": "2026-09-24T15:48:25Z",
   "week_number": 36,
   "week_start": "2026-08-31",
   "week_end": "2026-10-25",
@@ -1991,8 +1991,30 @@
       "date": "2026-10-11",
       "label": "SUNDAY",
       "premix": [],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 123.2,
+          "total_units": 176,
+          "mo_ref": "WH/MO/01456",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
+        }
+      ],
       "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "total_kg": 123.2,
+          "mo_ref": "WH/MO/01456",
+          "d0": "2026-10-13"
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
@@ -2021,7 +2043,16 @@
       "premix": [],
       "mix": [],
       "shaping": [],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88,
+          "qty_units": 176,
+          "mo_ref": "WH/MO/01456",
+          "d0": "2026-10-13"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "LF2P",
@@ -2058,7 +2089,21 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": []
+      "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 88.0,
+          "qty_units": 176.0,
+          "qty_pouches": 176.0,
+          "dluo": "2027-07-13",
+          "mo_ref": "WH/MO/01456",
+          "lot_id": 2171,
+          "lot_name": "07/13/2027",
+          "copacked": false,
+          "needs_setup": false
+        }
+      ]
     },
     {
       "date": "2026-10-14",
