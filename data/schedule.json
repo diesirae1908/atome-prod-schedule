@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T15:32:44Z",
+  "generated_at": "2026-09-24T15:34:42Z",
   "week_number": 36,
   "week_start": "2026-08-31",
   "week_end": "2026-10-25",
@@ -1517,6 +1517,18 @@
           "products": [
             "Pack of 2 Viennoise (Brioche Baguette)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01448",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1606,6 +1618,15 @@
           "total_kg": 21.6,
           "mo_ref": "WH/MO/01445",
           "d0": "2026-10-08"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01448",
+          "d0": "2026-10-08"
         }
       ],
       "score_tasks": [],
@@ -1677,6 +1698,19 @@
           "mo_ref": "WH/MO/01445",
           "lot_id": 2155,
           "lot_name": "04/08/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-07-08",
+          "mo_ref": "WH/MO/01448",
+          "lot_id": 2159,
+          "lot_name": "07/08/2027",
           "copacked": false,
           "needs_setup": false
         }
