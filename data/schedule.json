@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T15:38:39Z",
+  "generated_at": "2026-09-24T15:39:45Z",
   "week_number": 36,
   "week_start": "2026-08-31",
   "week_end": "2026-10-25",
@@ -1866,9 +1866,31 @@
           "products": [
             "Pack of 3 Traditional Sourdough Baguette"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 163.8,
+          "total_units": 234,
+          "mo_ref": "WH/MO/01453",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
         }
       ],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117,
+          "qty_units": 234,
+          "total_kg": 163.8,
+          "mo_ref": "WH/MO/01453",
+          "d0": "2026-10-12"
+        }
+      ],
       "score_tasks": [],
       "vacuuming": [
         {
@@ -1902,7 +1924,16 @@
           "d0": "2026-10-12"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117,
+          "qty_units": 234,
+          "mo_ref": "WH/MO/01453",
+          "d0": "2026-10-12"
+        }
+      ],
       "vacuuming": []
     },
     {
@@ -1913,6 +1944,19 @@
       "shaping": [],
       "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 117.0,
+          "qty_units": 234.0,
+          "qty_pouches": 234.0,
+          "dluo": "2027-07-12",
+          "mo_ref": "WH/MO/01453",
+          "lot_id": 2167,
+          "lot_name": "07/12/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
