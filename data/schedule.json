@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T15:56:42Z",
+  "generated_at": "2026-09-24T15:58:06Z",
   "week_number": 36,
   "week_start": "2026-08-31",
   "week_end": "2026-10-25",
@@ -1839,9 +1839,30 @@
           "products": [
             "Pack of 3 Multigrain Sourdough Baguettes"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 246.4,
+          "total_units": 352,
+          "mo_ref": "WH/MO/01459",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "total_kg": 246.4,
+          "mo_ref": "WH/MO/01459",
+          "d0": "2026-10-10"
+        },
         {
           "sku": "CH-SGL",
           "name": "Sourdough Cheese Baguette (Gruyere Cheese)",
@@ -1950,7 +1971,16 @@
           "d0": "2026-10-10"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "mo_ref": "WH/MO/01459",
+          "d0": "2026-10-10"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "CIA3-SGL",
@@ -2032,6 +2062,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176.0,
+          "qty_units": 352.0,
+          "qty_pouches": 352.0,
+          "dluo": "2027-07-10",
+          "mo_ref": "WH/MO/01459",
+          "lot_id": 2174,
+          "lot_name": "07/10/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "MG3P-SGL",
           "name": "Pack of 3 Multigrain Sourdough Baguettes",
