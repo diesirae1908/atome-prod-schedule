@@ -4,6 +4,18 @@ Dated work log for the `atome-prod-schedule` repo, newest entry first.
 
 ---
 
+## 2026-09-27 — Baptiste R20 §4: 4″×2″ vacuum box labels (Vacuuming column)
+
+Per Baptiste Round 20 item 4 (prod-schedule, not Apex):
+
+- **`index.html`**: Print label on every vacuuming MO pill (was Odoo lot PDF via `server.js` only). Dialog prefills label count = `ceil(qty_units / units_per_box)`, plus lot, expiry, and units/box (editable). Client-side `@page { size: 4in 2in }` print (works on GitHub Pages); layout 60% text / 40% QR reserve.
+- **`config/units_per_box.json`**: SKU→units mapping synced from Apex `sku_per_box.json` (LF2P = 6, etc.). Not in `schedule.json`; unknown SKUs must enter units/box manually until mapped.
+- **Lot / expiry**: from nightly `schedule.json` vacuum rows (`lot_name`, `dluo` parsed from Odoo producing lot). Atome convention: lot name is often the expiry date (`MM/DD/YYYY`). No computed shelf-life fallback in the schedule fetch.
+
+Branch: `sam/vacuum-label-r20` → merged to `main` (Pages live).
+
+---
+
 ## 2026-09-20 — Kasia schedule cleanup (recurring tasks, divider cadence, waffle premix)
 
 Per ops@ request (Kasia email to Lucas):
