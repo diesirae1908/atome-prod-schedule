@@ -394,12 +394,20 @@
     #printModal.open { display: flex; }
     .print-modal-box {
       background: #fff; border-radius: 14px;
-      padding: 28px 32px; max-width: 340px; width: 90%;
+      padding: 28px 32px; max-width: 400px; width: 90%;
       box-shadow: 0 12px 48px rgba(0,0,0,.28);
       display: flex; flex-direction: column; gap: 12px;
     }
     .print-modal-box h3 { font-size: 16px; font-weight: 700; color: #1e1b4b; }
     .print-modal-box p  { font-size: 12px; color: #6b7280; margin: 0; }
+    .print-field { display: flex; flex-direction: column; gap: 4px; }
+    .print-field label { font-size: 12px; font-weight: 600; color: #374151; }
+    .print-field input {
+      padding: 8px 10px; font-size: 14px;
+      border: 2px solid #e5e7eb; border-radius: 8px; outline: none;
+    }
+    .print-field input:focus { border-color: #7c3aed; }
+    .print-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .print-copies-row   { display: flex; align-items: center; gap: 10px; }
     .print-copies-row label { font-size: 13px; font-weight: 600; color: #374151; }
     #printCopiesInput {
@@ -830,12 +838,27 @@
 <!-- ── Print Label Modal ── -->
 <div id="printModal">
   <div class="print-modal-box">
-    <h3 id="printModalTitle">🖨 Print Label</h3>
+    <h3 id="printModalTitle">🖨 Print vacuum label</h3>
     <p id="printModalSub"></p>
-    <div class="print-copies-row">
-      <label for="printCopiesInput">Copies:</label>
-      <input id="printCopiesInput" type="number" min="1" max="50" step="1" value="1" />
+    <div class="print-field-row">
+      <div class="print-field">
+        <label for="printLotInput">Lot</label>
+        <input id="printLotInput" type="text" autocomplete="off" />
+      </div>
+      <div class="print-field">
+        <label for="printExpiryInput">Expiry (MM/DD/YYYY)</label>
+        <input id="printExpiryInput" type="text" autocomplete="off" placeholder="06/18/2027" />
+      </div>
     </div>
+    <div class="print-field">
+      <label for="printUnitsPerBoxInput">Units per box</label>
+      <input id="printUnitsPerBoxInput" type="number" min="1" step="1" />
+    </div>
+    <div class="print-copies-row">
+      <label for="printCopiesInput">Labels (boxes):</label>
+      <input id="printCopiesInput" type="number" min="1" max="500" step="1" value="1" />
+    </div>
+    <span class="print-modal-hint">4″ × 2″ per label · QR area reserved on the right</span>
     <button id="printConfirmBtn">Print</button>
   </div>
 </div>
@@ -1794,12 +1817,27 @@ document.addEventListener("DOMContentLoaded", () => {
 // ── state ─────────────────────────────────────────────────────────────────────
 let scheduleData = null;
 let viewWeekStart = mondayOfWeek(isoToday());
+/** @type {Record<string, number>} SKU → units per shipping box (config/units_per_box.json) */
+let UNITS_PER_BOX = {};
 
 // ── data loading ──────────────────────────────────────────────────────────────
 async function loadSchedule() {
   const r = await fetch("data/schedule.json?t=" + Date.now());
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   return r.json();
+}
+
+async function loadUnitsPerBox() {
+  try {
+    const r = await fetch("config/units_per_box.json?t=" + Date.now());
+    if (!r.ok) return {};
+    const data = await r.json();
+    const map = { ...data };
+    delete map._comment;
+    return map;
+  } catch {
+    return {};
+  }
 }
 
 function getDayData(iso) {
@@ -1971,9 +2009,13 @@ function renderVacCell(day) {
       return `<button class="step-btn${step >= st.n ? " step-done" : ""}" data-vkey="${vKey}" data-step="${st.n}"${extra}>${step >= st.n ? "✓ " : ""}${st.label}</button>`;
     }).join("");
 
-    const printBtn = v.lot_id
-      ? `<button class="print-label-btn" data-lot-id="${v.lot_id}" data-product="${escAttr(shortName(v.name))}" data-mo="${escAttr(v.mo_ref || '')}">🖨 Print label</button>`
-      : "";
+    const printBtn = `<button type="button" class="print-label-btn"
+      data-sku="${escAttr(v.sku || '')}"
+      data-name="${escAttr(v.name || '')}"
+      data-qty-units="${Math.round(v.qty_units || 0)}"
+      data-lot-name="${escAttr(v.lot_name || '')}"
+      data-dluo="${escAttr(v.dluo || '')}"
+      data-mo="${escAttr(v.mo_ref || '')}">🖨 Print label</button>`;
 
     let setupBadge = "";
     if (v.needs_setup) {
@@ -2469,54 +2511,173 @@ document.getElementById("scheduleRoot").addEventListener("click", e => {
   }
 }, true); // capture phase so it fires before other click handlers
 
-// ── print label modal ─────────────────────────────────────────────────────────
-let _printLotId   = null;
+// ── vacuum box label (4″ × 2″, client-side print for GitHub Pages) ───────────
+let _printVacCtx = null;
 
-function openPrintModal(lotId, product, moRef) {
-  _printLotId = lotId;
-  document.getElementById("printModalTitle").textContent = `🖨 Print Label — ${product}`;
-  document.getElementById("printModalSub").textContent   = moRef ? `MO: ${moRef}` : "";
-  const inp = document.getElementById("printCopiesInput");
-  inp.value = 1;
-  inp.style.borderColor = "";
-  document.getElementById("printModal").classList.add("open");
-  inp.focus(); inp.select();
+function defaultExpiryFromVac(v) {
+  if (v.dluo) return fmtDluo(v.dluo);
+  const ln = (v.lot_name || "").trim();
+  if (/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(ln)) return ln;
+  return "";
 }
 
-document.getElementById("printConfirmBtn").addEventListener("click", async () => {
-  const inp    = document.getElementById("printCopiesInput");
-  const copies = parseInt(inp.value, 10);
-  if (!copies || copies < 1) {
-    inp.style.borderColor = "#ef4444";
-    inp.focus();
+function defaultLotFromVac(v) {
+  const ln = (v.lot_name || "").trim();
+  if (ln) return ln;
+  if (v.dluo) return fmtDluo(v.dluo);
+  return "";
+}
+
+function vacuumLabelsForMo(qtyUnits, unitsPerBox) {
+  const upb = parseInt(unitsPerBox, 10);
+  if (!upb || upb < 1) return Math.max(1, Math.ceil(qtyUnits || 1));
+  return Math.max(1, Math.ceil((qtyUnits || 0) / upb));
+}
+
+function recalcPrintLabelCount() {
+  if (!_printVacCtx) return;
+  const upbInp = document.getElementById("printUnitsPerBoxInput");
+  const copiesInp = document.getElementById("printCopiesInput");
+  const upb = parseInt(upbInp.value, 10);
+  copiesInp.value = vacuumLabelsForMo(_printVacCtx.qtyUnits, upb);
+}
+
+function openPrintModal(vac) {
+  _printVacCtx = vac;
+  const sku = vac.sku || "?";
+  document.getElementById("printModalTitle").textContent = `🖨 Print vacuum label — ${sku}`;
+  document.getElementById("printModalSub").textContent =
+    [vac.name, vac.moRef ? `MO ${vac.moRef}` : ""].filter(Boolean).join(" · ");
+
+  const upbDefault = UNITS_PER_BOX[sku];
+  const upbInp = document.getElementById("printUnitsPerBoxInput");
+  upbInp.value = upbDefault || "";
+  upbInp.placeholder = upbDefault ? "" : "Enter units/box";
+
+  document.getElementById("printLotInput").value = defaultLotFromVac(vac);
+  document.getElementById("printExpiryInput").value = defaultExpiryFromVac(vac);
+
+  const copiesInp = document.getElementById("printCopiesInput");
+  copiesInp.value = vacuumLabelsForMo(vac.qtyUnits, upbDefault || 1);
+  copiesInp.style.borderColor = "";
+  upbInp.style.borderColor = "";
+
+  document.getElementById("printModal").classList.add("open");
+  copiesInp.focus();
+  copiesInp.select();
+}
+
+function escPrintText(s) {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function buildVacuumLabelPrintHtml({ sku, productName, unitsPerBox, lot, expiry, copies }) {
+  const lotLine = lot ? `Lot ${lot.replace(/^Lot\s+/i, "")}` : "Lot —";
+  const expLine = expiry ? `exp. ${expiry.replace(/^exp\.\s*/i, "")}` : "exp. —";
+  const unitsLine = `${unitsPerBox} units / box`;
+  const pages = Array.from({ length: copies }, () => `
+    <div class="label-page">
+      <div class="label-text">
+        <div class="label-sku">${escPrintText(sku)}</div>
+        <div class="label-name">${escPrintText(productName)}</div>
+        <div class="label-units">${escPrintText(unitsLine)}</div>
+        <div class="label-lot">${escPrintText(lotLine)}</div>
+        <div class="label-exp">${escPrintText(expLine)}</div>
+      </div>
+      <div class="label-qr" aria-hidden="true"></div>
+    </div>`).join("");
+
+  return `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Vacuum label ${escPrintText(sku)}</title>
+<style>
+  @page { size: 4in 2in; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { margin: 0; padding: 0; }
+  .label-page {
+    width: 4in; height: 2in; overflow: hidden;
+    display: flex; flex-direction: row; align-items: stretch;
+    page-break-after: always; break-after: page;
+    font-family: Arial, Helvetica, sans-serif; color: #111;
+  }
+  .label-page:last-child { page-break-after: auto; break-after: auto; }
+  .label-text {
+    flex: 0 0 60%; max-width: 60%; padding: 0.14in 0.12in 0.1in 0.16in;
+    display: flex; flex-direction: column; justify-content: center; gap: 0.03in;
+  }
+  .label-sku { font-size: 21pt; font-weight: 800; line-height: 1.05; letter-spacing: 0.02em; }
+  .label-name { font-size: 9pt; font-weight: 500; line-height: 1.15; max-height: 2.3em; overflow: hidden; }
+  .label-units { font-size: 11pt; font-weight: 700; margin-top: 0.04in; }
+  .label-lot, .label-exp { font-size: 10pt; font-weight: 600; }
+  .label-qr {
+    flex: 0 0 40%; max-width: 40%;
+  }
+  @media screen {
+    .label-qr { border-left: 1px dashed #cbd5e1; }
+  }
+  @media print {
+    .label-qr { border: none !important; }
+  }
+</style></head><body>${pages}</body></html>`;
+}
+
+function printVacuumLabelDocument(html) {
+  const iframe = document.createElement("iframe");
+  iframe.setAttribute("title", "Vacuum label print");
+  iframe.style.cssText = "position:fixed;right:0;bottom:0;width:0;height:0;border:0;";
+  document.body.appendChild(iframe);
+  const doc = iframe.contentDocument || iframe.contentWindow.document;
+  doc.open();
+  doc.write(html);
+  doc.close();
+  const win = iframe.contentWindow;
+  const cleanup = () => setTimeout(() => iframe.remove(), 1500);
+  if (win.document.readyState === "complete") {
+    win.focus();
+    win.print();
+    cleanup();
+  } else {
+    iframe.onload = () => {
+      win.focus();
+      win.print();
+      cleanup();
+    };
+  }
+}
+
+document.getElementById("printUnitsPerBoxInput").addEventListener("input", recalcPrintLabelCount);
+
+document.getElementById("printConfirmBtn").addEventListener("click", () => {
+  const copiesInp = document.getElementById("printCopiesInput");
+  const upbInp = document.getElementById("printUnitsPerBoxInput");
+  const lotInp = document.getElementById("printLotInput");
+  const expInp = document.getElementById("printExpiryInput");
+  const copies = parseInt(copiesInp.value, 10);
+  const upb = parseInt(upbInp.value, 10);
+  if (!copies || copies < 1 || copies > 500) {
+    copiesInp.style.borderColor = "#ef4444";
+    copiesInp.focus();
     return;
   }
-
-  const btn = document.getElementById("printConfirmBtn");
-  btn.textContent = "Generating…";
-  btn.disabled    = true;
-
-  try {
-    const resp = await fetch("/api/print-label", {
-      method:  "POST",
-      headers: { "Content-Type": "application/json" },
-      body:    JSON.stringify({ lot_id: _printLotId, copies }),
-    });
-    if (!resp.ok) {
-      const err = await resp.json().catch(() => ({ error: resp.statusText }));
-      throw new Error(err.error || resp.statusText);
-    }
-    const blob = await resp.blob();
-    const url  = URL.createObjectURL(blob);
-    document.getElementById("printModal").classList.remove("open");
-    window.open(url, "_blank");
-    setTimeout(() => URL.revokeObjectURL(url), 60000);
-  } catch (err) {
-    alert("Could not generate label: " + err.message);
-  } finally {
-    btn.textContent = "Print";
-    btn.disabled    = false;
+  if (!upb || upb < 1) {
+    upbInp.style.borderColor = "#ef4444";
+    upbInp.focus();
+    return;
   }
+  if (!_printVacCtx) return;
+
+  const html = buildVacuumLabelPrintHtml({
+    sku: _printVacCtx.sku || "?",
+    productName: _printVacCtx.name || "",
+    unitsPerBox: upb,
+    lot: (lotInp.value || "").trim(),
+    expiry: (expInp.value || "").trim(),
+    copies,
+  });
+  document.getElementById("printModal").classList.remove("open");
+  printVacuumLabelDocument(html);
 });
 
 document.getElementById("printCopiesInput").addEventListener("keydown", e => {
@@ -2528,12 +2689,18 @@ document.getElementById("printModal").addEventListener("click", e => {
     document.getElementById("printModal").classList.remove("open");
 });
 
-// Wire print-label-btn clicks via delegation on scheduleRoot
 document.getElementById("scheduleRoot").addEventListener("click", e => {
   const btn = e.target.closest(".print-label-btn");
   if (btn) {
     e.stopPropagation();
-    openPrintModal(parseInt(btn.dataset.lotId), btn.dataset.product, btn.dataset.mo);
+    openPrintModal({
+      sku: btn.dataset.sku,
+      name: btn.dataset.name,
+      qtyUnits: parseInt(btn.dataset.qtyUnits, 10) || 0,
+      lot_name: btn.dataset.lotName,
+      dluo: btn.dataset.dluo,
+      moRef: btn.dataset.mo,
+    });
   }
 }, true);
 
@@ -2575,12 +2742,14 @@ document.addEventListener("visibilitychange", () => {
   try {
     await window.AtomeAuth?.ready;
     // Load schedule + sync checks + load output records in parallel
-    const [sched] = await Promise.all([
+    const [sched, upbMap] = await Promise.all([
       loadSchedule(),
+      loadUnitsPerBox(),
       syncFromSupabase(),
-      loadOutputs()
+      loadOutputs(),
     ]);
     scheduleData = sched;
+    UNITS_PER_BOX = upbMap;
     cleanupOldChecks(); // async fire-and-forget
     const todayMon = mondayOfWeek(isoToday());
     const ds = scheduleData.week_start, de = scheduleData.week_end;
