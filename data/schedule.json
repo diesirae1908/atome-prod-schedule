@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T00:38:40Z",
+  "generated_at": "2026-09-29T00:41:26Z",
   "week_number": 37,
   "week_start": "2026-09-07",
   "week_end": "2026-11-01",
@@ -215,14 +215,14 @@
         },
         {
           "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "cfg_name": "Poppy Seed Baguette (×3)",
+          "label": "Pack of 3 Sourdough Sesame Baguette",
+          "cfg_name": "Sesame Baguette (×3)",
           "unit": "kg",
           "total_kg": 122.8,
           "total_units": 351,
-          "mo_ref": "WH/MO/01431",
+          "mo_ref": "WH/MO/01415",
           "products": [
-            "Pack of 3 Sourdough Poppy Seed Baguette"
+            "Pack of 3 Sourdough Sesame Baguette"
           ]
         }
       ],
@@ -257,27 +257,27 @@
       ],
       "mix": [
         {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Sesame Baguette",
-          "cfg_name": "Sesame Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01415",
-          "products": [
-            "Pack of 3 Sourdough Sesame Baguette"
-          ]
-        },
-        {
           "dough_type": "WW",
           "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
           "cfg_name": "Wholewheat Loaf (×2)",
           "unit": "kg",
-          "total_kg": 276.0,
-          "total_units": 460,
+          "total_kg": 138.0,
+          "total_units": 230,
           "mo_ref": "WH/MO/01428",
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+          ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "cfg_name": "Poppy Seed Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01431",
+          "products": [
+            "Pack of 3 Sourdough Poppy Seed Baguette"
           ]
         },
         {
@@ -306,19 +306,19 @@
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
-          "total_kg": 276.0,
+          "qty_packs": 115,
+          "qty_units": 230,
+          "total_kg": 138.0,
           "mo_ref": "WH/MO/01428",
           "d0": "2026-09-30"
         },
         {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
           "qty_packs": 117,
           "qty_units": 351,
           "total_kg": 122.8,
-          "mo_ref": "WH/MO/01431",
+          "mo_ref": "WH/MO/01415",
           "d0": "2026-09-29"
         }
       ],
@@ -344,8 +344,8 @@
           "label": "Pack of 2 Country Rye Sourdough Loaf",
           "cfg_name": "Country Rye Loaf (×2)",
           "unit": "kg",
-          "total_kg": 224.0,
-          "total_units": 320,
+          "total_kg": 112.0,
+          "total_units": 160,
           "mo_ref": "WH/MO/01421",
           "products": [
             "Pack of 2 Country Rye Sourdough Loaf"
@@ -368,9 +368,9 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
-          "total_kg": 224.0,
+          "qty_packs": 80,
+          "qty_units": 160,
+          "total_kg": 112.0,
           "mo_ref": "WH/MO/01421",
           "d0": "2026-10-01"
         },
@@ -384,12 +384,12 @@
           "d0": "2026-09-30"
         },
         {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
           "qty_packs": 117,
           "qty_units": 351,
           "total_kg": 122.8,
-          "mo_ref": "WH/MO/01415",
+          "mo_ref": "WH/MO/01431",
           "d0": "2026-09-30"
         }
       ],
@@ -397,8 +397,8 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230,
-          "qty_units": 460,
+          "qty_packs": 115,
+          "qty_units": 230,
           "mo_ref": "WH/MO/01428",
           "d0": "2026-09-30"
         }
@@ -431,14 +431,14 @@
           "needs_setup": false
         },
         {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
           "dluo": "2027-06-29",
-          "mo_ref": "WH/MO/01431",
-          "lot_id": 2140,
+          "mo_ref": "WH/MO/01415",
+          "lot_id": 2188,
           "lot_name": "06/29/2027",
           "copacked": false,
           "needs_setup": false
@@ -466,8 +466,8 @@
         {
           "action": "score_freeze",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160,
-          "qty_units": 320,
+          "qty_packs": 80,
+          "qty_units": 160,
           "mo_ref": "WH/MO/01421",
           "d0": "2026-10-01"
         }
@@ -476,9 +476,9 @@
         {
           "sku": "WW2P-SGL",
           "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 230.0,
-          "qty_units": 460.0,
-          "qty_pouches": 460.0,
+          "qty_packs": 115.0,
+          "qty_units": 230.0,
+          "qty_pouches": 230.0,
           "dluo": "2027-06-30",
           "mo_ref": "WH/MO/01428",
           "lot_id": 2133,
@@ -500,14 +500,14 @@
           "needs_setup": false
         },
         {
-          "sku": "SE3P-SGL",
-          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "sku": "PO3P-SGL",
+          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
           "qty_packs": 117.0,
           "qty_units": 351.0,
           "qty_pouches": 351.0,
           "dluo": "2027-06-30",
-          "mo_ref": "WH/MO/01415",
-          "lot_id": 2109,
+          "mo_ref": "WH/MO/01431",
+          "lot_id": 2187,
           "lot_name": "06/30/2027",
           "copacked": false,
           "needs_setup": false
@@ -590,9 +590,9 @@
         {
           "sku": "CTY2P-SGL",
           "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 160.0,
-          "qty_units": 320.0,
-          "qty_pouches": 320.0,
+          "qty_packs": 80.0,
+          "qty_units": 160.0,
+          "qty_pouches": 160.0,
           "dluo": "2027-07-01",
           "mo_ref": "WH/MO/01421",
           "lot_id": 2117,
