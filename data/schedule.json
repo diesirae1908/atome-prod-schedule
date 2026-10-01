@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T00:12:36Z",
+  "generated_at": "2026-10-01T20:33:13Z",
   "week_number": 37,
   "week_start": "2026-09-07",
   "week_end": "2026-11-01",
@@ -197,55 +197,9 @@
     {
       "date": "2026-09-28",
       "label": "MONDAY",
-      "premix": [
-        {
-          "label": "Prep mix PAC/CR",
-          "total_units": 309,
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ],
-          "mo_refs": [
-            "WH/MO/01432"
-          ]
-        }
-      ],
-      "mix": [
-        {
-          "dough_type": "WW",
-          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "cfg_name": "Wholewheat Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 138.0,
-          "total_units": 230,
-          "mo_ref": "WH/MO/01428",
-          "products": [
-            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
-          ]
-        },
-        {
-          "dough_type": "TRAD",
-          "label": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "cfg_name": "Poppy Seed Baguette (×3)",
-          "unit": "kg",
-          "total_kg": 122.8,
-          "total_units": 351,
-          "mo_ref": "WH/MO/01431",
-          "products": [
-            "Pack of 3 Sourdough Poppy Seed Baguette"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 115,
-          "qty_units": 230,
-          "total_kg": 138.0,
-          "mo_ref": "WH/MO/01428",
-          "d0": "2026-09-30"
-        }
-      ],
+      "premix": [],
+      "mix": [],
+      "shaping": [],
       "score_tasks": [],
       "vacuuming": []
     },
@@ -253,71 +207,9 @@
       "date": "2026-09-29",
       "label": "TUESDAY",
       "premix": [],
-      "mix": [
-        {
-          "dough_type": "COUNTRY",
-          "label": "Pack of 2 Country Rye Sourdough Loaf",
-          "cfg_name": "Country Rye Loaf (×2)",
-          "unit": "kg",
-          "total_kg": 112.0,
-          "total_units": 160,
-          "mo_ref": "WH/MO/01421",
-          "products": [
-            "Pack of 2 Country Rye Sourdough Loaf"
-          ]
-        },
-        {
-          "dough_type": "PAC_CR",
-          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "cfg_name": "Pain au Chocolat (×3)",
-          "unit": "pcs",
-          "total_kg": 21.6,
-          "total_units": 309,
-          "mo_ref": "WH/MO/01432",
-          "products": [
-            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
-          ]
-        }
-      ],
-      "shaping": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "total_kg": 112.0,
-          "mo_ref": "WH/MO/01421",
-          "d0": "2026-10-01"
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103,
-          "qty_units": 309,
-          "total_kg": 21.6,
-          "mo_ref": "WH/MO/01432",
-          "d0": "2026-09-30"
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117,
-          "qty_units": 351,
-          "total_kg": 122.8,
-          "mo_ref": "WH/MO/01431",
-          "d0": "2026-09-30"
-        }
-      ],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 115,
-          "qty_units": 230,
-          "mo_ref": "WH/MO/01428",
-          "d0": "2026-09-30"
-        }
-      ],
+      "mix": [],
+      "shaping": [],
+      "score_tasks": [],
       "vacuuming": []
     },
     {
@@ -337,57 +229,8 @@
       ],
       "mix": [],
       "shaping": [],
-      "score_tasks": [
-        {
-          "action": "score_freeze",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80,
-          "qty_units": 160,
-          "mo_ref": "WH/MO/01421",
-          "d0": "2026-10-01"
-        }
-      ],
-      "vacuuming": [
-        {
-          "sku": "WW2P-SGL",
-          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
-          "qty_packs": 115.0,
-          "qty_units": 230.0,
-          "qty_pouches": 230.0,
-          "dluo": "2027-06-30",
-          "mo_ref": "WH/MO/01428",
-          "lot_id": 2133,
-          "lot_name": "06/30/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PAC3P-SGL",
-          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
-          "qty_packs": 103.0,
-          "qty_units": 309.0,
-          "qty_pouches": 103.0,
-          "dluo": "2027-03-30",
-          "mo_ref": "WH/MO/01432",
-          "lot_id": 2142,
-          "lot_name": "03/30/2027",
-          "copacked": false,
-          "needs_setup": false
-        },
-        {
-          "sku": "PO3P-SGL",
-          "name": "Pack of 3 Sourdough Poppy Seed Baguette",
-          "qty_packs": 117.0,
-          "qty_units": 351.0,
-          "qty_pouches": 351.0,
-          "dluo": "2027-06-30",
-          "mo_ref": "WH/MO/01431",
-          "lot_id": 2187,
-          "lot_name": "06/30/2027",
-          "copacked": false,
-          "needs_setup": false
-        }
-      ]
+      "score_tasks": [],
+      "vacuuming": []
     },
     {
       "date": "2026-10-01",
@@ -461,21 +304,7 @@
         }
       ],
       "score_tasks": [],
-      "vacuuming": [
-        {
-          "sku": "CTY2P-SGL",
-          "name": "Pack of 2 Country Rye Sourdough Loaf",
-          "qty_packs": 80.0,
-          "qty_units": 160.0,
-          "qty_pouches": 160.0,
-          "dluo": "2027-07-01",
-          "mo_ref": "WH/MO/01421",
-          "lot_id": 2117,
-          "lot_name": "07/01/2027",
-          "copacked": false,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-10-02",
@@ -549,6 +378,32 @@
           "lot_id": 2123,
           "lot_name": "04/02/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "4-MAD4P",
+          "name": "Pack of 4 Madeleines",
+          "qty_packs": 70.0,
+          "qty_units": 70.0,
+          "qty_pouches": 70.0,
+          "dluo": "2028-01-23",
+          "mo_ref": "WH/MO/01461",
+          "lot_id": 1413,
+          "lot_name": "01/23/2028",
+          "copacked": true,
+          "needs_setup": true
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 120.0,
+          "qty_units": 960.0,
+          "qty_pouches": 120.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01462",
+          "lot_id": null,
+          "lot_name": null,
+          "copacked": true,
           "needs_setup": false
         },
         {
