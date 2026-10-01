@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T21:06:21Z",
+  "generated_at": "2026-10-01T23:33:42Z",
   "week_number": 37,
   "week_start": "2026-09-07",
   "week_end": "2026-11-01",
@@ -1399,6 +1399,18 @@
           "products": [
             "Pack of 3 Multigrain Sourdough Baguettes"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 2 Sourdough Loaves (White Flour)",
+          "cfg_name": "Sourdough Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 246.4,
+          "total_units": 352,
+          "mo_ref": "WH/MO/01471",
+          "products": [
+            "Pack of 2 Sourdough Loaves (White Flour)"
+          ]
         }
       ],
       "shaping": [
@@ -1410,6 +1422,15 @@
           "total_kg": 52.2,
           "mo_ref": "WH/MO/01465",
           "d0": "2026-10-14"
+        },
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "total_kg": 246.4,
+          "mo_ref": "WH/MO/01471",
+          "d0": "2026-10-15"
         }
       ],
       "score_tasks": [],
@@ -1499,7 +1520,16 @@
           "d0": "2026-10-15"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176,
+          "qty_units": 352,
+          "mo_ref": "WH/MO/01471",
+          "d0": "2026-10-15"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "BR-SGL",
@@ -1567,6 +1597,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "LF2P",
+          "name": "Pack of 2 Sourdough Loaves (White Flour)",
+          "qty_packs": 176.0,
+          "qty_units": 352.0,
+          "qty_pouches": 352.0,
+          "dluo": "2027-07-15",
+          "mo_ref": "WH/MO/01471",
+          "lot_id": 2207,
+          "lot_name": "07/15/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "MG3P-SGL",
           "name": "Pack of 3 Multigrain Sourdough Baguettes",
