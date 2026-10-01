@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T23:34:41Z",
+  "generated_at": "2026-10-01T23:40:54Z",
   "week_number": 37,
   "week_start": "2026-09-07",
   "week_end": "2026-11-01",
@@ -1573,6 +1573,18 @@
           "products": [
             "Butter Shortbread Log (Plain)"
           ]
+        },
+        {
+          "dough_type": "WW",
+          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "cfg_name": "Wholewheat Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 276.0,
+          "total_units": 460,
+          "mo_ref": "WH/MO/01472",
+          "products": [
+            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+          ]
         }
       ],
       "shaping": [
@@ -1584,6 +1596,15 @@
           "total_kg": 20.0,
           "mo_ref": "WH/MO/01468",
           "d0": "2026-10-16"
+        },
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 230,
+          "qty_units": 460,
+          "total_kg": 276.0,
+          "mo_ref": "WH/MO/01472",
+          "d0": "2026-10-17"
         }
       ],
       "score_tasks": [
@@ -1678,7 +1699,16 @@
           "d0": "2026-10-17"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 230,
+          "qty_units": 460,
+          "mo_ref": "WH/MO/01472",
+          "d0": "2026-10-17"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "SBL-P-SGL",
@@ -1750,6 +1780,19 @@
       ],
       "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 230.0,
+          "qty_units": 460.0,
+          "qty_pouches": 460.0,
+          "dluo": "2027-07-17",
+          "mo_ref": "WH/MO/01472",
+          "lot_id": 2208,
+          "lot_name": "07/17/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "WA3P-SGL",
           "name": "Pack of 3 Liege Waffle",
