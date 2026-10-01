@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T23:40:54Z",
+  "generated_at": "2026-10-01T23:41:46Z",
   "week_number": 37,
   "week_start": "2026-09-07",
   "week_end": "2026-11-01",
@@ -1585,6 +1585,18 @@
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Sourdough Sesame Baguette",
+          "cfg_name": "Sesame Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01473",
+          "products": [
+            "Pack of 3 Sourdough Sesame Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1696,6 +1708,15 @@
           "qty_units": 309,
           "total_kg": 21.6,
           "mo_ref": "WH/MO/01467",
+          "d0": "2026-10-17"
+        },
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01473",
           "d0": "2026-10-17"
         }
       ],
@@ -1816,6 +1837,19 @@
           "mo_ref": "WH/MO/01467",
           "lot_id": 2202,
           "lot_name": "04/17/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "SE3P-SGL",
+          "name": "Pack of 3 Sourdough Sesame Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-07-17",
+          "mo_ref": "WH/MO/01473",
+          "lot_id": 2209,
+          "lot_name": "07/17/2027",
           "copacked": false,
           "needs_setup": false
         }
