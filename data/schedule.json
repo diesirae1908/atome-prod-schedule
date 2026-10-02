@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T18:08:57Z",
+  "generated_at": "2026-10-02T20:20:45Z",
   "week_number": 37,
   "week_start": "2026-09-07",
   "week_end": "2026-11-01",
@@ -730,9 +730,30 @@
           "products": [
             "Pack of 3 Multigrain Sourdough Baguettes"
           ]
+        },
+        {
+          "dough_type": "COUNTRY",
+          "label": "Pack of 2 Country Rye Sourdough Loaf",
+          "cfg_name": "Country Rye Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 112.0,
+          "total_units": 160,
+          "mo_ref": "WH/MO/01487",
+          "products": [
+            "Pack of 2 Country Rye Sourdough Loaf"
+          ]
         }
       ],
       "shaping": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "total_kg": 112.0,
+          "mo_ref": "WH/MO/01487",
+          "d0": "2026-10-08"
+        },
         {
           "sku": "VI2P-SGL",
           "name": "Pack of 2 Viennoise (Brioche Baguette)",
@@ -883,7 +904,16 @@
           "d0": "2026-10-08"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80,
+          "qty_units": 160,
+          "mo_ref": "WH/MO/01487",
+          "d0": "2026-10-08"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "PIZ2-SGL",
@@ -998,6 +1028,19 @@
         }
       ],
       "vacuuming": [
+        {
+          "sku": "CTY2P-SGL",
+          "name": "Pack of 2 Country Rye Sourdough Loaf",
+          "qty_packs": 80.0,
+          "qty_units": 160.0,
+          "qty_pouches": 160.0,
+          "dluo": "2027-07-08",
+          "mo_ref": "WH/MO/01487",
+          "lot_id": 2218,
+          "lot_name": "07/08/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "MG3P-SGL",
           "name": "Pack of 3 Multigrain Sourdough Baguettes",
