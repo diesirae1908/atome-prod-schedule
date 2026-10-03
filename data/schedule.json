@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T00:01:47Z",
+  "generated_at": "2026-10-03T00:07:10Z",
   "week_number": 37,
   "week_start": "2026-09-07",
   "week_end": "2026-11-01",
@@ -334,34 +334,7 @@
           "d0": "2026-10-03"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 180.0,
-          "qty_units": 1440.0,
-          "qty_pouches": 180.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/01486",
-          "lot_id": 2195,
-          "lot_name": "01/21/27",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "PFP-SGL",
-          "name": "Puff Pastry",
-          "qty_packs": 96.0,
-          "qty_units": 96.0,
-          "qty_pouches": 96.0,
-          "dluo": "2026-11-25",
-          "mo_ref": "WH/MO/01485",
-          "lot_id": 2190,
-          "lot_name": "11/25/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-10-03",
@@ -541,19 +514,6 @@
       ],
       "vacuuming": [
         {
-          "sku": "CR3P-SGL",
-          "name": "Pack of 3 Croissants",
-          "qty_packs": 213.0,
-          "qty_units": 639.0,
-          "qty_pouches": 213.0,
-          "dluo": "2027-04-23",
-          "mo_ref": "WH/MO/01442",
-          "lot_id": 1966,
-          "lot_name": "04/23/2027",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
           "sku": "4-GD3P",
           "name": "Pack of 3 Gratin Dauphinois",
           "qty_packs": 266.0,
@@ -577,6 +537,32 @@
           "lot_id": 2216,
           "lot_name": "04/04/2027",
           "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "1-PACB8P-SGL",
+          "name": "Pack of 8 chocolate croissant bites",
+          "qty_packs": 180.0,
+          "qty_units": 1440.0,
+          "qty_pouches": 180.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01486",
+          "lot_id": 2195,
+          "lot_name": "01/21/27",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
+          "sku": "PFP-SGL",
+          "name": "Puff Pastry",
+          "qty_packs": 96.0,
+          "qty_units": 96.0,
+          "qty_pouches": 96.0,
+          "dluo": "2026-11-25",
+          "mo_ref": "WH/MO/01485",
+          "lot_id": 2190,
+          "lot_name": "11/25/2026",
+          "copacked": true,
           "needs_setup": false
         }
       ]
