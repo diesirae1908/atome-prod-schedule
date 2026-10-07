@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T23:09:40Z",
+  "generated_at": "2026-10-07T23:15:21Z",
   "week_number": 38,
   "week_start": "2026-09-14",
   "week_end": "2026-11-08",
@@ -1584,8 +1584,30 @@
           ]
         }
       ],
-      "mix": [],
+      "mix": [
+        {
+          "dough_type": "WW",
+          "label": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "cfg_name": "Wholewheat Loaf (×2)",
+          "unit": "kg",
+          "total_kg": 138.0,
+          "total_units": 230,
+          "mo_ref": "WH/MO/01501",
+          "products": [
+            "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
+          ]
+        }
+      ],
       "shaping": [
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 115,
+          "qty_units": 230,
+          "total_kg": 138.0,
+          "mo_ref": "WH/MO/01501",
+          "d0": "2026-10-22"
+        },
         {
           "sku": "TR3P-SGL",
           "name": "Pack of 3 Traditional Sourdough Baguette",
@@ -1676,7 +1698,16 @@
           "d0": "2026-10-22"
         }
       ],
-      "score_tasks": [],
+      "score_tasks": [
+        {
+          "action": "score_freeze",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 115,
+          "qty_units": 230,
+          "mo_ref": "WH/MO/01501",
+          "d0": "2026-10-22"
+        }
+      ],
       "vacuuming": [
         {
           "sku": "CTY2P-SGL",
@@ -1758,6 +1789,19 @@
       ],
       "score_tasks": [],
       "vacuuming": [
+        {
+          "sku": "WW2P-SGL",
+          "name": "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)",
+          "qty_packs": 115.0,
+          "qty_units": 230.0,
+          "qty_pouches": 230.0,
+          "dluo": "2027-07-22",
+          "mo_ref": "WH/MO/01501",
+          "lot_id": 2244,
+          "lot_name": "07/22/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
         {
           "sku": "PAC3P-SGL",
           "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
