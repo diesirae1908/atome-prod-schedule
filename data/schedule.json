@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T23:32:50Z",
+  "generated_at": "2026-10-07T23:33:48Z",
   "week_number": 38,
   "week_start": "2026-09-14",
   "week_end": "2026-11-08",
@@ -1046,11 +1046,24 @@
           "needs_setup": false
         },
         {
+          "sku": "1-AT3P-SGL",
+          "name": "Pack of 3 apple turnover",
+          "qty_packs": 133.0,
+          "qty_units": 133.0,
+          "qty_pouches": 133.0,
+          "dluo": null,
+          "mo_ref": "WH/MO/01504",
+          "lot_id": 2224,
+          "lot_name": "06/16/27",
+          "copacked": true,
+          "needs_setup": false
+        },
+        {
           "sku": "PFP-SGL",
           "name": "Puff Pastry",
-          "qty_packs": 120.0,
-          "qty_units": 120.0,
-          "qty_pouches": 120.0,
+          "qty_packs": 240.0,
+          "qty_units": 240.0,
+          "qty_pouches": 240.0,
           "dluo": "2026-11-25",
           "mo_ref": "WH/MO/01503",
           "lot_id": 2190,
