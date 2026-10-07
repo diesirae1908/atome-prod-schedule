@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T23:00:49Z",
+  "generated_at": "2026-10-07T23:04:39Z",
   "week_number": 38,
   "week_start": "2026-09-14",
   "week_end": "2026-11-08",
@@ -487,9 +487,9 @@
         {
           "sku": "1-PACB8P-SGL",
           "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 180.0,
-          "qty_units": 1440.0,
-          "qty_pouches": 180.0,
+          "qty_packs": 300.0,
+          "qty_units": 2400.0,
+          "qty_pouches": 300.0,
           "dluo": null,
           "mo_ref": "WH/MO/01480",
           "lot_id": 2195,
