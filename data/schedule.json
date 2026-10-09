@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T20:51:49Z",
+  "generated_at": "2026-10-09T22:38:40Z",
   "week_number": 38,
   "week_start": "2026-09-14",
   "week_end": "2026-11-08",
@@ -356,34 +356,7 @@
           "d0": "2026-10-10"
         }
       ],
-      "vacuuming": [
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 133.0,
-          "qty_units": 133.0,
-          "qty_pouches": 133.0,
-          "dluo": "2027-04-08",
-          "mo_ref": "WH/MO/01481",
-          "lot_id": 2034,
-          "lot_name": "04/08/2027",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "1-PACB8P-SGL",
-          "name": "Pack of 8 chocolate croissant bites",
-          "qty_packs": 60.0,
-          "qty_units": 480.0,
-          "qty_pouches": 60.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/01515",
-          "lot_id": 2195,
-          "lot_name": "01/21/27",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-10-10",
