@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T00:31:29Z",
+  "generated_at": "2026-10-09T00:32:21Z",
   "week_number": 38,
   "week_start": "2026-09-14",
   "week_end": "2026-11-08",
@@ -1515,6 +1515,18 @@
           "products": [
             "Pack of 2 Sourdough Wholewheat Loaves (Wholewheat Flour)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 1.1,
+          "total_units": 3,
+          "mo_ref": "WH/MO/01512",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1594,7 +1606,17 @@
           ]
         }
       ],
-      "shaping": [],
+      "shaping": [
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 1,
+          "qty_units": 3,
+          "total_kg": 1.1,
+          "mo_ref": "WH/MO/01512",
+          "d0": "2026-10-22"
+        }
+      ],
       "score_tasks": [
         {
           "action": "score_freeze",
@@ -1706,6 +1728,19 @@
           "dluo": "2027-07-22",
           "mo_ref": "WH/MO/01501",
           "lot_id": 2244,
+          "lot_name": "07/22/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 1.0,
+          "qty_units": 3.0,
+          "qty_pouches": 3.0,
+          "dluo": "2027-07-22",
+          "mo_ref": "WH/MO/01512",
+          "lot_id": 2248,
           "lot_name": "07/22/2027",
           "copacked": false,
           "needs_setup": false
