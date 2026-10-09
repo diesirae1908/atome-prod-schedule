@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T00:33:28Z",
+  "generated_at": "2026-10-09T00:35:01Z",
   "week_number": 38,
   "week_start": "2026-09-14",
   "week_end": "2026-11-08",
@@ -1689,8 +1689,8 @@
           "label": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
           "cfg_name": "Ciabatta (×3)",
           "unit": "kg",
-          "total_kg": 79.2,
-          "total_units": 264,
+          "total_kg": 239.4,
+          "total_units": 798,
           "mo_ref": "WH/MO/01499",
           "products": [
             "Pack of 3 Ciabatta Sourdough (Sandwich Bread)"
@@ -1701,9 +1701,9 @@
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 88,
-          "qty_units": 264,
-          "total_kg": 79.2,
+          "qty_packs": 266,
+          "qty_units": 798,
+          "total_kg": 239.4,
           "mo_ref": "WH/MO/01499",
           "d0": "2026-10-24"
         },
@@ -1775,6 +1775,18 @@
           "products": [
             "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
           ]
+        },
+        {
+          "dough_type": "TRAD",
+          "label": "Pack of 3 Traditional Sourdough Baguette",
+          "cfg_name": "Trad. Baguette (×3)",
+          "unit": "kg",
+          "total_kg": 122.8,
+          "total_units": 351,
+          "mo_ref": "WH/MO/01513",
+          "products": [
+            "Pack of 3 Traditional Sourdough Baguette"
+          ]
         }
       ],
       "shaping": [
@@ -1810,8 +1822,8 @@
         {
           "action": "freeze_only",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 88,
-          "qty_units": 264,
+          "qty_packs": 266,
+          "qty_units": 798,
           "mo_ref": "WH/MO/01499",
           "d0": "2026-10-24"
         }
@@ -1870,6 +1882,15 @@
           "total_kg": 123.2,
           "mo_ref": "WH/MO/01496",
           "d0": "2026-10-26"
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117,
+          "qty_units": 351,
+          "total_kg": 122.8,
+          "mo_ref": "WH/MO/01513",
+          "d0": "2026-10-25"
         }
       ],
       "score_tasks": [
@@ -1886,9 +1907,9 @@
         {
           "sku": "CIA3-SGL",
           "name": "Pack of 3 Ciabatta Sourdough (Sandwich Bread)",
-          "qty_packs": 88.0,
-          "qty_units": 264.0,
-          "qty_pouches": 88.0,
+          "qty_packs": 266.0,
+          "qty_units": 798.0,
+          "qty_pouches": 266.0,
           "dluo": "2027-07-24",
           "mo_ref": "WH/MO/01499",
           "lot_id": 2240,
@@ -2008,6 +2029,19 @@
           "mo_ref": "WH/MO/01491",
           "lot_id": 2227,
           "lot_name": "04/25/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "TR3P-SGL",
+          "name": "Pack of 3 Traditional Sourdough Baguette",
+          "qty_packs": 117.0,
+          "qty_units": 351.0,
+          "qty_pouches": 351.0,
+          "dluo": "2027-07-25",
+          "mo_ref": "WH/MO/01513",
+          "lot_id": 2249,
+          "lot_name": "07/25/2027",
           "copacked": false,
           "needs_setup": false
         }
