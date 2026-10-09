@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T00:29:45Z",
+  "generated_at": "2026-10-09T00:31:29Z",
   "week_number": 38,
   "week_start": "2026-09-14",
   "week_end": "2026-11-08",
@@ -1637,7 +1637,18 @@
     {
       "date": "2026-10-22",
       "label": "THURSDAY",
-      "premix": [],
+      "premix": [
+        {
+          "label": "Prep mix PAC/CR",
+          "total_units": 309,
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ],
+          "mo_refs": [
+            "WH/MO/01511"
+          ]
+        }
+      ],
       "mix": [
         {
           "dough_type": "TRAD",
@@ -1717,6 +1728,18 @@
           "products": [
             "Pack of 2 Sourdough Loaves (White Flour)"
           ]
+        },
+        {
+          "dough_type": "PAC_CR",
+          "label": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "cfg_name": "Pain au Chocolat (×3)",
+          "unit": "pcs",
+          "total_kg": 21.6,
+          "total_units": 309,
+          "mo_ref": "WH/MO/01511",
+          "products": [
+            "Pack of 3 Pain au Chocolat (Chocolate Croissant)"
+          ]
         }
       ],
       "shaping": [
@@ -1728,6 +1751,15 @@
           "total_kg": 246.4,
           "mo_ref": "WH/MO/01502",
           "d0": "2026-10-25"
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103,
+          "qty_units": 309,
+          "total_kg": 21.6,
+          "mo_ref": "WH/MO/01511",
+          "d0": "2026-10-24"
         },
         {
           "sku": "TR3P-SGL",
@@ -1826,6 +1858,19 @@
           "mo_ref": "WH/MO/01499",
           "lot_id": 2240,
           "lot_name": "07/24/2027",
+          "copacked": false,
+          "needs_setup": false
+        },
+        {
+          "sku": "PAC3P-SGL",
+          "name": "Pack of 3 Pain au Chocolat (Chocolate Croissant)",
+          "qty_packs": 103.0,
+          "qty_units": 309.0,
+          "qty_pouches": 103.0,
+          "dluo": "2027-04-24",
+          "mo_ref": "WH/MO/01511",
+          "lot_id": 2247,
+          "lot_name": "04/24/2027",
           "copacked": false,
           "needs_setup": false
         },
