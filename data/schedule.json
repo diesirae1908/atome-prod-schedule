@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T21:00:55Z",
+  "generated_at": "2026-10-14T22:16:01Z",
   "week_number": 39,
   "week_start": "2026-09-21",
   "week_end": "2026-11-15",
@@ -219,47 +219,7 @@
       "mix": [],
       "shaping": [],
       "score_tasks": [],
-      "vacuuming": [
-        {
-          "sku": "4-GD3P",
-          "name": "Pack of 3 Gratin Dauphinois",
-          "qty_packs": 133.0,
-          "qty_units": 133.0,
-          "qty_pouches": 133.0,
-          "dluo": "2027-10-13",
-          "mo_ref": "WH/MO/01520",
-          "lot_id": 2067,
-          "lot_name": "10/13/2027",
-          "copacked": true,
-          "needs_setup": true
-        },
-        {
-          "sku": "1-AT3P-SGL",
-          "name": "Pack of 3 apple turnover",
-          "qty_packs": 133.0,
-          "qty_units": 133.0,
-          "qty_pouches": 133.0,
-          "dluo": null,
-          "mo_ref": "WH/MO/01504",
-          "lot_id": 2224,
-          "lot_name": "06/16/27",
-          "copacked": true,
-          "needs_setup": false
-        },
-        {
-          "sku": "PFP-SGL",
-          "name": "Puff Pastry",
-          "qty_packs": 240.0,
-          "qty_units": 240.0,
-          "qty_pouches": 240.0,
-          "dluo": "2026-11-25",
-          "mo_ref": "WH/MO/01503",
-          "lot_id": 2190,
-          "lot_name": "11/25/2026",
-          "copacked": true,
-          "needs_setup": false
-        }
-      ]
+      "vacuuming": []
     },
     {
       "date": "2026-10-15",
