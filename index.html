@@ -712,6 +712,7 @@
   </style>
 </head>
 <body>
+<div class="odoo-retired-banner" role="alert" style="background:#fef3c7;border-bottom:2px solid #d97706;color:#78350f;padding:8px 14px;font:600 13px/1.4 system-ui,sans-serif;text-align:center">Odoo is retired (2026-11-08). The production schedule and lot labels now live in <a href="https://apex-atome.onrender.com" style="color:#92400e;text-decoration:underline">Apex</a>. This page no longer updates.</div>
 
 <!-- ── Side Navigation ── -->
 <div class="side-nav-backdrop" id="sideNavBackdrop" onclick="closeSideNav()"></div>
@@ -774,7 +775,7 @@
       </div>
       <button id="nextWeek">▶</button>
     </div>
-    <button class="refresh-btn" id="refreshBtn">🔄 Refresh from Odoo</button>
+    <button class="refresh-btn" id="refreshBtn" hidden disabled style="display:none" title="Odoo retired, schedule lives in Apex">🔄 Refresh (retired)</button>
     <span class="sync-dot syncing" id="syncDot" title="Syncing…"></span>
     <div class="meta" id="metaLine">Loading…</div>
   </div>

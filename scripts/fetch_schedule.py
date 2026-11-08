@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# RETIRED 2026-11-08: Odoo is shut down; the schedule lives in Apex. Kept for history, no longer run.
 """
 Fetches Manufacturing Orders from Odoo SH via XML-RPC and generates
 data/schedule.json for the production schedule web app.

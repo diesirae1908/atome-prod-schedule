@@ -1,10 +1,6 @@
 name: Remind — Rotate Odoo API Key
 
 on:
-  schedule:
-    # Fires June 15 at 09:00 UTC — ~2 weeks before the current key expires (~June 30 2026)
-    # After rotating, update this date to 2.5 months after the new key was created.
-    - cron: '0 9 15 6 *'
   workflow_dispatch: # allow manual trigger to test
 
 permissions:
