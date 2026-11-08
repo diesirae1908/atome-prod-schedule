@@ -4,6 +4,12 @@ Dated work log for the `atome-prod-schedule` repo, newest entry first.
 
 ---
 
+## 2026-11-08: Odoo retired (last Odoo calls removed)
+
+Odoo is shut down; Apex owns the schedule and lot labels. `refresh.yml` and `remind-rotate-api-key.yml`: schedule triggers removed (workflow_dispatch kept; refresh just prints a retired notice, no commit). `server.js`: `/api/print-label` and `/api/trigger-refresh` return 410 JSON, no ODOO_* env read. `trigger-refresh` edge function returns 410 (not deployed yet). `scripts/fetch_schedule.py` marked retired. `index.html` + `levain.html`: Apex banner; Refresh button hidden. Kept working: vacuum box label print (client-side, not Odoo), MOPs/outputs/kanban (no Odoo data). `data/schedule.json` is now stale.
+
+---
+
 ## 2026-09-27 — Baptiste R20 §4: 4″×2″ vacuum box labels (Vacuuming column)
 
 Per Baptiste Round 20 item 4 (prod-schedule, not Apex):

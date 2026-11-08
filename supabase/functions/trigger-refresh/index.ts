@@ -13,29 +13,9 @@ Deno.serve(async (req) => {
     return new Response("ok", { headers: corsHeaders });
   }
 
-  const GH_TOKEN = Deno.env.get("GH_TOKEN");
-  if (!GH_TOKEN) {
-    return new Response(
-      JSON.stringify({ error: "GH_TOKEN secret not configured" }),
-      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-    );
-  }
-
-  const resp = await fetch(
-    "https://api.github.com/repos/diesirae1908/atome-prod-schedule/actions/workflows/refresh.yml/dispatches",
-    {
-      method: "POST",
-      headers: {
-        "Authorization": `token ${GH_TOKEN}`,
-        "Accept": "application/vnd.github+json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ref: "main" }),
-    }
-  );
-
+  // Retired 2026-11-08: Odoo is shut down, schedule lives in Apex. No dispatch.
   return new Response(
-    JSON.stringify({ ok: resp.ok, status: resp.status }),
-    { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    JSON.stringify({ error: "Odoo is retired. Print labels and see the schedule in Apex: https://apex-atome.onrender.com" }),
+    { status: 410, headers: { ...corsHeaders, "Content-Type": "application/json" } }
   );
 });
